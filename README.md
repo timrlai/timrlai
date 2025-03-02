@@ -5,17 +5,17 @@
 My name is Tim Lai and I am a full-stack software developer, 👨🏻‍💻 web developer, 🛜 teacher, 👨🏻‍🏫 web designer, 🕸️ graphic designer, 🎨 illustrator 👨🏻‍🎨 and cartoonist ✏️ living in Ontario, Canada. 🍁
 
 ## Summary 📝
-- 🤖 Most recently worked as a web developer at Futuretalk Inc. making VR/AR and AI applications
-- 👨🏻‍🏫 Teacher of Web Programming with Python and Django and PHP and Laravel at Seneca College
-- 👨🏻‍🎓 Graduated with an Honours Bachelor of Technology – Software Development from Seneca College
+- 🤖 Most recently worked as a web developer at [Futuretalk Inc.](https://www.futuretalk.ca/) making [VR/AR and AI applications](https://learnwithtrek.com/)
+- 👨🏻‍🏫 Teacher of [Web Programming](https://www.senecapolytechnic.ca/ce/creative/graphics-web-design/web-programming-development.html) with Python and Django and PHP and Laravel at Seneca College
+- 👨🏻‍🎓 Graduated with an [Honours Bachelor of Technology – Software Development](https://www.senecapolytechnic.ca/programs/fulltime/BSD.html) from Seneca College
 - 👨🏻‍💻 A passionate full stack developer/designer with 5+ years of web development experience
 - ❤️‍🔥 Enthusiastic, creative, detail-oriented, resourceful, reliable, fast learning, dedicated and adaptable
 - 🤝 Experience working both independently and in team-oriented, collaborative environments
 - 🍁 Canadian citizen
 
 ## Experience 👨🏻‍💻🤖👨🏻‍🏫
-I am a full-stack software and web developer 👨🏻‍💻 who most recently worked with Futuretalk Inc. 🤖 At Futuretalk Inc. 🤖 I developed cutting edge web 🛜 applications using JavaScript/TypeScript, 🟨🟦 React ⚛️ and Three.js 🌐 to create
-immersive, 3D, 🌐 virtual and augmented reality experiences for educational 👨🏻‍🏫 content and used Python 🐍 to create AI 🤖 powered tools to automate processes. I also have experience teaching 👨🏻‍🏫 web development 🛜 skills at Seneca College 🏫 since 2017.
+I am a full-stack software and web developer 👨🏻‍💻 who most recently worked with [Futuretalk Inc.](https://www.futuretalk.ca/) 🤖 At Futuretalk Inc. 🤖 I developed cutting edge web 🛜 [applications](https://learnwithtrek.com/) using JavaScript/TypeScript, 🟨🟦 React ⚛️ and Three.js 🌐 to create
+immersive, 3D, 🌐 virtual and augmented reality experiences for educational 👨🏻‍🏫 content and used Python 🐍 to create AI 🤖 powered tools to automate processes. I also have experience teaching 👨🏻‍🏫 web development 🛜 skills at [Seneca College](https://www.senecapolytechnic.ca/ce/creative/graphics-web-design/web-programming-development.html) 🏫 since 2017.
 
 ## Skills 👨🏻‍💻❤️‍🔥💪🏻
 I have over five years of experience developing, testing, debugging and troubleshooting web applications and have experience working with JavaScript, 🟨 TypeScript, 🟦 React, ⚛️ Next.js, Angular, 🦸🏻 Vue, 💚 Vite, ⚡ Python, 🐍 Django, 🎸 Flask, 🍼 PHP, 🐘 Laravel, 🧱 Ruby, 💎 Ruby on Rails, 🛤️ SQL, 🐬 HTML, 🏷️ XML, 🏷️ CSS, 🔶 Sass, 🩷 Tailwind CSS, 🍃 Bootstrap, 🥾 WordPress, 📝 VS Code, 💙 Visual Studio 💜 and Adobe Creative Cloud. ☁️ I am experiened with using those skills to design intuitive, dynamic and acessible user interfaces for web applications. 💻
