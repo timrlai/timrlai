@@ -1,14 +1,14 @@
 # Tim R. Lai 👨🏻‍💻👨🏻‍🏫🤓🦇🐬🩵
 
-- [Tim R. Lai 👨🏻‍💻👨🏻‍🏫🤓🦇🐬🩵](#tim-r-lai-----------------------)
-  * [Hi, I'm Tim Lai! 👋](#hi--i-m-tim-lai----)
-  * [Summary 📝](#summary---)
-  * [Skills 👨🏻‍💻🎨❤️‍🔥](#skills---------------)
-    + [Technical Skills 👨🏻‍💻](#technical-skills--------)
-    + [Soft Skills ❤️‍🔥](#soft-skills------)
-  * [Work Experience 👨🏻‍💻🤖👨🏻‍🏫](#work-experience-----------------)
-  * [Education 🏫👨🏻‍🎓🎓](#education------------)
-  * [Volunteer Experience 💓🎬👁️](#volunteer-experience--------)
+- [Tim R. Lai 👨🏻‍💻👨🏻‍🏫🤓🦇🐬🩵](#tim-r-lai-)
+  * [Hi, I'm Tim Lai! 👋](#hi--i-m-tim-lai-)
+  * [Summary 📝](#summary-)
+  * [Skills 👨🏻‍💻🎨❤️‍🔥](#skills-)
+    + [Technical Skills 👨🏻‍💻](#technical-skills-)
+    + [Soft Skills ❤️‍🔥](#soft-skills-)
+  * [Work Experience 👨🏻‍💻🤖👨🏻‍🏫](#work-experience-)
+  * [Education 🏫👨🏻‍🎓🎓](#education-)
+  * [Volunteer Experience 💓🎬👁️](#volunteer-experience-)
 
 ## Hi, I'm Tim Lai! 👋
 
