@@ -1,7 +1,7 @@
 # Tim R. Lai 👨🏻‍💻👨🏻‍🏫🤓🦇🐬🩵
 
 - [Tim R. Lai 👨🏻‍💻👨🏻‍🏫🤓🦇🐬🩵](#tim-r-lai-----------------------)
-  * [Hi there 👋](#hi-there---)
+  * [Hi, I'm Tim Lai! 👋](#hi--i-m-tim-lai----)
   * [Summary 📝](#summary---)
   * [Skills 👨🏻‍💻🎨❤️‍🔥](#skills---------------)
     + [Technical Skills 👨🏻‍💻](#technical-skills--------)
