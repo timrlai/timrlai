@@ -26,7 +26,7 @@ My skills include developing, testing, debugging and troubleshooting web applica
 | **Text Editors/IDEs/FTP:**        | Visual Studio Code, Visual Studio, Android Studio, WinSCP, FileZilla                                                                                                                                                                                                   |
 | **Design/Illustration Software:** | Adobe Creative Cloud, Visual Paradigm, Clip Studio Paint                                                                                                                                                                                                               |
 | **General Software:**             | Linux, GitHub, MS Teams, Zoom, Slack, Discord, Microsoft Office, Google Docs                                                                                                                                                                                           |
-### Soft Skills
+### Soft Skills ❤️‍🔥
 
 Having worked with large, fast-paced organizations such as Futuretalk Inc., 🤖 Seneca College 👨🏻‍🏫 and the Toronto Animation Arts Festival International, 🎬 I have experience communicating 💬 with large teams and working under time constraints. ⌛ People know me to be passionate, ❤️‍🔥 creative, 🎨 detail-oriented, 👁️ resourceful, 🔗 reliable 💯 and adaptable. 💪🏻
 
