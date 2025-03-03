@@ -9,6 +9,7 @@
   * [Work Experience](#work)
   * [Education](#education)
   * [Volunteer Experience](#volunteer)
+  * [Contact Me](#contact)
 
 ## Hi, I'm Tim Lai!<a name="hi"></a> 👋
 
@@ -87,6 +88,13 @@ I have also offered my services volunteering for organizations which are importa
 | **CNIB** | **Summer Camp Volunteer** | **2013** |
 |----------|---------------------------|----------|
 - Assisted blind and visually impaired children with various recreational activities
+
+## Contact Me<a name="contact"></a> 📧🔗
+
+| **Contact Method** |                                                 |
+|--------------------|-------------------------------------------------|
+| **Email**          | timlaicodes@gmail.com                           |
+| **LinkedIn**       | [timrlai](https://www.linkedin.com/in/timrlai/) |
 
 <!--
 **timrlai/timrlai** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
