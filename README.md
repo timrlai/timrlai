@@ -15,7 +15,7 @@ My name is Tim Lai and I am a full-stack software developer, 👨🏻‍💻 web
 
 ## Skills 👨🏻‍💻🎨❤️‍🔥
 
-I have over five years of experience developing, testing, debugging and troubleshooting web applications and have experience working with JavaScript, 🟨 TypeScript, 🟦 React, ⚛️ Next.js, Angular, 🦸🏻 Vue, 💚 Vite, ⚡ Python, 🐍 Django, 🎸 Flask, 🍼 PHP, 🐘 Laravel, 🧱 Ruby, 💎 Ruby on Rails, 🛤️ SQL, 🐬 HTML, 🏷️ XML, 🏷️ CSS, 🔶 Sass, 🩷 Tailwind CSS, 🍃 Bootstrap, 🥾 WordPress, 📝 VS Code, 💙 Visual Studio 💜 and Adobe Creative Cloud. ☁️ I am experiened with using those skills to design intuitive, dynamic and acessible user interfaces for web applications. 💻
+My skills include developing, testing, debugging and troubleshooting web applications and have experience working with JavaScript, 🟨 TypeScript, 🟦 React, ⚛️ Next.js, Angular, 🦸🏻 Vue, 💚 Vite, ⚡ Python, 🐍 Django, 🎸 Flask, 🍼 PHP, 🐘 Laravel, 🧱 Ruby, 💎 Ruby on Rails, 🛤️ SQL, 🐬 HTML, 🏷️ XML, 🏷️ CSS, 🔶 Sass, 🩷 Tailwind CSS, 🍃 Bootstrap, 🥾 WordPress, 📝 VS Code, 💙 Visual Studio 💜 and Adobe Creative Cloud. ☁️ I am experiened with using those skills to design intuitive, dynamic and acessible user interfaces for web applications. 💻
 
 Having worked with large, fast-paced organizations such as Futuretalk Inc., 🤖 Seneca College 👨🏻‍🏫 and the Toronto Animation Arts Festival International, 🎬 I have experience communicating 💬 with large teams and working under time constraints. ⌛ People know me to be passionate, ❤️‍🔥 creative, 🎨 detail-oriented, 👁️ resourceful, 🔗 reliable 💯 and adaptable. 💪🏻
 
@@ -29,8 +29,7 @@ Having worked with large, fast-paced organizations such as Futuretalk Inc., 🤖
 | **General Software:**             | Linux, GitHub, MS Teams, Zoom, Slack, Discord, Microsoft Office, Google Docs                                                                                                                                                                                           |
 
 ## Experience 👨🏻‍💻🤖👨🏻‍🏫
-I am a full-stack software and web developer 👨🏻‍💻 who most recently worked with [Futuretalk Inc.](https://www.futuretalk.ca/) 🤖 At Futuretalk Inc. 🤖 I developed cutting edge web 🛜 [applications](https://learnwithtrek.com/) using JavaScript/TypeScript, 🟨🟦 React ⚛️ and Three.js 🌐 to create
-immersive, 3D, 🌐 virtual and augmented reality experiences for educational 👨🏻‍🏫 content and used Python 🐍 to create AI 🤖 powered tools to automate processes. I also have experience teaching 👨🏻‍🏫 web development 🛜 skills at [Seneca College](https://www.senecapolytechnic.ca/ce/creative/graphics-web-design/web-programming-development.html) 🏫 since 2017.
+I have over five years of experience as a full-stack software and web developer 👨🏻‍💻 who most recently worked with [Futuretalk Inc.](https://www.futuretalk.ca/) 🤖 At Futuretalk Inc. 🤖 I developed cutting edge web 🛜 [applications](https://learnwithtrek.com/) using JavaScript/TypeScript, 🟨🟦 React ⚛️ and Three.js 🌐 to create immersive, 3D, 🌐 virtual and augmented reality experiences for educational 👨🏻‍🏫 content and used Python 🐍 to create AI 🤖 powered tools to automate processes. I also have experience teaching 👨🏻‍🏫 web development 🛜 skills at [Seneca College](https://www.senecapolytechnic.ca/ce/creative/graphics-web-design/web-programming-development.html) 🏫 since 2017.
 
 | **Futuretalk Inc.** | **Web Developer** | **2022 to 2025** |
 |---------------------|-------------------|------------------|
