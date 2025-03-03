@@ -28,7 +28,7 @@ Having worked with large, fast-paced organizations such as Futuretalk Inc., 🤖
 | **Design/Illustration Software:** | Adobe Creative Cloud, Visual Paradigm, Clip Studio Paint                                                                                                                                                                                                               |
 | **General Software:**             | Linux, GitHub, MS Teams, Zoom, Slack, Discord, Microsoft Office, Google Docs                                                                                                                                                                                           |
 
-## Experience 👨🏻‍💻🤖👨🏻‍🏫
+## Work Experience 👨🏻‍💻🤖👨🏻‍🏫
 I have over five years of experience as a full-stack software and web developer 👨🏻‍💻 who most recently worked with [Futuretalk Inc.](https://www.futuretalk.ca/) 🤖 At Futuretalk Inc. 🤖 I developed cutting edge web 🛜 [applications](https://learnwithtrek.com/) using JavaScript/TypeScript, 🟨🟦 React ⚛️ and Three.js 🌐 to create immersive, 3D, 🌐 virtual and augmented reality experiences for educational 👨🏻‍🏫 content and used Python 🐍 to create AI 🤖 powered tools to automate processes. I also have experience teaching 👨🏻‍🏫 web development 🛜 skills at [Seneca College](https://www.senecapolytechnic.ca/ce/creative/graphics-web-design/web-programming-development.html) 🏫 since 2017.
 
 | **Futuretalk Inc.** | **Web Developer** | **2022 to 2025** |
@@ -60,6 +60,22 @@ I am a graduate of Seneca College's Honours Bachelor of Technology – Software 
 | Certificate – Webmaster Program                                | Seneca College of Applied Arts and Technology | 2016         | JavaScript, Node.js, PHP, HTML, CSS, Sass, SQL, MySQL, MariaDB, jQuery, Bootstrap, Font Awesome, Electron, Git, GitHub, Adobe Creative Cloud, WinSCP, FileZilla                                                                           |
 | Diploma – Independent Illustration                             | Seneca College of Applied Arts and Technology | 2013 to 2015 | JavaScript, ActionScript, HTML, CSS, Adobe Creative Cloud, Clip Studio Paint, Google Sketchup                                                                                                                                                         |
 | Certificate – Art Fundamentals                                 | Seneca College of Applied Arts and Technology | 2012 to 2013 | Adobe Creative Cloud, Clip Studio Paint, Google Sketchup                                                                                                                                                                                              |
+## Volunteer Experience 💓🎬👁️
+
+I have also offered my services volunteering for organizations which are important to me such as the Toronto Animation Arts Festival International 🎬 and the CNIB. 👁️
+
+| **Toronto Animation Arts Festival International (TAAFI)** | **Graphic Designer/Event Planner** | **2015 to 2016** |
+|--------------------------------------------------------------|------------------------------------|------------------|
+- Collaborated with a large team of event planners and volunteers to organize an art book and independent artist market for a non-profit animation festival
+- Promoted, organized, designed and compiled TAAFI 2016 Art Book in Adobe InDesign
+- Organized and promoted TAAFI 2016 Indie Alley event and managed TAAFI merchandise table
+- Communicated with artists, exhibitors, guests, sponsors and festival attendees to ensure that they had a positive festival experience
+- Prepared regular detailed reports to a Board of Directors to keep them informed
+
+| **CNIB** | **Summer Camp Volunteer** | **2013** |
+|----------|---------------------------|----------|
+- Assisted blind and visually impaired children with various recreational activities
+
 <!--
 **timrlai/timrlai** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
