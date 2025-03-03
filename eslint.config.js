@@ -5,7 +5,14 @@ import pluginVue from "eslint-plugin-vue";
 
 export default [
   { files: ["**/*.{ts,mts,js,mjs,cjs,vue}"] },
-  { languageOptions: { globals: globals.browser } },
+  {
+    languageOptions: {
+      globals: globals.browser,
+      parserOptions: {
+        parser: "@typescript-eslint/parser",
+      },
+    },
+  },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   ...pluginVue.configs["flat/essential"],
@@ -14,6 +21,15 @@ export default [
       "@typescript-eslint/explicit-module-boundary-types": "off",
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-non-null-assertion": "off",
+      "vue/multi-word-component-names": "off",
+      "vue/object-curly-spacing": [2, "always"],
+      "vue/html-closing-bracket-spacing": [
+        2,
+        {
+          selfClosingTag: "always",
+        },
+      ],
+      semi: [2, "always"],
     },
   },
 ];
