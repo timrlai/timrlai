@@ -1,8 +1,18 @@
 # Tim R. Lai 👨🏻‍💻👨🏻‍🏫🤓🦇🐬🩵
 
-## Hi there 👋
+- [Tim R. Lai 👨🏻‍💻👨🏻‍🏫🤓🦇🐬🩵](#tim-r-lai-----------------------)
+  * [Hi there 👋](#hi-there---)
+  * [Summary 📝](#summary---)
+  * [Skills 👨🏻‍💻🎨❤️‍🔥](#skills---------------)
+    + [Technical Skills 👨🏻‍💻](#technical-skills--------)
+    + [Soft Skills ❤️‍🔥](#soft-skills------)
+  * [Work Experience 👨🏻‍💻🤖👨🏻‍🏫](#work-experience-----------------)
+  * [Education 🏫👨🏻‍🎓🎓](#education------------)
+  * [Volunteer Experience 💓🎬👁️](#volunteer-experience--------)
 
-My name is Tim Lai and I am a full-stack software developer, 👨🏻‍💻 web developer, 🛜 teacher, 👨🏻‍🏫 web designer, 🕸️ graphic designer, 🎨 illustrator 👨🏻‍🎨 and cartoonist ✏️ living in Ontario, Canada. 🍁
+## Hi, I'm Tim Lai! 👋
+
+I am a full-stack software developer, 👨🏻‍💻 web developer, 🛜 teacher of web programming, 👨🏻‍🏫 web designer, 🕸️ graphic designer, 🎨 illustrator 👨🏻‍🎨 and cartoonist ✏️ living in Ontario, Canada. 🍁
 
 ## Summary 📝
 - 🤖 Most recently worked as a web developer at [Futuretalk Inc.](https://www.futuretalk.ca/) making [VR/AR and AI applications](https://learnwithtrek.com/)
