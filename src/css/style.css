@@ -282,7 +282,7 @@ body {
 
   /* border radius */
   --radius-selector: 1rem;
-  --radius-field: 0.25rem;
+  --radius-field: 2rem;
   --radius-box: 0.5rem;
 
   /* base sizes */
