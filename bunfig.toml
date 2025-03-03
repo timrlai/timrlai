@@ -1,0 +1,18 @@
+# Reduce memory usage at the cost of performance
+smol = true
+
+[install]
+optional = true
+dev = true
+peer = true
+production = false
+exact = false
+# If false, generate a binary bun.lockb instead of a text-based bun.lock file when running bun install and no lockfile is present.
+saveTextLockfile = true
+auto = "auto"
+
+[install.lockfile]
+# Whether to generate a lockfile on bun install. Default true.
+save = true
+# Whether to generate a non-Bun lockfile alongside bun.lock. (A bun.lock will always be created.) Currently "yarn" is the only supported value.
+print = "yarn"
