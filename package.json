@@ -3,6 +3,19 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "lint": "eslint --max-warnings 0 .",
+    "lint:fix": "eslint --max-warnings 0 . --fix",
+    "format": "prettier --write . --ignore-unknown",
+    "format:check": "prettier --check . --ignore-unknown",
+    "check": "bun run lint && bun run format:check"
+  },
+  "lint-staged": {
+    "**/*": [
+      "bun run lint",
+      "bun run format"
+    ]
+  },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
     "@types/bun": "latest",
