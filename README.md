@@ -18,8 +18,8 @@ I am a full-stack software developer, 👨🏻‍💻 web developer, 🛜 teache
 ## Summary<a name="summary"></a> 📝
 
 - 🤖 Most recently worked as a web developer at [Futuretalk Inc.](https://www.futuretalk.ca/) making [VR/AR and AI applications](https://learnwithtrek.com/)
-- 👨🏻‍🏫 Teacher of [Web Programming](https://www.senecapolytechnic.ca/ce/creative/graphics-web-design/web-programming-development.html) with Python and Django and PHP and Laravel at Seneca College
-- 👨🏻‍🎓 Graduated with an [Honours Bachelor of Technology – Software Development](https://www.senecapolytechnic.ca/programs/fulltime/BSD.html) from Seneca College
+- 👨🏻‍🏫 Teacher of [Web Programming](https://www.senecapolytechnic.ca/ce/creative/graphics-web-design/web-programming-development.html) with Python and Django and PHP and Laravel at Seneca Polytechnic
+- 👨🏻‍🎓 Graduated with an [Honours Bachelor of Technology – Software Development](https://www.senecapolytechnic.ca/programs/fulltime/BSD.html) from Seneca Polytechnic
 - 👨🏻‍💻 A passionate full stack developer/designer with 5+ years of web development experience
 - ❤️‍🔥 Enthusiastic, creative, detail-oriented, resourceful, reliable, fast learning, dedicated and adaptable
 - 🤝 Experience working both independently and in team-oriented, collaborative environments
@@ -42,11 +42,11 @@ My skills include developing, testing, debugging and troubleshooting web applica
 
 ### Soft Skills<a name="skills-soft"></a> ❤️‍🔥
 
-Having worked with large, fast-paced organizations such as Futuretalk Inc., 🤖 Seneca College 👨🏻‍🏫 and the Toronto Animation Arts Festival International, 🎬 I have experience communicating 💬 with large teams and working under time constraints. ⌛ People know me to be passionate, ❤️‍🔥 creative, 🎨 detail-oriented, 👁️ resourceful, 🔗 reliable 💯 and adaptable. 💪🏻
+Having worked with large, fast-paced organizations such as Futuretalk Inc., 🤖 Seneca Polytechnic 👨🏻‍🏫 and the Toronto Animation Arts Festival International, 🎬 I have experience communicating 💬 with large teams and working under time constraints. ⌛ People know me to be passionate, ❤️‍🔥 creative, 🎨 detail-oriented, 👁️ resourceful, 🔗 reliable 💯 and adaptable. 💪🏻
 
 ## Work Experience<a name="work"></a> 👨🏻‍💻🤖👨🏻‍🏫
 
-I have over five years of experience as a full-stack software and web developer 👨🏻‍💻 who most recently worked with [Futuretalk Inc.](https://www.futuretalk.ca/) 🤖 At Futuretalk Inc. 🤖 I developed cutting edge web 🛜 [applications](https://learnwithtrek.com/) using JavaScript/TypeScript, 🟨🟦 React ⚛️ and Three.js 🌐 to create immersive, 3D, 🌐 virtual and augmented reality experiences for educational 👨🏻‍🏫 content and used Python 🐍 to create AI 🤖 powered tools to automate processes. I also have experience teaching 👨🏻‍🏫 web development 🛜 skills at [Seneca College](https://www.senecapolytechnic.ca/ce/creative/graphics-web-design/web-programming-development.html) 🏫 since 2017.
+I have over five years of experience as a full-stack software and web developer 👨🏻‍💻 who most recently worked with [Futuretalk Inc.](https://www.futuretalk.ca/) 🤖 At Futuretalk Inc. 🤖 I developed cutting edge web 🛜 [applications](https://learnwithtrek.com/) using JavaScript/TypeScript, 🟨🟦 React ⚛️ and Three.js 🌐 to create immersive, 3D, 🌐 virtual and augmented reality experiences for educational 👨🏻‍🏫 content and used Python 🐍 to create AI 🤖 powered tools to automate processes. I also have experience teaching 👨🏻‍🏫 web development 🛜 skills at [Seneca Polytechnic](https://www.senecapolytechnic.ca/ce/creative/graphics-web-design/web-programming-development.html) 🏫 since 2017.
 
 | **Futuretalk Inc.** | **Web Developer** | **2022 to 2025** |
 | ------------------- | ----------------- | ---------------- |
@@ -59,7 +59,7 @@ I have over five years of experience as a full-stack software and web developer 
 - Created automated AI tools with Python, Langchain, and the Google Docs and YouTube APIs
 - Documented software and development process using Clickup, GitHub issues and pull requests
 
-| **Seneca College** | **Instructor** | **2017 to 2024** |
+| **Seneca Polytechnic** | **Instructor** | **2017 to 2024** |
 | ------------------ | -------------- | ---------------- |
 
 - Planned lessons to teach web development in the Web Programming and Webmaster programs
@@ -71,15 +71,16 @@ I have over five years of experience as a full-stack software and web developer 
 
 ## Education<a name="education"></a> 🏫👨🏻‍🎓🎓
 
-I am a graduate of Seneca College's Honours Bachelor of Technology – Software Development, 👨🏻‍💻🎓 IT Accelerator, 👨🏻‍💻🎓 Webmaster 👨🏻‍💻🎓 and Independent Illustration 🎨🎓 programs. In all four of these programs I received instruction in working with web 🛜 technologies and gained a foundation in graphic design. 🎨 I also received instruction in website accessibility ♿ and took a course specifically about disability ♿ and accessibility where I gained knowledge of the Accessibility for Ontarians with Disabilities Act (AODA). ♿
+I am a graduate of Seneca Polytechnic's Honours Bachelor of Technology – Software Development, 👨🏻‍💻🎓 IT Accelerator, 👨🏻‍💻🎓 Webmaster 👨🏻‍💻🎓 and Independent Illustration 🎨🎓 programs. In all four of these programs I received instruction in working with web 🛜 technologies and gained a foundation in graphic design. 🎨 I also received instruction in website accessibility ♿ and took a course specifically about disability ♿ and accessibility where I gained knowledge of the Accessibility for Ontarians with Disabilities Act (AODA). ♿
 
-| **Credential and Program**                                     | **Institution**                               | **Years**    | **Skills Used**                                                                                                                                                                                                                                       |
-| -------------------------------------------------------------- | --------------------------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Degree – Honours Bachelor of Technology – Software Development | Seneca College of Applied Arts and Technology | 2019 to 2023 | JavaScript, TypeScript, Node.js, Python, C, C++, Java, HTML, XML, CSS, Sass, SQL, JSON, React, Angular, Express, Spring MVC, Bootstrap, Font Awesome, OpenGL, OpenCV, Visual Studio, Visual Studio Code, Visual Paradigm, Linux, Git, GitHub, 3DS Max |
-| IT Accelerator (Now known as Web Programming)                  | Seneca College of Applied Arts and Technology | 2016 to 2017 | JavaScript, TypeScript, Node.js, Python, PHP, Ruby, HTML, CSS, Sass, SQL, MySQL, MariaDB, PostgreSQL, Angular, Django, Laravel, Ruby on Rails, Bootstrap, Font Awesome                                                                                |
-| Certificate – Webmaster Program                                | Seneca College of Applied Arts and Technology | 2016         | JavaScript, Node.js, PHP, HTML, CSS, Sass, SQL, MySQL, MariaDB, jQuery, Bootstrap, Font Awesome, Electron, Git, GitHub, Adobe Creative Cloud, WinSCP, FileZilla                                                                                       |
-| Diploma – Independent Illustration                             | Seneca College of Applied Arts and Technology | 2013 to 2015 | JavaScript, ActionScript, HTML, CSS, Adobe Creative Cloud, Clip Studio Paint, Google Sketchup                                                                                                                                                         |
-| Certificate – Art Fundamentals                                 | Seneca College of Applied Arts and Technology | 2012 to 2013 | Adobe Creative Cloud, Clip Studio Paint, Google Sketchup                                                                                                                                                                                              |
+| **Credential and Program**                                     | **Institution** | **Years**    | **Skills Used**                                                                                                                                                                                                                                       |
+| -------------------------------------------------------------- | --------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Degree – Honours Bachelor of Technology – Software Development | Seneca Polytechnic | 2019 to 2023 | JavaScript, TypeScript, Node.js, Python, C, C++, Java, HTML, XML, CSS, Sass, SQL, JSON, React, Angular, Express, Spring MVC, Bootstrap, Font Awesome, OpenGL, OpenCV, Visual Studio, Visual Studio Code, Visual Paradigm, Linux, Git, GitHub, 3DS Max |
+| Excellence in Educating Adults                                 | Seneca Polytechnic | 2017         | Teaching, Lesson Planning                                                                                                                                                                                                                             |
+| IT Accelerator (Now known as Web Programming)                  | Seneca Polytechnic | 2016 to 2017 | JavaScript, TypeScript, Node.js, Python, PHP, Ruby, HTML, CSS, Sass, SQL, MySQL, MariaDB, PostgreSQL, Angular, Django, Laravel, Ruby on Rails, Bootstrap, Font Awesome                                                                                |
+| Certificate – Webmaster Program                                | Seneca Polytechnic | 2016         | JavaScript, Node.js, PHP, HTML, CSS, Sass, SQL, MySQL, MariaDB, jQuery, Bootstrap, Font Awesome, Electron, Git, GitHub, Adobe Creative Cloud, WinSCP, FileZilla                                                                                       |
+| Diploma – Independent Illustration                             | Seneca Polytechnic | 2013 to 2015 | JavaScript, ActionScript, HTML, CSS, Adobe Creative Cloud, Clip Studio Paint, Google Sketchup                                                                                                                                                         |
+| Certificate – Art Fundamentals                                 | Seneca Polytechnic | 2012 to 2013 | Adobe Creative Cloud, Clip Studio Paint, Google Sketchup                                                                                                                                                                                              |
 
 ## Volunteer Experience<a name="volunteer"></a> 💓🎬👁️
 
