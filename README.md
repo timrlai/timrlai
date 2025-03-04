@@ -17,8 +17,8 @@ I am a full-stack software developer, 👨🏻‍💻 web developer, 🛜 teache
 
 ## Summary<a name="summary"></a> 📝
 
-- 🤖 Most recently worked as a web developer at [Futuretalk Inc.](https://www.futuretalk.ca/) making [VR/AR and AI applications](https://learnwithtrek.com/)
-- 👨🏻‍🏫 Teacher of [Web Programming](https://www.senecapolytechnic.ca/ce/creative/graphics-web-design/web-programming-development.html) with Python and Django and PHP and Laravel at Seneca Polytechnic
+- 🤖 Most recently worked as a web developer at [Futuretalk Inc.](https://www.futuretalk.ca/) making [VR/AR and AI applications](https://learnwithtrek.com/) with React/Next.js and Three.js
+- 👨🏻‍🏫 Teacher of [Web Programming](https://www.senecapolytechnic.ca/ce/creative/graphics-web-design/web-programming-development.html) with Python and Django, PHP and Laravel and JavaScript and Angular at Seneca Polytechnic
 - 👨🏻‍🎓 Graduated with an [Honours Bachelor of Technology – Software Development](https://www.senecapolytechnic.ca/programs/fulltime/BSD.html) from Seneca Polytechnic
 - 👨🏻‍💻 A passionate full stack developer/designer with 5+ years of web development experience
 - ❤️‍🔥 Enthusiastic, creative, detail-oriented, resourceful, reliable, fast learning, dedicated and adaptable
