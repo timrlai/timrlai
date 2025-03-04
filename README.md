@@ -60,7 +60,7 @@ I have over five years of experience as a full-stack software and web developer 
 - Documented software and development process using Clickup, GitHub issues and pull requests
 
 | **Seneca Polytechnic** | **Instructor** | **2017 to 2024** |
-| ------------------ | -------------- | ---------------- |
+| ---------------------- | -------------- | ---------------- |
 
 - Planned lessons to teach web development in the Web Programming and Webmaster programs
 - Instructed students in languages such as Python, PHP, JavaScript, HTML, CSS, Sass and SQL
@@ -73,8 +73,8 @@ I have over five years of experience as a full-stack software and web developer 
 
 I am a graduate of Seneca Polytechnic's Honours Bachelor of Technology – Software Development, 👨🏻‍💻🎓 IT Accelerator, 👨🏻‍💻🎓 Webmaster 👨🏻‍💻🎓 and Independent Illustration 🎨🎓 programs. In all four of these programs I received instruction in working with web 🛜 technologies and gained a foundation in graphic design. 🎨 I also received instruction in website accessibility ♿ and took a course specifically about disability ♿ and accessibility where I gained knowledge of the Accessibility for Ontarians with Disabilities Act (AODA). ♿
 
-| **Credential and Program**                                     | **Institution** | **Years**    | **Skills Used**                                                                                                                                                                                                                                       |
-| -------------------------------------------------------------- | --------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Credential and Program**                                     | **Institution**    | **Years**    | **Skills Used**                                                                                                                                                                                                                                       |
+| -------------------------------------------------------------- | ------------------ | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Degree – Honours Bachelor of Technology – Software Development | Seneca Polytechnic | 2019 to 2023 | JavaScript, TypeScript, Node.js, Python, C, C++, Java, HTML, XML, CSS, Sass, SQL, JSON, React, Angular, Express, Spring MVC, Bootstrap, Font Awesome, OpenGL, OpenCV, Visual Studio, Visual Studio Code, Visual Paradigm, Linux, Git, GitHub, 3DS Max |
 | Excellence in Educating Adults                                 | Seneca Polytechnic | 2017         | Teaching, Lesson Planning                                                                                                                                                                                                                             |
 | IT Accelerator (Now known as Web Programming)                  | Seneca Polytechnic | 2016 to 2017 | JavaScript, TypeScript, Node.js, Python, PHP, Ruby, HTML, CSS, Sass, SQL, MySQL, MariaDB, PostgreSQL, Angular, Django, Laravel, Ruby on Rails, Bootstrap, Font Awesome                                                                                |
