@@ -1,43 +1,7 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
-const subItems = [
-  {
-    label: "Hi!",
-    path: "/hi",
-  },
-  {
-    label: "Summary",
-    path: "/summary",
-  },
-  {
-    label: "Skills",
-    path: "/skills",
-  },
-  {
-    label: "Developer",
-    path: "/developer",
-  },
-  {
-    label: "Teacher",
-    path: "/teacher",
-  },
-  {
-    label: "Designer",
-    path: "/designer",
-  },
-  {
-    label: "Illustrator",
-    path: "/illustrator",
-  },
-  {
-    label: "Education",
-    path: "/education",
-  },
-  {
-    label: "Volunteering",
-    path: "/volunteering",
-  },
-];
+import { subItems } from "../../lib/constants";
+import SocialButtons from "./SocialButtons.vue";
 </script>
 
 <template>
@@ -97,31 +61,7 @@ const subItems = [
         </ul>
       </div>
       <div class="navbar-end flex gap-4">
-        <div class="tooltip tooltip-secondary tooltip-left" data-tip="GitHub!">
-          <div class="tooltip-content">
-            <div class="animate-bounce text-lg gluten">GitHub!</div>
-          </div>
-          <a
-            href="https://github.com/timrlai"
-            target="_blank"
-            class="btn btn-primary text-2xl"
-            ><Icon icon="mingcute:github-fill"
-          /></a>
-        </div>
-        <div
-          class="tooltip tooltip-secondary tooltip-left"
-          data-tip="LinkedIn!"
-        >
-          <div class="tooltip-content">
-            <div class="animate-bounce text-lg gluten">LinkedIn!</div>
-          </div>
-          <a
-            href="https://www.linkedin.com/in/timrlai/"
-            target="_blank"
-            class="btn btn-primary text-2xl"
-            ><Icon icon="mingcute:linkedin-fill"
-          /></a>
-        </div>
+        <SocialButtons buttonColor="primary" tooltipPosition="left" />
       </div>
     </nav>
   </header>
