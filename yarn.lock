@@ -1813,19 +1813,10 @@ rxjs@^7.4.0:
   dependencies:
     tslib "^2.1.0"
 
-sass-embedded@^1.85.1:
+sass-embedded@*, sass-embedded@^1.85.1:
   version "1.85.1"
   resolved "https://registry.npmjs.org/sass-embedded/-/sass-embedded-1.85.1.tgz"
   integrity sha512-0i+3h2Df/c71afluxC1SXqyyMmJlnKWfu9ZGdzwuKRM1OftEa2XM2myt5tR36CF3PanYrMjFKtRIj8PfSf838w==
-  dependencies:
-    "@bufbuild/protobuf" "^2.0.0"
-    buffer-builder "^0.2.0"
-    colorjs.io "^0.5.0"
-    immutable "^5.0.2"
-    rxjs "^7.4.0"
-    supports-color "^8.1.1"
-    sync-child-process "^1.0.2"
-    varint "^6.0.0"
   optionalDependencies:
     sass-embedded-android-arm "1.85.1"
     sass-embedded-android-arm64 "1.85.1"
@@ -1837,16 +1828,25 @@ sass-embedded@^1.85.1:
     sass-embedded-linux-arm "1.85.1"
     sass-embedded-linux-arm64 "1.85.1"
     sass-embedded-linux-ia32 "1.85.1"
-    sass-embedded-linux-riscv64 "1.85.1"
-    sass-embedded-linux-x64 "1.85.1"
     sass-embedded-linux-musl-arm "1.85.1"
     sass-embedded-linux-musl-arm64 "1.85.1"
     sass-embedded-linux-musl-ia32 "1.85.1"
     sass-embedded-linux-musl-riscv64 "1.85.1"
     sass-embedded-linux-musl-x64 "1.85.1"
+    sass-embedded-linux-riscv64 "1.85.1"
+    sass-embedded-linux-x64 "1.85.1"
     sass-embedded-win32-arm64 "1.85.1"
     sass-embedded-win32-ia32 "1.85.1"
     sass-embedded-win32-x64 "1.85.1"
+  dependencies:
+    "@bufbuild/protobuf" "^2.0.0"
+    buffer-builder "^0.2.0"
+    colorjs.io "^0.5.0"
+    immutable "^5.0.2"
+    rxjs "^7.4.0"
+    supports-color "^8.1.1"
+    sync-child-process "^1.0.2"
+    varint "^6.0.0"
 
 sass-embedded-android-arm@1.85.1:
   version "1.85.1"
@@ -2147,7 +2147,7 @@ vscode-uri@^3.0.8:
   resolved "https://registry.npmjs.org/vscode-uri/-/vscode-uri-3.1.0.tgz"
   integrity sha512-/BpdSx+yCQGnCvecbyXdxHDkuk55/G3xwnC0GqY4gmQ3j+A+g8kzzgB4Nk/SINjqn6+waqw3EgbVF2QKExkRxQ==
 
-vue@*, vue@3.5.13, vue@>=3, vue@^3.2.25, vue@^3.4.0, vue@^3.5.13:
+vue@*, vue@3.5.13, vue@>=3, vue@^3.0.5, vue@^3.2.25, vue@^3.4.0, vue@^3.5.13:
   version "3.5.13"
   resolved "https://registry.npmjs.org/vue/-/vue-3.5.13.tgz"
   integrity sha512-wmeiSMxkZCSc+PM2w2VRsOYAZC8GdipNFRTsLSfodVqI9mbejKeXEGr8SckuLnrQPGe3oJN5c3K0vpoU9q/wCQ==
@@ -2157,6 +2157,11 @@ vue@*, vue@3.5.13, vue@>=3, vue@^3.2.25, vue@^3.4.0, vue@^3.5.13:
     "@vue/runtime-dom" "3.5.13"
     "@vue/server-renderer" "3.5.13"
     "@vue/shared" "3.5.13"
+
+vue-confetti-explosion@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/vue-confetti-explosion/-/vue-confetti-explosion-1.0.2.tgz"
+  integrity sha512-80OboM3/6BItIoZ6DpNcZFqGpF607kjIVc5af56oKgtFmt5yWehvJeoYhkzYlqxrqdBe0Ko4Ie3bWrmLau+dJw==
 
 vue-eslint-parser@^9.4.3:
   version "9.4.3"
