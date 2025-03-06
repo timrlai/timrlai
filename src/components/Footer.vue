@@ -6,7 +6,7 @@ const year = new Date().getFullYear();
 
 <template>
   <footer
-    class="footer footer-center bg-primary text-primary-content p-10 tw-relative text-center atkinson-hyperlegible-next-bold"
+    class="footer footer-center bg-accent text-accent-content border-t-4 border-primary p-10 tw-relative text-center atkinson-hyperlegible-next-bold"
   >
     <p>
       <small>Copyright &copy; {{ year }} Tim R. Lai</small>
