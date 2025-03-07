@@ -3,7 +3,11 @@ import { Icon } from "@iconify/vue";
 import { ColorKind, TooltipPosition } from "../../lib/types";
 import { socialButtons } from "../../lib/constants";
 
-defineProps<{ buttonColor: ColorKind; tooltipPosition: TooltipPosition }>();
+defineProps<{
+  buttonColor: ColorKind;
+  tooltipColor: ColorKind;
+  tooltipPosition: TooltipPosition;
+}>();
 
 const buttonColors = {
   neutral: "btn-neutral",
@@ -14,6 +18,16 @@ const buttonColors = {
   success: "btn-success",
   warning: "btn-warning",
   error: "btn-error",
+};
+const tooltipColors = {
+  neutral: "tooltip-neutral",
+  primary: "tooltip-primary",
+  secondary: "tooltip-secondary",
+  accent: "tooltip-accent",
+  info: "tooltip-info",
+  success: "tooltip-success",
+  warning: "tooltip-warning",
+  error: "tooltip-error",
 };
 const tooltipPositions = {
   left: "tooltip-left",
@@ -28,7 +42,7 @@ const tooltipPositions = {
     <div
       v-for="button in socialButtons"
       v-bind:key="button.tooltip"
-      :class="`tooltip tooltip-secondary ${tooltipPositions[tooltipPosition]}`"
+      :class="`tooltip ${tooltipColors[tooltipColor]} ${tooltipPositions[tooltipPosition]}`"
       :data-tip="`${button.tooltip}`"
     >
       <div class="tooltip-content">
