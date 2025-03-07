@@ -20,3 +20,8 @@ export type SocialButton = {
   readonly url: string;
   readonly icon: string;
 };
+
+export type Skill = {
+  readonly title: string;
+  readonly icon: string | null;
+};
