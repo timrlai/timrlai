@@ -6,9 +6,9 @@ import SocialButtons from "./SocialButtons.vue";
 
 <template>
   <header class="ubuntu-bold">
-    <nav class="navbar">
+    <nav class="navbar bg-secondary text-secondary-content relative">
       <div class="navbar-start">
-        <div class="dropdown">
+        <div class="dropdown z-[9999]">
           <div
             tabindex="0"
             role="button"
@@ -18,7 +18,7 @@ import SocialButtons from "./SocialButtons.vue";
           </div>
           <ul
             tabindex="0"
-            class="menu menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow"
+            class="menu menu-sm dropdown-content rounded-box bg-secondary z-1 mt-3 w-52 p-2 border-4 border-primary shadow-lg shadow-primary"
           >
             <li>
               <a><Icon icon="mingcute:home-7-fill" /> Home</a>
@@ -44,9 +44,11 @@ import SocialButtons from "./SocialButtons.vue";
             <a><Icon icon="mingcute:home-7-fill" /> Home</a>
           </li>
           <li>
-            <details class="z-50">
+            <details class="z-[9999]">
               <summary><Icon icon="mingcute:emoji-fill" /> Meet Tim</summary>
-              <ul class="p-2">
+              <ul
+                class="p-2 bg-secondary border-4 border-primary shadow-lg shadow-primary"
+              >
                 <li v-for="item in subItems" v-bind:key="item.label">
                   <a :href="`${item.path}`" class="rounded-sm">{{
                     item.label
@@ -61,10 +63,32 @@ import SocialButtons from "./SocialButtons.vue";
         </ul>
       </div>
       <div class="navbar-end flex gap-4">
-        <SocialButtons buttonColor="primary" tooltipPosition="left" />
+        <SocialButtons
+          buttonColor="primary"
+          tooltipColor="primary"
+          tooltipPosition="left"
+        />
       </div>
     </nav>
   </header>
 </template>
 
-<style scoped></style>
+<style scoped lang="scss">
+nav::after {
+  position: absolute;
+  bottom: -20px;
+  left: 0px;
+  width: 100%;
+  content: " ";
+  background: radial-gradient(
+    circle at 50% 0%,
+    oklch(98% 0.05 101) 25%,
+    oklch(45% 0.08 220) 26%,
+    transparent 40%
+  );
+  background-size: 20px 40px;
+  height: 20px;
+  background-repeat: repeat-x;
+  z-index: 1;
+}
+</style>
