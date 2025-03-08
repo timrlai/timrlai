@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
-import { subItems } from "../../lib/constants";
-import SocialButtons from "./SocialButtons.vue";
+import { subItems } from "../../../lib/constants";
+import SocialButtons from "../Common/SocialButtons.vue";
 </script>
 
 <template>

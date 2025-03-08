@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SocialButtons from "./SocialButtons.vue";
+import SocialButtons from "../Common/SocialButtons.vue";
 
 const year = new Date().getFullYear();
 </script>

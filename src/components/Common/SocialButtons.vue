@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
-import { ColorKind, TooltipPosition } from "../../lib/types";
-import { socialButtons } from "../../lib/constants";
+import type { ColorKind, TooltipPosition } from "../../../lib/types";
+import { socialButtons } from "../../../lib/constants";
 
 defineProps<{
   buttonColor: ColorKind;
