@@ -1,3 +1,65 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
+
+.atkinson-hyperlegible-next-light {
+  font-family: "Atkinson Hyperlegible Next", sans-serif;
+  font-optical-sizing: auto;
+  @apply font-light not-italic;
+}
+.atkinson-hyperlegible-next-regular {
+  font-family: "Atkinson Hyperlegible Next", sans-serif;
+  font-optical-sizing: auto;
+  @apply font-normal not-italic;
+}
+
+.atkinson-hyperlegible-next-medium {
+  font-family: "Atkinson Hyperlegible Next", sans-serif;
+  font-optical-sizing: auto;
+  @apply font-medium not-italic;
+}
+
+.atkinson-hyperlegible-next-bold {
+  font-family: "Atkinson Hyperlegible Next", sans-serif;
+  font-optical-sizing: auto;
+  @apply font-bold not-italic;
+}
+
+.ubuntu-light {
+  font-family: "Ubuntu", sans-serif;
+  @apply font-light not-italic;
+}
+
+.ubuntu-regular {
+  font-family: "Ubuntu", sans-serif;
+  @apply font-normal not-italic;
+}
+
+.ubuntu-medium {
+  font-family: "Ubuntu", sans-serif;
+  @apply font-medium not-italic;
+}
+
+.ubuntu-bold {
+  font-family: "Ubuntu", sans-serif;
+  @apply font-bold not-italic;
+}
+
+.gluten {
+  font-family: "Gluten", cursive;
+  font-optical-sizing: auto;
+  font-variation-settings: "slnt" 0;
+  @apply font-semibold not-italic;
+}
+
+.fira-code {
+  font-family: "Fira Code", monospace;
+  font-optical-sizing: auto;
+  @apply font-semibold not-italic;
+}
+
 /*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
 
 /* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
@@ -85,12 +147,11 @@ textarea {
    ========================================================================== */
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
 }
 
 body {
@@ -99,18 +160,28 @@ body {
   min-height: 100vh;
 }
 
+.is-typed span.cursor {
+  width: 5px;
+  background-color: oklch(98% 0.05 101);
+  animation: blink 1s infinite;
+  @apply inline-block;
+}
+
+@keyframes blink {
+  49% {
+    background-color: oklch(98% 0.05 101);
+  }
+  50% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden,
-[hidden] {
-  display: none !important;
-}
 
 /*
  * Hide only visually, but have it available for screen readers:
@@ -260,7 +331,6 @@ body {
   }
 }
 
-@import "tailwindcss";
 @plugin "daisyui";
 @plugin "daisyui/theme" {
   name: "timrlai";
@@ -271,13 +341,13 @@ body {
   --color-base-100: oklch(98% 0.05 192);
   --color-base-200: oklch(95% 0.06 192);
   --color-base-300: oklch(92% 0.07 192);
-  --color-base-content: oklch(20% 0.05 192);
+  --color-base-content: oklch(45% 0.08 220);
   --color-primary: oklch(45% 0.08 220);
-  --color-primary-content: oklch(98% 0.01 220);
-  --color-secondary: oklch(70% 0.25 101);
-  --color-secondary-content: oklch(98% 0.01 101);
-  --color-accent: oklch(65% 0.25 160);
-  --color-accent-content: oklch(98% 0.01 160);
+  --color-primary-content: oklch(98% 0.05 101);
+  --color-secondary: oklch(98% 0.05 101);
+  --color-secondary-content: oklch(45% 0.08 220);
+  --color-accent: oklch(76% 0.17 130);
+  --color-accent-content: oklch(98% 0.05 101);
   --color-neutral: oklch(50% 0.05 240);
   --color-neutral-content: oklch(98% 0.01 240);
   --color-info: oklch(70% 0.2 220);
@@ -291,7 +361,7 @@ body {
 
   /* border radius */
   --radius-selector: 1rem;
-  --radius-field: 0.25rem;
+  --radius-field: 2rem;
   --radius-box: 0.5rem;
 
   /* base sizes */
