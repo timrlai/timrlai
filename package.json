@@ -20,6 +20,8 @@
     ]
   },
   "dependencies": {
+    "@tresjs/core": "^4.3.3",
+    "three": "^0.174.0",
     "vue": "^3.5.13",
     "vue-confetti-explosion": "^1.0.2",
     "vue-writer": "^2.0.2"
