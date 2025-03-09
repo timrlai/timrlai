@@ -36,7 +36,13 @@ import SocialButtons from "../Common/SocialButtons.vue";
             </li>
           </ul>
         </div>
-        <a class="btn btn-ghost text-xl">Tim Lai</a>
+        <a class="btn btn-ghost btn-lg rounded-box py-1 text-xl"
+          ><img
+            src="../../assets/img/logos/timrlai_logo.svg"
+            alt="Tim R. Lai"
+            title="Tim R. Lai"
+            class="w-full h-full"
+        /></a>
       </div>
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1 text-lg">

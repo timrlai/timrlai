@@ -6,6 +6,14 @@ import Content from "./components/Content/Content.vue";
 
 <template>
   <Header />
+  <div class="max-w-4xl mx-auto my-10 p-5">
+    <img
+      src="./assets/img/logos/timrlai_logo.svg"
+      alt="Tim R. Lai"
+      title="Tim R. Lai"
+      class="w-full h-full"
+    />
+  </div>
   <Content />
   <Footer />
 </template>
