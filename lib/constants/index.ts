@@ -185,6 +185,8 @@ export const designSkills: Skill[] = [
   { title: "Clip Studio Paint", icon: null },
   { title: "CorelDRAW", icon: null },
   { title: "Corel Painter", icon: null },
+  { title: "Blender", icon: "skill-icons:blender-dark" },
+  { title: "3ds Max", icon: null },
   { title: "Visual Paradigm", icon: null },
 ];
 export const generalSkills: Skill[] = [
@@ -315,15 +317,19 @@ export const madeWithSkills: Skill[] = [
     icon: "catppuccin:folder-github",
   },
   {
-    title: "Adobe Photoshop",
-    icon: "catppuccin:adobe-ps",
-  },
-  {
     title: "Adobe Illustrator",
     icon: "catppuccin:adobe-ai",
   },
   {
     title: "Adobe AfterEffects",
     icon: "catppuccin:adobe-ae",
+  },
+  {
+    title: "Adobe Photoshop",
+    icon: "catppuccin:adobe-ps",
+  },
+  {
+    title: "Blender",
+    icon: "logos:blender",
   },
 ];
