@@ -5,8 +5,8 @@ import SocialButtons from "../Common/SocialButtons.vue";
 </script>
 
 <template>
-  <header class="ubuntu-bold">
-    <nav class="navbar bg-secondary text-secondary-content relative">
+  <header class="ubuntu-titling uppercase relative">
+    <nav class="navbar bg-secondary text-secondary-content fixed z-[99999]">
       <div class="navbar-start">
         <div class="dropdown z-[9999]">
           <div
@@ -36,7 +36,13 @@ import SocialButtons from "../Common/SocialButtons.vue";
             </li>
           </ul>
         </div>
-        <a class="btn btn-ghost text-xl">Tim Lai</a>
+        <a class="btn btn-ghost btn-lg rounded-box py-1 text-xl"
+          ><img
+            src="../../assets/img/logos/timrlai_logo.svg"
+            alt="Tim RL dot AI"
+            title="Tim RL .ai"
+            class="w-full h-full"
+        /></a>
       </div>
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1 text-lg">
