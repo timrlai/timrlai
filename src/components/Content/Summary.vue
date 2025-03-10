@@ -6,7 +6,7 @@ import { Icon } from "@iconify/vue";
   <section
     class="mockup-window bg-secondary text-secondary-content border-4 border-primary shadow-lg shadow-primary"
   >
-    <h1 class="text-5xl text-center ubuntu-bold mb-4 px-5">
+    <h1 class="text-5xl text-center ubuntu-titling mb-4 px-5">
       Summary
       <Icon icon="fluent-color:apps-list-detail-20" class="inline-block" />
     </h1>

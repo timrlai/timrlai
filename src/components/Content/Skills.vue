@@ -31,7 +31,7 @@ const randomizedSkills = [...primarySkills]
     <div
       class="mockup-window bg-secondary text-secondary-content border-4 border-primary rounded-b-none shadow-lg shadow-primary"
     >
-      <h1 class="text-5xl text-center ubuntu-bold mb-4 px-5">
+      <h1 class="text-5xl text-center ubuntu-titling mb-4 px-5">
         Skills
         <Icon icon="fluent-color:code-20" class="inline-block" /><Icon
           icon="fluent-color:design-ideas-20"
