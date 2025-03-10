@@ -8,6 +8,14 @@ const year = new Date().getFullYear();
   <footer
     class="footer footer-center bg-accent text-accent-content mt-30 p-10 relative text-center atkinson-hyperlegible-next-bold text-2xl"
   >
+    <div class="w-1/3">
+      <img
+        src="../../assets/img/logos/timrlai_logo_light.svg"
+        alt="Tim RL dot AI"
+        title="Tim RL .ai"
+        class="inline-block w-full h-full"
+      />
+    </div>
     <p>
       <small>Copyright &copy; {{ year }} Tim R. Lai</small>
     </p>
