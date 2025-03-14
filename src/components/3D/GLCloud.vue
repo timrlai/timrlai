@@ -86,8 +86,8 @@ onLoop(({ elapsed }) => {
 
 <template>
   <Suspense>
-    <TresMesh :ref="mesh" :position="[0, -0.9, 0]" :rotation="[3, 0, 0]">
-      <Box :args="[1, 1, 1]" :scale="[5, 2, 1]">
+    <TresMesh :ref="mesh" :position="[0, -0.6, 0]" :rotation="[3, 0, 0]">
+      <Box :args="[5, 5, 5]">
         <TresRawShaderMaterial
           :vertex-shader="vertexShader"
           :fragment-shader="fragmentShader"
