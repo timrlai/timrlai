@@ -2,6 +2,7 @@
 import { TresCanvas } from "@tresjs/core";
 import { OrbitControls, GLTFModel, Text3D } from "@tresjs/cientos";
 import LottieSphere from "./LottieSphere.vue";
+import GLCloud from "./GLCloud.vue";
 
 const verticalRotationLimit = 1.6;
 const horizontalRotationLimit = 6;
@@ -63,6 +64,9 @@ const fontSize = 1;
           ></TresMesh>
         </Suspense>
       </TresMesh>
+      <Suspense>
+        <GLCloud />
+      </Suspense>
       <TresAmbientLight :position="[0, 10, 0]" :intensity="5" color="#C0FCF9" />
       <TresDirectionalLight
         :position="[-4, 8, 4]"
