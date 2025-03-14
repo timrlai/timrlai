@@ -32,7 +32,7 @@ const onIntroTyped = (currentTitle: string) => {
       <div class="input">https://timrl.ai</div>
     </div>
     <div
-      class="grid place-content-center min-h-[65vh] p-5 bg-primary/85 text-primary-content text-center"
+      class="glass grid place-content-center min-h-[65vh] p-5 bg-primary/85 text-primary-content text-center"
     >
       <div class="flex justify-center items-start">
         <ConfettiExplosion :particleCount="200" :force="0.3" v-if="visible" />
