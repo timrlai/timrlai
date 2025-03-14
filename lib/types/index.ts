@@ -23,6 +23,12 @@ export type SocialButton = {
   readonly icon: string;
   readonly main: boolean;
 };
+
+export type SocialButtonsProps = {
+  buttonColor?: ColorKind;
+  tooltipColor?: ColorKind;
+  tooltipPosition?: TooltipPosition;
+  showAll?: boolean;
 };
 
 export type Skill = {
