@@ -21,6 +21,8 @@ export type SocialButton = {
   readonly tooltip: string;
   readonly url: string;
   readonly icon: string;
+  readonly main: boolean;
+};
 };
 
 export type Skill = {
