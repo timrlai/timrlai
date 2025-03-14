@@ -73,6 +73,7 @@ import SocialButtons from "../Common/SocialButtons.vue";
           buttonColor="primary"
           tooltipColor="primary"
           tooltipPosition="left"
+          :showAll="false"
         />
       </div>
     </nav>

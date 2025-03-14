@@ -29,6 +29,7 @@ const year = new Date().getFullYear();
       buttonColor="secondary"
       tooltipColor="secondary"
       tooltipPosition="top"
+      :showAll="true"
     />
   </footer>
 </template>
