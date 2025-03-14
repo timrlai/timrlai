@@ -1,12 +1,18 @@
 <script setup lang="ts">
+import LottiePlayer from "../Common/LottiePlayer.vue";
 import SocialButtons from "../Common/SocialButtons.vue";
 
 const year = new Date().getFullYear();
 </script>
 
 <template>
+  <LottiePlayer
+    src="/lottie/clouds_lottie.json"
+    :autoPlay="false"
+    :playOnHover="true"
+  />
   <footer
-    class="footer footer-center bg-accent text-accent-content mt-30 p-10 relative text-center atkinson-hyperlegible-next-bold text-2xl"
+    class="footer footer-center bg-accent text-accent-content p-10 relative text-center atkinson-hyperlegible-next-bold text-2xl"
   >
     <div class="w-1/3">
       <img
