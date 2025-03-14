@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { TresCanvas } from "@tresjs/core";
 import { OrbitControls, GLTFModel, Text3D } from "@tresjs/cientos";
+import LottieSphere from "./LottieSphere.vue";
 
 const verticalRotationLimit = 1.6;
 const horizontalRotationLimit = 6;
@@ -24,6 +25,9 @@ const fontSize = 1;
         :minAzimuthAngle="-(Math.PI / horizontalRotationLimit)"
         :maxAzimuthAngle="Math.PI / horizontalRotationLimit"
       />
+      <Suspense>
+        <LottieSphere src="/lottie/clouds_lottie.json" />
+      </Suspense>
       <Suspense>
         <GLTFModel
           :path="gltfPath"
