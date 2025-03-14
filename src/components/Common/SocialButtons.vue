@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
-import type { ColorKind, TooltipPosition } from "../../../lib/types";
+import type { SocialButtonsProps } from "../../../lib/types";
 import { socialButtons } from "../../../lib/constants";
 
-defineProps<{
-  buttonColor: ColorKind;
-  tooltipColor: ColorKind;
-  tooltipPosition: TooltipPosition;
-}>();
+const {
+  buttonColor = "primary",
+  tooltipColor = "primary",
+  tooltipPosition = "left",
+  showAll = false,
+} = defineProps<SocialButtonsProps>();
 
 const buttonColors = {
   neutral: "btn-neutral",
@@ -38,24 +39,27 @@ const tooltipPositions = {
 </script>
 
 <template>
-  <nav class="flex flex-row justify-center gap-4 flex-shrink px-4">
-    <div
-      v-for="button in socialButtons"
-      v-bind:key="button.tooltip"
-      :class="`tooltip ${tooltipColors[tooltipColor]} ${tooltipPositions[tooltipPosition]}`"
-      :data-tip="`${button.tooltip}`"
-    >
-      <div class="tooltip-content">
-        <div class="animate-bounce text-lg gluten normal-case">
-          {{ button.tooltip }}
+  <nav
+    :class="`flex flex-row justify-center gap-4 flex-shrink px-4 ${showAll && 'flex-wrap'}`"
+  >
+    <div v-for="button in socialButtons" v-bind:key="button.tooltip">
+      <div
+        v-if="showAll || button.main"
+        :class="`tooltip ${tooltipColors[tooltipColor]} ${tooltipPositions[tooltipPosition]}`"
+        :data-tip="`${button.tooltip}`"
+      >
+        <div class="tooltip-content">
+          <div class="animate-bounce text-lg gluten normal-case">
+            {{ button.tooltip }}
+          </div>
         </div>
+        <a
+          :href="`${button.url}`"
+          target="_blank"
+          :class="`btn ${buttonColors[buttonColor]} text-2xl`"
+          ><Icon :icon="`${button.icon}`"
+        /></a>
       </div>
-      <a
-        :href="`${button.url}`"
-        target="_blank"
-        :class="`btn ${buttonColors[buttonColor]} text-2xl`"
-        ><Icon :icon="`${button.icon}`"
-      /></a>
     </div>
   </nav>
 </template>

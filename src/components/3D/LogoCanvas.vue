@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { TresCanvas } from "@tresjs/core";
 import { OrbitControls, GLTFModel, Text3D } from "@tresjs/cientos";
+import LottieSphere from "./LottieSphere.vue";
 
 const verticalRotationLimit = 1.6;
 const horizontalRotationLimit = 6;
@@ -25,53 +26,49 @@ const fontSize = 1;
         :maxAzimuthAngle="Math.PI / horizontalRotationLimit"
       />
       <Suspense>
+        <LottieSphere src="/lottie/clouds_lottie.json" />
+      </Suspense>
+      <Suspense>
         <GLTFModel
           :path="gltfPath"
           draco
           :scale="60"
           :position="[-10.5, 1, -25]"
           :rotation="[0, 0.2, 0]"
-          receive-shadow
         />
       </Suspense>
       <TresMesh :position="[3.5, 3, -15]" :rotation="[0, -0.5, 0]">
         <Suspense
           ><TresMesh :position="[0, 2, 0]"
-            ><Text3D :font="fontPath" :size="fontSize" receive-shadow
+            ><Text3D :font="fontPath" :size="fontSize"
               >A FULL <TresMeshStandardMaterial color="#006177" /></Text3D
           ></TresMesh>
         </Suspense>
         <Suspense
           ><TresMesh :position="[0, 0.7, 0]"
-            ><Text3D :font="fontPath" :size="fontSize" receive-shadow
+            ><Text3D :font="fontPath" :size="fontSize"
               >STACK <TresMeshStandardMaterial color="#006177" /></Text3D
           ></TresMesh>
         </Suspense>
         <Suspense
           ><TresMesh :position="[0, -0.7, 0]"
-            ><Text3D :font="fontPath" :size="fontSize" receive-shadow
+            ><Text3D :font="fontPath" :size="fontSize"
               >TEAM iN <TresMeshStandardMaterial color="#006177" /></Text3D
           ></TresMesh>
         </Suspense>
         <Suspense
           ><TresMesh :position="[0, -2, 0]"
-            ><Text3D :font="fontPath" :size="fontSize" receive-shadow
+            ><Text3D :font="fontPath" :size="fontSize"
               >ONE TiM! <TresMeshStandardMaterial color="#006177" /></Text3D
           ></TresMesh>
         </Suspense>
       </TresMesh>
-      <TresAmbientLight
-        :position="[0, 10, 0]"
-        :intensity="5"
-        color="#C0FCF9"
-        cast-shadow
-      />
+      <TresAmbientLight :position="[0, 10, 0]" :intensity="5" color="#C0FCF9" />
       <TresDirectionalLight
         :position="[-4, 8, 4]"
         :rotation="[0, 0, 0]"
         :intensity="10"
         color="#FFFAD4"
-        cast-shadow
       />
     </TresCanvas>
   </section>
