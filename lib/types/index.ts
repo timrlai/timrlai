@@ -14,7 +14,9 @@ export type TooltipPosition = "left" | "right" | "top" | "bottom";
 
 export type SubItem = {
   readonly label: string;
-  readonly path: string;
+  readonly to: string;
+  readonly hash: string;
+  readonly icon: string;
 };
 
 export type SocialButton = {

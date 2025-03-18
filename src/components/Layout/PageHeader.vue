@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
+import { RouterLink } from "vue-router";
 import { subItems } from "../../../lib/constants";
 import SocialButtons from "../Common/SocialButtons.vue";
 </script>
@@ -21,33 +22,44 @@ import SocialButtons from "../Common/SocialButtons.vue";
             class="menu menu-sm dropdown-content rounded-box bg-secondary z-1 mt-3 w-52 p-2 border-4 border-primary shadow-lg shadow-primary"
           >
             <li>
-              <a><Icon icon="mingcute:home-7-fill" /> Home</a>
+              <RouterLink to="/"
+                ><Icon icon="mingcute:home-7-fill" /> Home</RouterLink
+              >
             </li>
             <li>
               <a><Icon icon="mingcute:emoji-fill" /> Meet Tim</a>
               <ul class="p-2">
                 <li v-for="item in subItems" v-bind:key="item.label">
-                  <a :href="`${item.path}`">{{ item.label }}</a>
+                  <RouterLink
+                    :to="`${item.to}#${item.hash}`"
+                    :hash="`${item.hash}`"
+                    ><Icon :icon="`${item.icon}`" />
+                    {{ item.label }}</RouterLink
+                  >
                 </li>
               </ul>
             </li>
             <li>
-              <a><Icon icon="mingcute:code-fill" /> Projects</a>
+              <RouterLink to="/"
+                ><Icon icon="mingcute:code-fill" /> Projects</RouterLink
+              >
             </li>
           </ul>
         </div>
-        <a class="btn btn-ghost btn-lg rounded-box py-1 text-xl"
+        <RouterLink to="/" class="btn btn-ghost btn-lg rounded-box py-1 text-xl"
           ><img
             src="../../assets/img/logos/timrlai_logo.svg"
             alt="Tim RL dot AI"
             title="Tim RL .ai"
             class="w-full h-full"
-        /></a>
+        /></RouterLink>
       </div>
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1 text-lg">
           <li>
-            <a><Icon icon="mingcute:home-7-fill" /> Home</a>
+            <RouterLink to="/"
+              ><Icon icon="mingcute:home-7-fill" /> Home</RouterLink
+            >
           </li>
           <li>
             <details class="z-[9999]">
@@ -56,15 +68,21 @@ import SocialButtons from "../Common/SocialButtons.vue";
                 class="p-2 bg-secondary border-4 border-primary shadow-lg shadow-primary"
               >
                 <li v-for="item in subItems" v-bind:key="item.label">
-                  <a :href="`${item.path}`" class="rounded-sm">{{
-                    item.label
-                  }}</a>
+                  <RouterLink
+                    :to="`${item.to}#${item.hash}`"
+                    :hash="`${item.hash}`"
+                    class="rounded-sm"
+                    ><Icon :icon="`${item.icon}`" />
+                    {{ item.label }}</RouterLink
+                  >
                 </li>
               </ul>
             </details>
           </li>
           <li>
-            <a><Icon icon="mingcute:code-fill" /> Projects</a>
+            <RouterLink to="/"
+              ><Icon icon="mingcute:code-fill" /> Projects</RouterLink
+            >
           </li>
         </ul>
       </div>
