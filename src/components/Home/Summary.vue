@@ -4,6 +4,7 @@ import { Icon } from "@iconify/vue";
 
 <template>
   <section
+    id="summary"
     class="mockup-window bg-secondary text-secondary-content border-4 border-primary shadow-lg shadow-primary"
   >
     <h1 class="text-5xl text-center ubuntu-titling mb-4 px-5">

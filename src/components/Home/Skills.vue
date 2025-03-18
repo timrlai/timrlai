@@ -27,7 +27,7 @@ const randomizedSkills = [...primarySkills]
 </script>
 
 <template>
-  <section class="flex flex-col">
+  <section id="skills" class="flex flex-col">
     <div
       class="mockup-window bg-secondary text-secondary-content border-4 border-primary rounded-b-none shadow-lg shadow-primary"
     >
