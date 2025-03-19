@@ -8,8 +8,10 @@ import LottiePlayer from "./LottiePlayer.vue";
     class="mockup-window bg-warning text-warning-content border-4 border-primary shadow-lg shadow-primary mt-30"
   >
     <div class="grid place-content-center text-center p-5">
-      <h1 class="text-4xl sm:text-5xl md:text-8xl ubuntu-titling mb-4">
+      <h1 class="text-3xl sm:text-5xl md:text-8xl ubuntu-titling mb-4">
+        <Icon icon="fluent-emoji:construction" class="inline-block" />
         Under Construction!
+        <Icon icon="fluent-emoji:construction" class="inline-block" />
         <Icon
           icon="fluent-emoji:man-construction-worker-light"
           class="inline-block"
@@ -18,10 +20,22 @@ import LottiePlayer from "./LottiePlayer.vue";
       <p
         class="text-xl md:text-3xl atkinson-hyperlegible-next-bold md:max-w-4/5 mx-auto mb-4"
       >
-        This page is under construction. Please pardon the mess! They are
-        working so hard on this page! Look at them go! Actually, don't look!
+        This page is under construction.
+        <Icon icon="fluent-emoji:construction" class="inline-block" /> Please
+        pardon the mess!
+        <Icon icon="fluent-emoji:broom" class="inline-block" /> They are working
+        so hard on this page!
+        <Icon icon="fluent-emoji:flexed-biceps-light" class="inline-block" />
+        Look at them go!
+        <Icon icon="fluent-emoji:eyes" class="inline-block" /> Actually, don't
+        look!
+        <Icon icon="fluent-emoji:man-gesturing-no-light" class="inline-block" />
         You're stressing them out! Don't stress them out! They have performance
         anxiety!
+        <Icon
+          icon="fluent-emoji:anxious-face-with-sweat"
+          class="inline-block"
+        />
       </p>
       <div class="flex flex-row justify-center items-center gap-4">
         <div class="max-w-100">
