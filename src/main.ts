@@ -5,8 +5,12 @@ import "./css/style.css";
 import App from "./App.vue";
 
 import Home from "./components/Pages/Home/Home.vue";
+import Projects from "./components/Pages/Projects/Projects.vue";
 
-const routes = [{ path: "/", component: Home }];
+const routes = [
+  { path: "/", component: Home },
+  { path: "/projects", component: Projects },
+];
 
 const router = createRouter({
   history: createWebHistory(),

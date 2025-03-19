@@ -40,7 +40,7 @@ import SocialButtons from "../Common/SocialButtons.vue";
               </ul>
             </li>
             <li>
-              <RouterLink to="/"
+              <RouterLink to="/projects"
                 ><Icon icon="mingcute:code-fill" /> Projects</RouterLink
               >
             </li>
@@ -80,7 +80,7 @@ import SocialButtons from "../Common/SocialButtons.vue";
             </details>
           </li>
           <li>
-            <RouterLink to="/"
+            <RouterLink to="/projects"
               ><Icon icon="mingcute:code-fill" /> Projects</RouterLink
             >
           </li>
