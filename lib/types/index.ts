@@ -54,3 +54,24 @@ export type LottieSphereProps = {
   side?: Side;
   transparent?: boolean;
 };
+
+export type CloudCanvasProps = {
+  canvasColor?: string;
+  textColor?: string;
+  ambientLightColor?: string;
+  directionalLightColor?: string;
+  verticalRotationLimit?: number;
+  horizontalRotationLimit?: number;
+  fontPath?: string;
+};
+
+export type LogoCanvasProps = CloudCanvasProps & {
+  gltfPath?: string;
+  fontSize?: number;
+};
+
+export type NotFoundCanvasProps = CloudCanvasProps & {
+  titleFontSize?: number;
+  subtitleFontSize?: number;
+  explanationFontSize?: number;
+};
