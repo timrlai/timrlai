@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import LogoCanvas from "../3D/LogoCanvas.vue";
+import LogoCanvas from "../../3D/LogoCanvas.vue";
 import Hi from "./Hi.vue";
 import Summary from "./Summary.vue";
 import Skills from "./Skills.vue";

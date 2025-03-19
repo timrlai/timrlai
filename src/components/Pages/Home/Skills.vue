@@ -12,7 +12,7 @@ import {
   generalSkills,
   primarySkills,
   madeWithSkills,
-} from "../../../lib/constants";
+} from "../../../../lib/constants";
 
 const skillIcon = ref(primarySkills[0].icon);
 const onSkillTyped = (currentTitle: string) => {
