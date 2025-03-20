@@ -3,39 +3,21 @@ import type { SubItem, SocialButton, Skill } from "../types";
 export const subItems: SubItem[] = [
   {
     label: "Hi!",
-    path: "/hi",
+    to: "/",
+    hash: "hi",
+    icon: "mingcute:hand-fill",
   },
   {
     label: "Summary",
-    path: "/summary",
+    to: "/",
+    hash: "summary",
+    icon: "mingcute:list-check-3-fill",
   },
   {
     label: "Skills",
-    path: "/skills",
-  },
-  {
-    label: "Developer",
-    path: "/developer",
-  },
-  {
-    label: "Teacher",
-    path: "/teacher",
-  },
-  {
-    label: "Designer",
-    path: "/designer",
-  },
-  {
-    label: "Illustrator",
-    path: "/illustrator",
-  },
-  {
-    label: "Education",
-    path: "/education",
-  },
-  {
-    label: "Volunteering",
-    path: "/volunteering",
+    to: "/",
+    hash: "skills",
+    icon: "mingcute:code-fill",
   },
 ];
 
@@ -376,4 +358,11 @@ export const madeWithSkills: Skill[] = [
     title: "Blender",
     icon: "logos:blender",
   },
+];
+
+export const notFoundLotties: string[] = [
+  "404_cat_clouds.json",
+  "404_cat_magnifying_glass.json",
+  "404_cat_papers.json",
+  "404_cat_yarn.json",
 ];

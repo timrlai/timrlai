@@ -12,25 +12,27 @@ const year = new Date().getFullYear();
     :playOnHover="true"
   />
   <footer
-    class="footer footer-center bg-accent text-accent-content p-10 relative text-center atkinson-hyperlegible-next-bold text-2xl"
+    class="footer footer-horizontal lg:footer-vertical footer-center bg-accent text-accent-content p-10 relative text-center atkinson-hyperlegible-next-bold text-2xl"
   >
-    <div class="w-1/3">
+    <div class="footer-tile lg:w-1/3">
       <img
         src="../../assets/img/logos/timrlai_logo_light.svg"
         alt="Tim RL dot AI"
         title="Tim RL .ai"
         class="inline-block w-full h-full"
       />
+      <p>
+        <small>Copyright &copy; {{ year }} Tim R. Lai</small>
+      </p>
     </div>
-    <p>
-      <small>Copyright &copy; {{ year }} Tim R. Lai</small>
-    </p>
-    <SocialButtons
-      buttonColor="secondary"
-      tooltipColor="secondary"
-      tooltipPosition="top"
-      :showAll="true"
-    />
+    <div class="footer-tile lg:w-2/3">
+      <SocialButtons
+        buttonColor="secondary"
+        tooltipColor="secondary"
+        tooltipPosition="top"
+        :showAll="true"
+      />
+    </div>
   </footer>
 </template>
 

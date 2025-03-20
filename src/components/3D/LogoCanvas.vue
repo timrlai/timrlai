@@ -1,22 +1,29 @@
 <script setup lang="ts">
+import { defineProps } from "vue";
 import { TresCanvas } from "@tresjs/core";
 import { OrbitControls, GLTFModel, Text3D } from "@tresjs/cientos";
+import type { LogoCanvasProps } from "../../../lib/types";
 import LottieSphere from "./LottieSphere.vue";
 import GLCloud from "./GLCloud.vue";
 
-const verticalRotationLimit = 1.6;
-const horizontalRotationLimit = 6;
-
-const gltfPath = "/models/timrlai_logo.gltf";
-const fontPath = "/fonts/ubuntu_titling/Ubuntu_Titlin_Rg_Bold.json";
-const fontSize = 1;
+const {
+  canvasColor = "#C0FCF9",
+  textColor = "#006177",
+  ambientLightColor = "#C0FCF9",
+  directionalLightColor = "#FFFAD4",
+  verticalRotationLimit = 1.6,
+  horizontalRotationLimit = 6,
+  gltfPath = "/models/timrlai_logo.gltf",
+  fontPath = "/fonts/ubuntu_titling/Ubuntu_Titlin_Rg_Bold.json",
+  fontSize = 1,
+} = defineProps<LogoCanvasProps>();
 </script>
 
 <template>
   <section class="h-[170vh] mb-[-80vh] cursor-pointer">
     <h1 class="visually-hidden">Tim RL dot AI</h1>
     <h2 class="visually-hidden">A full stack team in one Tim!</h2>
-    <TresCanvas clear-color="#C0FCF9" shadows alpha>
+    <TresCanvas :clear-color="canvasColor" shadows alpha>
       <TresPerspectiveCamera :position="[0, 0, 1]" />
       <OrbitControls
         :minDistance="0"
@@ -42,37 +49,41 @@ const fontSize = 1;
         <Suspense
           ><TresMesh :position="[0, 2, 0]"
             ><Text3D :font="fontPath" :size="fontSize"
-              >A FULL <TresMeshStandardMaterial color="#006177" /></Text3D
+              >A FULL <TresMeshStandardMaterial :color="textColor" /></Text3D
           ></TresMesh>
         </Suspense>
         <Suspense
           ><TresMesh :position="[0, 0.7, 0]"
             ><Text3D :font="fontPath" :size="fontSize"
-              >STACK <TresMeshStandardMaterial color="#006177" /></Text3D
+              >STACK <TresMeshStandardMaterial :color="textColor" /></Text3D
           ></TresMesh>
         </Suspense>
         <Suspense
           ><TresMesh :position="[0, -0.7, 0]"
             ><Text3D :font="fontPath" :size="fontSize"
-              >TEAM iN <TresMeshStandardMaterial color="#006177" /></Text3D
+              >TEAM iN <TresMeshStandardMaterial :color="textColor" /></Text3D
           ></TresMesh>
         </Suspense>
         <Suspense
           ><TresMesh :position="[0, -2, 0]"
             ><Text3D :font="fontPath" :size="fontSize"
-              >ONE TiM! <TresMeshStandardMaterial color="#006177" /></Text3D
+              >ONE TiM! <TresMeshStandardMaterial :color="textColor" /></Text3D
           ></TresMesh>
         </Suspense>
       </TresMesh>
       <Suspense>
         <GLCloud />
       </Suspense>
-      <TresAmbientLight :position="[0, 10, 0]" :intensity="5" color="#C0FCF9" />
+      <TresAmbientLight
+        :position="[0, 10, 0]"
+        :intensity="5"
+        :color="ambientLightColor"
+      />
       <TresDirectionalLight
         :position="[-4, 8, 4]"
         :rotation="[0, 0, 0]"
         :intensity="10"
-        color="#FFFAD4"
+        :color="directionalLightColor"
       />
     </TresCanvas>
   </section>

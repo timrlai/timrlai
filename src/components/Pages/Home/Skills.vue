@@ -12,7 +12,7 @@ import {
   generalSkills,
   primarySkills,
   madeWithSkills,
-} from "../../../lib/constants";
+} from "../../../../lib/constants";
 
 const skillIcon = ref(primarySkills[0].icon);
 const onSkillTyped = (currentTitle: string) => {
@@ -27,7 +27,7 @@ const randomizedSkills = [...primarySkills]
 </script>
 
 <template>
-  <section class="flex flex-col">
+  <section id="skills" class="flex flex-col">
     <div
       class="mockup-window bg-secondary text-secondary-content border-4 border-primary rounded-b-none shadow-lg shadow-primary"
     >

@@ -4,7 +4,7 @@ import { Icon } from "@iconify/vue";
 import ConfettiExplosion from "vue-confetti-explosion";
 import { VueWriter } from "vue-writer";
 
-import { intros } from "../../../lib/constants";
+import { intros } from "../../../../lib/constants";
 
 const visible = ref(false);
 
