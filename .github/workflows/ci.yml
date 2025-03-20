@@ -3,9 +3,13 @@ name: CI
 on:
   pull_request:
     branches: ["main"]
+    paths:
+      - "frontend/**"
 
   push:
     branches: ["main"]
+    paths:
+      - "frontend/**"
 
 concurrency:
   group: ${{ github.head_ref || github.run_id }}
@@ -15,6 +19,9 @@ jobs:
   linter:
     name: Linter
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
     steps:
       - name: Checkout Code Repository
         uses: actions/checkout@v4
@@ -33,6 +40,9 @@ jobs:
   test:
     name: Bun Test
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
     steps:
       - name: Checkout Code Repository
         uses: actions/checkout@v4
