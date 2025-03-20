@@ -359,3 +359,10 @@ export const madeWithSkills: Skill[] = [
     icon: "logos:blender",
   },
 ];
+
+export const notFoundLotties: string[] = [
+  "404_cat_clouds.json",
+  "404_cat_magnifying_glass.json",
+  "404_cat_papers.json",
+  "404_cat_yarn.json",
+];
