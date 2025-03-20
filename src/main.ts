@@ -6,10 +6,13 @@ import App from "./App.vue";
 
 import Home from "./components/Pages/Home/Home.vue";
 import Projects from "./components/Pages/Projects/Projects.vue";
+import NotFound from "./components/Pages/Errors/NotFound.vue";
 
 const routes = [
-  { path: "/", component: Home },
-  { path: "/projects", component: Projects },
+  { path: "/", name: "Home", component: Home },
+  { path: "/projects", name: "Projects", component: Projects },
+  // will match everything and put it under `route.params.pathMatch`
+  { path: "/:pathMatch(.*)*", name: "NotFound", component: NotFound },
 ];
 
 const router = createRouter({
