@@ -24,7 +24,9 @@ const randomNotFoundLottie = `/lottie/404/${notFoundLotties[Math.floor(Math.rand
 </script>
 
 <template>
-  <section class="h-[100vh] cursor-pointer">
+  <section
+    class="h-[90vh] md:h-[100vh] mb-[-20vh] md:mb-[-10vh] cursor-pointer"
+  >
     <h1 class="visually-hidden">Four Oh Four</h1>
     <h2 class="visually-hidden">Oopsie Woopsie!</h2>
     <h3 class="visually-hidden">Page Not Found!</h3>

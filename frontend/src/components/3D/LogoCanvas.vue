@@ -20,7 +20,9 @@ const {
 </script>
 
 <template>
-  <section class="h-[170vh] mb-[-80vh] cursor-pointer">
+  <section
+    class="h-[140vh] md:h-[170vh] mb-[-70vh] md:mb-[-80vh] cursor-pointer"
+  >
     <h1 class="visually-hidden">Tim RL dot AI</h1>
     <h2 class="visually-hidden">A full stack team in one Tim!</h2>
     <TresCanvas :clear-color="canvasColor" shadows alpha>
