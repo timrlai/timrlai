@@ -106,6 +106,5 @@ export type LogoCanvasProps = CloudCanvasProps & {
 
 export type NotFoundCanvasProps = CloudCanvasProps & {
   titleFontSize?: number;
-  subtitleFontSize?: number;
   explanationFontSize?: number;
 };

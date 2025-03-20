@@ -3,7 +3,9 @@ import { defineProps } from "vue";
 import { TresCanvas } from "@tresjs/core";
 import { OrbitControls, Text3D } from "@tresjs/cientos";
 import type { NotFoundCanvasProps } from "../../../lib/types";
+import { notFoundLotties } from "../../../lib/constants";
 import LottieSphere from "./LottieSphere.vue";
+import LottieCylinder from "./LottieCylinder.vue";
 import GLCloud from "./GLCloud.vue";
 
 const {
@@ -14,10 +16,11 @@ const {
   verticalRotationLimit = 1.6,
   horizontalRotationLimit = 6,
   fontPath = "/fonts/ubuntu_titling/Ubuntu_Titlin_Rg_Bold.json",
-  titleFontSize = 10,
-  subtitleFontSize = 1,
+  titleFontSize = 1,
   explanationFontSize = 0.7,
 } = defineProps<NotFoundCanvasProps>();
+
+const randomNotFoundLottie = `/lottie/404/${notFoundLotties[Math.floor(Math.random() * notFoundLotties.length)]}`;
 </script>
 
 <template>
@@ -42,22 +45,23 @@ const {
         <LottieSphere src="/lottie/clouds_lottie.json" />
       </Suspense>
       <Suspense>
-        <TresMesh :position="[-6, -1, -25]" :rotation="[0, 1, 0]"
-          ><Text3D :font="fontPath" :size="titleFontSize"
-            >404 <TresMeshStandardMaterial :color="textColor" /></Text3D
-        ></TresMesh>
+        <LottieCylinder
+          :src="randomNotFoundLottie"
+          :position="[-6, -0.5, -15]"
+          :rotation="[0, -0.5, 0]"
+        />
       </Suspense>
-      <TresMesh :position="[6, 3, -15]" :rotation="[0, -0.5, 0]">
+      <TresMesh :position="[5, 3, -15]" :rotation="[0, -0.5, 0]">
         <Suspense
           ><TresMesh :position="[0, -1, 0]"
-            ><Text3D :font="fontPath" :size="subtitleFontSize"
+            ><Text3D :font="fontPath" :size="titleFontSize"
               >OOPSiE WOOPSiE!
               <TresMeshStandardMaterial :color="textColor" /></Text3D
           ></TresMesh>
         </Suspense>
         <Suspense
           ><TresMesh :position="[0, -2.7, 0]"
-            ><Text3D :font="fontPath" :size="subtitleFontSize"
+            ><Text3D :font="fontPath" :size="titleFontSize"
               >PAGE NOT FOUND!
               <TresMeshStandardMaterial :color="textColor" /></Text3D
           ></TresMesh>
@@ -65,7 +69,7 @@ const {
         <Suspense
           ><TresMesh :position="[0, -4.7, 0]"
             ><Text3D :font="fontPath" :size="explanationFontSize"
-              >Sowwy, the page {{ $route.path }}
+              >Sowwy, the page "{{ $route.path }}"
               <TresMeshStandardMaterial :color="textColor" /></Text3D
           ></TresMesh>
         </Suspense>
