@@ -39,10 +39,16 @@ import LottiePlayer from "./LottiePlayer.vue";
       </p>
       <div class="flex flex-row justify-center items-center gap-4">
         <div class="max-w-100">
-          <LottiePlayer src="/lottie/construction_guy.json" autoPlay />
+          <LottiePlayer
+            src="/lottie/construction/construction_guy.json"
+            autoPlay
+          />
         </div>
         <div class="max-w-50">
-          <LottiePlayer src="/lottie/construction_penguin.json" autoPlay />
+          <LottiePlayer
+            src="/lottie/construction/construction_penguin.json"
+            autoPlay
+          />
         </div>
       </div>
     </div>
