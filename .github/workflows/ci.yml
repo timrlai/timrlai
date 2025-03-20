@@ -19,6 +19,9 @@ jobs:
   linter:
     name: Linter
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
     steps:
       - name: Checkout Code Repository
         uses: actions/checkout@v4
@@ -37,6 +40,9 @@ jobs:
   test:
     name: Bun Test
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
     steps:
       - name: Checkout Code Repository
         uses: actions/checkout@v4
