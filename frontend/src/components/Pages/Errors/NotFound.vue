@@ -23,16 +23,16 @@ const randomNotFoundLottie = `/lottie/404/${notFoundLotties[Math.floor(Math.rand
       </h1>
       <div class="flex flex-row flex-wrap lg:flex-nowrap gap-4">
         <div class="lg:w-1/2">
-          <p class="text-2xl mb-4 px-5">
+          <p class="text-xl sm:text-2xl mb-4 px-5">
             Sorry, but a page with the provided address of
             <strong>"{{ $route.path }}"</strong> does not seem to exist. Did
             your cat
             <Icon icon="fluent-emoji:cat-with-wry-smile" class="inline-block" />
             step on your keyboard? Please try the following:
           </p>
-          <ul class="list text-2xl atkinson-hyperlegible-next-bold">
+          <ul class="list text-xl sm:text-2xl atkinson-hyperlegible-next-bold">
             <li class="list-row">
-              <div class="text-8xl">
+              <div class="text-7xl sm:text-8xl">
                 <Icon icon="fluent-color:text-edit-style-24" />
               </div>
               <div>
@@ -42,7 +42,7 @@ const randomNotFoundLottie = `/lottie/404/${notFoundLotties[Math.floor(Math.rand
               </div>
             </li>
             <li class="list-row">
-              <div class="text-8xl">
+              <div class="text-7xl sm:text-8xl">
                 <Icon icon="fluent-color:history-24" />
               </div>
               <div>
@@ -51,7 +51,7 @@ const randomNotFoundLottie = `/lottie/404/${notFoundLotties[Math.floor(Math.rand
               </div>
             </li>
             <li class="list-row">
-              <div class="text-8xl">
+              <div class="text-7xl sm:text-8xl">
                 <Icon icon="fluent-color:home-24" />
               </div>
               <div>
@@ -82,7 +82,7 @@ const randomNotFoundLottie = `/lottie/404/${notFoundLotties[Math.floor(Math.rand
               </div>
             </li>
             <li class="list-row">
-              <div class="text-8xl">
+              <div class="text-7xl sm:text-8xl">
                 <Icon icon="fluent-color:code-24" />
               </div>
               <div>
@@ -94,7 +94,7 @@ const randomNotFoundLottie = `/lottie/404/${notFoundLotties[Math.floor(Math.rand
               </div>
             </li>
             <li class="list-row">
-              <div class="text-8xl">
+              <div class="text-7xl sm:text-8xl">
                 <Icon icon="logos:github-octocat" />
               </div>
               <div>
@@ -109,7 +109,7 @@ const randomNotFoundLottie = `/lottie/404/${notFoundLotties[Math.floor(Math.rand
               </div>
             </li>
             <li class="list-row">
-              <div class="text-8xl">
+              <div class="text-7xl sm:text-8xl">
                 <Icon icon="logos:linkedin-icon" />
               </div>
               <div>
@@ -124,7 +124,7 @@ const randomNotFoundLottie = `/lottie/404/${notFoundLotties[Math.floor(Math.rand
               </div>
             </li>
             <li class="list-row">
-              <div class="text-8xl">
+              <div class="text-7xl sm:text-8xl">
                 <Icon icon="logos:twitter" />
               </div>
               <div>
@@ -141,7 +141,7 @@ const randomNotFoundLottie = `/lottie/404/${notFoundLotties[Math.floor(Math.rand
             </li>
           </ul>
         </div>
-        <div class="lg:w-1/2">
+        <div class="lg:w-1/2 mx-auto">
           <LottiePlayer :src="randomNotFoundLottie" autoPlay />
         </div>
       </div>

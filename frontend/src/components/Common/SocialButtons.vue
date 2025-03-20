@@ -40,7 +40,7 @@ const tooltipPositions = {
 
 <template>
   <nav
-    :class="`flex flex-row justify-center gap-4 flex-shrink px-4 ${showAll && 'flex-wrap'}`"
+    :class="`flex flex-row justify-center gap-1 sm:gap-2 md:gap-4 flex-shrink px-1 sm:px-2 md:px-4 ${showAll && 'flex-wrap'}`"
   >
     <div v-for="button in socialButtons" v-bind:key="button.tooltip">
       <div
@@ -56,7 +56,7 @@ const tooltipPositions = {
         <a
           :href="`${button.url}`"
           target="_blank"
-          :class="`btn ${buttonColors[buttonColor]} text-2xl`"
+          :class="`btn ${buttonColors[buttonColor]} text-xl sm:text-2xl`"
           ><Icon :icon="`${button.icon}`"
         /></a>
       </div>

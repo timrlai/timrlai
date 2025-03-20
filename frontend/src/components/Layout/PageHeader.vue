@@ -13,7 +13,7 @@ import SocialButtons from "../Common/SocialButtons.vue";
           <div
             tabindex="0"
             role="button"
-            class="btn btn-ghost lg:hidden text-2xl"
+            class="btn btn-ghost lg:hidden text-3xl"
           >
             <Icon icon="mingcute:hamburger-fill" />
           </div>
