@@ -10,13 +10,18 @@ const {
   src,
   repeatX = 6,
   repeatY = 6,
+  wrapS = THREE.RepeatWrapping,
+  wrapT = THREE.RepeatWrapping,
   radius = 500,
   segments = 16,
   position = [0, 0, 0],
   rotation = [0, 0, 0],
   scale = [-1, 1, 1],
+  renderOrder = 0,
+  material = "standard",
   side = THREE.BackSide,
   transparent = true,
+  depthWrite = false,
 } = defineProps<LottieSphereProps>();
 
 const lottieTexture: LottieTexture = (await useLoader(
@@ -26,8 +31,8 @@ const lottieTexture: LottieTexture = (await useLoader(
 
 lottieTexture.repeat.x = repeatX;
 lottieTexture.repeat.y = repeatY;
-lottieTexture.wrapS = THREE.RepeatWrapping;
-lottieTexture.wrapT = THREE.RepeatWrapping;
+lottieTexture.wrapS = wrapS;
+lottieTexture.wrapT = wrapT;
 </script>
 
 <template>
@@ -37,11 +42,28 @@ lottieTexture.wrapT = THREE.RepeatWrapping;
       :position="position"
       :rotation="rotation"
       :scale="scale"
+      :renderOrder="renderOrder"
     >
-      <MeshStandardMaterial
+      <MeshBasicMaterial
+        v-if="material === 'basic'"
         :map="lottieTexture"
         :side="side"
         :transparent="transparent"
+        :depthWrite="depthWrite"
+      />
+      <MeshStandardMaterial
+        v-if="material === 'standard'"
+        :map="lottieTexture"
+        :side="side"
+        :transparent="transparent"
+        :depthWrite="depthWrite"
+      />
+      <MeshToonMaterial
+        v-if="material === 'toon'"
+        :map="lottieTexture"
+        :side="side"
+        :transparent="transparent"
+        :depthWrite="depthWrite"
       />
     </Sphere>
   </Suspense>
