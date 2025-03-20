@@ -87,7 +87,7 @@ onLoop(({ elapsed }) => {
 <template>
   <Suspense>
     <TresMesh :ref="mesh" :position="[0, -0.6, 0]" :rotation="[3, 0, 0]">
-      <Box :args="[5, 5, 5]">
+      <Box :args="[5, 5, 5]" :renderOrder="1">
         <TresRawShaderMaterial
           :vertex-shader="vertexShader"
           :fragment-shader="fragmentShader"
@@ -95,6 +95,7 @@ onLoop(({ elapsed }) => {
           :glsl-version="glslVersion"
           :side="side"
           transparent
+          :depthWrite="false"
         />
       </Box>
     </TresMesh>
