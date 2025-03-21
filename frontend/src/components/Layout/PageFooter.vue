@@ -6,11 +6,13 @@ const year = new Date().getFullYear();
 </script>
 
 <template>
-  <LottiePlayer
-    src="/lottie/clouds_lottie.json"
-    :autoPlay="false"
-    :playOnHover="true"
-  />
+  <div class="mb-10 lg:mb-0">
+    <LottiePlayer
+      src="/lottie/clouds_lottie.json"
+      :autoPlay="false"
+      :playOnHover="true"
+    />
+  </div>
   <footer
     class="footer footer-horizontal lg:footer-vertical footer-center bg-accent text-accent-content p-10 relative text-center atkinson-hyperlegible-next-bold text-2xl"
   >
