@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { defineProps } from "vue";
+import isMobile from "is-mobile";
 import { TresCanvas } from "@tresjs/core";
 import { OrbitControls, Text3D } from "@tresjs/cientos";
 import type { NotFoundCanvasProps } from "../../../lib/types";
@@ -20,11 +21,38 @@ const {
   explanationFontSize = 0.7,
 } = defineProps<NotFoundCanvasProps>();
 
+const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
+const width: number = window.innerWidth;
+const height: number = window.innerHeight;
+const isPortrait: boolean = width < 750;
+const isLandscape: boolean = height < 750;
+
+const lottiePosition: [number, number, number] = isPortrait
+  ? [0, 3.7, -15]
+  : isLandscape
+    ? [-5, 0, -15]
+    : [-6, 0, -15];
+const lottieRotation: [number, number, number] = isPortrait
+  ? [0.5, -0.7, 0]
+  : [0, -0.5, 0];
+const lottieScale: number = isPortrait ? 0.6 : isLandscape ? 0.8 : 1;
+const explanationPosition: [number, number, number] = isPortrait
+  ? [0, -0.3, -15]
+  : isLandscape
+    ? [3, 2, -15]
+    : [5, 3.5, -15];
+const explanationRotation: [number, number, number] = isPortrait
+  ? [-0.5, 0, 0]
+  : [0, -0.5, 0];
+const explanationScale: number = isPortrait ? 0.5 : isLandscape ? 0.8 : 1;
+
 const randomNotFoundLottie = `/lottie/404/${notFoundLotties[Math.floor(Math.random() * notFoundLotties.length)]}`;
 </script>
 
 <template>
-  <section class="h-[100vh] cursor-pointer">
+  <section
+    class="h-[90vh] md:h-[100vh] mb-[-20vh] md:mb-[-10vh] cursor-pointer"
+  >
     <h1 class="visually-hidden">Four Oh Four</h1>
     <h2 class="visually-hidden">Oopsie Woopsie!</h2>
     <h3 class="visually-hidden">Page Not Found!</h3>
@@ -34,6 +62,7 @@ const randomNotFoundLottie = `/lottie/404/${notFoundLotties[Math.floor(Math.rand
     <TresCanvas :clear-color="canvasColor" shadows alpha>
       <TresPerspectiveCamera :position="[0, 0, 1]" />
       <OrbitControls
+        v-if="!(isMobileOrTablet && isLandscape)"
         :minDistance="0"
         :maxDistance="Infinity"
         :minPolarAngle="0"
@@ -47,11 +76,16 @@ const randomNotFoundLottie = `/lottie/404/${notFoundLotties[Math.floor(Math.rand
       <Suspense>
         <LottieCylinder
           :src="randomNotFoundLottie"
-          :position="[-6, -0.5, -15]"
-          :rotation="[0, -0.5, 0]"
+          :position="lottiePosition"
+          :rotation="lottieRotation"
+          :scale="lottieScale"
         />
       </Suspense>
-      <TresMesh :position="[5, 3, -15]" :rotation="[0, -0.5, 0]">
+      <TresMesh
+        :position="explanationPosition"
+        :rotation="explanationRotation"
+        :scale="explanationScale"
+      >
         <Suspense
           ><TresMesh :position="[0, -1, 0]"
             ><Text3D :font="fontPath" :size="titleFontSize"
@@ -82,7 +116,7 @@ const randomNotFoundLottie = `/lottie/404/${notFoundLotties[Math.floor(Math.rand
         </Suspense>
       </TresMesh>
       <Suspense>
-        <GLCloud />
+        <GLCloud v-if="!isMobileOrTablet" />
       </Suspense>
       <TresAmbientLight
         :position="[0, 10, 0]"

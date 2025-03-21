@@ -7,13 +7,13 @@ import { Icon } from "@iconify/vue";
     id="summary"
     class="mockup-window bg-secondary text-secondary-content border-4 border-primary shadow-lg shadow-primary"
   >
-    <h1 class="text-5xl text-center ubuntu-titling mb-4 px-5">
+    <h1 class="text-4xl sm:text-5xl text-center ubuntu-titling mb-4 px-5">
       Summary
       <Icon icon="fluent-color:apps-list-detail-20" class="inline-block" />
     </h1>
-    <ul class="list text-2xl atkinson-hyperlegible-next-bold">
+    <ul class="list text-xl sm:text-2xl atkinson-hyperlegible-next-bold">
       <li class="list-row">
-        <div class="text-5xl">
+        <div class="text-4xl sm:text-5xl">
           <Icon icon="fluent-emoji:robot" />
         </div>
         <div>
@@ -35,7 +35,7 @@ import { Icon } from "@iconify/vue";
         </div>
       </li>
       <li class="list-row">
-        <div class="text-5xl">
+        <div class="text-4xl sm:text-5xl">
           <Icon icon="fluent-emoji:man-teacher-light" class="inline-block" />
         </div>
         <div>
@@ -51,7 +51,7 @@ import { Icon } from "@iconify/vue";
         </div>
       </li>
       <li class="list-row">
-        <div class="text-5xl">
+        <div class="text-4xl sm:text-5xl">
           <Icon icon="fluent-emoji:student-light" />
         </div>
         <div>
@@ -66,7 +66,7 @@ import { Icon } from "@iconify/vue";
         </div>
       </li>
       <li class="list-row">
-        <div class="text-5xl">
+        <div class="text-4xl sm:text-5xl">
           <Icon icon="fluent-emoji:man-technologist-light" />
         </div>
         <div>
@@ -75,7 +75,7 @@ import { Icon } from "@iconify/vue";
         </div>
       </li>
       <li class="list-row">
-        <div class="text-5xl">
+        <div class="text-4xl sm:text-5xl">
           <Icon icon="fluent-emoji:heart-on-fire" />
         </div>
         <div>
@@ -84,7 +84,7 @@ import { Icon } from "@iconify/vue";
         </div>
       </li>
       <li class="list-row">
-        <div class="text-5xl">
+        <div class="text-4xl sm:text-5xl">
           <Icon icon="fluent-emoji:handshake" />
         </div>
         <div>
@@ -93,7 +93,7 @@ import { Icon } from "@iconify/vue";
         </div>
       </li>
       <li class="list-row">
-        <div class="text-5xl">
+        <div class="text-4xl sm:text-5xl">
           <Icon icon="flag:ca-1x1" />
         </div>
         <div>Canadian citizen</div>

@@ -50,7 +50,7 @@ export type LottieShapeProps = {
   wrapT?: Wrapping;
   position?: [number, number, number];
   rotation?: [number, number, number];
-  scale?: [number, number, number];
+  scale?: [number, number, number] | number;
   renderOrder?: number;
   side?: Side;
   material?: "basic" | "standard" | "toon";

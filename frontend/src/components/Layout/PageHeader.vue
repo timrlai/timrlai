@@ -1,19 +1,26 @@
 <script setup lang="ts">
+import isMobile from "is-mobile";
 import { Icon } from "@iconify/vue";
 import { RouterLink } from "vue-router";
 import { subItems } from "../../../lib/constants";
 import SocialButtons from "../Common/SocialButtons.vue";
+
+const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
+const height: number = window.innerHeight;
+const isLandscape: boolean = height < 750;
 </script>
 
 <template>
   <header class="ubuntu-titling uppercase relative">
-    <nav class="navbar bg-secondary text-secondary-content fixed z-[99999]">
+    <nav
+      :class="`navbar bg-secondary text-secondary-content ${!(isMobileOrTablet && isLandscape) && 'fixed z-[99999]'}`"
+    >
       <div class="navbar-start">
         <div class="dropdown z-[9999]">
           <div
             tabindex="0"
             role="button"
-            class="btn btn-ghost lg:hidden text-2xl"
+            class="btn btn-ghost lg:hidden text-3xl"
           >
             <Icon icon="mingcute:hamburger-fill" />
           </div>

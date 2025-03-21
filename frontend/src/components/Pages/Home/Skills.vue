@@ -31,7 +31,7 @@ const randomizedSkills = [...primarySkills]
     <div
       class="mockup-window bg-secondary text-secondary-content border-4 border-primary rounded-b-none shadow-lg shadow-primary"
     >
-      <h1 class="text-5xl text-center ubuntu-titling mb-4 px-5">
+      <h1 class="text-4xl sm:text-5xl text-center ubuntu-titling mb-4 px-5">
         Skills
         <Icon icon="fluent-color:code-20" class="inline-block" /><Icon
           icon="fluent-color:design-ideas-20"
@@ -43,14 +43,14 @@ const randomizedSkills = [...primarySkills]
       class="mockup-code bg-slate-800 text-slate-300 border-x-4 border-primary rounded-none shadow-lg shadow-primary fira-code"
     >
       <div class="px-5">
-        <h2 class="text-3xl mb-4 code-comment-inline">
+        <h2 class="text-2xl sm:text-3xl mb-4 code-comment-inline">
           Technical Skills
           <Icon icon="fluent-color:code-20" class="inline-block" /><Icon
             icon="fluent-color:design-ideas-20"
             class="inline-block"
           />
         </h2>
-        <div class="text-2xl/12">
+        <div class="text-xl/10 sm:text-2xl/12">
           <p class="code-comment-block">
             My skills include developing, designing, testing, debugging and
             troubleshooting websites and applications in a wide variety of
@@ -102,7 +102,7 @@ const randomizedSkills = [...primarySkills]
         </div>
         <div class="collapse collapse-plus mt-5">
           <input type="checkbox" />
-          <h3 class="collapse-title text-2xl ubuntu-bold bg-neutral">
+          <h3 class="collapse-title text-xl sm:text-2xl ubuntu-bold bg-neutral">
             Click to View All Technical Skills
           </h3>
           <div class="overflow-x-auto">
@@ -273,7 +273,7 @@ const randomizedSkills = [...primarySkills]
           </div>
         </div>
         <div class="mt-8">
-          <h2 class="text-3xl mb-4 code-comment-inline">
+          <h2 class="text-2xl sm:text-3xl mb-4 code-comment-inline">
             This Site Was Made With...
             <Icon icon="fluent-color:code-20" class="inline-block" /><Icon
               icon="fluent-color:design-ideas-20"
@@ -302,11 +302,11 @@ const randomizedSkills = [...primarySkills]
       class="mockup-window bg-secondary text-secondary-content border-4 rounded-t-none border-primary shadow-lg shadow-primary"
     >
       <div class="p-5">
-        <h2 class="text-3xl ubuntu-bold mb-4">
+        <h2 class="text-2xl sm:text-3xl ubuntu-bold mb-4">
           Soft Skills
           <Icon icon="fluent-emoji:handshake" class="inline-block" />
         </h2>
-        <p class="text-2xl">
+        <p class="text-xl sm:text-2xl">
           Having worked with large, fast-paced organizations such as Futuretalk
           Inc.,
           <Icon icon="fluent-emoji:robot" class="inline-block" /> Seneca

@@ -25,14 +25,14 @@ const onIntroTyped = (currentTitle: string) => {
 <template>
   <section
     id="hi"
-    class="mockup-browser min-h-[70vh] text-secondary-content border-4 border-primary shadow-lg shadow-primary cursor-pointer ubuntu-regular"
+    class="mockup-browser min-h-[60vh] md:min-h-[70vh] text-secondary-content border-4 border-primary shadow-lg shadow-primary cursor-pointer ubuntu-regular"
     @click="explode"
   >
     <div class="mockup-browser-toolbar bg-secondary py-4">
       <div class="input">https://timrl.ai</div>
     </div>
     <div
-      class="glass grid place-content-center min-h-[65vh] p-5 bg-primary/85 text-primary-content text-center"
+      class="glass grid place-content-center min-h-[55vh] md:min-h-[65vh] p-5 bg-primary/85 text-primary-content text-center"
     >
       <div class="flex justify-center items-start">
         <ConfettiExplosion :particleCount="200" :force="0.3" v-if="visible" />
