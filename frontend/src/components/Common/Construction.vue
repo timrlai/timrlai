@@ -5,7 +5,8 @@ import LottiePlayer from "./LottiePlayer.vue";
 
 <template>
   <section
-    class="mockup-window bg-warning text-warning-content border-4 border-primary shadow-lg shadow-primary mt-30"
+    id="construction-notice"
+    class="mockup-window bg-warning text-warning-content border-4 border-primary shadow-lg shadow-primary"
   >
     <div class="grid place-content-center text-center p-5">
       <h1 class="text-3xl sm:text-5xl md:text-8xl ubuntu-titling mb-4">
@@ -55,4 +56,15 @@ import LottiePlayer from "./LottiePlayer.vue";
   </section>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+@media screen and (max-height: 459px) {
+  section#construction-notice {
+    margin-top: 3rem;
+  }
+}
+@media screen and (min-height: 500px) {
+  section#construction-notice {
+    margin-top: 7rem;
+  }
+}
+</style>

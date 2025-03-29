@@ -1,5 +1,13 @@
 <script setup lang="ts">
-import { defineProps } from "vue";
+import {
+  type Ref,
+  defineProps,
+  ref,
+  onActivated,
+  onDeactivated,
+  onMounted,
+  onUnmounted,
+} from "vue";
 import isMobile from "is-mobile";
 import { TresCanvas } from "@tresjs/core";
 import { OrbitControls, GLTFModel, Text3D } from "@tresjs/cientos";
@@ -19,30 +27,61 @@ const {
   fontSize = 1,
 } = defineProps<LogoCanvasProps>();
 
+let isPortrait: boolean = false;
+let isLandscape: boolean = false;
+let logoPosition: [number, number, number] = [-10.5, 1, -25];
+let logoRotation: [number, number, number] = [0, 0.2, 0];
+let logoScale: number = 60;
+let taglinePosition: [number, number, number] = [3.5, 3, -15];
+let taglineRotation: [number, number, number] = [0, -0.5, 0];
+let taglineScale: number = 1;
+const canvasKey: Ref<string> = ref("logo-canvas");
 const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
-const width: number = window.innerWidth;
-const height: number = window.innerHeight;
-const isPortrait: boolean = width < 750;
-const isLandscape: boolean = height < 750;
 
-const logoPosition: [number, number, number] = isPortrait
-  ? [-2.3, 6.6, -25]
-  : isLandscape
-    ? [-9, 1, -25]
-    : [-10.5, 1, -25];
-const logoRotation: [number, number, number] = isPortrait
-  ? [0.5, 0, 0]
-  : [0, 0.2, 0];
-const logoScale: number = isPortrait ? 25 : isLandscape ? 50 : 60;
-const taglinePosition: [number, number, number] = isPortrait
-  ? [0, 2, -15]
-  : isLandscape
-    ? [3, 2.7, -15]
-    : [3.5, 3, -15];
-const taglineRotation: [number, number, number] = isPortrait
-  ? [-0.5, 0, 0]
-  : [0, -0.5, 0];
-const taglineScale: number = isPortrait ? 0.7 : isLandscape ? 0.8 : 1;
+const setPoses = () => {
+  const width: number = window?.innerWidth;
+  const height: number = window?.innerHeight;
+
+  if (!width || !height) return;
+
+  isPortrait = width < 750;
+  isLandscape = height < 750;
+
+  logoPosition = isPortrait
+    ? [-2.3, 6.6, -25]
+    : isLandscape
+      ? [-9, 1, -25]
+      : [-10.5, 1, -25];
+  logoRotation = isPortrait ? [0.5, 0, 0] : [0, 0.2, 0];
+  logoScale = isPortrait ? 25 : isLandscape ? 50 : 60;
+  taglinePosition = isPortrait
+    ? [0, 2, -15]
+    : isLandscape
+      ? [3, 2.7, -15]
+      : [3.5, 3, -15];
+  taglineRotation = isPortrait ? [-0.5, 0, 0] : [0, -0.5, 0];
+  taglineScale = isPortrait ? 0.7 : isLandscape ? 0.8 : 1;
+  // Regenerate the value of the key prop of the canvas to rerender it after resetting poses
+  canvasKey.value = `logo-canvas-${Math.random()}`;
+};
+
+onActivated(() => {
+  // Reset 3D poses when window loads - necessary for mobile Firefox to detect window width and height
+  window.addEventListener("load", setPoses);
+});
+
+onDeactivated(() => {
+  window.removeEventListener("load", setPoses);
+});
+
+onMounted(() => {
+  // Reset 3D poses when window resizes or device is rotated
+  window.addEventListener("resize", setPoses);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", setPoses);
+});
 </script>
 
 <template>
@@ -51,7 +90,7 @@ const taglineScale: number = isPortrait ? 0.7 : isLandscape ? 0.8 : 1;
   >
     <h1 class="visually-hidden">Tim RL dot AI</h1>
     <h2 class="visually-hidden">A full stack team in one Tim!</h2>
-    <TresCanvas :clear-color="canvasColor" shadows alpha>
+    <TresCanvas :key="canvasKey" :clear-color="canvasColor" shadows alpha>
       <TresPerspectiveCamera :position="[0, 0, 1]" />
       <OrbitControls
         v-if="!(isMobileOrTablet && isLandscape)"

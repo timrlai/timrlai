@@ -1,5 +1,13 @@
 <script setup lang="ts">
-import { defineProps } from "vue";
+import {
+  type Ref,
+  defineProps,
+  ref,
+  onActivated,
+  onDeactivated,
+  onMounted,
+  onUnmounted,
+} from "vue";
 import isMobile from "is-mobile";
 import { TresCanvas } from "@tresjs/core";
 import { OrbitControls, Text3D } from "@tresjs/cientos";
@@ -21,32 +29,62 @@ const {
   explanationFontSize = 0.7,
 } = defineProps<NotFoundCanvasProps>();
 
+let isPortrait: boolean = false;
+let isLandscape: boolean = false;
+let lottiePosition: [number, number, number] = [-6, 0, -15];
+let lottieRotation: [number, number, number] = [0, -0.5, 0];
+let lottieScale: number = 1;
+let explanationPosition: [number, number, number] = [5, 3.5, -15];
+let explanationRotation: [number, number, number] = [0, -0.5, 0];
+let explanationScale: number = 1;
+const canvasKey: Ref<string> = ref("not-found-canvas");
 const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
-const width: number = window.innerWidth;
-const height: number = window.innerHeight;
-const isPortrait: boolean = width < 750;
-const isLandscape: boolean = height < 750;
-
-const lottiePosition: [number, number, number] = isPortrait
-  ? [0, 3.7, -15]
-  : isLandscape
-    ? [-5, 0, -15]
-    : [-6, 0, -15];
-const lottieRotation: [number, number, number] = isPortrait
-  ? [0.5, -0.7, 0]
-  : [0, -0.5, 0];
-const lottieScale: number = isPortrait ? 0.6 : isLandscape ? 0.8 : 1;
-const explanationPosition: [number, number, number] = isPortrait
-  ? [0, -0.3, -15]
-  : isLandscape
-    ? [3, 2, -15]
-    : [5, 3.5, -15];
-const explanationRotation: [number, number, number] = isPortrait
-  ? [-0.5, 0, 0]
-  : [0, -0.5, 0];
-const explanationScale: number = isPortrait ? 0.5 : isLandscape ? 0.8 : 1;
-
 const randomNotFoundLottie = `/lottie/404/${notFoundLotties[Math.floor(Math.random() * notFoundLotties.length)]}`;
+
+const setPoses = () => {
+  const width: number = window?.innerWidth;
+  const height: number = window?.innerHeight;
+
+  if (!width || !height) return;
+
+  isPortrait = width < 750;
+  isLandscape = height < 750;
+
+  lottiePosition = isPortrait
+    ? [0, 3.7, -15]
+    : isLandscape
+      ? [-5, 0, -15]
+      : [-6, 0, -15];
+  lottieRotation = isPortrait ? [0.5, -0.7, 0] : [0, -0.5, 0];
+  lottieScale = isPortrait ? 0.6 : isLandscape ? 0.8 : 1;
+  explanationPosition = isPortrait
+    ? [0, -0.3, -15]
+    : isLandscape
+      ? [3, 2, -15]
+      : [5, 3.5, -15];
+  explanationRotation = isPortrait ? [-0.5, 0, 0] : [0, -0.5, 0];
+  explanationScale = isPortrait ? 0.5 : isLandscape ? 0.8 : 1;
+  // Regenerate the value of the key prop of the canvas to rerender it after resetting poses
+  canvasKey.value = `not-found-canvas-${Math.random()}`;
+};
+
+onActivated(() => {
+  // Reset 3D poses when window loads - necessary for mobile Firefox to detect window width and height
+  window.addEventListener("load", setPoses);
+});
+
+onDeactivated(() => {
+  window.removeEventListener("load", setPoses);
+});
+
+onMounted(() => {
+  // Reset 3D poses when window resizes or device is rotated
+  window.addEventListener("resize", setPoses);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", setPoses);
+});
 </script>
 
 <template>
@@ -59,7 +97,7 @@ const randomNotFoundLottie = `/lottie/404/${notFoundLotties[Math.floor(Math.rand
     <p class="visually-hidden">
       Sorry, the page {{ $route.path }} is not in the cloud.
     </p>
-    <TresCanvas :clear-color="canvasColor" shadows alpha>
+    <TresCanvas :key="canvasKey" :clear-color="canvasColor" shadows alpha>
       <TresPerspectiveCamera :position="[0, 0, 1]" />
       <OrbitControls
         v-if="!(isMobileOrTablet && isLandscape)"
