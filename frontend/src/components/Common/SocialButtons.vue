@@ -40,6 +40,7 @@ const tooltipPositions = {
 
 <template>
   <nav
+    id="social-nav"
     :class="`flex flex-row justify-center gap-1 sm:gap-2 md:gap-4 flex-shrink px-1 sm:px-2 md:px-4 ${showAll && 'flex-wrap'}`"
   >
     <div v-for="button in socialButtons" v-bind:key="button.tooltip">

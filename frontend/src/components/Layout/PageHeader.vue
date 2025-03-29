@@ -1,20 +1,13 @@
 <script setup lang="ts">
-import isMobile from "is-mobile";
 import { Icon } from "@iconify/vue";
 import { RouterLink } from "vue-router";
 import { subItems } from "../../../lib/constants";
 import SocialButtons from "../Common/SocialButtons.vue";
-
-const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
-const height: number = window.innerHeight;
-const isLandscape: boolean = height < 750;
 </script>
 
 <template>
   <header class="ubuntu-titling uppercase relative">
-    <nav
-      :class="`navbar bg-secondary text-secondary-content ${!(isMobileOrTablet && isLandscape) && 'fixed z-[99999]'}`"
-    >
+    <nav id="main-nav" class="navbar bg-secondary text-secondary-content">
       <div class="navbar-start">
         <div class="dropdown z-[9999]">
           <div
@@ -106,7 +99,7 @@ const isLandscape: boolean = height < 750;
 </template>
 
 <style scoped lang="scss">
-nav::after {
+nav#main-nav::after {
   position: absolute;
   bottom: -20px;
   left: 0px;
@@ -122,5 +115,12 @@ nav::after {
   height: 20px;
   background-repeat: repeat-x;
   z-index: 1;
+}
+
+@media screen and (min-height: 500px) {
+  nav#main-nav {
+    position: fixed;
+    z-index: 99999;
+  }
 }
 </style>
