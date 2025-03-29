@@ -61,10 +61,12 @@ const setPoses = () => {
       : [3.5, 3, -15];
   taglineRotation = isPortrait ? [-0.5, 0, 0] : [0, -0.5, 0];
   taglineScale = isPortrait ? 0.7 : isLandscape ? 0.8 : 1;
+  // Regenerate the value of the key prop of the canvas to rerender it after resetting poses
   canvasKey.value = `logo-canvas-${Math.random()}`;
 };
 
 onActivated(() => {
+  // Reset 3D poses when window loads - necessary for mobile Firefox to detect window width and height
   window.addEventListener("load", setPoses);
 });
 
@@ -73,6 +75,7 @@ onDeactivated(() => {
 });
 
 onMounted(() => {
+  // Reset 3D poses when window resizes or device is rotated
   window.addEventListener("resize", setPoses);
 });
 
