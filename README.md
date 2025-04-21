@@ -10,6 +10,7 @@
   - [Education](#education)
   - [Volunteer Experience](#volunteer)
   - [Contact Me](#contact)
+  - [GitHub Stats](#stats)
 
 ## Hi, I'm Tim Lai!<a name="hi"></a> 👋
 
@@ -106,6 +107,13 @@ I have also offered my services volunteering for organizations which are importa
 | ------------------ | ----------------------------------------------- |
 | **Email**          | timlaicodes@gmail.com                           |
 | **LinkedIn**       | [timrlai](https://www.linkedin.com/in/timrlai/) |
+
+## GitHub Stats<a name="stats"></a>
+
+[![](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=timrlai&theme=vue)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
+[![](https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=timrlai&theme=vue)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
+[![](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=timrlai&theme=vue)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
+[![](https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=timrlai&theme=vue)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
 
 <!--
 **timrlai/timrlai** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
