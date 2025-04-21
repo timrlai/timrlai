@@ -110,10 +110,14 @@ I have also offered my services volunteering for organizations which are importa
 
 ## GitHub Stats<a name="stats"></a> :octocat:📊
 
-[![](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=timrlai&theme=vue)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
-[![](https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=timrlai&theme=vue)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
-[![](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=timrlai&theme=vue)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
-[![](https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=timrlai&theme=vue)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
+[![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=timrlai&theme=solarized)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
+
+The top languages shown in these graphs only reflect public repositories. I use a lot of JavaScript/TypeScript/JSX and Python in private repositories.
+
+[![](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=timrlai&theme=solarized)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
+[![](https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=timrlai&theme=solarized)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
+[![](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=timrlai&theme=solarized)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
+[![](https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=timrlai&theme=solarized)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
 
 <!--
 **timrlai/timrlai** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
