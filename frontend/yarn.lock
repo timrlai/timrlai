@@ -2406,10 +2406,10 @@ varint@^6.0.0:
     postcss "^8.5.3"
     rollup "^4.30.1"
 
-vite-plugin-glsl@^1.3.3:
-  version "1.3.3"
-  resolved "https://registry.npmjs.org/vite-plugin-glsl/-/vite-plugin-glsl-1.3.3.tgz"
-  integrity sha512-ZN1PjwPN9MTqt75SAZHcNr9A4IFtxFxZsPwApVuhhnSSeDPk6ezD8LUmcoTQtZwerNT3vWiwv3+zSspT+8yInQ==
+vite-plugin-glsl@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.npmjs.org/vite-plugin-glsl/-/vite-plugin-glsl-1.4.1.tgz"
+  integrity sha512-LkfLZeHdyl0drA71GmCCfcTeLuXyn/DYwDfjzQrupvNYVwdFRvb7nkCnCm0o9LZRKxS4/8r7E3KNM7KQjWrWWQ==
   dependencies:
     "@rollup/pluginutils" "^5.1.4"
 
