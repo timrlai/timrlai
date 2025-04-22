@@ -7,11 +7,7 @@ const year = new Date().getFullYear();
 
 <template>
   <div class="mb-10 lg:mb-0">
-    <LottiePlayer
-      src="/lottie/clouds_lottie.json"
-      :autoPlay="false"
-      :playOnHover="true"
-    />
+    <LottiePlayer src="/lottie/clouds_lottie.json" autoPlay />
   </div>
   <footer
     class="footer footer-horizontal lg:footer-vertical footer-center bg-accent text-accent-content p-10 relative text-center atkinson-hyperlegible-next-bold text-2xl"
@@ -59,7 +55,7 @@ footer::before {
   height: 50px;
   transform: translateY(0) translateZ(0) rotateZ(360deg);
 }
-footer:hover::before {
+footer::before {
   animation: wind 2s infinite;
 }
 @keyframes wind {
