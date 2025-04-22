@@ -51,7 +51,7 @@ const {
   WIDE_EXPLANATION_ROTATION,
 } = constants;
 
-let isPortrait: boolean = false;
+let isPortrait: boolean = true;
 let isLandscape: boolean = false;
 let lottiePosition: [number, number, number] = PORTRAIT_LOTTIE_POSITION;
 let lottieRotation: [number, number, number] = PORTRAIT_LOTTIE_ROTATION;
@@ -72,8 +72,8 @@ const setPoses = () => {
 
   if (!width || !height) return;
 
-  isPortrait = width < WIDTH_BREAKPOINT;
-  isLandscape = height < HEIGHT_BREAKPOINT;
+  isPortrait = width <= WIDTH_BREAKPOINT && width < height;
+  isLandscape = height <= HEIGHT_BREAKPOINT && height < width;
 
   lottiePosition = isPortrait
     ? PORTRAIT_LOTTIE_POSITION
