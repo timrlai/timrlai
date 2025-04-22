@@ -10,8 +10,10 @@ import {
 import isMobile from "is-mobile";
 import { TresCanvas } from "@tresjs/core";
 import { OrbitControls, Text3D } from "@tresjs/cientos";
+
 import type { NotFoundCanvasProps } from "../../../lib/types";
 import { notFoundLotties } from "../../../lib/constants";
+import constants from "../../../lib/constants/NotFoundCanvas";
 import LottieSphere from "./LottieSphere.vue";
 import LottieCylinder from "./LottieCylinder.vue";
 import GLCloud from "./GLCloud.vue";
@@ -28,28 +30,26 @@ const {
   explanationFontSize = 0.7,
 } = defineProps<NotFoundCanvasProps>();
 
-const WIDTH_BREAKPOINT: number = 950;
-const HEIGHT_BREAKPOINT: number = 750;
-
-const PORTRAIT_LOTTIE_POSITION: [number, number, number] = [0, 3.7, -15];
-const PORTRAIT_LOTTIE_ROTATION: [number, number, number] = [0.5, -0.7, 0];
-const PORTRAIT_LOTTIE_SCALE: number = 0.6;
-const PORTRAIT_EXPLANATION_POSITION: [number, number, number] = [0, -0.3, -15];
-const PORTRAIT_EXPLANATION_ROTATION: [number, number, number] = [-0.5, 0, 0];
-const PORTRAIT_EXPLANATION_SCALE: number = 0.5;
-
-const LANDSCAPE_LOTTIE_POSITION: [number, number, number] = [-5, 0, -15];
-const LANDSCAPE_LOTTIE_SCALE: number = 0.8;
-const LANDSCAPE_EXPLANATION_POSITION: [number, number, number] = [3, 2, -15];
-const LANDSCAPE_EXPLANATION_SCALE: number = 0.8;
-
-const DESKTOP_LOTTIE_POSITION: [number, number, number] = [-6, 0, -15];
-const DESKTOP_LOTTIE_SCALE: number = 1;
-const DESKTOP_EXPLANATION_POSITION: [number, number, number] = [5, 3.5, -15];
-const DESKTOP_EXPLANATION_SCALE: number = 1;
-
-const WIDE_LOTTIE_ROTATION: [number, number, number] = [0, -0.5, 0];
-const WIDE_EXPLANATION_ROTATION: [number, number, number] = [0, -0.5, 0];
+const {
+  WIDTH_BREAKPOINT,
+  HEIGHT_BREAKPOINT,
+  PORTRAIT_LOTTIE_POSITION,
+  PORTRAIT_LOTTIE_ROTATION,
+  PORTRAIT_LOTTIE_SCALE,
+  PORTRAIT_EXPLANATION_POSITION,
+  PORTRAIT_EXPLANATION_ROTATION,
+  PORTRAIT_EXPLANATION_SCALE,
+  LANDSCAPE_LOTTIE_POSITION,
+  LANDSCAPE_LOTTIE_SCALE,
+  LANDSCAPE_EXPLANATION_POSITION,
+  LANDSCAPE_EXPLANATION_SCALE,
+  DESKTOP_LOTTIE_POSITION,
+  DESKTOP_LOTTIE_SCALE,
+  DESKTOP_EXPLANATION_POSITION,
+  DESKTOP_EXPLANATION_SCALE,
+  WIDE_LOTTIE_ROTATION,
+  WIDE_EXPLANATION_ROTATION,
+} = constants;
 
 let isPortrait: boolean = false;
 let isLandscape: boolean = false;
