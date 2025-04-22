@@ -1,23 +1,4 @@
-type NotFoundCanvasConstants = {
-  readonly WIDTH_BREAKPOINT: number;
-  readonly HEIGHT_BREAKPOINT: number;
-  readonly PORTRAIT_LOTTIE_POSITION: [number, number, number];
-  readonly PORTRAIT_LOTTIE_ROTATION: [number, number, number];
-  readonly PORTRAIT_LOTTIE_SCALE: number;
-  readonly PORTRAIT_EXPLANATION_POSITION: [number, number, number];
-  readonly PORTRAIT_EXPLANATION_ROTATION: [number, number, number];
-  readonly PORTRAIT_EXPLANATION_SCALE: number;
-  readonly LANDSCAPE_LOTTIE_POSITION: [number, number, number];
-  readonly LANDSCAPE_LOTTIE_SCALE: number;
-  readonly LANDSCAPE_EXPLANATION_POSITION: [number, number, number];
-  readonly LANDSCAPE_EXPLANATION_SCALE: number;
-  readonly DESKTOP_LOTTIE_POSITION: [number, number, number];
-  readonly DESKTOP_LOTTIE_SCALE: number;
-  readonly DESKTOP_EXPLANATION_POSITION: [number, number, number];
-  readonly DESKTOP_EXPLANATION_SCALE: number;
-  readonly WIDE_LOTTIE_ROTATION: [number, number, number];
-  readonly WIDE_EXPLANATION_ROTATION: [number, number, number];
-};
+import type { NotFoundCanvasConstants } from "../types";
 
 const constants: NotFoundCanvasConstants = {
   WIDTH_BREAKPOINT: 950,

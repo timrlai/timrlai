@@ -108,3 +108,45 @@ export type NotFoundCanvasProps = CloudCanvasProps & {
   titleFontSize?: number;
   explanationFontSize?: number;
 };
+
+export type LogoCanvasConstants = {
+  readonly WIDTH_BREAKPOINT: number;
+  readonly HEIGHT_BREAKPOINT: number;
+  readonly PORTRAIT_LOGO_POSITION: [number, number, number];
+  readonly PORTRAIT_LOGO_ROTATION: [number, number, number];
+  readonly PORTRAIT_LOGO_SCALE: number;
+  readonly PORTRAIT_TAGLINE_POSITION: [number, number, number];
+  readonly PORTRAIT_TAGLINE_ROTATION: [number, number, number];
+  readonly PORTRAIT_TAGLINE_SCALE: number;
+  readonly LANDSCAPE_LOGO_POSITION: [number, number, number];
+  readonly LANDSCAPE_LOGO_SCALE: number;
+  readonly LANDSCAPE_TAGLINE_POSITION: [number, number, number];
+  readonly LANDSCAPE_TAGLINE_SCALE: number;
+  readonly DESKTOP_LOGO_POSITION: [number, number, number];
+  readonly DESKTOP_LOGO_SCALE: number;
+  readonly DESKTOP_TAGLINE_POSITION: [number, number, number];
+  readonly DESKTOP_TAGLINE_SCALE: number;
+  readonly WIDE_LOGO_ROTATION: [number, number, number];
+  readonly WIDE_TAGLINE_ROTATION: [number, number, number];
+};
+
+export type NotFoundCanvasConstants = {
+  readonly WIDTH_BREAKPOINT: number;
+  readonly HEIGHT_BREAKPOINT: number;
+  readonly PORTRAIT_LOTTIE_POSITION: [number, number, number];
+  readonly PORTRAIT_LOTTIE_ROTATION: [number, number, number];
+  readonly PORTRAIT_LOTTIE_SCALE: number;
+  readonly PORTRAIT_EXPLANATION_POSITION: [number, number, number];
+  readonly PORTRAIT_EXPLANATION_ROTATION: [number, number, number];
+  readonly PORTRAIT_EXPLANATION_SCALE: number;
+  readonly LANDSCAPE_LOTTIE_POSITION: [number, number, number];
+  readonly LANDSCAPE_LOTTIE_SCALE: number;
+  readonly LANDSCAPE_EXPLANATION_POSITION: [number, number, number];
+  readonly LANDSCAPE_EXPLANATION_SCALE: number;
+  readonly DESKTOP_LOTTIE_POSITION: [number, number, number];
+  readonly DESKTOP_LOTTIE_SCALE: number;
+  readonly DESKTOP_EXPLANATION_POSITION: [number, number, number];
+  readonly DESKTOP_EXPLANATION_SCALE: number;
+  readonly WIDE_LOTTIE_ROTATION: [number, number, number];
+  readonly WIDE_EXPLANATION_ROTATION: [number, number, number];
+};

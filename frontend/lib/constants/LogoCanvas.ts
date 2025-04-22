@@ -1,23 +1,4 @@
-type LogoCanvasConstants = {
-  readonly WIDTH_BREAKPOINT: number;
-  readonly HEIGHT_BREAKPOINT: number;
-  readonly PORTRAIT_LOGO_POSITION: [number, number, number];
-  readonly PORTRAIT_LOGO_ROTATION: [number, number, number];
-  readonly PORTRAIT_LOGO_SCALE: number;
-  readonly PORTRAIT_TAGLINE_POSITION: [number, number, number];
-  readonly PORTRAIT_TAGLINE_ROTATION: [number, number, number];
-  readonly PORTRAIT_TAGLINE_SCALE: number;
-  readonly LANDSCAPE_LOGO_POSITION: [number, number, number];
-  readonly LANDSCAPE_LOGO_SCALE: number;
-  readonly LANDSCAPE_TAGLINE_POSITION: [number, number, number];
-  readonly LANDSCAPE_TAGLINE_SCALE: number;
-  readonly DESKTOP_LOGO_POSITION: [number, number, number];
-  readonly DESKTOP_LOGO_SCALE: number;
-  readonly DESKTOP_TAGLINE_POSITION: [number, number, number];
-  readonly DESKTOP_TAGLINE_SCALE: number;
-  readonly WIDE_LOGO_ROTATION: [number, number, number];
-  readonly WIDE_TAGLINE_ROTATION: [number, number, number];
-};
+import type { LogoCanvasConstants } from "../types";
 
 const constants: LogoCanvasConstants = {
   WIDTH_BREAKPOINT: 950,
