@@ -64,45 +64,51 @@ const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
 const { scene } = await useGLTF(gltfPath, { draco: true });
 let logoModel: Scene = scene;
 
-const setPoses = async () => {
-  const width: number = window?.innerWidth;
-  const height: number = window?.innerHeight;
+const setPoses = () => {
+  setTimeout(
+    async () => {
+      const width: number = window?.innerWidth;
+      const height: number = window?.innerHeight;
 
-  if (!width || !height) return;
+      if (!width || !height) return;
 
-  isPortrait = width <= WIDTH_BREAKPOINT && width < height;
-  isLandscape = height <= HEIGHT_BREAKPOINT && height < width;
+      isPortrait = width <= WIDTH_BREAKPOINT && width < height;
+      isLandscape = height <= HEIGHT_BREAKPOINT && height < width;
 
-  logoPosition = isPortrait
-    ? PORTRAIT_LOGO_POSITION
-    : isLandscape
-      ? LANDSCAPE_LOGO_POSITION
-      : DESKTOP_LOGO_POSITION;
-  logoRotation = isPortrait ? PORTRAIT_LOGO_ROTATION : WIDE_LOGO_ROTATION;
-  logoScale = isPortrait
-    ? PORTRAIT_LOGO_SCALE
-    : isLandscape
-      ? LANDSCAPE_LOGO_SCALE
-      : DESKTOP_LOGO_SCALE;
-  taglinePosition = isPortrait
-    ? PORTRAIT_TAGLINE_POSITION
-    : isLandscape
-      ? LANDSCAPE_TAGLINE_POSITION
-      : DESKTOP_TAGLINE_POSITION;
-  taglineRotation = isPortrait
-    ? PORTRAIT_TAGLINE_ROTATION
-    : WIDE_TAGLINE_ROTATION;
-  taglineScale = isPortrait
-    ? PORTRAIT_TAGLINE_SCALE
-    : isLandscape
-      ? LANDSCAPE_TAGLINE_SCALE
-      : DESKTOP_TAGLINE_SCALE;
+      logoPosition = isPortrait
+        ? PORTRAIT_LOGO_POSITION
+        : isLandscape
+          ? LANDSCAPE_LOGO_POSITION
+          : DESKTOP_LOGO_POSITION;
+      logoRotation = isPortrait ? PORTRAIT_LOGO_ROTATION : WIDE_LOGO_ROTATION;
+      logoScale = isPortrait
+        ? PORTRAIT_LOGO_SCALE
+        : isLandscape
+          ? LANDSCAPE_LOGO_SCALE
+          : DESKTOP_LOGO_SCALE;
+      taglinePosition = isPortrait
+        ? PORTRAIT_TAGLINE_POSITION
+        : isLandscape
+          ? LANDSCAPE_TAGLINE_POSITION
+          : DESKTOP_TAGLINE_POSITION;
+      taglineRotation = isPortrait
+        ? PORTRAIT_TAGLINE_ROTATION
+        : WIDE_TAGLINE_ROTATION;
+      taglineScale = isPortrait
+        ? PORTRAIT_TAGLINE_SCALE
+        : isLandscape
+          ? LANDSCAPE_TAGLINE_SCALE
+          : DESKTOP_TAGLINE_SCALE;
 
-  const { scene } = await useGLTF(gltfPath, { draco: true });
-  logoModel = scene;
+      const { scene } = await useGLTF(gltfPath, { draco: true });
+      logoModel = scene;
 
-  // Regenerate the value of the key prop of the canvas to rerender it after resetting poses
-  canvasKey.value = `logo-canvas-${Math.random()}`;
+      // Regenerate the value of the key prop of the canvas to rerender it after resetting poses
+      canvasKey.value = `logo-canvas-${Math.random()}`;
+    },
+    // Wait 1ms on mobile to ensure window has loaded
+    isMobileOrTablet ? 1 : 0,
+  );
 };
 
 onMounted(() => {

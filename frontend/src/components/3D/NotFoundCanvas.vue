@@ -67,41 +67,49 @@ const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
 const randomNotFoundLottie: string = `/lottie/404/${notFoundLotties[Math.floor(Math.random() * notFoundLotties.length)]}`;
 
 const setPoses = () => {
-  const width: number = window?.innerWidth;
-  const height: number = window?.innerHeight;
+  setTimeout(
+    () => {
+      const width: number = window?.innerWidth;
+      const height: number = window?.innerHeight;
 
-  if (!width || !height) return;
+      if (!width || !height) return;
 
-  isPortrait = width <= WIDTH_BREAKPOINT && width < height;
-  isLandscape = height <= HEIGHT_BREAKPOINT && height < width;
+      isPortrait = width <= WIDTH_BREAKPOINT && width < height;
+      isLandscape = height <= HEIGHT_BREAKPOINT && height < width;
 
-  lottiePosition = isPortrait
-    ? PORTRAIT_LOTTIE_POSITION
-    : isLandscape
-      ? LANDSCAPE_LOTTIE_POSITION
-      : DESKTOP_LOTTIE_POSITION;
-  lottieRotation = isPortrait ? PORTRAIT_LOTTIE_ROTATION : WIDE_LOTTIE_ROTATION;
-  lottieScale = isPortrait
-    ? PORTRAIT_LOTTIE_SCALE
-    : isLandscape
-      ? LANDSCAPE_LOTTIE_SCALE
-      : DESKTOP_LOTTIE_SCALE;
-  explanationPosition = isPortrait
-    ? PORTRAIT_EXPLANATION_POSITION
-    : isLandscape
-      ? LANDSCAPE_EXPLANATION_POSITION
-      : DESKTOP_EXPLANATION_POSITION;
-  explanationRotation = isPortrait
-    ? PORTRAIT_EXPLANATION_ROTATION
-    : WIDE_EXPLANATION_ROTATION;
-  explanationScale = isPortrait
-    ? PORTRAIT_EXPLANATION_SCALE
-    : isLandscape
-      ? LANDSCAPE_EXPLANATION_SCALE
-      : DESKTOP_EXPLANATION_SCALE;
+      lottiePosition = isPortrait
+        ? PORTRAIT_LOTTIE_POSITION
+        : isLandscape
+          ? LANDSCAPE_LOTTIE_POSITION
+          : DESKTOP_LOTTIE_POSITION;
+      lottieRotation = isPortrait
+        ? PORTRAIT_LOTTIE_ROTATION
+        : WIDE_LOTTIE_ROTATION;
+      lottieScale = isPortrait
+        ? PORTRAIT_LOTTIE_SCALE
+        : isLandscape
+          ? LANDSCAPE_LOTTIE_SCALE
+          : DESKTOP_LOTTIE_SCALE;
+      explanationPosition = isPortrait
+        ? PORTRAIT_EXPLANATION_POSITION
+        : isLandscape
+          ? LANDSCAPE_EXPLANATION_POSITION
+          : DESKTOP_EXPLANATION_POSITION;
+      explanationRotation = isPortrait
+        ? PORTRAIT_EXPLANATION_ROTATION
+        : WIDE_EXPLANATION_ROTATION;
+      explanationScale = isPortrait
+        ? PORTRAIT_EXPLANATION_SCALE
+        : isLandscape
+          ? LANDSCAPE_EXPLANATION_SCALE
+          : DESKTOP_EXPLANATION_SCALE;
 
-  // Regenerate the value of the key prop of the canvas to rerender it after resetting poses
-  canvasKey.value = `not-found-canvas-${Math.random()}`;
+      // Regenerate the value of the key prop of the canvas to rerender it after resetting poses
+      canvasKey.value = `not-found-canvas-${Math.random()}`;
+    },
+    // Wait 1ms on mobile to ensure window has loaded
+    isMobileOrTablet ? 1 : 0,
+  );
 };
 
 onMounted(() => {
