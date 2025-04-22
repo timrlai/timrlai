@@ -6,7 +6,9 @@ import Skills from "./Skills.vue";
 </script>
 
 <template>
-  <LogoCanvas />
+  <Suspense>
+    <LogoCanvas />
+  </Suspense>
   <main class="flex flex-col gap-4 max-w-[95vw] min-h-[80vh] mx-auto mb-10">
     <Hi />
     <Summary />

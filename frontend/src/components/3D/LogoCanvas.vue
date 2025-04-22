@@ -7,9 +7,10 @@ import {
   onUnmounted,
   watchEffect,
 } from "vue";
+import type { Scene } from "three";
 import isMobile from "is-mobile";
 import { TresCanvas } from "@tresjs/core";
-import { OrbitControls, GLTFModel, Text3D } from "@tresjs/cientos";
+import { useGLTF, OrbitControls, Text3D } from "@tresjs/cientos";
 import type { LogoCanvasProps } from "../../../lib/types";
 import LottieSphere from "./LottieSphere.vue";
 import GLCloud from "./GLCloud.vue";
@@ -60,8 +61,10 @@ let taglineScale: number = PORTRAIT_TAGLINE_SCALE;
 
 const canvasKey: Ref<string> = ref("logo-canvas");
 const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
+const { scene } = await useGLTF(gltfPath, { draco: true });
+let logoModel: Scene = scene;
 
-const setPoses = () => {
+const setPoses = async () => {
   const width: number = window?.innerWidth;
   const height: number = window?.innerHeight;
 
@@ -94,6 +97,9 @@ const setPoses = () => {
     : isLandscape
       ? LANDSCAPE_TAGLINE_SCALE
       : DESKTOP_TAGLINE_SCALE;
+
+  const { scene } = await useGLTF(gltfPath, { draco: true });
+  logoModel = scene;
 
   // Regenerate the value of the key prop of the canvas to rerender it after resetting poses
   canvasKey.value = `logo-canvas-${Math.random()}`;
@@ -134,15 +140,13 @@ watchEffect(() => {
       <Suspense>
         <LottieSphere src="/lottie/clouds_lottie.json" />
       </Suspense>
-      <Suspense>
-        <GLTFModel
-          :path="gltfPath"
-          draco
-          :position="logoPosition"
-          :rotation="logoRotation"
-          :scale="logoScale"
-        />
-      </Suspense>
+      <TresMesh
+        :position="logoPosition"
+        :rotation="logoRotation"
+        :scale="logoScale"
+      >
+        <Suspense><primitive :object="logoModel" /></Suspense>
+      </TresMesh>
       <TresMesh
         :position="taglinePosition"
         :rotation="taglineRotation"
