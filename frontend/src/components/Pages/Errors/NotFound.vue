@@ -9,7 +9,9 @@ const randomNotFoundLottie = `/lottie/404/${notFoundLotties[Math.floor(Math.rand
 </script>
 
 <template>
-  <NotFoundCanvas />
+  <Suspense>
+    <NotFoundCanvas />
+  </Suspense>
   <main class="flex flex-col justify-center gap-4 max-w-[95vw] mx-auto mb-10">
     <section
       id="summary"

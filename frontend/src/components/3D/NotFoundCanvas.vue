@@ -3,16 +3,17 @@ import {
   type Ref,
   defineProps,
   ref,
-  onActivated,
-  onDeactivated,
   onMounted,
   onUnmounted,
+  watchEffect,
 } from "vue";
 import isMobile from "is-mobile";
 import { TresCanvas } from "@tresjs/core";
 import { OrbitControls, Text3D } from "@tresjs/cientos";
+
 import type { NotFoundCanvasProps } from "../../../lib/types";
 import { notFoundLotties } from "../../../lib/constants";
+import constants from "../../../lib/constants/NotFoundCanvas";
 import LottieSphere from "./LottieSphere.vue";
 import LottieCylinder from "./LottieCylinder.vue";
 import GLCloud from "./GLCloud.vue";
@@ -29,17 +30,41 @@ const {
   explanationFontSize = 0.7,
 } = defineProps<NotFoundCanvasProps>();
 
+const {
+  WIDTH_BREAKPOINT,
+  HEIGHT_BREAKPOINT,
+  PORTRAIT_LOTTIE_POSITION,
+  PORTRAIT_LOTTIE_ROTATION,
+  PORTRAIT_LOTTIE_SCALE,
+  PORTRAIT_EXPLANATION_POSITION,
+  PORTRAIT_EXPLANATION_ROTATION,
+  PORTRAIT_EXPLANATION_SCALE,
+  LANDSCAPE_LOTTIE_POSITION,
+  LANDSCAPE_LOTTIE_SCALE,
+  LANDSCAPE_EXPLANATION_POSITION,
+  LANDSCAPE_EXPLANATION_SCALE,
+  DESKTOP_LOTTIE_POSITION,
+  DESKTOP_LOTTIE_SCALE,
+  DESKTOP_EXPLANATION_POSITION,
+  DESKTOP_EXPLANATION_SCALE,
+  WIDE_LOTTIE_ROTATION,
+  WIDE_EXPLANATION_ROTATION,
+} = constants;
+
 let isPortrait: boolean = false;
 let isLandscape: boolean = false;
-let lottiePosition: [number, number, number] = [-6, 0, -15];
-let lottieRotation: [number, number, number] = [0, -0.5, 0];
-let lottieScale: number = 1;
-let explanationPosition: [number, number, number] = [5, 3.5, -15];
-let explanationRotation: [number, number, number] = [0, -0.5, 0];
-let explanationScale: number = 1;
+let lottiePosition: [number, number, number] = PORTRAIT_LOTTIE_POSITION;
+let lottieRotation: [number, number, number] = PORTRAIT_LOTTIE_ROTATION;
+let lottieScale: number = PORTRAIT_LOTTIE_SCALE;
+let explanationPosition: [number, number, number] =
+  PORTRAIT_EXPLANATION_POSITION;
+let explanationRotation: [number, number, number] =
+  PORTRAIT_EXPLANATION_ROTATION;
+let explanationScale: number = PORTRAIT_EXPLANATION_SCALE;
+
 const canvasKey: Ref<string> = ref("not-found-canvas");
 const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
-const randomNotFoundLottie = `/lottie/404/${notFoundLotties[Math.floor(Math.random() * notFoundLotties.length)]}`;
+const randomNotFoundLottie: string = `/lottie/404/${notFoundLotties[Math.floor(Math.random() * notFoundLotties.length)]}`;
 
 const setPoses = () => {
   const width: number = window?.innerWidth;
@@ -47,35 +72,37 @@ const setPoses = () => {
 
   if (!width || !height) return;
 
-  isPortrait = width < 750;
-  isLandscape = height < 750;
+  isPortrait = width < WIDTH_BREAKPOINT;
+  isLandscape = height < HEIGHT_BREAKPOINT;
 
   lottiePosition = isPortrait
-    ? [0, 3.7, -15]
+    ? PORTRAIT_LOTTIE_POSITION
     : isLandscape
-      ? [-5, 0, -15]
-      : [-6, 0, -15];
-  lottieRotation = isPortrait ? [0.5, -0.7, 0] : [0, -0.5, 0];
-  lottieScale = isPortrait ? 0.6 : isLandscape ? 0.8 : 1;
+      ? LANDSCAPE_LOTTIE_POSITION
+      : DESKTOP_LOTTIE_POSITION;
+  lottieRotation = isPortrait ? PORTRAIT_LOTTIE_ROTATION : WIDE_LOTTIE_ROTATION;
+  lottieScale = isPortrait
+    ? PORTRAIT_LOTTIE_SCALE
+    : isLandscape
+      ? LANDSCAPE_LOTTIE_SCALE
+      : DESKTOP_LOTTIE_SCALE;
   explanationPosition = isPortrait
-    ? [0, -0.3, -15]
+    ? PORTRAIT_EXPLANATION_POSITION
     : isLandscape
-      ? [3, 2, -15]
-      : [5, 3.5, -15];
-  explanationRotation = isPortrait ? [-0.5, 0, 0] : [0, -0.5, 0];
-  explanationScale = isPortrait ? 0.5 : isLandscape ? 0.8 : 1;
+      ? LANDSCAPE_EXPLANATION_POSITION
+      : DESKTOP_EXPLANATION_POSITION;
+  explanationRotation = isPortrait
+    ? PORTRAIT_EXPLANATION_ROTATION
+    : WIDE_EXPLANATION_ROTATION;
+  explanationScale = isPortrait
+    ? PORTRAIT_EXPLANATION_SCALE
+    : isLandscape
+      ? LANDSCAPE_EXPLANATION_SCALE
+      : DESKTOP_EXPLANATION_SCALE;
+
   // Regenerate the value of the key prop of the canvas to rerender it after resetting poses
   canvasKey.value = `not-found-canvas-${Math.random()}`;
 };
-
-onActivated(() => {
-  // Reset 3D poses when window loads - necessary for mobile Firefox to detect window width and height
-  window.addEventListener("load", setPoses);
-});
-
-onDeactivated(() => {
-  window.removeEventListener("load", setPoses);
-});
 
 onMounted(() => {
   // Reset 3D poses when window resizes or device is rotated
@@ -84,6 +111,11 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener("resize", setPoses);
+});
+
+watchEffect(() => {
+  // Reset 3D poses when window with and height are set
+  if (window?.innerWidth && window?.innerHeight) setPoses();
 });
 </script>
 

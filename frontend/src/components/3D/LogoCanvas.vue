@@ -3,15 +3,17 @@ import {
   type Ref,
   defineProps,
   ref,
-  onActivated,
-  onDeactivated,
   onMounted,
   onUnmounted,
+  watchEffect,
 } from "vue";
+import type { Scene } from "three";
 import isMobile from "is-mobile";
 import { TresCanvas } from "@tresjs/core";
-import { OrbitControls, GLTFModel, Text3D } from "@tresjs/cientos";
+import { useGLTF, OrbitControls, Text3D } from "@tresjs/cientos";
+
 import type { LogoCanvasProps } from "../../../lib/types";
+import constants from "../../../lib/constants/LogoCanvas";
 import LottieSphere from "./LottieSphere.vue";
 import GLCloud from "./GLCloud.vue";
 
@@ -27,52 +29,81 @@ const {
   fontSize = 1,
 } = defineProps<LogoCanvasProps>();
 
+const {
+  WIDTH_BREAKPOINT,
+  HEIGHT_BREAKPOINT,
+  PORTRAIT_LOGO_POSITION,
+  PORTRAIT_LOGO_ROTATION,
+  PORTRAIT_LOGO_SCALE,
+  PORTRAIT_TAGLINE_POSITION,
+  PORTRAIT_TAGLINE_ROTATION,
+  PORTRAIT_TAGLINE_SCALE,
+  LANDSCAPE_LOGO_POSITION,
+  LANDSCAPE_LOGO_SCALE,
+  LANDSCAPE_TAGLINE_POSITION,
+  LANDSCAPE_TAGLINE_SCALE,
+  DESKTOP_LOGO_POSITION,
+  DESKTOP_LOGO_SCALE,
+  DESKTOP_TAGLINE_POSITION,
+  DESKTOP_TAGLINE_SCALE,
+  WIDE_LOGO_ROTATION,
+  WIDE_TAGLINE_ROTATION,
+} = constants;
+
 let isPortrait: boolean = false;
 let isLandscape: boolean = false;
-let logoPosition: [number, number, number] = [-10.5, 1, -25];
-let logoRotation: [number, number, number] = [0, 0.2, 0];
-let logoScale: number = 60;
-let taglinePosition: [number, number, number] = [3.5, 3, -15];
-let taglineRotation: [number, number, number] = [0, -0.5, 0];
-let taglineScale: number = 1;
+let logoPosition: [number, number, number] = PORTRAIT_LOGO_POSITION;
+let logoRotation: [number, number, number] = PORTRAIT_LOGO_ROTATION;
+let logoScale: number = PORTRAIT_LOGO_SCALE;
+let taglinePosition: [number, number, number] = PORTRAIT_TAGLINE_POSITION;
+let taglineRotation: [number, number, number] = PORTRAIT_TAGLINE_ROTATION;
+let taglineScale: number = PORTRAIT_TAGLINE_SCALE;
+
 const canvasKey: Ref<string> = ref("logo-canvas");
 const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
+const { scene } = await useGLTF(gltfPath, { draco: true });
+let logoModel: Scene = scene;
 
-const setPoses = () => {
+const setPoses = async () => {
   const width: number = window?.innerWidth;
   const height: number = window?.innerHeight;
 
   if (!width || !height) return;
 
-  isPortrait = width < 750;
-  isLandscape = height < 750;
+  isPortrait = width <= WIDTH_BREAKPOINT;
+  isLandscape = height <= HEIGHT_BREAKPOINT;
 
   logoPosition = isPortrait
-    ? [-2.3, 6.6, -25]
+    ? PORTRAIT_LOGO_POSITION
     : isLandscape
-      ? [-9, 1, -25]
-      : [-10.5, 1, -25];
-  logoRotation = isPortrait ? [0.5, 0, 0] : [0, 0.2, 0];
-  logoScale = isPortrait ? 25 : isLandscape ? 50 : 60;
+      ? LANDSCAPE_LOGO_POSITION
+      : DESKTOP_LOGO_POSITION;
+  logoRotation = isPortrait ? PORTRAIT_LOGO_ROTATION : WIDE_LOGO_ROTATION;
+  logoScale = isPortrait
+    ? PORTRAIT_LOGO_SCALE
+    : isLandscape
+      ? LANDSCAPE_LOGO_SCALE
+      : DESKTOP_LOGO_SCALE;
   taglinePosition = isPortrait
-    ? [0, 2, -15]
+    ? PORTRAIT_TAGLINE_POSITION
     : isLandscape
-      ? [3, 2.7, -15]
-      : [3.5, 3, -15];
-  taglineRotation = isPortrait ? [-0.5, 0, 0] : [0, -0.5, 0];
-  taglineScale = isPortrait ? 0.7 : isLandscape ? 0.8 : 1;
+      ? LANDSCAPE_TAGLINE_POSITION
+      : DESKTOP_TAGLINE_POSITION;
+  taglineRotation = isPortrait
+    ? PORTRAIT_TAGLINE_ROTATION
+    : WIDE_TAGLINE_ROTATION;
+  taglineScale = isPortrait
+    ? PORTRAIT_TAGLINE_SCALE
+    : isLandscape
+      ? LANDSCAPE_TAGLINE_SCALE
+      : DESKTOP_TAGLINE_SCALE;
+
+  const { scene } = await useGLTF(gltfPath, { draco: true });
+  logoModel = scene;
+
   // Regenerate the value of the key prop of the canvas to rerender it after resetting poses
   canvasKey.value = `logo-canvas-${Math.random()}`;
 };
-
-onActivated(() => {
-  // Reset 3D poses when window loads - necessary for mobile Firefox to detect window width and height
-  window.addEventListener("load", setPoses);
-});
-
-onDeactivated(() => {
-  window.removeEventListener("load", setPoses);
-});
 
 onMounted(() => {
   // Reset 3D poses when window resizes or device is rotated
@@ -81,6 +112,11 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener("resize", setPoses);
+});
+
+watchEffect(() => {
+  // Reset 3D poses when window loads
+  if (window?.innerWidth && window?.innerHeight) setPoses();
 });
 </script>
 
@@ -104,15 +140,13 @@ onUnmounted(() => {
       <Suspense>
         <LottieSphere src="/lottie/clouds_lottie.json" />
       </Suspense>
-      <Suspense>
-        <GLTFModel
-          :path="gltfPath"
-          draco
-          :position="logoPosition"
-          :rotation="logoRotation"
-          :scale="logoScale"
-        />
-      </Suspense>
+      <TresMesh
+        :position="logoPosition"
+        :rotation="logoRotation"
+        :scale="logoScale"
+      >
+        <Suspense><primitive :object="logoModel" /></Suspense>
+      </TresMesh>
       <TresMesh
         :position="taglinePosition"
         :rotation="taglineRotation"
