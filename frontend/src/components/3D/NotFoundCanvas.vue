@@ -3,10 +3,9 @@ import {
   type Ref,
   defineProps,
   ref,
-  onActivated,
-  onDeactivated,
   onMounted,
   onUnmounted,
+  watchEffect,
 } from "vue";
 import isMobile from "is-mobile";
 import { TresCanvas } from "@tresjs/core";
@@ -105,15 +104,6 @@ const setPoses = () => {
   canvasKey.value = `not-found-canvas-${Math.random()}`;
 };
 
-onActivated(() => {
-  // Reset 3D poses when window loads - necessary for mobile Firefox to detect window width and height
-  window.addEventListener("load", setPoses);
-});
-
-onDeactivated(() => {
-  window.removeEventListener("load", setPoses);
-});
-
 onMounted(() => {
   // Reset 3D poses when window resizes or device is rotated
   window.addEventListener("resize", setPoses);
@@ -121,6 +111,11 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener("resize", setPoses);
+});
+
+watchEffect(() => {
+  // Reset 3D poses when window with and height are set
+  if (window?.innerWidth && window?.innerHeight) setPoses();
 });
 </script>
 
