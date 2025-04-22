@@ -50,7 +50,7 @@ const {
   WIDE_TAGLINE_ROTATION,
 } = constants;
 
-let isPortrait: boolean = false;
+let isPortrait: boolean = true;
 let isLandscape: boolean = false;
 let logoPosition: [number, number, number] = PORTRAIT_LOGO_POSITION;
 let logoRotation: [number, number, number] = PORTRAIT_LOGO_ROTATION;
@@ -64,45 +64,51 @@ const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
 const { scene } = await useGLTF(gltfPath, { draco: true });
 let logoModel: Scene = scene;
 
-const setPoses = async () => {
-  const width: number = window?.innerWidth;
-  const height: number = window?.innerHeight;
+const setPoses = () => {
+  setTimeout(
+    async () => {
+      const width: number = window?.innerWidth;
+      const height: number = window?.innerHeight;
 
-  if (!width || !height) return;
+      if (!width || !height) return;
 
-  isPortrait = width <= WIDTH_BREAKPOINT;
-  isLandscape = height <= HEIGHT_BREAKPOINT;
+      isPortrait = width <= WIDTH_BREAKPOINT && width < height;
+      isLandscape = height <= HEIGHT_BREAKPOINT && height < width;
 
-  logoPosition = isPortrait
-    ? PORTRAIT_LOGO_POSITION
-    : isLandscape
-      ? LANDSCAPE_LOGO_POSITION
-      : DESKTOP_LOGO_POSITION;
-  logoRotation = isPortrait ? PORTRAIT_LOGO_ROTATION : WIDE_LOGO_ROTATION;
-  logoScale = isPortrait
-    ? PORTRAIT_LOGO_SCALE
-    : isLandscape
-      ? LANDSCAPE_LOGO_SCALE
-      : DESKTOP_LOGO_SCALE;
-  taglinePosition = isPortrait
-    ? PORTRAIT_TAGLINE_POSITION
-    : isLandscape
-      ? LANDSCAPE_TAGLINE_POSITION
-      : DESKTOP_TAGLINE_POSITION;
-  taglineRotation = isPortrait
-    ? PORTRAIT_TAGLINE_ROTATION
-    : WIDE_TAGLINE_ROTATION;
-  taglineScale = isPortrait
-    ? PORTRAIT_TAGLINE_SCALE
-    : isLandscape
-      ? LANDSCAPE_TAGLINE_SCALE
-      : DESKTOP_TAGLINE_SCALE;
+      logoPosition = isPortrait
+        ? PORTRAIT_LOGO_POSITION
+        : isLandscape
+          ? LANDSCAPE_LOGO_POSITION
+          : DESKTOP_LOGO_POSITION;
+      logoRotation = isPortrait ? PORTRAIT_LOGO_ROTATION : WIDE_LOGO_ROTATION;
+      logoScale = isPortrait
+        ? PORTRAIT_LOGO_SCALE
+        : isLandscape
+          ? LANDSCAPE_LOGO_SCALE
+          : DESKTOP_LOGO_SCALE;
+      taglinePosition = isPortrait
+        ? PORTRAIT_TAGLINE_POSITION
+        : isLandscape
+          ? LANDSCAPE_TAGLINE_POSITION
+          : DESKTOP_TAGLINE_POSITION;
+      taglineRotation = isPortrait
+        ? PORTRAIT_TAGLINE_ROTATION
+        : WIDE_TAGLINE_ROTATION;
+      taglineScale = isPortrait
+        ? PORTRAIT_TAGLINE_SCALE
+        : isLandscape
+          ? LANDSCAPE_TAGLINE_SCALE
+          : DESKTOP_TAGLINE_SCALE;
 
-  const { scene } = await useGLTF(gltfPath, { draco: true });
-  logoModel = scene;
+      const { scene } = await useGLTF(gltfPath, { draco: true });
+      logoModel = scene;
 
-  // Regenerate the value of the key prop of the canvas to rerender it after resetting poses
-  canvasKey.value = `logo-canvas-${Math.random()}`;
+      // Regenerate the value of the key prop of the canvas to rerender it after resetting poses
+      canvasKey.value = `logo-canvas-${Math.random()}`;
+    },
+    // Wait 1ms on mobile to ensure window has loaded
+    isMobileOrTablet ? 1 : 0,
+  );
 };
 
 onMounted(() => {
@@ -122,14 +128,18 @@ watchEffect(() => {
 
 <template>
   <section
-    class="h-[140vh] md:h-[170vh] mb-[-70vh] md:mb-[-80vh] cursor-pointer"
+    class="relative z-0 h-[140vh] md:h-[170vh] mb-[-70vh] md:mb-[-80vh] cursor-pointer"
   >
+    <div
+      v-if="isLandscape && isMobileOrTablet"
+      class="absolute z-10 top-0 left-0 w-full h-full"
+    ></div>
     <h1 class="visually-hidden">Tim RL dot AI</h1>
     <h2 class="visually-hidden">A full stack team in one Tim!</h2>
     <TresCanvas :key="canvasKey" :clear-color="canvasColor" shadows alpha>
       <TresPerspectiveCamera :position="[0, 0, 1]" />
       <OrbitControls
-        v-if="!(isMobileOrTablet && isLandscape)"
+        v-if="!(isLandscape && isMobileOrTablet)"
         :minDistance="0"
         :maxDistance="Infinity"
         :minPolarAngle="0"

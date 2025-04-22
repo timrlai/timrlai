@@ -51,7 +51,7 @@ const {
   WIDE_EXPLANATION_ROTATION,
 } = constants;
 
-let isPortrait: boolean = false;
+let isPortrait: boolean = true;
 let isLandscape: boolean = false;
 let lottiePosition: [number, number, number] = PORTRAIT_LOTTIE_POSITION;
 let lottieRotation: [number, number, number] = PORTRAIT_LOTTIE_ROTATION;
@@ -67,41 +67,49 @@ const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
 const randomNotFoundLottie: string = `/lottie/404/${notFoundLotties[Math.floor(Math.random() * notFoundLotties.length)]}`;
 
 const setPoses = () => {
-  const width: number = window?.innerWidth;
-  const height: number = window?.innerHeight;
+  setTimeout(
+    () => {
+      const width: number = window?.innerWidth;
+      const height: number = window?.innerHeight;
 
-  if (!width || !height) return;
+      if (!width || !height) return;
 
-  isPortrait = width < WIDTH_BREAKPOINT;
-  isLandscape = height < HEIGHT_BREAKPOINT;
+      isPortrait = width <= WIDTH_BREAKPOINT && width < height;
+      isLandscape = height <= HEIGHT_BREAKPOINT && height < width;
 
-  lottiePosition = isPortrait
-    ? PORTRAIT_LOTTIE_POSITION
-    : isLandscape
-      ? LANDSCAPE_LOTTIE_POSITION
-      : DESKTOP_LOTTIE_POSITION;
-  lottieRotation = isPortrait ? PORTRAIT_LOTTIE_ROTATION : WIDE_LOTTIE_ROTATION;
-  lottieScale = isPortrait
-    ? PORTRAIT_LOTTIE_SCALE
-    : isLandscape
-      ? LANDSCAPE_LOTTIE_SCALE
-      : DESKTOP_LOTTIE_SCALE;
-  explanationPosition = isPortrait
-    ? PORTRAIT_EXPLANATION_POSITION
-    : isLandscape
-      ? LANDSCAPE_EXPLANATION_POSITION
-      : DESKTOP_EXPLANATION_POSITION;
-  explanationRotation = isPortrait
-    ? PORTRAIT_EXPLANATION_ROTATION
-    : WIDE_EXPLANATION_ROTATION;
-  explanationScale = isPortrait
-    ? PORTRAIT_EXPLANATION_SCALE
-    : isLandscape
-      ? LANDSCAPE_EXPLANATION_SCALE
-      : DESKTOP_EXPLANATION_SCALE;
+      lottiePosition = isPortrait
+        ? PORTRAIT_LOTTIE_POSITION
+        : isLandscape
+          ? LANDSCAPE_LOTTIE_POSITION
+          : DESKTOP_LOTTIE_POSITION;
+      lottieRotation = isPortrait
+        ? PORTRAIT_LOTTIE_ROTATION
+        : WIDE_LOTTIE_ROTATION;
+      lottieScale = isPortrait
+        ? PORTRAIT_LOTTIE_SCALE
+        : isLandscape
+          ? LANDSCAPE_LOTTIE_SCALE
+          : DESKTOP_LOTTIE_SCALE;
+      explanationPosition = isPortrait
+        ? PORTRAIT_EXPLANATION_POSITION
+        : isLandscape
+          ? LANDSCAPE_EXPLANATION_POSITION
+          : DESKTOP_EXPLANATION_POSITION;
+      explanationRotation = isPortrait
+        ? PORTRAIT_EXPLANATION_ROTATION
+        : WIDE_EXPLANATION_ROTATION;
+      explanationScale = isPortrait
+        ? PORTRAIT_EXPLANATION_SCALE
+        : isLandscape
+          ? LANDSCAPE_EXPLANATION_SCALE
+          : DESKTOP_EXPLANATION_SCALE;
 
-  // Regenerate the value of the key prop of the canvas to rerender it after resetting poses
-  canvasKey.value = `not-found-canvas-${Math.random()}`;
+      // Regenerate the value of the key prop of the canvas to rerender it after resetting poses
+      canvasKey.value = `not-found-canvas-${Math.random()}`;
+    },
+    // Wait 1ms on mobile to ensure window has loaded
+    isMobileOrTablet ? 1 : 0,
+  );
 };
 
 onMounted(() => {
@@ -121,8 +129,12 @@ watchEffect(() => {
 
 <template>
   <section
-    class="h-[90vh] md:h-[100vh] mb-[-20vh] md:mb-[-10vh] cursor-pointer"
+    class="relative z-0 h-[90vh] md:h-[100vh] mb-[-20vh] md:mb-[-10vh] cursor-pointer"
   >
+    <div
+      v-if="isLandscape && isMobileOrTablet"
+      class="absolute z-10 top-0 left-0 w-full h-full"
+    ></div>
     <h1 class="visually-hidden">Four Oh Four</h1>
     <h2 class="visually-hidden">Oopsie Woopsie!</h2>
     <h3 class="visually-hidden">Page Not Found!</h3>
@@ -132,7 +144,7 @@ watchEffect(() => {
     <TresCanvas :key="canvasKey" :clear-color="canvasColor" shadows alpha>
       <TresPerspectiveCamera :position="[0, 0, 1]" />
       <OrbitControls
-        v-if="!(isMobileOrTablet && isLandscape)"
+        v-if="!(isLandscape && isMobileOrTablet)"
         :minDistance="0"
         :maxDistance="Infinity"
         :minPolarAngle="0"
