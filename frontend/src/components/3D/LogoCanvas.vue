@@ -11,7 +11,9 @@ import type { Scene } from "three";
 import isMobile from "is-mobile";
 import { TresCanvas } from "@tresjs/core";
 import { useGLTF, OrbitControls, Text3D } from "@tresjs/cientos";
+
 import type { LogoCanvasProps } from "../../../lib/types";
+import constants from "../../../lib/constants/LogoCanvas";
 import LottieSphere from "./LottieSphere.vue";
 import GLCloud from "./GLCloud.vue";
 
@@ -27,28 +29,26 @@ const {
   fontSize = 1,
 } = defineProps<LogoCanvasProps>();
 
-const WIDTH_BREAKPOINT: number = 950;
-const HEIGHT_BREAKPOINT: number = 750;
-
-const PORTRAIT_LOGO_POSITION: [number, number, number] = [-2.3, 6.6, -25];
-const PORTRAIT_LOGO_ROTATION: [number, number, number] = [0.5, 0, 0];
-const PORTRAIT_LOGO_SCALE: number = 25;
-const PORTRAIT_TAGLINE_POSITION: [number, number, number] = [0, 2, -15];
-const PORTRAIT_TAGLINE_ROTATION: [number, number, number] = [-0.5, 0, 0];
-const PORTRAIT_TAGLINE_SCALE: number = 0.7;
-
-const LANDSCAPE_LOGO_POSITION: [number, number, number] = [-9, 1, -25];
-const LANDSCAPE_LOGO_SCALE: number = 50;
-const LANDSCAPE_TAGLINE_POSITION: [number, number, number] = [3, 2.7, -15];
-const LANDSCAPE_TAGLINE_SCALE: number = 0.8;
-
-const DESKTOP_LOGO_POSITION: [number, number, number] = [-10.5, 1, -25];
-const DESKTOP_LOGO_SCALE: number = 60;
-const DESKTOP_TAGLINE_POSITION: [number, number, number] = [3.5, 3, -15];
-const DESKTOP_TAGLINE_SCALE: number = 1;
-
-const WIDE_LOGO_ROTATION: [number, number, number] = [0, 0.2, 0];
-const WIDE_TAGLINE_ROTATION: [number, number, number] = [0, -0.5, 0];
+const {
+  WIDTH_BREAKPOINT,
+  HEIGHT_BREAKPOINT,
+  PORTRAIT_LOGO_POSITION,
+  PORTRAIT_LOGO_ROTATION,
+  PORTRAIT_LOGO_SCALE,
+  PORTRAIT_TAGLINE_POSITION,
+  PORTRAIT_TAGLINE_ROTATION,
+  PORTRAIT_TAGLINE_SCALE,
+  LANDSCAPE_LOGO_POSITION,
+  LANDSCAPE_LOGO_SCALE,
+  LANDSCAPE_TAGLINE_POSITION,
+  LANDSCAPE_TAGLINE_SCALE,
+  DESKTOP_LOGO_POSITION,
+  DESKTOP_LOGO_SCALE,
+  DESKTOP_TAGLINE_POSITION,
+  DESKTOP_TAGLINE_SCALE,
+  WIDE_LOGO_ROTATION,
+  WIDE_TAGLINE_ROTATION,
+} = constants;
 
 let isPortrait: boolean = false;
 let isLandscape: boolean = false;
