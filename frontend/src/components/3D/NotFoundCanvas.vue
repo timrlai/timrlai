@@ -29,17 +29,43 @@ const {
   explanationFontSize = 0.7,
 } = defineProps<NotFoundCanvasProps>();
 
+const WIDTH_BREAKPOINT: number = 950;
+const HEIGHT_BREAKPOINT: number = 750;
+
+const PORTRAIT_LOTTIE_POSITION: [number, number, number] = [0, 3.7, -15];
+const PORTRAIT_LOTTIE_ROTATION: [number, number, number] = [0.5, -0.7, 0];
+const PORTRAIT_LOTTIE_SCALE: number = 0.6;
+const PORTRAIT_EXPLANATION_POSITION: [number, number, number] = [0, -0.3, -15];
+const PORTRAIT_EXPLANATION_ROTATION: [number, number, number] = [-0.5, 0, 0];
+const PORTRAIT_EXPLANATION_SCALE: number = 0.5;
+
+const LANDSCAPE_LOTTIE_POSITION: [number, number, number] = [-5, 0, -15];
+const LANDSCAPE_LOTTIE_SCALE: number = 0.8;
+const LANDSCAPE_EXPLANATION_POSITION: [number, number, number] = [3, 2, -15];
+const LANDSCAPE_EXPLANATION_SCALE: number = 0.8;
+
+const DESKTOP_LOTTIE_POSITION: [number, number, number] = [-6, 0, -15];
+const DESKTOP_LOTTIE_SCALE: number = 1;
+const DESKTOP_EXPLANATION_POSITION: [number, number, number] = [5, 3.5, -15];
+const DESKTOP_EXPLANATION_SCALE: number = 1;
+
+const WIDE_LOTTIE_ROTATION: [number, number, number] = [0, -0.5, 0];
+const WIDE_EXPLANATION_ROTATION: [number, number, number] = [0, -0.5, 0];
+
 let isPortrait: boolean = false;
 let isLandscape: boolean = false;
-let lottiePosition: [number, number, number] = [-6, 0, -15];
-let lottieRotation: [number, number, number] = [0, -0.5, 0];
-let lottieScale: number = 1;
-let explanationPosition: [number, number, number] = [5, 3.5, -15];
-let explanationRotation: [number, number, number] = [0, -0.5, 0];
-let explanationScale: number = 1;
+let lottiePosition: [number, number, number] = PORTRAIT_LOTTIE_POSITION;
+let lottieRotation: [number, number, number] = PORTRAIT_LOTTIE_ROTATION;
+let lottieScale: number = PORTRAIT_LOTTIE_SCALE;
+let explanationPosition: [number, number, number] =
+  PORTRAIT_EXPLANATION_POSITION;
+let explanationRotation: [number, number, number] =
+  PORTRAIT_EXPLANATION_ROTATION;
+let explanationScale: number = PORTRAIT_EXPLANATION_SCALE;
+
 const canvasKey: Ref<string> = ref("not-found-canvas");
 const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
-const randomNotFoundLottie = `/lottie/404/${notFoundLotties[Math.floor(Math.random() * notFoundLotties.length)]}`;
+const randomNotFoundLottie: string = `/lottie/404/${notFoundLotties[Math.floor(Math.random() * notFoundLotties.length)]}`;
 
 const setPoses = () => {
   const width: number = window?.innerWidth;
@@ -47,23 +73,34 @@ const setPoses = () => {
 
   if (!width || !height) return;
 
-  isPortrait = width < 750;
-  isLandscape = height < 750;
+  isPortrait = width < WIDTH_BREAKPOINT;
+  isLandscape = height < HEIGHT_BREAKPOINT;
 
   lottiePosition = isPortrait
-    ? [0, 3.7, -15]
+    ? PORTRAIT_LOTTIE_POSITION
     : isLandscape
-      ? [-5, 0, -15]
-      : [-6, 0, -15];
-  lottieRotation = isPortrait ? [0.5, -0.7, 0] : [0, -0.5, 0];
-  lottieScale = isPortrait ? 0.6 : isLandscape ? 0.8 : 1;
+      ? LANDSCAPE_LOTTIE_POSITION
+      : DESKTOP_LOTTIE_POSITION;
+  lottieRotation = isPortrait ? PORTRAIT_LOTTIE_ROTATION : WIDE_LOTTIE_ROTATION;
+  lottieScale = isPortrait
+    ? PORTRAIT_LOTTIE_SCALE
+    : isLandscape
+      ? LANDSCAPE_LOTTIE_SCALE
+      : DESKTOP_LOTTIE_SCALE;
   explanationPosition = isPortrait
-    ? [0, -0.3, -15]
+    ? PORTRAIT_EXPLANATION_POSITION
     : isLandscape
-      ? [3, 2, -15]
-      : [5, 3.5, -15];
-  explanationRotation = isPortrait ? [-0.5, 0, 0] : [0, -0.5, 0];
-  explanationScale = isPortrait ? 0.5 : isLandscape ? 0.8 : 1;
+      ? LANDSCAPE_EXPLANATION_POSITION
+      : DESKTOP_EXPLANATION_POSITION;
+  explanationRotation = isPortrait
+    ? PORTRAIT_EXPLANATION_ROTATION
+    : WIDE_EXPLANATION_ROTATION;
+  explanationScale = isPortrait
+    ? PORTRAIT_EXPLANATION_SCALE
+    : isLandscape
+      ? LANDSCAPE_EXPLANATION_SCALE
+      : DESKTOP_EXPLANATION_SCALE;
+
   // Regenerate the value of the key prop of the canvas to rerender it after resetting poses
   canvasKey.value = `not-found-canvas-${Math.random()}`;
 };
