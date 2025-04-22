@@ -121,8 +121,12 @@ watchEffect(() => {
 
 <template>
   <section
-    class="h-[90vh] md:h-[100vh] mb-[-20vh] md:mb-[-10vh] cursor-pointer"
+    class="relative z-0 h-[90vh] md:h-[100vh] mb-[-20vh] md:mb-[-10vh] cursor-pointer"
   >
+    <div
+      v-if="isLandscape && isMobileOrTablet"
+      class="absolute z-10 top-0 left-0 w-full h-full"
+    ></div>
     <h1 class="visually-hidden">Four Oh Four</h1>
     <h2 class="visually-hidden">Oopsie Woopsie!</h2>
     <h3 class="visually-hidden">Page Not Found!</h3>
@@ -132,7 +136,7 @@ watchEffect(() => {
     <TresCanvas :key="canvasKey" :clear-color="canvasColor" shadows alpha>
       <TresPerspectiveCamera :position="[0, 0, 1]" />
       <OrbitControls
-        v-if="!(isMobileOrTablet && isLandscape)"
+        v-if="!(isLandscape && isMobileOrTablet)"
         :minDistance="0"
         :maxDistance="Infinity"
         :minPolarAngle="0"

@@ -122,14 +122,18 @@ watchEffect(() => {
 
 <template>
   <section
-    class="h-[140vh] md:h-[170vh] mb-[-70vh] md:mb-[-80vh] cursor-pointer"
+    class="relative z-0 h-[140vh] md:h-[170vh] mb-[-70vh] md:mb-[-80vh] cursor-pointer"
   >
+    <div
+      v-if="isLandscape && isMobileOrTablet"
+      class="absolute z-10 top-0 left-0 w-full h-full"
+    ></div>
     <h1 class="visually-hidden">Tim RL dot AI</h1>
     <h2 class="visually-hidden">A full stack team in one Tim!</h2>
     <TresCanvas :key="canvasKey" :clear-color="canvasColor" shadows alpha>
       <TresPerspectiveCamera :position="[0, 0, 1]" />
       <OrbitControls
-        v-if="!(isMobileOrTablet && isLandscape)"
+        v-if="!(isLandscape && isMobileOrTablet)"
         :minDistance="0"
         :maxDistance="Infinity"
         :minPolarAngle="0"
