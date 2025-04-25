@@ -50,6 +50,8 @@ const {
   WIDE_TAGLINE_ROTATION,
 } = constants;
 
+let width: number = window?.innerWidth || WIDTH_BREAKPOINT;
+let height: number = window?.innerHeight || HEIGHT_BREAKPOINT;
 let isPortrait: boolean = true;
 let isLandscape: boolean = false;
 let logoPosition: [number, number, number] = PORTRAIT_LOGO_POSITION;
@@ -67,11 +69,13 @@ let logoModel: Scene = scene;
 const setPoses = () => {
   setTimeout(
     async () => {
-      const width: number = window?.innerWidth;
-      const height: number = window?.innerHeight;
+      const currentWidth: number = window?.innerWidth;
+      const currentHeight: number = window?.innerHeight;
 
-      if (!width || !height) return;
+      if (!currentWidth || !currentHeight || currentWidth === width) return;
 
+      width = currentWidth;
+      height = currentHeight;
       isPortrait = width <= WIDTH_BREAKPOINT && width < height;
       isLandscape = height <= HEIGHT_BREAKPOINT && height < width;
 
