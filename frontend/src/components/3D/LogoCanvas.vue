@@ -66,13 +66,18 @@ const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
 const { scene } = await useGLTF(gltfPath, { draco: true });
 let logoModel: Scene = scene;
 
-const setPoses = () => {
+const setPoses = (event: Event | null = null) => {
   setTimeout(
     async () => {
       const currentWidth: number = window?.innerWidth;
       const currentHeight: number = window?.innerHeight;
 
-      if (!currentWidth || !currentHeight || currentWidth === width) return;
+      if (
+        !currentWidth ||
+        !currentHeight ||
+        (event && event.type === "resize" && currentWidth === width)
+      )
+        return;
 
       width = currentWidth;
       height = currentHeight;
