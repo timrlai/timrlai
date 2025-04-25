@@ -1,33 +1,13 @@
 <script setup lang="ts">
-import {
-  type Ref,
-  defineProps,
-  ref,
-  onMounted,
-  onUnmounted,
-  watchEffect,
-} from "vue";
+import { type Ref, ref, onMounted, onUnmounted, watchEffect } from "vue";
 import type { Scene } from "three";
 import isMobile from "is-mobile";
 import { TresCanvas } from "@tresjs/core";
 import { useGLTF, OrbitControls, Text3D } from "@tresjs/cientos";
 
-import type { LogoCanvasProps } from "../../../lib/types";
 import constants from "../../../lib/constants/LogoCanvas";
 import LottieSphere from "./LottieSphere.vue";
 import GLCloud from "./GLCloud.vue";
-
-const {
-  canvasColor = "#C0FCF9",
-  textColor = "#006177",
-  ambientLightColor = "#C0FCF9",
-  directionalLightColor = "#FFFAD4",
-  verticalRotationLimit = 1.6,
-  horizontalRotationLimit = 6,
-  gltfPath = "/models/timrlai_logo.gltf",
-  fontPath = "/fonts/ubuntu_titling/Ubuntu_Titlin_Rg_Bold.json",
-  fontSize = 1,
-} = defineProps<LogoCanvasProps>();
 
 const {
   WIDTH_BREAKPOINT,
@@ -48,8 +28,19 @@ const {
   DESKTOP_TAGLINE_SCALE,
   WIDE_LOGO_ROTATION,
   WIDE_TAGLINE_ROTATION,
+  CANVAS_COLOR,
+  TEXT_COLOR,
+  AMBIENT_LIGHT_COLOR,
+  DIRECTIONAL_LIGHT_COLOR,
+  VERTICAL_ROTATION_LIMIT,
+  HORIZONTAL_ROTATION_LIMIT,
+  FONT_PATH,
+  FONT_SIZE,
+  LOGO_GLTF_PATH,
 } = constants;
 
+let width: number = window?.innerWidth || WIDTH_BREAKPOINT;
+let height: number = window?.innerHeight || HEIGHT_BREAKPOINT;
 let isPortrait: boolean = true;
 let isLandscape: boolean = false;
 let logoPosition: [number, number, number] = PORTRAIT_LOGO_POSITION;
@@ -61,17 +52,24 @@ let taglineScale: number = PORTRAIT_TAGLINE_SCALE;
 
 const canvasKey: Ref<string> = ref("logo-canvas");
 const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
-const { scene } = await useGLTF(gltfPath, { draco: true });
+const { scene } = await useGLTF(LOGO_GLTF_PATH, { draco: true });
 let logoModel: Scene = scene;
 
-const setPoses = () => {
+const setPoses = (event: Event | null = null) => {
   setTimeout(
     async () => {
-      const width: number = window?.innerWidth;
-      const height: number = window?.innerHeight;
+      const currentWidth: number = window?.innerWidth;
+      const currentHeight: number = window?.innerHeight;
 
-      if (!width || !height) return;
+      if (
+        !currentWidth ||
+        !currentHeight ||
+        (event && event.type === "resize" && currentWidth === width)
+      )
+        return;
 
+      width = currentWidth;
+      height = currentHeight;
       isPortrait = width <= WIDTH_BREAKPOINT && width < height;
       isLandscape = height <= HEIGHT_BREAKPOINT && height < width;
 
@@ -100,7 +98,7 @@ const setPoses = () => {
           ? LANDSCAPE_TAGLINE_SCALE
           : DESKTOP_TAGLINE_SCALE;
 
-      const { scene } = await useGLTF(gltfPath, { draco: true });
+      const { scene } = await useGLTF(LOGO_GLTF_PATH, { draco: true });
       logoModel = scene;
 
       // Regenerate the value of the key prop of the canvas to rerender it after resetting poses
@@ -136,16 +134,16 @@ watchEffect(() => {
     ></div>
     <h1 class="visually-hidden">Tim RL dot AI</h1>
     <h2 class="visually-hidden">A full stack team in one Tim!</h2>
-    <TresCanvas :key="canvasKey" :clear-color="canvasColor" shadows alpha>
+    <TresCanvas :key="canvasKey" :clear-color="CANVAS_COLOR" shadows alpha>
       <TresPerspectiveCamera :position="[0, 0, 1]" />
       <OrbitControls
         v-if="!(isLandscape && isMobileOrTablet)"
         :minDistance="0"
         :maxDistance="Infinity"
         :minPolarAngle="0"
-        :maxPolarAngle="Math.PI / verticalRotationLimit"
-        :minAzimuthAngle="-(Math.PI / horizontalRotationLimit)"
-        :maxAzimuthAngle="Math.PI / horizontalRotationLimit"
+        :maxPolarAngle="Math.PI / VERTICAL_ROTATION_LIMIT"
+        :minAzimuthAngle="-(Math.PI / HORIZONTAL_ROTATION_LIMIT)"
+        :maxAzimuthAngle="Math.PI / HORIZONTAL_ROTATION_LIMIT"
       />
       <Suspense>
         <LottieSphere src="/lottie/clouds_lottie.json" />
@@ -164,26 +162,26 @@ watchEffect(() => {
       >
         <Suspense
           ><TresMesh :position="[0, 2, 0]"
-            ><Text3D :font="fontPath" :size="fontSize"
-              >A FULL <TresMeshStandardMaterial :color="textColor" /></Text3D
+            ><Text3D :font="FONT_PATH" :size="FONT_SIZE"
+              >A FULL <TresMeshStandardMaterial :color="TEXT_COLOR" /></Text3D
           ></TresMesh>
         </Suspense>
         <Suspense
           ><TresMesh :position="[0, 0.7, 0]"
-            ><Text3D :font="fontPath" :size="fontSize"
-              >STACK <TresMeshStandardMaterial :color="textColor" /></Text3D
+            ><Text3D :font="FONT_PATH" :size="FONT_SIZE"
+              >STACK <TresMeshStandardMaterial :color="TEXT_COLOR" /></Text3D
           ></TresMesh>
         </Suspense>
         <Suspense
           ><TresMesh :position="[0, -0.7, 0]"
-            ><Text3D :font="fontPath" :size="fontSize"
-              >TEAM iN <TresMeshStandardMaterial :color="textColor" /></Text3D
+            ><Text3D :font="FONT_PATH" :size="FONT_SIZE"
+              >TEAM iN <TresMeshStandardMaterial :color="TEXT_COLOR" /></Text3D
           ></TresMesh>
         </Suspense>
         <Suspense
           ><TresMesh :position="[0, -2, 0]"
-            ><Text3D :font="fontPath" :size="fontSize"
-              >ONE TiM! <TresMeshStandardMaterial :color="textColor" /></Text3D
+            ><Text3D :font="FONT_PATH" :size="FONT_SIZE"
+              >ONE TiM! <TresMeshStandardMaterial :color="TEXT_COLOR" /></Text3D
           ></TresMesh>
         </Suspense>
       </TresMesh>
@@ -193,13 +191,13 @@ watchEffect(() => {
       <TresAmbientLight
         :position="[0, 10, 0]"
         :intensity="5"
-        :color="ambientLightColor"
+        :color="AMBIENT_LIGHT_COLOR"
       />
       <TresDirectionalLight
         :position="[-4, 8, 4]"
         :rotation="[0, 0, 0]"
         :intensity="10"
-        :color="directionalLightColor"
+        :color="DIRECTIONAL_LIGHT_COLOR"
       />
     </TresCanvas>
   </section>

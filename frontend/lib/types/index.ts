@@ -89,29 +89,19 @@ export type LottieCylinderProps = LottieShapeProps & {
   theataEnd?: number;
 };
 
-export type CloudCanvasProps = {
-  canvasColor?: string;
-  textColor?: string;
-  ambientLightColor?: string;
-  directionalLightColor?: string;
-  verticalRotationLimit?: number;
-  horizontalRotationLimit?: number;
-  fontPath?: string;
-};
-
-export type LogoCanvasProps = CloudCanvasProps & {
-  gltfPath?: string;
-  fontSize?: number;
-};
-
-export type NotFoundCanvasProps = CloudCanvasProps & {
-  titleFontSize?: number;
-  explanationFontSize?: number;
-};
-
-export type LogoCanvasConstants = {
+type CanvasConstants = {
   readonly WIDTH_BREAKPOINT: number;
   readonly HEIGHT_BREAKPOINT: number;
+  readonly CANVAS_COLOR: string;
+  readonly TEXT_COLOR: string;
+  readonly AMBIENT_LIGHT_COLOR: string;
+  readonly DIRECTIONAL_LIGHT_COLOR: string;
+  readonly VERTICAL_ROTATION_LIMIT: number;
+  readonly HORIZONTAL_ROTATION_LIMIT: number;
+  readonly FONT_PATH: string;
+};
+
+export type LogoCanvasConstants = CanvasConstants & {
   readonly PORTRAIT_LOGO_POSITION: [number, number, number];
   readonly PORTRAIT_LOGO_ROTATION: [number, number, number];
   readonly PORTRAIT_LOGO_SCALE: number;
@@ -128,9 +118,11 @@ export type LogoCanvasConstants = {
   readonly DESKTOP_TAGLINE_SCALE: number;
   readonly WIDE_LOGO_ROTATION: [number, number, number];
   readonly WIDE_TAGLINE_ROTATION: [number, number, number];
+  readonly LOGO_GLTF_PATH: string;
+  readonly FONT_SIZE: number;
 };
 
-export type NotFoundCanvasConstants = {
+export type NotFoundCanvasConstants = CanvasConstants & {
   readonly WIDTH_BREAKPOINT: number;
   readonly HEIGHT_BREAKPOINT: number;
   readonly PORTRAIT_LOTTIE_POSITION: [number, number, number];
@@ -149,4 +141,6 @@ export type NotFoundCanvasConstants = {
   readonly DESKTOP_EXPLANATION_SCALE: number;
   readonly WIDE_LOTTIE_ROTATION: [number, number, number];
   readonly WIDE_EXPLANATION_ROTATION: [number, number, number];
+  readonly TITLE_FONT_SIZE: number;
+  readonly EXPLANATION_FONT_SIZE: number;
 };
