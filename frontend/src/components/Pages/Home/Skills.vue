@@ -40,17 +40,17 @@ const randomizedSkills = [...primarySkills]
       </h1>
     </div>
     <div
-      class="mockup-code bg-slate-800 text-slate-300 border-x-4 border-primary rounded-none shadow-lg shadow-primary fira-code"
+      class="mockup-code bg-slate-800 text-slate-300 border-x-4 border-primary rounded-none shadow-lg shadow-primary fira-code overflow-x-hidden"
     >
       <div class="px-5">
-        <h2 class="text-2xl sm:text-3xl mb-4 code-comment-inline">
+        <h2 class="text-xl sm:text-2xl mb-4 code-comment-inline">
           Technical Skills
           <Icon icon="fluent-color:code-20" class="inline-block" /><Icon
             icon="fluent-color:design-ideas-20"
             class="inline-block"
           />
         </h2>
-        <div class="text-xl/10 sm:text-2xl/12">
+        <div class="text-lg/8 sm:text-xl/10">
           <p class="code-comment-block">
             My skills include developing, designing, testing, debugging and
             troubleshooting websites and applications in a wide variety of
@@ -102,7 +102,7 @@ const randomizedSkills = [...primarySkills]
         </div>
         <div class="collapse collapse-plus mt-5">
           <input type="checkbox" />
-          <h3 class="collapse-title text-xl sm:text-2xl ubuntu-bold bg-neutral">
+          <h3 class="collapse-title text-lg sm:text-xl ubuntu-bold bg-neutral">
             Click to View All Technical Skills
           </h3>
           <div class="overflow-x-auto">
@@ -273,14 +273,16 @@ const randomizedSkills = [...primarySkills]
           </div>
         </div>
         <div class="mt-8">
-          <h2 class="text-2xl sm:text-3xl mb-4 code-comment-inline">
+          <h2 class="text-xl sm:text-2xl mb-4 code-comment-inline">
             This Site Was Made With...
             <Icon icon="fluent-color:code-20" class="inline-block" /><Icon
               icon="fluent-color:design-ideas-20"
               class="inline-block"
             />
           </h2>
-          <div class="flex flex-wrap gap-2 text-7xl sm:text-9xl">
+          <div
+            class="flex flex-wrap gap-2 text-6xl sm:text-7xl md:text-8xl lg:text-9xl"
+          >
             <div
               v-for="skills in madeWithSkills"
               v-bind:key="skills.title"
