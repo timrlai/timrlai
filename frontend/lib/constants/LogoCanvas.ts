@@ -19,6 +19,15 @@ const constants: LogoCanvasConstants = {
   DESKTOP_TAGLINE_SCALE: 1,
   WIDE_LOGO_ROTATION: [0, 0.2, 0],
   WIDE_TAGLINE_ROTATION: [0, -0.5, 0],
+  CANVAS_COLOR: "#C0FCF9",
+  TEXT_COLOR: "#006177",
+  AMBIENT_LIGHT_COLOR: "#C0FCF9",
+  DIRECTIONAL_LIGHT_COLOR: "#FFFAD4",
+  VERTICAL_ROTATION_LIMIT: 1.6,
+  HORIZONTAL_ROTATION_LIMIT: 6,
+  FONT_PATH: "/fonts/ubuntu_titling/Ubuntu_Titlin_Rg_Bold.json",
+  FONT_SIZE: 1,
+  LOGO_GLTF_PATH: "/models/timrlai_logo.gltf",
 };
 
 export default constants;

@@ -1,34 +1,14 @@
 <script setup lang="ts">
-import {
-  type Ref,
-  defineProps,
-  ref,
-  onMounted,
-  onUnmounted,
-  watchEffect,
-} from "vue";
+import { type Ref, ref, onMounted, onUnmounted, watchEffect } from "vue";
 import isMobile from "is-mobile";
 import { TresCanvas } from "@tresjs/core";
 import { OrbitControls, Text3D } from "@tresjs/cientos";
 
-import type { NotFoundCanvasProps } from "../../../lib/types";
 import { notFoundLotties } from "../../../lib/constants";
 import constants from "../../../lib/constants/NotFoundCanvas";
 import LottieSphere from "./LottieSphere.vue";
 import LottieCylinder from "./LottieCylinder.vue";
 import GLCloud from "./GLCloud.vue";
-
-const {
-  canvasColor = "#C0FCF9",
-  textColor = "#006177",
-  ambientLightColor = "#C0FCF9",
-  directionalLightColor = "#FFFAD4",
-  verticalRotationLimit = 1.6,
-  horizontalRotationLimit = 6,
-  fontPath = "/fonts/ubuntu_titling/Ubuntu_Titlin_Rg_Bold.json",
-  titleFontSize = 1,
-  explanationFontSize = 0.7,
-} = defineProps<NotFoundCanvasProps>();
 
 const {
   WIDTH_BREAKPOINT,
@@ -49,6 +29,15 @@ const {
   DESKTOP_EXPLANATION_SCALE,
   WIDE_LOTTIE_ROTATION,
   WIDE_EXPLANATION_ROTATION,
+  CANVAS_COLOR,
+  TEXT_COLOR,
+  AMBIENT_LIGHT_COLOR,
+  DIRECTIONAL_LIGHT_COLOR,
+  VERTICAL_ROTATION_LIMIT,
+  HORIZONTAL_ROTATION_LIMIT,
+  FONT_PATH,
+  TITLE_FONT_SIZE,
+  EXPLANATION_FONT_SIZE,
 } = constants;
 
 let width: number = window?.innerWidth || WIDTH_BREAKPOINT;
@@ -150,16 +139,16 @@ watchEffect(() => {
     <p class="visually-hidden">
       Sorry, the page {{ $route.path }} is not in the cloud.
     </p>
-    <TresCanvas :key="canvasKey" :clear-color="canvasColor" shadows alpha>
+    <TresCanvas :key="canvasKey" :clear-color="CANVAS_COLOR" shadows alpha>
       <TresPerspectiveCamera :position="[0, 0, 1]" />
       <OrbitControls
         v-if="!(isLandscape && isMobileOrTablet)"
         :minDistance="0"
         :maxDistance="Infinity"
         :minPolarAngle="0"
-        :maxPolarAngle="Math.PI / verticalRotationLimit"
-        :minAzimuthAngle="-(Math.PI / horizontalRotationLimit)"
-        :maxAzimuthAngle="Math.PI / horizontalRotationLimit"
+        :maxPolarAngle="Math.PI / VERTICAL_ROTATION_LIMIT"
+        :minAzimuthAngle="-(Math.PI / HORIZONTAL_ROTATION_LIMIT)"
+        :maxAzimuthAngle="Math.PI / HORIZONTAL_ROTATION_LIMIT"
       />
       <Suspense>
         <LottieSphere src="/lottie/clouds_lottie.json" />
@@ -179,30 +168,30 @@ watchEffect(() => {
       >
         <Suspense
           ><TresMesh :position="[0, -1, 0]"
-            ><Text3D :font="fontPath" :size="titleFontSize"
+            ><Text3D :font="FONT_PATH" :size="TITLE_FONT_SIZE"
               >OOPSiE WOOPSiE!
-              <TresMeshStandardMaterial :color="textColor" /></Text3D
+              <TresMeshStandardMaterial :color="TEXT_COLOR" /></Text3D
           ></TresMesh>
         </Suspense>
         <Suspense
           ><TresMesh :position="[0, -2.7, 0]"
-            ><Text3D :font="fontPath" :size="titleFontSize"
+            ><Text3D :font="FONT_PATH" :size="TITLE_FONT_SIZE"
               >PAGE NOT FOUND!
-              <TresMeshStandardMaterial :color="textColor" /></Text3D
+              <TresMeshStandardMaterial :color="TEXT_COLOR" /></Text3D
           ></TresMesh>
         </Suspense>
         <Suspense
           ><TresMesh :position="[0, -4.7, 0]"
-            ><Text3D :font="fontPath" :size="explanationFontSize"
+            ><Text3D :font="FONT_PATH" :size="EXPLANATION_FONT_SIZE"
               >Sowwy, the page "{{ $route.path }}"
-              <TresMeshStandardMaterial :color="textColor" /></Text3D
+              <TresMeshStandardMaterial :color="TEXT_COLOR" /></Text3D
           ></TresMesh>
         </Suspense>
         <Suspense
           ><TresMesh :position="[0, -6, 0]"
-            ><Text3D :font="fontPath" :size="explanationFontSize"
+            ><Text3D :font="FONT_PATH" :size="EXPLANATION_FONT_SIZE"
               >is not in the cloud.
-              <TresMeshStandardMaterial :color="textColor" /></Text3D
+              <TresMeshStandardMaterial :color="TEXT_COLOR" /></Text3D
           ></TresMesh>
         </Suspense>
       </TresMesh>
@@ -212,13 +201,13 @@ watchEffect(() => {
       <TresAmbientLight
         :position="[0, 10, 0]"
         :intensity="5"
-        :color="ambientLightColor"
+        :color="AMBIENT_LIGHT_COLOR"
       />
       <TresDirectionalLight
         :position="[-4, 8, 4]"
         :rotation="[0, 0, 0]"
         :intensity="10"
-        :color="directionalLightColor"
+        :color="DIRECTIONAL_LIGHT_COLOR"
       />
     </TresCanvas>
   </section>

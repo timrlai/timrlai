@@ -19,6 +19,15 @@ const constants: NotFoundCanvasConstants = {
   DESKTOP_EXPLANATION_SCALE: 1,
   WIDE_LOTTIE_ROTATION: [0, -0.5, 0],
   WIDE_EXPLANATION_ROTATION: [0, -0.5, 0],
+  CANVAS_COLOR: "#C0FCF9",
+  TEXT_COLOR: "#006177",
+  AMBIENT_LIGHT_COLOR: "#C0FCF9",
+  DIRECTIONAL_LIGHT_COLOR: "#FFFAD4",
+  VERTICAL_ROTATION_LIMIT: 1.6,
+  HORIZONTAL_ROTATION_LIMIT: 6,
+  FONT_PATH: "/fonts/ubuntu_titling/Ubuntu_Titlin_Rg_Bold.json",
+  TITLE_FONT_SIZE: 1,
+  EXPLANATION_FONT_SIZE: 0.7,
 };
 
 export default constants;
