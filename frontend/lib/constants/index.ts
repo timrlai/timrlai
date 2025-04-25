@@ -1,4 +1,26 @@
-import type { SubItem, SocialButton, Skill } from "../types";
+import type {
+  SvgConstants,
+  LottieConstants,
+  SubItem,
+  SocialButton,
+  Skill,
+} from "../types";
+
+export const svgConstants: SvgConstants = {
+  LOGO_DARK_SVG_PATH: "../../src/assets/img/logos/timrlai_logo.svg",
+  LOGO_LIGHT_SVG_PATH: "../../src/assets/img/logos/timrlai_logo_light.svg",
+};
+
+export const lottieConstants: LottieConstants = {
+  CLOUDS_LOTTIE_PATH: "/lottie/bg/clouds_lottie.json",
+  NOT_FOUND_LOTTIE_FOLDER: "/lottie/404/",
+  NOT_FOUND_LOTTIES: [
+    "404_cat_clouds.json",
+    "404_cat_magnifying_glass.json",
+    "404_cat_papers.json",
+    "404_cat_yarn.json",
+  ],
+};
 
 export const subItems: SubItem[] = [
   {
@@ -358,11 +380,4 @@ export const madeWithSkills: Skill[] = [
     title: "Blender",
     icon: "logos:blender",
   },
-];
-
-export const notFoundLotties: string[] = [
-  "404_cat_clouds.json",
-  "404_cat_magnifying_glass.json",
-  "404_cat_papers.json",
-  "404_cat_yarn.json",
 ];

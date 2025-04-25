@@ -5,6 +5,7 @@ import isMobile from "is-mobile";
 import { TresCanvas } from "@tresjs/core";
 import { useGLTF, OrbitControls, Text3D } from "@tresjs/cientos";
 
+import { lottieConstants } from "../../../lib/constants";
 import constants from "../../../lib/constants/LogoCanvas";
 import LottieSphere from "./LottieSphere.vue";
 import GLCloud from "./GLCloud.vue";
@@ -38,6 +39,8 @@ const {
   FONT_SIZE,
   LOGO_GLTF_PATH,
 } = constants;
+
+const { CLOUDS_LOTTIE_PATH } = lottieConstants;
 
 let width: number = window?.innerWidth || WIDTH_BREAKPOINT;
 let height: number = window?.innerHeight || HEIGHT_BREAKPOINT;
@@ -146,7 +149,7 @@ watchEffect(() => {
         :maxAzimuthAngle="Math.PI / HORIZONTAL_ROTATION_LIMIT"
       />
       <Suspense>
-        <LottieSphere src="/lottie/clouds_lottie.json" />
+        <LottieSphere :src="CLOUDS_LOTTIE_PATH" />
       </Suspense>
       <TresMesh
         :position="logoPosition"

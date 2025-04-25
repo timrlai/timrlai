@@ -4,7 +4,7 @@ import isMobile from "is-mobile";
 import { TresCanvas } from "@tresjs/core";
 import { OrbitControls, Text3D } from "@tresjs/cientos";
 
-import { notFoundLotties } from "../../../lib/constants";
+import { lottieConstants } from "../../../lib/constants";
 import constants from "../../../lib/constants/NotFoundCanvas";
 import LottieSphere from "./LottieSphere.vue";
 import LottieCylinder from "./LottieCylinder.vue";
@@ -40,6 +40,9 @@ const {
   EXPLANATION_FONT_SIZE,
 } = constants;
 
+const { CLOUDS_LOTTIE_PATH, NOT_FOUND_LOTTIE_FOLDER, NOT_FOUND_LOTTIES } =
+  lottieConstants;
+
 let width: number = window?.innerWidth || WIDTH_BREAKPOINT;
 let height: number = window?.innerHeight || HEIGHT_BREAKPOINT;
 let isPortrait: boolean = true;
@@ -55,7 +58,7 @@ let explanationScale: number = PORTRAIT_EXPLANATION_SCALE;
 
 const canvasKey: Ref<string> = ref("not-found-canvas");
 const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
-const randomNotFoundLottie: string = `/lottie/404/${notFoundLotties[Math.floor(Math.random() * notFoundLotties.length)]}`;
+const randomNotFoundLottie: string = `${NOT_FOUND_LOTTIE_FOLDER}${NOT_FOUND_LOTTIES[Math.floor(Math.random() * NOT_FOUND_LOTTIES.length)]}`;
 
 const setPoses = (event: Event | null = null) => {
   setTimeout(
@@ -151,7 +154,7 @@ watchEffect(() => {
         :maxAzimuthAngle="Math.PI / HORIZONTAL_ROTATION_LIMIT"
       />
       <Suspense>
-        <LottieSphere src="/lottie/clouds_lottie.json" />
+        <LottieSphere :src="CLOUDS_LOTTIE_PATH" />
       </Suspense>
       <Suspense>
         <LottieCylinder

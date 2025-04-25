@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 import { RouterLink } from "vue-router";
-import { subItems } from "../../../lib/constants";
+import { svgConstants, subItems } from "../../../lib/constants";
 import SocialButtons from "../Common/SocialButtons.vue";
+
+const { LOGO_DARK_SVG_PATH } = svgConstants;
 </script>
 
 <template>
@@ -48,7 +50,7 @@ import SocialButtons from "../Common/SocialButtons.vue";
         </div>
         <RouterLink to="/" class="btn btn-ghost btn-lg rounded-box py-1 text-xl"
           ><img
-            src="../../assets/img/logos/timrlai_logo.svg"
+            :src="LOGO_DARK_SVG_PATH"
             alt="Tim RL dot AI"
             title="Tim RL .ai"
             class="w-full h-full"

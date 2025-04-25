@@ -89,6 +89,17 @@ export type LottieCylinderProps = LottieShapeProps & {
   theataEnd?: number;
 };
 
+export type SvgConstants = {
+  readonly LOGO_DARK_SVG_PATH: string;
+  readonly LOGO_LIGHT_SVG_PATH: string;
+};
+
+export type LottieConstants = {
+  readonly CLOUDS_LOTTIE_PATH: string;
+  readonly NOT_FOUND_LOTTIE_FOLDER: string;
+  readonly NOT_FOUND_LOTTIES: string[];
+};
+
 type CanvasConstants = {
   readonly WIDTH_BREAKPOINT: number;
   readonly HEIGHT_BREAKPOINT: number;

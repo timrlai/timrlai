@@ -1,6 +1,10 @@
 <script setup lang="ts">
+import { lottieConstants, svgConstants } from "../../../lib/constants";
 import LottiePlayer from "../Common/LottiePlayer.vue";
 import SocialButtons from "../Common/SocialButtons.vue";
+
+const { CLOUDS_LOTTIE_PATH } = lottieConstants;
+const { LOGO_LIGHT_SVG_PATH } = svgConstants;
 
 const year = new Date().getFullYear();
 </script>
@@ -8,7 +12,7 @@ const year = new Date().getFullYear();
 <template>
   <div class="mb-10 lg:mb-0">
     <LottiePlayer
-      src="/lottie/clouds_lottie.json"
+      :src="CLOUDS_LOTTIE_PATH"
       :autoPlay="false"
       :playOnHover="true"
     />
@@ -18,7 +22,7 @@ const year = new Date().getFullYear();
   >
     <div class="footer-tile lg:w-1/3">
       <img
-        src="../../assets/img/logos/timrlai_logo_light.svg"
+        :src="LOGO_LIGHT_SVG_PATH"
         alt="Tim RL dot AI"
         title="Tim RL .ai"
         class="inline-block w-full h-full"
