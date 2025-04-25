@@ -96,6 +96,7 @@ export type SvgConstants = {
 
 export type LottieConstants = {
   readonly CLOUDS_LOTTIE_PATH: string;
+  readonly AVATAR_WAVE_LOTTIE_PATH: string;
   readonly NOT_FOUND_LOTTIE_FOLDER: string;
   readonly NOT_FOUND_LOTTIES: string[];
 };
