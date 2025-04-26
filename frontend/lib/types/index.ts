@@ -99,6 +99,8 @@ export type GLCloudProps = {
 export type SvgConstants = {
   readonly LOGO_DARK_SVG_PATH: string;
   readonly LOGO_LIGHT_SVG_PATH: string;
+  readonly HEAD_TRANS_SVG_PATH: string;
+  readonly HEAD_BLUE_SVG_PATH: string;
 };
 
 export type LottieConstants = {
