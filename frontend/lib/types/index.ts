@@ -120,18 +120,28 @@ export type LogoCanvasConstants = CanvasConstants & {
   readonly PORTRAIT_TAGLINE_POSITION: [number, number, number];
   readonly PORTRAIT_TAGLINE_ROTATION: [number, number, number];
   readonly PORTRAIT_TAGLINE_SCALE: number;
+  readonly PORTRAIT_AVATAR_POSITION: [number, number, number];
+  readonly PORTRAIT_AVATAR_ROTATION: [number, number, number];
+  readonly PORTRAIT_AVATAR_SCALE: number;
   readonly LANDSCAPE_LOGO_POSITION: [number, number, number];
   readonly LANDSCAPE_LOGO_SCALE: number;
   readonly LANDSCAPE_TAGLINE_POSITION: [number, number, number];
   readonly LANDSCAPE_TAGLINE_SCALE: number;
+  readonly LANDSCAPE_AVATAR_POSITION: [number, number, number];
+  readonly LANDSCAPE_AVATAR_SCALE: number;
   readonly DESKTOP_LOGO_POSITION: [number, number, number];
   readonly DESKTOP_LOGO_SCALE: number;
   readonly DESKTOP_TAGLINE_POSITION: [number, number, number];
   readonly DESKTOP_TAGLINE_SCALE: number;
+  readonly DESKTOP_AVATAR_POSITION: [number, number, number];
+  readonly DESKTOP_AVATAR_SCALE: number;
   readonly WIDE_LOGO_ROTATION: [number, number, number];
   readonly WIDE_TAGLINE_ROTATION: [number, number, number];
+  readonly WIDE_AVATAR_ROTATION: [number, number, number];
   readonly LOGO_GLTF_PATH: string;
   readonly FONT_SIZE: number;
+  readonly AVATAR_HEIGHT: number;
+  readonly AVATAR_RADIUS: number;
 };
 
 export type NotFoundCanvasConstants = CanvasConstants & {
