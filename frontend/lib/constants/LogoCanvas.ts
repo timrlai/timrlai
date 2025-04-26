@@ -39,7 +39,7 @@ const constants: LogoCanvasConstants = {
   FONT_PATH: "/fonts/ubuntu_titling/Ubuntu_Titlin_Rg_Bold.json",
   FONT_SIZE: 1,
   LOGO_GLTF_PATH: "/models/timrlai_logo.gltf",
-  AVATAR_HEIGHT: 12,
+  AVATAR_HEIGHT: 9,
   AVATAR_RADIUS: 5,
 };
 
