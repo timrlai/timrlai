@@ -8,6 +8,7 @@ import { useGLTF, OrbitControls, Text3D } from "@tresjs/cientos";
 import { lottieConstants } from "../../../lib/constants";
 import constants from "../../../lib/constants/LogoCanvas";
 import LottieSphere from "./LottieSphere.vue";
+import LottieCylinder from "./LottieCylinder.vue";
 import GLCloud from "./GLCloud.vue";
 
 const {
@@ -19,16 +20,24 @@ const {
   PORTRAIT_TAGLINE_POSITION,
   PORTRAIT_TAGLINE_ROTATION,
   PORTRAIT_TAGLINE_SCALE,
+  PORTRAIT_AVATAR_POSITION,
+  PORTRAIT_AVATAR_ROTATION,
+  PORTRAIT_AVATAR_SCALE,
   LANDSCAPE_LOGO_POSITION,
   LANDSCAPE_LOGO_SCALE,
   LANDSCAPE_TAGLINE_POSITION,
   LANDSCAPE_TAGLINE_SCALE,
+  LANDSCAPE_AVATAR_POSITION,
+  LANDSCAPE_AVATAR_SCALE,
   DESKTOP_LOGO_POSITION,
   DESKTOP_LOGO_SCALE,
   DESKTOP_TAGLINE_POSITION,
   DESKTOP_TAGLINE_SCALE,
+  DESKTOP_AVATAR_POSITION,
+  DESKTOP_AVATAR_SCALE,
   WIDE_LOGO_ROTATION,
   WIDE_TAGLINE_ROTATION,
+  WIDE_AVATAR_ROTATION,
   CANVAS_COLOR,
   TEXT_COLOR,
   AMBIENT_LIGHT_COLOR,
@@ -38,20 +47,58 @@ const {
   FONT_PATH,
   FONT_SIZE,
   LOGO_GLTF_PATH,
+  AVATAR_HEIGHT,
+  AVATAR_RADIUS,
+  GL_CLOUD_POSITION,
+  GL_CLOUD_ROTATION,
+  GL_CLOUD_SCALE,
 } = constants;
 
-const { CLOUDS_LOTTIE_PATH } = lottieConstants;
+const { CLOUDS_LOTTIE_PATH, AVATAR_WAVE_LOTTIE_PATH } = lottieConstants;
 
 let width: number = window?.innerWidth || WIDTH_BREAKPOINT;
 let height: number = window?.innerHeight || HEIGHT_BREAKPOINT;
-let isPortrait: boolean = true;
-let isLandscape: boolean = false;
-let logoPosition: [number, number, number] = PORTRAIT_LOGO_POSITION;
-let logoRotation: [number, number, number] = PORTRAIT_LOGO_ROTATION;
-let logoScale: number = PORTRAIT_LOGO_SCALE;
-let taglinePosition: [number, number, number] = PORTRAIT_TAGLINE_POSITION;
-let taglineRotation: [number, number, number] = PORTRAIT_TAGLINE_ROTATION;
-let taglineScale: number = PORTRAIT_TAGLINE_SCALE;
+let isPortrait: boolean = width <= WIDTH_BREAKPOINT && width < height;
+let isLandscape: boolean = height <= HEIGHT_BREAKPOINT && height < width;
+let logoPosition: [number, number, number] = isPortrait
+  ? PORTRAIT_LOGO_POSITION
+  : isLandscape
+    ? LANDSCAPE_LOGO_POSITION
+    : DESKTOP_LOGO_POSITION;
+let logoRotation: [number, number, number] = isPortrait
+  ? PORTRAIT_LOGO_ROTATION
+  : WIDE_LOGO_ROTATION;
+let logoScale: number = isPortrait
+  ? PORTRAIT_LOGO_SCALE
+  : isLandscape
+    ? LANDSCAPE_LOGO_SCALE
+    : DESKTOP_LOGO_SCALE;
+let taglinePosition: [number, number, number] = isPortrait
+  ? PORTRAIT_TAGLINE_POSITION
+  : isLandscape
+    ? LANDSCAPE_TAGLINE_POSITION
+    : DESKTOP_TAGLINE_POSITION;
+let taglineRotation: [number, number, number] = isPortrait
+  ? PORTRAIT_TAGLINE_ROTATION
+  : WIDE_TAGLINE_ROTATION;
+let taglineScale: number = isPortrait
+  ? PORTRAIT_TAGLINE_SCALE
+  : isLandscape
+    ? LANDSCAPE_TAGLINE_SCALE
+    : DESKTOP_TAGLINE_SCALE;
+let avatarPosition: [number, number, number] = isPortrait
+  ? PORTRAIT_AVATAR_POSITION
+  : isLandscape
+    ? LANDSCAPE_AVATAR_POSITION
+    : DESKTOP_AVATAR_POSITION;
+let avatarRotation: [number, number, number] = isPortrait
+  ? PORTRAIT_AVATAR_ROTATION
+  : WIDE_AVATAR_ROTATION;
+let avatarScale: number = isPortrait
+  ? PORTRAIT_AVATAR_SCALE
+  : isLandscape
+    ? LANDSCAPE_AVATAR_SCALE
+    : DESKTOP_AVATAR_SCALE;
 
 const canvasKey: Ref<string> = ref("logo-canvas");
 const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
@@ -67,7 +114,8 @@ const setPoses = (event: Event | null = null) => {
       if (
         !currentWidth ||
         !currentHeight ||
-        (event && event.type === "resize" && currentWidth === width)
+        (event && event.type === "resize" && currentWidth === width) ||
+        (currentWidth === width && currentHeight === height)
       )
         return;
 
@@ -100,6 +148,19 @@ const setPoses = (event: Event | null = null) => {
         : isLandscape
           ? LANDSCAPE_TAGLINE_SCALE
           : DESKTOP_TAGLINE_SCALE;
+      avatarPosition = isPortrait
+        ? PORTRAIT_AVATAR_POSITION
+        : isLandscape
+          ? LANDSCAPE_AVATAR_POSITION
+          : DESKTOP_AVATAR_POSITION;
+      avatarRotation = isPortrait
+        ? PORTRAIT_AVATAR_ROTATION
+        : WIDE_AVATAR_ROTATION;
+      avatarScale = isPortrait
+        ? PORTRAIT_AVATAR_SCALE
+        : isLandscape
+          ? LANDSCAPE_AVATAR_SCALE
+          : DESKTOP_AVATAR_SCALE;
 
       const { scene } = await useGLTF(LOGO_GLTF_PATH, { draco: true });
       logoModel = scene;
@@ -189,7 +250,23 @@ watchEffect(() => {
         </Suspense>
       </TresMesh>
       <Suspense>
-        <GLCloud v-if="!isMobileOrTablet" />
+        <LottieCylinder
+          :src="AVATAR_WAVE_LOTTIE_PATH"
+          :height="AVATAR_HEIGHT"
+          :radius-top="AVATAR_RADIUS"
+          :radius-bottom="AVATAR_RADIUS"
+          :position="avatarPosition"
+          :rotation="avatarRotation"
+          :scale="avatarScale"
+        />
+      </Suspense>
+      <Suspense>
+        <GLCloud
+          v-if="!isMobileOrTablet"
+          :position="GL_CLOUD_POSITION"
+          :rotation="GL_CLOUD_ROTATION"
+          :scale="GL_CLOUD_SCALE"
+        />
       </Suspense>
       <TresAmbientLight
         :position="[0, 10, 0]"
