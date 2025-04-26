@@ -113,7 +113,13 @@ type CanvasConstants = {
   readonly FONT_PATH: string;
 };
 
-export type LogoCanvasConstants = CanvasConstants & {
+type CloudCanvasConstants = CanvasConstants & {
+  readonly GL_CLOUD_POSITION: [number, number, number];
+  readonly GL_CLOUD_ROTATION: [number, number, number];
+  readonly GL_CLOUD_SCALE: number;
+};
+
+export type LogoCanvasConstants = CloudCanvasConstants & {
   readonly PORTRAIT_LOGO_POSITION: [number, number, number];
   readonly PORTRAIT_LOGO_ROTATION: [number, number, number];
   readonly PORTRAIT_LOGO_SCALE: number;
@@ -144,7 +150,7 @@ export type LogoCanvasConstants = CanvasConstants & {
   readonly AVATAR_RADIUS: number;
 };
 
-export type NotFoundCanvasConstants = CanvasConstants & {
+export type NotFoundCanvasConstants = CloudCanvasConstants & {
   readonly WIDTH_BREAKPOINT: number;
   readonly HEIGHT_BREAKPOINT: number;
   readonly PORTRAIT_LOTTIE_POSITION: [number, number, number];

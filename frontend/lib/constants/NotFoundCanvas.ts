@@ -28,6 +28,9 @@ const constants: NotFoundCanvasConstants = {
   FONT_PATH: "/fonts/ubuntu_titling/Ubuntu_Titlin_Rg_Bold.json",
   TITLE_FONT_SIZE: 1,
   EXPLANATION_FONT_SIZE: 0.7,
+  GL_CLOUD_POSITION: [0, -0.5, -0.3],
+  GL_CLOUD_ROTATION: [8, 0, 0],
+  GL_CLOUD_SCALE: 1,
 };
 
 export default constants;
