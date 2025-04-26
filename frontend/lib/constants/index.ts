@@ -16,6 +16,7 @@ export const svgConstants: SvgConstants = {
 export const lottieConstants: LottieConstants = {
   CLOUDS_LOTTIE_PATH: "/lottie/bg/clouds_lottie.json",
   AVATAR_WAVE_LOTTIE_PATH: "/lottie/avatars/timrlai_avatar_wave.json",
+  AVATAR_SUMMARY_LOTTIE_PATH: "/lottie/avatars/timrlai_avatar_summary.json",
   NOT_FOUND_LOTTIE_FOLDER: "/lottie/404/",
   NOT_FOUND_LOTTIES: [
     "404_cat_clouds.json",
