@@ -61,7 +61,9 @@ const onIntroTyped = (currentTitle: string) => {
               />
             </strong>
           </p>
-          <div class="text-9xl text-center mb-8 sm:mb-0 mt-8">
+          <div
+            class="text-9xl lg:text-[12rem] xl:text-[16rem] text-center mb-8 sm:mb-0 mt-8"
+          >
             <Icon :icon="`${introIcon}`" class="inline-block" />
           </div>
         </div>
