@@ -89,6 +89,13 @@ export type LottieCylinderProps = LottieShapeProps & {
   theataEnd?: number;
 };
 
+export type GLCloudProps = {
+  position?: [number, number, number];
+  rotation?: [number, number, number];
+  scale?: [number, number, number] | number;
+  args?: [number, number, number];
+};
+
 export type SvgConstants = {
   readonly LOGO_DARK_SVG_PATH: string;
   readonly LOGO_LIGHT_SVG_PATH: string;
