@@ -17,6 +17,10 @@ export const lottieConstants: LottieConstants = {
   CLOUDS_LOTTIE_PATH: "/lottie/bg/clouds_lottie.json",
   AVATAR_WAVE_LOTTIE_PATH: "/lottie/avatars/timrlai_avatar_wave.json",
   AVATAR_SUMMARY_LOTTIE_PATH: "/lottie/avatars/timrlai_avatar_summary.json",
+  AVATAR_SKILLS_DESK_LOTTIE_PATH:
+    "/lottie/avatars/timrlai_avatar_skills_desk.json",
+  AVATAR_SKILLS_LEGS_LOTTIE_PATH:
+    "/lottie/avatars/timrlai_avatar_skills_legs.json",
   NOT_FOUND_LOTTIE_FOLDER: "/lottie/404/",
   NOT_FOUND_LOTTIES: [
     "404_cat_clouds.json",
