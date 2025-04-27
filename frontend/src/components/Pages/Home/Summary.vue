@@ -16,7 +16,7 @@ const { AVATAR_SUMMARY_LOTTIE_PATH } = lottieConstants;
       Summary
       <Icon icon="fluent-color:apps-list-detail-20" class="inline-block" />
     </h1>
-    <div class="flex flex-wrap items-center">
+    <div class="flex flex-wrap justify-between items-center">
       <ul
         class="list w-full sm:w-4/5 text-lg sm:text-xl atkinson-hyperlegible-next-bold"
       >

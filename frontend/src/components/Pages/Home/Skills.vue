@@ -4,6 +4,7 @@ import { Icon } from "@iconify/vue";
 import { VueWriter } from "vue-writer";
 
 import {
+  lottieConstants,
   languageSkills,
   frameworkSkills,
   cmsSkills,
@@ -13,6 +14,10 @@ import {
   primarySkills,
   madeWithSkills,
 } from "../../../../lib/constants";
+
+import LottiePlayer from "../../Common/LottiePlayer.vue";
+
+const { AVATAR_SKILLS_DESK_LOTTIE_PATH } = lottieConstants;
 
 const skillIcon = ref(primarySkills[0].icon);
 const onSkillTyped = (currentTitle: string) => {
@@ -43,63 +48,73 @@ const randomizedSkills = [...primarySkills]
       class="mockup-code bg-slate-800 text-slate-300 border-x-4 border-primary rounded-none shadow-lg shadow-primary fira-code overflow-x-hidden"
     >
       <div class="px-5">
-        <h2 class="text-xl sm:text-2xl mb-4 code-comment-inline">
-          Technical Skills
-          <Icon icon="fluent-color:code-20" class="inline-block" /><Icon
-            icon="fluent-color:design-ideas-20"
-            class="inline-block"
-          />
-        </h2>
-        <div class="text-lg/8 sm:text-xl/10">
-          <p class="code-comment-block">
-            My skills include developing, designing, testing, debugging and
-            troubleshooting websites and applications in a wide variety of
-            programming languages, frameworks and software. I am also
-            experienced with designing intuitive, dynamic and accessible user
-            interfaces for web applications using those skills.
-          </p>
-          <p class="code-comment-block my-4">
-            Specifically, I have experience working with...
-            <strong class="bg-slate-600">
-              <VueWriter
-                :array="primarySkills.map(({ title }) => title)"
-                @typed="onSkillTyped"
-                class="inline" /></strong
-            >.
-          </p>
-          <div class="text-9xl text-center mt-10">
-            <Icon
-              v-if="skillIcon !== null"
-              :icon="`${skillIcon}`"
-              class="inline-block"
-            />
+        <div class="flex flex-wrap justify-between items-center">
+          <div class="w-full sm:w-3/4">
+            <h2 class="text-xl sm:text-2xl mb-4 code-comment-inline">
+              Technical Skills
+              <Icon icon="fluent-color:code-20" class="inline-block" /><Icon
+                icon="fluent-color:design-ideas-20"
+                class="inline-block"
+              />
+            </h2>
+            <div class="text-lg/8 sm:text-xl/10">
+              <p class="code-comment-block">
+                My skills include developing, designing, testing, debugging and
+                troubleshooting websites and applications in a wide variety of
+                programming languages, frameworks and software. I am also
+                experienced with designing intuitive, dynamic and accessible
+                user interfaces for web applications using those skills.
+              </p>
+              <p class="code-comment-block my-4">
+                Specifically, I have experience working with...
+                <strong class="bg-slate-600">
+                  <VueWriter
+                    :array="primarySkills.map(({ title }) => title)"
+                    @typed="onSkillTyped"
+                    class="inline" /></strong
+                >.
+              </p>
+              <div class="text-9xl text-center mt-10">
+                <Icon
+                  v-if="skillIcon !== null"
+                  :icon="`${skillIcon}`"
+                  class="inline-block"
+                />
+              </div>
+              <p class="code-comment-block my-4">
+                I also have many additional skills such as
+                <span
+                  v-for="(skill, index) in randomizedSkills"
+                  v-bind:key="skill.title"
+                >
+                  {{ skill.title
+                  }}<span v-if="index < randomizedSkills.length - 1">, </span
+                  ><span v-else>.</span
+                  ><span v-if="index === randomizedSkills.length - 2">
+                    and
+                  </span>
+                </span>
+              </p>
+              <div class="text-7xl smtext-8xl text-center my-6">
+                <Icon
+                  v-for="skill in randomizedSkills.filter(
+                    ({ icon }) => icon && icon,
+                  )"
+                  v-bind:key="skill.title"
+                  :icon="`${skill.icon}`"
+                  class="inline-block mx-4"
+                />
+              </div>
+              <p class="code-comment-block">
+                Expand the below table to see all of my technical skills.
+              </p>
+            </div>
           </div>
-          <p class="code-comment-block my-4">
-            I also have many additional skills such as
-            <span
-              v-for="(skill, index) in randomizedSkills"
-              v-bind:key="skill.title"
-            >
-              {{ skill.title
-              }}<span v-if="index < randomizedSkills.length - 1">, </span
-              ><span v-else>.</span
-              ><span v-if="index === randomizedSkills.length - 2"> and </span>
-            </span>
-          </p>
-          <div class="text-7xl smtext-8xl text-center my-6">
-            <Icon
-              v-for="skill in randomizedSkills.filter(
-                ({ icon }) => icon && icon,
-              )"
-              v-bind:key="skill.title"
-              :icon="`${skill.icon}`"
-              class="inline-block mx-4"
-            />
+          <div class="w-full sm:w-1/4">
+            <LottiePlayer :src="AVATAR_SKILLS_DESK_LOTTIE_PATH" autoPlay />
           </div>
-          <p class="code-comment-block">
-            Expand the below table to see all of my technical skills.
-          </p>
         </div>
+
         <div class="collapse collapse-plus mt-5">
           <input type="checkbox" />
           <h3 class="collapse-title text-lg sm:text-xl ubuntu-bold bg-neutral">
