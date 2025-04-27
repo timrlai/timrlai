@@ -3,7 +3,7 @@ import { type Ref, ref, onMounted, onUnmounted, watchEffect } from "vue";
 import type { Scene } from "three";
 import isMobile from "is-mobile";
 import { TresCanvas } from "@tresjs/core";
-import { useGLTF, OrbitControls, Text3D } from "@tresjs/cientos";
+import { useGLTF, OrbitControls, Text3D, Box } from "@tresjs/cientos";
 
 import { lottieConstants } from "../../../lib/constants";
 import constants from "../../../lib/constants/LogoCanvas";
@@ -26,6 +26,12 @@ const {
   PORTRAIT_AVATAR_SUMMARY_POSITION,
   PORTRAIT_AVATAR_SUMMARY_ROTATION,
   PORTRAIT_AVATAR_SUMMARY_SCALE,
+  PORTRAIT_AVATAR_SKILLS_POSITION,
+  PORTRAIT_AVATAR_SKILLS_ROTATION,
+  PORTRAIT_AVATAR_SKILLS_SCALE,
+  PORTRAIT_DESK_POSITION,
+  PORTRAIT_DESK_ROTATION,
+  PORTRAIT_DESK_SCALE,
   LANDSCAPE_LOGO_POSITION,
   LANDSCAPE_LOGO_SCALE,
   LANDSCAPE_TAGLINE_POSITION,
@@ -34,6 +40,10 @@ const {
   LANDSCAPE_AVATAR_WAVE_SCALE,
   LANDSCAPE_AVATAR_SUMMARY_POSITION,
   LANDSCAPE_AVATAR_SUMMARY_SCALE,
+  LANDSCAPE_AVATAR_SKILLS_POSITION,
+  LANDSCAPE_AVATAR_SKILLS_SCALE,
+  LANDSCAPE_DESK_POSITION,
+  LANDSCAPE_DESK_SCALE,
   DESKTOP_LOGO_POSITION,
   DESKTOP_LOGO_SCALE,
   DESKTOP_TAGLINE_POSITION,
@@ -42,10 +52,16 @@ const {
   DESKTOP_AVATAR_WAVE_SCALE,
   DESKTOP_AVATAR_SUMMARY_POSITION,
   DESKTOP_AVATAR_SUMMARY_SCALE,
+  DESKTOP_AVATAR_SKILLS_POSITION,
+  DESKTOP_AVATAR_SKILLS_SCALE,
+  DESKTOP_DESK_POSITION,
+  DESKTOP_DESK_SCALE,
   WIDE_LOGO_ROTATION,
   WIDE_TAGLINE_ROTATION,
   WIDE_AVATAR_WAVE_ROTATION,
   WIDE_AVATAR_SUMMARY_ROTATION,
+  WIDE_AVATAR_SKILLS_ROTATION,
+  WIDE_DESK_ROTATION,
   CANVAS_COLOR,
   TEXT_COLOR,
   AMBIENT_LIGHT_COLOR,
@@ -59,6 +75,8 @@ const {
   AVATAR_WAVE_RADIUS,
   AVATAR_SUMMARY_HEIGHT,
   AVATAR_SUMMARY_RADIUS,
+  AVATAR_SKILLS_HEIGHT,
+  AVATAR_SKILLS_RADIUS,
   GL_CLOUD_POSITION,
   GL_CLOUD_ROTATION,
   GL_CLOUD_SCALE,
@@ -68,6 +86,7 @@ const {
   CLOUDS_LOTTIE_PATH,
   AVATAR_WAVE_LOTTIE_PATH,
   AVATAR_SUMMARY_LOTTIE_PATH,
+  AVATAR_SKILLS_LEGS_LOTTIE_PATH,
 } = lottieConstants;
 
 let width: number = window?.innerWidth || WIDTH_BREAKPOINT;
@@ -126,6 +145,32 @@ let avatarSummaryScale: number = isPortrait
   : isLandscape
     ? LANDSCAPE_AVATAR_SUMMARY_SCALE
     : DESKTOP_AVATAR_SUMMARY_SCALE;
+let avatarSkillsPosition: [number, number, number] = isPortrait
+  ? PORTRAIT_AVATAR_SKILLS_POSITION
+  : isLandscape
+    ? LANDSCAPE_AVATAR_SKILLS_POSITION
+    : DESKTOP_AVATAR_SKILLS_POSITION;
+let avatarSkillsRotation: [number, number, number] = isPortrait
+  ? PORTRAIT_AVATAR_SKILLS_ROTATION
+  : WIDE_AVATAR_SKILLS_ROTATION;
+let avatarSkillsScale: number = isPortrait
+  ? PORTRAIT_AVATAR_SKILLS_SCALE
+  : isLandscape
+    ? LANDSCAPE_AVATAR_SKILLS_SCALE
+    : DESKTOP_AVATAR_SKILLS_SCALE;
+let avatarDeskPosition: [number, number, number] = isPortrait
+  ? PORTRAIT_DESK_POSITION
+  : isLandscape
+    ? LANDSCAPE_DESK_POSITION
+    : DESKTOP_DESK_POSITION;
+let avatarDeskRotation: [number, number, number] = isPortrait
+  ? PORTRAIT_DESK_ROTATION
+  : WIDE_DESK_ROTATION;
+let avatarDeskScale: number = isPortrait
+  ? PORTRAIT_DESK_SCALE
+  : isLandscape
+    ? LANDSCAPE_DESK_SCALE
+    : DESKTOP_DESK_SCALE;
 
 const canvasKey: Ref<string> = ref("logo-canvas");
 const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
@@ -201,6 +246,32 @@ const setPoses = (event: Event | null = null) => {
         : isLandscape
           ? LANDSCAPE_AVATAR_SUMMARY_SCALE
           : DESKTOP_AVATAR_SUMMARY_SCALE;
+      avatarSkillsPosition = isPortrait
+        ? PORTRAIT_AVATAR_SKILLS_POSITION
+        : isLandscape
+          ? LANDSCAPE_AVATAR_SKILLS_POSITION
+          : DESKTOP_AVATAR_SKILLS_POSITION;
+      avatarSkillsRotation = isPortrait
+        ? PORTRAIT_AVATAR_SKILLS_ROTATION
+        : WIDE_AVATAR_SKILLS_ROTATION;
+      avatarSkillsScale = isPortrait
+        ? PORTRAIT_AVATAR_SKILLS_SCALE
+        : isLandscape
+          ? LANDSCAPE_AVATAR_SKILLS_SCALE
+          : DESKTOP_AVATAR_SKILLS_SCALE;
+      avatarDeskPosition = isPortrait
+        ? PORTRAIT_DESK_POSITION
+        : isLandscape
+          ? LANDSCAPE_DESK_POSITION
+          : DESKTOP_DESK_POSITION;
+      avatarDeskRotation = isPortrait
+        ? PORTRAIT_DESK_ROTATION
+        : WIDE_DESK_ROTATION;
+      avatarDeskScale = isPortrait
+        ? PORTRAIT_DESK_SCALE
+        : isLandscape
+          ? LANDSCAPE_DESK_SCALE
+          : DESKTOP_DESK_SCALE;
 
       const { scene } = await useGLTF(LOGO_GLTF_PATH, { draco: true });
       logoModel = scene;
@@ -311,6 +382,48 @@ watchEffect(() => {
           :scale="avatarSummaryScale"
         />
       </Suspense>
+      <Suspense>
+        <LottieCylinder
+          :src="AVATAR_SKILLS_LEGS_LOTTIE_PATH"
+          :height="AVATAR_SKILLS_HEIGHT"
+          :radius-top="AVATAR_SKILLS_RADIUS"
+          :radius-bottom="AVATAR_SKILLS_RADIUS"
+          :position="avatarSkillsPosition"
+          :rotation="avatarSkillsRotation"
+          :scale="avatarSkillsScale"
+        />
+      </Suspense>
+      <TresMesh
+        :position="avatarDeskPosition"
+        :rotation="avatarDeskRotation"
+        :scale="avatarDeskScale"
+      >
+        <Suspense>
+          <Box
+            :args="[2.2, 0.1, 1.6]"
+            :position="[0, 2.4, 1.5]"
+            :rotation="[2.2, 0.1, 0.05]"
+            shadows
+          >
+            <TresMeshStandardMaterial color="#006177" />
+          </Box>
+        </Suspense>
+        <Suspense>
+          <Box
+            :args="[2.2, 0.2, 1.6]"
+            :position="[0, 1.7, 0]"
+            :rotation="[0, 0, 0.05]"
+            shadows
+          >
+            <TresMeshStandardMaterial color="#006177" />
+          </Box>
+        </Suspense>
+        <Suspense>
+          <Box :args="[5, 3, 3]" shadows>
+            <TresMeshStandardMaterial color="#963600" />
+          </Box>
+        </Suspense>
+      </TresMesh>
       <Suspense>
         <GLCloud
           v-if="!isMobileOrTablet"

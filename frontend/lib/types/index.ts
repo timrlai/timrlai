@@ -144,6 +144,12 @@ export type LogoCanvasConstants = CloudCanvasConstants & {
   readonly PORTRAIT_AVATAR_SUMMARY_POSITION: [number, number, number];
   readonly PORTRAIT_AVATAR_SUMMARY_ROTATION: [number, number, number];
   readonly PORTRAIT_AVATAR_SUMMARY_SCALE: number;
+  readonly PORTRAIT_AVATAR_SKILLS_POSITION: [number, number, number];
+  readonly PORTRAIT_AVATAR_SKILLS_ROTATION: [number, number, number];
+  readonly PORTRAIT_AVATAR_SKILLS_SCALE: number;
+  readonly PORTRAIT_DESK_POSITION: [number, number, number];
+  readonly PORTRAIT_DESK_ROTATION: [number, number, number];
+  readonly PORTRAIT_DESK_SCALE: number;
   readonly LANDSCAPE_LOGO_POSITION: [number, number, number];
   readonly LANDSCAPE_LOGO_SCALE: number;
   readonly LANDSCAPE_TAGLINE_POSITION: [number, number, number];
@@ -152,6 +158,10 @@ export type LogoCanvasConstants = CloudCanvasConstants & {
   readonly LANDSCAPE_AVATAR_WAVE_SCALE: number;
   readonly LANDSCAPE_AVATAR_SUMMARY_POSITION: [number, number, number];
   readonly LANDSCAPE_AVATAR_SUMMARY_SCALE: number;
+  readonly LANDSCAPE_AVATAR_SKILLS_POSITION: [number, number, number];
+  readonly LANDSCAPE_AVATAR_SKILLS_SCALE: number;
+  readonly LANDSCAPE_DESK_POSITION: [number, number, number];
+  readonly LANDSCAPE_DESK_SCALE: number;
   readonly DESKTOP_LOGO_POSITION: [number, number, number];
   readonly DESKTOP_LOGO_SCALE: number;
   readonly DESKTOP_TAGLINE_POSITION: [number, number, number];
@@ -160,16 +170,24 @@ export type LogoCanvasConstants = CloudCanvasConstants & {
   readonly DESKTOP_AVATAR_WAVE_SCALE: number;
   readonly DESKTOP_AVATAR_SUMMARY_POSITION: [number, number, number];
   readonly DESKTOP_AVATAR_SUMMARY_SCALE: number;
+  readonly DESKTOP_AVATAR_SKILLS_POSITION: [number, number, number];
+  readonly DESKTOP_AVATAR_SKILLS_SCALE: number;
+  readonly DESKTOP_DESK_POSITION: [number, number, number];
+  readonly DESKTOP_DESK_SCALE: number;
   readonly WIDE_LOGO_ROTATION: [number, number, number];
   readonly WIDE_TAGLINE_ROTATION: [number, number, number];
   readonly WIDE_AVATAR_WAVE_ROTATION: [number, number, number];
   readonly WIDE_AVATAR_SUMMARY_ROTATION: [number, number, number];
+  readonly WIDE_AVATAR_SKILLS_ROTATION: [number, number, number];
+  readonly WIDE_DESK_ROTATION: [number, number, number];
   readonly LOGO_GLTF_PATH: string;
   readonly FONT_SIZE: number;
   readonly AVATAR_WAVE_HEIGHT: number;
   readonly AVATAR_WAVE_RADIUS: number;
   readonly AVATAR_SUMMARY_HEIGHT: number;
   readonly AVATAR_SUMMARY_RADIUS: number;
+  readonly AVATAR_SKILLS_HEIGHT: number;
+  readonly AVATAR_SKILLS_RADIUS: number;
 };
 
 export type NotFoundCanvasConstants = CloudCanvasConstants & {
