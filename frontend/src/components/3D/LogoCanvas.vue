@@ -20,24 +20,32 @@ const {
   PORTRAIT_TAGLINE_POSITION,
   PORTRAIT_TAGLINE_ROTATION,
   PORTRAIT_TAGLINE_SCALE,
-  PORTRAIT_AVATAR_POSITION,
-  PORTRAIT_AVATAR_ROTATION,
-  PORTRAIT_AVATAR_SCALE,
+  PORTRAIT_AVATAR_WAVE_POSITION,
+  PORTRAIT_AVATAR_WAVE_ROTATION,
+  PORTRAIT_AVATAR_WAVE_SCALE,
+  PORTRAIT_AVATAR_SUMMARY_POSITION,
+  PORTRAIT_AVATAR_SUMMARY_ROTATION,
+  PORTRAIT_AVATAR_SUMMARY_SCALE,
   LANDSCAPE_LOGO_POSITION,
   LANDSCAPE_LOGO_SCALE,
   LANDSCAPE_TAGLINE_POSITION,
   LANDSCAPE_TAGLINE_SCALE,
-  LANDSCAPE_AVATAR_POSITION,
-  LANDSCAPE_AVATAR_SCALE,
+  LANDSCAPE_AVATAR_WAVE_POSITION,
+  LANDSCAPE_AVATAR_WAVE_SCALE,
+  LANDSCAPE_AVATAR_SUMMARY_POSITION,
+  LANDSCAPE_AVATAR_SUMMARY_SCALE,
   DESKTOP_LOGO_POSITION,
   DESKTOP_LOGO_SCALE,
   DESKTOP_TAGLINE_POSITION,
   DESKTOP_TAGLINE_SCALE,
-  DESKTOP_AVATAR_POSITION,
-  DESKTOP_AVATAR_SCALE,
+  DESKTOP_AVATAR_WAVE_POSITION,
+  DESKTOP_AVATAR_WAVE_SCALE,
+  DESKTOP_AVATAR_SUMMARY_POSITION,
+  DESKTOP_AVATAR_SUMMARY_SCALE,
   WIDE_LOGO_ROTATION,
   WIDE_TAGLINE_ROTATION,
-  WIDE_AVATAR_ROTATION,
+  WIDE_AVATAR_WAVE_ROTATION,
+  WIDE_AVATAR_SUMMARY_ROTATION,
   CANVAS_COLOR,
   TEXT_COLOR,
   AMBIENT_LIGHT_COLOR,
@@ -47,14 +55,20 @@ const {
   FONT_PATH,
   FONT_SIZE,
   LOGO_GLTF_PATH,
-  AVATAR_HEIGHT,
-  AVATAR_RADIUS,
+  AVATAR_WAVE_HEIGHT,
+  AVATAR_WAVE_RADIUS,
+  AVATAR_SUMMARY_HEIGHT,
+  AVATAR_SUMMARY_RADIUS,
   GL_CLOUD_POSITION,
   GL_CLOUD_ROTATION,
   GL_CLOUD_SCALE,
 } = constants;
 
-const { CLOUDS_LOTTIE_PATH, AVATAR_WAVE_LOTTIE_PATH } = lottieConstants;
+const {
+  CLOUDS_LOTTIE_PATH,
+  AVATAR_WAVE_LOTTIE_PATH,
+  AVATAR_SUMMARY_LOTTIE_PATH,
+} = lottieConstants;
 
 let width: number = window?.innerWidth || WIDTH_BREAKPOINT;
 let height: number = window?.innerHeight || HEIGHT_BREAKPOINT;
@@ -86,19 +100,32 @@ let taglineScale: number = isPortrait
   : isLandscape
     ? LANDSCAPE_TAGLINE_SCALE
     : DESKTOP_TAGLINE_SCALE;
-let avatarPosition: [number, number, number] = isPortrait
-  ? PORTRAIT_AVATAR_POSITION
+let avatarWavePosition: [number, number, number] = isPortrait
+  ? PORTRAIT_AVATAR_WAVE_POSITION
   : isLandscape
-    ? LANDSCAPE_AVATAR_POSITION
-    : DESKTOP_AVATAR_POSITION;
-let avatarRotation: [number, number, number] = isPortrait
-  ? PORTRAIT_AVATAR_ROTATION
-  : WIDE_AVATAR_ROTATION;
-let avatarScale: number = isPortrait
-  ? PORTRAIT_AVATAR_SCALE
+    ? LANDSCAPE_AVATAR_WAVE_POSITION
+    : DESKTOP_AVATAR_WAVE_POSITION;
+let avatarWaveRotation: [number, number, number] = isPortrait
+  ? PORTRAIT_AVATAR_WAVE_ROTATION
+  : WIDE_AVATAR_WAVE_ROTATION;
+let avatarWaveScale: number = isPortrait
+  ? PORTRAIT_AVATAR_WAVE_SCALE
   : isLandscape
-    ? LANDSCAPE_AVATAR_SCALE
-    : DESKTOP_AVATAR_SCALE;
+    ? LANDSCAPE_AVATAR_WAVE_SCALE
+    : DESKTOP_AVATAR_WAVE_SCALE;
+let avatarSummaryPosition: [number, number, number] = isPortrait
+  ? PORTRAIT_AVATAR_SUMMARY_POSITION
+  : isLandscape
+    ? LANDSCAPE_AVATAR_SUMMARY_POSITION
+    : DESKTOP_AVATAR_SUMMARY_POSITION;
+let avatarSummaryRotation: [number, number, number] = isPortrait
+  ? PORTRAIT_AVATAR_SUMMARY_ROTATION
+  : WIDE_AVATAR_SUMMARY_ROTATION;
+let avatarSummaryScale: number = isPortrait
+  ? PORTRAIT_AVATAR_SUMMARY_SCALE
+  : isLandscape
+    ? LANDSCAPE_AVATAR_SUMMARY_SCALE
+    : DESKTOP_AVATAR_SUMMARY_SCALE;
 
 const canvasKey: Ref<string> = ref("logo-canvas");
 const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
@@ -148,19 +175,32 @@ const setPoses = (event: Event | null = null) => {
         : isLandscape
           ? LANDSCAPE_TAGLINE_SCALE
           : DESKTOP_TAGLINE_SCALE;
-      avatarPosition = isPortrait
-        ? PORTRAIT_AVATAR_POSITION
+      avatarWavePosition = isPortrait
+        ? PORTRAIT_AVATAR_WAVE_POSITION
         : isLandscape
-          ? LANDSCAPE_AVATAR_POSITION
-          : DESKTOP_AVATAR_POSITION;
-      avatarRotation = isPortrait
-        ? PORTRAIT_AVATAR_ROTATION
-        : WIDE_AVATAR_ROTATION;
-      avatarScale = isPortrait
-        ? PORTRAIT_AVATAR_SCALE
+          ? LANDSCAPE_AVATAR_WAVE_POSITION
+          : DESKTOP_AVATAR_WAVE_POSITION;
+      avatarWaveRotation = isPortrait
+        ? PORTRAIT_AVATAR_WAVE_ROTATION
+        : WIDE_AVATAR_WAVE_ROTATION;
+      avatarWaveScale = isPortrait
+        ? PORTRAIT_AVATAR_WAVE_SCALE
         : isLandscape
-          ? LANDSCAPE_AVATAR_SCALE
-          : DESKTOP_AVATAR_SCALE;
+          ? LANDSCAPE_AVATAR_WAVE_SCALE
+          : DESKTOP_AVATAR_WAVE_SCALE;
+      avatarSummaryPosition = isPortrait
+        ? PORTRAIT_AVATAR_SUMMARY_POSITION
+        : isLandscape
+          ? LANDSCAPE_AVATAR_SUMMARY_POSITION
+          : DESKTOP_AVATAR_SUMMARY_POSITION;
+      avatarSummaryRotation = isPortrait
+        ? PORTRAIT_AVATAR_SUMMARY_ROTATION
+        : WIDE_AVATAR_SUMMARY_ROTATION;
+      avatarSummaryScale = isPortrait
+        ? PORTRAIT_AVATAR_SUMMARY_SCALE
+        : isLandscape
+          ? LANDSCAPE_AVATAR_SUMMARY_SCALE
+          : DESKTOP_AVATAR_SUMMARY_SCALE;
 
       const { scene } = await useGLTF(LOGO_GLTF_PATH, { draco: true });
       logoModel = scene;
@@ -252,12 +292,23 @@ watchEffect(() => {
       <Suspense>
         <LottieCylinder
           :src="AVATAR_WAVE_LOTTIE_PATH"
-          :height="AVATAR_HEIGHT"
-          :radius-top="AVATAR_RADIUS"
-          :radius-bottom="AVATAR_RADIUS"
-          :position="avatarPosition"
-          :rotation="avatarRotation"
-          :scale="avatarScale"
+          :height="AVATAR_WAVE_HEIGHT"
+          :radius-top="AVATAR_WAVE_RADIUS"
+          :radius-bottom="AVATAR_WAVE_RADIUS"
+          :position="avatarWavePosition"
+          :rotation="avatarWaveRotation"
+          :scale="avatarWaveScale"
+        />
+      </Suspense>
+      <Suspense>
+        <LottieCylinder
+          :src="AVATAR_SUMMARY_LOTTIE_PATH"
+          :height="AVATAR_SUMMARY_HEIGHT"
+          :radius-top="AVATAR_SUMMARY_RADIUS"
+          :radius-bottom="AVATAR_SUMMARY_RADIUS"
+          :position="avatarSummaryPosition"
+          :rotation="avatarSummaryRotation"
+          :scale="avatarSummaryScale"
         />
       </Suspense>
       <Suspense>
