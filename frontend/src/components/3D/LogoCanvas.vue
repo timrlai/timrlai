@@ -3,10 +3,12 @@ import { type Ref, ref, onMounted, onUnmounted, watchEffect } from "vue";
 import type { Scene } from "three";
 import isMobile from "is-mobile";
 import { TresCanvas } from "@tresjs/core";
-import { useGLTF, OrbitControls, Text3D } from "@tresjs/cientos";
+import { useGLTF, OrbitControls, Text3D, Box } from "@tresjs/cientos";
 
+import { lottieConstants } from "../../../lib/constants";
 import constants from "../../../lib/constants/LogoCanvas";
 import LottieSphere from "./LottieSphere.vue";
+import LottieCylinder from "./LottieCylinder.vue";
 import GLCloud from "./GLCloud.vue";
 
 const {
@@ -18,16 +20,56 @@ const {
   PORTRAIT_TAGLINE_POSITION,
   PORTRAIT_TAGLINE_ROTATION,
   PORTRAIT_TAGLINE_SCALE,
+  PORTRAIT_AVATAR_WAVE_POSITION,
+  PORTRAIT_AVATAR_WAVE_ROTATION,
+  PORTRAIT_AVATAR_WAVE_SCALE,
+  PORTRAIT_AVATAR_SUMMARY_POSITION,
+  PORTRAIT_AVATAR_SUMMARY_ROTATION,
+  PORTRAIT_AVATAR_SUMMARY_SCALE,
+  PORTRAIT_AVATAR_SKILLS_POSITION,
+  PORTRAIT_AVATAR_SKILLS_ROTATION,
+  PORTRAIT_AVATAR_SKILLS_SCALE,
+  PORTRAIT_AVATAR_SKILLS_SOFT_POSITION,
+  PORTRAIT_AVATAR_SKILLS_SOFT_ROTATION,
+  PORTRAIT_AVATAR_SKILLS_SOFT_SCALE,
+  PORTRAIT_DESK_POSITION,
+  PORTRAIT_DESK_ROTATION,
+  PORTRAIT_DESK_SCALE,
   LANDSCAPE_LOGO_POSITION,
   LANDSCAPE_LOGO_SCALE,
   LANDSCAPE_TAGLINE_POSITION,
   LANDSCAPE_TAGLINE_SCALE,
+  LANDSCAPE_AVATAR_WAVE_POSITION,
+  LANDSCAPE_AVATAR_WAVE_SCALE,
+  LANDSCAPE_AVATAR_SUMMARY_POSITION,
+  LANDSCAPE_AVATAR_SUMMARY_SCALE,
+  LANDSCAPE_AVATAR_SKILLS_POSITION,
+  LANDSCAPE_AVATAR_SKILLS_SCALE,
+  LANDSCAPE_AVATAR_SKILLS_SOFT_POSITION,
+  LANDSCAPE_AVATAR_SKILLS_SOFT_SCALE,
+  LANDSCAPE_DESK_POSITION,
+  LANDSCAPE_DESK_SCALE,
   DESKTOP_LOGO_POSITION,
   DESKTOP_LOGO_SCALE,
   DESKTOP_TAGLINE_POSITION,
   DESKTOP_TAGLINE_SCALE,
+  DESKTOP_AVATAR_WAVE_POSITION,
+  DESKTOP_AVATAR_WAVE_SCALE,
+  DESKTOP_AVATAR_SUMMARY_POSITION,
+  DESKTOP_AVATAR_SUMMARY_SCALE,
+  DESKTOP_AVATAR_SKILLS_POSITION,
+  DESKTOP_AVATAR_SKILLS_SCALE,
+  DESKTOP_AVATAR_SKILLS_SOFT_POSITION,
+  DESKTOP_AVATAR_SKILLS_SOFT_SCALE,
+  DESKTOP_DESK_POSITION,
+  DESKTOP_DESK_SCALE,
   WIDE_LOGO_ROTATION,
   WIDE_TAGLINE_ROTATION,
+  WIDE_AVATAR_WAVE_ROTATION,
+  WIDE_AVATAR_SUMMARY_ROTATION,
+  WIDE_AVATAR_SKILLS_ROTATION,
+  WIDE_AVATAR_SKILLS_SOFT_ROTATION,
+  WIDE_DESK_ROTATION,
   CANVAS_COLOR,
   TEXT_COLOR,
   AMBIENT_LIGHT_COLOR,
@@ -37,18 +79,122 @@ const {
   FONT_PATH,
   FONT_SIZE,
   LOGO_GLTF_PATH,
+  AVATAR_WAVE_HEIGHT,
+  AVATAR_WAVE_RADIUS,
+  AVATAR_SUMMARY_HEIGHT,
+  AVATAR_SUMMARY_RADIUS,
+  AVATAR_SKILLS_HEIGHT,
+  AVATAR_SKILLS_RADIUS,
+  AVATAR_SKILLS_SOFT_HEIGHT,
+  AVATAR_SKILLS_SOFT_RADIUS,
+  GL_CLOUD_POSITION,
+  GL_CLOUD_ROTATION,
+  GL_CLOUD_SCALE,
 } = constants;
+
+const {
+  CLOUDS_LOTTIE_PATH,
+  AVATAR_WAVE_LOTTIE_PATH,
+  AVATAR_SUMMARY_LOTTIE_PATH,
+  AVATAR_SKILLS_LEGS_LOTTIE_PATH,
+  AVATAR_SKILLS_SOFT_LOTTIE_PATH,
+} = lottieConstants;
 
 let width: number = window?.innerWidth || WIDTH_BREAKPOINT;
 let height: number = window?.innerHeight || HEIGHT_BREAKPOINT;
-let isPortrait: boolean = true;
-let isLandscape: boolean = false;
-let logoPosition: [number, number, number] = PORTRAIT_LOGO_POSITION;
-let logoRotation: [number, number, number] = PORTRAIT_LOGO_ROTATION;
-let logoScale: number = PORTRAIT_LOGO_SCALE;
-let taglinePosition: [number, number, number] = PORTRAIT_TAGLINE_POSITION;
-let taglineRotation: [number, number, number] = PORTRAIT_TAGLINE_ROTATION;
-let taglineScale: number = PORTRAIT_TAGLINE_SCALE;
+let isPortrait: boolean = width <= WIDTH_BREAKPOINT && width < height;
+let isLandscape: boolean = height <= HEIGHT_BREAKPOINT && height < width;
+let logoPosition: [number, number, number] = isPortrait
+  ? PORTRAIT_LOGO_POSITION
+  : isLandscape
+    ? LANDSCAPE_LOGO_POSITION
+    : DESKTOP_LOGO_POSITION;
+let logoRotation: [number, number, number] = isPortrait
+  ? PORTRAIT_LOGO_ROTATION
+  : WIDE_LOGO_ROTATION;
+let logoScale: number = isPortrait
+  ? PORTRAIT_LOGO_SCALE
+  : isLandscape
+    ? LANDSCAPE_LOGO_SCALE
+    : DESKTOP_LOGO_SCALE;
+let taglinePosition: [number, number, number] = isPortrait
+  ? PORTRAIT_TAGLINE_POSITION
+  : isLandscape
+    ? LANDSCAPE_TAGLINE_POSITION
+    : DESKTOP_TAGLINE_POSITION;
+let taglineRotation: [number, number, number] = isPortrait
+  ? PORTRAIT_TAGLINE_ROTATION
+  : WIDE_TAGLINE_ROTATION;
+let taglineScale: number = isPortrait
+  ? PORTRAIT_TAGLINE_SCALE
+  : isLandscape
+    ? LANDSCAPE_TAGLINE_SCALE
+    : DESKTOP_TAGLINE_SCALE;
+let avatarWavePosition: [number, number, number] = isPortrait
+  ? PORTRAIT_AVATAR_WAVE_POSITION
+  : isLandscape
+    ? LANDSCAPE_AVATAR_WAVE_POSITION
+    : DESKTOP_AVATAR_WAVE_POSITION;
+let avatarWaveRotation: [number, number, number] = isPortrait
+  ? PORTRAIT_AVATAR_WAVE_ROTATION
+  : WIDE_AVATAR_WAVE_ROTATION;
+let avatarWaveScale: number = isPortrait
+  ? PORTRAIT_AVATAR_WAVE_SCALE
+  : isLandscape
+    ? LANDSCAPE_AVATAR_WAVE_SCALE
+    : DESKTOP_AVATAR_WAVE_SCALE;
+let avatarSummaryPosition: [number, number, number] = isPortrait
+  ? PORTRAIT_AVATAR_SUMMARY_POSITION
+  : isLandscape
+    ? LANDSCAPE_AVATAR_SUMMARY_POSITION
+    : DESKTOP_AVATAR_SUMMARY_POSITION;
+let avatarSummaryRotation: [number, number, number] = isPortrait
+  ? PORTRAIT_AVATAR_SUMMARY_ROTATION
+  : WIDE_AVATAR_SUMMARY_ROTATION;
+let avatarSummaryScale: number = isPortrait
+  ? PORTRAIT_AVATAR_SUMMARY_SCALE
+  : isLandscape
+    ? LANDSCAPE_AVATAR_SUMMARY_SCALE
+    : DESKTOP_AVATAR_SUMMARY_SCALE;
+let avatarSkillsPosition: [number, number, number] = isPortrait
+  ? PORTRAIT_AVATAR_SKILLS_POSITION
+  : isLandscape
+    ? LANDSCAPE_AVATAR_SKILLS_POSITION
+    : DESKTOP_AVATAR_SKILLS_POSITION;
+let avatarSkillsRotation: [number, number, number] = isPortrait
+  ? PORTRAIT_AVATAR_SKILLS_ROTATION
+  : WIDE_AVATAR_SKILLS_ROTATION;
+let avatarSkillsScale: number = isPortrait
+  ? PORTRAIT_AVATAR_SKILLS_SCALE
+  : isLandscape
+    ? LANDSCAPE_AVATAR_SKILLS_SCALE
+    : DESKTOP_AVATAR_SKILLS_SCALE;
+let avatarDeskPosition: [number, number, number] = isPortrait
+  ? PORTRAIT_DESK_POSITION
+  : isLandscape
+    ? LANDSCAPE_DESK_POSITION
+    : DESKTOP_DESK_POSITION;
+let avatarDeskRotation: [number, number, number] = isPortrait
+  ? PORTRAIT_DESK_ROTATION
+  : WIDE_DESK_ROTATION;
+let avatarDeskScale: number = isPortrait
+  ? PORTRAIT_DESK_SCALE
+  : isLandscape
+    ? LANDSCAPE_DESK_SCALE
+    : DESKTOP_DESK_SCALE;
+let avatarSkillsSoftPosition: [number, number, number] = isPortrait
+  ? PORTRAIT_AVATAR_SKILLS_SOFT_POSITION
+  : isLandscape
+    ? LANDSCAPE_AVATAR_SKILLS_SOFT_POSITION
+    : DESKTOP_AVATAR_SKILLS_SOFT_POSITION;
+let avatarSkillsSoftRotation: [number, number, number] = isPortrait
+  ? PORTRAIT_AVATAR_SKILLS_SOFT_ROTATION
+  : WIDE_AVATAR_SKILLS_SOFT_ROTATION;
+let avatarSkillsSoftScale: number = isPortrait
+  ? PORTRAIT_AVATAR_SKILLS_SOFT_SCALE
+  : isLandscape
+    ? LANDSCAPE_AVATAR_SKILLS_SOFT_SCALE
+    : DESKTOP_AVATAR_SKILLS_SOFT_SCALE;
 
 const canvasKey: Ref<string> = ref("logo-canvas");
 const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
@@ -64,7 +210,8 @@ const setPoses = (event: Event | null = null) => {
       if (
         !currentWidth ||
         !currentHeight ||
-        (event && event.type === "resize" && currentWidth === width)
+        (event && event.type === "resize" && currentWidth === width) ||
+        (currentWidth === width && currentHeight === height)
       )
         return;
 
@@ -97,6 +244,71 @@ const setPoses = (event: Event | null = null) => {
         : isLandscape
           ? LANDSCAPE_TAGLINE_SCALE
           : DESKTOP_TAGLINE_SCALE;
+      avatarWavePosition = isPortrait
+        ? PORTRAIT_AVATAR_WAVE_POSITION
+        : isLandscape
+          ? LANDSCAPE_AVATAR_WAVE_POSITION
+          : DESKTOP_AVATAR_WAVE_POSITION;
+      avatarWaveRotation = isPortrait
+        ? PORTRAIT_AVATAR_WAVE_ROTATION
+        : WIDE_AVATAR_WAVE_ROTATION;
+      avatarWaveScale = isPortrait
+        ? PORTRAIT_AVATAR_WAVE_SCALE
+        : isLandscape
+          ? LANDSCAPE_AVATAR_WAVE_SCALE
+          : DESKTOP_AVATAR_WAVE_SCALE;
+      avatarSummaryPosition = isPortrait
+        ? PORTRAIT_AVATAR_SUMMARY_POSITION
+        : isLandscape
+          ? LANDSCAPE_AVATAR_SUMMARY_POSITION
+          : DESKTOP_AVATAR_SUMMARY_POSITION;
+      avatarSummaryRotation = isPortrait
+        ? PORTRAIT_AVATAR_SUMMARY_ROTATION
+        : WIDE_AVATAR_SUMMARY_ROTATION;
+      avatarSummaryScale = isPortrait
+        ? PORTRAIT_AVATAR_SUMMARY_SCALE
+        : isLandscape
+          ? LANDSCAPE_AVATAR_SUMMARY_SCALE
+          : DESKTOP_AVATAR_SUMMARY_SCALE;
+      avatarSkillsPosition = isPortrait
+        ? PORTRAIT_AVATAR_SKILLS_POSITION
+        : isLandscape
+          ? LANDSCAPE_AVATAR_SKILLS_POSITION
+          : DESKTOP_AVATAR_SKILLS_POSITION;
+      avatarSkillsRotation = isPortrait
+        ? PORTRAIT_AVATAR_SKILLS_ROTATION
+        : WIDE_AVATAR_SKILLS_ROTATION;
+      avatarSkillsScale = isPortrait
+        ? PORTRAIT_AVATAR_SKILLS_SCALE
+        : isLandscape
+          ? LANDSCAPE_AVATAR_SKILLS_SCALE
+          : DESKTOP_AVATAR_SKILLS_SCALE;
+      avatarDeskPosition = isPortrait
+        ? PORTRAIT_DESK_POSITION
+        : isLandscape
+          ? LANDSCAPE_DESK_POSITION
+          : DESKTOP_DESK_POSITION;
+      avatarDeskRotation = isPortrait
+        ? PORTRAIT_DESK_ROTATION
+        : WIDE_DESK_ROTATION;
+      avatarDeskScale = isPortrait
+        ? PORTRAIT_DESK_SCALE
+        : isLandscape
+          ? LANDSCAPE_DESK_SCALE
+          : DESKTOP_DESK_SCALE;
+      avatarSkillsSoftPosition = isPortrait
+        ? PORTRAIT_AVATAR_SKILLS_SOFT_POSITION
+        : isLandscape
+          ? LANDSCAPE_AVATAR_SKILLS_SOFT_POSITION
+          : DESKTOP_AVATAR_SKILLS_SOFT_POSITION;
+      avatarSkillsSoftRotation = isPortrait
+        ? PORTRAIT_AVATAR_SKILLS_ROTATION
+        : WIDE_AVATAR_SKILLS_SOFT_ROTATION;
+      avatarSkillsSoftScale = isPortrait
+        ? PORTRAIT_AVATAR_SKILLS_SCALE
+        : isLandscape
+          ? LANDSCAPE_AVATAR_SKILLS_SOFT_SCALE
+          : DESKTOP_AVATAR_SKILLS_SOFT_SCALE;
 
       const { scene } = await useGLTF(LOGO_GLTF_PATH, { draco: true });
       logoModel = scene;
@@ -146,7 +358,7 @@ watchEffect(() => {
         :maxAzimuthAngle="Math.PI / HORIZONTAL_ROTATION_LIMIT"
       />
       <Suspense>
-        <LottieSphere src="/lottie/clouds_lottie.json" />
+        <LottieSphere :src="CLOUDS_LOTTIE_PATH" />
       </Suspense>
       <TresMesh
         :position="logoPosition"
@@ -186,7 +398,87 @@ watchEffect(() => {
         </Suspense>
       </TresMesh>
       <Suspense>
-        <GLCloud v-if="!isMobileOrTablet" />
+        <LottieCylinder
+          :src="AVATAR_WAVE_LOTTIE_PATH"
+          :height="AVATAR_WAVE_HEIGHT"
+          :radius-top="AVATAR_WAVE_RADIUS"
+          :radius-bottom="AVATAR_WAVE_RADIUS"
+          :position="avatarWavePosition"
+          :rotation="avatarWaveRotation"
+          :scale="avatarWaveScale"
+        />
+      </Suspense>
+      <Suspense>
+        <LottieCylinder
+          :src="AVATAR_SUMMARY_LOTTIE_PATH"
+          :height="AVATAR_SUMMARY_HEIGHT"
+          :radius-top="AVATAR_SUMMARY_RADIUS"
+          :radius-bottom="AVATAR_SUMMARY_RADIUS"
+          :position="avatarSummaryPosition"
+          :rotation="avatarSummaryRotation"
+          :scale="avatarSummaryScale"
+        />
+      </Suspense>
+      <Suspense>
+        <LottieCylinder
+          :src="AVATAR_SKILLS_SOFT_LOTTIE_PATH"
+          :height="AVATAR_SKILLS_SOFT_HEIGHT"
+          :radius-top="AVATAR_SKILLS_SOFT_RADIUS"
+          :radius-bottom="AVATAR_SKILLS_SOFT_RADIUS"
+          :position="avatarSkillsSoftPosition"
+          :rotation="avatarSkillsSoftRotation"
+          :scale="avatarSkillsSoftScale"
+        />
+      </Suspense>
+      <Suspense>
+        <LottieCylinder
+          :src="AVATAR_SKILLS_LEGS_LOTTIE_PATH"
+          :height="AVATAR_SKILLS_HEIGHT"
+          :radius-top="AVATAR_SKILLS_RADIUS"
+          :radius-bottom="AVATAR_SKILLS_RADIUS"
+          :position="avatarSkillsPosition"
+          :rotation="avatarSkillsRotation"
+          :scale="avatarSkillsScale"
+        />
+      </Suspense>
+      <TresMesh
+        :position="avatarDeskPosition"
+        :rotation="avatarDeskRotation"
+        :scale="avatarDeskScale"
+      >
+        <Suspense>
+          <Box
+            :args="[2.2, 0.1, 1.6]"
+            :position="[0, 2.4, 1.5]"
+            :rotation="[2.2, 0.1, 0.05]"
+            shadows
+          >
+            <TresMeshStandardMaterial color="#006177" />
+          </Box>
+        </Suspense>
+        <Suspense>
+          <Box
+            :args="[2.2, 0.2, 1.6]"
+            :position="[0, 1.7, 0]"
+            :rotation="[0, 0, 0.05]"
+            shadows
+          >
+            <TresMeshStandardMaterial color="#006177" />
+          </Box>
+        </Suspense>
+        <Suspense>
+          <Box :args="[5, 3, 3]" shadows>
+            <TresMeshStandardMaterial color="#963600" />
+          </Box>
+        </Suspense>
+      </TresMesh>
+      <Suspense>
+        <GLCloud
+          v-if="!isMobileOrTablet"
+          :position="GL_CLOUD_POSITION"
+          :rotation="GL_CLOUD_ROTATION"
+          :scale="GL_CLOUD_SCALE"
+        />
       </Suspense>
       <TresAmbientLight
         :position="[0, 10, 0]"

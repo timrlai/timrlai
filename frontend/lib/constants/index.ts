@@ -1,4 +1,36 @@
-import type { SubItem, SocialButton, Skill } from "../types";
+import type {
+  SvgConstants,
+  LottieConstants,
+  SubItem,
+  SocialButton,
+  Skill,
+} from "../types";
+
+export const svgConstants: SvgConstants = {
+  LOGO_DARK_SVG_PATH: "../../src/assets/img/logos/timrlai_logo.svg",
+  LOGO_LIGHT_SVG_PATH: "../../src/assets/img/logos/timrlai_logo_light.svg",
+  HEAD_TRANS_SVG_PATH: "../../src/assets/img/icons/timrlai_head_trans_bg.svg",
+  HEAD_BLUE_SVG_PATH: "../../src/assets/img/icons/timrlai_head_blue_bg.svg",
+};
+
+export const lottieConstants: LottieConstants = {
+  CLOUDS_LOTTIE_PATH: "/lottie/bg/clouds_lottie.json",
+  AVATAR_WAVE_LOTTIE_PATH: "/lottie/avatars/timrlai_avatar_wave.json",
+  AVATAR_SUMMARY_LOTTIE_PATH: "/lottie/avatars/timrlai_avatar_summary.json",
+  AVATAR_SKILLS_DESK_LOTTIE_PATH:
+    "/lottie/avatars/timrlai_avatar_skills_desk.json",
+  AVATAR_SKILLS_LEGS_LOTTIE_PATH:
+    "/lottie/avatars/timrlai_avatar_skills_legs.json",
+  AVATAR_SKILLS_SOFT_LOTTIE_PATH:
+    "/lottie/avatars/timrlai_avatar_skills_soft.json",
+  NOT_FOUND_LOTTIE_FOLDER: "/lottie/404/",
+  NOT_FOUND_LOTTIES: [
+    "404_cat_clouds.json",
+    "404_cat_magnifying_glass.json",
+    "404_cat_papers.json",
+    "404_cat_yarn.json",
+  ],
+};
 
 export const subItems: SubItem[] = [
   {
@@ -358,11 +390,4 @@ export const madeWithSkills: Skill[] = [
     title: "Blender",
     icon: "logos:blender",
   },
-];
-
-export const notFoundLotties: string[] = [
-  "404_cat_clouds.json",
-  "404_cat_magnifying_glass.json",
-  "404_cat_papers.json",
-  "404_cat_yarn.json",
 ];

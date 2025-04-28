@@ -4,7 +4,7 @@ import isMobile from "is-mobile";
 import { TresCanvas } from "@tresjs/core";
 import { OrbitControls, Text3D } from "@tresjs/cientos";
 
-import { notFoundLotties } from "../../../lib/constants";
+import { lottieConstants } from "../../../lib/constants";
 import constants from "../../../lib/constants/NotFoundCanvas";
 import LottieSphere from "./LottieSphere.vue";
 import LottieCylinder from "./LottieCylinder.vue";
@@ -38,24 +38,48 @@ const {
   FONT_PATH,
   TITLE_FONT_SIZE,
   EXPLANATION_FONT_SIZE,
+  GL_CLOUD_POSITION,
+  GL_CLOUD_ROTATION,
+  GL_CLOUD_SCALE,
 } = constants;
+
+const { CLOUDS_LOTTIE_PATH, NOT_FOUND_LOTTIE_FOLDER, NOT_FOUND_LOTTIES } =
+  lottieConstants;
 
 let width: number = window?.innerWidth || WIDTH_BREAKPOINT;
 let height: number = window?.innerHeight || HEIGHT_BREAKPOINT;
-let isPortrait: boolean = true;
-let isLandscape: boolean = false;
-let lottiePosition: [number, number, number] = PORTRAIT_LOTTIE_POSITION;
-let lottieRotation: [number, number, number] = PORTRAIT_LOTTIE_ROTATION;
-let lottieScale: number = PORTRAIT_LOTTIE_SCALE;
-let explanationPosition: [number, number, number] =
-  PORTRAIT_EXPLANATION_POSITION;
-let explanationRotation: [number, number, number] =
-  PORTRAIT_EXPLANATION_ROTATION;
-let explanationScale: number = PORTRAIT_EXPLANATION_SCALE;
+let isPortrait: boolean = width <= WIDTH_BREAKPOINT && width < height;
+let isLandscape: boolean = height <= HEIGHT_BREAKPOINT && height < width;
+let lottiePosition: [number, number, number] = isPortrait
+  ? PORTRAIT_LOTTIE_POSITION
+  : isLandscape
+    ? LANDSCAPE_LOTTIE_POSITION
+    : DESKTOP_LOTTIE_POSITION;
+let lottieRotation: [number, number, number] = isPortrait
+  ? PORTRAIT_LOTTIE_ROTATION
+  : WIDE_LOTTIE_ROTATION;
+let lottieScale: number = isPortrait
+  ? PORTRAIT_LOTTIE_SCALE
+  : isLandscape
+    ? LANDSCAPE_LOTTIE_SCALE
+    : DESKTOP_LOTTIE_SCALE;
+let explanationPosition: [number, number, number] = isPortrait
+  ? PORTRAIT_EXPLANATION_POSITION
+  : isLandscape
+    ? LANDSCAPE_EXPLANATION_POSITION
+    : DESKTOP_EXPLANATION_POSITION;
+let explanationRotation: [number, number, number] = isPortrait
+  ? PORTRAIT_EXPLANATION_ROTATION
+  : WIDE_EXPLANATION_ROTATION;
+let explanationScale: number = isPortrait
+  ? PORTRAIT_EXPLANATION_SCALE
+  : isLandscape
+    ? LANDSCAPE_EXPLANATION_SCALE
+    : DESKTOP_EXPLANATION_SCALE;
 
 const canvasKey: Ref<string> = ref("not-found-canvas");
 const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
-const randomNotFoundLottie: string = `/lottie/404/${notFoundLotties[Math.floor(Math.random() * notFoundLotties.length)]}`;
+const randomNotFoundLottie: string = `${NOT_FOUND_LOTTIE_FOLDER}${NOT_FOUND_LOTTIES[Math.floor(Math.random() * NOT_FOUND_LOTTIES.length)]}`;
 
 const setPoses = (event: Event | null = null) => {
   setTimeout(
@@ -66,7 +90,8 @@ const setPoses = (event: Event | null = null) => {
       if (
         !currentWidth ||
         !currentHeight ||
-        (event && event.type === "resize" && currentWidth === width)
+        (event && event.type === "resize" && currentWidth === width) ||
+        (currentWidth === width && currentHeight === height)
       )
         return;
 
@@ -151,7 +176,7 @@ watchEffect(() => {
         :maxAzimuthAngle="Math.PI / HORIZONTAL_ROTATION_LIMIT"
       />
       <Suspense>
-        <LottieSphere src="/lottie/clouds_lottie.json" />
+        <LottieSphere :src="CLOUDS_LOTTIE_PATH" />
       </Suspense>
       <Suspense>
         <LottieCylinder
@@ -196,7 +221,12 @@ watchEffect(() => {
         </Suspense>
       </TresMesh>
       <Suspense>
-        <GLCloud v-if="!isMobileOrTablet" />
+        <GLCloud
+          v-if="!isMobileOrTablet"
+          :position="GL_CLOUD_POSITION"
+          :rotation="GL_CLOUD_ROTATION"
+          :scale="GL_CLOUD_SCALE"
+        />
       </Suspense>
       <TresAmbientLight
         :position="[0, 10, 0]"

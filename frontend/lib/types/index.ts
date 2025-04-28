@@ -89,6 +89,31 @@ export type LottieCylinderProps = LottieShapeProps & {
   theataEnd?: number;
 };
 
+export type GLCloudProps = {
+  position?: [number, number, number];
+  rotation?: [number, number, number];
+  scale?: [number, number, number] | number;
+  args?: [number, number, number];
+};
+
+export type SvgConstants = {
+  readonly LOGO_DARK_SVG_PATH: string;
+  readonly LOGO_LIGHT_SVG_PATH: string;
+  readonly HEAD_TRANS_SVG_PATH: string;
+  readonly HEAD_BLUE_SVG_PATH: string;
+};
+
+export type LottieConstants = {
+  readonly CLOUDS_LOTTIE_PATH: string;
+  readonly AVATAR_WAVE_LOTTIE_PATH: string;
+  readonly AVATAR_SUMMARY_LOTTIE_PATH: string;
+  readonly AVATAR_SKILLS_DESK_LOTTIE_PATH: string;
+  readonly AVATAR_SKILLS_LEGS_LOTTIE_PATH: string;
+  readonly AVATAR_SKILLS_SOFT_LOTTIE_PATH: string;
+  readonly NOT_FOUND_LOTTIE_FOLDER: string;
+  readonly NOT_FOUND_LOTTIES: string[];
+};
+
 type CanvasConstants = {
   readonly WIDTH_BREAKPOINT: number;
   readonly HEIGHT_BREAKPOINT: number;
@@ -101,28 +126,82 @@ type CanvasConstants = {
   readonly FONT_PATH: string;
 };
 
-export type LogoCanvasConstants = CanvasConstants & {
+type CloudCanvasConstants = CanvasConstants & {
+  readonly GL_CLOUD_POSITION: [number, number, number];
+  readonly GL_CLOUD_ROTATION: [number, number, number];
+  readonly GL_CLOUD_SCALE: number;
+};
+
+export type LogoCanvasConstants = CloudCanvasConstants & {
   readonly PORTRAIT_LOGO_POSITION: [number, number, number];
   readonly PORTRAIT_LOGO_ROTATION: [number, number, number];
   readonly PORTRAIT_LOGO_SCALE: number;
   readonly PORTRAIT_TAGLINE_POSITION: [number, number, number];
   readonly PORTRAIT_TAGLINE_ROTATION: [number, number, number];
   readonly PORTRAIT_TAGLINE_SCALE: number;
+  readonly PORTRAIT_AVATAR_WAVE_POSITION: [number, number, number];
+  readonly PORTRAIT_AVATAR_WAVE_ROTATION: [number, number, number];
+  readonly PORTRAIT_AVATAR_WAVE_SCALE: number;
+  readonly PORTRAIT_AVATAR_SUMMARY_POSITION: [number, number, number];
+  readonly PORTRAIT_AVATAR_SUMMARY_ROTATION: [number, number, number];
+  readonly PORTRAIT_AVATAR_SUMMARY_SCALE: number;
+  readonly PORTRAIT_AVATAR_SKILLS_POSITION: [number, number, number];
+  readonly PORTRAIT_AVATAR_SKILLS_ROTATION: [number, number, number];
+  readonly PORTRAIT_AVATAR_SKILLS_SCALE: number;
+  readonly PORTRAIT_AVATAR_SKILLS_SOFT_POSITION: [number, number, number];
+  readonly PORTRAIT_AVATAR_SKILLS_SOFT_ROTATION: [number, number, number];
+  readonly PORTRAIT_AVATAR_SKILLS_SOFT_SCALE: number;
+  readonly PORTRAIT_DESK_POSITION: [number, number, number];
+  readonly PORTRAIT_DESK_ROTATION: [number, number, number];
+  readonly PORTRAIT_DESK_SCALE: number;
   readonly LANDSCAPE_LOGO_POSITION: [number, number, number];
   readonly LANDSCAPE_LOGO_SCALE: number;
   readonly LANDSCAPE_TAGLINE_POSITION: [number, number, number];
   readonly LANDSCAPE_TAGLINE_SCALE: number;
+  readonly LANDSCAPE_AVATAR_WAVE_POSITION: [number, number, number];
+  readonly LANDSCAPE_AVATAR_WAVE_SCALE: number;
+  readonly LANDSCAPE_AVATAR_SUMMARY_POSITION: [number, number, number];
+  readonly LANDSCAPE_AVATAR_SUMMARY_SCALE: number;
+  readonly LANDSCAPE_AVATAR_SKILLS_POSITION: [number, number, number];
+  readonly LANDSCAPE_AVATAR_SKILLS_SCALE: number;
+  readonly LANDSCAPE_AVATAR_SKILLS_SOFT_POSITION: [number, number, number];
+  readonly LANDSCAPE_AVATAR_SKILLS_SOFT_SCALE: number;
+  readonly LANDSCAPE_DESK_POSITION: [number, number, number];
+  readonly LANDSCAPE_DESK_SCALE: number;
   readonly DESKTOP_LOGO_POSITION: [number, number, number];
   readonly DESKTOP_LOGO_SCALE: number;
   readonly DESKTOP_TAGLINE_POSITION: [number, number, number];
   readonly DESKTOP_TAGLINE_SCALE: number;
+  readonly DESKTOP_AVATAR_WAVE_POSITION: [number, number, number];
+  readonly DESKTOP_AVATAR_WAVE_SCALE: number;
+  readonly DESKTOP_AVATAR_SUMMARY_POSITION: [number, number, number];
+  readonly DESKTOP_AVATAR_SUMMARY_SCALE: number;
+  readonly DESKTOP_AVATAR_SKILLS_POSITION: [number, number, number];
+  readonly DESKTOP_AVATAR_SKILLS_SCALE: number;
+  readonly DESKTOP_AVATAR_SKILLS_SOFT_POSITION: [number, number, number];
+  readonly DESKTOP_AVATAR_SKILLS_SOFT_SCALE: number;
+  readonly DESKTOP_DESK_POSITION: [number, number, number];
+  readonly DESKTOP_DESK_SCALE: number;
   readonly WIDE_LOGO_ROTATION: [number, number, number];
   readonly WIDE_TAGLINE_ROTATION: [number, number, number];
+  readonly WIDE_AVATAR_WAVE_ROTATION: [number, number, number];
+  readonly WIDE_AVATAR_SUMMARY_ROTATION: [number, number, number];
+  readonly WIDE_AVATAR_SKILLS_ROTATION: [number, number, number];
+  readonly WIDE_AVATAR_SKILLS_SOFT_ROTATION: [number, number, number];
+  readonly WIDE_DESK_ROTATION: [number, number, number];
   readonly LOGO_GLTF_PATH: string;
   readonly FONT_SIZE: number;
+  readonly AVATAR_WAVE_HEIGHT: number;
+  readonly AVATAR_WAVE_RADIUS: number;
+  readonly AVATAR_SUMMARY_HEIGHT: number;
+  readonly AVATAR_SUMMARY_RADIUS: number;
+  readonly AVATAR_SKILLS_HEIGHT: number;
+  readonly AVATAR_SKILLS_RADIUS: number;
+  readonly AVATAR_SKILLS_SOFT_HEIGHT: number;
+  readonly AVATAR_SKILLS_SOFT_RADIUS: number;
 };
 
-export type NotFoundCanvasConstants = CanvasConstants & {
+export type NotFoundCanvasConstants = CloudCanvasConstants & {
   readonly WIDTH_BREAKPOINT: number;
   readonly HEIGHT_BREAKPOINT: number;
   readonly PORTRAIT_LOTTIE_POSITION: [number, number, number];

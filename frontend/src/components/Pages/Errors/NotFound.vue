@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 import { RouterLink } from "vue-router";
-import { notFoundLotties } from "../../../../lib/constants";
+import { lottieConstants } from "../../../../lib/constants";
 import NotFoundCanvas from "../../3D/NotFoundCanvas.vue";
 import LottiePlayer from "../../Common/LottiePlayer.vue";
 
-const randomNotFoundLottie = `/lottie/404/${notFoundLotties[Math.floor(Math.random() * notFoundLotties.length)]}`;
+const { NOT_FOUND_LOTTIE_FOLDER, NOT_FOUND_LOTTIES } = lottieConstants;
+
+const randomNotFoundLottie = `${NOT_FOUND_LOTTIE_FOLDER}${NOT_FOUND_LOTTIES[Math.floor(Math.random() * NOT_FOUND_LOTTIES.length)]}`;
 </script>
 
 <template>

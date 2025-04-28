@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { defineProps } from "vue";
 import * as THREE from "three";
 import { LottieLoader } from "three/addons/loaders/LottieLoader.js";
 import type { LoaderProto } from "@tresjs/core";
@@ -23,7 +24,7 @@ const {
   position = [0, 0, 0],
   rotation = [0, 0, 0],
   scale = [1, 1, 1],
-  renderOrder = 2,
+  renderOrder = 1,
   side = THREE.FrontSide,
   material = "basic",
   transparent = true,

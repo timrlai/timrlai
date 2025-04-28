@@ -1,11 +1,20 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { defineProps, ref } from "vue";
 import * as THREE from "three";
 import { ImprovedNoise } from "three/addons/math/ImprovedNoise.js";
 import { useTresContext, useRenderLoop } from "@tresjs/core";
 import { Box } from "@tresjs/cientos";
+
+import type { GLCloudProps } from "../../../lib/types";
 import vertexShader from "../../assets/shaders/cloud_vertex_shader.glsl";
 import fragmentShader from "../../assets/shaders/cloud_fragment_shader.glsl";
+
+const {
+  position = [0, -0.4, -0.3],
+  rotation = [2, 0, 0],
+  scale = 1,
+  args = [10, 10, 10],
+} = defineProps<GLCloudProps>();
 
 const { scene, camera: cameraRef, renderer } = useTresContext();
 const cameraValue = cameraRef.value as THREE.Camera;
@@ -18,7 +27,7 @@ const size = 128;
 const data = new Uint8Array(size * size * size);
 
 let i = 0;
-const scale = 0.05;
+const textureScale = 0.05;
 const perlin = new ImprovedNoise();
 const vector = new THREE.Vector3();
 
@@ -34,7 +43,12 @@ for (let z = 0; z < size; z++) {
           .length();
       data[i] =
         (128 +
-          128 * perlin.noise((x * scale) / 1.5, y * scale, (z * scale) / 1.5)) *
+          128 *
+            perlin.noise(
+              (x * textureScale) / 1.5,
+              y * textureScale,
+              (z * textureScale) / 1.5,
+            )) *
         d *
         d;
       i++;
@@ -86,8 +100,13 @@ onLoop(({ elapsed }) => {
 
 <template>
   <Suspense>
-    <TresMesh :ref="mesh" :position="[0, -0.6, 0]" :rotation="[3, 0, 0]">
-      <Box :args="[5, 5, 5]" :renderOrder="1">
+    <TresMesh
+      :ref="mesh"
+      :position="position"
+      :rotation="rotation"
+      :scale="scale"
+    >
+      <Box :args="args" :renderOrder="1">
         <TresRawShaderMaterial
           :vertex-shader="vertexShader"
           :fragment-shader="fragmentShader"

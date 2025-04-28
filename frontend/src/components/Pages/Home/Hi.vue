@@ -4,7 +4,10 @@ import { Icon } from "@iconify/vue";
 import ConfettiExplosion from "vue-confetti-explosion";
 import { VueWriter } from "vue-writer";
 
-import { intros } from "../../../../lib/constants";
+import { lottieConstants, intros } from "../../../../lib/constants";
+import LottiePlayer from "../../Common/LottiePlayer.vue";
+
+const { AVATAR_WAVE_LOTTIE_PATH } = lottieConstants;
 
 const visible = ref(false);
 
@@ -28,33 +31,45 @@ const onIntroTyped = (currentTitle: string) => {
     class="mockup-browser min-h-[60vh] md:min-h-[70vh] text-secondary-content border-4 border-primary shadow-lg shadow-primary cursor-pointer ubuntu-regular"
     @click="explode"
   >
-    <div class="mockup-browser-toolbar bg-secondary py-4">
+    <div
+      class="mockup-browser-toolbar bg-secondary border-b-4 border-primary py-4"
+    >
       <div class="input">https://timrl.ai</div>
     </div>
     <div
-      class="glass grid place-content-center min-h-[55vh] md:min-h-[65vh] p-5 bg-primary/85 text-primary-content text-center"
+      class="glass grid place-content-center min-h-[55vh] md:min-h-[65vh] p-2 bg-primary/85 text-primary-content text-center"
     >
       <div class="flex justify-center items-start">
         <ConfettiExplosion :particleCount="200" :force="0.3" v-if="visible" />
       </div>
-      <h1 class="text-5xl sm:text-6xl md:text-8xl ubuntu-titling mb-5">
-        Hi, I'm Tim Lai!
-        <span id="hand" class="inline-block pb-5">
-          <Icon icon="fluent-emoji:waving-hand" />
-        </span>
-      </h1>
-      <p class="text-2xl sm:text-3xl md:text-5xl my-5">
-        I am
-        <strong class="bg-blue-600 ubuntu-bold">
-          <VueWriter
-            :array="intros.map(({ title }) => title)"
-            @typed="onIntroTyped"
-            class="inline"
-          />
-        </strong>
-      </p>
-      <div class="text-9xl text-center mt-8 animate-bounce">
-        <Icon :icon="`${introIcon}`" class="inline-block" />
+      <div class="flex flex-wrap items-center">
+        <div class="place-content-center w-full sm:w-3/4 md:w-2/3">
+          <h1
+            class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl ubuntu-titling mb-5"
+          >
+            Hi, I'm Tim Lai!
+          </h1>
+          <p class="text-xl sm:text-2xl md:text-4xl my-5">
+            I am
+            <strong class="bg-blue-600 ubuntu-bold">
+              <VueWriter
+                :array="intros.map(({ title }) => title)"
+                :typeSpeed="50"
+                :eraseSpeed="25"
+                @typed="onIntroTyped"
+                class="inline"
+              />
+            </strong>
+          </p>
+          <div
+            class="text-9xl lg:text-[12rem] xl:text-[16rem] text-center mb-8 sm:mb-0 mt-8"
+          >
+            <Icon :icon="`${introIcon}`" class="inline-block" />
+          </div>
+        </div>
+        <div class="w-full sm:w-1/4 md:w-1/3">
+          <LottiePlayer :src="AVATAR_WAVE_LOTTIE_PATH" autoPlay />
+        </div>
       </div>
     </div>
   </section>
@@ -68,21 +83,7 @@ const onIntroTyped = (currentTitle: string) => {
   }
 }
 
-#hand {
-  animation: wave 2s infinite;
-}
-
 .mockup-browser-toolbar {
   margin-block: 0;
-}
-
-@keyframes wave {
-  0%,
-  100% {
-    transform: rotate(-10deg);
-  }
-  50% {
-    transform: rotate(70deg);
-  }
 }
 </style>
