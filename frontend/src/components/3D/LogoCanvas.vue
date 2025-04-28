@@ -29,6 +29,9 @@ const {
   PORTRAIT_AVATAR_SKILLS_POSITION,
   PORTRAIT_AVATAR_SKILLS_ROTATION,
   PORTRAIT_AVATAR_SKILLS_SCALE,
+  PORTRAIT_AVATAR_SKILLS_SOFT_POSITION,
+  PORTRAIT_AVATAR_SKILLS_SOFT_ROTATION,
+  PORTRAIT_AVATAR_SKILLS_SOFT_SCALE,
   PORTRAIT_DESK_POSITION,
   PORTRAIT_DESK_ROTATION,
   PORTRAIT_DESK_SCALE,
@@ -42,6 +45,8 @@ const {
   LANDSCAPE_AVATAR_SUMMARY_SCALE,
   LANDSCAPE_AVATAR_SKILLS_POSITION,
   LANDSCAPE_AVATAR_SKILLS_SCALE,
+  LANDSCAPE_AVATAR_SKILLS_SOFT_POSITION,
+  LANDSCAPE_AVATAR_SKILLS_SOFT_SCALE,
   LANDSCAPE_DESK_POSITION,
   LANDSCAPE_DESK_SCALE,
   DESKTOP_LOGO_POSITION,
@@ -54,6 +59,8 @@ const {
   DESKTOP_AVATAR_SUMMARY_SCALE,
   DESKTOP_AVATAR_SKILLS_POSITION,
   DESKTOP_AVATAR_SKILLS_SCALE,
+  DESKTOP_AVATAR_SKILLS_SOFT_POSITION,
+  DESKTOP_AVATAR_SKILLS_SOFT_SCALE,
   DESKTOP_DESK_POSITION,
   DESKTOP_DESK_SCALE,
   WIDE_LOGO_ROTATION,
@@ -61,6 +68,7 @@ const {
   WIDE_AVATAR_WAVE_ROTATION,
   WIDE_AVATAR_SUMMARY_ROTATION,
   WIDE_AVATAR_SKILLS_ROTATION,
+  WIDE_AVATAR_SKILLS_SOFT_ROTATION,
   WIDE_DESK_ROTATION,
   CANVAS_COLOR,
   TEXT_COLOR,
@@ -77,6 +85,8 @@ const {
   AVATAR_SUMMARY_RADIUS,
   AVATAR_SKILLS_HEIGHT,
   AVATAR_SKILLS_RADIUS,
+  AVATAR_SKILLS_SOFT_HEIGHT,
+  AVATAR_SKILLS_SOFT_RADIUS,
   GL_CLOUD_POSITION,
   GL_CLOUD_ROTATION,
   GL_CLOUD_SCALE,
@@ -87,6 +97,7 @@ const {
   AVATAR_WAVE_LOTTIE_PATH,
   AVATAR_SUMMARY_LOTTIE_PATH,
   AVATAR_SKILLS_LEGS_LOTTIE_PATH,
+  AVATAR_SKILLS_SOFT_LOTTIE_PATH,
 } = lottieConstants;
 
 let width: number = window?.innerWidth || WIDTH_BREAKPOINT;
@@ -171,6 +182,19 @@ let avatarDeskScale: number = isPortrait
   : isLandscape
     ? LANDSCAPE_DESK_SCALE
     : DESKTOP_DESK_SCALE;
+let avatarSkillsSoftPosition: [number, number, number] = isPortrait
+  ? PORTRAIT_AVATAR_SKILLS_SOFT_POSITION
+  : isLandscape
+    ? LANDSCAPE_AVATAR_SKILLS_SOFT_POSITION
+    : DESKTOP_AVATAR_SKILLS_SOFT_POSITION;
+let avatarSkillsSoftRotation: [number, number, number] = isPortrait
+  ? PORTRAIT_AVATAR_SKILLS_SOFT_ROTATION
+  : WIDE_AVATAR_SKILLS_SOFT_ROTATION;
+let avatarSkillsSoftScale: number = isPortrait
+  ? PORTRAIT_AVATAR_SKILLS_SOFT_SCALE
+  : isLandscape
+    ? LANDSCAPE_AVATAR_SKILLS_SOFT_SCALE
+    : DESKTOP_AVATAR_SKILLS_SOFT_SCALE;
 
 const canvasKey: Ref<string> = ref("logo-canvas");
 const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
@@ -272,6 +296,19 @@ const setPoses = (event: Event | null = null) => {
         : isLandscape
           ? LANDSCAPE_DESK_SCALE
           : DESKTOP_DESK_SCALE;
+      avatarSkillsSoftPosition = isPortrait
+        ? PORTRAIT_AVATAR_SKILLS_SOFT_POSITION
+        : isLandscape
+          ? LANDSCAPE_AVATAR_SKILLS_SOFT_POSITION
+          : DESKTOP_AVATAR_SKILLS_SOFT_POSITION;
+      avatarSkillsSoftRotation = isPortrait
+        ? PORTRAIT_AVATAR_SKILLS_ROTATION
+        : WIDE_AVATAR_SKILLS_SOFT_ROTATION;
+      avatarSkillsSoftScale = isPortrait
+        ? PORTRAIT_AVATAR_SKILLS_SCALE
+        : isLandscape
+          ? LANDSCAPE_AVATAR_SKILLS_SOFT_SCALE
+          : DESKTOP_AVATAR_SKILLS_SOFT_SCALE;
 
       const { scene } = await useGLTF(LOGO_GLTF_PATH, { draco: true });
       logoModel = scene;
@@ -380,6 +417,17 @@ watchEffect(() => {
           :position="avatarSummaryPosition"
           :rotation="avatarSummaryRotation"
           :scale="avatarSummaryScale"
+        />
+      </Suspense>
+      <Suspense>
+        <LottieCylinder
+          :src="AVATAR_SKILLS_SOFT_LOTTIE_PATH"
+          :height="AVATAR_SKILLS_SOFT_HEIGHT"
+          :radius-top="AVATAR_SKILLS_SOFT_RADIUS"
+          :radius-bottom="AVATAR_SKILLS_SOFT_RADIUS"
+          :position="avatarSkillsSoftPosition"
+          :rotation="avatarSkillsSoftRotation"
+          :scale="avatarSkillsSoftScale"
         />
       </Suspense>
       <Suspense>
