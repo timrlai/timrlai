@@ -1,17 +1,4 @@
-import type {
-  SvgConstants,
-  LottieConstants,
-  SubItem,
-  SocialButton,
-  Skill,
-} from "../types";
-
-export const svgConstants: SvgConstants = {
-  LOGO_DARK_SVG_PATH: "assets/img/logos/timrlai_logo.svg",
-  LOGO_LIGHT_SVG_PATH: "assets/img/logos/timrlai_logo_light.svg",
-  HEAD_TRANS_SVG_PATH: "assets/img/icons/timrlai_head_trans_bg.svg",
-  HEAD_BLUE_SVG_PATH: "assets/img/icons/timrlai_head_blue_bg.svg",
-};
+import type { LottieConstants, SubItem, SocialButton, Skill } from "../types";
 
 export const lottieConstants: LottieConstants = {
   CLOUDS_LOTTIE_PATH: "/lottie/bg/clouds_lottie.json",

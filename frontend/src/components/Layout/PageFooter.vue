@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { RouterLink } from "vue-router";
 import { Icon } from "@iconify/vue";
-import { svgConstants } from "../../../lib/constants";
 import SocialButtons from "../Common/SocialButtons.vue";
 
-const { LOGO_LIGHT_SVG_PATH, HEAD_TRANS_SVG_PATH } = svgConstants;
+const logoSvgPath = "../../src/assets/img/logos/timrlai_logo_light.svg";
+const headSvgPath = `../../src/assets/img/icons/timrlai_head_trans_bg.svg`;
 
 const year = new Date().getFullYear();
 </script>
@@ -16,7 +16,7 @@ const year = new Date().getFullYear();
   >
     <aside class="footer-tile w-full md:w-2xs">
       <img
-        :src="`../../src/${LOGO_LIGHT_SVG_PATH}`"
+        :src="logoSvgPath"
         alt="Tim RL dot AI"
         title="Tim RL .ai"
         class="inline-block w-full"
@@ -26,11 +26,7 @@ const year = new Date().getFullYear();
       <h2 class="text-3xl w-full mb-4 ubuntu-titling">
         Email Tim
         <Icon icon="fluent-color:mail-32" class="inline-block text-5xl" />
-        <img
-          :src="`../../src/${HEAD_TRANS_SVG_PATH}`"
-          alt=""
-          class="inline-block h-[1.5em]"
-        />
+        <img :src="headSvgPath" alt="" class="inline-block h-[1.5em]" />
       </h2>
       <p class="w-full mb-4">
         <a href="mailto:hi@timrl.ai" class="link link-success link-hover"
@@ -43,11 +39,7 @@ const year = new Date().getFullYear();
           icon="fluent-emoji:mobile-phone-with-arrow"
           class="inline-block text-5xl"
         />
-        <img
-          :src="`../../src/${HEAD_TRANS_SVG_PATH}`"
-          alt=""
-          class="inline-block h-[1.5em]"
-        />
+        <img :src="headSvgPath" alt="" class="inline-block h-[1.5em]" />
       </h2>
       <SocialButtons
         buttonColor="secondary"
@@ -81,11 +73,7 @@ const year = new Date().getFullYear();
           />
           by and copyright &copy; {{ year }} Tim R. Lai
         </small>
-        <img
-          :src="`../../src/${HEAD_TRANS_SVG_PATH}`"
-          alt=""
-          class="inline-block h-[1.5em]"
-        />
+        <img :src="headSvgPath" alt="" class="inline-block h-[1.5em]" />
       </p>
     </aside>
   </footer>
