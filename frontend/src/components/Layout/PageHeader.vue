@@ -3,8 +3,7 @@ import { Icon } from "@iconify/vue";
 import { RouterLink } from "vue-router";
 import { subItems } from "../../../lib/constants";
 import SocialButtons from "../Common/SocialButtons.vue";
-
-const logoSvgPath = "../../src/assets/img/logos/timrlai_logo.svg";
+import logoSvgPath from "../../assets/img/logos/timrlai_logo.svg";
 </script>
 
 <template>

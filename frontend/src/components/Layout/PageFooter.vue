@@ -2,9 +2,8 @@
 import { RouterLink } from "vue-router";
 import { Icon } from "@iconify/vue";
 import SocialButtons from "../Common/SocialButtons.vue";
-
-const logoSvgPath = "../../src/assets/img/logos/timrlai_logo_light.svg";
-const headSvgPath = `../../src/assets/img/icons/timrlai_head_trans_bg.svg`;
+import logoSvgPath from "../../assets/img/logos/timrlai_logo_light.svg";
+import headSvgPath from "../../assets/img/icons/timrlai_head_trans_bg.svg";
 
 const year = new Date().getFullYear();
 </script>
