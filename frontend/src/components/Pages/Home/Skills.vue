@@ -106,16 +106,15 @@ const randomizedSkills = [...primarySkills]
                   class="inline-block mx-4"
                 />
               </div>
-              <p class="code-comment-block">
-                Expand the below table to see all of my technical skills.
-              </p>
             </div>
           </div>
           <div class="w-full sm:w-1/4">
             <LottiePlayer :src="AVATAR_SKILLS_DESK_LOTTIE_PATH" autoPlay />
           </div>
         </div>
-
+        <p class="code-comment-block text-lg/8 sm:text-xl/10">
+          Expand the below table to see all of my technical skills.
+        </p>
         <div class="collapse collapse-plus mt-5">
           <input type="checkbox" />
           <h3 class="collapse-title text-lg sm:text-xl ubuntu-bold bg-neutral">
