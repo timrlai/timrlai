@@ -14,7 +14,7 @@
   - [Contact Me](#contact)
   - [GitHub Stats](#stats)
 
-## Hi, I'm Tim Lai!<a name="hi"></a> 👋
+## Hi, I'm Tim Lai! (he/him)<a name="hi"></a> 👋
 
 I am a full-stack software developer, 👨🏻‍💻 web developer, 🛜 teacher of web programming, 👨🏻‍🏫 web designer, 🕸️ graphic designer, 🎨 illustrator 👨🏻‍🎨 and cartoonist ✏️ living in Ontario, Canada. 🍁
 
