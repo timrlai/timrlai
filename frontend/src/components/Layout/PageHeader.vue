@@ -50,8 +50,8 @@ import logoSvgPath from "../../assets/img/logos/timrlai_logo.svg";
         <RouterLink to="/" class="btn btn-ghost btn-lg rounded-box py-1 text-xl"
           ><img
             :src="logoSvgPath"
-            alt="Tim RL dot AI"
-            title="Tim RL .ai"
+            alt="Tim R. Lai"
+            title="Tim R. Lai"
             class="w-full h-full"
         /></RouterLink>
       </div>

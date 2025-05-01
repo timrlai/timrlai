@@ -344,7 +344,7 @@ watchEffect(() => {
       v-if="isLandscape && isMobileOrTablet"
       class="absolute z-10 top-0 left-0 w-full h-full"
     ></div>
-    <h1 class="visually-hidden">Tim RL dot AI</h1>
+    <h1 class="visually-hidden">Tim R. Lai</h1>
     <h2 class="visually-hidden">A full stack team in one Tim!</h2>
     <TresCanvas :key="canvasKey" :clear-color="CANVAS_COLOR" shadows alpha>
       <TresPerspectiveCamera :position="[0, 0, 1]" />
