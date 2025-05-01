@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { defineAsyncComponent } from "vue";
 import { Icon } from "@iconify/vue";
-import LottiePlayer from "./LottiePlayer.vue";
+
+const LottiePlayer = defineAsyncComponent(() => import("./LottiePlayer.vue"));
 </script>
 
 <template>

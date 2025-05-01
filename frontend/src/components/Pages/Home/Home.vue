@@ -1,8 +1,12 @@
 <script setup lang="ts">
-import LogoCanvas from "../../3D/LogoCanvas.vue";
-import Hi from "./Hi.vue";
-import Summary from "./Summary.vue";
-import Skills from "./Skills.vue";
+import { defineAsyncComponent } from "vue";
+
+const LogoCanvas = defineAsyncComponent(
+  () => import("../../3D/LogoCanvas.vue"),
+);
+const Hi = defineAsyncComponent(() => import("./Hi.vue"));
+const Summary = defineAsyncComponent(() => import("./Summary.vue"));
+const Skills = defineAsyncComponent(() => import("./Skills.vue"));
 </script>
 
 <template>

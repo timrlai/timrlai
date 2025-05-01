@@ -1,9 +1,13 @@
 <script setup lang="ts">
+import { defineAsyncComponent } from "vue";
 import { RouterLink } from "vue-router";
 import { Icon } from "@iconify/vue";
-import SocialButtons from "../Common/SocialButtons.vue";
 import logoSvgPath from "../../assets/img/logos/timrlai_logo_light.svg";
 import headSvgPath from "../../assets/img/icons/timrlai_head_trans_bg.svg";
+
+const SocialButtons = defineAsyncComponent(
+  () => import("../Common/SocialButtons.vue"),
+);
 
 const year = new Date().getFullYear();
 </script>

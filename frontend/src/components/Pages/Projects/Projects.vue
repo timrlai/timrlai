@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import Construction from "../../Common/Construction.vue";
+import { defineAsyncComponent } from "vue";
+
+const Construction = defineAsyncComponent(
+  () => import("../../Common/Construction.vue"),
+);
 </script>
 
 <template>

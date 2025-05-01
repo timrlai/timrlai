@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import { nextTick, ref } from "vue";
+import { defineAsyncComponent, ref, nextTick } from "vue";
 import { Icon } from "@iconify/vue";
 import ConfettiExplosion from "vue-confetti-explosion";
 import { VueWriter } from "vue-writer";
 
 import { lottieConstants, intros } from "../../../../lib/constants";
-import LottiePlayer from "../../Common/LottiePlayer.vue";
+
+const LottiePlayer = defineAsyncComponent(
+  () => import("../../Common/LottiePlayer.vue"),
+);
 
 const { AVATAR_WAVE_LOTTIE_PATH } = lottieConstants;
 

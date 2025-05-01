@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { defineAsyncComponent, ref } from "vue";
 import { Icon } from "@iconify/vue";
 import { VueWriter } from "vue-writer";
 
@@ -15,7 +15,9 @@ import {
   madeWithSkills,
 } from "../../../../lib/constants";
 
-import LottiePlayer from "../../Common/LottiePlayer.vue";
+const LottiePlayer = defineAsyncComponent(
+  () => import("../../Common/LottiePlayer.vue"),
+);
 
 const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_SKILLS_SOFT_LOTTIE_PATH } =
   lottieConstants;
