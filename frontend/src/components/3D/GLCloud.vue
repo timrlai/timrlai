@@ -1,6 +1,15 @@
 <script setup lang="ts">
 import { defineProps, ref } from "vue";
-import * as THREE from "three";
+import {
+  Camera,
+  Vector3,
+  Data3DTexture,
+  RedFormat,
+  LinearFilter,
+  Color,
+  GLSL3,
+  BackSide,
+} from "three";
 import { ImprovedNoise } from "three/addons/math/ImprovedNoise.js";
 import { useTresContext, useRenderLoop } from "@tresjs/core";
 import { Box } from "@tresjs/cientos";
@@ -17,7 +26,7 @@ const {
 } = defineProps<GLCloudProps>();
 
 const { scene, camera: cameraRef, renderer } = useTresContext();
-const cameraValue = cameraRef.value as THREE.Camera;
+const cameraValue = cameraRef.value as Camera;
 
 const { onLoop } = useRenderLoop();
 
@@ -29,7 +38,7 @@ const data = new Uint8Array(size * size * size);
 let i = 0;
 const textureScale = 0.05;
 const perlin = new ImprovedNoise();
-const vector = new THREE.Vector3();
+const vector = new Vector3();
 
 for (let z = 0; z < size; z++) {
   for (let y = 0; y < size; y++) {
@@ -56,19 +65,19 @@ for (let z = 0; z < size; z++) {
   }
 }
 
-const texture = new THREE.Data3DTexture(data, size, size, size);
-texture.format = THREE.RedFormat;
-texture.minFilter = THREE.LinearFilter;
-texture.magFilter = THREE.LinearFilter;
+const texture = new Data3DTexture(data, size, size, size);
+texture.format = RedFormat;
+texture.minFilter = LinearFilter;
+texture.magFilter = LinearFilter;
 texture.unpackAlignment = 1;
 texture.needsUpdate = true;
 
 // Material
 
 const uniforms = {
-  base: { value: new THREE.Color(0xfffad4) },
+  base: { value: new Color(0xfffad4) },
   map: { value: texture },
-  cameraPos: { value: new THREE.Vector3() },
+  cameraPos: { value: new Vector3() },
   threshold: { value: 0.25 },
   opacity: { value: 0.25 },
   range: { value: 0.1 },
@@ -76,8 +85,8 @@ const uniforms = {
   frame: { value: 0 },
 };
 
-const glslVersion = THREE.GLSL3;
-const side = THREE.BackSide;
+const glslVersion = GLSL3;
+const side = BackSide;
 
 const mesh = ref();
 
