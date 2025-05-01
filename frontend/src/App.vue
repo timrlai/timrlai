@@ -11,9 +11,9 @@ const PageFooter = defineAsyncComponent(
 </script>
 
 <template>
-  <PageHeader />
+  <PageHeader v-once />
   <RouterView />
-  <PageFooter />
+  <PageFooter v-once />
 </template>
 
 <style scoped></style>
