@@ -1,8 +1,12 @@
 <script setup lang="ts">
+import { defineAsyncComponent } from "vue";
 import { Icon } from "@iconify/vue";
 
 import { lottieConstants } from "../../../../lib/constants";
-import LottiePlayer from "../../Common/LottiePlayer.vue";
+
+const LottiePlayer = defineAsyncComponent(
+  () => import("../../Common/LottiePlayer.vue"),
+);
 
 const { AVATAR_SUMMARY_LOTTIE_PATH } = lottieConstants;
 </script>

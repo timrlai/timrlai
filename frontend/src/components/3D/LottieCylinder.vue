@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { defineProps } from "vue";
-import * as THREE from "three";
+import { ClampToEdgeWrapping, FrontSide } from "three";
 import { LottieLoader } from "three/addons/loaders/LottieLoader.js";
 import type { LoaderProto } from "@tresjs/core";
 import { useLoader } from "@tresjs/core";
@@ -11,8 +11,8 @@ const {
   src,
   repeatX = 4,
   repeatY = 1,
-  wrapS = THREE.ClampToEdgeWrapping,
-  wrapT = THREE.ClampToEdgeWrapping,
+  wrapS = ClampToEdgeWrapping,
+  wrapT = ClampToEdgeWrapping,
   radiusTop = 5,
   radiusBottom = 5,
   height = 8,
@@ -25,7 +25,7 @@ const {
   rotation = [0, 0, 0],
   scale = [1, 1, 1],
   renderOrder = 1,
-  side = THREE.FrontSide,
+  side = FrontSide,
   material = "basic",
   transparent = true,
   depthWrite = false,

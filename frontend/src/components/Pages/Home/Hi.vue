@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import { nextTick, ref } from "vue";
+import { defineAsyncComponent, ref, nextTick } from "vue";
 import { Icon } from "@iconify/vue";
 import ConfettiExplosion from "vue-confetti-explosion";
 import { VueWriter } from "vue-writer";
 
 import { lottieConstants, intros } from "../../../../lib/constants";
-import LottiePlayer from "../../Common/LottiePlayer.vue";
+
+const LottiePlayer = defineAsyncComponent(
+  () => import("../../Common/LottiePlayer.vue"),
+);
 
 const { AVATAR_WAVE_LOTTIE_PATH } = lottieConstants;
 
@@ -28,11 +31,11 @@ const onIntroTyped = (currentTitle: string) => {
 <template>
   <section
     id="hi"
-    class="mockup-browser min-h-[60vh] md:min-h-[70vh] text-secondary-content border-4 border-primary shadow-lg shadow-primary cursor-pointer ubuntu-regular"
+    class="mockup-browser min-h-[60vh] md:min-h-[70vh] border-4 border-primary shadow-lg shadow-primary cursor-pointer ubuntu-regular overflow-hidden"
     @click="explode"
   >
     <div
-      class="mockup-browser-toolbar bg-secondary border-b-4 border-primary py-4"
+      class="mockup-browser-toolbar bg-secondary text-secondary-content border-b-4 border-primary py-4"
     >
       <div class="input">https://timrl.ai</div>
     </div>

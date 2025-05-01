@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { defineAsyncComponent, ref } from "vue";
 import { Icon } from "@iconify/vue";
 import { VueWriter } from "vue-writer";
 
@@ -15,7 +15,9 @@ import {
   madeWithSkills,
 } from "../../../../lib/constants";
 
-import LottiePlayer from "../../Common/LottiePlayer.vue";
+const LottiePlayer = defineAsyncComponent(
+  () => import("../../Common/LottiePlayer.vue"),
+);
 
 const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_SKILLS_SOFT_LOTTIE_PATH } =
   lottieConstants;
@@ -46,7 +48,7 @@ const randomizedSkills = [...primarySkills]
       </h1>
     </div>
     <div
-      class="mockup-code bg-slate-800 text-slate-300 border-x-4 border-primary rounded-none shadow-lg shadow-primary fira-code overflow-x-hidden"
+      class="mockup-code bg-slate-800 text-neutral-content border-x-4 border-primary rounded-none shadow-lg shadow-primary fira-code overflow-x-hidden"
     >
       <div class="px-5">
         <div class="flex flex-wrap justify-between items-center">
@@ -68,7 +70,7 @@ const randomizedSkills = [...primarySkills]
               </p>
               <p class="code-comment-block my-4">
                 Specifically, I have experience working with...
-                <strong class="bg-slate-600">
+                <strong class="bg-neutral">
                   <VueWriter
                     :array="primarySkills.map(({ title }) => title)"
                     @typed="onSkillTyped"
@@ -117,7 +119,9 @@ const randomizedSkills = [...primarySkills]
         </p>
         <div class="collapse collapse-plus mt-5">
           <input type="checkbox" />
-          <h3 class="collapse-title text-lg sm:text-xl ubuntu-bold bg-neutral">
+          <h3
+            class="collapse-title text-lg sm:text-xl ubuntu-bold bg-neutral text-neutral-content"
+          >
             Click to View All Technical Skills
           </h3>
           <div class="overflow-x-auto">

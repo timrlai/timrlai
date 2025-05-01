@@ -26,4 +26,29 @@ export default defineConfig({
       root: "/", // Directory for root imports
     }),
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vue: ["vue", "vue-router"],
+          three: ["three"],
+          tres: ["@tresjs/core", "@tresjs/cientos"],
+          lottie: ["vue3-lottie"],
+          confetti: ["vue-confetti-explosion"],
+          writer: ["vue-writer"],
+          mobile: ["is-mobile"],
+          iconify: ["@iconify/vue"],
+          eslint: [
+            "@eslint/js",
+            "eslint-config-prettier",
+            "eslint-plugin-prettier",
+            "eslint-plugin-vue",
+            "@typescript-eslint/eslint-plugin",
+            "@typescript-eslint/parser",
+            "typescript-eslint",
+          ],
+        },
+      },
+    },
+  },
 });

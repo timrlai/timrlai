@@ -1,14 +1,24 @@
 <script setup lang="ts">
-import { type Ref, ref, onMounted, onUnmounted, watchEffect } from "vue";
+import {
+  type Ref,
+  defineAsyncComponent,
+  ref,
+  onMounted,
+  onUnmounted,
+  watchEffect,
+} from "vue";
 import isMobile from "is-mobile";
 import { TresCanvas } from "@tresjs/core";
 import { OrbitControls, Text3D } from "@tresjs/cientos";
 
 import { lottieConstants } from "../../../lib/constants";
 import constants from "../../../lib/constants/NotFoundCanvas";
-import LottieSphere from "./LottieSphere.vue";
-import LottieCylinder from "./LottieCylinder.vue";
-import GLCloud from "./GLCloud.vue";
+
+const LottieSphere = defineAsyncComponent(() => import("./LottieSphere.vue"));
+const LottieCylinder = defineAsyncComponent(
+  () => import("./LottieCylinder.vue"),
+);
+const GLCloud = defineAsyncComponent(() => import("./GLCloud.vue"));
 
 const {
   WIDTH_BREAKPOINT,

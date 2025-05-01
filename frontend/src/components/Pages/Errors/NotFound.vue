@@ -1,9 +1,15 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
+import { defineAsyncComponent } from "vue";
 import { RouterLink } from "vue-router";
+import { Icon } from "@iconify/vue";
 import { lottieConstants } from "../../../../lib/constants";
-import NotFoundCanvas from "../../3D/NotFoundCanvas.vue";
-import LottiePlayer from "../../Common/LottiePlayer.vue";
+
+const NotFoundCanvas = defineAsyncComponent(
+  () => import("../../3D/NotFoundCanvas.vue"),
+);
+const LottiePlayer = defineAsyncComponent(
+  () => import("../../Common/LottiePlayer.vue"),
+);
 
 const { NOT_FOUND_LOTTIE_FOLDER, NOT_FOUND_LOTTIES } = lottieConstants;
 

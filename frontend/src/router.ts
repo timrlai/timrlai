@@ -1,8 +1,15 @@
+import { defineAsyncComponent } from "vue";
 import { createWebHistory, createRouter } from "vue-router";
 
-import Home from "./components/Pages/Home/Home.vue";
-import Projects from "./components/Pages/Projects/Projects.vue";
-import NotFound from "./components/Pages/Errors/NotFound.vue";
+const Home = defineAsyncComponent(
+  () => import("./components/Pages/Home/Home.vue"),
+);
+const Projects = defineAsyncComponent(
+  () => import("./components/Pages/Projects/Projects.vue"),
+);
+const NotFound = defineAsyncComponent(
+  () => import("./components/Pages/Errors/NotFound.vue"),
+);
 
 const routes = [
   { path: "/", name: "Home", component: Home },

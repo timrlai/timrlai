@@ -1,9 +1,13 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
+import { defineAsyncComponent } from "vue";
 import { RouterLink } from "vue-router";
+import { Icon } from "@iconify/vue";
 import { subItems } from "../../../lib/constants";
-import SocialButtons from "../Common/SocialButtons.vue";
 import logoSvgPath from "../../assets/img/logos/timrlai_logo.svg";
+
+const SocialButtons = defineAsyncComponent(
+  () => import("../Common/SocialButtons.vue"),
+);
 </script>
 
 <template>

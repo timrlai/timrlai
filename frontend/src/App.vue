@@ -1,13 +1,19 @@
 <script setup lang="ts">
+import { defineAsyncComponent } from "vue";
 import { RouterView } from "vue-router";
-import PageHeader from "./components/Layout/PageHeader.vue";
-import PageFooter from "./components/Layout/PageFooter.vue";
+
+const PageHeader = defineAsyncComponent(
+  () => import("./components/Layout/PageHeader.vue"),
+);
+const PageFooter = defineAsyncComponent(
+  () => import("./components/Layout/PageFooter.vue"),
+);
 </script>
 
 <template>
-  <PageHeader />
+  <PageHeader v-once />
   <RouterView />
-  <PageFooter />
+  <PageFooter v-once />
 </template>
 
 <style scoped></style>

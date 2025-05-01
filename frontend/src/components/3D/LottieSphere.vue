@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { defineProps } from "vue";
-import * as THREE from "three";
+import { RepeatWrapping, BackSide } from "three";
 import { LottieLoader } from "three/addons/loaders/LottieLoader.js";
 import type { LoaderProto } from "@tresjs/core";
 import { useLoader } from "@tresjs/core";
@@ -11,8 +11,8 @@ const {
   src,
   repeatX = 6,
   repeatY = 6,
-  wrapS = THREE.RepeatWrapping,
-  wrapT = THREE.RepeatWrapping,
+  wrapS = RepeatWrapping,
+  wrapT = RepeatWrapping,
   radius = 500,
   segments = 16,
   position = [0, 0, 0],
@@ -20,7 +20,7 @@ const {
   scale = [-1, 1, 1],
   renderOrder = 0,
   material = "standard",
-  side = THREE.BackSide,
+  side = BackSide,
   transparent = true,
   depthWrite = false,
 } = defineProps<LottieSphereProps>();
