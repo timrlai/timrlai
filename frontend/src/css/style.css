@@ -103,14 +103,31 @@ html {
  * Customize the background color to match your design.
  */
 
-::-moz-selection {
-  background: #b3d4fc;
+::-moz-selection,
+::selection {
   text-shadow: none;
 }
 
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
+.text-base-content ::-moz-selection,
+.text-base-content ::selection,
+.text-base-content .table ::-moz-selection,
+.text-base-content .table ::selection {
+  background: oklch(98% 0.05 101);
+}
+
+.text-primary-content ::-moz-selection,
+.text-primary-content ::selection {
+  background: oklch(70% 0.2 220);
+}
+
+.text-secondary-content ::-moz-selection,
+.text-secondary-content ::selection {
+  background: oklch(98% 0.05 192);
+}
+
+.text-neutral-content ::-moz-selection,
+.text-neutral-content ::selection {
+  background: oklch(45% 0.08 220);
 }
 
 /*
