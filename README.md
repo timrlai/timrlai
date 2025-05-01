@@ -1,4 +1,6 @@
-# Tim R. Lai<a name="tim"></a> 👨🏻‍💻👨🏻‍🏫🤓🦇🐬🩵
+# Tim R. Lai<a name="tim"></a> 👨🏻‍💻👨🏻‍🏫👨🏻‍🎨
+
+![A logo reads Tim R. Lai and a tagline to the right of it reads A Full Stack Team in One Tim. There is a cartoon depiction of Tim R. Lai's face to the right of the logo. The titles Developer, Teacher, Designer and Illustrator are listed underneath the logo, tagline and face. There are cartoon clouds at the bottom.](https:/timrl.ai/og_image.png)
 
 - [Tim R. Lai](#tim)
   - [Hi, I'm Tim Lai!](#hi)
@@ -12,7 +14,7 @@
   - [Contact Me](#contact)
   - [GitHub Stats](#stats)
 
-## Hi, I'm Tim Lai!<a name="hi"></a> 👋
+## Hi, I'm Tim Lai! (he/him)<a name="hi"></a> 👋
 
 I am a full-stack software developer, 👨🏻‍💻 web developer, 🛜 teacher of web programming, 👨🏻‍🏫 web designer, 🕸️ graphic designer, 🎨 illustrator 👨🏻‍🎨 and cartoonist ✏️ living in Ontario, Canada. 🍁
 

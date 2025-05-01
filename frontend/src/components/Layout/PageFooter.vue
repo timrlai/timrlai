@@ -16,8 +16,8 @@ const year = new Date().getFullYear();
     <aside class="footer-tile w-full md:w-2xs">
       <img
         :src="logoSvgPath"
-        alt="Tim RL dot AI"
-        title="Tim RL .ai"
+        alt="Tim R. Lai"
+        title="Tim R. Lai"
         class="inline-block w-full"
       />
     </aside>

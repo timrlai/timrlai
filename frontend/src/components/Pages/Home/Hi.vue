@@ -45,11 +45,15 @@ const onIntroTyped = (currentTitle: string) => {
       <div class="flex flex-wrap items-center">
         <div class="place-content-center w-full sm:w-3/4 md:w-2/3">
           <h1
-            class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl ubuntu-titling mb-5"
+            class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl ubuntu-titling mb-2"
           >
             Hi, I'm Tim Lai!
           </h1>
-          <p class="text-xl sm:text-2xl md:text-4xl my-5">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl ubuntu-titling mb-4">
+            <small>(he/him)</small>
+            <Icon icon="mingcute:male-line" class="inline-block ml-2" />
+          </h2>
+          <p class="text-xl sm:text-2xl md:text-4xl my-4">
             I am
             <strong class="bg-blue-600 ubuntu-bold">
               <VueWriter
@@ -78,6 +82,7 @@ const onIntroTyped = (currentTitle: string) => {
 <style scoped lang="scss">
 #hi {
   h1,
+  h2,
   p {
     text-shadow: 0 0 30px oklch(98% 0.05 101);
   }
