@@ -32,7 +32,6 @@ const onIntroTyped = (currentTitle: string) => {
   <section
     id="hi"
     class="mockup-browser min-h-[60vh] md:min-h-[70vh] border-4 border-primary shadow-lg shadow-primary cursor-pointer ubuntu-regular overflow-hidden"
-    @click="explode"
   >
     <div
       class="mockup-browser-toolbar bg-secondary text-secondary-content border-b-4 border-primary py-4"
