@@ -184,6 +184,7 @@ watchEffect(() => {
         :maxPolarAngle="Math.PI / VERTICAL_ROTATION_LIMIT"
         :minAzimuthAngle="-(Math.PI / HORIZONTAL_ROTATION_LIMIT)"
         :maxAzimuthAngle="Math.PI / HORIZONTAL_ROTATION_LIMIT"
+        :enable-zoom="false"
       />
       <Suspense>
         <LottieSphere :src="CLOUDS_LOTTIE_PATH" />
