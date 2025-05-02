@@ -126,7 +126,7 @@ const randomizedSkills = [...primarySkills]
           <input id="table-collapse" type="checkbox" />
           <label
             for="table-collapse"
-            class="collapse-title text-lg sm:text-xl ubuntu-bold bg-neutral text-neutral-content"
+            class="collapse-title text-base sm:text-lg ubuntu-bold bg-neutral text-neutral-content"
           >
             Click to View All Technical Skills
           </label>
@@ -324,6 +324,15 @@ const randomizedSkills = [...primarySkills]
                 :aria-label="`${skills.title} logo`"
               />
             </div>
+          </div>
+          <div class="text-center mt-8">
+            <a
+              href="https://github.com/timrlai/timrlai"
+              target="_blank"
+              class="btn btn-xl btn-neutral ubuntu-bold"
+              ><Icon icon="mingcute:github-fill" class="inline-block" />View The
+              Code for This Site on GitHub
+            </a>
           </div>
         </div>
       </div>
