@@ -181,6 +181,19 @@ body {
   min-height: 100vh;
 }
 
+.link {
+  text-decoration: underline;
+  text-decoration-thickness: 4px;
+}
+
+.link-accent {
+  text-decoration-color: oklch(45% 0.08 220);
+}
+
+.link-success {
+  text-decoration-color: oklch(98% 0.05 101);
+}
+
 .is-typed span.cursor {
   width: 5px;
   background-color: oklch(98% 0.05 101);
