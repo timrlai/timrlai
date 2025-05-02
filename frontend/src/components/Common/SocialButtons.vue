@@ -57,8 +57,14 @@ const tooltipPositions = {
         <a
           :href="`${button.url}`"
           target="_blank"
+          aria-roledescription="button"
+          :aria-labelledby="`${button.tooltip}-icon`"
           :class="`btn ${buttonColors[buttonColor]} text-xl sm:text-2xl`"
-          ><Icon :icon="`${button.icon}`"
+          ><Icon
+            :id="`${button.tooltip}-icon`"
+            :icon="`${button.icon}`"
+            aria-roledescription="icon"
+            :aria-label="button.tooltip"
         /></a>
       </div>
     </div>
