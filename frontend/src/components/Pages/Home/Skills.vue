@@ -319,7 +319,10 @@ const randomizedSkills = [...primarySkills]
                   {{ skills.title }}
                 </div>
               </div>
-              <Icon :icon="`${skills.icon}`" />
+              <Icon
+                :icon="`${skills.icon}`"
+                :aria-label="`${skills.title} logo`"
+              />
             </div>
           </div>
         </div>
