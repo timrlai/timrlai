@@ -310,7 +310,7 @@ const randomizedSkills = [...primarySkills]
               :data-tip="`${skills.title}`"
             >
               <div class="tooltip-content">
-                <div class="animate-bounce text-2xl gluten">
+                <div class="text-2xl gluten">
                   {{ skills.title }}
                 </div>
               </div>

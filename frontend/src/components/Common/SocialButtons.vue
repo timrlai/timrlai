@@ -50,7 +50,7 @@ const tooltipPositions = {
         :data-tip="`${button.tooltip}`"
       >
         <div class="tooltip-content">
-          <div class="animate-bounce text-lg gluten normal-case">
+          <div class="text-lg gluten normal-case">
             {{ button.tooltip }}
           </div>
         </div>
