@@ -348,7 +348,7 @@ watchEffect(() => {
 
 <template>
   <section
-    class="relative z-0 h-[140vh] md:h-[170vh] mb-[-70vh] md:mb-[-80vh] cursor-pointer"
+    class="relative z-0 h-[140vh] md:h-[170vh] mb-[-70vh] md:mb-[-80vh] cursor-pointer motion-reduce:hidden"
   >
     <div
       v-if="isLandscape && isMobileOrTablet"
