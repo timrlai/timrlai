@@ -39,10 +39,12 @@ export default defineConfig({
           mobile: ["is-mobile"],
           iconify: ["@iconify/vue"],
           eslint: [
+            "eslint",
             "@eslint/js",
             "eslint-config-prettier",
             "eslint-plugin-prettier",
             "eslint-plugin-vue",
+            "eslint-plugin-vuejs-accessibility",
             "@typescript-eslint/eslint-plugin",
             "@typescript-eslint/parser",
             "typescript-eslint",
