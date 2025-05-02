@@ -31,7 +31,7 @@
     "vue3-lottie": "^3.3.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.21.0",
+    "@eslint/js": "^9.25.1",
     "@iconify/vue": "^4.3.0",
     "@tailwindcss/vite": "^4.0.9",
     "@types/bun": "latest",
