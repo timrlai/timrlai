@@ -56,7 +56,7 @@ const year = new Date().getFullYear();
         to="/"
         tabindex="0"
         role="button"
-        class="w-full my-4 btn btn-xl btn-secondary text-2xl ubuntu-bold"
+        class="w-full my-4 btn btn-xl btn-secondary text-2xl ubuntu-titling"
         ><Icon icon="mingcute:arrow-to-up-fill" class="inline-block" /> To
         Top</RouterLink
       >
