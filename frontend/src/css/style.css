@@ -184,14 +184,27 @@ body {
 .link {
   text-decoration: underline;
   text-decoration-thickness: 4px;
+  transition: all 50ms;
+}
+
+.link:hover {
+  text-decoration-thickness: 6px;
 }
 
 .link-accent {
   text-decoration-color: oklch(45% 0.08 220);
 }
 
+.link-accent:hover {
+  text-decoration-color: oklch(58% 0.22 360);
+}
+
 .link-success {
   text-decoration-color: oklch(98% 0.05 101);
+}
+
+.link-success:hover {
+  text-decoration-color: oklch(98% 0.05 192);
 }
 
 .is-typed span.cursor {
