@@ -22,26 +22,6 @@
   @apply font-normal not-italic;
 }
 
-.ubuntu-light {
-  font-family: "Ubuntu", sans-serif;
-  @apply font-light not-italic;
-}
-
-.ubuntu-regular {
-  font-family: "Ubuntu", sans-serif;
-  @apply font-normal not-italic;
-}
-
-.ubuntu-medium {
-  font-family: "Ubuntu", sans-serif;
-  @apply font-medium not-italic;
-}
-
-.ubuntu-bold {
-  font-family: "Ubuntu", sans-serif;
-  @apply font-bold not-italic;
-}
-
 .atkinson-hyperlegible-next-light {
   font-family: "Atkinson Hyperlegible Next", sans-serif;
   font-optical-sizing: auto;
