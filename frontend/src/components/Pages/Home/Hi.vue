@@ -69,7 +69,13 @@ const onIntroTyped = (currentTitle: string) => {
           </p>
           <p class="text-lg sm:text-xl md:text-2xl m-4 motion-safe:hidden">
             I am
-            {{ intros.map(({ title }) => title).join(", ") }}
+            {{
+              intros
+                .map(({ title }, i) =>
+                  i === intros.length - 1 ? `and ${title}` : title,
+                )
+                .join(", ")
+            }}.
           </p>
           <div
             class="text-9xl lg:text-[12rem] xl:text-[16rem] text-center mb-8 sm:mb-0 mt-8"
