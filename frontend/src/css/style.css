@@ -90,8 +90,8 @@ html {
 
 .text-base-content ::-moz-selection,
 .text-base-content ::selection,
-.text-base-content .table ::-moz-selection,
-.text-base-content .table ::selection {
+.table-zebra.text-base-content ::-moz-selection,
+.table-zebra.text-base-content ::selection {
   background: oklch(98% 0.05 101);
 }
 
