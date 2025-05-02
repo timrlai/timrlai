@@ -37,6 +37,9 @@ jobs:
       - name: Run ESLint and check Prettier formatting
         run: bun run check
 
+      - name: Build App
+        run: bun run build
+
   test:
     name: Bun Test
     runs-on: ubuntu-latest
