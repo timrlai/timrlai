@@ -15,7 +15,10 @@ const Skills = defineAsyncComponent(() => import("./Skills.vue"));
       <LogoCanvas />
     </Suspense>
   </div>
-  <main class="flex flex-col gap-4 max-w-[95vw] min-h-[80vh] mx-auto mb-10">
+  <main
+    id="main"
+    class="flex flex-col gap-4 max-w-[95vw] min-h-[80vh] mx-auto mb-10"
+  >
     <Hi v-once />
     <Summary v-once />
     <Skills v-once />
