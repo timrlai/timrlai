@@ -127,7 +127,7 @@ export const intros: Skill[] = [
     title: "a WebGL and Three.js Developer",
     icon: "skill-icons:threejs-dark",
   },
-  { title: "a VR/AR Developer.", icon: "fluent-emoji:goggles" },
+  { title: "a VR/AR Developer", icon: "fluent-emoji:goggles" },
   {
     title: "a teacher of Web Programming",
     icon: "fluent-emoji:man-teacher-light",
