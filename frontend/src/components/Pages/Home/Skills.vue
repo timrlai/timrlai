@@ -139,7 +139,7 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
           />
           <label
             for="table-checkbox"
-            class="collapse-title text-lg sm:text-xl ubuntu-titling bg-neutral text-neutral-content"
+            class="collapse-title text-base sm:text-lg md:text-xl ubuntu-titling bg-neutral text-neutral-content"
           >
             <Icon icon="mingcute:table-2-line" class="inline-block h-[1.5em]" />
             Click to View All Technical Skills
@@ -370,7 +370,7 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
             <a
               href="https://github.com/timrlai/timrlai"
               target="_blank"
-              class="btn btn-lg md:btn-xl btn-neutral ubuntu-titling"
+              class="btn btn-block btn-md sm:btn-lg md:btn-xl btn-neutral ubuntu-titling"
               ><Icon
                 icon="mingcute:github-fill"
                 class="inline-block h-[1.5em]"
