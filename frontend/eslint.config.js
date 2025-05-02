@@ -1,10 +1,12 @@
+import { defineConfig, globalIgnores } from "eslint/config";
 import globals from "globals";
 import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 import pluginVue from "eslint-plugin-vue";
 import pluginVueA11y from "eslint-plugin-vuejs-accessibility";
 
-export default [
+export default defineConfig([
+  globalIgnores(["node_modules/*", "dist/*"]),
   { files: ["**/*.{ts,mts,js,mjs,cjs,vue}"] },
   {
     languageOptions: {
@@ -34,4 +36,4 @@ export default [
       semi: [2, "always"],
     },
   },
-];
+]);
