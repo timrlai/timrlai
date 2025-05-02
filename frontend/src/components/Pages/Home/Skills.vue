@@ -37,7 +37,7 @@ const randomizedSkills = [...primarySkills]
   .sort(() => Math.random() - 0.5)
   .slice(-6);
 
-const checkboxKeyPress = (event: Event) => {
+const checkboxKeyPress = (event: KeyboardEvent) => {
   if (event.keyCode === 13) {
     tableCheckbox.value.checked = !tableCheckbox.value.checked;
   }
