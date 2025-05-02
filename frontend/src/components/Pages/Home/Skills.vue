@@ -126,8 +126,9 @@ const randomizedSkills = [...primarySkills]
           <input id="table-collapse" type="checkbox" />
           <label
             for="table-collapse"
-            class="collapse-title text-base sm:text-lg ubuntu-bold bg-neutral text-neutral-content"
+            class="collapse-title text-lg sm:text-xl ubuntu-titling bg-neutral text-neutral-content"
           >
+            <Icon icon="mingcute:table-2-line" class="inline-block h-[1.5em]" />
             Click to View All Technical Skills
           </label>
           <div class="overflow-x-auto">
@@ -329,9 +330,11 @@ const randomizedSkills = [...primarySkills]
             <a
               href="https://github.com/timrlai/timrlai"
               target="_blank"
-              class="btn btn-xl btn-neutral ubuntu-bold"
-              ><Icon icon="mingcute:github-fill" class="inline-block" />View The
-              Code for This Site on GitHub
+              class="btn btn-lg md:btn-xl btn-neutral ubuntu-titling"
+              ><Icon
+                icon="mingcute:github-fill"
+                class="inline-block h-[1.5em]"
+              />View the Code for This Site on GitHub
             </a>
           </div>
         </div>
@@ -343,7 +346,7 @@ const randomizedSkills = [...primarySkills]
       <div class="p-5">
         <div class="flex flex-wrap justify-between items-center">
           <div class="w-full sm:w-4/5 sm:pr-14">
-            <h2 class="text-2xl sm:text-3xl ubuntu-bold mb-4">
+            <h2 class="text-2xl sm:text-3xl ubuntu-titling mb-4">
               Soft Skills
               <Icon icon="fluent-emoji:handshake" class="inline-block" />
             </h2>
