@@ -10,12 +10,15 @@ const Skills = defineAsyncComponent(() => import("./Skills.vue"));
 </script>
 
 <template>
-  <div class="min-h-[90vh]">
+  <div class="min-h-[90vh] motion-reduce:min-h-0">
     <Suspense>
       <LogoCanvas />
     </Suspense>
   </div>
-  <main class="flex flex-col gap-4 max-w-[95vw] min-h-[80vh] mx-auto mb-10">
+  <main
+    id="main"
+    class="flex flex-col gap-4 max-w-[95vw] min-h-[80vh] mx-auto mb-10 motion-reduce:pt-30"
+  >
     <Hi v-once />
     <Summary v-once />
     <Skills v-once />

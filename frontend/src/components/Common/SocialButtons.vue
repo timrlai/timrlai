@@ -50,15 +50,21 @@ const tooltipPositions = {
         :data-tip="`${button.tooltip}`"
       >
         <div class="tooltip-content">
-          <div class="animate-bounce text-lg gluten normal-case">
+          <div class="text-lg gluten normal-case">
             {{ button.tooltip }}
           </div>
         </div>
         <a
           :href="`${button.url}`"
           target="_blank"
+          aria-roledescription="button"
+          :aria-labelledby="`${button.tooltip}-icon`"
           :class="`btn ${buttonColors[buttonColor]} text-xl sm:text-2xl`"
-          ><Icon :icon="`${button.icon}`"
+          ><Icon
+            :id="`${button.tooltip}-icon`"
+            :icon="`${button.icon}`"
+            aria-roledescription="icon"
+            :aria-label="button.tooltip"
         /></a>
       </div>
     </div>

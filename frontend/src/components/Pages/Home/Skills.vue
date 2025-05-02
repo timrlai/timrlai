@@ -22,8 +22,10 @@ const LottiePlayer = defineAsyncComponent(
 const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_SKILLS_SOFT_LOTTIE_PATH } =
   lottieConstants;
 
+const currentSkill = ref(primarySkills[0].icon);
 const skillIcon = ref(primarySkills[0].icon);
 const onSkillTyped = (currentTitle: string) => {
+  currentSkill.value = currentTitle;
   skillIcon.value =
     primarySkills.find(({ title }) => title === currentTitle)?.icon ||
     primarySkills[0].icon;
@@ -70,11 +72,14 @@ const randomizedSkills = [...primarySkills]
               </p>
               <p class="code-comment-block my-4">
                 Specifically, I have experience working with...
-                <strong class="bg-neutral">
+                <strong class="bg-neutral motion-reduce:hidden">
                   <VueWriter
                     :array="primarySkills.map(({ title }) => title)"
                     @typed="onSkillTyped"
                     class="inline" /></strong
+                ><strong class="bg-neutral motion-safe:hidden">{{
+                  currentSkill
+                }}</strong
                 >.
               </p>
               <div class="text-9xl text-center mt-10">
@@ -118,12 +123,13 @@ const randomizedSkills = [...primarySkills]
           Expand the below table to see all of my technical skills.
         </p>
         <div class="collapse collapse-plus mt-5">
-          <input type="checkbox" />
-          <h3
-            class="collapse-title text-lg sm:text-xl ubuntu-bold bg-neutral text-neutral-content"
+          <input id="table-collapse" type="checkbox" />
+          <label
+            for="table-collapse"
+            class="collapse-title text-base sm:text-lg ubuntu-bold bg-neutral text-neutral-content"
           >
             Click to View All Technical Skills
-          </h3>
+          </label>
           <div class="overflow-x-auto">
             <table
               class="table table-zebra text-lg bg-base-100 text-base-content atkinson-hyperlegible-next-medium"
@@ -309,12 +315,24 @@ const randomizedSkills = [...primarySkills]
               :data-tip="`${skills.title}`"
             >
               <div class="tooltip-content">
-                <div class="animate-bounce text-2xl gluten">
+                <div class="text-2xl gluten">
                   {{ skills.title }}
                 </div>
               </div>
-              <Icon :icon="`${skills.icon}`" />
+              <Icon
+                :icon="`${skills.icon}`"
+                :aria-label="`${skills.title} logo`"
+              />
             </div>
+          </div>
+          <div class="text-center mt-8">
+            <a
+              href="https://github.com/timrlai/timrlai"
+              target="_blank"
+              class="btn btn-xl btn-neutral ubuntu-bold"
+              ><Icon icon="mingcute:github-fill" class="inline-block" />View The
+              Code for This Site on GitHub
+            </a>
           </div>
         </div>
       </div>

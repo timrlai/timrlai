@@ -52,16 +52,14 @@ const year = new Date().getFullYear();
       />
     </aside>
     <aside class="footer-tile md:w-2xs">
-      <div
+      <RouterLink
+        to="/"
         tabindex="0"
         role="button"
-        class="w-full my-4 btn btn-secondary text-2xl"
+        class="w-full my-4 btn btn-xl btn-secondary text-2xl ubuntu-bold"
+        ><Icon icon="mingcute:arrow-to-up-fill" class="inline-block" /> To
+        Top</RouterLink
       >
-        <RouterLink to="/"
-          ><Icon icon="mingcute:arrow-to-up-fill" class="inline-block" /> To
-          Top</RouterLink
-        >
-      </div>
       <p class="mt-4">
         <small
           >Made with love

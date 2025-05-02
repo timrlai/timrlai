@@ -348,7 +348,7 @@ watchEffect(() => {
 
 <template>
   <section
-    class="relative z-0 h-[140vh] md:h-[170vh] mb-[-70vh] md:mb-[-80vh] cursor-pointer"
+    class="relative z-0 h-[140vh] md:h-[170vh] mb-[-70vh] md:mb-[-80vh] cursor-pointer motion-reduce:hidden"
   >
     <div
       v-if="isLandscape && isMobileOrTablet"
@@ -366,6 +366,7 @@ watchEffect(() => {
         :maxPolarAngle="Math.PI / VERTICAL_ROTATION_LIMIT"
         :minAzimuthAngle="-(Math.PI / HORIZONTAL_ROTATION_LIMIT)"
         :maxAzimuthAngle="Math.PI / HORIZONTAL_ROTATION_LIMIT"
+        :enable-zoom="false"
       />
       <Suspense>
         <LottieSphere :src="CLOUDS_LOTTIE_PATH" />

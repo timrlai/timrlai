@@ -18,7 +18,7 @@ defineProps<{
 </script>
 
 <template>
-  <section>
+  <section class="motion-reduce:hidden">
     <Vue3Lottie
       v-if="typeof src === 'string'"
       :animationLink="src"
@@ -45,6 +45,32 @@ defineProps<{
       :pauseAnimation="pauseAnimation"
       :pauseOnHover="pauseOnHover"
       :playOnHover="playOnHover"
+      :backgroundColor="backgroundColor"
+    />
+  </section>
+  <section class="motion-safe:hidden">
+    <Vue3Lottie
+      v-if="typeof src === 'string'"
+      :animationLink="src"
+      :height="height"
+      :width="width"
+      :speed="0"
+      :autoPlay="false"
+      :pauseAnimation="true"
+      :pauseOnHover="false"
+      :playOnHover="false"
+      :backgroundColor="backgroundColor"
+    />
+    <Vue3Lottie
+      v-if="data"
+      :animationData="data"
+      :height="height"
+      :width="width"
+      :speed="0"
+      :autoPlay="false"
+      :pauseAnimation="true"
+      :pauseOnHover="false"
+      :playOnHover="false"
       :backgroundColor="backgroundColor"
     />
   </section>

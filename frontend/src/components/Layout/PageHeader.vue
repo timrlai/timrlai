@@ -11,10 +11,16 @@ const SocialButtons = defineAsyncComponent(
 </script>
 
 <template>
-  <header class="ubuntu-titling uppercase relative">
+  <header class="relative">
     <nav id="main-nav" class="navbar bg-secondary text-secondary-content">
       <div class="navbar-start">
-        <div class="dropdown z-[9999]">
+        <RouterLink
+          to="/#main"
+          class="visually-hidden focusable btn btn-lg btn-ghost atkinson-hyperlegible-next"
+          >Skip to main content
+          <Icon icon="mingcute:arrow-to-down-fill" class="inline-block"
+        /></RouterLink>
+        <div class="dropdown z-[9999] ubuntu-titling uppercase">
           <div
             tabindex="0"
             role="button"
@@ -59,7 +65,7 @@ const SocialButtons = defineAsyncComponent(
             class="w-full h-full"
         /></RouterLink>
       </div>
-      <div class="navbar-center hidden lg:flex">
+      <div class="navbar-center hidden lg:flex ubuntu-titling uppercase">
         <ul class="menu menu-horizontal px-1 text-lg">
           <li>
             <RouterLink to="/"

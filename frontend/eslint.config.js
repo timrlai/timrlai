@@ -1,9 +1,12 @@
+import { defineConfig, globalIgnores } from "eslint/config";
 import globals from "globals";
 import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 import pluginVue from "eslint-plugin-vue";
+import pluginVueA11y from "eslint-plugin-vuejs-accessibility";
 
-export default [
+export default defineConfig([
+  globalIgnores(["node_modules/*", "dist/*"]),
   { files: ["**/*.{ts,mts,js,mjs,cjs,vue}"] },
   {
     languageOptions: {
@@ -16,6 +19,7 @@ export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   ...pluginVue.configs["flat/essential"],
+  ...pluginVueA11y.configs["flat/recommended"],
   {
     rules: {
       "@typescript-eslint/explicit-module-boundary-types": "off",
@@ -30,6 +34,17 @@ export default [
         },
       ],
       semi: [2, "always"],
+      "vuejs-accessibility/label-has-for": [
+        "error",
+        {
+          components: ["VLabel"],
+          controlComponents: ["VInput"],
+          required: {
+            every: ["id"],
+          },
+          allowChildren: false,
+        },
+      ],
     },
   },
-];
+]);

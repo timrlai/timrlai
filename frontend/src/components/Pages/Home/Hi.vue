@@ -31,8 +31,7 @@ const onIntroTyped = (currentTitle: string) => {
 <template>
   <section
     id="hi"
-    class="mockup-browser min-h-[60vh] md:min-h-[70vh] border-4 border-primary shadow-lg shadow-primary cursor-pointer ubuntu-regular overflow-hidden"
-    @click="explode"
+    class="mockup-browser min-h-[60vh] md:min-h-[70vh] border-4 border-primary shadow-lg shadow-primary ubuntu-regular overflow-hidden"
   >
     <div
       class="mockup-browser-toolbar bg-secondary text-secondary-content border-b-4 border-primary py-4"
@@ -42,7 +41,7 @@ const onIntroTyped = (currentTitle: string) => {
     <div
       class="glass grid place-content-center min-h-[55vh] md:min-h-[65vh] p-2 bg-primary/85 text-primary-content text-center"
     >
-      <div class="flex justify-center items-start">
+      <div class="flex justify-center items-start motion-reduce:hidden">
         <ConfettiExplosion :particleCount="200" :force="0.3" v-if="visible" />
       </div>
       <div class="flex flex-wrap items-center">
@@ -56,7 +55,7 @@ const onIntroTyped = (currentTitle: string) => {
             <small>(he/him)</small>
             <Icon icon="mingcute:male-line" class="inline-block ml-2" />
           </h2>
-          <p class="text-xl sm:text-2xl md:text-4xl my-4">
+          <p class="text-xl sm:text-2xl md:text-4xl my-4 motion-reduce:hidden">
             I am
             <strong class="bg-blue-600 ubuntu-bold">
               <VueWriter
@@ -67,6 +66,10 @@ const onIntroTyped = (currentTitle: string) => {
                 class="inline"
               />
             </strong>
+          </p>
+          <p class="text-lg sm:text-xl md:text-2xl m-4 motion-safe:hidden">
+            I am
+            {{ intros.map(({ title }) => title).join(", ") }}
           </p>
           <div
             class="text-9xl lg:text-[12rem] xl:text-[16rem] text-center mb-8 sm:mb-0 mt-8"
