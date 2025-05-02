@@ -34,6 +34,17 @@ export default defineConfig([
         },
       ],
       semi: [2, "always"],
+      "vuejs-accessibility/label-has-for": [
+        "error",
+        {
+          components: ["VLabel"],
+          controlComponents: ["VInput"],
+          required: {
+            every: ["id"],
+          },
+          allowChildren: false,
+        },
+      ],
     },
   },
 ]);
