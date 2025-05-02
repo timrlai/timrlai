@@ -320,22 +320,23 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
             />
           </h2>
           <div
-            class="flex flex-wrap gap-2 text-6xl sm:text-7xl md:text-8xl lg:text-9xl"
+            class="flex flex-wrap justify-center gap-2 text-6xl sm:text-7xl md:text-8xl lg:text-9xl"
           >
             <div
               v-for="skills in madeWithSkills"
               v-bind:key="skills.title"
-              class="tooltip tooltip-secondary tooltip-secondary-content opacity-70 hover:opacity-100"
+              class="tooltip tooltip-secondary tooltip-secondary-content w-1/5 md:w-auto text-center opacity-70 hover:opacity-100"
               :data-tip="`${skills.title}`"
             >
               <div class="tooltip-content">
-                <div class="text-2xl gluten">
+                <div class="text-base sm:text-xl md:text-2xl gluten">
                   {{ skills.title }}
                 </div>
               </div>
               <Icon
                 :icon="`${skills.icon}`"
                 :aria-label="`${skills.title} logo`"
+                class="inline-block"
               />
             </div>
           </div>
