@@ -1172,7 +1172,7 @@ eslint@>=6.0.0, eslint@>=7.0.0, eslint@>=8.0.0, "eslint@^5.0.0 || ^6.0.0 || ^7.0
     natural-compare "^1.4.0"
     optionator "^0.9.3"
 
-eslint-config-prettier@^10.1.2:
+"eslint-config-prettier@>= 7.0.0 <10.0.0 || >=10.1.0", eslint-config-prettier@^10.1.2:
   version "10.1.2"
   resolved "https://registry.npmjs.org/eslint-config-prettier/-/eslint-config-prettier-10.1.2.tgz"
   integrity sha512-Epgp/EofAUeEpIdZkW60MHKvPyru1ruQJxPL+WIycnaPApuseK0Zpkrh/FwL9oIpQvIhJwV7ptOy0DWUjTlCiA==
@@ -1185,19 +1185,19 @@ eslint-plugin-prettier@^5.2.6:
     prettier-linter-helpers "^1.0.0"
     synckit "^0.11.0"
 
-eslint-plugin-vue@^9.32.0:
-  version "9.32.0"
-  resolved "https://registry.npmjs.org/eslint-plugin-vue/-/eslint-plugin-vue-9.32.0.tgz"
-  integrity sha512-b/Y05HYmnB/32wqVcjxjHZzNpwxj1onBOvqW89W+V+XNG1dRuaFbNd3vT9CLbr2LXjEoq+3vn8DanWf7XU22Ug==
+eslint-plugin-vue@^9.33.0:
+  version "9.33.0"
+  resolved "https://registry.npmjs.org/eslint-plugin-vue/-/eslint-plugin-vue-9.33.0.tgz"
+  integrity sha512-174lJKuNsuDIlLpjeXc5E2Tss8P44uIimAfGD0b90k0NoirJqpG7stLuU9Vp/9ioTOrQdWVREc4mRd1BD+CvGw==
   dependencies:
-    "@eslint-community/eslint-utils" "^4.4.0"
-    globals "^13.24.0"
-    natural-compare "^1.4.0"
-    nth-check "^2.1.1"
-    postcss-selector-parser "^6.0.15"
     semver "^7.6.3"
+    globals "^13.24.0"
+    nth-check "^2.1.1"
+    natural-compare "^1.4.0"
     vue-eslint-parser "^9.4.3"
     xml-name-validator "^4.0.0"
+    postcss-selector-parser "^6.0.15"
+    "@eslint-community/eslint-utils" "^4.4.0"
 
 eslint-plugin-vuejs-accessibility@^2.4.1:
   version "2.4.1"
