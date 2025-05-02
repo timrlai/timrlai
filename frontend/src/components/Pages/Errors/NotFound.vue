@@ -20,7 +20,9 @@ const randomNotFoundLottie = `${NOT_FOUND_LOTTIE_FOLDER}${NOT_FOUND_LOTTIES[Math
   <Suspense>
     <NotFoundCanvas />
   </Suspense>
-  <main class="flex flex-col justify-center gap-4 max-w-[95vw] mx-auto mb-10">
+  <main
+    class="flex flex-col justify-center gap-4 max-w-[95vw] mx-auto mb-10 motion-reduce:pt-30"
+  >
     <section
       id="summary"
       class="mockup-window bg-secondary text-secondary-content border-4 border-primary shadow-lg shadow-primary"
