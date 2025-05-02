@@ -118,12 +118,13 @@ const randomizedSkills = [...primarySkills]
           Expand the below table to see all of my technical skills.
         </p>
         <div class="collapse collapse-plus mt-5">
-          <input type="checkbox" />
-          <h3
+          <input id="table-collapse" type="checkbox" />
+          <label
+            for="table-collapse"
             class="collapse-title text-lg sm:text-xl ubuntu-bold bg-neutral text-neutral-content"
           >
             Click to View All Technical Skills
-          </h3>
+          </label>
           <div class="overflow-x-auto">
             <table
               class="table table-zebra text-lg bg-base-100 text-base-content atkinson-hyperlegible-next-medium"
