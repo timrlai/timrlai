@@ -146,22 +146,28 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
           </label>
           <div class="overflow-x-auto">
             <table
-              class="table table-zebra text-lg bg-base-100 text-base-content atkinson-hyperlegible-next-medium"
+              class="flex flex-wrap md:table table-zebra text-lg bg-base-100 text-base-content"
             >
               <!-- head -->
               <thead
-                class="text-center text-xl ubuntu-bold bg-base-200 text-base-content atkinson-hyperlegible-next-bold"
+                class="block md:table-header-group w-full md:w-auto text-center bg-base-200 text-base-content ubuntu-titling"
               >
-                <tr>
-                  <th>Category</th>
-                  <th>Skills</th>
+                <tr class="block md:table-row w-full md:w-auto p-4 md:p-0">
+                  <th class="hidden md:table-cell text-xl">Category</th>
+                  <th class="block md:table-cell w-full md:w-auto text-xl">
+                    Skills
+                  </th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody class="w-full md:w-auto atkinson-hyperlegible-next-medium">
                 <!-- row 1 -->
-                <tr>
-                  <td class="atkinson-hyperlegible-next-bold">Languages:</td>
-                  <td class="flex flex-col gap-2">
+                <tr class="block md:table-row w-full md:w-auto p-4 md:p-0">
+                  <td
+                    class="block md:table-cell w-full md:w-auto atkinson-hyperlegible-next-bold"
+                  >
+                    Languages:
+                  </td>
+                  <td class="flex flex-col gap-2 w-full md:w-auto">
                     <p>
                       <span
                         v-for="(skill, index) in languageSkills"
@@ -173,7 +179,7 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
                         </span>
                       </span>
                     </p>
-                    <div class="flex gap-2 text-5xl">
+                    <div class="flex flex-wrap gap-2 text-5xl">
                       <Icon
                         v-for="skill in languageSkills.filter(
                           ({ icon }) => icon && icon,
@@ -185,9 +191,13 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
                   </td>
                 </tr>
                 <!-- row 2 -->
-                <tr>
-                  <td class="font-bold">Frameworks/Libraries:</td>
-                  <td class="flex flex-col gap-2">
+                <tr class="block md:table-row w-full md:w-auto p-4 md:p-0">
+                  <td class="block md:table-cell w-full md:w-auto font-bold">
+                    Frameworks/Libraries:
+                  </td>
+                  <td
+                    class="flex flex-col gap-2 md:table-cell w-full md:w-auto"
+                  >
                     <p>
                       <span
                         v-for="(skill, index) in frameworkSkills"
@@ -199,7 +209,7 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
                         </span>
                       </span>
                     </p>
-                    <div class="flex gap-2 text-5xl">
+                    <div class="flex flex-wrap gap-2 text-5xl">
                       <Icon
                         v-for="skill in frameworkSkills.filter(
                           ({ icon }) => icon && icon,
@@ -211,9 +221,13 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
                   </td>
                 </tr>
                 <!-- row 3 -->
-                <tr>
-                  <td class="font-bold">Content Management Systems:</td>
-                  <td class="flex flex-col gap-2">
+                <tr class="block md:table-row w-full md:w-auto p-4 md:p-0">
+                  <td class="block md:table-cell w-full md:w-auto font-bold">
+                    Content Management Systems:
+                  </td>
+                  <td
+                    class="flex flex-col gap-2 md:table-cell w-full md:w-auto"
+                  >
                     <p>
                       <span
                         v-for="(skill, index) in cmsSkills"
@@ -223,7 +237,7 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
                         }}<span v-if="index < cmsSkills.length - 1">, </span>
                       </span>
                     </p>
-                    <div class="flex gap-2 text-5xl">
+                    <div class="flex flex-wrap gap-2 text-5xl">
                       <Icon
                         v-for="skill in cmsSkills.filter(
                           ({ icon }) => icon && icon,
@@ -235,9 +249,13 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
                   </td>
                 </tr>
                 <!-- row 4 -->
-                <tr>
-                  <td class="font-bold">Text Editors/IDEs/FTP:</td>
-                  <td class="flex flex-col gap-2">
+                <tr class="block md:table-row w-full md:w-auto p-4 md:p-0">
+                  <td class="block md:table-cell w-full md:w-auto font-bold">
+                    Text Editors/IDEs/FTP:
+                  </td>
+                  <td
+                    class="flex flex-col gap-2 md:table-cell w-full md:w-auto"
+                  >
                     <p>
                       <span
                         v-for="(skill, index) in editorSkills"
@@ -247,7 +265,7 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
                         }}<span v-if="index < editorSkills.length - 1">, </span>
                       </span>
                     </p>
-                    <div class="flex gap-2 text-5xl">
+                    <div class="flex flex-wrap gap-2 text-5xl">
                       <Icon
                         v-for="skill in editorSkills.filter(
                           ({ icon }) => icon && icon,
@@ -259,9 +277,13 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
                   </td>
                 </tr>
                 <!-- row 5 -->
-                <tr>
-                  <td class="font-bold">Design/Illustration Software:</td>
-                  <td class="flex flex-col gap-2">
+                <tr class="block md:table-row w-full md:w-auto p-4 md:p-0">
+                  <td class="block md:table-cell w-full md:w-auto font-bold">
+                    Design/Illustration Software:
+                  </td>
+                  <td
+                    class="flex flex-col gap-2 md:table-cell w-full md:w-auto"
+                  >
                     <p>
                       <span
                         v-for="(skill, index) in designSkills"
@@ -271,7 +293,7 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
                         }}<span v-if="index < designSkills.length - 1">, </span>
                       </span>
                     </p>
-                    <div class="flex gap-2 text-5xl">
+                    <div class="flex flex-wrap gap-2 text-5xl">
                       <Icon
                         v-for="skill in designSkills.filter(
                           ({ icon }) => icon && icon,
@@ -282,9 +304,13 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
                     </div>
                   </td>
                 </tr>
-                <tr>
-                  <td class="font-bold">General Software:</td>
-                  <td class="flex flex-col gap-2">
+                <tr class="block md:table-row w-full md:w-auto p-4 md:p-0">
+                  <td class="block md:table-cell w-full md:w-auto font-bold">
+                    General Software:
+                  </td>
+                  <td
+                    class="flex flex-col gap-2 md:table-cell w-full md:w-auto"
+                  >
                     <p>
                       <span
                         v-for="(skill, index) in generalSkills"
@@ -296,7 +322,7 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
                         </span>
                       </span>
                     </p>
-                    <div class="flex gap-2 text-5xl">
+                    <div class="flex flex-wrap gap-2 text-5xl">
                       <Icon
                         v-for="skill in generalSkills.filter(
                           ({ icon }) => icon && icon,
