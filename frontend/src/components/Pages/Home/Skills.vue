@@ -22,8 +22,10 @@ const LottiePlayer = defineAsyncComponent(
 const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_SKILLS_SOFT_LOTTIE_PATH } =
   lottieConstants;
 
+const currentSkill = ref(primarySkills[0].icon);
 const skillIcon = ref(primarySkills[0].icon);
 const onSkillTyped = (currentTitle: string) => {
+  currentSkill.value = currentTitle;
   skillIcon.value =
     primarySkills.find(({ title }) => title === currentTitle)?.icon ||
     primarySkills[0].icon;
@@ -70,11 +72,14 @@ const randomizedSkills = [...primarySkills]
               </p>
               <p class="code-comment-block my-4">
                 Specifically, I have experience working with...
-                <strong class="bg-neutral">
+                <strong class="bg-neutral motion-reduce:hidden">
                   <VueWriter
                     :array="primarySkills.map(({ title }) => title)"
                     @typed="onSkillTyped"
                     class="inline" /></strong
+                ><strong class="bg-neutral motion-safe:hidden">{{
+                  currentSkill
+                }}</strong
                 >.
               </p>
               <div class="text-9xl text-center mt-10">
