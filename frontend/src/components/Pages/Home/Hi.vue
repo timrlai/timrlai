@@ -31,7 +31,7 @@ const onIntroTyped = (currentTitle: string) => {
 <template>
   <section
     id="hi"
-    class="mockup-browser min-h-[60vh] md:min-h-[70vh] border-4 border-primary shadow-lg shadow-primary ubuntu-regular overflow-hidden"
+    class="mockup-browser min-h-[60vh] md:min-h-[70vh] border-4 border-primary shadow-lg shadow-primary overflow-hidden"
   >
     <div
       class="mockup-browser-toolbar bg-secondary text-secondary-content border-b-4 border-primary py-4"
@@ -57,7 +57,7 @@ const onIntroTyped = (currentTitle: string) => {
           </h2>
           <p class="text-xl sm:text-2xl md:text-4xl my-4 motion-reduce:hidden">
             I am
-            <strong class="bg-blue-600 ubuntu-bold">
+            <strong class="bg-blue-600 atkinson-hyperlegible-next-bold">
               <VueWriter
                 :array="intros.map(({ title }) => title)"
                 :typeSpeed="50"
@@ -67,9 +67,17 @@ const onIntroTyped = (currentTitle: string) => {
               />
             </strong>
           </p>
-          <p class="text-lg sm:text-xl md:text-2xl m-4 motion-safe:hidden">
+          <p
+            class="text-lg sm:text-xl md:text-2xl m-4 atkinson-hyperlegible-next-medium motion-safe:hidden"
+          >
             I am
-            {{ intros.map(({ title }) => title).join(", ") }}
+            {{
+              intros
+                .map(({ title }, i) =>
+                  i === intros.length - 1 ? `and ${title}` : title,
+                )
+                .join(", ")
+            }}.
           </p>
           <div
             class="text-9xl lg:text-[12rem] xl:text-[16rem] text-center mb-8 sm:mb-0 mt-8"

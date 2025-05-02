@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineAsyncComponent, ref } from "vue";
+import { defineAsyncComponent, ref, useTemplateRef } from "vue";
 import { Icon } from "@iconify/vue";
 import { VueWriter } from "vue-writer";
 
@@ -24,6 +24,8 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_SKILLS_SOFT_LOTTIE_PATH } =
 
 const currentSkill = ref(primarySkills[0].icon);
 const skillIcon = ref(primarySkills[0].icon);
+const tableCheckbox = useTemplateRef("table-checkbox");
+
 const onSkillTyped = (currentTitle: string) => {
   currentSkill.value = currentTitle;
   skillIcon.value =
@@ -34,6 +36,12 @@ const onSkillTyped = (currentTitle: string) => {
 const randomizedSkills = [...primarySkills]
   .sort(() => Math.random() - 0.5)
   .slice(-6);
+
+const checkboxKeyPress = (event: Event) => {
+  if (event.keyCode === 13) {
+    tableCheckbox.value.checked = !tableCheckbox.value.checked;
+  }
+};
 </script>
 
 <template>
@@ -123,11 +131,17 @@ const randomizedSkills = [...primarySkills]
           Expand the below table to see all of my technical skills.
         </p>
         <div class="collapse collapse-plus mt-5">
-          <input id="table-collapse" type="checkbox" />
+          <input
+            ref="table-checkbox"
+            id="table-checkbox"
+            type="checkbox"
+            :onkeypress="checkboxKeyPress"
+          />
           <label
-            for="table-collapse"
-            class="collapse-title text-base sm:text-lg ubuntu-bold bg-neutral text-neutral-content"
+            for="table-checkbox"
+            class="collapse-title text-lg sm:text-xl ubuntu-titling bg-neutral text-neutral-content"
           >
+            <Icon icon="mingcute:table-2-line" class="inline-block h-[1.5em]" />
             Click to View All Technical Skills
           </label>
           <div class="overflow-x-auto">
@@ -329,9 +343,11 @@ const randomizedSkills = [...primarySkills]
             <a
               href="https://github.com/timrlai/timrlai"
               target="_blank"
-              class="btn btn-xl btn-neutral ubuntu-bold"
-              ><Icon icon="mingcute:github-fill" class="inline-block" />View The
-              Code for This Site on GitHub
+              class="btn btn-lg md:btn-xl btn-neutral ubuntu-titling"
+              ><Icon
+                icon="mingcute:github-fill"
+                class="inline-block h-[1.5em]"
+              />View the Code for This Site on GitHub
             </a>
           </div>
         </div>
@@ -343,7 +359,7 @@ const randomizedSkills = [...primarySkills]
       <div class="p-5">
         <div class="flex flex-wrap justify-between items-center">
           <div class="w-full sm:w-4/5 sm:pr-14">
-            <h2 class="text-2xl sm:text-3xl ubuntu-bold mb-4">
+            <h2 class="text-2xl sm:text-3xl ubuntu-titling mb-4">
               Soft Skills
               <Icon icon="fluent-emoji:handshake" class="inline-block" />
             </h2>

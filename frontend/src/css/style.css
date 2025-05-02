@@ -22,26 +22,6 @@
   @apply font-normal not-italic;
 }
 
-.ubuntu-light {
-  font-family: "Ubuntu", sans-serif;
-  @apply font-light not-italic;
-}
-
-.ubuntu-regular {
-  font-family: "Ubuntu", sans-serif;
-  @apply font-normal not-italic;
-}
-
-.ubuntu-medium {
-  font-family: "Ubuntu", sans-serif;
-  @apply font-medium not-italic;
-}
-
-.ubuntu-bold {
-  font-family: "Ubuntu", sans-serif;
-  @apply font-bold not-italic;
-}
-
 .atkinson-hyperlegible-next-light {
   font-family: "Atkinson Hyperlegible Next", sans-serif;
   font-optical-sizing: auto;
@@ -184,14 +164,27 @@ body {
 .link {
   text-decoration: underline;
   text-decoration-thickness: 4px;
+  transition: all 50ms;
+}
+
+.link:hover {
+  text-decoration-thickness: 6px;
 }
 
 .link-accent {
   text-decoration-color: oklch(45% 0.08 220);
 }
 
+.link-accent:hover {
+  text-decoration-color: oklch(58% 0.22 360);
+}
+
 .link-success {
   text-decoration-color: oklch(98% 0.05 101);
+}
+
+.link-success:hover {
+  text-decoration-color: oklch(98% 0.05 192);
 }
 
 .is-typed span.cursor {
