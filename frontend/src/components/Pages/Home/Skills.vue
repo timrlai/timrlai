@@ -49,26 +49,22 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
     <div
       class="mockup-window bg-secondary text-secondary-content border-4 border-primary rounded-b-none shadow-lg shadow-primary"
     >
-      <h1 class="text-4xl sm:text-5xl text-center ubuntu-titling mb-4 px-5">
+      <h1
+        class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl ubuntu-titling mb-4 px-5"
+      >
+        <Icon icon="fluent-color:code-24" class="inline-block h-[1em]" />
         Skills
-        <Icon icon="fluent-color:code-20" class="inline-block" /><Icon
-          icon="fluent-color:design-ideas-20"
-          class="inline-block"
-        /><Icon icon="fluent-emoji:handshake" class="inline-block" />
       </h1>
     </div>
     <div
-      class="mockup-code bg-slate-800 text-neutral-content border-x-4 border-primary rounded-none shadow-lg shadow-primary fira-code overflow-x-hidden"
+      class="mockup-code bg-slate-900 text-neutral-content border-x-4 border-primary rounded-none shadow-lg shadow-primary fira-code overflow-x-hidden"
     >
       <div class="px-5">
         <div class="flex flex-wrap justify-between items-center">
           <div class="w-full sm:w-3/4">
-            <h2 class="text-xl sm:text-2xl mb-4 code-comment-inline">
+            <h2 class="text-3xl sm:text-4xl mb-4 code-comment-inline">
+              <Icon icon="fluent-color:code-24" class="inline-block h-[1em]" />
               Technical Skills
-              <Icon icon="fluent-color:code-20" class="inline-block" /><Icon
-                icon="fluent-color:design-ideas-20"
-                class="inline-block"
-              />
             </h2>
             <div class="text-lg/8 sm:text-xl/10">
               <p class="code-comment-block">
@@ -150,16 +146,18 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
             >
               <!-- head -->
               <thead
-                class="block md:table-header-group w-full md:w-auto text-center bg-base-200 text-base-content ubuntu-titling"
+                class="block md:table-header-group w-full md:w-auto text-center bg-base-200 ubuntu-titling"
               >
-                <tr class="block md:table-row w-full md:w-auto p-4 md:p-0">
-                  <th class="hidden md:table-cell text-xl">Category</th>
-                  <th class="block md:table-cell w-full md:w-auto text-xl">
-                    Skills
-                  </th>
+                <tr
+                  class="block md:table-row w-full md:w-auto p-4 md:p-0 text-xl md:text-2xl text-base-content"
+                >
+                  <th class="hidden md:table-cell">Category</th>
+                  <th class="block md:table-cell w-full md:w-auto">Skills</th>
                 </tr>
               </thead>
-              <tbody class="w-full md:w-auto atkinson-hyperlegible-next-medium">
+              <tbody
+                class="w-full md:w-auto text-lg atkinson-hyperlegible-next-medium"
+              >
                 <!-- row 1 -->
                 <tr class="block md:table-row w-full md:w-auto p-4 md:p-0">
                   <td
@@ -338,12 +336,9 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
           </div>
         </div>
         <div class="mt-8">
-          <h2 class="text-xl sm:text-2xl mb-4 code-comment-inline">
+          <h2 class="text-3xl sm:text-4xl mb-4 code-comment-inline">
+            <Icon icon="fluent-color:code-24" class="inline-block h-[1em]" />
             This Site Was Made With...
-            <Icon icon="fluent-color:code-20" class="inline-block" /><Icon
-              icon="fluent-color:design-ideas-20"
-              class="inline-block"
-            />
           </h2>
           <div
             class="flex flex-wrap justify-center gap-2 text-6xl sm:text-7xl md:text-8xl lg:text-9xl"
@@ -386,9 +381,12 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
       <div class="p-5">
         <div class="flex flex-wrap justify-between items-center">
           <div class="w-full sm:w-4/5 sm:pr-14">
-            <h2 class="text-2xl sm:text-3xl ubuntu-titling mb-4">
+            <h2 class="text-3xl sm:text-4xl ubuntu-titling mb-4">
+              <Icon
+                icon="fluent-emoji:handshake"
+                class="inline-block h-[1em]"
+              />
               Soft Skills
-              <Icon icon="fluent-emoji:handshake" class="inline-block" />
             </h2>
             <p class="text-xl sm:text-2xl">
               Having worked with large, fast-paced organizations such as
