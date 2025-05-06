@@ -38,7 +38,7 @@ const randomizedSkills = [...primarySkills]
   .slice(-6);
 
 const checkboxKeyPress = (event: KeyboardEvent) => {
-  if (event.keyCode === 13 && tableCheckbox.value) {
+  if (event.code === "Enter" && tableCheckbox.value) {
     tableCheckbox.value.checked = !tableCheckbox.value.checked;
   }
 };
