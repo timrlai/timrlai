@@ -16,9 +16,14 @@ const { AVATAR_SUMMARY_LOTTIE_PATH } = lottieConstants;
     id="summary"
     class="mockup-window bg-secondary text-secondary-content border-4 border-primary shadow-lg shadow-primary"
   >
-    <h1 class="text-4xl sm:text-5xl text-center ubuntu-titling mb-4 px-5">
+    <h1
+      class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl ubuntu-titling mb-4 px-5"
+    >
+      <Icon
+        icon="fluent-color:apps-list-detail-20"
+        class="inline-block h-[1em]"
+      />
       Summary
-      <Icon icon="fluent-color:apps-list-detail-20" class="inline-block" />
     </h1>
     <div class="flex flex-wrap justify-between items-center">
       <ul
@@ -48,7 +53,7 @@ const { AVATAR_SUMMARY_LOTTIE_PATH } = lottieConstants;
         </li>
         <li class="list-row">
           <div class="text-4xl sm:text-5xl">
-            <Icon icon="fluent-emoji:man-teacher-light" class="inline-block" />
+            <Icon icon="fluent-emoji:man-teacher-light" />
           </div>
           <div>
             Teacher of
