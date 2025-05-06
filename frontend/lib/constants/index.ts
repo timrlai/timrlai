@@ -10,6 +10,11 @@ export const lottieConstants: LottieConstants = {
     "/lottie/avatars/timrlai_avatar_skills_legs.json",
   AVATAR_SKILLS_SOFT_LOTTIE_PATH:
     "/lottie/avatars/timrlai_avatar_skills_soft.json",
+  AVATAR_VR_LOTTIE_PATH: "/lottie/avatars/timrlai_avatar_vr.json",
+  AVATAR_TEACHER_DESK_LOTTIE_PATH:
+    "/lottie/avatars/timrlai_avatar_teacher_desk.json",
+  AVATAR_TEACHER_LEGS_LOTTIE_PATH:
+    "/lottie/avatars/timrlai_avatar_teacher_legs.json",
   NOT_FOUND_LOTTIE_FOLDER: "/lottie/404/",
   NOT_FOUND_LOTTIES: [
     "404_cat_clouds.json",

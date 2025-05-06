@@ -103,6 +103,9 @@ export type LottieConstants = {
   readonly AVATAR_SKILLS_DESK_LOTTIE_PATH: string;
   readonly AVATAR_SKILLS_LEGS_LOTTIE_PATH: string;
   readonly AVATAR_SKILLS_SOFT_LOTTIE_PATH: string;
+  readonly AVATAR_VR_LOTTIE_PATH: string;
+  readonly AVATAR_TEACHER_DESK_LOTTIE_PATH: string;
+  readonly AVATAR_TEACHER_LEGS_LOTTIE_PATH: string;
   readonly NOT_FOUND_LOTTIE_FOLDER: string;
   readonly NOT_FOUND_LOTTIES: string[];
 };
