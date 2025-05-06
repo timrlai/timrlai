@@ -24,7 +24,7 @@ export const lottieConstants: LottieConstants = {
   ],
 };
 
-export const subItems: SubItem[] = [
+export const meetSubItems: SubItem[] = [
   {
     label: "Hi!",
     to: "/",
@@ -42,6 +42,45 @@ export const subItems: SubItem[] = [
     to: "/",
     hash: "skills",
     icon: "mingcute:code-fill",
+  },
+];
+
+export const experienceSubItems: SubItem[] = [
+  {
+    label: "Developer",
+    to: "/experience",
+    hash: "developer",
+    icon: "mingcute:code-fill",
+  },
+  {
+    label: "Teacher",
+    to: "/experience",
+    hash: "teacher",
+    icon: "mingcute:school-fill",
+  },
+  {
+    label: "Designer",
+    to: "/experience",
+    hash: "designer",
+    icon: "mingcute:palette-fill",
+  },
+  {
+    label: "Illustrator",
+    to: "/experience",
+    hash: "illustrator",
+    icon: "mingcute:paint-brush-fill",
+  },
+  {
+    label: "Education",
+    to: "/experience",
+    hash: "education",
+    icon: "mingcute:mortarboard-fill",
+  },
+  {
+    label: "Volunteer",
+    to: "/experience",
+    hash: "volunteer",
+    icon: "mingcute:hand-heart-fill",
   },
 ];
 

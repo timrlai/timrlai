@@ -2,7 +2,7 @@
 import { defineAsyncComponent } from "vue";
 import { RouterLink } from "vue-router";
 import { Icon } from "@iconify/vue";
-import { subItems } from "../../../lib/constants";
+import { meetSubItems, experienceSubItems } from "../../../lib/constants";
 import logoSvgPath from "../../assets/img/logos/timrlai_logo.svg";
 
 const SocialButtons = defineAsyncComponent(
@@ -15,7 +15,7 @@ const SocialButtons = defineAsyncComponent(
     <nav id="main-nav" class="navbar bg-secondary text-secondary-content">
       <div class="navbar-start">
         <RouterLink
-          to="/#main"
+          to="#main"
           class="visually-hidden focusable btn btn-lg btn-ghost atkinson-hyperlegible-next"
           >Skip to main content
           <Icon icon="mingcute:arrow-to-down-fill" class="inline-block"
@@ -30,17 +30,30 @@ const SocialButtons = defineAsyncComponent(
           </div>
           <ul
             tabindex="0"
-            class="menu menu-sm dropdown-content rounded-box bg-secondary z-1 mt-3 w-52 p-2 border-4 border-primary shadow-lg shadow-primary"
+            class="menu menu-lg dropdown-content rounded-box bg-secondary z-1 mt-3 w-sm p-2 rounded-t-none border-l-4 border-r-4 border-b-4 border-primary shadow-lg shadow-primary"
           >
             <li>
-              <RouterLink to="/"
-                ><Icon icon="mingcute:home-7-fill" /> Home</RouterLink
+              <RouterLink to="/" hash="#"
+                ><Icon icon="line-md:home-twotone" /> Home</RouterLink
               >
             </li>
             <li>
-              <a><Icon icon="mingcute:emoji-fill" /> Meet Tim</a>
+              <a><Icon icon="line-md:emoji-smile-twotone" /> Meet Tim</a>
               <ul class="p-2">
-                <li v-for="item in subItems" v-bind:key="item.label">
+                <li v-for="item in meetSubItems" v-bind:key="item.label">
+                  <RouterLink
+                    :to="`${item.to}#${item.hash}`"
+                    :hash="`${item.hash}`"
+                    ><Icon :icon="`${item.icon}`" />
+                    {{ item.label }}</RouterLink
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a><Icon icon="line-md:document-list-twotone" /> Experience</a>
+              <ul class="p-2">
+                <li v-for="item in experienceSubItems" v-bind:key="item.label">
                   <RouterLink
                     :to="`${item.to}#${item.hash}`"
                     :hash="`${item.hash}`"
@@ -52,12 +65,16 @@ const SocialButtons = defineAsyncComponent(
             </li>
             <li>
               <RouterLink to="/projects"
-                ><Icon icon="mingcute:code-fill" /> Projects</RouterLink
+                ><Icon icon="line-md:document-code-twotone" />
+                Projects</RouterLink
               >
             </li>
           </ul>
         </div>
-        <RouterLink to="/" class="btn btn-ghost btn-lg rounded-box py-1 text-xl"
+        <RouterLink
+          to="/"
+          hash="#"
+          class="btn btn-ghost btn-lg rounded-box py-1 text-xl"
           ><img
             :src="logoSvgPath"
             alt="Tim R. Lai"
@@ -66,19 +83,41 @@ const SocialButtons = defineAsyncComponent(
         /></RouterLink>
       </div>
       <div class="navbar-center hidden lg:flex ubuntu-titling uppercase">
-        <ul class="menu menu-horizontal px-1 text-lg">
+        <ul class="menu menu-horizontal px-1 text-xl xl:text-2xl">
           <li>
-            <RouterLink to="/"
-              ><Icon icon="mingcute:home-7-fill" /> Home</RouterLink
+            <RouterLink to="/" hash="#"
+              ><Icon icon="line-md:home-twotone" /> Home</RouterLink
             >
           </li>
           <li>
             <details class="z-[9999]">
-              <summary><Icon icon="mingcute:emoji-fill" /> Meet Tim</summary>
+              <summary>
+                <Icon icon="line-md:emoji-smile-twotone" /> Meet Tim
+              </summary>
               <ul
-                class="p-2 bg-secondary border-4 border-primary shadow-lg shadow-primary"
+                class="p-2 bg-secondary rounded-t-none border-l-4 border-r-4 border-b-4 border-primary shadow-lg shadow-primary"
               >
-                <li v-for="item in subItems" v-bind:key="item.label">
+                <li v-for="item in meetSubItems" v-bind:key="item.label">
+                  <RouterLink
+                    :to="`${item.to}#${item.hash}`"
+                    :hash="`${item.hash}`"
+                    class="rounded-sm"
+                    ><Icon :icon="`${item.icon}`" />
+                    {{ item.label }}</RouterLink
+                  >
+                </li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="z-[9999]">
+              <summary>
+                <Icon icon="line-md:document-list-twotone" /> Experience
+              </summary>
+              <ul
+                class="p-2 bg-secondary rounded-t-none border-l-4 border-r-4 border-b-4 border-primary shadow-lg shadow-primary"
+              >
+                <li v-for="item in experienceSubItems" v-bind:key="item.label">
                   <RouterLink
                     :to="`${item.to}#${item.hash}`"
                     :hash="`${item.hash}`"
@@ -92,7 +131,8 @@ const SocialButtons = defineAsyncComponent(
           </li>
           <li>
             <RouterLink to="/projects"
-              ><Icon icon="mingcute:code-fill" /> Projects</RouterLink
+              ><Icon icon="line-md:document-code-twotone" />
+              Projects</RouterLink
             >
           </li>
         </ul>
