@@ -6,10 +6,12 @@ import { VueWriter } from "vue-writer";
 import {
   lottieConstants,
   languageSkills,
+  databaseSkills,
   frameworkSkills,
   cmsSkills,
   editorSkills,
   designSkills,
+  hostingSkills,
   generalSkills,
   primarySkills,
   madeWithSkills,
@@ -62,7 +64,9 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
       <div class="px-5">
         <div class="flex flex-wrap justify-between items-center">
           <div class="w-full sm:w-3/4">
-            <h2 class="text-3xl sm:text-4xl mb-4 code-comment-inline">
+            <h2
+              class="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 code-comment-inline"
+            >
               <Icon icon="fluent-color:code-24" class="inline-block h-[1em]" />
               Technical Skills
             </h2>
@@ -165,7 +169,7 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
                   >
                     Languages:
                   </td>
-                  <td class="flex flex-col gap-2 w-full md:w-auto">
+                  <td class="flex flex-col gap-4 w-full md:w-auto">
                     <p>
                       <span
                         v-for="(skill, index) in languageSkills"
@@ -193,9 +197,7 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
                   <td class="block md:table-cell w-full md:w-auto font-bold">
                     Frameworks/Libraries:
                   </td>
-                  <td
-                    class="flex flex-col gap-2 md:table-cell w-full md:w-auto"
-                  >
+                  <td class="flex flex-col gap-4 w-full md:w-auto">
                     <p>
                       <span
                         v-for="(skill, index) in frameworkSkills"
@@ -220,12 +222,40 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
                 </tr>
                 <!-- row 3 -->
                 <tr class="block md:table-row w-full md:w-auto p-4 md:p-0">
+                  <td
+                    class="block md:table-cell w-full md:w-auto atkinson-hyperlegible-next-bold"
+                  >
+                    Databases:
+                  </td>
+                  <td class="flex flex-col gap-4 w-full md:w-auto">
+                    <p>
+                      <span
+                        v-for="(skill, index) in databaseSkills"
+                        v-bind:key="skill.title"
+                      >
+                        {{ skill.title
+                        }}<span v-if="index < databaseSkills.length - 1"
+                          >,
+                        </span>
+                      </span>
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-5xl">
+                      <Icon
+                        v-for="skill in databaseSkills.filter(
+                          ({ icon }) => icon && icon,
+                        )"
+                        v-bind:key="skill.title"
+                        :icon="`${skill.icon}`"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <!-- row 4 -->
+                <tr class="block md:table-row w-full md:w-auto p-4 md:p-0">
                   <td class="block md:table-cell w-full md:w-auto font-bold">
                     Content Management Systems:
                   </td>
-                  <td
-                    class="flex flex-col gap-2 md:table-cell w-full md:w-auto"
-                  >
+                  <td class="flex flex-col gap-4 w-full md:w-auto">
                     <p>
                       <span
                         v-for="(skill, index) in cmsSkills"
@@ -246,14 +276,12 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
                     </div>
                   </td>
                 </tr>
-                <!-- row 4 -->
+                <!-- row 5 -->
                 <tr class="block md:table-row w-full md:w-auto p-4 md:p-0">
                   <td class="block md:table-cell w-full md:w-auto font-bold">
                     Text Editors/IDEs/FTP:
                   </td>
-                  <td
-                    class="flex flex-col gap-2 md:table-cell w-full md:w-auto"
-                  >
+                  <td class="flex flex-col gap-4 w-full md:w-auto">
                     <p>
                       <span
                         v-for="(skill, index) in editorSkills"
@@ -274,14 +302,12 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
                     </div>
                   </td>
                 </tr>
-                <!-- row 5 -->
+                <!-- row 6 -->
                 <tr class="block md:table-row w-full md:w-auto p-4 md:p-0">
                   <td class="block md:table-cell w-full md:w-auto font-bold">
                     Design/Illustration Software:
                   </td>
-                  <td
-                    class="flex flex-col gap-2 md:table-cell w-full md:w-auto"
-                  >
+                  <td class="flex flex-col gap-4 w-full md:w-auto">
                     <p>
                       <span
                         v-for="(skill, index) in designSkills"
@@ -302,13 +328,40 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
                     </div>
                   </td>
                 </tr>
+                <!-- row 7 -->
+                <tr class="block md:table-row w-full md:w-auto p-4 md:p-0">
+                  <td class="block md:table-cell w-full md:w-auto font-bold">
+                    Hosting/Domains:
+                  </td>
+                  <td class="flex flex-col gap-4 w-full md:w-auto">
+                    <p>
+                      <span
+                        v-for="(skill, index) in hostingSkills"
+                        v-bind:key="skill.title"
+                      >
+                        {{ skill.title
+                        }}<span v-if="index < hostingSkills.length - 1"
+                          >,
+                        </span>
+                      </span>
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-5xl">
+                      <Icon
+                        v-for="skill in hostingSkills.filter(
+                          ({ icon }) => icon && icon,
+                        )"
+                        v-bind:key="skill.title"
+                        :icon="`${skill.icon}`"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <!-- row 8 -->
                 <tr class="block md:table-row w-full md:w-auto p-4 md:p-0">
                   <td class="block md:table-cell w-full md:w-auto font-bold">
                     General Software:
                   </td>
-                  <td
-                    class="flex flex-col gap-2 md:table-cell w-full md:w-auto"
-                  >
+                  <td class="flex flex-col gap-4 w-full md:w-auto">
                     <p>
                       <span
                         v-for="(skill, index) in generalSkills"
@@ -336,21 +389,36 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
           </div>
         </div>
         <div class="mt-8">
-          <h2 class="text-3xl sm:text-4xl mb-4 code-comment-inline">
+          <h2
+            class="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 code-comment-inline"
+          >
             <Icon icon="fluent-color:code-24" class="inline-block h-[1em]" />
             This Site Was Made With...
           </h2>
+          <p class="code-comment-block text-lg/8 sm:text-xl/10 my-4">
+            <span
+              v-for="(skill, index) in madeWithSkills"
+              v-bind:key="skill.title"
+            >
+              {{ skill.title
+              }}<span v-if="index < madeWithSkills.length - 1">, </span>
+            </span>
+          </p>
           <div
-            class="flex flex-wrap justify-center gap-2 text-6xl sm:text-7xl md:text-8xl lg:text-9xl"
+            class="flex flex-wrap justify-center gap-4 text-6xl sm:text-7xl md:text-8xl lg:text-9xl"
           >
             <div
-              v-for="skills in madeWithSkills"
+              v-for="skills in madeWithSkills.filter(
+                (skill) => skill.icon !== null,
+              )"
               v-bind:key="skills.title"
               class="tooltip tooltip-secondary tooltip-secondary-content w-1/5 md:w-auto text-center opacity-70 hover:opacity-100"
               :data-tip="`${skills.title}`"
             >
               <div class="tooltip-content">
-                <div class="text-base sm:text-xl md:text-2xl gluten">
+                <div
+                  class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl gluten"
+                >
                   {{ skills.title }}
                 </div>
               </div>
