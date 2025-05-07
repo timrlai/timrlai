@@ -16,103 +16,107 @@ const { AVATAR_SUMMARY_LOTTIE_PATH } = lottieConstants;
     id="summary"
     class="mockup-window bg-secondary text-secondary-content border-4 border-primary shadow-lg shadow-primary"
   >
-    <h1 class="text-4xl sm:text-5xl text-center ubuntu-titling mb-4 px-5">
-      Summary
-      <Icon icon="fluent-color:apps-list-detail-20" class="inline-block" />
-    </h1>
-    <div class="flex flex-wrap justify-between items-center">
-      <ul
-        class="list w-full sm:w-4/5 text-lg sm:text-xl atkinson-hyperlegible-next-bold"
+    <div class="px-5">
+      <h1
+        class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl uppercase ubuntu-titling border-b-4 border-primary mb-4"
       >
-        <li class="list-row">
-          <div class="text-4xl sm:text-5xl">
-            <Icon icon="fluent-emoji:robot" />
-          </div>
-          <div>
-            Worked as a web developer at
-            <a
-              href="https://futuretalk.ca"
-              target="_blank"
-              class="link link-accent link-hover"
-              >Futuretalk Inc.</a
-            >
-            making
-            <a
-              href="https://learnwithtrek.com"
-              target="_blank"
-              class="link link-accent link-hover"
-              >VR/AR and AI applications</a
-            >
-            with React/Next.js and Three.js
-          </div>
-        </li>
-        <li class="list-row">
-          <div class="text-4xl sm:text-5xl">
-            <Icon icon="fluent-emoji:man-teacher-light" class="inline-block" />
-          </div>
-          <div>
-            Teacher of
-            <a
-              href="https://www.senecapolytechnic.ca/ce/creative/graphics-web-design/web-programming-development.html"
-              target="_blank"
-              class="link link-accent link-hover"
-              >Web Programming</a
-            >
-            with Python and Django, PHP and Laravel and JavaScript and Angular
-            at Seneca Polytechnic
-          </div>
-        </li>
-        <li class="list-row">
-          <div class="text-4xl sm:text-5xl">
-            <Icon icon="fluent-emoji:student-light" />
-          </div>
-          <div>
-            Graduated with an
-            <a
-              href="https://www.senecapolytechnic.ca/programs/fulltime/BSD.html"
-              target="_blank"
-              class="link link-accent link-hover"
-              >Honours Bachelor of Technology - Software Development</a
-            >
-            degree from Seneca Polytechnic
-          </div>
-        </li>
-        <li class="list-row">
-          <div class="text-4xl sm:text-5xl">
-            <Icon icon="fluent-emoji:man-technologist-light" />
-          </div>
-          <div>
-            A passionate full stack developer/designer with 5+ years of web
-            development experience
-          </div>
-        </li>
-        <li class="list-row">
-          <div class="text-4xl sm:text-5xl">
-            <Icon icon="fluent-emoji:heart-on-fire" />
-          </div>
-          <div>
-            Enthusiastic, creative, detail-oriented, resourceful, reliable, fast
-            learning, dedicated and adaptable
-          </div>
-        </li>
-        <li class="list-row">
-          <div class="text-4xl sm:text-5xl">
-            <Icon icon="fluent-emoji:handshake" />
-          </div>
-          <div>
-            Experience working both independently and in team-oriented,
-            collaborative environments
-          </div>
-        </li>
-        <li class="list-row">
-          <div class="text-4xl sm:text-5xl">
-            <Icon icon="flag:ca-1x1" />
-          </div>
-          <div>Canadian citizen</div>
-        </li>
-      </ul>
-      <div class="w-full sm:w-1/5 pl-14 sm:pl-0 pr-14">
-        <LottiePlayer :src="AVATAR_SUMMARY_LOTTIE_PATH" autoPlay />
+        <Icon icon="mingcute:list-check-3-fill" class="inline-block h-[1em]" />
+        Summary
+      </h1>
+      <div class="flex flex-wrap justify-between items-center">
+        <ul
+          class="list w-full sm:w-4/5 text-lg sm:text-xl atkinson-hyperlegible-next-bold"
+        >
+          <li class="list-row">
+            <div class="text-4xl sm:text-5xl">
+              <Icon icon="fluent-emoji:robot" />
+            </div>
+            <div>
+              Worked as a web developer at
+              <a
+                href="https://futuretalk.ca"
+                target="_blank"
+                class="link link-accent link-hover"
+                >Futuretalk Inc.</a
+              >
+              making
+              <a
+                href="https://learnwithtrek.com"
+                target="_blank"
+                class="link link-accent link-hover"
+                >VR/AR and AI applications</a
+              >
+              with React/Next.js and Three.js
+            </div>
+          </li>
+          <li class="list-row">
+            <div class="text-4xl sm:text-5xl">
+              <Icon icon="fluent-emoji:man-teacher-light" />
+            </div>
+            <div>
+              Teacher of
+              <a
+                href="https://www.senecapolytechnic.ca/ce/creative/graphics-web-design/web-programming-development.html"
+                target="_blank"
+                class="link link-accent link-hover"
+                >Web Programming</a
+              >
+              with Python and Django, PHP and Laravel and JavaScript and Angular
+              at Seneca Polytechnic
+            </div>
+          </li>
+          <li class="list-row">
+            <div class="text-4xl sm:text-5xl">
+              <Icon icon="fluent-emoji:student-light" />
+            </div>
+            <div>
+              Graduated with an
+              <a
+                href="https://www.senecapolytechnic.ca/programs/fulltime/BSD.html"
+                target="_blank"
+                class="link link-accent link-hover"
+                >Honours Bachelor of Technology - Software Development</a
+              >
+              degree from Seneca Polytechnic
+            </div>
+          </li>
+          <li class="list-row">
+            <div class="text-4xl sm:text-5xl">
+              <Icon icon="fluent-emoji:man-technologist-light" />
+            </div>
+            <div>
+              A passionate full stack developer/designer with 5+ years of web
+              development experience
+            </div>
+          </li>
+          <li class="list-row">
+            <div class="text-4xl sm:text-5xl">
+              <Icon icon="fluent-emoji:heart-on-fire" />
+            </div>
+            <div>
+              Enthusiastic, creative, detail-oriented, resourceful, reliable,
+              fast learning, dedicated and adaptable
+            </div>
+          </li>
+          <li class="list-row">
+            <div class="text-4xl sm:text-5xl">
+              <Icon icon="fluent-emoji:handshake" />
+            </div>
+            <div>
+              Experience working both independently and in team-oriented,
+              collaborative environments
+            </div>
+          </li>
+          <li class="list-row">
+            <div class="text-4xl sm:text-5xl">
+              <Icon icon="flag:ca-1x1" />
+            </div>
+            <div>Canadian citizen</div>
+          </li>
+        </ul>
+        <div class="w-full sm:w-1/5 pl-14 sm:pl-0 pr-14">
+          <LottiePlayer :src="AVATAR_SUMMARY_LOTTIE_PATH" autoPlay />
+        </div>
       </div>
     </div>
   </section>

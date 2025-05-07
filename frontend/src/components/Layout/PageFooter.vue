@@ -27,9 +27,9 @@ const year = new Date().getFullYear();
     </aside>
     <aside class="footer-tile">
       <h2 class="text-3xl w-full mb-4 ubuntu-titling">
-        Email Tim
         <Icon icon="fluent-color:mail-32" class="inline-block text-5xl" />
         <img :src="headSvgPath" alt="" class="inline-block h-[1.5em]" />
+        Email Tim
       </h2>
       <p class="w-full mb-4">
         <a href="mailto:hi@timrl.ai" class="link link-success link-hover"
@@ -37,12 +37,12 @@ const year = new Date().getFullYear();
         >
       </p>
       <h2 class="text-3xl w-full mb-4 ubuntu-titling">
-        Follow Tim on Social Media
         <Icon
           icon="fluent-emoji:mobile-phone-with-arrow"
           class="inline-block text-5xl"
         />
         <img :src="headSvgPath" alt="" class="inline-block h-[1.5em]" />
+        Follow Tim on Social Media
       </h2>
       <SocialButtons
         buttonColor="secondary"

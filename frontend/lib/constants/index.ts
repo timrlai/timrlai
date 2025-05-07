@@ -10,6 +10,11 @@ export const lottieConstants: LottieConstants = {
     "/lottie/avatars/timrlai_avatar_skills_legs.json",
   AVATAR_SKILLS_SOFT_LOTTIE_PATH:
     "/lottie/avatars/timrlai_avatar_skills_soft.json",
+  AVATAR_VR_LOTTIE_PATH: "/lottie/avatars/timrlai_avatar_vr.json",
+  AVATAR_TEACHER_DESK_LOTTIE_PATH:
+    "/lottie/avatars/timrlai_avatar_teacher_desk.json",
+  AVATAR_TEACHER_LEGS_LOTTIE_PATH:
+    "/lottie/avatars/timrlai_avatar_teacher_legs.json",
   NOT_FOUND_LOTTIE_FOLDER: "/lottie/404/",
   NOT_FOUND_LOTTIES: [
     "404_cat_clouds.json",
@@ -19,7 +24,7 @@ export const lottieConstants: LottieConstants = {
   ],
 };
 
-export const subItems: SubItem[] = [
+export const meetSubItems: SubItem[] = [
   {
     label: "Hi!",
     to: "/",
@@ -38,6 +43,45 @@ export const subItems: SubItem[] = [
     hash: "skills",
     icon: "mingcute:code-fill",
   },
+];
+
+export const experienceSubItems: SubItem[] = [
+  {
+    label: "Developer",
+    to: "/experience",
+    hash: "developer",
+    icon: "mingcute:code-fill",
+  },
+  {
+    label: "Teacher",
+    to: "/experience",
+    hash: "teacher",
+    icon: "mingcute:school-fill",
+  },
+  // {
+  //   label: "Designer",
+  //   to: "/experience",
+  //   hash: "designer",
+  //   icon: "mingcute:palette-fill",
+  // },
+  // {
+  //   label: "Illustrator",
+  //   to: "/experience",
+  //   hash: "illustrator",
+  //   icon: "mingcute:paint-brush-fill",
+  // },
+  // {
+  //   label: "Education",
+  //   to: "/experience",
+  //   hash: "education",
+  //   icon: "mingcute:mortarboard-fill",
+  // },
+  // {
+  //   label: "Volunteer",
+  //   to: "/experience",
+  //   hash: "volunteer",
+  //   icon: "mingcute:hand-heart-fill",
+  // },
 ];
 
 export const socialButtons: SocialButton[] = [
@@ -167,6 +211,7 @@ export const languageSkills: Skill[] = [
   { title: "XML", icon: "devicon:xml" },
   { title: "CSS", icon: "skill-icons:css" },
   { title: "Sass", icon: "skill-icons:sass" },
+  { title: "Less", icon: "skill-icons:less-dark" },
   { title: "MySQL", icon: "skill-icons:mysql-light" },
   { title: "MariaDB", icon: "devicon:mariadb-wordmark" },
   { title: "PostgreSQL", icon: "skill-icons:postgresql-light" },
@@ -178,7 +223,7 @@ export const languageSkills: Skill[] = [
 ];
 export const frameworkSkills: Skill[] = [
   { title: "React", icon: "skill-icons:react-dark" },
-  { title: "Next.js", icon: "skill-icons:nextjs-dark" },
+  { title: "Next.js", icon: "skill-icons:nextjs-light" },
   { title: "Angular", icon: "skill-icons:angular-dark" },
   { title: "Vue", icon: "skill-icons:vuejs-dark" },
   { title: "Vite", icon: "skill-icons:vite-dark" },
@@ -202,9 +247,12 @@ export const frameworkSkills: Skill[] = [
   { title: "React Three Fiber", icon: null },
   { title: "Drei", icon: null },
   { title: "A-Frame", icon: null },
+  { title: "React Spring", icon: null },
+  { title: "Theatre.js", icon: null },
   { title: "OpenGL", icon: "logos:opengl" },
   { title: "OpenCV", icon: "skill-icons:opencv-light" },
   { title: "Jasmine", icon: "devicon:jasmine-wordmark" },
+  { title: "jQuery", icon: "skill-icons:jquery" },
   { title: "Enhance", icon: null },
 ];
 export const cmsSkills: Skill[] = [
@@ -277,12 +325,136 @@ export const primarySkills: Skill[] = [
   ),
   cmsSkills[0],
   ...editorSkills.filter(({ title }) =>
-    ["Visual Studio Code", "Visual Studio", "Postman"].includes(title),
+    ["VS Code", "Visual Studio", "Postman"].includes(title),
   ),
   ...generalSkills.filter(({ title }) => ["Git", "GitHub"].includes(title)),
   ...designSkills.filter(({ title }) =>
     ["Adobe Photoshop", "Adobe Illustrator", "Adobe XD"].includes(title),
   ),
+];
+export const futuretalkSkills: Skill[] = [
+  ...languageSkills.filter(({ title }) =>
+    [
+      "JavaScript",
+      "TypeScript",
+      "Node.js",
+      "Python",
+      "HTML",
+      "CSS",
+      "Sass",
+      "JSON",
+      "YAML",
+      "TOML",
+      "Markdown",
+    ].includes(title),
+  ),
+  ...frameworkSkills.filter(({ title }) =>
+    [
+      "React",
+      "Next.js",
+      "Koa",
+      "Tailwind CSS",
+      "Carbon Design System",
+      "Three.js",
+      "React Three Fiber",
+      "Drei",
+      "A-Frame",
+      "React Spring",
+      "Theatre.js",
+    ].includes(title),
+  ),
+  ...designSkills.filter(({ title }) => ["Adobe XD"].includes(title)),
+  ...editorSkills.filter(({ title }) => ["VS Code", "Postman"].includes(title)),
+  ...generalSkills.filter(({ title }) =>
+    ["Git", "GitHub", "Discord", "Google Docs"].includes(title),
+  ),
+];
+export const freelanceSkills: Skill[] = [
+  ...languageSkills.filter(({ title }) =>
+    [
+      "JavaScript",
+      "Node.js",
+      "PHP",
+      "HTML",
+      "CSS",
+      "Sass",
+      "Less",
+      "MySQL",
+      "MariaDB",
+      "JSON",
+      "Markdown",
+    ].includes(title),
+  ),
+  ...frameworkSkills.filter(({ title }) =>
+    ["Bootstrap", "Gulp.js", "jQuery"].includes(title),
+  ),
+  cmsSkills[0],
+  ...designSkills.filter(({ title }) => ["Photoshop"].includes(title)),
+  ...editorSkills.filter(({ title }) => ["VS Code"].includes(title)),
+  ...generalSkills.filter(({ title }) =>
+    ["Git", "GitHub", "Google Docs"].includes(title),
+  ),
+];
+export const instructorSkills: Skill[] = [
+  ...languageSkills.filter(({ title }) =>
+    [
+      "JavaScript",
+      "TypeScript",
+      "Node.js",
+      "Python",
+      "PHP",
+      "HTML",
+      "CSS",
+      "Sass",
+      "MySQL",
+      "MariaDB",
+      "PostgreSQL",
+      "JSON",
+      "Markdown",
+    ].includes(title),
+  ),
+  ...frameworkSkills.filter(({ title }) =>
+    [
+      "Angular",
+      "Django",
+      "Laravel",
+      "Bootstrap",
+      "Electron",
+      "Gulp.js",
+      "jQuery",
+    ].includes(title),
+  ),
+  cmsSkills[0],
+  ...designSkills.filter(({ title }) =>
+    ["Photoshop", "Illustrator", "InDesign"].includes(title),
+  ),
+  ...editorSkills.filter(({ title }) => ["VS Code"].includes(title)),
+  ...generalSkills.filter(({ title }) =>
+    ["Git", "GitHub", "MS Teams"].includes(title),
+  ),
+];
+export const technologistSeniorSkills: Skill[] = [
+  ...languageSkills.filter(({ title }) =>
+    [
+      "JavaScript",
+      "TypeScript",
+      "Node.js",
+      "PHP",
+      "HTML",
+      "CSS",
+      "Sass",
+      "MySQL",
+      "MariaDB",
+      "JSON",
+    ].includes(title),
+  ),
+  ...frameworkSkills.filter(({ title }) =>
+    ["Bootstrap", "Electron", "Gulp.js", "jQuery"].includes(title),
+  ),
+  cmsSkills[0],
+  ...designSkills.filter(({ title }) => ["Photoshop"].includes(title)),
+  ...editorSkills.filter(({ title }) => ["Dreamweaver"].includes(title)),
+  ...generalSkills.filter(({ title }) => ["Git", "GitHub"].includes(title)),
 ];
 export const madeWithSkills: Skill[] = [
   {

@@ -4,6 +4,9 @@ import { createWebHistory, createRouter } from "vue-router";
 const Home = defineAsyncComponent(
   () => import("./components/Pages/Home/Home.vue"),
 );
+const Experience = defineAsyncComponent(
+  () => import("./components/Pages/Experience/Experience.vue"),
+);
 const Projects = defineAsyncComponent(
   () => import("./components/Pages/Projects/Projects.vue"),
 );
@@ -13,6 +16,7 @@ const NotFound = defineAsyncComponent(
 
 const routes = [
   { path: "/", name: "Home", component: Home },
+  { path: "/experience", name: "Experience", component: Experience },
   { path: "/projects", name: "Projects", component: Projects },
   // will match everything and put it under `route.params.pathMatch`
   { path: "/:pathMatch(.*)*", name: "NotFound", component: NotFound },

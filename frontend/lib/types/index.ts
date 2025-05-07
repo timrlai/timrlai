@@ -96,6 +96,17 @@ export type GLCloudProps = {
   args?: [number, number, number];
 };
 
+export type VimeoVideoProps = {
+  videoId: number;
+  badge?: number;
+  autoPause?: number;
+  playerId?: number;
+  appId: number;
+  title: string;
+  height?: number | `${number}%`;
+  width?: number | `${number}%`;
+};
+
 export type LottieConstants = {
   readonly CLOUDS_LOTTIE_PATH: string;
   readonly AVATAR_WAVE_LOTTIE_PATH: string;
@@ -103,6 +114,9 @@ export type LottieConstants = {
   readonly AVATAR_SKILLS_DESK_LOTTIE_PATH: string;
   readonly AVATAR_SKILLS_LEGS_LOTTIE_PATH: string;
   readonly AVATAR_SKILLS_SOFT_LOTTIE_PATH: string;
+  readonly AVATAR_VR_LOTTIE_PATH: string;
+  readonly AVATAR_TEACHER_DESK_LOTTIE_PATH: string;
+  readonly AVATAR_TEACHER_LEGS_LOTTIE_PATH: string;
   readonly NOT_FOUND_LOTTIE_FOLDER: string;
   readonly NOT_FOUND_LOTTIES: string[];
 };

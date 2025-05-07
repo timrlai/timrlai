@@ -8,6 +8,7 @@ const Construction = defineAsyncComponent(
 
 <template>
   <main
+    id="main"
     class="flex flex-col justify-center gap-4 max-w-[95vw] min-h-[80vh] mx-auto mb-10"
   >
     <Construction v-once />
