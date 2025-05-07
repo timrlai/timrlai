@@ -64,7 +64,9 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
       <div class="px-5">
         <div class="flex flex-wrap justify-between items-center">
           <div class="w-full sm:w-3/4">
-            <h2 class="text-3xl sm:text-4xl mb-4 code-comment-inline">
+            <h2
+              class="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 code-comment-inline"
+            >
               <Icon icon="fluent-color:code-24" class="inline-block h-[1em]" />
               Technical Skills
             </h2>
@@ -387,7 +389,9 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
           </div>
         </div>
         <div class="mt-8">
-          <h2 class="text-3xl sm:text-4xl mb-4 code-comment-inline">
+          <h2
+            class="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 code-comment-inline"
+          >
             <Icon icon="fluent-color:code-24" class="inline-block h-[1em]" />
             This Site Was Made With...
           </h2>
@@ -401,7 +405,7 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
             </span>
           </p>
           <div
-            class="flex flex-wrap justify-center gap-2 text-6xl sm:text-7xl md:text-8xl lg:text-9xl"
+            class="flex flex-wrap justify-center gap-4 text-6xl sm:text-7xl md:text-8xl lg:text-9xl"
           >
             <div
               v-for="skills in madeWithSkills.filter(
@@ -412,7 +416,9 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
               :data-tip="`${skills.title}`"
             >
               <div class="tooltip-content">
-                <div class="text-base sm:text-xl md:text-2xl gluten">
+                <div
+                  class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl gluten"
+                >
                   {{ skills.title }}
                 </div>
               </div>
