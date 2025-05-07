@@ -391,11 +391,22 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
             <Icon icon="fluent-color:code-24" class="inline-block h-[1em]" />
             This Site Was Made With...
           </h2>
+          <p class="code-comment-block text-lg/8 sm:text-xl/10 my-4">
+            <span
+              v-for="(skill, index) in madeWithSkills"
+              v-bind:key="skill.title"
+            >
+              {{ skill.title
+              }}<span v-if="index < madeWithSkills.length - 1">, </span>
+            </span>
+          </p>
           <div
             class="flex flex-wrap justify-center gap-2 text-6xl sm:text-7xl md:text-8xl lg:text-9xl"
           >
             <div
-              v-for="skills in madeWithSkills"
+              v-for="skills in madeWithSkills.filter(
+                (skill) => skill.icon !== null,
+              )"
               v-bind:key="skills.title"
               class="tooltip tooltip-secondary tooltip-secondary-content w-1/5 md:w-auto text-center opacity-70 hover:opacity-100"
               :data-tip="`${skills.title}`"
