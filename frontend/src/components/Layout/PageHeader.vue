@@ -30,7 +30,7 @@ const SocialButtons = defineAsyncComponent(
           </div>
           <ul
             tabindex="0"
-            class="menu menu-lg dropdown-content rounded-box bg-secondary z-1 mt-3 w-sm p-2 rounded-t-none border-l-4 border-r-4 border-b-4 border-primary shadow-lg shadow-primary"
+            class="menu menu-lg dropdown-content rounded-box bg-secondary z-1 mt-3 w-xs sm:w-sm p-2 rounded-t-none border-l-4 border-r-4 border-b-4 border-primary shadow-lg shadow-primary"
           >
             <li>
               <RouterLink to="/" hash="#"
