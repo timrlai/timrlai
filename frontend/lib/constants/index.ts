@@ -58,30 +58,30 @@ export const experienceSubItems: SubItem[] = [
     hash: "teacher",
     icon: "mingcute:school-fill",
   },
-  {
-    label: "Designer",
-    to: "/experience",
-    hash: "designer",
-    icon: "mingcute:palette-fill",
-  },
-  {
-    label: "Illustrator",
-    to: "/experience",
-    hash: "illustrator",
-    icon: "mingcute:paint-brush-fill",
-  },
-  {
-    label: "Education",
-    to: "/experience",
-    hash: "education",
-    icon: "mingcute:mortarboard-fill",
-  },
-  {
-    label: "Volunteer",
-    to: "/experience",
-    hash: "volunteer",
-    icon: "mingcute:hand-heart-fill",
-  },
+  // {
+  //   label: "Designer",
+  //   to: "/experience",
+  //   hash: "designer",
+  //   icon: "mingcute:palette-fill",
+  // },
+  // {
+  //   label: "Illustrator",
+  //   to: "/experience",
+  //   hash: "illustrator",
+  //   icon: "mingcute:paint-brush-fill",
+  // },
+  // {
+  //   label: "Education",
+  //   to: "/experience",
+  //   hash: "education",
+  //   icon: "mingcute:mortarboard-fill",
+  // },
+  // {
+  //   label: "Volunteer",
+  //   to: "/experience",
+  //   hash: "volunteer",
+  //   icon: "mingcute:hand-heart-fill",
+  // },
 ];
 
 export const socialButtons: SocialButton[] = [
