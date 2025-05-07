@@ -96,6 +96,17 @@ export type GLCloudProps = {
   args?: [number, number, number];
 };
 
+export type VimeoVideoProps = {
+  videoId: number;
+  badge?: number;
+  autoPause?: number;
+  playerId?: number;
+  appId: number;
+  title: string;
+  height?: number | `${number}%`;
+  width?: number | `${number}%`;
+};
+
 export type LottieConstants = {
   readonly CLOUDS_LOTTIE_PATH: string;
   readonly AVATAR_WAVE_LOTTIE_PATH: string;
