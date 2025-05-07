@@ -51,26 +51,44 @@ Having worked with large, fast-paced organizations such as Futuretalk Inc., 🤖
 
 I have over five years of experience as a full-stack software and web developer 👨🏻‍💻 who most recently worked with [Futuretalk Inc.](https://www.futuretalk.ca/) 🤖 At Futuretalk Inc. 🤖 I developed cutting edge web 🛜 [applications](https://learnwithtrek.com/) using JavaScript/TypeScript, 🟨🟦 React ⚛️ and Three.js 🌐 to create immersive, 3D, 🌐 virtual and augmented reality experiences for educational 👨🏻‍🏫 content and used Python 🐍 to create AI 🤖 powered tools to automate processes. I also have experience teaching 👨🏻‍🏫 web development 🛜 skills at [Seneca Polytechnic](https://www.senecapolytechnic.ca/ce/creative/graphics-web-design/web-programming-development.html) 🏫 since 2017.
 
-| **Futuretalk Inc.** | **Web Developer** | **2022 to 2025** |
-| ------------------- | ----------------- | ---------------- |
+| **Futuretalk Inc.** | **Creative Software Developer** | **2022 to 2025** |
+| ------------------- | ------------------------------- | ---------------- |
 
 - Developed, updated and debugged front-end UI/UX using JavaScript/TypeScript, React, Next.js, Tailwind CSS, the Carbon Design System and React Spring
 - Designed UI/UX wireframes and concepts using Adobe XD
 - Contributed to, updated and debugged software for building 3D worlds using JavaScript/TypeScript, Three.js, React Three Fiber, Drei and Theatre.js
-- Adapted 3D worlds for VR experiences using React XR, the Oculus Quest VR headset and the Meta Quest Developer Hub
+- Adapted 3D worlds for VR experiences using React XR, the Meta Quest VR headset and the Meta Quest Developer Hub
 - Created AR experiences using 8th Wall, A-Frame, JavaScript and Three.js
 - Created automated AI tools with Python, Langchain, and the Google Docs and YouTube APIs
 - Documented software and development process using Clickup, GitHub issues and pull requests
 
-| **Seneca Polytechnic** | **Instructor** | **2017 to 2024** |
-| ---------------------- | -------------- | ---------------- |
+| **Tim Lai Design & Development** | **Freelance Software Developer** | **2017 to Present** |
+| -------------------------------- | -------------------------------- | ------------------- |
 
-- Planned lessons to teach web development in the Web Programming and Webmaster programs
+- Designed and developed custom websites and Wordpress themes using PHP, Wordpress, JavaScript, HTML, CSS and Sass/SCSS
+- Updated layout, styles and content of sites using PHP, Wordpress, JavaScript, HTML, CSS and Sass/SCSS/Less on a regular basis to make design and content changes
+- Tested, debugged and performed troubleshooting on Wordpress themes and plugins
+- Compiled and minified Sass and JavaScript using the Gulp.js task-runner and Node.js
+- Accessed the Instagram API using JavaScript, jQuery and AJAX to display Instagram posts
+- Used JavaScript, jQuery and AJAX to access the YouTube API
+- Edited, cropped and combined photos in Adobe Photoshop
+
+| **Seneca Polytechnic** | **Instructor** | **2017 to Present** |
+| ---------------------- | -------------- | ------------------- |
+
+- Planned lessons to teach web development in the Web Programming and Webmaster/Web Design and Developement programs
 - Instructed students in languages such as Python, PHP, JavaScript, HTML, CSS, Sass and SQL
 - Taught students to use frameworks and technologies such as Django, Laravel, Angular, jQuery, Electron, Gulp.js, Bootstrap, VS Code and GitHub
 - Wrote extensive and detailed technical notes to provide to students
 - Facilitated interactive learning activities to engage students in concepts
 - Ran workshops on design software such as Adobe Illustrator and InDesign
+
+| **Seneca Polytechnic** | **Technologist Senior** | **2017 to 2018** |
+| ---------------------- | ----------------------- | ---------------- |
+
+- Helped students with assignments and exercises in Seneca College's Webmaster/Web Design and Developement Program
+- Explained concepts and broke down class examples into manageable chunks
+- Assisted students in troubleshooting and debugging coding problems
 
 ## Education<a name="education"></a> 🏫👨🏻‍🎓🎓
 
