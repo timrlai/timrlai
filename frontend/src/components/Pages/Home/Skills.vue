@@ -188,6 +188,7 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
                         )"
                         v-bind:key="skill.title"
                         :icon="`${skill.icon}`"
+                        class="w-10"
                       />
                     </div>
                   </td>
@@ -216,6 +217,7 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
                         )"
                         v-bind:key="skill.title"
                         :icon="`${skill.icon}`"
+                        class="w-10"
                       />
                     </div>
                   </td>
@@ -246,6 +248,7 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
                         )"
                         v-bind:key="skill.title"
                         :icon="`${skill.icon}`"
+                        class="w-10"
                       />
                     </div>
                   </td>
@@ -272,6 +275,7 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
                         )"
                         v-bind:key="skill.title"
                         :icon="`${skill.icon}`"
+                        class="w-10"
                       />
                     </div>
                   </td>
@@ -298,6 +302,7 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
                         )"
                         v-bind:key="skill.title"
                         :icon="`${skill.icon}`"
+                        class="w-10"
                       />
                     </div>
                   </td>
@@ -324,6 +329,7 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
                         )"
                         v-bind:key="skill.title"
                         :icon="`${skill.icon}`"
+                        class="w-10"
                       />
                     </div>
                   </td>
@@ -352,6 +358,7 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
                         )"
                         v-bind:key="skill.title"
                         :icon="`${skill.icon}`"
+                        class="w-10"
                       />
                     </div>
                   </td>
@@ -380,6 +387,7 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
                         )"
                         v-bind:key="skill.title"
                         :icon="`${skill.icon}`"
+                        class="w-10"
                       />
                     </div>
                   </td>

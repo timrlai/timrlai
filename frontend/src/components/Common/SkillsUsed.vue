@@ -24,6 +24,7 @@ defineProps<{ skills: Skill[] }>();
         v-for="skill in skills.filter(({ icon }) => icon && icon)"
         v-bind:key="skill.title"
         :icon="`${skill.icon}`"
+        class="w-10"
       />
     </div>
   </aside>
