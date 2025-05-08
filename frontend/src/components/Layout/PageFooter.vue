@@ -17,7 +17,7 @@ const year = new Date().getFullYear();
   <footer
     class="footer footer-vertical md:footer-horizontal place-content-between bg-primary text-primary-content border-t-[10rem] border-success p-10 relative text-center atkinson-hyperlegible-next-bold text-2xl"
   >
-    <aside class="footer-tile w-full md:w-2xs">
+    <aside class="footer-tile w-full md:w-2xs print:hidden">
       <img
         :src="logoSvgPath"
         alt="Tim R. Lai"

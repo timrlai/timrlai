@@ -285,6 +285,7 @@ body {
     /* Black prints faster */
     box-shadow: none !important;
     text-shadow: none !important;
+    border: none !important;
   }
 
   a,

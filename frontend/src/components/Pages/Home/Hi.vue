@@ -41,7 +41,9 @@ const onIntroTyped = (currentTitle: string) => {
     <div
       class="glass grid place-content-center min-h-[55vh] md:min-h-[65vh] p-2 bg-primary/85 text-primary-content text-center"
     >
-      <div class="flex justify-center items-start motion-reduce:hidden">
+      <div
+        class="flex justify-center items-start motion-reduce:hidden print:hidden"
+      >
         <ConfettiExplosion :particleCount="200" :force="0.3" v-if="visible" />
       </div>
       <div class="flex flex-wrap items-center">
@@ -55,7 +57,9 @@ const onIntroTyped = (currentTitle: string) => {
             <small>(he/him)</small>
             <Icon icon="mingcute:male-line" class="inline-block ml-2" />
           </h2>
-          <p class="text-xl sm:text-2xl md:text-4xl my-4 motion-reduce:hidden">
+          <p
+            class="text-xl sm:text-2xl md:text-4xl my-4 motion-reduce:hidden print:hidden"
+          >
             I am
             <strong class="bg-blue-600 atkinson-hyperlegible-next-bold">
               <VueWriter
@@ -68,7 +72,7 @@ const onIntroTyped = (currentTitle: string) => {
             </strong>
           </p>
           <p
-            class="text-lg sm:text-xl md:text-2xl m-4 atkinson-hyperlegible-next-medium motion-safe:hidden"
+            class="text-lg sm:text-xl md:text-2xl m-4 atkinson-hyperlegible-next-medium motion-safe:not-print:hidden"
           >
             I am
             {{
