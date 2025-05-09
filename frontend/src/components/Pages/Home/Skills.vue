@@ -124,7 +124,12 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
             </div>
           </div>
           <div class="w-full sm:w-1/4">
-            <LottiePlayer :src="AVATAR_SKILLS_DESK_LOTTIE_PATH" autoPlay />
+            <Suspense
+              ><LottiePlayer
+                :src="AVATAR_SKILLS_DESK_LOTTIE_PATH"
+                autoPlay
+                v-once
+            /></Suspense>
           </div>
         </div>
         <p class="code-comment-block text-lg/8 sm:text-xl/10">
@@ -497,7 +502,13 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
             </p>
           </div>
           <div class="w-full sm:w-1/5">
-            <LottiePlayer :src="AVATAR_SKILLS_SOFT_LOTTIE_PATH" autoPlay />
+            <Suspense>
+              <LottiePlayer
+                :src="AVATAR_SKILLS_SOFT_LOTTIE_PATH"
+                autoPlay
+                v-once
+              />
+            </Suspense>
           </div>
         </div>
       </div>

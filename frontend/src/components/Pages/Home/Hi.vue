@@ -90,7 +90,9 @@ const onIntroTyped = (currentTitle: string) => {
           </div>
         </div>
         <div class="w-full sm:w-1/4 md:w-1/3">
-          <LottiePlayer :src="AVATAR_WAVE_LOTTIE_PATH" autoPlay />
+          <Suspense>
+            <LottiePlayer :src="AVATAR_WAVE_LOTTIE_PATH" autoPlay v-once />
+          </Suspense>
         </div>
       </div>
     </div>

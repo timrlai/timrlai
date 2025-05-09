@@ -10,8 +10,12 @@ const Teacher = defineAsyncComponent(() => import("./Teacher.vue"));
     id="main"
     class="flex flex-col gap-4 not-print:max-w-[95vw] not-print:min-h-[80vh] mx-auto mb-10 not-print:pt-30"
   >
-    <Developer v-once />
-    <Teacher v-once />
+    <Suspense>
+      <Developer v-once />
+    </Suspense>
+    <Suspense>
+      <Teacher v-once />
+    </Suspense>
   </main>
 </template>
 

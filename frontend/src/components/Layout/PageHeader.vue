@@ -3,7 +3,8 @@ import { defineAsyncComponent } from "vue";
 import { RouterLink } from "vue-router";
 import { Icon } from "@iconify/vue";
 import { meetSubItems, experienceSubItems } from "../../../lib/constants";
-import logoSvgPath from "../../assets/img/logos/timrlai_logo.svg";
+
+const logoSvgPath = await import("../../assets/img/logos/timrlai_logo.svg");
 
 const SocialButtons = defineAsyncComponent(
   () => import("../Common/SocialButtons.vue"),
@@ -75,12 +76,13 @@ const SocialButtons = defineAsyncComponent(
           to="/"
           hash="#"
           class="btn btn-ghost btn-lg rounded-box py-1 text-xl"
-          ><img
-            :src="logoSvgPath"
-            alt="Tim R. Lai"
-            title="Tim R. Lai"
-            class="w-full h-full"
-        /></RouterLink>
+          ><Suspense>
+            <img
+              :src="logoSvgPath.default"
+              alt="Tim R. Lai"
+              title="Tim R. Lai"
+              class="w-full h-full" /></Suspense
+        ></RouterLink>
       </div>
       <div class="navbar-center hidden lg:flex ubuntu-titling uppercase">
         <ul class="menu menu-horizontal px-1 text-xl xl:text-2xl">

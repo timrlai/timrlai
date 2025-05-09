@@ -19,7 +19,7 @@ const randomNotFoundLottie = `${NOT_FOUND_LOTTIE_FOLDER}${NOT_FOUND_LOTTIES[Math
 <template>
   <div class="min-h-[90vh] motion-reduce:hidden print:hidden">
     <Suspense>
-      <NotFoundCanvas />
+      <NotFoundCanvas v-once />
     </Suspense>
   </div>
   <main
@@ -157,7 +157,9 @@ const randomNotFoundLottie = `${NOT_FOUND_LOTTIE_FOLDER}${NOT_FOUND_LOTTIES[Math
           </ul>
         </div>
         <div class="lg:w-1/2 mx-auto">
-          <LottiePlayer :src="randomNotFoundLottie" autoPlay />
+          <Suspense>
+            <LottiePlayer :src="randomNotFoundLottie" autoPlay v-once />
+          </Suspense>
         </div>
       </div>
     </section>

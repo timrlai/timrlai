@@ -7,7 +7,10 @@ import {
   futuretalkSkills,
   freelanceSkills,
 } from "../../../../lib/constants";
-import headSvgPath from "../../../assets/img/icons/timrlai_head_trans_bg.svg";
+
+const headSvgPath = await import(
+  "../../../assets/img/icons/timrlai_head_trans_bg.svg"
+);
 
 const LottiePlayer = defineAsyncComponent(
   () => import("../../Common/LottiePlayer.vue"),
@@ -196,7 +199,9 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
             </ul>
           </div>
           <div class="w-full sm:w-1/4">
-            <LottiePlayer :src="AVATAR_VR_LOTTIE_PATH" autoPlay />
+            <Suspense>
+              <LottiePlayer :src="AVATAR_VR_LOTTIE_PATH" autoPlay v-once />
+            </Suspense>
           </div>
           <div class="w-full">
             <h4 class="text-xl lg:text-2xl xl:text-3xl mb-4 ubuntu-titling">
@@ -220,23 +225,30 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                 >Futuretalk Inc.</a
               >
             </p>
-            <VimeoVideo
-              :videoId="1022236072"
-              :appId="58479"
-              title="Learn With Trek"
-            />
+            <Suspense>
+              <VimeoVideo
+                :videoId="1022236072"
+                :appId="58479"
+                title="Learn With Trek"
+                v-once
+              />
+            </Suspense>
           </div>
-          <SkillsUsed :skills="futuretalkSkills" />
+          <Suspense>
+            <SkillsUsed :skills="futuretalkSkills" v-once />
+          </Suspense>
           <div class="w-full sm:w-3/4">
             <div class="flex flex-row justify-between items-start gap-2 my-8">
               <h2
                 class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto"
               >
-                <img
-                  :src="headSvgPath"
-                  alt=""
-                  class="block sm:inline-block h-[3em] sm:h-[1em]"
-                />
+                <Suspense>
+                  <img
+                    :src="headSvgPath.default"
+                    alt=""
+                    class="block sm:inline-block h-[3em] sm:h-[1em]"
+                  />
+                </Suspense>
                 Tim R. Lai Design & Development
               </h2>
               <h3
@@ -365,9 +377,17 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
             </ul>
           </div>
           <div class="w-full sm:w-1/4 pl-4">
-            <LottiePlayer :src="AVATAR_SKILLS_DESK_LOTTIE_PATH" autoPlay />
+            <Suspense>
+              <LottiePlayer
+                :src="AVATAR_SKILLS_DESK_LOTTIE_PATH"
+                autoPlay
+                v-once
+              />
+            </Suspense>
           </div>
-          <SkillsUsed :skills="freelanceSkills" />
+          <Suspense>
+            <SkillsUsed :skills="freelanceSkills" v-once />
+          </Suspense>
         </div>
       </div>
     </div>
