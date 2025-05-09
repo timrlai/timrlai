@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import tailwindcss from "@tailwindcss/vite";
+import webfontDownload from "vite-plugin-webfont-dl";
 import glsl from "vite-plugin-glsl";
 
 // https://vite.dev/config/
@@ -8,6 +9,7 @@ export default defineConfig({
   plugins: [
     vue(),
     tailwindcss(),
+    webfontDownload(),
     glsl({
       include: [
         // Glob pattern, or array of glob patterns to import
