@@ -165,8 +165,8 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                   <Icon icon="fluent-emoji:goggles" />
                 </div>
                 <div>
-                  Adapted 3D worlds for VR experiences using React XR, the
-                  Oculus Quest VR headset and the Meta Quest Developer Hub
+                  Adapted 3D worlds for VR experiences using React XR, the Meta
+                  Quest VR headset and the Meta Quest Developer Hub
                 </div>
               </li>
               <li class="list-row">
