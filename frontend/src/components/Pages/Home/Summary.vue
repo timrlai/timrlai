@@ -115,7 +115,9 @@ const { AVATAR_SUMMARY_LOTTIE_PATH } = lottieConstants;
           </li>
         </ul>
         <div class="w-full sm:w-1/5 pl-14 sm:pl-0 pr-14">
-          <LottiePlayer :src="AVATAR_SUMMARY_LOTTIE_PATH" autoPlay />
+          <Suspense>
+            <LottiePlayer :src="AVATAR_SUMMARY_LOTTIE_PATH" autoPlay v-once />
+          </Suspense>
         </div>
       </div>
     </div>

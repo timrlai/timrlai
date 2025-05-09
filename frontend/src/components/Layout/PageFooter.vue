@@ -2,8 +2,13 @@
 import { defineAsyncComponent } from "vue";
 import { RouterLink } from "vue-router";
 import { Icon } from "@iconify/vue";
-import logoSvgPath from "../../assets/img/logos/timrlai_logo_light.svg";
-import headSvgPath from "../../assets/img/icons/timrlai_head_trans_bg.svg";
+
+const logoSvgPath = await import(
+  "../../assets/img/logos/timrlai_logo_light.svg"
+);
+const headSvgPath = await import(
+  "../../assets/img/icons/timrlai_head_trans_bg.svg"
+);
 
 const SocialButtons = defineAsyncComponent(
   () => import("../Common/SocialButtons.vue"),
@@ -17,18 +22,26 @@ const year = new Date().getFullYear();
   <footer
     class="footer footer-vertical md:footer-horizontal place-content-between bg-primary text-primary-content border-t-[10rem] border-success p-10 relative text-center atkinson-hyperlegible-next-bold text-2xl"
   >
-    <aside class="footer-tile w-full md:w-2xs">
-      <img
-        :src="logoSvgPath"
-        alt="Tim R. Lai"
-        title="Tim R. Lai"
-        class="inline-block w-full"
-      />
+    <aside class="footer-tile w-full md:w-2xs print:hidden">
+      <Suspense>
+        <img
+          :src="logoSvgPath.default"
+          alt="Tim R. Lai"
+          title="Tim R. Lai"
+          class="inline-block w-full"
+        />
+      </Suspense>
     </aside>
     <aside class="footer-tile">
       <h2 class="text-3xl w-full mb-4 ubuntu-titling">
         <Icon icon="fluent-color:mail-32" class="inline-block text-5xl" />
-        <img :src="headSvgPath" alt="" class="inline-block h-[1.5em]" />
+        <Suspense>
+          <img
+            :src="headSvgPath.default"
+            alt=""
+            class="inline-block h-[1.5em]"
+          />
+        </Suspense>
         Email Tim
       </h2>
       <p class="w-full mb-4">
@@ -41,7 +54,13 @@ const year = new Date().getFullYear();
           icon="fluent-emoji:mobile-phone-with-arrow"
           class="inline-block text-5xl"
         />
-        <img :src="headSvgPath" alt="" class="inline-block h-[1.5em]" />
+        <Suspense>
+          <img
+            :src="headSvgPath.default"
+            alt=""
+            class="inline-block h-[1.5em]"
+          />
+        </Suspense>
         Follow Tim on Social Media
       </h2>
       <SocialButtons
@@ -74,7 +93,13 @@ const year = new Date().getFullYear();
           />
           by and copyright &copy; {{ year }} Tim R. Lai
         </small>
-        <img :src="headSvgPath" alt="" class="inline-block h-[1.5em]" />
+        <Suspense>
+          <img
+            :src="headSvgPath.default"
+            alt=""
+            class="inline-block h-[1.5em]"
+          />
+        </Suspense>
       </p>
     </aside>
   </footer>

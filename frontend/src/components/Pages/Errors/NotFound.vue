@@ -17,9 +17,11 @@ const randomNotFoundLottie = `${NOT_FOUND_LOTTIE_FOLDER}${NOT_FOUND_LOTTIES[Math
 </script>
 
 <template>
-  <Suspense>
-    <NotFoundCanvas />
-  </Suspense>
+  <div class="min-h-[90vh] motion-reduce:hidden print:hidden">
+    <Suspense>
+      <NotFoundCanvas v-once />
+    </Suspense>
+  </div>
   <main
     id="main"
     class="flex flex-col justify-center gap-4 max-w-[95vw] mx-auto mb-10 motion-reduce:pt-30"
@@ -155,7 +157,9 @@ const randomNotFoundLottie = `${NOT_FOUND_LOTTIE_FOLDER}${NOT_FOUND_LOTTIES[Math
           </ul>
         </div>
         <div class="lg:w-1/2 mx-auto">
-          <LottiePlayer :src="randomNotFoundLottie" autoPlay />
+          <Suspense>
+            <LottiePlayer :src="randomNotFoundLottie" autoPlay v-once />
+          </Suspense>
         </div>
       </div>
     </section>

@@ -15,47 +15,60 @@
       format("truetype"),
     url("/fonts/ubuntu_titling/UbuntuTitling-Bold-webfont.svg#ubuntu_titlingbold")
       format("svg");
+  font-display: swap;
+}
+
+.ubuntu-titling,
+.atkinson-hyperlegible-next-light,
+.atkinson-hyperlegible-next-regular,
+.atkinson-hyperlegible-next-medium,
+.atkinson-hyperlegible-next-bold,
+.gluten,
+.fira-code {
+  font-optical-sizing: auto;
+  @apply not-italic;
+}
+
+.ubuntu-titling,
+.atkinson-hyperlegible-next-regular {
+  @apply font-normal;
+}
+
+.atkinson-hyperlegible-next-light {
+  @apply font-light;
+}
+
+.atkinson-hyperlegible-next-medium {
+  @apply font-medium;
+}
+
+.atkinson-hyperlegible-next-bold {
+  @apply font-bold;
+}
+
+.gluten,
+.fira-code {
+  @apply font-semibold;
 }
 
 .ubuntu-titling {
   font-family: "ubuntu_titlingbold", sans-serif;
-  @apply font-normal not-italic;
 }
 
-.atkinson-hyperlegible-next-light {
-  font-family: "Atkinson Hyperlegible Next", sans-serif;
-  font-optical-sizing: auto;
-  @apply font-light not-italic;
-}
-.atkinson-hyperlegible-next-regular {
-  font-family: "Atkinson Hyperlegible Next", sans-serif;
-  font-optical-sizing: auto;
-  @apply font-normal not-italic;
-}
-
-.atkinson-hyperlegible-next-medium {
-  font-family: "Atkinson Hyperlegible Next", sans-serif;
-  font-optical-sizing: auto;
-  @apply font-medium not-italic;
-}
-
+.atkinson-hyperlegible-next-light,
+.atkinson-hyperlegible-next-regular,
+.atkinson-hyperlegible-next-medium,
 .atkinson-hyperlegible-next-bold {
   font-family: "Atkinson Hyperlegible Next", sans-serif;
-  font-optical-sizing: auto;
-  @apply font-bold not-italic;
 }
 
 .gluten {
   font-family: "Gluten", cursive;
-  font-optical-sizing: auto;
   font-variation-settings: "slnt" 0;
-  @apply font-semibold not-italic;
 }
 
 .fira-code {
   font-family: "Fira Code", monospace;
-  font-optical-sizing: auto;
-  @apply font-semibold not-italic;
 }
 
 /*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
@@ -272,6 +285,7 @@ body {
     /* Black prints faster */
     box-shadow: none !important;
     text-shadow: none !important;
+    border: none !important;
   }
 
   a,

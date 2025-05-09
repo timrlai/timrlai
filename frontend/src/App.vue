@@ -11,9 +11,17 @@ const PageFooter = defineAsyncComponent(
 </script>
 
 <template>
-  <PageHeader v-once />
-  <RouterView />
-  <PageFooter v-once />
+  <Suspense>
+    <PageHeader v-once />
+  </Suspense>
+  <div class="not-print:min-h-[80vh]">
+    <Suspense>
+      <RouterView />
+    </Suspense>
+  </div>
+  <Suspense>
+    <PageFooter v-once />
+  </Suspense>
 </template>
 
 <style scoped></style>

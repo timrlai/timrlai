@@ -19,11 +19,12 @@ defineProps<{ skills: Skill[] }>();
         {{ skill.title }}<span v-if="index < skills.length - 1">, </span>
       </span>
     </p>
-    <div class="flex flex-wrap gap-2 text-5xl">
+    <div class="flex flex-wrap gap-2 text-5xl print:hidden">
       <Icon
         v-for="skill in skills.filter(({ icon }) => icon && icon)"
         v-bind:key="skill.title"
         :icon="`${skill.icon}`"
+        class="w-10"
       />
     </div>
   </aside>

@@ -7,7 +7,10 @@ import {
   instructorSkills,
   technologistSeniorSkills,
 } from "../../../../lib/constants";
-import senecaChalkboardSvgPath from "../../../assets/img/props/seneca_chalkboard.svg";
+
+const senecaChalkboardSvgPath = await import(
+  "../../../assets/img/props/seneca_chalkboard.svg"
+);
 
 const LottiePlayer = defineAsyncComponent(
   () => import("../../Common/LottiePlayer.vue"),
@@ -152,25 +155,32 @@ const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
             <div class="stack">
               <div class="flex justify-end">
                 <div class="w-2/3">
-                  <LottiePlayer
-                    :src="AVATAR_TEACHER_DESK_LOTTIE_PATH"
-                    autoPlay
-                  />
+                  <Suspense>
+                    <LottiePlayer
+                      :src="AVATAR_TEACHER_DESK_LOTTIE_PATH"
+                      autoPlay
+                      v-once
+                    />
+                  </Suspense>
                 </div>
               </div>
               <div class="flex justify-start">
                 <div class="w-3/4">
-                  <img
-                    :src="senecaChalkboardSvgPath"
-                    alt="A chalkboard with the Seneca Polytechnic logo on it."
-                    title="Seneca Polytechnic"
-                    class="inline-block"
-                  />
+                  <Suspense>
+                    <img
+                      :src="senecaChalkboardSvgPath.default"
+                      alt="A chalkboard with the Seneca Polytechnic logo on it."
+                      title="Seneca Polytechnic"
+                      class="inline-block"
+                    />
+                  </Suspense>
                 </div>
               </div>
             </div>
           </div>
-          <SkillsUsed :skills="instructorSkills" />
+          <Suspense>
+            <SkillsUsed :skills="instructorSkills" v-once />
+          </Suspense>
           <div class="w-full sm:w-2/3">
             <div class="flex flex-row justify-between items-start gap-2 my-8">
               <h2
@@ -248,7 +258,9 @@ const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
               </li>
             </ul>
           </div>
-          <SkillsUsed :skills="technologistSeniorSkills" />
+          <Suspense>
+            <SkillsUsed :skills="technologistSeniorSkills" v-once />
+          </Suspense>
         </div>
       </div>
     </div>
