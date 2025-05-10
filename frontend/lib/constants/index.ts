@@ -451,7 +451,15 @@ export const freelanceSkills: Skill[] = [
   ),
   ...databaseSkills.filter(({ title }) => ["MySQL", "MariaDB"].includes(title)),
   cmsSkills[0],
-  ...designSkills.filter(({ title }) => ["Photoshop"].includes(title)),
+  ...designSkills.filter(({ title }) =>
+    [
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Adobe InDesign",
+      "Adobe XD",
+      "CorelDRAW",
+    ].includes(title),
+  ),
   ...editorSkills.filter(({ title }) => ["VS Code"].includes(title)),
   ...hostingSkills.filter(({ title }) =>
     ["Dreamhost", "Namecheap", "Wix"].includes(title),
