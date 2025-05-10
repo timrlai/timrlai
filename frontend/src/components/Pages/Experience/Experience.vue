@@ -3,6 +3,7 @@ import { defineAsyncComponent } from "vue";
 
 const Developer = defineAsyncComponent(() => import("./Developer.vue"));
 const Teacher = defineAsyncComponent(() => import("./Teacher.vue"));
+const Designer = defineAsyncComponent(() => import("./Designer.vue"));
 </script>
 
 <template>
@@ -15,6 +16,9 @@ const Teacher = defineAsyncComponent(() => import("./Teacher.vue"));
     </Suspense>
     <Suspense>
       <Teacher v-once />
+    </Suspense>
+    <Suspense>
+      <Designer v-once />
     </Suspense>
   </main>
 </template>

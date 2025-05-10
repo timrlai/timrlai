@@ -22,12 +22,12 @@ const VimeoVideo = defineAsyncComponent(
   () => import("../../Common/VimeoVideo.vue"),
 );
 
-const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
+const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
   lottieConstants;
 </script>
 
 <template>
-  <section id="developer">
+  <section id="designer">
     <div
       class="mockup-window bg-secondary text-secondary-content border-4 border-primary shadow-lg shadow-primary"
     >
@@ -35,8 +35,8 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
         <h1
           class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl uppercase ubuntu-titling border-b-4 border-primary mb-8"
         >
-          <Icon icon="mingcute:code-fill" class="inline-block h-[1em]" />
-          Developer
+          <Icon icon="mingcute:palette-fill" class="inline-block h-[1em]" />
+          Designer
         </h1>
         <div class="flex flex-wrap justify-between items-start gap-y-8">
           <div class="w-full sm:w-3/4">
@@ -54,10 +54,10 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                 class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
               >
                 <Icon
-                  icon="fluent-emoji:goggles"
+                  icon="fluent-color:phone-laptop-24"
                   class="block sm:inline-block text-6xl sm:text-3xl"
                 />
-                Web & VR/AR Software Developer
+                UI/UX & VR/AR Designer
               </h3>
               <h3
                 class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
@@ -79,7 +79,7 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                 class="link link-accent link-hover"
                 >Futuretalk Inc.</a
               >
-              I developed cutting edge web applications
+              I created UI/UX designs for web applications
               <Icon
                 icon="fluent-color:phone-laptop-24"
                 class="inline-block h-[1em]"
@@ -91,57 +91,48 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                 class="link link-accent link-hover"
                 >Thealogue and Trek AI</a
               >
-              using JavaScript/TypeScript,
-              <Icon
-                icon="skill-icons:javascript"
-                class="inline-block h-[1em]"
-              />
-              <Icon
-                icon="skill-icons:typescript"
-                class="inline-block h-[1em]"
-              />
-              React,
-              <Icon
-                icon="skill-icons:react-dark"
-                class="inline-block h-[1em]"
-              />
-              Next.js
-              <Icon
-                icon="skill-icons:nextjs-light"
-                class="inline-block h-[1em]"
-              />
-              and Three.js
-              <Icon
-                icon="skill-icons:threejs-dark"
-                class="inline-block h-[1em]"
-              />
-              to create immersive, 3D,
+              using Adobe XD,
+              <Icon icon="skill-icons:xd" class="inline-block h-[1em]" />
+              the Carbon Design System,
+              <Icon icon="carbon:carbon" class="inline-block h-[1em]" />
+              Tailwind CSS. I also crafted UI/UX designs for immersive, 3D,
               <Icon icon="fluent-color:globe-20" class="inline-block h-[1em]" />
               virtual and augmented reality experiences for educational
               <Icon
                 icon="fluent-emoji:man-teacher-light"
                 class="inline-block h-[1em]"
               />
-              content and used Python
+              content using
               <Icon
-                icon="skill-icons:python-light"
+                icon="skill-icons:tailwindcss-dark"
                 class="inline-block h-[1em]"
               />
-              to create AI
-              <Icon icon="fluent-emoji:robot" class="inline-block h-[1em]" />
-              powered tools to automate processes.
+              Three.js
+              <Icon
+                icon="skill-icons:threejs-dark"
+                class="inline-block h-[1em]"
+              />
+              and uikit.
             </p>
             <ul
               class="list text-base sm:text-lg my-4 atkinson-hyperlegible-next-medium"
             >
               <li class="list-row">
                 <div class="text-3xl sm:text-4xl">
-                  <Icon icon="skill-icons:react-dark" />
+                  <Icon icon="skill-icons:xd" />
                 </div>
                 <div>
-                  Developed, updated and debugged front-end UI/UX using
-                  JavaScript/TypeScript, React, Next.js, Tailwind CSS, the
-                  Carbon Design System and React Spring
+                  Designed UI/UX wireframes and concepts using Adobe XD and the
+                  Carbon Design System
+                </div>
+              </li>
+              <li class="list-row">
+                <div class="text-3xl sm:text-4xl">
+                  <Icon icon="skill-icons:tailwindcss-dark" />
+                </div>
+                <div>
+                  Implemented UI/UX using JavaScript/TypeScript, React, Next.js,
+                  Tailwind CSS, the Carbon Design System and React Spring
                 </div>
               </li>
               <li class="list-row">
@@ -149,9 +140,8 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                   <Icon icon="skill-icons:threejs-dark" />
                 </div>
                 <div>
-                  Contributed to, updated and debugged software for building 3D
-                  worlds using JavaScript/TypeScript, Three.js, React Three
-                  Fiber, Drei, uikit and Theatre.js
+                  Designed 3D worlds and UI/UX using JavaScript/TypeScript,
+                  Three.js, React Three Fiber, Drei, uikit and Theatre.js
                 </div>
               </li>
               <li class="list-row">
@@ -159,8 +149,9 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                   <Icon icon="fluent-emoji:goggles" />
                 </div>
                 <div>
-                  Adapted 3D worlds for VR experiences using React XR, the Meta
-                  Quest VR headset and the Meta Quest Developer Hub
+                  Ensured that 3D worlds and UI/UX designs translated well for
+                  VR experiences using React XR, the Meta Quest VR headset and
+                  the Meta Quest Developer Hub
                 </div>
               </li>
               <li class="list-row">
@@ -168,26 +159,8 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                   <Icon icon="fluent-emoji:mobile-phone-with-arrow" />
                 </div>
                 <div>
-                  Created AR experiences using 8th Wall, A-Frame, JavaScript and
-                  Three.js
-                </div>
-              </li>
-              <li class="list-row">
-                <div class="text-3xl sm:text-4xl">
-                  <Icon icon="fluent-emoji:robot" />
-                </div>
-                <div>
-                  Created automated AI tools with Python, Langchain, and the
-                  Google Docs and YouTube APIs
-                </div>
-              </li>
-              <li class="list-row">
-                <div class="text-3xl sm:text-4xl">
-                  <Icon icon="logos:github-octocat" />
-                </div>
-                <div>
-                  Documented software and development process using Clickup,
-                  GitHub issues and pull requests
+                  Designed AR experiences using 8th Wall, A-Frame, JavaScript
+                  and Three.js
                 </div>
               </li>
             </ul>
@@ -249,10 +222,10 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                 class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
               >
                 <Icon
-                  icon="fluent-emoji:man-technologist-light"
+                  icon="fluent-color:design-ideas-28"
                   class="block sm:inline-block text-6xl sm:text-3xl"
                 />
-                Freelance Software Developer
+                Freelance Designer
               </h3>
               <h3
                 class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
@@ -261,32 +234,34 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                   icon="fluent-color:calendar-28"
                   class="block sm:inline-block text-6xl sm:text-3xl"
                 />
-                2017 to Present
+                2016 to Present
               </h3>
             </div>
             <p
               class="text-lg sm:text-xl my-4 atkinson-hyperlegible-next-medium"
             >
               I have over five years of experience working as a freelance
-              full-stack developer,
+              graphic designer for both web
+              <Icon icon="fluent-emoji:laptop" class="inline-block h-[1em]" />
+              and print,
               <Icon
-                icon="fluent-emoji:man-technologist-light"
+                icon="fluent-emoji:open-book"
                 class="inline-block h-[1em]"
               />
-              working with technologies such as JavaScript,
+              working with software such as Adobe InDesign,
+              <Icon icon="logos:adobe-indesign" class="inline-block h-[1em]" />
+              Adobe Illustrator,
               <Icon
-                icon="skill-icons:javascript"
+                icon="logos:adobe-illustrator"
                 class="inline-block h-[1em]"
               />
-              jQuery,
-              <Icon icon="skill-icons:jquery" class="inline-block h-[1em]" />
-              PHP,
-              <Icon icon="skill-icons:php-dark" class="inline-block h-[1em]" />
-              Wordpress,
-              <Icon icon="skill-icons:wordpress" class="inline-block h-[1em]" />
-              MySQL,
+              Adobe Photoshop,
+              <Icon icon="logos:adobe-photoshop" class="inline-block h-[1em]" />
+              Adobe XD,
+              <Icon icon="logos:adobe-xd" class="inline-block h-[1em]" />
+              CorelDRAW,
               <Icon
-                icon="skill-icons:mysql-light"
+                icon="simple-icons:coreldraw"
                 class="inline-block h-[1em]"
               />
               HTML,
@@ -297,8 +272,6 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
               <Icon icon="skill-icons:sass" class="inline-block h-[1em]" />
               Less,
               <Icon icon="skill-icons:less-dark" class="inline-block h-[1em]" />
-              Gulp,
-              <Icon icon="skill-icons:gulp" class="inline-block h-[1em]" />
               Bootstrap,
               <Icon icon="skill-icons:bootstrap" class="inline-block h-[1em]" />
               and more.
@@ -308,10 +281,50 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
             >
               <li class="list-row">
                 <div class="text-3xl sm:text-4xl">
+                  <Icon icon="logos:adobe-indesign" />
+                </div>
+                <div>
+                  Designed and laid out interiors and exteriors of books such as
+                  the
+                  <a
+                    href="https://joeshusterawards.com/2018/05/29/the-2018-joe-shuster-award-nominations-les-nomines-pour-le-prix-joe-shuster-2018/"
+                    target="_blank"
+                    class="link link-accent link-hover"
+                    >Shuster Award</a
+                  >
+                  nominated
+                  <a
+                    href="https://canadiancomicbooks.fandom.com/wiki/Hogtown_Horror_Volume_1"
+                    target="_blank"
+                    class="link link-accent link-hover"
+                    >Hogtown Horror
+                  </a>
+                  comics anthology for print in InDesign
+                </div>
+              </li>
+              <li class="list-row">
+                <div class="text-3xl sm:text-4xl">
+                  <Icon icon="logos:adobe-illustrator" />
+                </div>
+                <div>
+                  Designed logos and graphics using Adobe Illustrator and
+                  CorelDRAW
+                </div>
+              </li>
+              <li class="list-row">
+                <div class="text-3xl sm:text-4xl">
+                  <Icon icon="skill-icons:photoshop" />
+                </div>
+                <div>
+                  Edited, cropped and combined photos in Adobe Photoshop
+                </div>
+              </li>
+              <li class="list-row">
+                <div class="text-3xl sm:text-4xl">
                   <Icon icon="fluent-color:design-ideas-24" />
                 </div>
                 <div>
-                  Developed and designed custom websites and Wordpress themes
+                  Designed and developed custom websites and Wordpress themes
                   using PHP, Wordpress, JavaScript, HTML, CSS and Sass/SCSS
                 </div>
               </li>
@@ -325,47 +338,12 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                   regular basis to make design and content changes
                 </div>
               </li>
-              <li class="list-row">
-                <div class="text-3xl sm:text-4xl">
-                  <Icon icon="skill-icons:wordpress" />
-                </div>
-                <div>
-                  Tested, debugged and performed troubleshooting on Wordpress
-                  themes and plugins
-                </div>
-              </li>
-              <li class="list-row">
-                <div class="text-3xl sm:text-4xl">
-                  <Icon icon="skill-icons:gulp" />
-                </div>
-                <div>
-                  Compiled and minified Sass and JavaScript using the Gulp.js
-                  task-runner and Node.js
-                </div>
-              </li>
-              <li class="list-row">
-                <div class="text-3xl sm:text-4xl">
-                  <Icon icon="skill-icons:instagram" />
-                </div>
-                <div>
-                  Accessed the Instagram API using JavaScript, jQuery and AJAX
-                  to display Instagram posts
-                </div>
-              </li>
-              <li class="list-row">
-                <div class="text-3xl sm:text-4xl">
-                  <Icon icon="openmoji:youtube" />
-                </div>
-                <div>
-                  Used JavaScript, jQuery and AJAX to access the YouTube API
-                </div>
-              </li>
             </ul>
           </div>
           <div class="w-full sm:w-1/4 pl-4">
             <Suspense>
               <LottiePlayer
-                :src="AVATAR_SKILLS_DESK_LOTTIE_PATH"
+                :src="AVATAR_DESIGNER_DESK_LOTTIE_PATH"
                 autoPlay
                 v-once
               />
