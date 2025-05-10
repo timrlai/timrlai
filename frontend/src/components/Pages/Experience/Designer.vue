@@ -54,7 +54,7 @@ const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                 class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
               >
                 <Icon
-                  icon="fluent-color:design-ideas-28"
+                  icon="fluent-color:phone-laptop-24"
                   class="block sm:inline-block text-6xl sm:text-3xl"
                 />
                 UI/UX & VR/AR Designer
@@ -222,7 +222,7 @@ const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                 class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
               >
                 <Icon
-                  icon="fluent-emoji:man-technologist-light"
+                  icon="fluent-color:design-ideas-28"
                   class="block sm:inline-block text-6xl sm:text-3xl"
                 />
                 Freelance Designer
