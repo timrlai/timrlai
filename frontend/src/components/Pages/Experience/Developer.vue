@@ -54,10 +54,10 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                 class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
               >
                 <Icon
-                  icon="fluent-color:design-ideas-28"
+                  icon="fluent-emoji:goggles"
                   class="block sm:inline-block text-6xl sm:text-3xl"
                 />
-                Creative Software Developer
+                Web & VR/AR Software Developer
               </h3>
               <h3
                 class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
@@ -146,18 +146,12 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
               </li>
               <li class="list-row">
                 <div class="text-3xl sm:text-4xl">
-                  <Icon icon="skill-icons:xd" />
-                </div>
-                <div>Designed UI/UX wireframes and concepts using Adobe XD</div>
-              </li>
-              <li class="list-row">
-                <div class="text-3xl sm:text-4xl">
                   <Icon icon="skill-icons:threejs-dark" />
                 </div>
                 <div>
                   Contributed to, updated and debugged software for building 3D
                   worlds using JavaScript/TypeScript, Three.js, React Three
-                  Fiber, Drei and Theatre.js
+                  Fiber, Drei, uikit and Theatre.js
                 </div>
               </li>
               <li class="list-row">
@@ -317,7 +311,7 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                   <Icon icon="fluent-color:design-ideas-24" />
                 </div>
                 <div>
-                  Designed and developed custom websites and Wordpress themes
+                  Developed and designed custom websites and Wordpress themes
                   using PHP, Wordpress, JavaScript, HTML, CSS and Sass/SCSS
                 </div>
               </li>
@@ -364,14 +358,6 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                 </div>
                 <div>
                   Used JavaScript, jQuery and AJAX to access the YouTube API
-                </div>
-              </li>
-              <li class="list-row">
-                <div class="text-3xl sm:text-4xl">
-                  <Icon icon="skill-icons:photoshop" />
-                </div>
-                <div>
-                  Edited, cropped and combined photos in Adobe Photoshop
                 </div>
               </li>
             </ul>
