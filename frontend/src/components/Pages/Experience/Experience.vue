@@ -4,6 +4,7 @@ import { defineAsyncComponent } from "vue";
 const Developer = defineAsyncComponent(() => import("./Developer.vue"));
 const Teacher = defineAsyncComponent(() => import("./Teacher.vue"));
 const Designer = defineAsyncComponent(() => import("./Designer.vue"));
+const Illustrator = defineAsyncComponent(() => import("./Illustrator.vue"));
 </script>
 
 <template>
@@ -19,6 +20,9 @@ const Designer = defineAsyncComponent(() => import("./Designer.vue"));
     </Suspense>
     <Suspense>
       <Designer v-once />
+    </Suspense>
+    <Suspense>
+      <Illustrator v-once />
     </Suspense>
   </main>
 </template>
