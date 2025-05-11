@@ -234,7 +234,7 @@ const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                   icon="fluent-color:calendar-28"
                   class="block sm:inline-block text-6xl sm:text-3xl"
                 />
-                2016 to Present
+                2010 to Present
               </h3>
             </div>
             <p
