@@ -71,12 +71,12 @@ export const experienceSubItems: SubItem[] = [
     hash: "designer",
     icon: "mingcute:palette-fill",
   },
-  // {
-  //   label: "Illustrator",
-  //   to: "/experience",
-  //   hash: "illustrator",
-  //   icon: "mingcute:paint-brush-fill",
-  // },
+  {
+    label: "Illustrator",
+    to: "/experience",
+    hash: "illustrator",
+    icon: "mingcute:paint-brush-fill",
+  },
   // {
   //   label: "Education",
   //   to: "/experience",
@@ -294,7 +294,7 @@ export const designSkills: Skill[] = [
   { title: "Adobe Photoshop", icon: "logos:adobe-photoshop" },
   { title: "Adobe Illustrator", icon: "logos:adobe-illustrator" },
   { title: "Adobe XD", icon: "logos:adobe-xd" },
-  { title: "Adobe AfterEffects", icon: "logos:adobe-after-effects" },
+  { title: "Adobe After Effects", icon: "logos:adobe-after-effects" },
   { title: "Adobe InDesign", icon: "logos:adobe-indesign" },
   { title: "Canva", icon: "devicon:canva" },
   { title: "Blender", icon: "skill-icons:blender-dark" },
@@ -542,6 +542,24 @@ export const technologistSeniorSkills: Skill[] = [
     ["XAMPP", "Git", "GitHub"].includes(title),
   ),
 ];
+export const illustratorSkills: Skill[] = [
+  ...designSkills.filter(({ title }) =>
+    [
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Adobe After Effects",
+      "Adobe InDesign",
+      "Clip Studio Paint",
+      "CorelDRAW",
+      "Corel Painter",
+    ].includes(title),
+  ),
+  ...languageSkills.filter(({ title }) =>
+    ["HTML", "CSS", "JSON"].includes(title),
+  ),
+  ...frameworkSkills.filter(({ title }) => ["Lottie"].includes(title)),
+  cmsSkills[0],
+];
 export const madeWithSkills: Skill[] = [
   { title: "TypeScript", icon: "catppuccin:typescript" },
   { title: "Vue", icon: "catppuccin:vue" },
@@ -567,7 +585,7 @@ export const madeWithSkills: Skill[] = [
   { title: "Git", icon: "catppuccin:git" },
   { title: "GitHub", icon: "catppuccin:folder-github" },
   { title: "Adobe Illustrator", icon: "catppuccin:adobe-ai" },
-  { title: "Adobe AfterEffects", icon: "catppuccin:adobe-ae" },
+  { title: "Adobe After Effects", icon: "catppuccin:adobe-ae" },
   { title: "Adobe Photoshop", icon: "catppuccin:adobe-ps" },
   { title: "Blender", icon: "logos:blender" },
   { title: "Render", icon: "simple-icons:render" },

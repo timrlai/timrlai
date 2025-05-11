@@ -234,7 +234,7 @@ const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                   icon="fluent-color:calendar-28"
                   class="block sm:inline-block text-6xl sm:text-3xl"
                 />
-                2016 to Present
+                2010 to Present
               </h3>
             </div>
             <p
@@ -297,9 +297,12 @@ const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                     href="https://canadiancomicbooks.fandom.com/wiki/Hogtown_Horror_Volume_1"
                     target="_blank"
                     class="link link-accent link-hover"
-                    >Hogtown Horror
-                  </a>
-                  comics anthology for print in InDesign
+                    ><em class="italic">Hogtown Horror</em></a
+                  >
+                  comics anthology, the
+                  <em class="italic">TAAFI 2016 Art Book</em> and my comic strip
+                  collection, <em class="italic">Lemon Inc.</em>, for print in
+                  InDesign
                 </div>
               </li>
               <li class="list-row">
