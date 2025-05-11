@@ -542,6 +542,24 @@ export const technologistSeniorSkills: Skill[] = [
     ["XAMPP", "Git", "GitHub"].includes(title),
   ),
 ];
+export const illustratorSkills: Skill[] = [
+  ...designSkills.filter(({ title }) =>
+    [
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Adobe After Effects",
+      "Adobe InDesign",
+      "Clip Studio Paint",
+      "CorelDRAW",
+      "Corel Painter",
+    ].includes(title),
+  ),
+  ...languageSkills.filter(({ title }) =>
+    ["HTML", "CSS", "JSON"].includes(title),
+  ),
+  ...frameworkSkills.filter(({ title }) => ["Lottie"].includes(title)),
+  cmsSkills[0],
+];
 export const madeWithSkills: Skill[] = [
   { title: "TypeScript", icon: "catppuccin:typescript" },
   { title: "Vue", icon: "catppuccin:vue" },
