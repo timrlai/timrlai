@@ -297,9 +297,10 @@ const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                     href="https://canadiancomicbooks.fandom.com/wiki/Hogtown_Horror_Volume_1"
                     target="_blank"
                     class="link link-accent link-hover"
-                    >Hogtown Horror
-                  </a>
-                  comics anthology for print in InDesign
+                    >Hogtown Horror</a
+                  >
+                  comics anthology, the TAAFI 2016 Art Book and my comic strip
+                  Lemon Inc., for print in InDesign
                 </div>
               </li>
               <li class="list-row">
