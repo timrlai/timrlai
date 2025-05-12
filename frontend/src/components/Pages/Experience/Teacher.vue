@@ -36,7 +36,7 @@ const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
         </h1>
         <div class="flex flex-wrap justify-between gap-y-8">
           <div class="w-full sm:w-1/2">
-            <div class="flex flex-row justify-between gap-2 mb-8">
+            <div class="flex justify-between gap-2 mb-8">
               <h2
                 class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto"
               >
@@ -182,7 +182,7 @@ const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
             <SkillsUsed :skills="instructorSkills" v-once />
           </Suspense>
           <div class="w-full sm:w-2/3">
-            <div class="flex flex-row justify-between gap-2 my-8">
+            <div class="flex justify-between gap-2 my-8">
               <h2
                 class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto"
               >

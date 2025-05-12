@@ -40,7 +40,7 @@ const LottiePlayer = defineAsyncComponent(() => import("./LottiePlayer.vue"));
           class="inline-block"
         />
       </p>
-      <div class="flex flex-row justify-center items-center gap-4">
+      <div class="flex justify-center items-center gap-4">
         <div class="max-w-100">
           <LottiePlayer
             src="/lottie/construction/construction_guy.json"
