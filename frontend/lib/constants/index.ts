@@ -299,6 +299,7 @@ export const designSkills: Skill[] = [
   { title: "Canva", icon: "devicon:canva" },
   { title: "Blender", icon: "skill-icons:blender-dark" },
   { title: "3ds Max", icon: "devicon:3dsmax" },
+  { title: "Google Sketchup", icon: "skill-icons:sketchup-light" },
   { title: "Clip Studio Paint", icon: "arcticons:clip-studio" },
   { title: "CorelDRAW", icon: "simple-icons:coreldraw" },
   { title: "Corel Painter", icon: null },
