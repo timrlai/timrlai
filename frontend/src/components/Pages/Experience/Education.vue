@@ -30,7 +30,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
           <div class="w-full sm:w-3/4">
             <div class="flex justify-between gap-2 mb-8">
               <h2
-                class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto sm:w-sm"
+                class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-60 sm:h-auto w-2xs sm:w-sm"
               >
                 <Icon
                   icon="fluent-emoji:school"
@@ -39,7 +39,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 Seneca Polytechnic
               </h2>
               <h3
-                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2 sm:w-xl"
+                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-60 sm:h-auto pl-2 w-xs sm:w-xl"
               >
                 <Icon
                   icon="fluent-emoji:man-technologist-light"
@@ -49,7 +49,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 &mdash; Software Development
               </h3>
               <h3
-                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2 sm:w-3xs"
+                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-60 sm:h-auto pl-2 w-3xs sm:w-3xs"
               >
                 <Icon
                   icon="fluent-color:calendar-28"
@@ -65,7 +65,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
             </div>
             <div class="flex justify-between gap-2 mb-8">
               <h2
-                class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto sm:w-sm"
+                class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-60 sm:h-auto w-2xs sm:w-sm"
               >
                 <Icon
                   icon="fluent-emoji:school"
@@ -74,7 +74,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 Seneca Polytechnic
               </h2>
               <h3
-                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2 sm:w-xl"
+                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-60 sm:h-auto pl-2 w-xs sm:w-xl"
               >
                 <Icon
                   icon="fluent-emoji:man-teacher-light"
@@ -83,7 +83,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 Excellence in Educating Adults
               </h3>
               <h3
-                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2 sm:w-3xs"
+                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-60 sm:h-auto pl-2 w-3xs sm:w-3xs"
               >
                 <Icon
                   icon="fluent-color:calendar-28"
@@ -94,7 +94,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
             </div>
             <div class="flex justify-between gap-2 mb-8">
               <h2
-                class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto sm:w-sm"
+                class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-60 sm:h-auto w-2xs sm:w-sm"
               >
                 <Icon
                   icon="fluent-emoji:school"
@@ -103,7 +103,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 Seneca Polytechnic
               </h2>
               <h3
-                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2 sm:w-xl"
+                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-60 sm:h-auto pl-2 w-xs sm:w-xl"
               >
                 <Icon
                   icon="fluent-emoji:man-technologist-light"
@@ -113,7 +113,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 (Web Programming)
               </h3>
               <h3
-                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2 sm:w-3xs"
+                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-60 sm:h-auto pl-2 w-3xs sm:w-3xs"
               >
                 <Icon
                   icon="fluent-color:calendar-28"
@@ -129,7 +129,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
             </div>
             <div class="flex justify-between gap-2 mb-8">
               <h2
-                class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto sm:w-sm"
+                class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-60 sm:h-auto w-2xs sm:w-sm"
               >
                 <Icon
                   icon="fluent-emoji:school"
@@ -138,7 +138,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 Seneca Polytechnic
               </h2>
               <h3
-                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2 sm:w-xl"
+                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-60 sm:h-auto pl-2 w-xs sm:w-xl"
               >
                 <Icon
                   icon="fluent-emoji:man-technologist-light"
@@ -148,7 +148,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 (Web Design and Development)
               </h3>
               <h3
-                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2 sm:w-3xs"
+                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-60 sm:h-auto pl-2 w-3xs sm:w-3xs"
               >
                 <Icon
                   icon="fluent-color:calendar-28"
@@ -164,7 +164,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
             </div>
             <div class="flex justify-between gap-2 mb-8">
               <h2
-                class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto sm:w-sm"
+                class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-60 sm:h-auto w-2xs sm:w-sm"
               >
                 <Icon
                   icon="fluent-emoji:school"
@@ -173,7 +173,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 Seneca Polytechnic
               </h2>
               <h3
-                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2 sm:w-xl"
+                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-60 sm:h-auto pl-2 w-xs sm:w-xl"
               >
                 <Icon
                   icon="fluent-emoji:artist-light"
@@ -182,7 +182,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 Diploma &mdash; Independent Illustration
               </h3>
               <h3
-                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2 sm:w-3xs"
+                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-60 sm:h-auto pl-2 w-3xs sm:w-3xs"
               >
                 <Icon
                   icon="fluent-color:calendar-28"
@@ -198,7 +198,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
             </div>
             <div class="flex justify-between gap-2 mb-8">
               <h2
-                class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto sm:w-sm"
+                class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-60 sm:h-auto w-2xs sm:w-sm"
               >
                 <Icon
                   icon="fluent-emoji:school"
@@ -207,7 +207,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 Seneca Polytechnic
               </h2>
               <h3
-                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2 sm:w-xl"
+                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-60 sm:h-auto pl-2 w-xs sm:w-xl"
               >
                 <Icon
                   icon="fluent-emoji:artist-light"
@@ -216,7 +216,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 Certificate &mdash; Art Fundamentals
               </h3>
               <h3
-                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2 sm:w-3xs"
+                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-60 sm:h-auto pl-2 w-3xs sm:w-3xs"
               >
                 <Icon
                   icon="fluent-color:calendar-28"
