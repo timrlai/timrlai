@@ -38,9 +38,9 @@ const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
           <Icon icon="mingcute:palette-fill" class="inline-block h-[1em]" />
           Designer
         </h1>
-        <div class="flex flex-wrap justify-between items-start gap-y-8">
+        <div class="flex flex-wrap justify-between gap-y-8">
           <div class="w-full sm:w-3/4">
-            <div class="flex flex-row justify-between items-start gap-2 mb-8">
+            <div class="flex flex-row justify-between gap-2 mb-8">
               <h2
                 class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto"
               >
@@ -205,7 +205,7 @@ const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
             <SkillsUsed :skills="futuretalkSkills" v-once />
           </Suspense>
           <div class="w-full sm:w-3/4">
-            <div class="flex flex-row justify-between items-start gap-2 my-8">
+            <div class="flex flex-row justify-between gap-2 my-8">
               <h2
                 class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto"
               >

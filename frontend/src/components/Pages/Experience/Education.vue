@@ -26,9 +26,9 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
           <Icon icon="mingcute:mortarboard-fill" class="inline-block h-[1em]" />
           Education
         </h1>
-        <div class="flex flex-wrap justify-between items-start gap-y-8">
+        <div class="flex flex-wrap justify-between gap-y-8">
           <div class="w-full sm:w-3/4">
-            <div class="flex flex-row justify-between items-start gap-2 mb-8">
+            <div class="flex flex-row justify-between gap-2 mb-8">
               <h2
                 class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto sm:w-sm"
               >
@@ -63,7 +63,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 <SkillsUsed :skills="educationSkills.bsd" v-once />
               </Suspense>
             </div>
-            <div class="flex flex-row justify-between items-start gap-2 mb-8">
+            <div class="flex flex-row justify-between gap-2 mb-8">
               <h2
                 class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto sm:w-sm"
               >
@@ -92,7 +92,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 2017
               </h3>
             </div>
-            <div class="flex flex-row justify-between items-start gap-2 mb-8">
+            <div class="flex flex-row justify-between gap-2 mb-8">
               <h2
                 class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto sm:w-sm"
               >
@@ -127,7 +127,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 <SkillsUsed :skills="educationSkills.it" v-once />
               </Suspense>
             </div>
-            <div class="flex flex-row justify-between items-start gap-2 mb-8">
+            <div class="flex flex-row justify-between gap-2 mb-8">
               <h2
                 class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto sm:w-sm"
               >
@@ -162,7 +162,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 <SkillsUsed :skills="educationSkills.web" v-once />
               </Suspense>
             </div>
-            <div class="flex flex-row justify-between items-start gap-2 mb-8">
+            <div class="flex flex-row justify-between gap-2 mb-8">
               <h2
                 class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto sm:w-sm"
               >
@@ -196,7 +196,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 <SkillsUsed :skills="educationSkills.ilu" v-once />
               </Suspense>
             </div>
-            <div class="flex flex-row justify-between items-start gap-2 mb-8">
+            <div class="flex flex-row justify-between gap-2 mb-8">
               <h2
                 class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto sm:w-sm"
               >
