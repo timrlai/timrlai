@@ -10,7 +10,7 @@ defineProps<{ skills: Skill[] }>();
   <aside
     class="bg-base-100 text-base-content border-4 border-primary rounded-lg w-full p-5"
   >
-    <h1 class="text-2xl lg:text-3xl mb-4 ubuntu-titling">
+    <h1 class="text-xl lg:text-2xl mb-4 ubuntu-titling">
       <Icon icon="mingcute:code-fill" class="inline-block h-[1em]" />
       Skills Used
     </h1>
