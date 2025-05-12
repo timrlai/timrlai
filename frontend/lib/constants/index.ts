@@ -1,4 +1,10 @@
-import type { LottieConstants, SubItem, SocialButton, Skill } from "../types";
+import type {
+  LottieConstants,
+  SubItem,
+  SocialButton,
+  Skill,
+  EducationSkills,
+} from "../types";
 
 export const lottieConstants: LottieConstants = {
   CLOUDS_LOTTIE_PATH: "/lottie/bg/clouds_lottie.json",
@@ -561,6 +567,136 @@ export const illustratorSkills: Skill[] = [
   ...frameworkSkills.filter(({ title }) => ["Lottie"].includes(title)),
   cmsSkills[0],
 ];
+export const educationSkills: EducationSkills = {
+  bsd: [
+    ...languageSkills.filter(({ title }) =>
+      [
+        "JavaScript",
+        "TypeScript",
+        "Node.js",
+        "Python",
+        "Java",
+        "C#",
+        "C",
+        "C++",
+        "HTML",
+        "CSS",
+        "Sass",
+        "Bash",
+        "JSON",
+        "Markdown",
+      ].includes(title),
+    ),
+    ...frameworkSkills.filter(({ title }) =>
+      [
+        "React",
+        "Angular",
+        "Express",
+        "Spring MVC",
+        "OpenGL",
+        "OpenCV",
+        "Jasmine",
+        "jQuery",
+      ].includes(title),
+    ),
+    ...databaseSkills.filter(({ title }) =>
+      ["MySQL", "MariaDB"].includes(title),
+    ),
+    ...designSkills.filter(({ title }) =>
+      ["3ds Max", "Visual Paradigm"].includes(title),
+    ),
+    ...editorSkills.filter(({ title }) =>
+      ["VS Code", "Visual Studio", "Android Studio"].includes(title),
+    ),
+    ...generalSkills.filter(({ title }) =>
+      ["Linux", "Git", "GitHub"].includes(title),
+    ),
+  ],
+  it: [
+    ...languageSkills.filter(({ title }) =>
+      [
+        "JavaScript",
+        "TypeScript",
+        "Node.js",
+        "Python",
+        "PHP",
+        "Ruby",
+        "HTML",
+        "CSS",
+        "Sass",
+        "Bash",
+        "JSON",
+        "Markdown",
+      ].includes(title),
+    ),
+    ...frameworkSkills.filter(({ title }) =>
+      [
+        "Angular",
+        "Django",
+        "Laravel",
+        "Ruby on Rails",
+        "Bootstrap",
+        "jQuery",
+      ].includes(title),
+    ),
+    ...databaseSkills.filter(({ title }) =>
+      ["MySQL", "MariaDB"].includes(title),
+    ),
+    ...generalSkills.filter(({ title }) =>
+      ["XAMPP", "Git", "GitHub"].includes(title),
+    ),
+  ],
+  web: [
+    ...languageSkills.filter(({ title }) =>
+      [
+        "JavaScript",
+        "Node.js",
+        "PHP",
+        "HTML",
+        "CSS",
+        "Sass",
+        "Bash",
+        "JSON",
+      ].includes(title),
+    ),
+    ...frameworkSkills.filter(({ title }) =>
+      ["Bootstrap", "Electron", "jQuery"].includes(title),
+    ),
+    ...databaseSkills.filter(({ title }) =>
+      ["MySQL", "MariaDB"].includes(title),
+    ),
+    cmsSkills[0],
+    ...designSkills.filter(({ title }) => ["Adobe Photoshop"].includes(title)),
+    ...editorSkills.filter(({ title }) =>
+      ["Adobe Dreamweaver"].includes(title),
+    ),
+    ...generalSkills.filter(({ title }) =>
+      ["XAMPP", "Git", "GitHub"].includes(title),
+    ),
+  ],
+  ilu: [
+    ...designSkills.filter(({ title }) =>
+      [
+        "Adobe Photoshop",
+        "Adobe Illustrator",
+        "Adobe After Effects",
+        "Google Sketchup",
+        "Clip Studio Paint",
+      ].includes(title),
+    ),
+    ...languageSkills.filter(({ title }) => ["HTML", "CSS"].includes(title)),
+  ],
+  afd: [
+    ...designSkills.filter(({ title }) =>
+      [
+        "Adobe Photoshop",
+        "Adobe Illustrator",
+        "Google Sketchup",
+        "Clip Studio Paint",
+      ].includes(title),
+    ),
+  ],
+};
 export const madeWithSkills: Skill[] = [
   { title: "TypeScript", icon: "catppuccin:typescript" },
   { title: "Vue", icon: "catppuccin:vue" },
