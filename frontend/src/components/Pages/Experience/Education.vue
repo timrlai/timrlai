@@ -58,12 +58,10 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 2019 to 2023
               </h3>
             </div>
-            <div class="mb-8">
-              <Suspense>
-                <SkillsUsed :skills="educationSkills.bsd" v-once />
-              </Suspense>
-            </div>
-            <div class="flex justify-between gap-2 mb-8">
+            <Suspense>
+              <SkillsUsed :skills="educationSkills.bsd" v-once />
+            </Suspense>
+            <div class="flex justify-between gap-2 my-8">
               <h2
                 class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-60 sm:h-auto w-2xs sm:w-sm"
               >
@@ -92,7 +90,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 2017
               </h3>
             </div>
-            <div class="flex justify-between gap-2 mb-8">
+            <div class="flex justify-between gap-2 my-8">
               <h2
                 class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-60 sm:h-auto w-2xs sm:w-sm"
               >
@@ -122,12 +120,10 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 2016 to 2017
               </h3>
             </div>
-            <div class="mb-8">
-              <Suspense>
-                <SkillsUsed :skills="educationSkills.it" v-once />
-              </Suspense>
-            </div>
-            <div class="flex justify-between gap-2 mb-8">
+            <Suspense>
+              <SkillsUsed :skills="educationSkills.it" v-once />
+            </Suspense>
+            <div class="flex justify-between gap-2 my-8">
               <h2
                 class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-60 sm:h-auto w-2xs sm:w-sm"
               >
@@ -191,12 +187,10 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 2013 to 2015
               </h3>
             </div>
-            <div class="mb-8">
-              <Suspense>
-                <SkillsUsed :skills="educationSkills.ilu" v-once />
-              </Suspense>
-            </div>
-            <div class="flex justify-between gap-2 mb-8">
+            <Suspense>
+              <SkillsUsed :skills="educationSkills.ilu" v-once />
+            </Suspense>
+            <div class="flex justify-between gap-2 my-8">
               <h2
                 class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-60 sm:h-auto w-2xs sm:w-sm"
               >
@@ -225,11 +219,9 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 2012
               </h3>
             </div>
-            <div class="mb-8">
-              <Suspense>
-                <SkillsUsed :skills="educationSkills.afd" v-once />
-              </Suspense>
-            </div>
+            <Suspense>
+              <SkillsUsed :skills="educationSkills.afd" v-once />
+            </Suspense>
           </div>
           <div class="w-full sm:w-1/4 pl-4 sm:-mt-50">
             <Suspense>
