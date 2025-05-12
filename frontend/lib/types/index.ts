@@ -38,6 +38,14 @@ export type Skill = {
   readonly icon: string | null;
 };
 
+export type EducationSkills = {
+  bsd: Skill[];
+  it: Skill[];
+  web: Skill[];
+  ilu: Skill[];
+  afd: Skill[];
+};
+
 export type LottieTexture = CanvasTexture & {
   animation?: object;
 };
