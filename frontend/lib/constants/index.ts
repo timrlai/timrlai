@@ -83,12 +83,12 @@ export const experienceSubItems: SubItem[] = [
     hash: "illustrator",
     icon: "mingcute:paint-brush-fill",
   },
-  // {
-  //   label: "Education",
-  //   to: "/experience",
-  //   hash: "education",
-  //   icon: "mingcute:mortarboard-fill",
-  // },
+  {
+    label: "Education",
+    to: "/experience",
+    hash: "education",
+    icon: "mingcute:mortarboard-fill",
+  },
   // {
   //   label: "Volunteer",
   //   to: "/experience",
