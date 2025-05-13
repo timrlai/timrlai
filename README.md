@@ -107,17 +107,18 @@ I am a graduate of Seneca Polytechnic's Honours Bachelor of Technology – Softw
 
 I have also offered my services volunteering for organizations which are important to me such as the Toronto Animation Arts Festival International 🎬 and the CNIB. 👁️
 
-| **Toronto Animation Arts Festival International (TAAFI)** | **Graphic Designer/Event Planner** | **2015 to 2016** |
+| **TAAFI (Toronto Animation Arts Festival International)** | **Graphic Designer/Event Planner** | **2015 to 2016** |
 | --------------------------------------------------------- | ---------------------------------- | ---------------- |
 
 - Collaborated with a large team of event planners and volunteers to organize an art book and independent artist market for a non-profit animation festival
 - Promoted, organized, designed and compiled TAAFI 2016 Art Book in Adobe InDesign
+- Created graphics for the website and promotional materials using Adobe Illustrator and Adobe Photoshop
 - Organized and promoted TAAFI 2016 Indie Alley event and managed TAAFI merchandise table
 - Communicated with artists, exhibitors, guests, sponsors and festival attendees to ensure that they had a positive festival experience
 - Prepared regular detailed reports to a Board of Directors to keep them informed
 
-| **CNIB** | **Summer Camp Volunteer** | **2013** |
-| -------- | ------------------------- | -------- |
+| **CNIB (Canadian National Institue for the Blind)** | **Summer Camp Volunteer** | **2013** |
+| --------------------------------------------------- | ------------------------- | -------- |
 
 - Assisted blind and visually impaired children with various recreational activities
 
