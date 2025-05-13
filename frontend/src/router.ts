@@ -26,18 +26,29 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
   scrollBehavior(to) {
-    console.log(to.hash);
     if (to.hash) {
-      return {
-        el: to.hash,
-        top: 100,
-        behavior: "smooth",
-      };
+      return new Promise((resolve) => {
+        setTimeout(
+          () =>
+            resolve({
+              el: to.hash,
+              top: 100,
+              behavior: "smooth",
+            }),
+          500,
+        );
+      });
     } else {
-      return {
-        top: 0,
-        behavior: "smooth",
-      };
+      return new Promise((resolve) => {
+        setTimeout(
+          () =>
+            resolve({
+              top: 0,
+              behavior: "smooth",
+            }),
+          500,
+        );
+      });
     }
   },
 });
