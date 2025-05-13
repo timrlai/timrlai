@@ -15,7 +15,7 @@ const { AVATAR_VOLUNTEER_LOTTIE_PATH } = lottieConstants;
 </script>
 
 <template>
-  <section id="designer">
+  <section id="volunteer">
     <div
       class="mockup-window bg-secondary text-secondary-content border-4 border-primary shadow-lg shadow-primary"
     >
