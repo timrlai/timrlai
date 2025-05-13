@@ -28,6 +28,7 @@ export const lottieConstants: LottieConstants = {
   AVATAR_ILLUSTRATOR_LOTTIE_PATH:
     "/lottie/avatars/timrlai_avatar_illustrator.json",
   AVATAR_EDUCATION_LOTTIE_PATH: "/lottie/avatars/timrlai_avatar_education.json",
+  AVATAR_VOLUNTEER_LOTTIE_PATH: "/lottie/avatars/timrlai_avatar_volunteer.json",
   NOT_FOUND_LOTTIE_FOLDER: "/lottie/404/",
   NOT_FOUND_LOTTIES: [
     "404_cat_clouds.json",
@@ -89,12 +90,12 @@ export const experienceSubItems: SubItem[] = [
     hash: "education",
     icon: "mingcute:mortarboard-fill",
   },
-  // {
-  //   label: "Volunteer",
-  //   to: "/experience",
-  //   hash: "volunteer",
-  //   icon: "mingcute:hand-heart-fill",
-  // },
+  {
+    label: "Volunteer",
+    to: "/experience",
+    hash: "volunteer",
+    icon: "mingcute:hand-heart-fill",
+  },
 ];
 
 export const socialButtons: SocialButton[] = [
@@ -697,6 +698,14 @@ export const educationSkills: EducationSkills = {
     ),
   ],
 };
+export const taafiSkills: Skill[] = [
+  ...designSkills.filter(({ title }) =>
+    ["Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign"].includes(title),
+  ),
+  ...generalSkills.filter(({ title }) =>
+    ["Slack", "Google Docs"].includes(title),
+  ),
+];
 export const madeWithSkills: Skill[] = [
   { title: "TypeScript", icon: "catppuccin:typescript" },
   { title: "Vue", icon: "catppuccin:vue" },

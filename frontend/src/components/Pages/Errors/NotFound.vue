@@ -36,7 +36,7 @@ const randomNotFoundLottie = `${NOT_FOUND_LOTTIE_FOLDER}${NOT_FOUND_LOTTIES[Math
         404 Error: Page Not Found
         <Icon icon="fluent-emoji:weary-cat" class="inline-block" />
       </h1>
-      <div class="flex flex-row flex-wrap lg:flex-nowrap gap-4">
+      <div class="flex flex-wrap lg:flex-nowrap gap-4">
         <div class="lg:w-1/2">
           <p class="text-xl sm:text-2xl mb-4 px-5">
             Sorry, but a page with the provided address of

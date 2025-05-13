@@ -41,9 +41,7 @@ const onIntroTyped = (currentTitle: string) => {
     <div
       class="glass grid place-content-center min-h-[55vh] md:min-h-[65vh] p-2 bg-primary/85 text-primary-content text-center"
     >
-      <div
-        class="flex justify-center items-start motion-reduce:hidden print:hidden"
-      >
+      <div class="flex justify-center motion-reduce:hidden print:hidden">
         <ConfettiExplosion :particleCount="200" :force="0.3" v-if="visible" />
       </div>
       <div class="flex flex-wrap items-center">
