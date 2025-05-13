@@ -90,12 +90,12 @@ export const experienceSubItems: SubItem[] = [
     hash: "education",
     icon: "mingcute:mortarboard-fill",
   },
-  // {
-  //   label: "Volunteer",
-  //   to: "/experience",
-  //   hash: "volunteer",
-  //   icon: "mingcute:hand-heart-fill",
-  // },
+  {
+    label: "Volunteer",
+    to: "/experience",
+    hash: "volunteer",
+    icon: "mingcute:hand-heart-fill",
+  },
 ];
 
 export const socialButtons: SocialButton[] = [

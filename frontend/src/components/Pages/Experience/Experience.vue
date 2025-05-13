@@ -6,6 +6,7 @@ const Teacher = defineAsyncComponent(() => import("./Teacher.vue"));
 const Designer = defineAsyncComponent(() => import("./Designer.vue"));
 const Illustrator = defineAsyncComponent(() => import("./Illustrator.vue"));
 const Education = defineAsyncComponent(() => import("./Education.vue"));
+const Volunteer = defineAsyncComponent(() => import("./Volunteer.vue"));
 </script>
 
 <template>
@@ -27,6 +28,9 @@ const Education = defineAsyncComponent(() => import("./Education.vue"));
     </Suspense>
     <Suspense>
       <Education v-once />
+    </Suspense>
+    <Suspense>
+      <Volunteer v-once />
     </Suspense>
   </main>
 </template>
