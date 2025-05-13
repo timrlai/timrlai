@@ -460,8 +460,8 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
       class="mockup-window bg-secondary text-secondary-content border-4 rounded-t-none border-primary shadow-lg shadow-primary"
     >
       <div class="p-5">
-        <div class="flex flex-wrap justify-between items-center">
-          <div class="w-full sm:w-4/5 sm:pr-14">
+        <div class="flex flex-wrap justify-between">
+          <div class="w-full sm:w-3/4 sm:pr-14">
             <h2 class="text-3xl sm:text-4xl ubuntu-titling mb-4">
               <Icon
                 icon="fluent-emoji:handshake"
@@ -501,7 +501,7 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
               />
             </p>
           </div>
-          <div class="w-full sm:w-1/5">
+          <div class="w-full sm:w-1/4">
             <Suspense>
               <LottiePlayer
                 :src="AVATAR_SKILLS_SOFT_LOTTIE_PATH"
