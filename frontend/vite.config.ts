@@ -88,6 +88,7 @@ export default defineConfig({
       warnDuplicatedImports: true, // Warn if the same chunk was imported multiple times
       removeDuplicatedImports: false, // Automatically remove an already imported chunk
       defaultExtension: "glsl", // Shader suffix when no extension is specified
+      minify: true, // Minify/optimize output shader code
       watch: true, // Recompile shader on change
       root: "/", // Directory for root imports
     }),
