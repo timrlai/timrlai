@@ -1,5 +1,12 @@
 import type { CanvasTexture, Wrapping, Side } from "three";
 
+export type ScrollPosition = {
+  el?: string | Element;
+  left?: number;
+  top?: number;
+  behavior?: "auto" | "instant" | "smooth";
+};
+
 export type ColorKind =
   | "neutral"
   | "primary"
