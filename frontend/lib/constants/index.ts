@@ -698,6 +698,14 @@ export const educationSkills: EducationSkills = {
     ),
   ],
 };
+export const taafiSkills: Skill[] = [
+  ...designSkills.filter(({ title }) =>
+    ["Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign"].includes(title),
+  ),
+  ...generalSkills.filter(({ title }) =>
+    ["Slack", "Google Docs"].includes(title),
+  ),
+];
 export const madeWithSkills: Skill[] = [
   { title: "TypeScript", icon: "catppuccin:typescript" },
   { title: "Vue", icon: "catppuccin:vue" },
