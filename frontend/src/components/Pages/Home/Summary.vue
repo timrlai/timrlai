@@ -18,7 +18,7 @@ const { AVATAR_SUMMARY_LOTTIE_PATH } = lottieConstants;
   >
     <div class="px-5">
       <h1
-        class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl uppercase ubuntu-titling border-b-4 border-primary mb-4"
+        class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase ubuntu-titling border-b-4 border-primary mb-4"
       >
         <Icon icon="mingcute:list-check-3-fill" class="inline-block h-[1em]" />
         Summary

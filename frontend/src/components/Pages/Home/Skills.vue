@@ -52,7 +52,7 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
       class="mockup-window bg-secondary text-secondary-content border-4 border-primary rounded-b-none shadow-lg shadow-primary"
     >
       <h1
-        class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl uppercase ubuntu-titling mb-4 px-5"
+        class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase ubuntu-titling mb-4 px-5"
       >
         <Icon icon="mingcute:code-fill" class="inline-block h-[1em]" />
         Skills

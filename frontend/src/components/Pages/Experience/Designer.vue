@@ -33,7 +33,7 @@ const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
     >
       <div class="px-5 pb-5">
         <h1
-          class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl uppercase ubuntu-titling border-b-4 border-primary mb-8"
+          class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase ubuntu-titling border-b-4 border-primary mb-8"
         >
           <Icon icon="mingcute:palette-fill" class="inline-block h-[1em]" />
           Designer

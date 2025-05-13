@@ -21,7 +21,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
     >
       <div class="px-5 pb-5">
         <h1
-          class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl uppercase ubuntu-titling border-b-4 border-primary mb-8"
+          class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase ubuntu-titling border-b-4 border-primary mb-8"
         >
           <Icon icon="mingcute:mortarboard-fill" class="inline-block h-[1em]" />
           Education
@@ -223,7 +223,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
               <SkillsUsed :skills="educationSkills.afd" v-once />
             </Suspense>
           </div>
-          <div class="w-full sm:w-1/4 pl-4 sm:-mt-50">
+          <div class="w-full sm:w-1/4 pl-4 sm:-mt-40">
             <Suspense>
               <LottiePlayer
                 :src="AVATAR_EDUCATION_LOTTIE_PATH"
