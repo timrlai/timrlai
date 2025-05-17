@@ -2841,10 +2841,15 @@ three@^0.170.0:
   resolved "https://registry.npmjs.org/three/-/three-0.170.0.tgz"
   integrity sha512-FQK+LEpYc0fBD+J8g6oSEyyNzjp+Q7Ks1C568WWaoMRLW+TkNNWmenWeGgJjV105Gd+p/2ql1ZcjYvNiPZBhuQ==
 
-three@>=0.126.1, three@>=0.128.0, three@>=0.133, three@>=0.154, three@^0.174.0:
+three@>=0.126.1, three@>=0.128.0, three@>=0.133, three@>=0.154:
   version "0.174.0"
   resolved "https://registry.npmjs.org/three/-/three-0.174.0.tgz"
   integrity sha512-p+WG3W6Ov74alh3geCMkGK9NWuT62ee21cV3jEnun201zodVF4tCE5aZa2U122/mkLRmhJJUQmLLW1BH00uQJQ==
+
+three@^0.176.0:
+  version "0.176.0"
+  resolved "https://registry.npmjs.org/three/-/three-0.176.0.tgz"
+  integrity sha512-PWRKYWQo23ojf9oZSlRGH8K09q7nRSWx6LY/HF/UUrMdYgN9i1e2OwJYHoQjwc6HF/4lvvYLC5YC1X8UJL2ZpA==
 
 three-custom-shader-material@^5.4.0:
   version "5.4.0"
