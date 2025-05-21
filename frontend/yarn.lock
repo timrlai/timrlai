@@ -494,9 +494,9 @@
     extract-zip "^2.0.1"
     progress "^2.0.3"
     proxy-agent "^6.5.0"
+    semver "^7.7.2"
     tar-fs "^3.0.8"
     yargs "^17.7.2"
-    semver "^7.7.2"
 
 "@rollup/pluginutils@^5.1.4":
   version "5.1.4"
@@ -1853,6 +1853,11 @@ es-set-tostringtag@^2.1.0:
     has-tostringtag "^1.0.2"
     hasown "^2.0.2"
 
+es6-promise@^2.0.0:
+  version "2.3.0"
+  resolved "https://registry.npmjs.org/es6-promise/-/es6-promise-2.3.0.tgz"
+  integrity sha512-oyOjMhyKMLEjOOtvkwg0G4pAzLQ9WdbbeX7WdqKzvYXu+UFgD0Zo/Brq5Q49zNmnGPPzV5rmYvrr0jz1zWx8Iw==
+
 esbuild@^0.25.0:
   version "0.25.0"
   resolved "https://registry.npmjs.org/esbuild/-/esbuild-0.25.0.tgz"
@@ -2799,6 +2804,15 @@ listr2@^8.2.5:
     rfdc "^1.4.1"
     wrap-ansi "^9.0.0"
 
+locate-chrome@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.npmjs.org/locate-chrome/-/locate-chrome-0.1.1.tgz"
+  integrity sha512-87n87RotxqHb/TJoSgW1ayezxZtuki3+QGtfKbTDfjOS0OSKX9xHJv7IW+OK1XPAVl+RVo4M1J4xe7rBmLNsVA==
+  dependencies:
+    es6-promise "^2.0.0"
+    queue-async "^1.0.0"
+    userhome "^1.0.0"
+
 locate-path@^6.0.0:
   version "6.0.0"
   resolved "https://registry.npmjs.org/locate-path/-/locate-path-6.0.0.tgz"
@@ -3320,11 +3334,16 @@ puppeteer-core@24.9.0:
   integrity sha512-HFdCeH/wx6QPz8EncafbCqJBqaCG1ENW75xg3cLFMRUoqZDgByT6HSueiumetT2uClZxwqj0qS4qMVZwLHRHHw==
   dependencies:
     "@puppeteer/browsers" "2.10.5"
-    debug "^4.4.1"
     chromium-bidi "5.1.0"
+    debug "^4.4.1"
     devtools-protocol "0.0.1439962"
     typed-query-selector "^2.12.0"
     ws "^8.18.2"
+
+queue-async@^1.0.0:
+  version "1.2.1"
+  resolved "https://registry.npmjs.org/queue-async/-/queue-async-1.2.1.tgz"
+  integrity sha512-aPVvlovU79BlPPgEiroL5XO57lZy1WrnyypfpGy25O+VQBbjOgr4XZYL/JVPuYN1zQO0oEH3bd1ZPRPO/nqZ5A==
 
 queue-microtask@^1.2.2:
   version "1.2.3"
@@ -4061,6 +4080,11 @@ urlpattern-polyfill@10.0.0:
   version "10.0.0"
   resolved "https://registry.npmjs.org/urlpattern-polyfill/-/urlpattern-polyfill-10.0.0.tgz"
   integrity sha512-H/A06tKD7sS1O1X2SshBVeA5FLycRpjqiBeqGKmBwBDBy28EnRjORxTNe269KSSr5un5qyWi1iL61wLxpd+ZOg==
+
+userhome@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/userhome/-/userhome-1.0.1.tgz"
+  integrity sha512-5cnLm4gseXjAclKowC4IjByaGsjtAoV6PrOQOljplNB54ReUYJP8HdAFq2muHinSDAh09PPX/uXDPfdxRHvuSA==
 
 util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"
