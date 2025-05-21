@@ -64,6 +64,7 @@ const year = new Date().getFullYear();
         Follow Tim on Social Media
       </h2>
       <SocialButtons
+        location="footer"
         buttonColor="secondary"
         tooltipColor="secondary"
         tooltipPosition="top"

@@ -13,7 +13,11 @@ const SocialButtons = defineAsyncComponent(
 
 <template>
   <header class="relative">
-    <nav id="main-nav" class="navbar bg-secondary text-secondary-content">
+    <nav
+      id="main-nav"
+      aria-label="Main navigation"
+      class="navbar bg-secondary text-secondary-content"
+    >
       <div class="navbar-start">
         <RouterLink
           to="#main"
@@ -141,6 +145,7 @@ const SocialButtons = defineAsyncComponent(
       </div>
       <div class="navbar-end flex gap-4">
         <SocialButtons
+          location="header"
           buttonColor="primary"
           tooltipColor="primary"
           tooltipPosition="left"
