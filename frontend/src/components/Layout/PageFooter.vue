@@ -38,6 +38,7 @@ const year = new Date().getFullYear();
         <Suspense>
           <img
             :src="headSvgPath.default"
+            aria-hidden
             alt=""
             class="inline-block h-[1.5em]"
           />
@@ -57,6 +58,7 @@ const year = new Date().getFullYear();
         <Suspense>
           <img
             :src="headSvgPath.default"
+            aria-hidden
             alt=""
             class="inline-block h-[1.5em]"
           />
@@ -98,6 +100,7 @@ const year = new Date().getFullYear();
         <Suspense>
           <img
             :src="headSvgPath.default"
+            aria-hidden
             alt=""
             class="inline-block h-[1.5em]"
           />
