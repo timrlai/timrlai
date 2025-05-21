@@ -1,0 +1,48 @@
+import * as Puppeteer from "puppeteer";
+import { beforeAll, afterAll, describe, it, expect } from "bun:test";
+import { getCompliance, assertCompliance } from "accessibility-checker";
+
+let browser: Puppeteer.Browser;
+let page: Puppeteer.Page;
+
+beforeAll(async () => {
+  try {
+    browser = await Puppeteer.launch();
+    page = await browser.newPage();
+  } catch (e) {
+    console.log(e);
+  }
+  return Promise.resolve();
+});
+
+afterAll(async () => {
+  await browser.close();
+  return Promise.resolve();
+});
+
+// Describe this Suite of testscases, describe is a test Suite and 'it' is a testcase.
+describe("Accessibility Checks", function () {
+  it("Home", async () => {
+    await page.goto(`http://localhost:5173/`);
+
+    const result = await getCompliance(page, "Home");
+    const report = result!.report as any;
+    expect(assertCompliance(report)).toEqual(0);
+  });
+
+  it("Experience", async () => {
+    await page.goto(`http://localhost:5173/experience`);
+
+    const result = await getCompliance(page, "Experience");
+    const report = result!.report as any;
+    expect(assertCompliance(report)).toEqual(0);
+  });
+
+  it("Projects", async () => {
+    await page.goto(`http://localhost:5173/projects`);
+
+    const result = await getCompliance(page, "Projects");
+    const report = result!.report as any;
+    expect(assertCompliance(report)).toEqual(0);
+  });
+});
