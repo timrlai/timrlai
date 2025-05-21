@@ -52,7 +52,11 @@ const tooltipPositions = {
         :data-tip="`${button.tooltip}`"
       >
         <div class="tooltip-content">
-          <div class="text-lg gluten normal-case">
+          <div
+            :id="`${button.icon}-tooltip-${location}`"
+            role="tooltip"
+            class="text-lg gluten"
+          >
             {{ button.tooltip }}
           </div>
         </div>
@@ -60,13 +64,9 @@ const tooltipPositions = {
           :href="`${button.url}`"
           target="_blank"
           aria-roledescription="button"
-          :aria-labelledby="`${button.tooltip}-icon`"
+          :aria-labelledby="`${button.icon}-tooltip-${location}`"
           :class="`btn ${buttonColors[buttonColor]} text-xl sm:text-2xl`"
-          ><Icon
-            :id="`${button.tooltip}-icon`"
-            :icon="`${button.icon}`"
-            aria-roledescription="icon"
-            :aria-label="button.tooltip"
+          ><Icon :icon="`${button.icon}`" aria-roledescription="icon"
         /></a>
       </div>
     </div>
