@@ -11,7 +11,7 @@ ruleArchive: latest
 # i.e. Multiple policies: IBM_Accessibility, WCAG_2_1
 # Run `npx achecker archives` for a list of valid ruleArchive ids and policy ids
 policies:
-  - IBM_Accessibility
+  - WCAG_2_1
 
 # optional - Specify one or many violation levels on which to fail the test
 #            i.e. If specified violation then the testcase will only fail if
