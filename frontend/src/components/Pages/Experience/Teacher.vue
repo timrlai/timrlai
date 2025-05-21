@@ -47,6 +47,7 @@ const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
                 Seneca Polytechnic
               </h2>
               <h3
+                id="teacher-instructor-heading"
                 class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
               >
                 <Icon
@@ -179,7 +180,11 @@ const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
             </div>
           </div>
           <Suspense>
-            <SkillsUsed :skills="instructorSkills" v-once />
+            <SkillsUsed
+              labelledby="teacher-instructor-heading"
+              :skills="instructorSkills"
+              v-once
+            />
           </Suspense>
           <div class="w-full sm:w-2/3">
             <div class="flex justify-between gap-2 my-8">
@@ -193,6 +198,7 @@ const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
                 Seneca Polytechnic
               </h2>
               <h3
+                id="teacher-technologist-heading"
                 class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
               >
                 <Icon
@@ -259,7 +265,11 @@ const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
             </ul>
           </div>
           <Suspense>
-            <SkillsUsed :skills="technologistSeniorSkills" v-once />
+            <SkillsUsed
+              labelledby="teacher-technologist-heading"
+              :skills="technologistSeniorSkills"
+              v-once
+            />
           </Suspense>
         </div>
       </div>

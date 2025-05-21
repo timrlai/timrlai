@@ -34,6 +34,7 @@ export type SocialButton = {
 };
 
 export type SocialButtonsProps = {
+  location?: "header" | "footer";
   buttonColor?: ColorKind;
   tooltipColor?: ColorKind;
   tooltipPosition?: TooltipPosition;

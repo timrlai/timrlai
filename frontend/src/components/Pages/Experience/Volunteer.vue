@@ -39,6 +39,7 @@ const { AVATAR_VOLUNTEER_LOTTIE_PATH } = lottieConstants;
                 TAAFI (Toronto Animation Arts Festival International)
               </h2>
               <h3
+                id="volunteer-taafi-heading"
                 class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
               >
                 <Icon
@@ -141,7 +142,11 @@ const { AVATAR_VOLUNTEER_LOTTIE_PATH } = lottieConstants;
               </li>
             </ul>
             <Suspense>
-              <SkillsUsed :skills="taafiSkills" v-once />
+              <SkillsUsed
+                labelledby="volunteer-taafi-heading"
+                :skills="taafiSkills"
+                v-once
+              />
             </Suspense>
           </div>
           <div class="w-full sm:w-1/4">
@@ -168,6 +173,7 @@ const { AVATAR_VOLUNTEER_LOTTIE_PATH } = lottieConstants;
                 CNIB (Canadian National Institue for the Blind)
               </h2>
               <h3
+                id="volunteer-cnib-heading"
                 class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
               >
                 <Icon

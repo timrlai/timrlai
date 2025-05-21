@@ -58,5 +58,8 @@ jobs:
       - name: Install JS dependencies with Bun
         run: bun install
 
+      - name: Build app
+        run: bun run build
+
       - name: Run tests
-        run: bun test
+        run: bun run dev & sleep 10 && curl http://localhost:5173 -I && bun test
