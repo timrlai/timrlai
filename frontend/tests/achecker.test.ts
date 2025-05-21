@@ -1,13 +1,22 @@
 import * as Puppeteer from "puppeteer";
+// @ts-expect-error no types for locate-chrome
+import locateChrome from "locate-chrome";
 import { beforeAll, afterAll, describe, it, expect } from "bun:test";
 import { getCompliance, assertCompliance } from "accessibility-checker";
 
 let browser: Puppeteer.Browser;
 let page: Puppeteer.Page;
 
+const executablePath: string = await new Promise((resolve) =>
+  locateChrome((arg: any) => resolve(arg)),
+);
+
 beforeAll(async () => {
   try {
-    browser = await Puppeteer.launch();
+    browser = await Puppeteer.launch({
+      headless: true,
+      executablePath,
+    });
     page = await browser.newPage();
   } catch (e) {
     console.log(e);
