@@ -22,13 +22,13 @@ const SocialButtons = defineAsyncComponent(
           <Icon icon="mingcute:arrow-to-down-fill" class="inline-block"
         /></RouterLink>
         <div class="dropdown z-[9999] ubuntu-titling uppercase">
-          <div
+          <button
             tabindex="0"
-            role="button"
             class="btn btn-ghost lg:hidden text-3xl"
+            aria-label=" Open/close menu"
           >
-            <Icon icon="mingcute:hamburger-fill" />
-          </div>
+            <Icon icon="mingcute:menu-fill" />
+          </button>
           <ul
             tabindex="0"
             class="menu menu-lg dropdown-content rounded-box bg-secondary z-1 mt-3 w-xs sm:w-sm p-2 rounded-t-none border-l-4 border-r-4 border-b-4 border-primary shadow-lg shadow-primary"
