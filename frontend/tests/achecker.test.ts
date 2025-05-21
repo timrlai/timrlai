@@ -7,12 +7,11 @@ import { getCompliance, assertCompliance } from "accessibility-checker";
 let browser: Puppeteer.Browser;
 let page: Puppeteer.Page;
 
-const executablePath: string = await new Promise((resolve) =>
-  locateChrome((arg: any) => resolve(arg)),
-);
-
 beforeAll(async () => {
   try {
+    const executablePath: string = await new Promise((resolve) =>
+      locateChrome((arg: any) => resolve(arg)),
+    );
     browser = await Puppeteer.launch({
       headless: true,
       executablePath,
