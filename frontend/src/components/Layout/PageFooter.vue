@@ -22,7 +22,7 @@ const year = new Date().getFullYear();
   <footer
     class="footer footer-vertical md:footer-horizontal place-content-between bg-primary text-primary-content border-t-[10rem] border-success p-10 relative text-center atkinson-hyperlegible-next-bold text-2xl"
   >
-    <aside class="footer-tile w-full md:w-2xs print:hidden">
+    <section class="footer-tile w-full md:w-2xs print:hidden">
       <Suspense>
         <img
           :src="logoSvgPath.default"
@@ -31,8 +31,8 @@ const year = new Date().getFullYear();
           class="inline-block w-full"
         />
       </Suspense>
-    </aside>
-    <aside class="footer-tile">
+    </section>
+    <section class="footer-tile">
       <h2 class="text-3xl w-full mb-4 ubuntu-titling">
         <Icon icon="fluent-color:mail-32" class="inline-block text-5xl" />
         <Suspense>
@@ -70,8 +70,8 @@ const year = new Date().getFullYear();
         tooltipPosition="top"
         :showAll="true"
       />
-    </aside>
-    <aside class="footer-tile md:w-2xs">
+    </section>
+    <section class="footer-tile md:w-2xs">
       <RouterLink
         to=""
         hash="#"
@@ -103,7 +103,7 @@ const year = new Date().getFullYear();
           />
         </Suspense>
       </p>
-    </aside>
+    </section>
   </footer>
 </template>
 
