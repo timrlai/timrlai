@@ -58,8 +58,8 @@ jobs:
       - name: Install JS dependencies with Bun
         run: bun install
 
-      - name: Start Server
-        run: bun run dev
+      - name: Build App
+        run: bun run build
 
       - name: Run tests
-        run: bun test
+        run: bun run dev & bun test
