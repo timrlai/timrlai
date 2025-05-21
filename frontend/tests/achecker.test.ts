@@ -36,7 +36,7 @@ describe("Accessibility Checks", function () {
 
     const result = await getCompliance(page, "Home");
     const report = result!.report as any;
-    console.log(report);
+    console.info("Accessibility Report for Home:", report);
     expect(assertCompliance(report)).toEqual(0);
   });
 
@@ -45,7 +45,7 @@ describe("Accessibility Checks", function () {
 
     const result = await getCompliance(page, "Experience");
     const report = result!.report as any;
-    console.log(report);
+    console.info("Accessibility Report for Experience:", report);
     expect(assertCompliance(report)).toEqual(0);
   });
 
@@ -54,7 +54,7 @@ describe("Accessibility Checks", function () {
 
     const result = await getCompliance(page, "Projects");
     const report = result!.report as any;
-    console.log(report);
+    console.info("Accessibility Report for Projects:", report);
     expect(assertCompliance(report)).toEqual(0);
   });
 });
