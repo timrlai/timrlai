@@ -39,6 +39,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 Seneca Polytechnic
               </h2>
               <h3
+                id="education-bsd-heading"
                 class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-60 sm:h-auto pl-2 w-xs sm:w-xl"
               >
                 <Icon
@@ -59,7 +60,11 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
               </h3>
             </div>
             <Suspense>
-              <SkillsUsed :skills="educationSkills.bsd" v-once />
+              <SkillsUsed
+                labelledby="education-bsd-heading"
+                :skills="educationSkills.bsd"
+                v-once
+              />
             </Suspense>
             <div class="flex justify-between gap-2 my-8">
               <h2
@@ -101,6 +106,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 Seneca Polytechnic
               </h2>
               <h3
+                id="education-it-heading"
                 class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-60 sm:h-auto pl-2 w-xs sm:w-xl"
               >
                 <Icon
@@ -121,7 +127,11 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
               </h3>
             </div>
             <Suspense>
-              <SkillsUsed :skills="educationSkills.it" v-once />
+              <SkillsUsed
+                labelledby="education-it-heading"
+                :skills="educationSkills.it"
+                v-once
+              />
             </Suspense>
             <div class="flex justify-between gap-2 my-8">
               <h2
@@ -134,6 +144,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 Seneca Polytechnic
               </h2>
               <h3
+                id="education-webmaster-heading"
                 class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-60 sm:h-auto pl-2 w-xs sm:w-xl"
               >
                 <Icon
@@ -155,7 +166,11 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
             </div>
             <div class="mb-8">
               <Suspense>
-                <SkillsUsed :skills="educationSkills.web" v-once />
+                <SkillsUsed
+                  labelledby="education-webmaster-heading"
+                  :skills="educationSkills.web"
+                  v-once
+                />
               </Suspense>
             </div>
             <div class="flex justify-between gap-2 mb-8">
@@ -169,6 +184,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 Seneca Polytechnic
               </h2>
               <h3
+                id="education-illustration-heading"
                 class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-60 sm:h-auto pl-2 w-xs sm:w-xl"
               >
                 <Icon
@@ -188,7 +204,11 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
               </h3>
             </div>
             <Suspense>
-              <SkillsUsed :skills="educationSkills.ilu" v-once />
+              <SkillsUsed
+                labelledby="education-illustration-heading"
+                :skills="educationSkills.ilu"
+                v-once
+              />
             </Suspense>
             <div class="flex justify-between gap-2 my-8">
               <h2
@@ -201,6 +221,7 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 Seneca Polytechnic
               </h2>
               <h3
+                id="education-afd-heading"
                 class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-60 sm:h-auto pl-2 w-xs sm:w-xl"
               >
                 <Icon
@@ -220,7 +241,11 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
               </h3>
             </div>
             <Suspense>
-              <SkillsUsed :skills="educationSkills.afd" v-once />
+              <SkillsUsed
+                labelledby="education-afd-heading"
+                :skills="educationSkills.afd"
+                v-once
+              />
             </Suspense>
           </div>
           <div class="w-full sm:w-1/4 pl-4 sm:-mt-40">

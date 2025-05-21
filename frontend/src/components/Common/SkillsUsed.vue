@@ -3,11 +3,12 @@ import { Icon } from "@iconify/vue";
 
 import type { Skill } from "../../../lib/types";
 
-defineProps<{ skills: Skill[] }>();
+defineProps<{ labelledby: string; skills: Skill[] }>();
 </script>
 
 <template>
   <aside
+    :aria-labelledby="labelledby"
     class="bg-base-100 text-base-content border-4 border-primary rounded-lg w-full p-5"
   >
     <h1 class="text-xl lg:text-2xl mb-4 ubuntu-titling">

@@ -51,6 +51,7 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                 Futuretalk Inc.
               </h2>
               <h3
+                id="developer-futuretalk-heading"
                 class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
               >
                 <Icon
@@ -229,7 +230,11 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
             </Suspense>
           </div>
           <Suspense>
-            <SkillsUsed :skills="futuretalkSkills" v-once />
+            <SkillsUsed
+              labelledby="developer-futuretalk-heading"
+              :skills="futuretalkSkills"
+              v-once
+            />
           </Suspense>
           <div class="w-full sm:w-3/4">
             <div class="flex justify-between gap-2 my-8">
@@ -246,6 +251,7 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                 Tim R. Lai Design & Development
               </h2>
               <h3
+                id="developer-timrlai-heading"
                 class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
               >
                 <Icon
@@ -372,7 +378,11 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
             </Suspense>
           </div>
           <Suspense>
-            <SkillsUsed :skills="freelanceSkills" v-once />
+            <SkillsUsed
+              labelledby="developer-timrlai-heading"
+              :skills="freelanceSkills"
+              v-once
+            />
           </Suspense>
         </div>
       </div>

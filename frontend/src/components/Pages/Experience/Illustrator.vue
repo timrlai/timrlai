@@ -46,6 +46,7 @@ const { AVATAR_ILLUSTRATOR_LOTTIE_PATH } = lottieConstants;
                 Tim R. Lai Illustration
               </h2>
               <h3
+                id="illustrator-timrlai-heading"
                 class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
               >
                 <Icon
@@ -194,7 +195,11 @@ const { AVATAR_ILLUSTRATOR_LOTTIE_PATH } = lottieConstants;
             </Suspense>
           </div>
           <Suspense>
-            <SkillsUsed :skills="illustratorSkills" v-once />
+            <SkillsUsed
+              labelledby="illustrator-timrlai-heading"
+              :skills="illustratorSkills"
+              v-once
+            />
           </Suspense>
         </div>
       </div>
