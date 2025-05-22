@@ -31,10 +31,16 @@ const {
         <Icon icon="mingcute:document-2-fill" class="inline-block h-[1em]" />
         Experience
       </h1>
-      <div class="relative flex flex-wrap justify-between items-center gap-4">
+      <div class="flex flex-wrap justify-between items-center gap-4">
         <div class="flex flex-col items-center w-full md:w-1/4">
-          <RouterLink to="/experience#developer" hash="developer">
-            <div class="mask mask-squircle glass w-2xs h-2xs bg-primary">
+          <RouterLink
+            to="/experience#developer"
+            hash="developer"
+            class="experience-link"
+          >
+            <div
+              class="lottie-box mask mask-squircle glass w-2xs h-2xs bg-primary -mb-10"
+            >
               <div class="-mb-30">
                 <Suspense>
                   <LottiePlayer
@@ -45,16 +51,21 @@ const {
                 </Suspense>
               </div>
             </div>
-            <h2
-              class="absolute top-10 left-0 -rotate-45 text-3xl text-center ubuntu-titling"
-            >
+            <h2 class="text-3xl text-center ubuntu-titling">
+              <Icon icon="mingcute:code-fill" class="inline-block h-[1em]" />
               Developer
             </h2>
           </RouterLink>
         </div>
-        <div class="relative flex flex-col items-center w-full md:w-1/4">
-          <RouterLink to="/experience#teacher" hash="teacher">
-            <div class="mask mask-squircle glass w-2xs h-2xs bg-primary">
+        <div class="flex flex-col items-center w-full md:w-1/4">
+          <RouterLink
+            to="/experience#teacher"
+            hash="teacher"
+            class="experience-link"
+          >
+            <div
+              class="lottie-box mask mask-squircle glass w-2xs h-2xs bg-primary -mb-3"
+            >
               <div class="-ml-30 -mb-30">
                 <Suspense>
                   <LottiePlayer
@@ -65,16 +76,21 @@ const {
                 </Suspense>
               </div>
             </div>
-            <h2
-              class="absolute top-5 left-0 -rotate-45 text-3xl text-center ubuntu-titling"
-            >
+            <h2 class="text-3xl text-center ubuntu-titling">
+              <Icon icon="mingcute:school-fill" class="inline-block h-[1em]" />
               Teacher
             </h2>
           </RouterLink>
         </div>
-        <div class="relative flex flex-col items-center w-full md:w-1/4">
-          <RouterLink to="/experience#designer" hash="designer">
-            <div class="mask mask-squircle glass w-2xs h-2xs bg-primary">
+        <div class="flex flex-col items-center w-full md:w-1/4">
+          <RouterLink
+            to="/experience#designer"
+            hash="designer"
+            class="experience-link"
+          >
+            <div
+              class="lottie-box mask mask-squircle glass w-2xs h-2xs bg-primary mt-10 mb-5"
+            >
               <div class="-mb-30">
                 <Suspense>
                   <LottiePlayer
@@ -85,16 +101,21 @@ const {
                 </Suspense>
               </div>
             </div>
-            <h2
-              class="absolute top-0 left-0 -rotate-45 text-3xl text-center ubuntu-titling"
-            >
+            <h2 class="text-3xl text-center ubuntu-titling">
+              <Icon icon="mingcute:palette-fill" class="inline-block h-[1em]" />
               Designer
             </h2>
           </RouterLink>
         </div>
-        <div class="relative flex flex-col items-center w-full md:w-1/4">
-          <RouterLink to="/experience#illustrator" hash="illustrator">
-            <div class="mask mask-squircle glass w-2xs h-2xs bg-primary">
+        <div class="flex flex-col items-center w-full md:w-1/4">
+          <RouterLink
+            to="/experience#illustrator"
+            hash="illustrator"
+            class="experience-link"
+          >
+            <div
+              class="lottie-box mask mask-squircle glass w-2xs h-2xs bg-primary mt-10 mb-5"
+            >
               <div class="-mb-30">
                 <Suspense>
                   <LottiePlayer
@@ -105,16 +126,24 @@ const {
                 </Suspense>
               </div>
             </div>
-            <h2
-              class="absolute top-0 left-0 -rotate-45 text-3xl text-center ubuntu-titling"
-            >
+            <h2 class="text-3xl text-center ubuntu-titling">
+              <Icon
+                icon="mingcute:paint-brush-fill"
+                class="inline-block h-[1em]"
+              />
               Illustrator
             </h2>
           </RouterLink>
         </div>
-        <div class="relative flex flex-col items-center w-full md:w-1/4">
-          <RouterLink to="/experience#education" hash="education">
-            <div class="mask mask-squircle glass w-2xs h-2xs bg-primary">
+        <div class="flex flex-col items-center w-full md:w-1/4">
+          <RouterLink
+            to="/experience#education"
+            hash="education"
+            class="experience-link"
+          >
+            <div
+              class="lottie-box mask mask-squircle glass w-2xs h-2xs bg-primary -mt-20 -mb-25"
+            >
               <div class="-mb-30">
                 <Suspense>
                   <LottiePlayer
@@ -125,16 +154,24 @@ const {
                 </Suspense>
               </div>
             </div>
-            <h2
-              class="absolute top-25 left-0 -rotate-45 text-3xl text-center ubuntu-titling"
-            >
+            <h2 class="text-3xl text-center ubuntu-titling">
+              <Icon
+                icon="mingcute:mortarboard-fill"
+                class="inline-block h-[1em]"
+              />
               Education
             </h2>
           </RouterLink>
         </div>
-        <div class="relative flex flex-col items-center w-full md:w-1/4">
-          <RouterLink to="/experience#volunteer" hash="volunteer">
-            <div class="mask mask-squircle glass w-2xs h-2xs bg-primary">
+        <div class="flex flex-col items-center w-full md:w-1/4">
+          <RouterLink
+            to="/experience#volunteer"
+            hash="volunteer"
+            class="experience-link"
+          >
+            <div
+              class="lottie-box mask mask-squircle glass w-2xs h-2xs bg-primary -mb-5"
+            >
               <div class="-mb-30">
                 <Suspense>
                   <LottiePlayer
@@ -145,15 +182,17 @@ const {
                 </Suspense>
               </div>
             </div>
-            <h2
-              class="absolute top-5 left-0 -rotate-45 text-3xl text-center ubuntu-titling"
-            >
+            <h2 class="text-3xl text-center ubuntu-titling">
+              <Icon
+                icon="mingcute:hand-heart-fill"
+                class="inline-block h-[1em]"
+              />
               Volunteer
             </h2>
           </RouterLink>
         </div>
       </div>
-      <div class="pb-5">
+      <div class="pt-20 pb-5">
         <RouterLink
           to="/experience"
           hash="#"
@@ -166,4 +205,20 @@ const {
   </section>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+$hover-color: oklch(44% 0.14 42);
+$transition: all 0.7s;
+
+.experience-link {
+  &:hover {
+    .lottie-box {
+      background: $hover-color;
+      transition: $transition;
+    }
+    h2 {
+      color: $hover-color;
+      transition: $transition;
+    }
+  }
+}
+</style>
