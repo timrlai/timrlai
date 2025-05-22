@@ -110,7 +110,7 @@ const randomizedSkills = [...primarySkills]
       <p class="code-comment-block text-lg/8 sm:text-xl/10">
         Expand the below table to see all of my technical skills.
       </p>
-      <Lazy>
+      <Lazy :min-height="60">
         <SkillsTable />
       </Lazy>
       <div class="mt-8">

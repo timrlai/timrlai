@@ -20,7 +20,7 @@ const PageFooter = defineAsyncComponent(
       <RouterView />
     </Suspense>
   </div>
-  <Lazy
+  <Lazy :min-height="500"
     ><Suspense><PageFooter v-once /></Suspense
   ></Lazy>
 </template>
