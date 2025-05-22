@@ -2,6 +2,7 @@
 import { defineAsyncComponent } from "vue";
 import { RouterView } from "vue-router";
 
+const Lazy = defineAsyncComponent(() => import("./components/Common/Lazy.vue"));
 const PageHeader = defineAsyncComponent(
   () => import("./components/Layout/PageHeader.vue"),
 );
@@ -19,9 +20,9 @@ const PageFooter = defineAsyncComponent(
       <RouterView />
     </Suspense>
   </div>
-  <Suspense>
-    <PageFooter v-once />
-  </Suspense>
+  <Lazy :min-height="400"
+    ><Suspense><PageFooter v-once /></Suspense
+  ></Lazy>
 </template>
 
 <style scoped></style>

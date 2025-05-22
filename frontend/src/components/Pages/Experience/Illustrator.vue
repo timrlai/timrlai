@@ -8,6 +8,7 @@ const headSvgPath = await import(
   "../../../assets/img/icons/timrlai_head_trans_bg.svg"
 );
 
+const Lazy = defineAsyncComponent(() => import("../../Common/Lazy.vue"));
 const LottiePlayer = defineAsyncComponent(
   () => import("../../Common/LottiePlayer.vue"),
 );
@@ -194,13 +195,15 @@ const { AVATAR_ILLUSTRATOR_LOTTIE_PATH } = lottieConstants;
               />
             </Suspense>
           </div>
-          <Suspense>
-            <SkillsUsed
-              labelledby="illustrator-timrlai-heading"
-              :skills="illustratorSkills"
-              v-once
-            />
-          </Suspense>
+          <Lazy :min-height="200">
+            <Suspense>
+              <SkillsUsed
+                labelledby="illustrator-timrlai-heading"
+                :skills="illustratorSkills"
+                v-once
+              />
+            </Suspense>
+          </Lazy>
         </div>
       </div>
     </div>

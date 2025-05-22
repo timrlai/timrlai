@@ -12,6 +12,7 @@ const headSvgPath = await import(
   "../../../assets/img/icons/timrlai_head_trans_bg.svg"
 );
 
+const Lazy = defineAsyncComponent(() => import("../../Common/Lazy.vue"));
 const LottiePlayer = defineAsyncComponent(
   () => import("../../Common/LottiePlayer.vue"),
 );
@@ -193,22 +194,26 @@ const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                 >Futuretalk Inc.</a
               >
             </p>
+            <Lazy :min-height="500">
+              <Suspense>
+                <VimeoVideo
+                  :videoId="1022236072"
+                  :appId="58479"
+                  title="Learn With Trek"
+                  v-once
+                />
+              </Suspense>
+            </Lazy>
+          </div>
+          <Lazy :min-height="200">
             <Suspense>
-              <VimeoVideo
-                :videoId="1022236072"
-                :appId="58479"
-                title="Learn With Trek"
+              <SkillsUsed
+                labelledby="designer-futuretalk-heading"
+                :skills="futuretalkSkills"
                 v-once
               />
             </Suspense>
-          </div>
-          <Suspense>
-            <SkillsUsed
-              labelledby="designer-futuretalk-heading"
-              :skills="futuretalkSkills"
-              v-once
-            />
-          </Suspense>
+          </Lazy>
           <div class="w-full sm:w-2/3">
             <div class="flex justify-between gap-2 my-8">
               <h2
@@ -359,13 +364,15 @@ const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
               />
             </Suspense>
           </div>
-          <Suspense>
-            <SkillsUsed
-              labelledby="designer-timrlai-heading"
-              :skills="freelanceSkills"
-              v-once
-            />
-          </Suspense>
+          <Lazy :min-height="200">
+            <Suspense>
+              <SkillsUsed
+                labelledby="designer-timrlai-heading"
+                :skills="freelanceSkills"
+                v-once
+              />
+            </Suspense>
+          </Lazy>
         </div>
       </div>
     </div>
