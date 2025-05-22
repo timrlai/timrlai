@@ -4,6 +4,7 @@ import { Icon } from "@iconify/vue";
 
 import { lottieConstants, educationSkills } from "../../../../lib/constants";
 
+const Lazy = defineAsyncComponent(() => import("../../Common/Lazy.vue"));
 const LottiePlayer = defineAsyncComponent(
   () => import("../../Common/LottiePlayer.vue"),
 );
@@ -59,13 +60,15 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 2019 to 2023
               </h3>
             </div>
-            <Suspense>
-              <SkillsUsed
-                labelledby="education-bsd-heading"
-                :skills="educationSkills.bsd"
-                v-once
-              />
-            </Suspense>
+            <Lazy :min-height="200">
+              <Suspense>
+                <SkillsUsed
+                  labelledby="education-bsd-heading"
+                  :skills="educationSkills.bsd"
+                  v-once
+                />
+              </Suspense>
+            </Lazy>
             <div class="flex justify-between gap-2 my-8">
               <h2
                 class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-60 sm:h-auto w-2xs sm:w-sm"
@@ -126,13 +129,15 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 2016 to 2017
               </h3>
             </div>
-            <Suspense>
-              <SkillsUsed
-                labelledby="education-it-heading"
-                :skills="educationSkills.it"
-                v-once
-              />
-            </Suspense>
+            <Lazy :min-height="200">
+              <Suspense>
+                <SkillsUsed
+                  labelledby="education-it-heading"
+                  :skills="educationSkills.it"
+                  v-once
+                />
+              </Suspense>
+            </Lazy>
             <div class="flex justify-between gap-2 my-8">
               <h2
                 class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-60 sm:h-auto w-2xs sm:w-sm"
@@ -165,13 +170,15 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
               </h3>
             </div>
             <div class="mb-8">
-              <Suspense>
-                <SkillsUsed
-                  labelledby="education-webmaster-heading"
-                  :skills="educationSkills.web"
-                  v-once
-                />
-              </Suspense>
+              <Lazy :min-height="200">
+                <Suspense>
+                  <SkillsUsed
+                    labelledby="education-webmaster-heading"
+                    :skills="educationSkills.web"
+                    v-once
+                  />
+                </Suspense>
+              </Lazy>
             </div>
             <div class="flex justify-between gap-2 mb-8">
               <h2
@@ -203,13 +210,15 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 2013 to 2015
               </h3>
             </div>
-            <Suspense>
-              <SkillsUsed
-                labelledby="education-illustration-heading"
-                :skills="educationSkills.ilu"
-                v-once
-              />
-            </Suspense>
+            <Lazy :min-height="200">
+              <Suspense>
+                <SkillsUsed
+                  labelledby="education-illustration-heading"
+                  :skills="educationSkills.ilu"
+                  v-once
+                />
+              </Suspense>
+            </Lazy>
             <div class="flex justify-between gap-2 my-8">
               <h2
                 class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-60 sm:h-auto w-2xs sm:w-sm"
@@ -240,13 +249,15 @@ const { AVATAR_EDUCATION_LOTTIE_PATH } = lottieConstants;
                 2012
               </h3>
             </div>
-            <Suspense>
-              <SkillsUsed
-                labelledby="education-afd-heading"
-                :skills="educationSkills.afd"
-                v-once
-              />
-            </Suspense>
+            <Lazy :min-height="200">
+              <Suspense>
+                <SkillsUsed
+                  labelledby="education-afd-heading"
+                  :skills="educationSkills.afd"
+                  v-once
+                />
+              </Suspense>
+            </Lazy>
           </div>
           <div class="w-full sm:w-1/4 pl-4 sm:-mt-40">
             <Suspense>
