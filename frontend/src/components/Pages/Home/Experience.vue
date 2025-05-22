@@ -32,12 +32,14 @@ const {
         Experience
       </h1>
       <div class="flex flex-wrap justify-between items-center gap-4">
-        <div
-          class="flex flex-col items-center w-full md:w-1/4 hover:text-accent transition-colors"
-        >
-          <RouterLink to="/experience#developer" hash="developer">
+        <div class="flex flex-col items-center w-full md:w-1/4">
+          <RouterLink
+            to="/experience#developer"
+            hash="developer"
+            class="experience-link"
+          >
             <div
-              class="mask mask-squircle glass w-2xs h-2xs bg-primary hover:bg-accent transition-colors -mb-10"
+              class="lottie-box mask mask-squircle glass w-2xs h-2xs bg-primary -mb-10"
             >
               <div class="-mb-30">
                 <Suspense>
@@ -55,12 +57,14 @@ const {
             </h2>
           </RouterLink>
         </div>
-        <div
-          class="flex flex-col items-center w-full md:w-1/4 hover:text-accent transition-colors"
-        >
-          <RouterLink to="/experience#teacher" hash="teacher">
+        <div class="flex flex-col items-center w-full md:w-1/4">
+          <RouterLink
+            to="/experience#teacher"
+            hash="teacher"
+            class="experience-link"
+          >
             <div
-              class="mask mask-squircle glass w-2xs h-2xs bg-primary hover:bg-accent transition-colors -mb-3"
+              class="lottie-box mask mask-squircle glass w-2xs h-2xs bg-primary -mb-3"
             >
               <div class="-ml-30 -mb-30">
                 <Suspense>
@@ -78,12 +82,14 @@ const {
             </h2>
           </RouterLink>
         </div>
-        <div
-          class="flex flex-col items-center w-full md:w-1/4 hover:text-accent transition-colors"
-        >
-          <RouterLink to="/experience#designer" hash="designer">
+        <div class="flex flex-col items-center w-full md:w-1/4">
+          <RouterLink
+            to="/experience#designer"
+            hash="designer"
+            class="experience-link"
+          >
             <div
-              class="mask mask-squircle glass w-2xs h-2xs bg-primary hover:bg-accent transition-colors mt-10 mb-5"
+              class="lottie-box mask mask-squircle glass w-2xs h-2xs bg-primary mt-10 mb-5"
             >
               <div class="-mb-30">
                 <Suspense>
@@ -101,12 +107,14 @@ const {
             </h2>
           </RouterLink>
         </div>
-        <div
-          class="flex flex-col items-center w-full md:w-1/4 hover:text-accent transition-colors"
-        >
-          <RouterLink to="/experience#illustrator" hash="illustrator">
+        <div class="flex flex-col items-center w-full md:w-1/4">
+          <RouterLink
+            to="/experience#illustrator"
+            hash="illustrator"
+            class="experience-link"
+          >
             <div
-              class="mask mask-squircle glass w-2xs h-2xs bg-primary hover:bg-accent transition-colors mt-10 mb-5"
+              class="lottie-box mask mask-squircle glass w-2xs h-2xs bg-primary mt-10 mb-5"
             >
               <div class="-mb-30">
                 <Suspense>
@@ -127,12 +135,14 @@ const {
             </h2>
           </RouterLink>
         </div>
-        <div
-          class="flex flex-col items-center w-full md:w-1/4 hover:text-accent transition-colors"
-        >
-          <RouterLink to="/experience#education" hash="education">
+        <div class="flex flex-col items-center w-full md:w-1/4">
+          <RouterLink
+            to="/experience#education"
+            hash="education"
+            class="experience-link"
+          >
             <div
-              class="mask mask-squircle glass w-2xs h-2xs bg-primary hover:bg-accent transition-colors -mt-20 -mb-25"
+              class="lottie-box mask mask-squircle glass w-2xs h-2xs bg-primary -mt-20 -mb-25"
             >
               <div class="-mb-30">
                 <Suspense>
@@ -153,12 +163,14 @@ const {
             </h2>
           </RouterLink>
         </div>
-        <div
-          class="flex flex-col items-center w-full md:w-1/4 hover:text-accent transition-colors"
-        >
-          <RouterLink to="/experience#volunteer" hash="volunteer">
+        <div class="flex flex-col items-center w-full md:w-1/4">
+          <RouterLink
+            to="/experience#volunteer"
+            hash="volunteer"
+            class="experience-link"
+          >
             <div
-              class="mask mask-squircle glass w-2xs h-2xs bg-primary hover:bg-accent transition-colors -mb-5"
+              class="lottie-box mask mask-squircle glass w-2xs h-2xs bg-primary -mb-5"
             >
               <div class="-mb-30">
                 <Suspense>
@@ -193,4 +205,20 @@ const {
   </section>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+$hover-color: oklch(44% 0.14 42);
+$transition: all 0.7s;
+
+.experience-link {
+  &:hover {
+    .lottie-box {
+      background: $hover-color;
+      transition: $transition;
+    }
+    h2 {
+      color: $hover-color;
+      transition: $transition;
+    }
+  }
+}
+</style>
