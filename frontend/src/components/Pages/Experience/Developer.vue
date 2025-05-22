@@ -12,6 +12,7 @@ const headSvgPath = await import(
   "../../../assets/img/icons/timrlai_head_trans_bg.svg"
 );
 
+const Lazy = defineAsyncComponent(() => import("../../Common/Lazy.vue"));
 const LottiePlayer = defineAsyncComponent(
   () => import("../../Common/LottiePlayer.vue"),
 );
@@ -231,13 +232,15 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
               </Suspense>
             </Lazy>
           </div>
-          <Suspense>
-            <SkillsUsed
-              labelledby="developer-futuretalk-heading"
-              :skills="futuretalkSkills"
-              v-once
-            />
-          </Suspense>
+          <Lazy :min-height="200">
+            <Suspense>
+              <SkillsUsed
+                labelledby="developer-futuretalk-heading"
+                :skills="futuretalkSkills"
+                v-once
+              />
+            </Suspense>
+          </Lazy>
           <div class="w-full sm:w-3/4">
             <div class="flex justify-between gap-2 my-8">
               <h2
@@ -380,13 +383,15 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
               />
             </Suspense>
           </div>
-          <Suspense>
-            <SkillsUsed
-              labelledby="developer-timrlai-heading"
-              :skills="freelanceSkills"
-              v-once
-            />
-          </Suspense>
+          <Lazy :min-height="200">
+            <Suspense>
+              <SkillsUsed
+                labelledby="developer-timrlai-heading"
+                :skills="freelanceSkills"
+                v-once
+              />
+            </Suspense>
+          </Lazy>
         </div>
       </div>
     </div>

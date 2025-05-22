@@ -4,6 +4,7 @@ import { Icon } from "@iconify/vue";
 
 import { lottieConstants, taafiSkills } from "../../../../lib/constants";
 
+const Lazy = defineAsyncComponent(() => import("../../Common/Lazy.vue"));
 const LottiePlayer = defineAsyncComponent(
   () => import("../../Common/LottiePlayer.vue"),
 );
@@ -141,13 +142,15 @@ const { AVATAR_VOLUNTEER_LOTTIE_PATH } = lottieConstants;
                 </div>
               </li>
             </ul>
-            <Suspense>
-              <SkillsUsed
-                labelledby="volunteer-taafi-heading"
-                :skills="taafiSkills"
-                v-once
-              />
-            </Suspense>
+            <Lazy :min-height="200">
+              <Suspense>
+                <SkillsUsed
+                  labelledby="volunteer-taafi-heading"
+                  :skills="taafiSkills"
+                  v-once
+                />
+              </Suspense>
+            </Lazy>
           </div>
           <div class="w-full sm:w-1/4">
             <Suspense>

@@ -12,6 +12,7 @@ const senecaChalkboardSvgPath = await import(
   "../../../assets/img/props/seneca_chalkboard.svg"
 );
 
+const Lazy = defineAsyncComponent(() => import("../../Common/Lazy.vue"));
 const LottiePlayer = defineAsyncComponent(
   () => import("../../Common/LottiePlayer.vue"),
 );
@@ -179,13 +180,15 @@ const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
               </div>
             </div>
           </div>
-          <Suspense>
-            <SkillsUsed
-              labelledby="teacher-instructor-heading"
-              :skills="instructorSkills"
-              v-once
-            />
-          </Suspense>
+          <Lazy :min-height="200">
+            <Suspense>
+              <SkillsUsed
+                labelledby="teacher-instructor-heading"
+                :skills="instructorSkills"
+                v-once
+              />
+            </Suspense>
+          </Lazy>
           <div class="w-full sm:w-2/3">
             <div class="flex justify-between gap-2 my-8">
               <h2
@@ -264,13 +267,15 @@ const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
               </li>
             </ul>
           </div>
-          <Suspense>
-            <SkillsUsed
-              labelledby="teacher-technologist-heading"
-              :skills="technologistSeniorSkills"
-              v-once
-            />
-          </Suspense>
+          <Lazy :min-height="200">
+            <Suspense>
+              <SkillsUsed
+                labelledby="teacher-technologist-heading"
+                :skills="technologistSeniorSkills"
+                v-once
+              />
+            </Suspense>
+          </Lazy>
         </div>
       </div>
     </div>

@@ -205,13 +205,15 @@ const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
               </Suspense>
             </Lazy>
           </div>
-          <Suspense>
-            <SkillsUsed
-              labelledby="designer-futuretalk-heading"
-              :skills="futuretalkSkills"
-              v-once
-            />
-          </Suspense>
+          <Lazy :min-height="200">
+            <Suspense>
+              <SkillsUsed
+                labelledby="designer-futuretalk-heading"
+                :skills="futuretalkSkills"
+                v-once
+              />
+            </Suspense>
+          </Lazy>
           <div class="w-full sm:w-2/3">
             <div class="flex justify-between gap-2 my-8">
               <h2
@@ -362,13 +364,15 @@ const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
               />
             </Suspense>
           </div>
-          <Suspense>
-            <SkillsUsed
-              labelledby="designer-timrlai-heading"
-              :skills="freelanceSkills"
-              v-once
-            />
-          </Suspense>
+          <Lazy :min-height="200">
+            <Suspense>
+              <SkillsUsed
+                labelledby="designer-timrlai-heading"
+                :skills="freelanceSkills"
+                v-once
+              />
+            </Suspense>
+          </Lazy>
         </div>
       </div>
     </div>
