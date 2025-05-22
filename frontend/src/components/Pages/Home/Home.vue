@@ -8,6 +8,7 @@ const LogoCanvas = defineAsyncComponent(
 const Hi = defineAsyncComponent(() => import("./Hi.vue"));
 const Summary = defineAsyncComponent(() => import("./Summary.vue"));
 const Skills = defineAsyncComponent(() => import("./Skills.vue"));
+const Experience = defineAsyncComponent(() => import("./Experience.vue"));
 </script>
 
 <template>
@@ -33,6 +34,11 @@ const Skills = defineAsyncComponent(() => import("./Skills.vue"));
     <Lazy :min-height="2000">
       <Suspense>
         <Skills v-once />
+      </Suspense>
+    </Lazy>
+    <Lazy :min-height="1000">
+      <Suspense>
+        <Experience v-once />
       </Suspense>
     </Lazy>
   </main>
