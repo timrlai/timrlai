@@ -22,10 +22,14 @@ const SoftSkills = defineAsyncComponent(() => import("./SoftSkills.vue"));
       </h1>
     </div>
     <Lazy>
-      <TechnicalSkills />
+      <Suspense>
+        <TechnicalSkills />
+      </Suspense>
     </Lazy>
     <Lazy>
-      <SoftSkills />
+      <Suspense>
+        <SoftSkills />
+      </Suspense>
     </Lazy>
   </section>
 </template>
