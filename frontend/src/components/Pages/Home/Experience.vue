@@ -25,7 +25,7 @@ const {
     id="experience"
     class="mockup-window bg-secondary text-secondary-content border-4 border-primary shadow-lg shadow-primary"
   >
-    <Lazy :min-height="2000">
+    <Lazy :min-height="1000">
       <div class="px-5">
         <h1
           class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase ubuntu-titling border-b-4 border-primary mb-4"
