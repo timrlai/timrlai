@@ -194,7 +194,7 @@ const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                 >Futuretalk Inc.</a
               >
             </p>
-            <Lazy :min-height="500">
+            <Lazy :min-height="200">
               <Suspense>
                 <VimeoVideo
                   :videoId="1022236072"

@@ -57,6 +57,12 @@ export const meetSubItems: SubItem[] = [
     hash: "skills",
     icon: "mingcute:code-fill",
   },
+  {
+    label: "Experience",
+    to: "/",
+    hash: "experience",
+    icon: "mingcute:document-2-fill",
+  },
 ];
 
 export const experienceSubItems: SubItem[] = [
