@@ -97,6 +97,8 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
+          style: ["src/css/style.css"],
+          print: ["src/css/print.css"],
           vue: ["vue", "vue-router"],
           three: ["three"],
           tres: ["@tresjs/core", "@tresjs/cientos"],
