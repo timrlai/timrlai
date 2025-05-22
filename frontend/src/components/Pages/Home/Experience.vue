@@ -32,9 +32,13 @@ const {
         Experience
       </h1>
       <div class="flex flex-wrap justify-between items-center gap-4">
-        <div class="flex flex-col items-center w-full md:w-1/4">
+        <div
+          class="flex flex-col items-center w-full md:w-1/4 hover:text-accent transition-colors"
+        >
           <RouterLink to="/experience#developer" hash="developer">
-            <div class="mask mask-squircle glass w-2xs h-2xs bg-primary -mb-10">
+            <div
+              class="mask mask-squircle glass w-2xs h-2xs bg-primary hover:bg-accent transition-colors -mb-10"
+            >
               <div class="-mb-30">
                 <Suspense>
                   <LottiePlayer
@@ -51,9 +55,13 @@ const {
             </h2>
           </RouterLink>
         </div>
-        <div class="flex flex-col items-center w-full md:w-1/4">
+        <div
+          class="flex flex-col items-center w-full md:w-1/4 hover:text-accent transition-colors"
+        >
           <RouterLink to="/experience#teacher" hash="teacher">
-            <div class="mask mask-squircle glass w-2xs h-2xs bg-primary -mb-3">
+            <div
+              class="mask mask-squircle glass w-2xs h-2xs bg-primary hover:bg-accent transition-colors -mb-3"
+            >
               <div class="-ml-30 -mb-30">
                 <Suspense>
                   <LottiePlayer
@@ -70,10 +78,12 @@ const {
             </h2>
           </RouterLink>
         </div>
-        <div class="flex flex-col items-center w-full md:w-1/4">
+        <div
+          class="flex flex-col items-center w-full md:w-1/4 hover:text-accent transition-colors"
+        >
           <RouterLink to="/experience#designer" hash="designer">
             <div
-              class="mask mask-squircle glass w-2xs h-2xs bg-primary mt-10 mb-5"
+              class="mask mask-squircle glass w-2xs h-2xs bg-primary hover:bg-accent transition-colors mt-10 mb-5"
             >
               <div class="-mb-30">
                 <Suspense>
@@ -91,10 +101,12 @@ const {
             </h2>
           </RouterLink>
         </div>
-        <div class="flex flex-col items-center w-full md:w-1/4">
+        <div
+          class="flex flex-col items-center w-full md:w-1/4 hover:text-accent transition-colors"
+        >
           <RouterLink to="/experience#illustrator" hash="illustrator">
             <div
-              class="mask mask-squircle glass w-2xs h-2xs bg-primary mt-10 mb-5"
+              class="mask mask-squircle glass w-2xs h-2xs bg-primary hover:bg-accent transition-colors mt-10 mb-5"
             >
               <div class="-mb-30">
                 <Suspense>
@@ -115,10 +127,12 @@ const {
             </h2>
           </RouterLink>
         </div>
-        <div class="flex flex-col items-center w-full md:w-1/4">
+        <div
+          class="flex flex-col items-center w-full md:w-1/4 hover:text-accent transition-colors"
+        >
           <RouterLink to="/experience#education" hash="education">
             <div
-              class="mask mask-squircle glass w-2xs h-2xs bg-primary -mt-20 -mb-25"
+              class="mask mask-squircle glass w-2xs h-2xs bg-primary hover:bg-accent transition-colors -mt-20 -mb-25"
             >
               <div class="-mb-30">
                 <Suspense>
@@ -139,9 +153,13 @@ const {
             </h2>
           </RouterLink>
         </div>
-        <div class="flex flex-col items-center w-full md:w-1/4">
+        <div
+          class="flex flex-col items-center w-full md:w-1/4 hover:text-accent transition-colors"
+        >
           <RouterLink to="/experience#volunteer" hash="volunteer">
-            <div class="mask mask-squircle glass w-2xs h-2xs bg-primary -mb-5">
+            <div
+              class="mask mask-squircle glass w-2xs h-2xs bg-primary hover:bg-accent transition-colors -mb-5"
+            >
               <div class="-mb-30">
                 <Suspense>
                   <LottiePlayer
