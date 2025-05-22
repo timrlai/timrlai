@@ -220,14 +220,16 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                 >Futuretalk Inc.</a
               >
             </p>
-            <Suspense>
-              <VimeoVideo
-                :videoId="1022236072"
-                :appId="58479"
-                title="Learn With Trek"
-                v-once
-              />
-            </Suspense>
+            <Lazy :min-height="500">
+              <Suspense>
+                <VimeoVideo
+                  :videoId="1022236072"
+                  :appId="58479"
+                  title="Learn With Trek"
+                  v-once
+                />
+              </Suspense>
+            </Lazy>
           </div>
           <Suspense>
             <SkillsUsed

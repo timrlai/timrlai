@@ -12,6 +12,7 @@ const headSvgPath = await import(
   "../../../assets/img/icons/timrlai_head_trans_bg.svg"
 );
 
+const Lazy = defineAsyncComponent(() => import("../../Common/Lazy.vue"));
 const LottiePlayer = defineAsyncComponent(
   () => import("../../Common/LottiePlayer.vue"),
 );
@@ -193,14 +194,16 @@ const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                 >Futuretalk Inc.</a
               >
             </p>
-            <Suspense>
-              <VimeoVideo
-                :videoId="1022236072"
-                :appId="58479"
-                title="Learn With Trek"
-                v-once
-              />
-            </Suspense>
+            <Lazy :min-height="500">
+              <Suspense>
+                <VimeoVideo
+                  :videoId="1022236072"
+                  :appId="58479"
+                  title="Learn With Trek"
+                  v-once
+                />
+              </Suspense>
+            </Lazy>
           </div>
           <Suspense>
             <SkillsUsed
