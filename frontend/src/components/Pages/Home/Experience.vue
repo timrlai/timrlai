@@ -45,7 +45,10 @@ const {
                 </Suspense>
               </div>
             </div>
-            <h2 class="text-3xl text-center ubuntu-titling">Developer</h2>
+            <h2 class="text-3xl text-center ubuntu-titling">
+              <Icon icon="mingcute:code-fill" class="inline-block h-[1em]" />
+              Developer
+            </h2>
           </RouterLink>
         </div>
         <div class="flex flex-col items-center w-full md:w-1/4">
@@ -61,7 +64,10 @@ const {
                 </Suspense>
               </div>
             </div>
-            <h2 class="text-3xl text-center ubuntu-titling">Teacher</h2>
+            <h2 class="text-3xl text-center ubuntu-titling">
+              <Icon icon="mingcute:school-fill" class="inline-block h-[1em]" />
+              Teacher
+            </h2>
           </RouterLink>
         </div>
         <div class="flex flex-col items-center w-full md:w-1/4">
@@ -79,7 +85,10 @@ const {
                 </Suspense>
               </div>
             </div>
-            <h2 class="text-3xl text-center ubuntu-titling">Designer</h2>
+            <h2 class="text-3xl text-center ubuntu-titling">
+              <Icon icon="mingcute:palette-fill" class="inline-block h-[1em]" />
+              Designer
+            </h2>
           </RouterLink>
         </div>
         <div class="flex flex-col items-center w-full md:w-1/4">
@@ -97,7 +106,13 @@ const {
                 </Suspense>
               </div>
             </div>
-            <h2 class="text-3xl text-center ubuntu-titling">Illustrator</h2>
+            <h2 class="text-3xl text-center ubuntu-titling">
+              <Icon
+                icon="mingcute:paint-brush-fill"
+                class="inline-block h-[1em]"
+              />
+              Illustrator
+            </h2>
           </RouterLink>
         </div>
         <div class="flex flex-col items-center w-full md:w-1/4">
@@ -115,7 +130,13 @@ const {
                 </Suspense>
               </div>
             </div>
-            <h2 class="text-3xl text-center ubuntu-titling">Education</h2>
+            <h2 class="text-3xl text-center ubuntu-titling">
+              <Icon
+                icon="mingcute:mortarboard-fill"
+                class="inline-block h-[1em]"
+              />
+              Education
+            </h2>
           </RouterLink>
         </div>
         <div class="flex flex-col items-center w-full md:w-1/4">
@@ -131,7 +152,13 @@ const {
                 </Suspense>
               </div>
             </div>
-            <h2 class="text-3xl text-center ubuntu-titling">Volunteer</h2>
+            <h2 class="text-3xl text-center ubuntu-titling">
+              <Icon
+                icon="mingcute:hand-heart-fill"
+                class="inline-block h-[1em]"
+              />
+              Volunteer
+            </h2>
           </RouterLink>
         </div>
       </div>
