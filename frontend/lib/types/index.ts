@@ -1,5 +1,12 @@
 import type { CanvasTexture, Wrapping, Side } from "three";
 
+export type ScrollPosition = {
+  el?: string | Element;
+  left?: number;
+  top?: number;
+  behavior?: "auto" | "instant" | "smooth";
+};
+
 export type ColorKind =
   | "neutral"
   | "primary"
@@ -27,6 +34,7 @@ export type SocialButton = {
 };
 
 export type SocialButtonsProps = {
+  location?: "header" | "footer";
   buttonColor?: ColorKind;
   tooltipColor?: ColorKind;
   tooltipPosition?: TooltipPosition;

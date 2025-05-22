@@ -7,8 +7,8 @@ import {
   onUnmounted,
   watchEffect,
 } from "vue";
-import type { Scene } from "three";
 import isMobile from "is-mobile";
+import { type Scene, LinearSRGBColorSpace } from "three";
 import { TresCanvas } from "@tresjs/core";
 import { useGLTF, OrbitControls, Text3D, Box } from "@tresjs/cientos";
 
@@ -356,16 +356,23 @@ watchEffect(() => {
     ></div>
     <h1 class="visually-hidden">Tim R. Lai</h1>
     <h2 class="visually-hidden">A full stack team in one Tim!</h2>
-    <TresCanvas :key="canvasKey" :clear-color="CANVAS_COLOR" shadows alpha>
+    <TresCanvas
+      :key="canvasKey"
+      :clear-color="CANVAS_COLOR"
+      :output-color-space="LinearSRGBColorSpace"
+      :tone-mapping-exposure="1.2"
+      shadows
+      alpha
+    >
       <TresPerspectiveCamera :position="[0, 0, 1]" />
       <OrbitControls
         v-if="!(isLandscape && isMobileOrTablet)"
-        :minDistance="0"
-        :maxDistance="Infinity"
-        :minPolarAngle="0"
-        :maxPolarAngle="Math.PI / VERTICAL_ROTATION_LIMIT"
-        :minAzimuthAngle="-(Math.PI / HORIZONTAL_ROTATION_LIMIT)"
-        :maxAzimuthAngle="Math.PI / HORIZONTAL_ROTATION_LIMIT"
+        :min-distance="0"
+        :max-distance="Infinity"
+        :min-polar-angle="0"
+        :max-polar-angle="Math.PI / VERTICAL_ROTATION_LIMIT"
+        :min-azimuth-angle="-(Math.PI / HORIZONTAL_ROTATION_LIMIT)"
+        :max-azimuth-angle="Math.PI / HORIZONTAL_ROTATION_LIMIT"
         :enable-zoom="false"
       />
       <Suspense>
@@ -497,7 +504,7 @@ watchEffect(() => {
         :color="AMBIENT_LIGHT_COLOR"
       />
       <TresDirectionalLight
-        :position="[-4, 8, 4]"
+        :position="[-4, 8, 8]"
         :rotation="[0, 0, 0]"
         :intensity="10"
         :color="DIRECTIONAL_LIGHT_COLOR"
