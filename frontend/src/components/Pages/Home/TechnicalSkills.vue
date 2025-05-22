@@ -112,7 +112,7 @@ const randomizedSkills = [...primarySkills]
       </p>
       <Lazy :min-height="60">
         <Suspense>
-          <SkillsTable />
+          <SkillsTable v-once />
         </Suspense>
       </Lazy>
       <div class="mt-8">
