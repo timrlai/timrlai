@@ -145,7 +145,7 @@ export const socialButtons: SocialButton[] = [
     tooltip: "Twitter (No, not X)",
     url: "https://twitter.com/timrlai",
     icon: "mingcute:twitter-fill",
-    main: true,
+    main: false,
   },
   {
     tooltip: "GitHub",

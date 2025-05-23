@@ -9,6 +9,9 @@ const logoSvgPath = await import("../../assets/img/logos/timrlai_logo.svg");
 const SocialButtons = defineAsyncComponent(
   () => import("../Common/SocialButtons.vue"),
 );
+const ThemeSwapper = defineAsyncComponent(
+  () => import("../Common/ThemeSwapper.vue"),
+);
 </script>
 
 <template>
@@ -146,10 +149,15 @@ const SocialButtons = defineAsyncComponent(
       <div class="navbar-end flex gap-4">
         <SocialButtons
           location="header"
-          buttonColor="primary"
-          tooltipColor="primary"
-          tooltipPosition="left"
-          :showAll="false"
+          button-color="primary"
+          tooltip-color="accent"
+          tooltip-position="left"
+          :show-all="false"
+        />
+        <ThemeSwapper
+          location="header"
+          tooltip-color="accent"
+          tooltip-position="left"
         />
       </div>
     </nav>
@@ -157,7 +165,7 @@ const SocialButtons = defineAsyncComponent(
 </template>
 
 <style scoped lang="scss">
-nav#main-nav::after {
+#main-nav::after {
   position: absolute;
   bottom: -20px;
   left: 0px;
@@ -176,7 +184,7 @@ nav#main-nav::after {
 }
 
 @media screen and (min-height: 500px) {
-  nav#main-nav {
+  #main-nav {
     position: fixed;
     z-index: 99999;
   }
