@@ -218,7 +218,7 @@ const {
 </template>
 
 <style scoped lang="scss">
-$hover-color: oklch(44% 0.14 42);
+$hover-color: var(--color-accent);
 $transition: all 0.7s;
 
 .experience-link {

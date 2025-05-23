@@ -101,12 +101,10 @@ const onIntroTyped = (currentTitle: string) => {
 </template>
 
 <style scoped lang="scss">
-#hi {
-  h1,
-  h2,
-  p {
-    text-shadow: 0 0 30px oklch(98% 0.05 101);
-  }
+h1,
+h2,
+p {
+  text-shadow: 0 0 30px var(--color-primary-content);
 }
 
 .mockup-browser-toolbar {

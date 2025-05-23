@@ -165,8 +165,8 @@ nav#main-nav::after {
   content: " ";
   background: radial-gradient(
     circle at 50% 0%,
-    oklch(98% 0.05 101) 25%,
-    oklch(45% 0.08 220) 26%,
+    var(--color-secondary) 25%,
+    var(--color-primary) 26%,
     transparent 40%
   );
   background-size: 20px 40px;

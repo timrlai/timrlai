@@ -121,10 +121,10 @@ footer::before {
     circle at 50% 0%,
     transparent,
     transparent 25%,
-    oklch(98% 0.05 101) 25%,
-    oklch(98% 0.05 101) 27%,
-    oklch(45% 0.08 220) 28%,
-    oklch(45% 0.08 220) 40%
+    var(--color-secondary) 25%,
+    var(--color-secondary) 27%,
+    var(--color-primary) 28%,
+    var(--color-primary) 40%
   );
   background-size: 50px 100px;
   background-repeat: repeat-x;
