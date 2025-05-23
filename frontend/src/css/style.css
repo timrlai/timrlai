@@ -336,7 +336,7 @@ body {
   --color-secondary: oklch(0.2783 0.059 235.28);
   --color-secondary-content: oklch(98% 0.05 192);
   --color-accent: oklch(98% 0.05 101);
-  --color-accent-content: oklch(98% 0.05 101);
+  --color-accent-content: oklch(45% 0.08 220);
   --color-neutral: oklch(50% 0.05 240);
   --color-neutral-content: oklch(98% 0.01 240);
   --color-info: oklch(70% 0.2 220);

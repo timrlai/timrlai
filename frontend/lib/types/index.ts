@@ -41,6 +41,12 @@ export type SocialButtonsProps = {
   showAll?: boolean;
 };
 
+export type ThemeSwapperProps = {
+  location?: "header" | "footer";
+  tooltipColor?: ColorKind;
+  tooltipPosition?: TooltipPosition;
+};
+
 export type Skill = {
   readonly title: string;
   readonly icon: string | null;
