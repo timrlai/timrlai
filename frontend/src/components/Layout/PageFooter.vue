@@ -65,13 +65,15 @@ const year = new Date().getFullYear();
         </Suspense>
         Follow Tim on Social Media
       </h2>
-      <SocialButtons
-        location="footer"
-        buttonColor="secondary"
-        tooltipColor="secondary"
-        tooltipPosition="top"
-        :showAll="true"
-      />
+      <Suspense>
+        <SocialButtons
+          location="footer"
+          button-color="secondary"
+          tooltip-color="secondary"
+          tooltip-position="top"
+          :show-all="true"
+        />
+      </Suspense>
     </section>
     <section class="footer-tile md:w-2xs">
       <RouterLink

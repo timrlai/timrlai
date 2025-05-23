@@ -147,18 +147,22 @@ const ThemeSwapper = defineAsyncComponent(
         </ul>
       </div>
       <div class="navbar-end flex gap-4">
-        <SocialButtons
-          location="header"
-          button-color="primary"
-          tooltip-color="accent"
-          tooltip-position="left"
-          :show-all="false"
-        />
-        <ThemeSwapper
-          location="header"
-          tooltip-color="accent"
-          tooltip-position="left"
-        />
+        <Suspense>
+          <SocialButtons
+            location="header"
+            button-color="primary"
+            tooltip-color="accent"
+            tooltip-position="left"
+            :show-all="false"
+          />
+        </Suspense>
+        <Suspense>
+          <ThemeSwapper
+            location="header"
+            tooltip-color="accent"
+            tooltip-position="left"
+          />
+        </Suspense>
       </div>
     </nav>
   </header>
