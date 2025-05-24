@@ -43,6 +43,7 @@ export type SocialButtonsProps = {
 
 export type ThemeSwapperProps = {
   location?: "header" | "footer";
+  iconColor?: ColorKind;
   tooltipColor?: ColorKind;
   tooltipPosition?: TooltipPosition;
 };

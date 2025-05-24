@@ -7,10 +7,21 @@ import { useThemeStore } from "../../../lib/stores/theme";
 
 const {
   location = "header",
+  iconColor = "secondary",
   tooltipColor = "primary",
   tooltipPosition = "left",
 } = defineProps<ThemeSwapperProps>();
 
+const iconColors = {
+  neutral: "text-neutral-content",
+  primary: "text-primary-content",
+  secondary: "text-secondary-content",
+  accent: "text-accent-content",
+  info: "text-info-content",
+  success: "text-success-content",
+  warning: "text-warning-content",
+  error: "text-error-content",
+};
 const tooltipColors = {
   neutral: "tooltip-neutral",
   primary: "tooltip-primary",
@@ -67,7 +78,7 @@ darkMediaQuery.value.addEventListener("change", changeDarkMode);
     </div>
     <label
       for="swap-theme-checkbox"
-      class="swap swap-rotate text-5xl pr-2 text-secondary-content"
+      :class="`swap swap-rotate text-5xl pr-2 ${iconColors[iconColor]}`"
       :aria-labelledby="`theme-tooltip-${location}`"
     >
       <!-- this hidden checkbox controls the state -->

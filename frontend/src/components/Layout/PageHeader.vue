@@ -170,6 +170,7 @@ const { isNight } = storeToRefs(store);
         <Suspense>
           <ThemeSwapper
             location="header"
+            icon-color="secondary"
             tooltip-color="accent"
             tooltip-position="left"
           />
