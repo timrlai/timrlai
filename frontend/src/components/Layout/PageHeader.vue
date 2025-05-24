@@ -4,7 +4,10 @@ import { RouterLink } from "vue-router";
 import { Icon } from "@iconify/vue";
 import { meetSubItems, experienceSubItems } from "../../../lib/constants";
 
-const logoSvgPath = await import("../../assets/img/logos/timrlai_logo.svg");
+const logoDarkSvgPath = await import("../../assets/img/logos/timrlai_logo.svg");
+const logoLightSvgPath = await import(
+  "../../assets/img/logos/timrlai_logo_light.svg"
+);
 
 const SocialButtons = defineAsyncComponent(
   () => import("../Common/SocialButtons.vue"),
@@ -12,6 +15,8 @@ const SocialButtons = defineAsyncComponent(
 const ThemeSwapper = defineAsyncComponent(
   () => import("../Common/ThemeSwapper.vue"),
 );
+
+const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 </script>
 
 <template>
@@ -85,7 +90,11 @@ const ThemeSwapper = defineAsyncComponent(
           class="btn btn-ghost btn-lg rounded-box py-1 text-xl"
           ><Suspense>
             <img
-              :src="logoSvgPath.default"
+              :src="
+                darkModeMediaQuery
+                  ? logoLightSvgPath.default
+                  : logoDarkSvgPath.default
+              "
               alt="Tim R. Lai"
               title="Tim R. Lai"
               class="w-full h-full" /></Suspense
