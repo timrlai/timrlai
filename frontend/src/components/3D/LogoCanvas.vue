@@ -521,14 +521,14 @@ watchEffect(() => {
         />
       </Suspense>
       <TresAmbientLight
-        :position="[0, 10, 0]"
-        :intensity="5"
+        :position="[0, 5, 0]"
+        :intensity="isNight ? 10 : 8"
         :color="isNight ? AMBIENT_LIGHT_COLOR_DARK : AMBIENT_LIGHT_COLOR_LIGHT"
       />
       <TresDirectionalLight
-        :position="[-4, 8, 8]"
+        :position="[-4, isNight ? 1 : 10, 8]"
         :rotation="[0, 0, 0]"
-        :intensity="10"
+        :intensity="isNight ? 8 : 10"
         :color="
           isNight ? DIRECTIONAL_LIGHT_COLOR_DARK : DIRECTIONAL_LIGHT_COLOR_LIGHT
         "
