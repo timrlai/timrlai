@@ -13,7 +13,7 @@ const { AVATAR_SKILLS_SOFT_LOTTIE_PATH } = lottieConstants;
 
 <template>
   <div
-    class="mockup-window bg-secondary text-secondary-content border-4 rounded-t-none border-primary shadow-lg shadow-primary"
+    class="mockup-window bg-secondary/80 text-secondary-content border-4 rounded-t-none border-primary shadow-lg shadow-primary"
   >
     <div class="p-5">
       <div class="flex flex-wrap justify-between">

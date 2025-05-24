@@ -9,7 +9,7 @@ defineProps<{ labelledby: string; skills: Skill[] }>();
 <template>
   <aside
     :aria-labelledby="labelledby"
-    class="bg-base-100 text-base-content border-4 border-primary rounded-lg w-full p-5"
+    class="bg-base-200/60 text-base-content border-4 border-primary rounded-lg w-full p-5"
   >
     <h1 class="text-xl lg:text-2xl mb-4 ubuntu-titling">
       <Icon icon="mingcute:code-fill" class="inline-block h-[1em]" />

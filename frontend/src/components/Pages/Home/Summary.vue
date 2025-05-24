@@ -15,7 +15,7 @@ const { AVATAR_SUMMARY_LOTTIE_PATH } = lottieConstants;
 <template>
   <section
     id="summary"
-    class="mockup-window bg-secondary text-secondary-content border-4 border-primary shadow-lg shadow-primary"
+    class="mockup-window bg-secondary/80 text-secondary-content border-4 border-primary shadow-lg shadow-primary"
   >
     <Lazy :min-height="700">
       <div class="px-5">
