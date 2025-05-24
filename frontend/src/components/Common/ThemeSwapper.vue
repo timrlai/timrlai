@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { storeToRefs } from "pinia";
 import { Icon } from "@iconify/vue";
+
 import type { ThemeSwapperProps } from "../../../lib/types";
+import { useThemeStore } from "../../../lib/stores/theme";
 
 const {
   location = "header",
@@ -26,51 +28,27 @@ const tooltipPositions = {
   bottom: "tooltip-bottom",
 };
 
-const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-let themeSwapped = false;
-let themeName = darkModeMediaQuery.matches ? "timrlai-day" : "timrlai-night";
-const tooltip = ref(darkModeMediaQuery.matches ? "Night Mode" : "Day Mode");
-
-const setNightMode = () => {
-  console.log("Switched to dark mode");
-  tooltip.value = "Night Mode";
-};
-
-const setDayMode = () => {
-  console.log("Switched to light mode or no preference");
-  tooltip.value = "Day Mode";
-};
+const store = useThemeStore();
+const { darkMediaQuery, prefersDark, swapped, swapTo, tooltip } =
+  storeToRefs(store);
 
 const checkSwapTheme = (event: InputEvent) => {
   const target = event.target as HTMLInputElement;
-  console.log(target?.checked);
-  themeSwapped = target?.checked;
-  if (
-    (!darkModeMediaQuery.matches && !themeSwapped) ||
-    (darkModeMediaQuery.matches && themeSwapped)
-  ) {
-    // User switched to light mode or no preference
-    setDayMode();
-  } else {
-    // User switched to dark mode
-    setNightMode();
-  }
+  swapped.value = target?.checked;
 };
 
 const changeDarkMode = (event: MediaQueryListEvent) => {
-  if (event.matches && darkModeMediaQuery.matches) {
+  if (event.matches && prefersDark.value) {
     // User switched to dark mode
-    setNightMode();
-    themeName = "timrlai-day";
+    swapTo.value = "timrlai-day";
   } else {
     // User switched to light mode or no preference
-    setDayMode();
-    themeName = "timrlai-night";
+    swapTo.value = "timrlai-night";
   }
 };
 
 // Listen for changes in the user's preference
-darkModeMediaQuery.addEventListener("change", changeDarkMode);
+darkMediaQuery.value.addEventListener("change", changeDarkMode);
 </script>
 
 <template>
@@ -97,21 +75,21 @@ darkModeMediaQuery.addEventListener("change", changeDarkMode);
         id="swap-theme-checkbox"
         type="checkbox"
         class="theme-controller"
-        :value="themeName"
-        :checked="themeSwapped"
+        :value="swapTo"
+        :checked="swapped"
         :onchange="checkSwapTheme"
       />
 
       <!-- sun icon -->
       <Icon
         icon="line-md:moon-filled-to-sunny-filled-loop-transition"
-        :class="darkModeMediaQuery.matches ? 'swap-on' : 'swap-off'"
+        :class="prefersDark ? 'swap-on' : 'swap-off'"
       />
 
       <!-- moon icon -->
       <Icon
         icon="line-md:sunny-filled-loop-to-moon-filled-loop-transition"
-        :class="darkModeMediaQuery.matches ? 'swap-off' : 'swap-on'"
+        :class="prefersDark ? 'swap-off' : 'swap-on'"
       />
     </label>
   </div>
