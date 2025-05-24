@@ -286,7 +286,7 @@ export const frameworkSkills: Skill[] = [
 ];
 export const databaseSkills: Skill[] = [
   { title: "MySQL", icon: "skill-icons:mysql-light" },
-  { title: "MariaDB", icon: "devicon:mariadb-wordmark" },
+  { title: "MariaDB", icon: "simple-icons:mariadb" },
   { title: "PostgreSQL", icon: "skill-icons:postgresql-light" },
   { title: "SQLite", icon: "skill-icons:sqlite" },
   { title: "DynamoDB", icon: "skill-icons:dynamodb-light" },
