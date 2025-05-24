@@ -13,6 +13,9 @@ const headSvgPath = await import(
 const SocialButtons = defineAsyncComponent(
   () => import("../Common/SocialButtons.vue"),
 );
+const ThemeSwapper = defineAsyncComponent(
+  () => import("../Common/ThemeSwapper.vue"),
+);
 
 const year = new Date().getFullYear();
 </script>
@@ -108,6 +111,16 @@ const year = new Date().getFullYear();
           />
         </Suspense>
       </p>
+      <div class="w-full flex justify-center">
+        <Suspense>
+          <ThemeSwapper
+            location="footer"
+            icon-color="primary"
+            tooltip-color="accent"
+            tooltip-position="top"
+          />
+        </Suspense>
+      </div>
     </section>
   </footer>
 </template>
