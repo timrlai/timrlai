@@ -176,10 +176,11 @@ body {
   min-height: 100vh;
   background: linear-gradient(
     180deg,
-    var(--color-base-200) 0%,
+    var(--color-base-300) 0%,
     var(--color-neutral) 25%,
-    var(--color-base-200) 35%,
-    var(--color-base-200) 100%
+    var(--color-base-300) 35%,
+    var(--color-base-200) 70%,
+    var(--color-base-100) 100%
   );
 }
 
