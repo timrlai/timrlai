@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { defineAsyncComponent } from "vue";
 import { RouterLink } from "vue-router";
+import { storeToRefs } from "pinia";
 import { Icon } from "@iconify/vue";
+
 import { meetSubItems, experienceSubItems } from "../../../lib/constants";
+import { useThemeStore } from "../../../lib/stores/theme";
 
 const logoDarkSvgPath = await import("../../assets/img/logos/timrlai_logo.svg");
 const logoLightSvgPath = await import(
@@ -16,7 +19,8 @@ const ThemeSwapper = defineAsyncComponent(
   () => import("../Common/ThemeSwapper.vue"),
 );
 
-const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+const store = useThemeStore();
+const { isNight } = storeToRefs(store);
 </script>
 
 <template>
@@ -91,9 +95,7 @@ const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
           ><Suspense>
             <img
               :src="
-                darkModeMediaQuery
-                  ? logoLightSvgPath.default
-                  : logoDarkSvgPath.default
+                isNight ? logoLightSvgPath.default : logoDarkSvgPath.default
               "
               alt="Tim R. Lai"
               title="Tim R. Lai"
