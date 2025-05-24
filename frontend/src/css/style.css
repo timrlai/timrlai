@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   Fonts
-   ========================================================================== */
+  Fonts
+  ========================================================================== */
 
 @font-face {
   font-family: "ubuntu_titlingbold";
@@ -81,8 +81,8 @@
  */
 
 /* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
+  Base styles: opinionated defaults
+  ========================================================================== */
 
 html {
   font-size: 1em;
@@ -174,6 +174,53 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background: linear-gradient(
+    180deg,
+    var(--color-base-300) 0%,
+    var(--color-neutral) 25%,
+    var(--color-base-300) 35%,
+    var(--color-base-200) 70%,
+    var(--color-base-100) 100%
+  );
+}
+
+#app {
+  background-image:
+    radial-gradient(
+      rgb(155, 250, 255),
+      rgb(155, 250, 255) 2px,
+      rgba(155, 250, 255, 0.2) 2px,
+      transparent 40px
+    ),
+    radial-gradient(
+      rgb(155, 250, 255),
+      rgb(155, 250, 255) 2px,
+      rgba(155, 250, 255, 0.15) 1px,
+      transparent 30px
+    ),
+    radial-gradient(
+      rgb(155, 250, 255),
+      rgb(155, 250, 255) 2px,
+      rgba(155, 250, 255, 0.1) 2px,
+      transparent 40px
+    ),
+    radial-gradient(
+      rgb(155, 250, 255),
+      rgb(155, 250, 255) 2px,
+      rgba(155, 250, 255, 0.1) 2px,
+      transparent 30px
+    );
+  background-size:
+    550px 550px,
+    350px 350px,
+    250px 250px,
+    150px 150px;
+  background-position:
+    0 0,
+    40px 60px,
+    130px 270px,
+    70px 100px;
+  background-attachment: fixed;
 }
 
 .link {
@@ -222,8 +269,8 @@ body {
 }
 
 /* ==========================================================================
-   Helper classes
-   ========================================================================== */
+  Helper classes
+  ========================================================================== */
 
 /*
  * Hide only visually, but have it available for screen readers:
@@ -289,8 +336,8 @@ body {
   --color-secondary-content: oklch(45% 0.08 220);
   --color-accent: oklch(44% 0.14 42);
   --color-accent-content: oklch(98% 0.05 101);
-  --color-neutral: oklch(50% 0.05 240);
-  --color-neutral-content: oklch(98% 0.01 240);
+  --color-neutral: oklch(98% 0.05 101);
+  --color-neutral-content: oklch(47% 0.01 135);
   --color-info: oklch(70% 0.2 220);
   --color-info-content: oklch(98% 0.01 220);
   --color-success: oklch(92% 0.23 125);
@@ -335,18 +382,18 @@ body {
   --color-base-content: oklch(98% 0.05 192);
   --color-primary: oklch(45% 0.08 220);
   --color-primary-content: oklch(98% 0.05 101);
-  --color-secondary: oklch(22% 0.043 100);
+  --color-secondary: oklch(18% 0.043 100);
   --color-secondary-content: oklch(98% 0.05 192);
   --color-accent: oklch(98% 0.05 101);
   --color-accent-content: oklch(45% 0.08 220);
-  --color-neutral: oklch(50% 0.05 240);
+  --color-neutral: oklch(46% 0.01 157);
   --color-neutral-content: oklch(98% 0.01 240);
   --color-info: oklch(70% 0.2 220);
   --color-info-content: oklch(98% 0.01 220);
   --color-success: oklch(87% 0.17 170);
   --color-success-content: oklch(45% 0.08 220);
-  --color-warning: oklch(80% 0.25 80);
-  --color-warning-content: oklch(20% 0.05 80);
+  --color-warning: oklch(20% 0.05 80);
+  --color-warning-content: oklch(80% 0.25 80);
   --color-error: oklch(58% 0.22 360);
   --color-error-content: oklch(98% 0.05 101);
 

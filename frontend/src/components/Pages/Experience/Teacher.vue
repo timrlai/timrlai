@@ -27,7 +27,7 @@ const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
   <section id="teacher">
     <Lazy :min-height="1000">
       <div
-        class="mockup-window bg-secondary text-secondary-content border-4 border-primary shadow-lg shadow-primary"
+        class="mockup-window bg-secondary/80 text-secondary-content border-4 border-primary shadow-lg shadow-primary"
       >
         <div class="px-5 pb-5">
           <h1

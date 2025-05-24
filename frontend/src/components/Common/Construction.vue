@@ -8,7 +8,7 @@ const LottiePlayer = defineAsyncComponent(() => import("./LottiePlayer.vue"));
 <template>
   <section
     id="construction-notice"
-    class="mockup-window bg-warning text-warning-content border-4 border-primary shadow-lg shadow-primary"
+    class="mockup-window bg-warning/80 text-warning-content border-4 border-primary shadow-lg shadow-primary"
   >
     <div class="grid place-content-center text-center p-5">
       <h1 class="text-3xl sm:text-5xl md:text-8xl ubuntu-titling mb-4">

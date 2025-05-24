@@ -31,7 +31,7 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
   <section id="developer">
     <Lazy :min-height="2000">
       <div
-        class="mockup-window bg-secondary text-secondary-content border-4 border-primary shadow-lg shadow-primary"
+        class="mockup-window bg-secondary/80 text-secondary-content border-4 border-primary shadow-lg shadow-primary"
       >
         <div class="px-5 pb-5">
           <h1
