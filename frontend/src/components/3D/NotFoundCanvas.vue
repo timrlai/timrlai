@@ -20,6 +20,7 @@ const LottieCylinder = defineAsyncComponent(
   () => import("./LottieCylinder.vue"),
 );
 const GLCloud = defineAsyncComponent(() => import("./GLCloud.vue"));
+const TresStars = defineAsyncComponent(() => import("./TresStars.vue"));
 
 const {
   WIDTH_BREAKPOINT,
@@ -40,10 +41,16 @@ const {
   DESKTOP_EXPLANATION_SCALE,
   WIDE_LOTTIE_ROTATION,
   WIDE_EXPLANATION_ROTATION,
-  CANVAS_COLOR,
-  TEXT_COLOR,
-  AMBIENT_LIGHT_COLOR,
-  DIRECTIONAL_LIGHT_COLOR,
+  CANVAS_COLOR_LIGHT,
+  CANVAS_COLOR_DARK,
+  TEXT_COLOR_LIGHT,
+  TEXT_COLOR_DARK,
+  AMBIENT_LIGHT_COLOR_LIGHT,
+  AMBIENT_LIGHT_COLOR_DARK,
+  DIRECTIONAL_LIGHT_COLOR_LIGHT,
+  DIRECTIONAL_LIGHT_COLOR_DARK,
+  CLOUD_COLOR_LIGHT,
+  CLOUD_COLOR_DARK,
   VERTICAL_ROTATION_LIMIT,
   HORIZONTAL_ROTATION_LIMIT,
   FONT_PATH,
@@ -91,6 +98,10 @@ let explanationScale: number = isPortrait
 const canvasKey: Ref<string> = ref("not-found-canvas");
 const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
 const randomNotFoundLottie: string = `${NOT_FOUND_LOTTIE_FOLDER}${NOT_FOUND_LOTTIES[Math.floor(Math.random() * NOT_FOUND_LOTTIES.length)]}`;
+const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+const textColor = darkModeMediaQuery.matches
+  ? TEXT_COLOR_DARK
+  : TEXT_COLOR_LIGHT;
 
 const setPoses = (event: Event | null = null) => {
   setTimeout(
@@ -177,7 +188,9 @@ watchEffect(() => {
     </p>
     <TresCanvas
       :key="canvasKey"
-      :clear-color="CANVAS_COLOR"
+      :clear-color="
+        darkModeMediaQuery.matches ? CANVAS_COLOR_DARK : CANVAS_COLOR_LIGHT
+      "
       :output-color-space="LinearSRGBColorSpace"
       :tone-mapping-exposure="1.2"
       shadows
@@ -214,34 +227,37 @@ watchEffect(() => {
           ><TresMesh :position="[0, -1, 0]"
             ><Text3D :font="FONT_PATH" :size="TITLE_FONT_SIZE"
               >OOPSiE WOOPSiE!
-              <TresMeshStandardMaterial :color="TEXT_COLOR" /></Text3D
+              <TresMeshStandardMaterial :color="textColor" /></Text3D
           ></TresMesh>
         </Suspense>
         <Suspense
           ><TresMesh :position="[0, -2.7, 0]"
             ><Text3D :font="FONT_PATH" :size="TITLE_FONT_SIZE"
               >PAGE NOT FOUND!
-              <TresMeshStandardMaterial :color="TEXT_COLOR" /></Text3D
+              <TresMeshStandardMaterial :color="textColor" /></Text3D
           ></TresMesh>
         </Suspense>
         <Suspense
           ><TresMesh :position="[0, -4.7, 0]"
             ><Text3D :font="FONT_PATH" :size="EXPLANATION_FONT_SIZE"
               >Sowwy, the page "{{ $route.path }}"
-              <TresMeshStandardMaterial :color="TEXT_COLOR" /></Text3D
+              <TresMeshStandardMaterial :color="textColor" /></Text3D
           ></TresMesh>
         </Suspense>
         <Suspense
           ><TresMesh :position="[0, -6, 0]"
             ><Text3D :font="FONT_PATH" :size="EXPLANATION_FONT_SIZE"
               >is not in the cloud.
-              <TresMeshStandardMaterial :color="TEXT_COLOR" /></Text3D
+              <TresMeshStandardMaterial :color="textColor" /></Text3D
           ></TresMesh>
         </Suspense>
       </TresMesh>
       <Suspense>
         <GLCloud
           v-if="!isMobileOrTablet"
+          :color="
+            darkModeMediaQuery.matches ? CLOUD_COLOR_DARK : CLOUD_COLOR_LIGHT
+          "
           :position="GL_CLOUD_POSITION"
           :rotation="GL_CLOUD_ROTATION"
           :scale="GL_CLOUD_SCALE"
@@ -250,14 +266,25 @@ watchEffect(() => {
       <TresAmbientLight
         :position="[0, 10, 0]"
         :intensity="5"
-        :color="AMBIENT_LIGHT_COLOR"
+        :color="
+          darkModeMediaQuery.matches
+            ? AMBIENT_LIGHT_COLOR_DARK
+            : AMBIENT_LIGHT_COLOR_LIGHT
+        "
       />
       <TresDirectionalLight
         :position="[-4, 8, 8]"
         :rotation="[0, 0, 0]"
         :intensity="10"
-        :color="DIRECTIONAL_LIGHT_COLOR"
+        :color="
+          darkModeMediaQuery.matches
+            ? DIRECTIONAL_LIGHT_COLOR_DARK
+            : DIRECTIONAL_LIGHT_COLOR_LIGHT
+        "
       />
+      <Suspense>
+        <TresStars v-if="darkModeMediaQuery.matches" />
+      </Suspense>
     </TresCanvas>
   </section>
 </template>
