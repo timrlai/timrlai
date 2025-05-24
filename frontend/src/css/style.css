@@ -392,8 +392,8 @@ body {
   --color-info-content: oklch(98% 0.01 220);
   --color-success: oklch(87% 0.17 170);
   --color-success-content: oklch(45% 0.08 220);
-  --color-warning: oklch(80% 0.25 80);
-  --color-warning-content: oklch(20% 0.05 80);
+  --color-warning: oklch(20% 0.05 80);
+  --color-warning-content: oklch(80% 0.25 80);
   --color-error: oklch(58% 0.22 360);
   --color-error-content: oklch(98% 0.05 101);
 
