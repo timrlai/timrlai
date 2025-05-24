@@ -118,6 +118,13 @@ export type GLCloudProps = {
   args?: [number, number, number];
 };
 
+export type TresStarsProps = {
+  radius?: number;
+  depth?: number;
+  count?: number;
+  size?: number;
+};
+
 export type VimeoVideoProps = {
   videoId: number;
   badge?: number;
