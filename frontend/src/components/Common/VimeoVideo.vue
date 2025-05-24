@@ -21,7 +21,7 @@ const {
       <a
         :href="`https://player.vimeo.com/video/${videoId}`"
         target="_blank"
-        class="link link-primary link-hover"
+        class="link link-info link-hover"
         ><Icon
           icon="entypo-social:vimeo-with-circle"
           class="inline-block h-[1em]"
