@@ -41,6 +41,13 @@ export type SocialButtonsProps = {
   showAll?: boolean;
 };
 
+export type ThemeSwapperProps = {
+  location?: "header" | "footer";
+  iconColor?: ColorKind;
+  tooltipColor?: ColorKind;
+  tooltipPosition?: TooltipPosition;
+};
+
 export type Skill = {
   readonly title: string;
   readonly icon: string | null;
@@ -106,10 +113,18 @@ export type LottieCylinderProps = LottieShapeProps & {
 };
 
 export type GLCloudProps = {
+  color: string;
   position?: [number, number, number];
   rotation?: [number, number, number];
   scale?: [number, number, number] | number;
   args?: [number, number, number];
+};
+
+export type TresStarsProps = {
+  radius?: number;
+  depth?: number;
+  count?: number;
+  size?: number;
 };
 
 export type VimeoVideoProps = {
@@ -145,10 +160,16 @@ export type LottieConstants = {
 type CanvasConstants = {
   readonly WIDTH_BREAKPOINT: number;
   readonly HEIGHT_BREAKPOINT: number;
-  readonly CANVAS_COLOR: string;
-  readonly TEXT_COLOR: string;
-  readonly AMBIENT_LIGHT_COLOR: string;
-  readonly DIRECTIONAL_LIGHT_COLOR: string;
+  readonly CANVAS_COLOR_LIGHT: string;
+  readonly CANVAS_COLOR_DARK: string;
+  readonly TEXT_COLOR_LIGHT: string;
+  readonly TEXT_COLOR_DARK: string;
+  readonly AMBIENT_LIGHT_COLOR_LIGHT: string;
+  readonly AMBIENT_LIGHT_COLOR_DARK: string;
+  readonly DIRECTIONAL_LIGHT_COLOR_LIGHT: string;
+  readonly DIRECTIONAL_LIGHT_COLOR_DARK: string;
+  readonly CLOUD_COLOR_LIGHT: string;
+  readonly CLOUD_COLOR_DARK: string;
   readonly VERTICAL_ROTATION_LIMIT: number;
   readonly HORIZONTAL_ROTATION_LIMIT: number;
   readonly FONT_PATH: string;

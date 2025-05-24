@@ -13,6 +13,9 @@ const headSvgPath = await import(
 const SocialButtons = defineAsyncComponent(
   () => import("../Common/SocialButtons.vue"),
 );
+const ThemeSwapper = defineAsyncComponent(
+  () => import("../Common/ThemeSwapper.vue"),
+);
 
 const year = new Date().getFullYear();
 </script>
@@ -65,13 +68,15 @@ const year = new Date().getFullYear();
         </Suspense>
         Follow Tim on Social Media
       </h2>
-      <SocialButtons
-        location="footer"
-        buttonColor="secondary"
-        tooltipColor="secondary"
-        tooltipPosition="top"
-        :showAll="true"
-      />
+      <Suspense>
+        <SocialButtons
+          location="footer"
+          button-color="secondary"
+          tooltip-color="secondary"
+          tooltip-position="top"
+          :show-all="true"
+        />
+      </Suspense>
     </section>
     <section class="footer-tile md:w-2xs">
       <RouterLink
@@ -106,6 +111,16 @@ const year = new Date().getFullYear();
           />
         </Suspense>
       </p>
+      <div class="w-full flex justify-center">
+        <Suspense>
+          <ThemeSwapper
+            location="footer"
+            icon-color="primary"
+            tooltip-color="accent"
+            tooltip-position="top"
+          />
+        </Suspense>
+      </div>
     </section>
   </footer>
 </template>
@@ -121,10 +136,10 @@ footer::before {
     circle at 50% 0%,
     transparent,
     transparent 25%,
-    oklch(98% 0.05 101) 25%,
-    oklch(98% 0.05 101) 27%,
-    oklch(45% 0.08 220) 28%,
-    oklch(45% 0.08 220) 40%
+    var(--color-secondary) 25%,
+    var(--color-secondary) 27%,
+    var(--color-primary) 28%,
+    var(--color-primary) 40%
   );
   background-size: 50px 100px;
   background-repeat: repeat-x;

@@ -1,14 +1,26 @@
 <script setup lang="ts">
 import { defineAsyncComponent } from "vue";
 import { RouterLink } from "vue-router";
+import { storeToRefs } from "pinia";
 import { Icon } from "@iconify/vue";
-import { meetSubItems, experienceSubItems } from "../../../lib/constants";
 
-const logoSvgPath = await import("../../assets/img/logos/timrlai_logo.svg");
+import { meetSubItems, experienceSubItems } from "../../../lib/constants";
+import { useThemeStore } from "../../../lib/stores/theme";
+
+const logoDarkSvgPath = await import("../../assets/img/logos/timrlai_logo.svg");
+const logoLightSvgPath = await import(
+  "../../assets/img/logos/timrlai_logo_light.svg"
+);
 
 const SocialButtons = defineAsyncComponent(
   () => import("../Common/SocialButtons.vue"),
 );
+const ThemeSwapper = defineAsyncComponent(
+  () => import("../Common/ThemeSwapper.vue"),
+);
+
+const store = useThemeStore();
+const { isNight } = storeToRefs(store);
 </script>
 
 <template>
@@ -82,7 +94,9 @@ const SocialButtons = defineAsyncComponent(
           class="btn btn-ghost btn-lg rounded-box py-1 text-xl"
           ><Suspense>
             <img
-              :src="logoSvgPath.default"
+              :src="
+                isNight ? logoLightSvgPath.default : logoDarkSvgPath.default
+              "
               alt="Tim R. Lai"
               title="Tim R. Lai"
               class="w-full h-full" /></Suspense
@@ -144,20 +158,30 @@ const SocialButtons = defineAsyncComponent(
         </ul>
       </div>
       <div class="navbar-end flex gap-4">
-        <SocialButtons
-          location="header"
-          buttonColor="primary"
-          tooltipColor="primary"
-          tooltipPosition="left"
-          :showAll="false"
-        />
+        <Suspense>
+          <SocialButtons
+            location="header"
+            button-color="primary"
+            tooltip-color="accent"
+            tooltip-position="left"
+            :show-all="false"
+          />
+        </Suspense>
+        <Suspense>
+          <ThemeSwapper
+            location="header"
+            icon-color="secondary"
+            tooltip-color="accent"
+            tooltip-position="left"
+          />
+        </Suspense>
       </div>
     </nav>
   </header>
 </template>
 
 <style scoped lang="scss">
-nav#main-nav::after {
+#main-nav::after {
   position: absolute;
   bottom: -20px;
   left: 0px;
@@ -165,8 +189,8 @@ nav#main-nav::after {
   content: " ";
   background: radial-gradient(
     circle at 50% 0%,
-    oklch(98% 0.05 101) 25%,
-    oklch(45% 0.08 220) 26%,
+    var(--color-secondary) 25%,
+    var(--color-primary) 26%,
     transparent 40%
   );
   background-size: 20px 40px;
@@ -176,7 +200,7 @@ nav#main-nav::after {
 }
 
 @media screen and (min-height: 500px) {
-  nav#main-nav {
+  #main-nav {
     position: fixed;
     z-index: 99999;
   }

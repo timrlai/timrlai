@@ -105,22 +105,24 @@ html {
 .text-base-content ::selection,
 .table-zebra.text-base-content ::-moz-selection,
 .table-zebra.text-base-content ::selection {
-  background: oklch(98% 0.05 101);
+  background: var(--color-secondary);
 }
 
 .text-primary-content ::-moz-selection,
 .text-primary-content ::selection {
-  background: oklch(70% 0.2 220);
+  background: var(--color-info);
 }
 
 .text-secondary-content ::-moz-selection,
 .text-secondary-content ::selection {
-  background: oklch(98% 0.05 192);
+  background: var(--color-base-100);
 }
 
 .text-neutral-content ::-moz-selection,
-.text-neutral-content ::selection {
-  background: oklch(45% 0.08 220);
+.text-neutral-content ::selection,
+.text-slate-400 ::-moz-selection,
+.text-slate-400 ::selection {
+  background: var(--color-primary);
 }
 
 /*
@@ -185,19 +187,19 @@ body {
 }
 
 .link-accent {
-  text-decoration-color: oklch(45% 0.08 220);
+  text-decoration-color: var(--color-accent);
 }
 
 .link-accent:hover {
-  text-decoration-color: oklch(58% 0.22 360);
+  text-decoration-color: var(--color-info);
 }
 
 .link-success {
-  text-decoration-color: oklch(98% 0.05 101);
+  text-decoration-color: var(--color-success);
 }
 
 .link-success:hover {
-  text-decoration-color: oklch(98% 0.05 192);
+  text-decoration-color: var(--color-base-100);
 }
 
 .is-typed span.cursor {
@@ -272,9 +274,9 @@ body {
 
 @plugin "daisyui";
 @plugin "daisyui/theme" {
-  name: "timrlai";
+  name: "timrlai-day";
   default: true; /* set as default */
-  prefersdark: true; /* set as default dark mode (prefers-color-scheme:dark) */
+  prefersdark: false; /* set as default dark mode (prefers-color-scheme:dark) */
   color-scheme: light; /* color of browser-provided UI */
 
   --color-base-100: oklch(98% 0.05 192);
@@ -292,6 +294,56 @@ body {
   --color-info: oklch(70% 0.2 220);
   --color-info-content: oklch(98% 0.01 220);
   --color-success: oklch(92% 0.23 125);
+  --color-success-content: oklch(45% 0.08 220);
+  --color-warning: oklch(80% 0.25 80);
+  --color-warning-content: oklch(20% 0.05 80);
+  --color-error: oklch(58% 0.22 360);
+  --color-error-content: oklch(98% 0.05 101);
+
+  /* border radius */
+  --radius-selector: 1rem;
+  --radius-field: 2rem;
+  --radius-box: 0.5rem;
+
+  /* base sizes */
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  /* border size */
+  --border: 1px;
+
+  /* effects */
+  --depth: 1;
+  --noise: 0;
+
+  /* glass */
+  --glass-blur: 0.6;
+  --glass-opacity: 0.15;
+  --glass-reflect-opacity: 0.15;
+  --glass-border-opacity: 0.3;
+  --glass-text-shadow-opacity: 0.8;
+}
+@plugin "daisyui/theme" {
+  name: "timrlai-night";
+  default: false; /* set as default */
+  prefersdark: true; /* set as default dark mode (prefers-color-scheme:dark) */
+  color-scheme: dark; /* color of browser-provided UI */
+
+  --color-base-100: oklch(25% 0.035 243);
+  --color-base-200: oklch(20% 0.035 243);
+  --color-base-300: oklch(15% 0.035 243);
+  --color-base-content: oklch(98% 0.05 192);
+  --color-primary: oklch(45% 0.08 220);
+  --color-primary-content: oklch(98% 0.05 101);
+  --color-secondary: oklch(22% 0.043 100);
+  --color-secondary-content: oklch(98% 0.05 192);
+  --color-accent: oklch(98% 0.05 101);
+  --color-accent-content: oklch(45% 0.08 220);
+  --color-neutral: oklch(50% 0.05 240);
+  --color-neutral-content: oklch(98% 0.01 240);
+  --color-info: oklch(70% 0.2 220);
+  --color-info-content: oklch(98% 0.01 220);
+  --color-success: oklch(87% 0.17 170);
   --color-success-content: oklch(45% 0.08 220);
   --color-warning: oklch(80% 0.25 80);
   --color-warning-content: oklch(20% 0.05 80);

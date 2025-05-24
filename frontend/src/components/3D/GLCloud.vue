@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, ref } from "vue";
+import { ref } from "vue";
 import {
   Camera,
   Vector3,
@@ -19,6 +19,7 @@ import vertexShader from "../../assets/shaders/cloud_vertex_shader.glsl";
 import fragmentShader from "../../assets/shaders/cloud_fragment_shader.glsl";
 
 const {
+  color,
   position = [0, -0.4, -0.3],
   rotation = [2, 0, 0],
   scale = 1,
@@ -75,7 +76,7 @@ texture.needsUpdate = true;
 // Material
 
 const uniforms = {
-  base: { value: new Color(0xfffad4) },
+  base: { value: new Color(color) },
   map: { value: texture },
   cameraPos: { value: new Vector3() },
   threshold: { value: 0.25 },
@@ -129,5 +130,3 @@ onLoop(({ elapsed }) => {
     </TresMesh>
   </Suspense>
 </template>
-
-<style scoped></style>
