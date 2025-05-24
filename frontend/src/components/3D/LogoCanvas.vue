@@ -7,6 +7,7 @@ import {
   onUnmounted,
   watchEffect,
 } from "vue";
+import { storeToRefs } from "pinia";
 import isMobile from "is-mobile";
 import { type Scene, LinearSRGBColorSpace } from "three";
 import { TresCanvas } from "@tresjs/core";
@@ -14,6 +15,7 @@ import { useGLTF, OrbitControls, Text3D, Box } from "@tresjs/cientos";
 
 import { lottieConstants } from "../../../lib/constants";
 import constants from "../../../lib/constants/LogoCanvas";
+import { useThemeStore } from "../../../lib/stores/theme";
 
 const LottieSphere = defineAsyncComponent(() => import("./LottieSphere.vue"));
 const LottieCylinder = defineAsyncComponent(
@@ -217,10 +219,9 @@ const canvasKey: Ref<string> = ref("logo-canvas");
 const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
 const { scene } = await useGLTF(LOGO_GLTF_PATH, { draco: true });
 let logoModel: Scene = scene;
-const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-const textColor = darkModeMediaQuery.matches
-  ? TEXT_COLOR_DARK
-  : TEXT_COLOR_LIGHT;
+const store = useThemeStore();
+const { isNight } = storeToRefs(store);
+const textColor = isNight ? TEXT_COLOR_DARK : TEXT_COLOR_LIGHT;
 
 const setPoses = (event: Event | null = null) => {
   setTimeout(
@@ -369,9 +370,7 @@ watchEffect(() => {
     <h2 class="visually-hidden">A full stack team in one Tim!</h2>
     <TresCanvas
       :key="canvasKey"
-      :clear-color="
-        darkModeMediaQuery.matches ? CANVAS_COLOR_DARK : CANVAS_COLOR_LIGHT
-      "
+      :clear-color="isNight ? CANVAS_COLOR_DARK : CANVAS_COLOR_LIGHT"
       :output-color-space="LinearSRGBColorSpace"
       :tone-mapping-exposure="1.2"
       shadows
@@ -505,10 +504,17 @@ watchEffect(() => {
       </TresMesh>
       <Suspense>
         <GLCloud
-          v-if="!isMobileOrTablet"
-          :color="
-            darkModeMediaQuery.matches ? CLOUD_COLOR_DARK : CLOUD_COLOR_LIGHT
-          "
+          v-if="!isMobileOrTablet && !isNight"
+          :color="CLOUD_COLOR_LIGHT"
+          :position="GL_CLOUD_POSITION"
+          :rotation="GL_CLOUD_ROTATION"
+          :scale="GL_CLOUD_SCALE"
+        />
+      </Suspense>
+      <Suspense>
+        <GLCloud
+          v-if="!isMobileOrTablet && isNight"
+          :color="CLOUD_COLOR_DARK"
           :position="GL_CLOUD_POSITION"
           :rotation="GL_CLOUD_ROTATION"
           :scale="GL_CLOUD_SCALE"
@@ -517,24 +523,18 @@ watchEffect(() => {
       <TresAmbientLight
         :position="[0, 10, 0]"
         :intensity="5"
-        :color="
-          darkModeMediaQuery.matches
-            ? AMBIENT_LIGHT_COLOR_DARK
-            : AMBIENT_LIGHT_COLOR_LIGHT
-        "
+        :color="isNight ? AMBIENT_LIGHT_COLOR_DARK : AMBIENT_LIGHT_COLOR_LIGHT"
       />
       <TresDirectionalLight
         :position="[-4, 8, 8]"
         :rotation="[0, 0, 0]"
         :intensity="10"
         :color="
-          darkModeMediaQuery.matches
-            ? DIRECTIONAL_LIGHT_COLOR_DARK
-            : DIRECTIONAL_LIGHT_COLOR_LIGHT
+          isNight ? DIRECTIONAL_LIGHT_COLOR_DARK : DIRECTIONAL_LIGHT_COLOR_LIGHT
         "
       />
       <Suspense>
-        <TresStars v-if="darkModeMediaQuery.matches" />
+        <TresStars v-if="isNight" />
       </Suspense>
     </TresCanvas>
   </section>
