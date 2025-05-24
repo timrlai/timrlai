@@ -119,7 +119,9 @@ html {
 }
 
 .text-neutral-content ::-moz-selection,
-.text-neutral-content ::selection {
+.text-neutral-content ::selection,
+.text-slate-400 ::-moz-selection,
+.text-slate-400 ::selection {
   background: var(--color-primary);
 }
 
