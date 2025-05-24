@@ -289,8 +289,8 @@ body {
   --color-secondary-content: oklch(45% 0.08 220);
   --color-accent: oklch(44% 0.14 42);
   --color-accent-content: oklch(98% 0.05 101);
-  --color-neutral: oklch(50% 0.05 240);
-  --color-neutral-content: oklch(98% 0.01 240);
+  --color-neutral: oklch(98% 0.05 101);
+  --color-neutral-content: oklch(47% 0.01 135);
   --color-info: oklch(70% 0.2 220);
   --color-info-content: oklch(98% 0.01 220);
   --color-success: oklch(92% 0.23 125);
@@ -339,7 +339,7 @@ body {
   --color-secondary-content: oklch(98% 0.05 192);
   --color-accent: oklch(98% 0.05 101);
   --color-accent-content: oklch(45% 0.08 220);
-  --color-neutral: oklch(50% 0.05 240);
+  --color-neutral: oklch(46% 0.01 157);
   --color-neutral-content: oklch(98% 0.01 240);
   --color-info: oklch(70% 0.2 220);
   --color-info-content: oklch(98% 0.01 220);
