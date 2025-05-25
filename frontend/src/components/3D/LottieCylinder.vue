@@ -26,7 +26,7 @@ const {
   scale = [1, 1, 1],
   renderOrder = 1,
   side = FrontSide,
-  material = "basic",
+  material = "standard",
   transparent = true,
   depthWrite = false,
 } = defineProps<LottieCylinderProps>();
