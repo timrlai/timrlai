@@ -72,7 +72,7 @@ const year = new Date().getFullYear();
         <SocialButtons
           location="footer"
           button-color="secondary"
-          tooltip-color="secondary"
+          tooltip-color="accent"
           tooltip-position="top"
           :show-all="true"
         />
