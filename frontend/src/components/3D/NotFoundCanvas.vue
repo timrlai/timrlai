@@ -101,12 +101,11 @@ let explanationScale: number = isPortrait
     ? LANDSCAPE_EXPLANATION_SCALE
     : DESKTOP_EXPLANATION_SCALE;
 
+const store = useThemeStore();
+const { isNight } = storeToRefs(store);
 const canvasKey: Ref<string> = ref("not-found-canvas");
 const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
 const randomNotFoundLottie: string = `${NOT_FOUND_LOTTIE_FOLDER}${NOT_FOUND_LOTTIES[Math.floor(Math.random() * NOT_FOUND_LOTTIES.length)]}`;
-const store = useThemeStore();
-const { isNight } = storeToRefs(store);
-const textColor = isNight ? TEXT_COLOR_DARK : TEXT_COLOR_LIGHT;
 
 const setPoses = (event: Event | null = null) => {
   setTimeout(
@@ -233,28 +232,44 @@ watchEffect(() => {
           ><TresMesh :position="[0, -1, 0]"
             ><Text3D :font="FONT_PATH" :size="TITLE_FONT_SIZE"
               >OOPSiE WOOPSiE!
-              <TresMeshStandardMaterial :color="textColor" /></Text3D
+              <TresMeshStandardMaterial
+                v-if="!isNight"
+                :color="TEXT_COLOR_LIGHT" /><TresMeshStandardMaterial
+                v-if="isNight"
+                :color="TEXT_COLOR_DARK" /></Text3D
           ></TresMesh>
         </Suspense>
         <Suspense
           ><TresMesh :position="[0, -2.7, 0]"
             ><Text3D :font="FONT_PATH" :size="TITLE_FONT_SIZE"
               >PAGE NOT FOUND!
-              <TresMeshStandardMaterial :color="textColor" /></Text3D
+              <TresMeshStandardMaterial
+                v-if="!isNight"
+                :color="TEXT_COLOR_LIGHT" /><TresMeshStandardMaterial
+                v-if="isNight"
+                :color="TEXT_COLOR_DARK" /></Text3D
           ></TresMesh>
         </Suspense>
         <Suspense
           ><TresMesh :position="[0, -4.7, 0]"
             ><Text3D :font="FONT_PATH" :size="EXPLANATION_FONT_SIZE"
               >Sowwy, the page "{{ $route.path }}"
-              <TresMeshStandardMaterial :color="textColor" /></Text3D
+              <TresMeshStandardMaterial
+                v-if="!isNight"
+                :color="TEXT_COLOR_LIGHT" /><TresMeshStandardMaterial
+                v-if="isNight"
+                :color="TEXT_COLOR_DARK" /></Text3D
           ></TresMesh>
         </Suspense>
         <Suspense
           ><TresMesh :position="[0, -6, 0]"
             ><Text3D :font="FONT_PATH" :size="EXPLANATION_FONT_SIZE"
               >is not in the cloud.
-              <TresMeshStandardMaterial :color="textColor" /></Text3D
+              <TresMeshStandardMaterial
+                v-if="!isNight"
+                :color="TEXT_COLOR_LIGHT" /><TresMeshStandardMaterial
+                v-if="isNight"
+                :color="TEXT_COLOR_DARK" /></Text3D
           ></TresMesh>
         </Suspense>
       </TresMesh>
@@ -282,7 +297,7 @@ watchEffect(() => {
         :color="isNight ? AMBIENT_LIGHT_COLOR_DARK : AMBIENT_LIGHT_COLOR_LIGHT"
       />
       <TresDirectionalLight
-        :position="[-4, isNight ? 1 : 10, 8]"
+        :position="[-4, 10, 8]"
         :rotation="[0, 0, 0]"
         :intensity="isNight ? 8 : 10"
         :color="

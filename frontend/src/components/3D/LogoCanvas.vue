@@ -97,7 +97,8 @@ const {
   HORIZONTAL_ROTATION_LIMIT,
   FONT_PATH,
   FONT_SIZE,
-  LOGO_GLTF_PATH,
+  LOGO_LIGHT_GLTF_PATH,
+  LOGO_DARK_GLTF_PATH,
   AVATAR_WAVE_HEIGHT,
   AVATAR_WAVE_RADIUS,
   AVATAR_SUMMARY_HEIGHT,
@@ -216,13 +217,18 @@ let avatarSkillsSoftScale: number = isPortrait
     ? LANDSCAPE_AVATAR_SKILLS_SOFT_SCALE
     : DESKTOP_AVATAR_SKILLS_SOFT_SCALE;
 
-const canvasKey: Ref<string> = ref("logo-canvas");
-const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
-const { scene } = await useGLTF(LOGO_GLTF_PATH, { draco: true });
-let logoModel: Scene = scene;
 const store = useThemeStore();
 const { isNight } = storeToRefs(store);
-const textColor = isNight ? TEXT_COLOR_DARK : TEXT_COLOR_LIGHT;
+const canvasKey: Ref<string> = ref("logo-canvas");
+const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
+const { scene: logoLightScene } = await useGLTF(LOGO_LIGHT_GLTF_PATH, {
+  draco: true,
+});
+const { scene: logoDarkScene } = await useGLTF(LOGO_DARK_GLTF_PATH, {
+  draco: true,
+});
+let logoLightModel: Scene = logoLightScene;
+let logoDarkModel: Scene = logoDarkScene;
 
 const setPoses = (event: Event | null = null) => {
   setTimeout(
@@ -333,8 +339,14 @@ const setPoses = (event: Event | null = null) => {
           ? LANDSCAPE_AVATAR_SKILLS_SOFT_SCALE
           : DESKTOP_AVATAR_SKILLS_SOFT_SCALE;
 
-      const { scene } = await useGLTF(LOGO_GLTF_PATH, { draco: true });
-      logoModel = scene;
+      const { scene: logoLightScene } = await useGLTF(LOGO_LIGHT_GLTF_PATH, {
+        draco: true,
+      });
+      const { scene: logoDarkScene } = await useGLTF(LOGO_DARK_GLTF_PATH, {
+        draco: true,
+      });
+      logoLightModel = logoLightScene;
+      logoDarkModel = logoDarkScene;
 
       // Regenerate the value of the key prop of the canvas to rerender it after resetting poses
       canvasKey.value = `logo-canvas-${Math.random()}`;
@@ -399,7 +411,12 @@ watchEffect(() => {
         :rotation="logoRotation"
         :scale="logoScale"
       >
-        <Suspense><primitive :object="logoModel" /></Suspense>
+        <Suspense
+          ><primitive v-if="!isNight" :object="logoLightModel"
+        /></Suspense>
+        <Suspense
+          ><primitive v-if="isNight" :object="logoDarkModel"
+        /></Suspense>
       </TresMesh>
       <TresMesh
         :position="taglinePosition"
@@ -409,25 +426,45 @@ watchEffect(() => {
         <Suspense
           ><TresMesh :position="[0, 2, 0]"
             ><Text3D :font="FONT_PATH" :size="FONT_SIZE"
-              >A FULL <TresMeshStandardMaterial :color="textColor" /></Text3D
+              >A FULL
+              <TresMeshStandardMaterial
+                v-if="!isNight"
+                :color="TEXT_COLOR_LIGHT" /><TresMeshStandardMaterial
+                v-if="isNight"
+                :color="TEXT_COLOR_DARK" /></Text3D
           ></TresMesh>
         </Suspense>
         <Suspense
           ><TresMesh :position="[0, 0.7, 0]"
             ><Text3D :font="FONT_PATH" :size="FONT_SIZE"
-              >STACK <TresMeshStandardMaterial :color="textColor" /></Text3D
+              >STACK
+              <TresMeshStandardMaterial
+                v-if="!isNight"
+                :color="TEXT_COLOR_LIGHT" /><TresMeshStandardMaterial
+                v-if="isNight"
+                :color="TEXT_COLOR_DARK" /></Text3D
           ></TresMesh>
         </Suspense>
         <Suspense
           ><TresMesh :position="[0, -0.7, 0]"
             ><Text3D :font="FONT_PATH" :size="FONT_SIZE"
-              >TEAM iN <TresMeshStandardMaterial :color="textColor" /></Text3D
+              >TEAM iN
+              <TresMeshStandardMaterial
+                v-if="!isNight"
+                :color="TEXT_COLOR_LIGHT" /><TresMeshStandardMaterial
+                v-if="isNight"
+                :color="TEXT_COLOR_DARK" /></Text3D
           ></TresMesh>
         </Suspense>
         <Suspense
           ><TresMesh :position="[0, -2, 0]"
             ><Text3D :font="FONT_PATH" :size="FONT_SIZE"
-              >ONE TiM! <TresMeshStandardMaterial :color="textColor" /></Text3D
+              >ONE TiM!
+              <TresMeshStandardMaterial
+                v-if="!isNight"
+                :color="TEXT_COLOR_LIGHT" /><TresMeshStandardMaterial
+                v-if="isNight"
+                :color="TEXT_COLOR_DARK" /></Text3D
           ></TresMesh>
         </Suspense>
       </TresMesh>
@@ -530,7 +567,7 @@ watchEffect(() => {
         :color="isNight ? AMBIENT_LIGHT_COLOR_DARK : AMBIENT_LIGHT_COLOR_LIGHT"
       />
       <TresDirectionalLight
-        :position="[-4, isNight ? 1 : 10, 8]"
+        :position="[-4, 10, 8]"
         :rotation="[0, 0, 0]"
         :intensity="isNight ? 8 : 10"
         :color="
