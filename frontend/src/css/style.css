@@ -387,7 +387,7 @@ body {
   --color-accent: oklch(98% 0.05 101);
   --color-accent-content: oklch(45% 0.08 220);
   --color-neutral: oklch(58% 0.01 146);
-  --color-neutral-content: oklch(98% 0.01 240);
+  --color-neutral-content: oklch(99% 0.02 109);
   --color-info: oklch(70% 0.2 220);
   --color-info-content: oklch(98% 0.01 220);
   --color-success: oklch(87% 0.17 170);
