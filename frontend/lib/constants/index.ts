@@ -7,7 +7,8 @@ import type {
 } from "../types";
 
 export const lottieConstants: LottieConstants = {
-  CLOUDS_LOTTIE_PATH: "/lottie/bg/clouds_lottie.json",
+  CLOUDS_LIGHT_LOTTIE_PATH: "/lottie/bg/clouds_light.json",
+  CLOUDS_DARK_LOTTIE_PATH: "/lottie/bg/clouds_dark.json",
   AVATAR_WAVE_LOTTIE_PATH: "/lottie/avatars/timrlai_avatar_wave.json",
   AVATAR_SUMMARY_LOTTIE_PATH: "/lottie/avatars/timrlai_avatar_summary.json",
   AVATAR_SKILLS_DESK_LOTTIE_PATH:

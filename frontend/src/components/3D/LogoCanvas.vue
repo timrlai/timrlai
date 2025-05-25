@@ -112,7 +112,8 @@ const {
 } = constants;
 
 const {
-  CLOUDS_LOTTIE_PATH,
+  CLOUDS_LIGHT_LOTTIE_PATH,
+  CLOUDS_DARK_LOTTIE_PATH,
   AVATAR_WAVE_LOTTIE_PATH,
   AVATAR_SUMMARY_LOTTIE_PATH,
   AVATAR_SKILLS_LEGS_LOTTIE_PATH,
@@ -388,7 +389,10 @@ watchEffect(() => {
         :enable-zoom="false"
       />
       <Suspense>
-        <LottieSphere :src="CLOUDS_LOTTIE_PATH" />
+        <LottieSphere v-if="!isNight" :src="CLOUDS_LIGHT_LOTTIE_PATH" />
+      </Suspense>
+      <Suspense>
+        <LottieSphere v-if="isNight" :src="CLOUDS_DARK_LOTTIE_PATH" />
       </Suspense>
       <TresMesh
         :position="logoPosition"

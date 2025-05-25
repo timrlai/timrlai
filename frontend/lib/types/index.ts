@@ -139,7 +139,8 @@ export type VimeoVideoProps = {
 };
 
 export type LottieConstants = {
-  readonly CLOUDS_LOTTIE_PATH: string;
+  readonly CLOUDS_LIGHT_LOTTIE_PATH: string;
+  readonly CLOUDS_DARK_LOTTIE_PATH: string;
   readonly AVATAR_WAVE_LOTTIE_PATH: string;
   readonly AVATAR_SUMMARY_LOTTIE_PATH: string;
   readonly AVATAR_SKILLS_DESK_LOTTIE_PATH: string;

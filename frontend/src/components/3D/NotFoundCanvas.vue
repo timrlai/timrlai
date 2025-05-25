@@ -63,8 +63,12 @@ const {
   GL_CLOUD_SCALE,
 } = constants;
 
-const { CLOUDS_LOTTIE_PATH, NOT_FOUND_LOTTIE_FOLDER, NOT_FOUND_LOTTIES } =
-  lottieConstants;
+const {
+  CLOUDS_LIGHT_LOTTIE_PATH,
+  CLOUDS_DARK_LOTTIE_PATH,
+  NOT_FOUND_LOTTIE_FOLDER,
+  NOT_FOUND_LOTTIES,
+} = lottieConstants;
 
 let width: number = window?.innerWidth || WIDTH_BREAKPOINT;
 let height: number = window?.innerHeight || HEIGHT_BREAKPOINT;
@@ -207,7 +211,10 @@ watchEffect(() => {
         :enable-zoom="false"
       />
       <Suspense>
-        <LottieSphere :src="CLOUDS_LOTTIE_PATH" />
+        <LottieSphere v-if="!isNight" :src="CLOUDS_LIGHT_LOTTIE_PATH" />
+      </Suspense>
+      <Suspense>
+        <LottieSphere v-if="isNight" :src="CLOUDS_DARK_LOTTIE_PATH" />
       </Suspense>
       <Suspense>
         <LottieCylinder
