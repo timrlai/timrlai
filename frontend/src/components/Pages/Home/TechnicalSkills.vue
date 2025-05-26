@@ -139,7 +139,7 @@ const randomizedSkills = [...primarySkills]
               (skill) => skill.icon !== null,
             )"
             v-bind:key="skills.title"
-            class="tooltip tooltip-secondary tooltip-secondary-content w-1/5 md:w-auto text-center opacity-70 hover:opacity-100"
+            class="tooltip tooltip-neutral tooltip-secondary-content w-1/5 md:w-auto text-center opacity-70 hover:opacity-100"
             :data-tip="`${skills.title}`"
           >
             <div class="tooltip-content">

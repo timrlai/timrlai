@@ -139,7 +139,8 @@ export type VimeoVideoProps = {
 };
 
 export type LottieConstants = {
-  readonly CLOUDS_LOTTIE_PATH: string;
+  readonly CLOUDS_LIGHT_LOTTIE_PATH: string;
+  readonly CLOUDS_DARK_LOTTIE_PATH: string;
   readonly AVATAR_WAVE_LOTTIE_PATH: string;
   readonly AVATAR_SUMMARY_LOTTIE_PATH: string;
   readonly AVATAR_SKILLS_DESK_LOTTIE_PATH: string;
@@ -238,7 +239,8 @@ export type LogoCanvasConstants = CloudCanvasConstants & {
   readonly WIDE_AVATAR_SKILLS_ROTATION: [number, number, number];
   readonly WIDE_AVATAR_SKILLS_SOFT_ROTATION: [number, number, number];
   readonly WIDE_DESK_ROTATION: [number, number, number];
-  readonly LOGO_GLTF_PATH: string;
+  readonly LOGO_LIGHT_GLTF_PATH: string;
+  readonly LOGO_DARK_GLTF_PATH: string;
   readonly FONT_SIZE: number;
   readonly AVATAR_WAVE_HEIGHT: number;
   readonly AVATAR_WAVE_RADIUS: number;
