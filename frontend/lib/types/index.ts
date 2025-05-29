@@ -206,6 +206,9 @@ export type LogoCanvasConstants = CloudCanvasConstants & {
   readonly PORTRAIT_BAT_POSITION: [number, number, number];
   readonly PORTRAIT_BAT_ROTATION: [number, number, number];
   readonly PORTRAIT_BAT_SCALE: number;
+  readonly PORTRAIT_BAT_SUMMARY_POSITION: [number, number, number];
+  readonly PORTRAIT_BAT_SUMMARY_ROTATION: [number, number, number];
+  readonly PORTRAIT_BAT_SUMMARY_SCALE: number;
   readonly PORTRAIT_DESK_POSITION: [number, number, number];
   readonly PORTRAIT_DESK_ROTATION: [number, number, number];
   readonly PORTRAIT_DESK_SCALE: number;
@@ -223,6 +226,8 @@ export type LogoCanvasConstants = CloudCanvasConstants & {
   readonly LANDSCAPE_AVATAR_SKILLS_SOFT_SCALE: number;
   readonly LANDSCAPE_BAT_POSITION: [number, number, number];
   readonly LANDSCAPE_BAT_SCALE: number;
+  readonly LANDSCAPE_BAT_SUMMARY_POSITION: [number, number, number];
+  readonly LANDSCAPE_BAT_SUMMARY_SCALE: number;
   readonly LANDSCAPE_DESK_POSITION: [number, number, number];
   readonly LANDSCAPE_DESK_SCALE: number;
   readonly DESKTOP_LOGO_POSITION: [number, number, number];
@@ -239,6 +244,8 @@ export type LogoCanvasConstants = CloudCanvasConstants & {
   readonly DESKTOP_AVATAR_SKILLS_SOFT_SCALE: number;
   readonly DESKTOP_BAT_POSITION: [number, number, number];
   readonly DESKTOP_BAT_SCALE: number;
+  readonly DESKTOP_BAT_SUMMARY_POSITION: [number, number, number];
+  readonly DESKTOP_BAT_SUMMARY_SCALE: number;
   readonly DESKTOP_DESK_POSITION: [number, number, number];
   readonly DESKTOP_DESK_SCALE: number;
   readonly WIDE_LOGO_ROTATION: [number, number, number];
@@ -248,6 +255,7 @@ export type LogoCanvasConstants = CloudCanvasConstants & {
   readonly WIDE_AVATAR_SKILLS_ROTATION: [number, number, number];
   readonly WIDE_AVATAR_SKILLS_SOFT_ROTATION: [number, number, number];
   readonly WIDE_BAT_ROTATION: [number, number, number];
+  readonly WIDE_BAT_SUMMARY_ROTATION: [number, number, number];
   readonly WIDE_DESK_ROTATION: [number, number, number];
   readonly LOGO_LIGHT_GLTF_PATH: string;
   readonly LOGO_DARK_GLTF_PATH: string;
@@ -262,6 +270,8 @@ export type LogoCanvasConstants = CloudCanvasConstants & {
   readonly AVATAR_SKILLS_SOFT_RADIUS: number;
   readonly BAT_HEIGHT: number;
   readonly BAT_RADIUS: number;
+  readonly BAT_SUMMARY_HEIGHT: number;
+  readonly BAT_SUMMARY_RADIUS: number;
 };
 
 export type NotFoundCanvasConstants = CloudCanvasConstants & {
