@@ -51,6 +51,9 @@ const {
   PORTRAIT_BAT_SUMMARY_POSITION,
   PORTRAIT_BAT_SUMMARY_ROTATION,
   PORTRAIT_BAT_SUMMARY_SCALE,
+  PORTRAIT_BAT_SKILLS_SOFT_POSITION,
+  PORTRAIT_BAT_SKILLS_SOFT_ROTATION,
+  PORTRAIT_BAT_SKILLS_SOFT_SCALE,
   PORTRAIT_DESK_POSITION,
   PORTRAIT_DESK_ROTATION,
   PORTRAIT_DESK_SCALE,
@@ -70,6 +73,8 @@ const {
   LANDSCAPE_BAT_SCALE,
   LANDSCAPE_BAT_SUMMARY_POSITION,
   LANDSCAPE_BAT_SUMMARY_SCALE,
+  LANDSCAPE_BAT_SKILLS_SOFT_POSITION,
+  LANDSCAPE_BAT_SKILLS_SOFT_SCALE,
   LANDSCAPE_DESK_POSITION,
   LANDSCAPE_DESK_SCALE,
   DESKTOP_LOGO_POSITION,
@@ -88,6 +93,8 @@ const {
   DESKTOP_BAT_SCALE,
   DESKTOP_BAT_SUMMARY_POSITION,
   DESKTOP_BAT_SUMMARY_SCALE,
+  DESKTOP_BAT_SKILLS_SOFT_POSITION,
+  DESKTOP_BAT_SKILLS_SOFT_SCALE,
   DESKTOP_DESK_POSITION,
   DESKTOP_DESK_SCALE,
   WIDE_LOGO_ROTATION,
@@ -98,6 +105,7 @@ const {
   WIDE_AVATAR_SKILLS_SOFT_ROTATION,
   WIDE_BAT_ROTATION,
   WIDE_BAT_SUMMARY_ROTATION,
+  WIDE_BAT_SKILLS_SOFT_ROTATION,
   WIDE_DESK_ROTATION,
   CANVAS_COLOR_LIGHT,
   CANVAS_COLOR_DARK,
@@ -127,6 +135,8 @@ const {
   BAT_RADIUS,
   BAT_SUMMARY_HEIGHT,
   BAT_SUMMARY_RADIUS,
+  BAT_SKILLS_SOFT_HEIGHT,
+  BAT_SKILLS_SOFT_RADIUS,
   GL_CLOUD_POSITION,
   GL_CLOUD_ROTATION,
   GL_CLOUD_SCALE,
@@ -141,6 +151,7 @@ const {
   AVATAR_SKILLS_SOFT_LOTTIE_PATH,
   BAT_LOTTIE_PATH,
   BAT_SUMMARY_LOTTIE_PATH,
+  BAT_SKILLS_SOFT_LOTTIE_PATH,
 } = lottieConstants;
 
 let width: number = window?.innerWidth || WIDTH_BREAKPOINT;
@@ -264,6 +275,19 @@ let batSummaryScale: number = isPortrait
   : isLandscape
     ? LANDSCAPE_BAT_SUMMARY_SCALE
     : DESKTOP_BAT_SUMMARY_SCALE;
+let batSkillsSoftPosition: [number, number, number] = isPortrait
+  ? PORTRAIT_BAT_SKILLS_SOFT_POSITION
+  : isLandscape
+    ? LANDSCAPE_BAT_SKILLS_SOFT_POSITION
+    : DESKTOP_BAT_SKILLS_SOFT_POSITION;
+let batSkillsSoftRotation: [number, number, number] = isPortrait
+  ? PORTRAIT_BAT_SKILLS_SOFT_ROTATION
+  : WIDE_BAT_SKILLS_SOFT_ROTATION;
+let batSkillsSoftScale: number = isPortrait
+  ? PORTRAIT_BAT_SKILLS_SOFT_SCALE
+  : isLandscape
+    ? LANDSCAPE_BAT_SKILLS_SOFT_SCALE
+    : DESKTOP_BAT_SKILLS_SOFT_SCALE;
 
 const store = useThemeStore();
 const { isNight } = storeToRefs(store);
@@ -410,6 +434,19 @@ const setPoses = (event: Event | null = null) => {
         : isLandscape
           ? LANDSCAPE_BAT_SUMMARY_SCALE
           : DESKTOP_BAT_SUMMARY_SCALE;
+      batSkillsSoftPosition = isPortrait
+        ? PORTRAIT_BAT_SKILLS_SOFT_POSITION
+        : isLandscape
+          ? LANDSCAPE_BAT_SKILLS_SOFT_POSITION
+          : DESKTOP_BAT_SKILLS_SOFT_POSITION;
+      batSkillsSoftRotation = isPortrait
+        ? PORTRAIT_BAT_SKILLS_SOFT_ROTATION
+        : WIDE_BAT_SKILLS_SOFT_ROTATION;
+      batSkillsSoftScale = isPortrait
+        ? PORTRAIT_BAT_SKILLS_SOFT_SCALE
+        : isLandscape
+          ? LANDSCAPE_BAT_SKILLS_SOFT_SCALE
+          : DESKTOP_BAT_SKILLS_SOFT_SCALE;
 
       const { scene: logoLightScene } = await useGLTF(LOGO_LIGHT_GLTF_PATH, {
         draco: true,
@@ -637,6 +674,18 @@ watchEffect(() => {
           :position="batSummaryPosition"
           :rotation="batSummaryRotation"
           :scale="batSummaryScale"
+        />
+      </Suspense>
+      <Suspense>
+        <LottieCylinder
+          v-if="isNight"
+          :src="BAT_SKILLS_SOFT_LOTTIE_PATH"
+          :height="BAT_SKILLS_SOFT_HEIGHT"
+          :radius-top="BAT_SKILLS_SOFT_RADIUS"
+          :radius-bottom="BAT_SKILLS_SOFT_RADIUS"
+          :position="batSkillsSoftPosition"
+          :rotation="batSkillsSoftRotation"
+          :scale="batSkillsSoftScale"
         />
       </Suspense>
       <Suspense>
