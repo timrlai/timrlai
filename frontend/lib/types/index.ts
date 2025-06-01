@@ -156,6 +156,8 @@ export type LottieConstants = {
   readonly AVATAR_VOLUNTEER_LOTTIE_PATH: string;
   readonly BAT_LOTTIE_PATH: string;
   readonly BAT_SUMMARY_LOTTIE_PATH: string;
+  readonly BAT_SKILLS_LOTTIE_PATH: string;
+  readonly BAT_SKILLS_LAPTOP_LOTTIE_PATH: string;
   readonly BAT_SKILLS_SOFT_LOTTIE_PATH: string;
   readonly NOT_FOUND_LOTTIE_FOLDER: string;
   readonly NOT_FOUND_LOTTIES: string[];
