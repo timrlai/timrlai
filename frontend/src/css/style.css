@@ -170,15 +170,21 @@ textarea {
   line-height: 1.5;
 }
 
-body {
-  margin: 0;
+body,
+#app {
   min-width: 320px;
   min-height: 100vh;
+}
+
+body {
+  margin: 0;
   background: linear-gradient(
     180deg,
     var(--color-base-300) 0%,
+    var(--color-base-200) 5%,
+    var(--color-base-100) 8%,
     var(--color-neutral) 25%,
-    var(--color-base-300) 35%,
+    var(--color-base-300) 40%,
     var(--color-base-200) 70%,
     var(--color-base-100) 100%
   );
@@ -187,27 +193,27 @@ body {
 #app {
   background-image:
     radial-gradient(
-      rgb(155, 250, 255),
-      rgb(155, 250, 255) 2px,
-      rgba(155, 250, 255, 0.2) 2px,
+      oklch(93% 0.09 200),
+      oklch(93% 0.09 200) 2px,
+      oklch(93% 0.09 200 / 10%) 2px,
       transparent 40px
     ),
     radial-gradient(
-      rgb(155, 250, 255),
-      rgb(155, 250, 255) 2px,
-      rgba(155, 250, 255, 0.15) 1px,
+      oklch(93% 0.09 200),
+      oklch(93% 0.09 200) 2px,
+      oklch(93% 0.09 200 / 10%) 1px,
       transparent 30px
     ),
     radial-gradient(
-      rgb(155, 250, 255),
-      rgb(155, 250, 255) 2px,
-      rgba(155, 250, 255, 0.1) 2px,
+      oklch(93% 0.09 200),
+      oklch(93% 0.09 200) 2px,
+      oklch(93% 0.09 200 / 10%) 2px,
       transparent 40px
     ),
     radial-gradient(
-      rgb(155, 250, 255),
-      rgb(155, 250, 255) 2px,
-      rgba(155, 250, 255, 0.1) 2px,
+      oklch(93% 0.09 200),
+      oklch(93% 0.09 200) 2px,
+      oklch(93% 0.09 200 / 10%) 2px,
       transparent 30px
     );
   background-size:
