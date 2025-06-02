@@ -166,8 +166,6 @@ export type LottieConstants = {
 type CanvasConstants = {
   readonly WIDTH_BREAKPOINT: number;
   readonly HEIGHT_BREAKPOINT: number;
-  readonly CANVAS_COLOR_LIGHT: string;
-  readonly CANVAS_COLOR_DARK: string;
   readonly TEXT_COLOR_LIGHT: string;
   readonly TEXT_COLOR_DARK: string;
   readonly AMBIENT_LIGHT_COLOR_LIGHT: string;

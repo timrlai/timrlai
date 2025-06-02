@@ -115,8 +115,6 @@ const {
   WIDE_BAT_SKILLS_ROTATION,
   WIDE_BAT_SKILLS_SOFT_ROTATION,
   WIDE_DESK_ROTATION,
-  CANVAS_COLOR_LIGHT,
-  CANVAS_COLOR_DARK,
   TEXT_COLOR_LIGHT,
   TEXT_COLOR_DARK,
   AMBIENT_LIGHT_COLOR_LIGHT,
@@ -529,7 +527,6 @@ watchEffect(() => {
     <h2 class="visually-hidden">A full stack team in one Tim!</h2>
     <TresCanvas
       :key="canvasKey"
-      :clear-color="isNight ? CANVAS_COLOR_DARK : CANVAS_COLOR_LIGHT"
       :output-color-space="LinearSRGBColorSpace"
       :tone-mapping-exposure="1.2"
       shadows
