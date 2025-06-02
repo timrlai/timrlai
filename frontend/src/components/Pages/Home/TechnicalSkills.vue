@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { defineAsyncComponent, ref } from "vue";
+import { storeToRefs } from "pinia";
 import { Icon } from "@iconify/vue";
 import { VueWriter } from "vue-writer";
 
@@ -8,6 +9,7 @@ import {
   primarySkills,
   madeWithSkills,
 } from "../../../../lib/constants";
+import { useThemeStore } from "../../../../lib/stores/theme";
 
 const Lazy = defineAsyncComponent(() => import("../../Common/Lazy.vue"));
 const LottiePlayer = defineAsyncComponent(
@@ -17,7 +19,11 @@ const SkillsTable = defineAsyncComponent(
   () => import("../../Common/SkillsTable.vue"),
 );
 
-const { AVATAR_SKILLS_DESK_LOTTIE_PATH } = lottieConstants;
+const { AVATAR_SKILLS_DESK_LOTTIE_PATH, BAT_SKILLS_LAPTOP_LOTTIE_PATH } =
+  lottieConstants;
+
+const store = useThemeStore();
+const { isNight } = storeToRefs(store);
 
 const currentSkill = ref(primarySkills[0].icon);
 const skillIcon = ref(primarySkills[0].icon);
@@ -98,12 +104,17 @@ const randomizedSkills = [...primarySkills]
             </div>
           </div>
         </div>
-        <div class="w-full sm:w-1/4">
+        <div v-if="!isNight" class="w-full sm:w-1/4">
           <Suspense
             ><LottiePlayer
               :src="AVATAR_SKILLS_DESK_LOTTIE_PATH"
               autoPlay
               v-once
+          /></Suspense>
+        </div>
+        <div v-if="isNight" class="w-full sm:w-1/4">
+          <Suspense
+            ><LottiePlayer :src="BAT_SKILLS_LAPTOP_LOTTIE_PATH" autoPlay v-once
           /></Suspense>
         </div>
       </div>

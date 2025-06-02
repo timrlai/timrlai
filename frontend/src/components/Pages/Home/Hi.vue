@@ -1,17 +1,22 @@
 <script setup lang="ts">
 import { defineAsyncComponent, ref, nextTick } from "vue";
+import { storeToRefs } from "pinia";
 import { Icon } from "@iconify/vue";
 import ConfettiExplosion from "vue-confetti-explosion";
 import { VueWriter } from "vue-writer";
 
 import { lottieConstants, intros } from "../../../../lib/constants";
+import { useThemeStore } from "../../../../lib/stores/theme";
 
 const Lazy = defineAsyncComponent(() => import("../../Common/Lazy.vue"));
 const LottiePlayer = defineAsyncComponent(
   () => import("../../Common/LottiePlayer.vue"),
 );
 
-const { AVATAR_WAVE_LOTTIE_PATH } = lottieConstants;
+const { AVATAR_WAVE_LOTTIE_PATH, BAT_LOTTIE_PATH } = lottieConstants;
+
+const store = useThemeStore();
+const { isNight } = storeToRefs(store);
 
 const visible = ref(false);
 
@@ -34,15 +39,15 @@ const onIntroTyped = (currentTitle: string) => {
     id="hi"
     class="mockup-browser min-h-[60vh] md:min-h-[70vh] border-4 border-primary shadow-lg shadow-primary overflow-hidden"
   >
-    <Lazy :min-height="700">
-      <div
-        class="mockup-browser-toolbar bg-secondary text-secondary-content border-b-4 border-primary py-4"
-      >
-        <div class="input">https://timrl.ai</div>
-      </div>
-      <div
-        class="glass grid place-content-center min-h-[55vh] md:min-h-[65vh] p-2 bg-primary/70 text-primary-content text-center"
-      >
+    <div
+      class="mockup-browser-toolbar bg-secondary text-secondary-content border-b-4 border-primary py-4"
+    >
+      <div class="input">https://timrl.ai</div>
+    </div>
+    <div
+      class="glass grid place-content-center min-h-[55vh] md:min-h-[65vh] p-2 bg-primary/70 text-primary-content text-center py-5"
+    >
+      <Lazy :min-height="500">
         <div class="flex justify-center motion-reduce:hidden print:hidden">
           <ConfettiExplosion :particleCount="200" :force="0.3" v-if="visible" />
         </div>
@@ -89,14 +94,19 @@ const onIntroTyped = (currentTitle: string) => {
               <Icon :icon="`${introIcon}`" class="inline-block" />
             </div>
           </div>
-          <div class="w-full sm:w-1/4 md:w-1/3">
+          <div v-if="!isNight" class="w-full sm:w-1/4 md:w-1/3">
             <Suspense>
               <LottiePlayer :src="AVATAR_WAVE_LOTTIE_PATH" autoPlay v-once />
             </Suspense>
           </div>
+          <div v-if="isNight" class="w-full sm:w-1/4 md:w-1/3">
+            <Suspense>
+              <LottiePlayer :src="BAT_LOTTIE_PATH" autoPlay v-once />
+            </Suspense>
+          </div>
         </div>
-      </div>
-    </Lazy>
+      </Lazy>
+    </div>
   </section>
 </template>
 

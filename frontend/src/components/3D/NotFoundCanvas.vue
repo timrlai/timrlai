@@ -43,8 +43,6 @@ const {
   DESKTOP_EXPLANATION_SCALE,
   WIDE_LOTTIE_ROTATION,
   WIDE_EXPLANATION_ROTATION,
-  CANVAS_COLOR_LIGHT,
-  CANVAS_COLOR_DARK,
   TEXT_COLOR_LIGHT,
   TEXT_COLOR_DARK,
   AMBIENT_LIGHT_COLOR_LIGHT,
@@ -192,7 +190,6 @@ watchEffect(() => {
     </p>
     <TresCanvas
       :key="canvasKey"
-      :clear-color="isNight ? CANVAS_COLOR_DARK : CANVAS_COLOR_LIGHT"
       :output-color-space="LinearSRGBColorSpace"
       :tone-mapping-exposure="1.2"
       shadows
