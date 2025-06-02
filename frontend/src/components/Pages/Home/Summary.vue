@@ -1,15 +1,20 @@
 <script setup lang="ts">
 import { defineAsyncComponent } from "vue";
+import { storeToRefs } from "pinia";
 import { Icon } from "@iconify/vue";
 
 import { lottieConstants } from "../../../../lib/constants";
+import { useThemeStore } from "../../../../lib/stores/theme";
 
 const Lazy = defineAsyncComponent(() => import("../../Common/Lazy.vue"));
 const LottiePlayer = defineAsyncComponent(
   () => import("../../Common/LottiePlayer.vue"),
 );
 
-const { AVATAR_SUMMARY_LOTTIE_PATH } = lottieConstants;
+const { AVATAR_SUMMARY_LOTTIE_PATH, BAT_SUMMARY_LOTTIE_PATH } = lottieConstants;
+
+const store = useThemeStore();
+const { isNight } = storeToRefs(store);
 </script>
 
 <template>
@@ -30,7 +35,7 @@ const { AVATAR_SUMMARY_LOTTIE_PATH } = lottieConstants;
         </h1>
         <div class="flex flex-wrap justify-between items-center">
           <ul
-            class="list w-full sm:w-4/5 text-lg sm:text-xl atkinson-hyperlegible-next-bold"
+            class="list w-full sm:w-3/4 text-lg sm:text-xl atkinson-hyperlegible-next-bold"
           >
             <li class="list-row">
               <div class="text-4xl sm:text-5xl">
@@ -119,9 +124,14 @@ const { AVATAR_SUMMARY_LOTTIE_PATH } = lottieConstants;
               <div>Canadian citizen</div>
             </li>
           </ul>
-          <div class="w-full sm:w-1/5 pl-14 sm:pl-0 pr-14">
+          <div v-if="!isNight" class="w-full sm:w-1/4 pl-14 sm:pl-0 pr-14">
             <Suspense>
               <LottiePlayer :src="AVATAR_SUMMARY_LOTTIE_PATH" autoPlay v-once />
+            </Suspense>
+          </div>
+          <div v-if="isNight" class="w-full sm:w-1/4 sm:pl-0">
+            <Suspense>
+              <LottiePlayer :src="BAT_SUMMARY_LOTTIE_PATH" autoPlay v-once />
             </Suspense>
           </div>
         </div>
