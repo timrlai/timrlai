@@ -96,11 +96,10 @@ export default defineConfig({
   build: {
     minify: "esbuild",
     cssMinify: "esbuild",
+    cssCodeSplit: true,
     rollupOptions: {
       output: {
         manualChunks: {
-          style: ["src/css/style.css"],
-          print: ["src/css/print.css"],
           vue: ["vue"],
           router: ["vue-router"],
           pinia: ["pinia"],

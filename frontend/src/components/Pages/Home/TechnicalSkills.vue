@@ -42,6 +42,7 @@ const randomizedSkills = [...primarySkills]
 
 <template>
   <div
+    id="tech-skills"
     class="mockup-code bg-slate-950 text-slate-400 border-x-4 border-primary rounded-none shadow-lg shadow-primary fira-code overflow-x-hidden"
   >
     <div class="px-5">
