@@ -99,8 +99,6 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          style: ["src/css/style.css"],
-          print: ["src/css/print.css"],
           vue: ["vue"],
           router: ["vue-router"],
           pinia: ["pinia"],
