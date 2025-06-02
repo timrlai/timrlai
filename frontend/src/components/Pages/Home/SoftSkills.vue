@@ -19,6 +19,7 @@ const { isNight } = storeToRefs(store);
 
 <template>
   <div
+    id="soft-skills"
     class="mockup-window bg-secondary/80 text-secondary-content border-4 rounded-t-none border-primary shadow-lg shadow-primary"
   >
     <div class="p-5">
