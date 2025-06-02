@@ -34,15 +34,15 @@ const onIntroTyped = (currentTitle: string) => {
     id="hi"
     class="mockup-browser min-h-[60vh] md:min-h-[70vh] border-4 border-primary shadow-lg shadow-primary overflow-hidden"
   >
-    <Lazy :min-height="700">
-      <div
-        class="mockup-browser-toolbar bg-secondary text-secondary-content border-b-4 border-primary py-4"
-      >
-        <div class="input">https://timrl.ai</div>
-      </div>
-      <div
-        class="glass grid place-content-center min-h-[55vh] md:min-h-[65vh] p-2 bg-primary/70 text-primary-content text-center"
-      >
+    <div
+      class="mockup-browser-toolbar bg-secondary text-secondary-content border-b-4 border-primary py-4"
+    >
+      <div class="input">https://timrl.ai</div>
+    </div>
+    <div
+      class="glass grid place-content-center min-h-[55vh] md:min-h-[65vh] p-2 bg-primary/70 text-primary-content text-center py-5"
+    >
+      <Lazy :min-height="500">
         <div class="flex justify-center motion-reduce:hidden print:hidden">
           <ConfettiExplosion :particleCount="200" :force="0.3" v-if="visible" />
         </div>
@@ -95,8 +95,8 @@ const onIntroTyped = (currentTitle: string) => {
             </Suspense>
           </div>
         </div>
-      </div>
-    </Lazy>
+      </Lazy>
+    </div>
   </section>
 </template>
 
