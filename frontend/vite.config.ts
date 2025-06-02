@@ -96,6 +96,7 @@ export default defineConfig({
   build: {
     minify: "esbuild",
     cssMinify: "esbuild",
+    cssCodeSplit: true,
     rollupOptions: {
       output: {
         manualChunks: {
