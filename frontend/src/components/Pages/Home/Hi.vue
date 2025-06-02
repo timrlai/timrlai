@@ -1,17 +1,22 @@
 <script setup lang="ts">
 import { defineAsyncComponent, ref, nextTick } from "vue";
+import { storeToRefs } from "pinia";
 import { Icon } from "@iconify/vue";
 import ConfettiExplosion from "vue-confetti-explosion";
 import { VueWriter } from "vue-writer";
 
 import { lottieConstants, intros } from "../../../../lib/constants";
+import { useThemeStore } from "../../../../lib/stores/theme";
 
 const Lazy = defineAsyncComponent(() => import("../../Common/Lazy.vue"));
 const LottiePlayer = defineAsyncComponent(
   () => import("../../Common/LottiePlayer.vue"),
 );
 
-const { AVATAR_WAVE_LOTTIE_PATH } = lottieConstants;
+const { AVATAR_WAVE_LOTTIE_PATH, BAT_LOTTIE_PATH } = lottieConstants;
+
+const store = useThemeStore();
+const { isNight } = storeToRefs(store);
 
 const visible = ref(false);
 
@@ -89,9 +94,14 @@ const onIntroTyped = (currentTitle: string) => {
               <Icon :icon="`${introIcon}`" class="inline-block" />
             </div>
           </div>
-          <div class="w-full sm:w-1/4 md:w-1/3">
+          <div v-if="!isNight" class="w-full sm:w-1/4 md:w-1/3">
             <Suspense>
               <LottiePlayer :src="AVATAR_WAVE_LOTTIE_PATH" autoPlay v-once />
+            </Suspense>
+          </div>
+          <div v-if="isNight" class="w-full sm:w-1/4 md:w-1/3">
+            <Suspense>
+              <LottiePlayer :src="BAT_LOTTIE_PATH" autoPlay v-once />
             </Suspense>
           </div>
         </div>
