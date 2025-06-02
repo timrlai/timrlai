@@ -9,7 +9,8 @@ import {
 } from "vue";
 import { storeToRefs } from "pinia";
 import isMobile from "is-mobile";
-import { type Scene, LinearSRGBColorSpace } from "three";
+import type { Scene } from "three/src/scenes/Scene.d.ts";
+import { LinearSRGBColorSpace } from "three/src/constants.js";
 import { TresCanvas } from "@tresjs/core";
 import { useGLTF, OrbitControls, Text3D, Box } from "@tresjs/cientos";
 
