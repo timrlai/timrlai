@@ -72,11 +72,32 @@ export default {
   },
 };
 </script>
+
 <template>
   <div
     ref="targetEl"
-    :style="`min-height:${fixedMinHeight ? fixedMinHeight : minHeight}px`"
+    :style="`min-height: ${fixedMinHeight ? fixedMinHeight : minHeight}px; contain-intrinsic-height: ${fixedMinHeight ? fixedMinHeight : minHeight}px`"
+    class="lazy"
   >
     <slot v-if="shouldRender" />
   </div>
 </template>
+
+<style scoped lang="scss">
+.lazy,
+.lazy section,
+.lazy article,
+.lazy aside,
+.lazy footer,
+.lazy [id] {
+  content-visibility: auto;
+}
+
+.lazy section,
+.lazy article,
+.lazy aside,
+.lazy footer,
+.lazy [id] {
+  contain-intrinsic-height: 100%;
+}
+</style>
