@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import type { Camera } from "three/src/cameras/Camera.d.ts";
+import { Vector3 } from "three/src/math/Vector3.js";
+import { Data3DTexture } from "three/src/textures/Data3DTexture.js";
 import {
-  Camera,
-  Vector3,
-  Data3DTexture,
   RedFormat,
   LinearFilter,
-  Color,
   GLSL3,
   BackSide,
-} from "three";
+} from "three/src/constants.js";
+import { Color } from "three/src/math/Color.js";
 import { ImprovedNoise } from "three/addons/math/ImprovedNoise.js";
 import { useTresContext, useRenderLoop } from "@tresjs/core";
 import { Box } from "@tresjs/cientos";

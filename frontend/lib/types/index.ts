@@ -1,4 +1,5 @@
-import type { CanvasTexture, Wrapping, Side } from "three";
+import type { CanvasTexture } from "three/src/textures/CanvasTexture.d.ts";
+import type { Wrapping, Side } from "three/src/constants.d.ts";
 
 export type ScrollPosition = {
   el?: string | Element;

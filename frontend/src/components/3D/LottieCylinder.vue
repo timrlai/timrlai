@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { defineProps } from "vue";
-import { ClampToEdgeWrapping, FrontSide } from "three";
+import { ClampToEdgeWrapping, FrontSide } from "three/src/constants.js";
 import { LottieLoader } from "three/addons/loaders/LottieLoader.js";
-import type { LoaderProto } from "@tresjs/core";
-import { useLoader } from "@tresjs/core";
+import { type LoaderProto, useLoader } from "@tresjs/core";
 import { Cylinder } from "@tresjs/cientos";
 import type { LottieTexture, LottieCylinderProps } from "../../../lib/types";
 
