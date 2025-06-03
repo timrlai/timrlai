@@ -31,6 +31,8 @@ const year = new Date().getFullYear();
           :src="logoSvgPath.default"
           alt="Tim R. Lai"
           title="Tim R. Lai"
+          width="320"
+          height="234"
           class="inline-block w-full"
         />
       </Suspense>
@@ -43,6 +45,8 @@ const year = new Date().getFullYear();
             :src="headSvgPath.default"
             aria-hidden
             alt=""
+            width="45"
+            height="45"
             class="inline-block h-[1.5em]"
           />
         </Suspense>
@@ -63,6 +67,8 @@ const year = new Date().getFullYear();
             :src="headSvgPath.default"
             aria-hidden
             alt=""
+            width="45"
+            height="45"
             class="inline-block h-[1.5em]"
           />
         </Suspense>
@@ -107,6 +113,8 @@ const year = new Date().getFullYear();
             :src="headSvgPath.default"
             aria-hidden
             alt=""
+            width="45"
+            height="45"
             class="inline-block h-[1.5em]"
           />
         </Suspense>
