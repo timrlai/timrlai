@@ -100,50 +100,93 @@
     />
     <link
       rel="preload"
-      as="font"
-      href="fonts/ubuntu_titling/UbuntuTitling-Bold-webfont.eot"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
+      fetchpriority="high"
       as="font"
       href="fonts/ubuntu_titling/UbuntuTitling-Bold-webfont.woff"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
+      fetchpriority="low"
+      as="font"
+      href="fonts/ubuntu_titling/UbuntuTitling-Bold-webfont.eot"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      fetchpriority="low"
       as="font"
       href="fonts/ubuntu_titling/UbuntuTitling-Bold-webfont.ttf"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
+      fetchpriority="low"
       as="font"
       href="fonts/ubuntu_titling/UbuntuTitling-Bold-webfont.svg#ubuntu_titlingbold"
+      crossorigin="anonymous"
+    />
+
+    <!-- Preload Image Files -->
+    <!-- Preload the LCP image with a high fetchpriority so it starts loading with the stylesheet. -->
+    <link
+      rel="preload"
+      fetchpriority="high"
+      as="image"
+      href="src/assets/img/logos/timrlai_logo.svg"
+      type="image/svg"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      fetchpriority="high"
+      as="image"
+      href="src/assets/img/logos/timrlai_logo_light.svg"
+      type="image/svg"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      fetchpriority="low"
+      as="image"
+      href="src/assets/img/icons/timrlai_head_trans_bg.svg"
+      type="image/svg"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      fetchpriority="low"
+      as="image"
+      href="src/assets/img/props/seneca_chalkboard.svg"
+      type="image/svg"
       crossorigin="anonymous"
     />
 
     <!-- Preload GLTF Models -->
     <link
       rel="preload"
+      fetchpriority="low"
       as="fetch"
       href="models/logos/timrlai_logo.gltf"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
+      fetchpriority="low"
       as="fetch"
       href="models/logos/timrlai_logo.bin"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
+      fetchpriority="low"
       as="fetch"
       href="models/logos/timrlai_logo_light.gltf"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
+      fetchpriority="low"
       as="fetch"
       href="models/logos/timrlai_logo_light.bin"
       crossorigin="anonymous"
@@ -152,148 +195,142 @@
     <!-- Preload Lottie JSON -->
     <link
       rel="preload"
+      fetchpriority="low"
       as="fetch"
       href="lottie/bg/clouds_light.json"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
+      fetchpriority="low"
       as="fetch"
       href="lottie/bg/clouds_dark.json"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
+      fetchpriority="low"
       as="fetch"
       href="lottie/avatars/timrlai_avatar_wave.json"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
+      fetchpriority="low"
       as="fetch"
       href="lottie/avatars/timrlai_avatar_summary.json"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
+      fetchpriority="low"
       as="fetch"
       href="lottie/avatars/timrlai_avatar_skills_legs.json"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
+      fetchpriority="low"
       as="fetch"
       href="lottie/avatars/timrlai_avatar_skills_desk.json"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
+      fetchpriority="low"
       as="fetch"
       href="lottie/avatars/timrlai_avatar_skills_soft.json"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
+      fetchpriority="low"
       as="fetch"
       href="lottie/avatars/timrlai_avatar_teacher_desk.json"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
+      fetchpriority="low"
       as="fetch"
       href="lottie/avatars/timrlai_avatar_designer_desk.json"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
+      fetchpriority="low"
       as="fetch"
       href="lottie/avatars/timrlai_avatar_illustrator.json"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
+      fetchpriority="low"
       as="fetch"
       href="lottie/avatars/timrlai_avatar_education.json"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
+      fetchpriority="low"
       as="fetch"
       href="lottie/avatars/timrlai_avatar_volunteer.json"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
+      fetchpriority="low"
       as="fetch"
       href="lottie/avatars/timrlai_avatar_vr.json"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
+      fetchpriority="low"
       as="fetch"
       href="lottie/bats/timrlai_bat.json"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
+      fetchpriority="low"
       as="fetch"
       href="lottie/bats/timrlai_bat_summary.json"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
+      fetchpriority="low"
       as="fetch"
       href="lottie/bats/timrlai_bat_skills.json"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
+      fetchpriority="low"
       as="fetch"
       href="lottie/bats/timrlai_bat_skills_laptop.json"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
+      fetchpriority="low"
       as="fetch"
       href="lottie/bats/timrlai_bat_skills_soft.json"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
+      fetchpriority="low"
       as="fetch"
       href="lottie/construction/construction_guy.json"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
+      fetchpriority="low"
       as="fetch"
       href="lottie/construction/construction_penguin.json"
-      crossorigin="anonymous"
-    />
-
-    <!-- Preload Image Files -->
-    <link
-      rel="preload"
-      as="image"
-      href="src/assets/img/logos/timrlai_logo.svg"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      as="image"
-      href="src/assets/img/logos/timrlai_logo_light.svg"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      as="image"
-      href="src/assets/img/icons/timrlai_head_trans_bg.svg"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      as="image"
-      href="src/assets/img/props/seneca_chalkboard.svg"
       crossorigin="anonymous"
     />
 
