@@ -258,6 +258,8 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                       :src="headSvgPath.default"
                       aria-hidden
                       alt=""
+                      width="45"
+                      height="45"
                       class="block sm:inline-block h-[3em] sm:h-[1em]"
                     />
                   </Suspense>

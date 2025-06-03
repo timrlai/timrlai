@@ -99,6 +99,8 @@ const { isNight } = storeToRefs(store);
               "
               alt="Tim R. Lai"
               title="Tim R. Lai"
+              width="52"
+              height="38"
               class="w-full h-full" /></Suspense
         ></RouterLink>
       </div>

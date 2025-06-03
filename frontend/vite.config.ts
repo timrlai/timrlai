@@ -4,6 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import webfontDownload from "vite-plugin-webfont-dl";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import glsl from "vite-plugin-glsl";
+import viteCompression from "vite-plugin-compression";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -92,6 +93,7 @@ export default defineConfig({
       watch: true, // Recompile shader on change
       root: "/", // Directory for root imports
     }),
+    viteCompression(),
   ],
   build: {
     minify: "esbuild",
@@ -103,12 +105,7 @@ export default defineConfig({
           vue: ["vue"],
           router: ["vue-router"],
           pinia: ["pinia"],
-          threeConstants: ["three/src/constants.js"],
-          threeVector3: ["three/src/math/Vector3.js"],
-          threeData3DTexture: ["three/src/textures/Data3DTexture.js"],
-          threeColor: ["three/src/math/Color.js"],
-          threeImprovedNoise: ["three/addons/math/ImprovedNoise.js"],
-          threeLottieLoader: ["three/addons/loaders/LottieLoader.js"],
+          three: ["three"],
           tres: ["@tresjs/core"],
           cientos: ["@tresjs/cientos"],
           lottie: ["vue3-lottie"],
