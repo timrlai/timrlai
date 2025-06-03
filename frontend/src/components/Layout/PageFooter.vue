@@ -29,6 +29,7 @@ const year = new Date().getFullYear();
       <Suspense>
         <img
           :src="logoSvgPath.default"
+          fetchpriority="low"
           alt="Tim R. Lai"
           title="Tim R. Lai"
           width="320"
@@ -43,6 +44,7 @@ const year = new Date().getFullYear();
         <Suspense>
           <img
             :src="headSvgPath.default"
+            fetchpriority="low"
             aria-hidden
             alt=""
             width="45"
@@ -65,6 +67,7 @@ const year = new Date().getFullYear();
         <Suspense>
           <img
             :src="headSvgPath.default"
+            fetchpriority="low"
             aria-hidden
             alt=""
             width="45"
@@ -111,6 +114,7 @@ const year = new Date().getFullYear();
         <Suspense>
           <img
             :src="headSvgPath.default"
+            fetchpriority="low"
             aria-hidden
             alt=""
             width="45"

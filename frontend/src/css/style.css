@@ -4,20 +4,6 @@
   Fonts
   ========================================================================== */
 
-@font-face {
-  font-family: "Ubuntu Titling Rg";
-  src: url("UbuntuTitling-Bold.eot");
-  src:
-    local("UbuntuTitling-Bold"),
-    url("UbuntuTitling-Bold.eot?#iefix") format("embedded-opentype"),
-    url("UbuntuTitling-Bold.woff2") format("woff2"),
-    url("UbuntuTitling-Bold.woff") format("woff"),
-    url("UbuntuTitling-Bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
 .ubuntu-titling,
 .atkinson-hyperlegible-next-light,
 .atkinson-hyperlegible-next-regular,

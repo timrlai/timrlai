@@ -97,6 +97,7 @@ const { isNight } = storeToRefs(store);
               :src="
                 isNight ? logoLightSvgPath.default : logoDarkSvgPath.default
               "
+              fetchpriority="high"
               alt="Tim R. Lai"
               title="Tim R. Lai"
               width="52"
