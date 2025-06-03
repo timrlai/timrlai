@@ -172,6 +172,7 @@ const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
                     <Suspense>
                       <img
                         :src="senecaChalkboardSvgPath.default"
+                        fetchpriority="low"
                         alt="A chalkboard with the Seneca Polytechnic logo on it."
                         title="Seneca Polytechnic"
                         width="316"

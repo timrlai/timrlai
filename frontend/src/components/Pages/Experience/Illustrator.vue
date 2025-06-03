@@ -44,6 +44,7 @@ const { AVATAR_ILLUSTRATOR_LOTTIE_PATH } = lottieConstants;
                   <Suspense>
                     <img
                       :src="headSvgPath.default"
+                      fetchpriority="low"
                       alt=""
                       width="45"
                       height="45"

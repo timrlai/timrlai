@@ -256,6 +256,7 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                   <Suspense>
                     <img
                       :src="headSvgPath.default"
+                      fetchpriority="low"
                       aria-hidden
                       alt=""
                       width="45"
