@@ -102,28 +102,21 @@
       rel="preload"
       fetchpriority="high"
       as="font"
-      href="fonts/ubuntu_titling/UbuntuTitling-Bold-webfont.woff"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      fetchpriority="high"
-      as="font"
-      href="fonts/ubuntu_titling/UbuntuTitling-Bold-webfont.eot"
+      href="fonts/ubuntu_titling/UbuntuTitling-Bold.woff2"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
       fetchpriority="low"
       as="font"
-      href="fonts/ubuntu_titling/UbuntuTitling-Bold-webfont.ttf"
+      href="fonts/ubuntu_titling/UbuntuTitling-Bold.woff"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
       fetchpriority="low"
-      as="font"
-      href="fonts/ubuntu_titling/UbuntuTitling-Bold-webfont.svg#ubuntu_titlingbold"
+      as="fetch"
+      href="fonts/ubuntu_titling/Ubuntu_Titlin_Rg_Bold.json"
       crossorigin="anonymous"
     />
 
@@ -335,19 +328,15 @@
     />
 
     <!-- Styles -->
-    <style media="screen">
+    <style>
       @font-face {
-        font-family: "ubuntu_titlingbold";
-        src: url("UbuntuTitling-Bold-webfont.eot");
+        font-family: "Ubuntu Titling Rg";
         src:
-          url("/fonts/ubuntu_titling/UbuntuTitling-Bold-webfont.eot?#iefix")
-            format("embedded-opentype"),
-          url("/fonts/ubuntu_titling/UbuntuTitling-Bold-webfont.woff")
-            format("woff"),
-          url("/fonts/ubuntu_titling/UbuntuTitling-Bold-webfont.ttf")
-            format("truetype"),
-          url("/fonts/ubuntu_titling/UbuntuTitling-Bold-webfont.svg#ubuntu_titlingbold")
-            format("svg");
+          local("UbuntuTitling-Bold"),
+          url("UbuntuTitling-Bold.woff2") format("woff2"),
+          url("UbuntuTitling-Bold.woff") format("woff");
+        font-weight: bold;
+        font-style: normal;
         font-display: swap;
       }
     </style>
