@@ -4,6 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import webfontDownload from "vite-plugin-webfont-dl";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import glsl from "vite-plugin-glsl";
+import viteCompression from "vite-plugin-compression";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -92,6 +93,7 @@ export default defineConfig({
       watch: true, // Recompile shader on change
       root: "/", // Directory for root imports
     }),
+    viteCompression(),
   ],
   build: {
     minify: "esbuild",
