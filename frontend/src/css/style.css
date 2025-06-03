@@ -4,20 +4,6 @@
   Fonts
   ========================================================================== */
 
-@font-face {
-  font-family: "ubuntu_titlingbold";
-  src: url("UbuntuTitling-Bold-webfont.eot");
-  src:
-    url("/fonts/ubuntu_titling/UbuntuTitling-Bold-webfont.eot?#iefix")
-      format("embedded-opentype"),
-    url("/fonts/ubuntu_titling/UbuntuTitling-Bold-webfont.woff") format("woff"),
-    url("/fonts/ubuntu_titling/UbuntuTitling-Bold-webfont.ttf")
-      format("truetype"),
-    url("/fonts/ubuntu_titling/UbuntuTitling-Bold-webfont.svg#ubuntu_titlingbold")
-      format("svg");
-  font-display: swap;
-}
-
 .ubuntu-titling,
 .atkinson-hyperlegible-next-light,
 .atkinson-hyperlegible-next-regular,
