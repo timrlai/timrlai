@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { defineAsyncComponent, ref, nextTick } from "vue";
 import { storeToRefs } from "pinia";
+import isMobile from "is-mobile";
 import { Icon } from "@iconify/vue";
 import ConfettiExplosion from "vue-confetti-explosion";
 import { VueWriter } from "vue-writer";
@@ -16,6 +17,7 @@ const { AVATAR_WAVE_LOTTIE_PATH, BAT_LOTTIE_PATH } = lottieConstants;
 
 const store = useThemeStore();
 const { isNight } = storeToRefs(store);
+const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
 
 const visible = ref(false);
 
@@ -47,11 +49,14 @@ const onIntroTyped = (currentTitle: string) => {
       id="screen"
       class="glass grid place-content-center p-2 bg-primary/70 text-primary-content text-center"
     >
-      <div class="flex justify-center motion-reduce:hidden print:hidden">
+      <div
+        v-if="!isMobileOrTablet"
+        class="flex justify-center motion-reduce:hidden print:hidden"
+      >
         <ConfettiExplosion :particleCount="200" :force="0.3" v-if="visible" />
       </div>
       <div class="flex flex-wrap items-center py-5">
-        <div class="place-content-center w-full sm:w-3/4 md:w-2/3">
+        <div class="w-full sm:w-3/4 md:w-2/3">
           <h1
             class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl ubuntu-titling mb-2"
           >
