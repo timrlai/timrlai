@@ -241,25 +241,6 @@ body {
   text-decoration-color: var(--color-base-100);
 }
 
-.is-typed span.cursor {
-  width: 5px;
-  background-color: oklch(98% 0.05 101);
-  animation: blink 1s infinite;
-  @apply inline-block;
-}
-
-@keyframes blink {
-  49% {
-    background-color: oklch(98% 0.05 101);
-  }
-  50% {
-    background-color: transparent;
-  }
-  99% {
-    background-color: transparent;
-  }
-}
-
 /* ==========================================================================
   Helper classes
   ========================================================================== */
