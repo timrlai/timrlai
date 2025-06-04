@@ -45,6 +45,7 @@ const { AVATAR_ILLUSTRATOR_LOTTIE_PATH } = lottieConstants;
                     <img
                       :src="headSvgPath.default"
                       fetchpriority="low"
+                      loading="lazy"
                       alt=""
                       width="45"
                       height="45"

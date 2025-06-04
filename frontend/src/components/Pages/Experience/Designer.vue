@@ -231,6 +231,7 @@ const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                     <img
                       :src="headSvgPath.default"
                       fetchpriority="low"
+                      loading="lazy"
                       aria-hidden
                       alt=""
                       width="45"
