@@ -30,6 +30,7 @@ const year = new Date().getFullYear();
         <img
           :src="logoSvgPath.default"
           fetchpriority="low"
+          loading="lazy"
           alt="Tim R. Lai"
           title="Tim R. Lai"
           width="320"
@@ -45,6 +46,7 @@ const year = new Date().getFullYear();
           <img
             :src="headSvgPath.default"
             fetchpriority="low"
+            loading="lazy"
             aria-hidden
             alt=""
             width="45"
@@ -68,6 +70,7 @@ const year = new Date().getFullYear();
           <img
             :src="headSvgPath.default"
             fetchpriority="low"
+            loading="lazy"
             aria-hidden
             alt=""
             width="45"
@@ -115,6 +118,7 @@ const year = new Date().getFullYear();
           <img
             :src="headSvgPath.default"
             fetchpriority="low"
+            loading="lazy"
             aria-hidden
             alt=""
             width="45"
