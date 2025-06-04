@@ -61,6 +61,7 @@ const onIntroTyped = (currentTitle: string) => {
             <Icon icon="mingcute:male-line" class="inline-block ml-2" />
           </h2>
           <p
+            id="intro-text"
             class="text-xl sm:text-2xl md:text-4xl my-4 motion-reduce:hidden print:hidden"
           >
             I am
@@ -112,6 +113,17 @@ h1,
 h2,
 p {
   text-shadow: 0 0 30px var(--color-primary-content);
+}
+
+h1,
+h2 {
+  min-height: 1em;
+  contain-intrinsic-height: 1em;
+}
+
+#intro-text {
+  min-height: 4em;
+  contain-intrinsic-height: 4em;
 }
 
 .mockup-browser-toolbar {
