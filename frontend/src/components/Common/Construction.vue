@@ -20,9 +20,7 @@ const LottiePlayer = defineAsyncComponent(() => import("./LottiePlayer.vue"));
           class="inline-block"
         />
       </h1>
-      <p
-        class="text-xl md:text-3xl atkinson-hyperlegible-next-bold md:max-w-4/5 mx-auto mb-4"
-      >
+      <p class="text-xl md:text-3xl ahn-bold md:max-w-4/5 mx-auto mb-4">
         This page is under construction.
         <Icon icon="fluent-emoji:construction" class="inline-block" /> Please
         pardon the mess!

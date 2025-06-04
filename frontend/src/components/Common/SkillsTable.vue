@@ -52,14 +52,10 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
             <th class="block md:table-cell w-full md:w-auto">Skills</th>
           </tr>
         </thead>
-        <tbody
-          class="w-full md:w-auto text-lg atkinson-hyperlegible-next-medium"
-        >
+        <tbody class="w-full md:w-auto text-lg ahn-medium">
           <!-- row 1 -->
           <tr class="block md:table-row w-full md:w-auto p-4 md:p-0">
-            <td
-              class="block md:table-cell w-full md:w-auto atkinson-hyperlegible-next-bold"
-            >
+            <td class="block md:table-cell w-full md:w-auto ahn-bold">
               Languages:
             </td>
             <td class="flex flex-col gap-4 w-full md:w-auto">
@@ -113,9 +109,7 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
           </tr>
           <!-- row 3 -->
           <tr class="block md:table-row w-full md:w-auto p-4 md:p-0">
-            <td
-              class="block md:table-cell w-full md:w-auto atkinson-hyperlegible-next-bold"
-            >
+            <td class="block md:table-cell w-full md:w-auto ahn-bold">
               Databases:
             </td>
             <td class="flex flex-col gap-4 w-full md:w-auto">

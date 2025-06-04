@@ -36,6 +36,7 @@ const {
         <Suspense>
           <iframe
             :src="`https://player.vimeo.com/video/${videoId}?badge=${badge}&amp;autopause=${autoPause}&amp;player_id=${playerId}&amp;app_id=${appId}`"
+            loading="lazy"
             frameborder="0"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
             :title="title"

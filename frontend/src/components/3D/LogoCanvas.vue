@@ -517,9 +517,7 @@ watchEffect(() => {
 </script>
 
 <template>
-  <section
-    class="relative z-0 h-[140vh] md:h-[170vh] mb-[-70vh] md:mb-[-80vh] cursor-pointer motion-reduce:hidden print:hidden"
-  >
+  <section class="relative z-0 motion-reduce:hidden print:hidden">
     <div
       v-if="isLandscape && isMobileOrTablet"
       class="absolute z-10 top-0 left-0 w-full h-full"
@@ -773,4 +771,16 @@ watchEffect(() => {
   </section>
 </template>
 
-<style scoped></style>
+<style scoped lang="scss">
+section {
+  cursor: pointer;
+  height: 140vh;
+  contain-intrinsic-height: 140vh;
+  margin-bottom: -70vh;
+  @media (width >= 48rem /* 768px */) {
+    height: 170vh;
+    contain-intrinsic-height: 170vh;
+    margin-bottom: -80vh;
+  }
+}
+</style>

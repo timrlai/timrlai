@@ -23,7 +23,7 @@ const year = new Date().getFullYear();
 <template>
   <hr class="border-b-4 border-primary m-0" />
   <footer
-    class="footer footer-vertical md:footer-horizontal place-content-between bg-primary text-primary-content border-t-[10rem] border-success p-10 relative text-center atkinson-hyperlegible-next-bold text-2xl"
+    class="footer footer-vertical md:footer-horizontal place-content-between bg-primary text-primary-content border-t-[10rem] border-success p-10 relative text-center ahn-bold text-2xl"
   >
     <section class="footer-tile w-full md:w-2xs print:hidden">
       <Suspense>

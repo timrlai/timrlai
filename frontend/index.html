@@ -100,9 +100,10 @@
     />
     <link
       rel="preload"
-      fetchpriority="low"
+      fetchpriority="high"
       as="font"
       href="/fonts/ubuntu_titling/UbuntuTitling-Bold.woff2"
+      type="font/format"
       crossorigin="anonymous"
     />
     <link
@@ -110,6 +111,7 @@
       fetchpriority="low"
       as="font"
       href="/fonts/ubuntu_titling/UbuntuTitling-Bold.woff"
+      type="font/format"
       crossorigin="anonymous"
     />
     <link
@@ -117,6 +119,7 @@
       fetchpriority="low"
       as="font"
       href="/fonts/ubuntu_titling/UbuntuTitling-Bold.eot"
+      type="font/format"
       crossorigin="anonymous"
     />
     <link
@@ -124,6 +127,7 @@
       fetchpriority="low"
       as="font"
       href="/fonts/ubuntu_titling/UbuntuTitling-Bold.ttf"
+      type="font/format"
       crossorigin="anonymous"
     />
     <link
@@ -131,6 +135,7 @@
       fetchpriority="low"
       as="fetch"
       href="/fonts/ubuntu_titling/Ubuntu_Titlin_Rg_Bold.json"
+      type="font/format"
       crossorigin="anonymous"
     />
 
@@ -341,6 +346,39 @@
       crossorigin="anonymous"
     />
 
+    <!-- Preload Scripts -->
+    <link
+      rel="preload"
+      fetchpriority="high"
+      as="script"
+      href="/src/main.ts"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      fetchpriority="low"
+      as="script"
+      href="https://player.vimeo.com/api/player.js"
+      crossorigin="anonymous"
+    />
+
+    <!-- Preload Styles -->
+    <link
+      rel="preload"
+      fetchpriority="low"
+      as="style"
+      href="/src/css/style.css"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      fetchpriority="low"
+      as="style"
+      href="/src/css/print.css"
+      crossorigin="anonymous"
+      media="print"
+    />
+
     <!-- Styles -->
     <style>
       @font-face {
@@ -358,11 +396,9 @@
         font-display: swap;
       }
     </style>
-    <link rel="stylesheet" href="src/css/print.css" media="print" />
+    <link rel="stylesheet" href="/src/css/print.css" media="print" />
   </head>
-  <body
-    class="bg-base-300 text-base-content atkinson-hyperlegible-next-regular"
-  >
+  <body class="bg-base-300 text-base-content ahn-regular">
     <div id="app"></div>
     <!-- Third Party Scripts -->
     <script

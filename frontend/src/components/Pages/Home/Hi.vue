@@ -36,7 +36,7 @@ const onIntroTyped = (currentTitle: string) => {
 <template>
   <section
     id="hi"
-    class="mockup-browser min-h-[60vh] md:min-h-[70vh] border-4 border-primary shadow-lg shadow-primary overflow-hidden"
+    class="mockup-browser border-4 border-primary shadow-lg shadow-primary overflow-hidden"
   >
     <div
       class="mockup-browser-toolbar bg-secondary text-secondary-content border-b-4 border-primary py-4"
@@ -44,7 +44,8 @@ const onIntroTyped = (currentTitle: string) => {
       <div class="input">https://timrl.ai</div>
     </div>
     <div
-      class="glass grid place-content-center min-h-[55vh] md:min-h-[65vh] p-2 bg-primary/70 text-primary-content text-center"
+      id="screen"
+      class="glass grid place-content-center p-2 bg-primary/70 text-primary-content text-center"
     >
       <div class="flex justify-center motion-reduce:hidden print:hidden">
         <ConfettiExplosion :particleCount="200" :force="0.3" v-if="visible" />
@@ -61,10 +62,11 @@ const onIntroTyped = (currentTitle: string) => {
             <Icon icon="mingcute:male-line" class="inline-block ml-2" />
           </h2>
           <p
+            id="intro-text"
             class="text-xl sm:text-2xl md:text-4xl my-4 motion-reduce:hidden print:hidden"
           >
             I am
-            <strong class="bg-blue-600 atkinson-hyperlegible-next-bold">
+            <strong class="bg-blue-600 ahn-bold">
               <VueWriter
                 :array="intros.map(({ title }) => title)"
                 :typeSpeed="50"
@@ -75,7 +77,7 @@ const onIntroTyped = (currentTitle: string) => {
             </strong>
           </p>
           <p
-            class="text-lg sm:text-xl md:text-2xl m-4 atkinson-hyperlegible-next-medium motion-safe:not-print:hidden"
+            class="text-lg sm:text-xl md:text-2xl m-4 ahn-medium motion-safe:not-print:hidden"
           >
             I am
             {{
@@ -112,6 +114,35 @@ h1,
 h2,
 p {
   text-shadow: 0 0 30px var(--color-primary-content);
+}
+
+h1,
+h2 {
+  min-height: 1em;
+  contain-intrinsic-height: 1em;
+}
+
+#hi {
+  min-height: 60vh;
+  contain-intrinsic-height: 60vh;
+  @media (width >= 48rem /* 768px */) {
+    min-height: 70vh;
+    contain-intrinsic-height: 70vh;
+  }
+}
+
+#screen {
+  min-height: 55vh;
+  contain-intrinsic-height: 55vh;
+  @media (width >= 48rem /* 768px */) {
+    min-height: 65vh;
+    contain-intrinsic-height: 65vh;
+  }
+}
+
+#intro-text {
+  min-height: 4em;
+  contain-intrinsic-height: 4em;
 }
 
 .mockup-browser-toolbar {

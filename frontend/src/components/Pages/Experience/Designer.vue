@@ -54,7 +54,7 @@ const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                 </h2>
                 <h3
                   id="designer-futuretalk-heading"
-                  class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+                  class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
                 >
                   <Icon
                     icon="fluent-color:phone-laptop-24"
@@ -63,7 +63,7 @@ const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                   UI/UX & VR/AR Designer
                 </h3>
                 <h3
-                  class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+                  class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
                 >
                   <Icon
                     icon="fluent-color:calendar-28"
@@ -72,9 +72,7 @@ const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                   2022 to 2025
                 </h3>
               </div>
-              <p
-                class="text-lg sm:text-xl my-4 atkinson-hyperlegible-next-medium"
-              >
+              <p class="text-lg sm:text-xl my-4 ahn-medium">
                 At
                 <a
                   href="https://futuretalk.ca/"
@@ -120,9 +118,7 @@ const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                 />
                 and uikit.
               </p>
-              <ul
-                class="list text-base sm:text-lg my-4 atkinson-hyperlegible-next-medium"
-              >
+              <ul class="list text-base sm:text-lg my-4 ahn-medium">
                 <li class="list-row">
                   <div class="text-3xl sm:text-4xl">
                     <Icon icon="skill-icons:xd" />
@@ -185,9 +181,7 @@ const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                 />
                 Thealogue and Trek AI Demo Video
               </h4>
-              <p
-                class="text-lg sm:text-xl my-4 atkinson-hyperlegible-next-medium"
-              >
+              <p class="text-lg sm:text-xl my-4 ahn-medium">
                 Watch the below video to see a demonstration of
                 <a
                   href="https://learnwithtrek.com/"
@@ -243,7 +237,7 @@ const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                 </h2>
                 <h3
                   id="designer-timrlai-heading"
-                  class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+                  class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
                 >
                   <Icon
                     icon="fluent-color:design-ideas-28"
@@ -252,7 +246,7 @@ const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                   Freelance Designer
                 </h3>
                 <h3
-                  class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+                  class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
                 >
                   <Icon
                     icon="fluent-color:calendar-28"
@@ -261,9 +255,7 @@ const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                   2010 to Present
                 </h3>
               </div>
-              <p
-                class="text-lg sm:text-xl my-4 atkinson-hyperlegible-next-medium"
-              >
+              <p class="text-lg sm:text-xl my-4 ahn-medium">
                 I have over five years of experience working as a freelance
                 graphic designer for both web
                 <Icon icon="fluent-emoji:laptop" class="inline-block h-[1em]" />
@@ -312,9 +304,7 @@ const { AVATAR_DESIGNER_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                 />
                 and more.
               </p>
-              <ul
-                class="list text-base sm:text-lg my-4 atkinson-hyperlegible-next-medium"
-              >
+              <ul class="list text-base sm:text-lg my-4 ahn-medium">
                 <li class="list-row">
                   <div class="text-3xl sm:text-4xl">
                     <Icon icon="logos:adobe-indesign" />

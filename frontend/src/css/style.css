@@ -5,10 +5,10 @@
   ========================================================================== */
 
 .ubuntu-titling,
-.atkinson-hyperlegible-next-light,
-.atkinson-hyperlegible-next-regular,
-.atkinson-hyperlegible-next-medium,
-.atkinson-hyperlegible-next-bold,
+.ahn-light,
+.ahn-regular,
+.ahn-medium,
+.ahn-bold,
 .gluten,
 .fira-code {
   font-optical-sizing: auto;
@@ -16,19 +16,19 @@
 }
 
 .ubuntu-titling,
-.atkinson-hyperlegible-next-regular {
+.ahn-regular {
   @apply font-normal;
 }
 
-.atkinson-hyperlegible-next-light {
+.ahn-light {
   @apply font-light;
 }
 
-.atkinson-hyperlegible-next-medium {
+.ahn-medium {
   @apply font-medium;
 }
 
-.atkinson-hyperlegible-next-bold {
+.ahn-bold {
   @apply font-bold;
 }
 
@@ -38,14 +38,14 @@
 }
 
 .ubuntu-titling {
-  font-family: "Ubuntu Titling Rg", sans-serif;
+  font-family: "Ubuntu Titling Rg", Arial, Helvetica, sans-serif;
 }
 
-.atkinson-hyperlegible-next-light,
-.atkinson-hyperlegible-next-regular,
-.atkinson-hyperlegible-next-medium,
-.atkinson-hyperlegible-next-bold {
-  font-family: "Atkinson Hyperlegible Next", sans-serif;
+.ahn-light,
+.ahn-regular,
+.ahn-medium,
+.ahn-bold {
+  font-family: "Atkinson Hyperlegible Next", "Times New Roman", Times, serif;
 }
 
 .gluten {
