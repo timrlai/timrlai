@@ -5,17 +5,6 @@
   ========================================================================== */
 
 .ubuntu-titling,
-.ahn-light,
-.ahn-regular,
-.ahn-medium,
-.ahn-bold,
-.gluten,
-.fira-code {
-  font-optical-sizing: auto;
-  @apply not-italic;
-}
-
-.ubuntu-titling,
 .ahn-regular {
   @apply font-normal;
 }
@@ -37,26 +26,6 @@
   @apply font-semibold;
 }
 
-.ubuntu-titling {
-  font-family: "Ubuntu Titling Rg", Arial, Helvetica, sans-serif;
-}
-
-.ahn-light,
-.ahn-regular,
-.ahn-medium,
-.ahn-bold {
-  font-family: "Atkinson Hyperlegible Next", "Times New Roman", Times, serif;
-}
-
-.gluten {
-  font-family: "Gluten", cursive;
-  font-variation-settings: "slnt" 0;
-}
-
-.fira-code {
-  font-family: "Fira Code", monospace;
-}
-
 /*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
 
 /* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
@@ -69,11 +38,6 @@
 /* ==========================================================================
   Base styles: opinionated defaults
   ========================================================================== */
-
-html {
-  font-size: 1em;
-  line-height: 1.4;
-}
 
 /*
  * Remove text-shadow in selection highlight:
@@ -148,22 +112,7 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-:root {
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.5;
-}
-
-body,
-#app {
-  min-width: 320px;
-  min-height: 100vh;
-}
-
 body {
-  margin: 0;
   background: linear-gradient(
     180deg,
     var(--color-base-300) 0%,

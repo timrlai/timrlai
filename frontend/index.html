@@ -374,6 +374,10 @@
 
     <!-- Styles -->
     <style>
+      /* ==========================================================================
+      Fonts
+      ========================================================================== */
+
       @font-face {
         font-family: "Ubuntu Titling Rg";
         src: url("/fonts/ubuntu_titling/UbuntuTitling-Bold.eot");
@@ -385,8 +389,66 @@
           url("/fonts/ubuntu_titling/UbuntuTitling-Bold.woff") format("woff"),
           url("/fonts/ubuntu_titling/UbuntuTitling-Bold.ttf") format("truetype");
         font-weight: bold;
-        font-style: normal;
         font-display: swap;
+      }
+
+      .ubuntu-titling,
+      .ahn-light,
+      .ahn-regular,
+      .ahn-medium,
+      .ahn-bold,
+      .gluten,
+      .fira-code {
+        font-optical-sizing: auto;
+        font-style: normal;
+      }
+
+      .ubuntu-titling {
+        font-family: "Ubuntu Titling Rg", Arial, Helvetica, sans-serif;
+      }
+
+      .ahn-light,
+      .ahn-regular,
+      .ahn-medium,
+      .ahn-bold {
+        font-family:
+          "Atkinson Hyperlegible Next", "Times New Roman", Times, serif;
+      }
+
+      .gluten {
+        font-family: "Gluten", cursive;
+        font-variation-settings: "slnt" 0;
+      }
+
+      .fira-code {
+        font-family: "Fira Code", monospace;
+      }
+
+      /* ==========================================================================
+      Base styles: opinionated defaults
+      ========================================================================== */
+
+      html {
+        font-size: 1em;
+        line-height: 1.4;
+      }
+
+      :root {
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1.5;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      body,
+      #app {
+        min-width: 320px;
+        min-height: 100vh;
       }
     </style>
     <link rel="stylesheet" href="/src/css/print.css" media="print" />
