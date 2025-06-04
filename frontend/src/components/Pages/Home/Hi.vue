@@ -66,7 +66,7 @@ const onIntroTyped = (currentTitle: string) => {
             class="text-xl sm:text-2xl md:text-4xl my-4 motion-reduce:hidden print:hidden"
           >
             I am
-            <strong class="bg-blue-600 atkinson-hyperlegible-next-bold">
+            <strong class="bg-blue-600 ahn-bold">
               <VueWriter
                 :array="intros.map(({ title }) => title)"
                 :typeSpeed="50"
@@ -77,7 +77,7 @@ const onIntroTyped = (currentTitle: string) => {
             </strong>
           </p>
           <p
-            class="text-lg sm:text-xl md:text-2xl m-4 atkinson-hyperlegible-next-medium motion-safe:not-print:hidden"
+            class="text-lg sm:text-xl md:text-2xl m-4 ahn-medium motion-safe:not-print:hidden"
           >
             I am
             {{

@@ -53,7 +53,7 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
               </h2>
               <h3
                 id="developer-futuretalk-heading"
-                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+                class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
               >
                 <Icon
                   icon="fluent-emoji:goggles"
@@ -62,7 +62,7 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                 Web & VR/AR Software Developer
               </h3>
               <h3
-                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+                class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
               >
                 <Icon
                   icon="fluent-color:calendar-28"
@@ -71,9 +71,7 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                 2022 to 2025
               </h3>
             </div>
-            <p
-              class="text-lg sm:text-xl my-4 atkinson-hyperlegible-next-medium"
-            >
+            <p class="text-lg sm:text-xl my-4 ahn-medium">
               At
               <a
                 href="https://futuretalk.ca/"
@@ -133,9 +131,7 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
               <Icon icon="fluent-emoji:robot" class="inline-block h-[1em]" />
               powered tools to automate processes.
             </p>
-            <ul
-              class="list text-base sm:text-lg my-4 atkinson-hyperlegible-next-medium"
-            >
+            <ul class="list text-base sm:text-lg my-4 ahn-medium">
               <li class="list-row">
                 <div class="text-3xl sm:text-4xl">
                   <Icon icon="skill-icons:react-dark" />
@@ -204,9 +200,7 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
               <Icon icon="fluent-color:video-28" class="inline-block h-[1em]" />
               Thealogue and Trek AI Demo Video
             </h4>
-            <p
-              class="text-lg sm:text-xl my-4 atkinson-hyperlegible-next-medium"
-            >
+            <p class="text-lg sm:text-xl my-4 ahn-medium">
               Watch the below video to see a demonstration of
               <a
                 href="https://learnwithtrek.com/"
@@ -262,7 +256,7 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
               </h2>
               <h3
                 id="developer-timrlai-heading"
-                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+                class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
               >
                 <Icon
                   icon="fluent-emoji:man-technologist-light"
@@ -271,7 +265,7 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                 Freelance Software Developer
               </h3>
               <h3
-                class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+                class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
               >
                 <Icon
                   icon="fluent-color:calendar-28"
@@ -280,9 +274,7 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
                 2017 to Present
               </h3>
             </div>
-            <p
-              class="text-lg sm:text-xl my-4 atkinson-hyperlegible-next-medium"
-            >
+            <p class="text-lg sm:text-xl my-4 ahn-medium">
               I have over five years of experience working as a freelance
               full-stack developer,
               <Icon
@@ -319,9 +311,7 @@ const { AVATAR_SKILLS_DESK_LOTTIE_PATH, AVATAR_VR_LOTTIE_PATH } =
               <Icon icon="skill-icons:bootstrap" class="inline-block h-[1em]" />
               and more.
             </p>
-            <ul
-              class="list text-base sm:text-lg my-4 atkinson-hyperlegible-next-medium"
-            >
+            <ul class="list text-base sm:text-lg my-4 ahn-medium">
               <li class="list-row">
                 <div class="text-3xl sm:text-4xl">
                   <Icon icon="fluent-color:design-ideas-24" />

@@ -45,7 +45,7 @@ const { AVATAR_VOLUNTEER_LOTTIE_PATH } = lottieConstants;
                 </h2>
                 <h3
                   id="volunteer-taafi-heading"
-                  class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+                  class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
                 >
                   <Icon
                     icon="fluent-color:design-ideas-24"
@@ -54,7 +54,7 @@ const { AVATAR_VOLUNTEER_LOTTIE_PATH } = lottieConstants;
                   Graphic Designer/Event Planner
                 </h3>
                 <h3
-                  class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+                  class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
                 >
                   <Icon
                     icon="fluent-color:calendar-28"
@@ -63,9 +63,7 @@ const { AVATAR_VOLUNTEER_LOTTIE_PATH } = lottieConstants;
                   2015 to 2016
                 </h3>
               </div>
-              <p
-                class="text-lg sm:text-xl my-4 atkinson-hyperlegible-next-medium"
-              >
+              <p class="text-lg sm:text-xl my-4 ahn-medium">
                 I volunteered for
                 <a
                   href="https://taafi.com/"
@@ -93,9 +91,7 @@ const { AVATAR_VOLUNTEER_LOTTIE_PATH } = lottieConstants;
                 which provided a space for independent artists to sell their
                 work.
               </p>
-              <ul
-                class="list text-base sm:text-lg my-4 atkinson-hyperlegible-next-medium mb-8"
-              >
+              <ul class="list text-base sm:text-lg my-4 ahn-medium mb-8">
                 <li class="list-row">
                   <div class="text-3xl sm:text-4xl">
                     <Icon icon="fluent-emoji:handshake" />
@@ -188,7 +184,7 @@ const { AVATAR_VOLUNTEER_LOTTIE_PATH } = lottieConstants;
                 </h2>
                 <h3
                   id="volunteer-cnib-heading"
-                  class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+                  class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
                 >
                   <Icon
                     icon="fluent-emoji:camping"
@@ -197,7 +193,7 @@ const { AVATAR_VOLUNTEER_LOTTIE_PATH } = lottieConstants;
                   Summer Camp Volunteer
                 </h3>
                 <h3
-                  class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+                  class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
                 >
                   <Icon
                     icon="fluent-color:calendar-28"
@@ -206,9 +202,7 @@ const { AVATAR_VOLUNTEER_LOTTIE_PATH } = lottieConstants;
                   2013
                 </h3>
               </div>
-              <ul
-                class="list text-base sm:text-lg my-4 atkinson-hyperlegible-next-medium"
-              >
+              <ul class="list text-base sm:text-lg my-4 ahn-medium">
                 <li class="list-row">
                   <div class="text-3xl sm:text-4xl">
                     <Icon icon="fluent-emoji:playground-slide" />

@@ -15,7 +15,7 @@ defineProps<{ labelledby: string; skills: Skill[] }>();
       <Icon icon="mingcute:code-fill" class="inline-block h-[1em]" />
       Skills Used
     </h1>
-    <p class="text-lg sm:text-xl my-4 atkinson-hyperlegible-next-medium">
+    <p class="text-lg sm:text-xl my-4 ahn-medium">
       <span v-for="(skill, index) in skills" v-bind:key="skill.title">
         {{ skill.title }}<span v-if="index < skills.length - 1">, </span>
       </span>

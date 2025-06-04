@@ -50,7 +50,7 @@ const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
                 </h2>
                 <h3
                   id="teacher-instructor-heading"
-                  class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+                  class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
                 >
                   <Icon
                     icon="fluent-emoji:man-teacher-light"
@@ -59,7 +59,7 @@ const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
                   Instructor
                 </h3>
                 <h3
-                  class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+                  class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
                 >
                   <Icon
                     icon="fluent-color:calendar-28"
@@ -68,9 +68,7 @@ const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
                   2017 to Present
                 </h3>
               </div>
-              <p
-                class="text-lg sm:text-xl my-4 atkinson-hyperlegible-next-medium"
-              >
+              <p class="text-lg sm:text-xl my-4 ahn-medium">
                 I have experience teaching
                 <Icon
                   icon="fluent-emoji:man-teacher-light"
@@ -94,9 +92,7 @@ const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
                 >
                 programs since 2017.
               </p>
-              <ul
-                class="list text-base sm:text-lg my-4 atkinson-hyperlegible-next-medium"
-              >
+              <ul class="list text-base sm:text-lg my-4 ahn-medium">
                 <li class="list-row">
                   <div class="text-3xl sm:text-4xl">
                     <Icon icon="fluent-color:apps-list-24" />
@@ -207,7 +203,7 @@ const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
                 </h2>
                 <h3
                   id="teacher-technologist-heading"
-                  class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+                  class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
                 >
                   <Icon
                     icon="fluent-emoji:man-technologist-light"
@@ -216,7 +212,7 @@ const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
                   Technologist Senior
                 </h3>
                 <h3
-                  class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+                  class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
                 >
                   <Icon
                     icon="fluent-color:calendar-28"
@@ -225,9 +221,7 @@ const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
                   2017 to 2018
                 </h3>
               </div>
-              <p
-                class="text-lg sm:text-xl my-4 atkinson-hyperlegible-next-medium"
-              >
+              <p class="text-lg sm:text-xl my-4 ahn-medium">
                 I also worked as a Technologist Senior, helping students with
                 course content and assignments at Seneca Polytechnic
                 <Icon icon="fluent-emoji:school" class="inline-block h-[1em]" />
@@ -240,9 +234,7 @@ const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
                 >
                 program.
               </p>
-              <ul
-                class="list text-base sm:text-lg my-4 atkinson-hyperlegible-next-medium"
-              >
+              <ul class="list text-base sm:text-lg my-4 ahn-medium">
                 <li class="list-row">
                   <div class="text-3xl sm:text-4xl">
                     <Icon icon="fluent-color:laptop-24" />

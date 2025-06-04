@@ -33,7 +33,7 @@ const { isNight } = storeToRefs(store);
       <div class="navbar-start">
         <RouterLink
           to="#main"
-          class="visually-hidden focusable btn btn-lg btn-ghost atkinson-hyperlegible-next"
+          class="visually-hidden focusable btn btn-lg btn-ghost ahn"
           >Skip to main content
           <Icon icon="mingcute:arrow-to-down-fill" class="inline-block"
         /></RouterLink>

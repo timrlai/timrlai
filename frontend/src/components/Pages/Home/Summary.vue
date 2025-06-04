@@ -34,9 +34,7 @@ const { isNight } = storeToRefs(store);
           Summary
         </h1>
         <div class="flex flex-wrap justify-between items-center">
-          <ul
-            class="list w-full sm:w-3/4 text-lg sm:text-xl atkinson-hyperlegible-next-bold"
-          >
+          <ul class="list w-full sm:w-3/4 text-lg sm:text-xl ahn-bold">
             <li class="list-row">
               <div class="text-4xl sm:text-5xl">
                 <Icon icon="fluent-emoji:robot" />

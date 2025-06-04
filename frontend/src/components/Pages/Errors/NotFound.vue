@@ -45,7 +45,7 @@ const randomNotFoundLottie = `${NOT_FOUND_LOTTIE_FOLDER}${NOT_FOUND_LOTTIES[Math
             <Icon icon="fluent-emoji:cat-with-wry-smile" class="inline-block" />
             step on your keyboard? Please try the following:
           </p>
-          <ul class="list text-xl sm:text-2xl atkinson-hyperlegible-next-bold">
+          <ul class="list text-xl sm:text-2xl ahn-bold">
             <li class="list-row">
               <div class="text-7xl sm:text-8xl">
                 <Icon icon="fluent-color:text-edit-style-24" />

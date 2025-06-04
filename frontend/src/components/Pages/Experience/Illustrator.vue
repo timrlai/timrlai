@@ -56,7 +56,7 @@ const { AVATAR_ILLUSTRATOR_LOTTIE_PATH } = lottieConstants;
                 </h2>
                 <h3
                   id="illustrator-timrlai-heading"
-                  class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+                  class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
                 >
                   <Icon
                     icon="fluent-emoji:man-artist-light"
@@ -65,7 +65,7 @@ const { AVATAR_ILLUSTRATOR_LOTTIE_PATH } = lottieConstants;
                   Illustrator & Cartoonist
                 </h3>
                 <h3
-                  class="text-lg sm:text-xl md:text-2xl atkinson-hyperlegible-next-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+                  class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
                 >
                   <Icon
                     icon="fluent-color:calendar-28"
@@ -74,9 +74,7 @@ const { AVATAR_ILLUSTRATOR_LOTTIE_PATH } = lottieConstants;
                   2009 to Present
                 </h3>
               </div>
-              <p
-                class="text-lg sm:text-xl my-4 atkinson-hyperlegible-next-medium"
-              >
+              <p class="text-lg sm:text-xl my-4 ahn-medium">
                 I have been an illustrator and cartoonist since 2009. I have
                 worked with traditional mediums such as pencil,
                 <Icon icon="fluent-emoji:pencil" class="inline-block h-[1em]" />
@@ -118,9 +116,7 @@ const { AVATAR_ILLUSTRATOR_LOTTIE_PATH } = lottieConstants;
                 />
                 and more.
               </p>
-              <ul
-                class="list text-base sm:text-lg my-4 atkinson-hyperlegible-next-medium"
-              >
+              <ul class="list text-base sm:text-lg my-4 ahn-medium">
                 <li class="list-row">
                   <div class="text-3xl sm:text-4xl">
                     <Icon icon="fluent-emoji:cityscape" />
