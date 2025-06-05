@@ -83,21 +83,8 @@ export default {
   </div>
 </template>
 
-<style lang="scss">
-.lazy,
-.lazy section,
-.lazy article,
-.lazy aside,
-.lazy footer,
-.lazy [id] {
+<style scoped lang="scss">
+.lazy {
   content-visibility: auto;
-}
-
-.lazy section,
-.lazy article,
-.lazy aside,
-.lazy footer,
-.lazy [id] {
-  contain-intrinsic-height: 100%;
 }
 </style>
