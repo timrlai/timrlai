@@ -35,10 +35,10 @@ const Experience = defineAsyncComponent(() => import("./Experience.vue"));
   </main>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .is-typed span.cursor {
   width: 5px;
-  background-color: oklch(98% 0.05 101);
+  background-color: var(--color-primary-content);
   animation: blink 1s infinite;
   display: inline-block;
 }

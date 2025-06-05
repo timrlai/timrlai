@@ -83,7 +83,7 @@ export default {
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .lazy,
 .lazy section,
 .lazy article,
