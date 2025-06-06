@@ -79,7 +79,6 @@ darkMediaQuery.value.addEventListener("change", changeDarkMode);
     <label
       for="swap-theme-checkbox"
       :class="`swap swap-rotate text-5xl pr-2 ${iconColors[iconColor]}`"
-      :aria-labelledby="`theme-tooltip-${location}`"
     >
       <!-- this hidden checkbox controls the state -->
       <input
@@ -89,6 +88,7 @@ darkMediaQuery.value.addEventListener("change", changeDarkMode);
         :value="swapTo"
         :checked="swapped"
         :onchange="checkSwapTheme"
+        :aria-labelledby="`theme-tooltip-${location}`"
       />
 
       <!-- sun icon -->
