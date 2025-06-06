@@ -45,7 +45,7 @@ const Experience = defineAsyncComponent(() => import("./Experience.vue"));
 
 @keyframes blink {
   49% {
-    background-color: oklch(98% 0.05 101);
+    background-color: var(--color-primary-content);
   }
   50% {
     background-color: transparent;
