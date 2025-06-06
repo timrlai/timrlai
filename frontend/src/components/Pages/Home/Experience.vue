@@ -222,6 +222,7 @@ $hover-color: var(--color-accent);
 $transition: all 0.7s;
 
 .experience-link {
+  contain: paint;
   &:hover {
     .lottie-box {
       background: $hover-color;
