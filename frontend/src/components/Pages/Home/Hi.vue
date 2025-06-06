@@ -47,7 +47,7 @@ const onIntroTyped = (currentTitle: string) => {
     </div>
     <div
       id="screen"
-      class="glass grid place-content-center p-2 bg-primary/70 text-primary-content text-center"
+      class="glass p-2 bg-primary/70 text-primary-content text-center"
     >
       <div
         v-if="!isMobileOrTablet"
