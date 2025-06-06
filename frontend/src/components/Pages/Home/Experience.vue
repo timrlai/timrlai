@@ -233,4 +233,9 @@ $transition: all 0.7s;
     }
   }
 }
+
+#skills {
+  min-height: 1000px;
+  contain-intrinsic-size: 1000px;
+}
 </style>

@@ -36,4 +36,9 @@ const SoftSkills = defineAsyncComponent(() => import("./SoftSkills.vue"));
   </section>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+#skills {
+  min-height: 2000px;
+  contain-intrinsic-size: 2000px;
+}
+</style>
