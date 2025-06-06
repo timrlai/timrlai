@@ -222,6 +222,7 @@ $hover-color: var(--color-accent);
 $transition: all 0.7s;
 
 .experience-link {
+  contain: paint;
   &:hover {
     .lottie-box {
       background: $hover-color;
@@ -232,5 +233,10 @@ $transition: all 0.7s;
       transition: $transition;
     }
   }
+}
+
+#skills {
+  min-height: 1000px;
+  contain-intrinsic-size: 1000px;
 }
 </style>

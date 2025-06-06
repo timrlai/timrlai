@@ -138,4 +138,9 @@ const { isNight } = storeToRefs(store);
   </section>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+#summary {
+  min-height: 700px;
+  contain-intrinsic-size: 700px;
+}
+</style>
