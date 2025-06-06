@@ -103,7 +103,6 @@ export default defineConfig({
       output: {
         manualChunks: {
           vue: ["vue"],
-          vueRuntime: ["@vue/runtime-core"],
           router: ["vue-router"],
           vueuse: ["@vueuse/core"],
           pinia: ["pinia"],
