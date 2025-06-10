@@ -715,10 +715,19 @@
     three-custom-shader-material "^5.4.0"
     three-stdlib "^2.34.0"
 
-"@tresjs/core@>=4.2.1", "@tresjs/core@^4.3.5":
+"@tresjs/core@>=4.2.1":
   version "4.3.5"
   resolved "https://registry.npmjs.org/@tresjs/core/-/core-4.3.5.tgz"
   integrity sha512-sHXkzIEHoeIn2aNFMa4dA1P2zFSksBcc8lJc1tqED5vFUIBqCtnqQjg3g3Hq7GnZ7YEQJG5TsKQFpB0J0bK+jA==
+  dependencies:
+    "@alvarosabu/utils" "^3.2.0"
+    "@vue/devtools-api" "^6.6.3"
+    "@vueuse/core" "^12.5.0"
+
+"@tresjs/core@^4.3.6":
+  version "4.3.6"
+  resolved "https://registry.npmjs.org/@tresjs/core/-/core-4.3.6.tgz"
+  integrity sha512-CCk4+jwbiTl7Hj3REZqweglUQQdA3cF29TqJ4dEWunaBPyfsAGLTlJExK5lGIS10ptJkr8DqPvHQT41iTIb0Yg==
   dependencies:
     "@alvarosabu/utils" "^3.2.0"
     "@vue/devtools-api" "^6.6.3"
