@@ -715,10 +715,10 @@
     three-custom-shader-material "^5.4.0"
     three-stdlib "^2.34.0"
 
-"@tresjs/core@>=4.2.1", "@tresjs/core@^4.3.5":
-  version "4.3.5"
-  resolved "https://registry.npmjs.org/@tresjs/core/-/core-4.3.5.tgz"
-  integrity sha512-sHXkzIEHoeIn2aNFMa4dA1P2zFSksBcc8lJc1tqED5vFUIBqCtnqQjg3g3Hq7GnZ7YEQJG5TsKQFpB0J0bK+jA==
+"@tresjs/core@>=4.2.1", "@tresjs/core@^4.3.6":
+  version "4.3.6"
+  resolved "https://registry.npmjs.org/@tresjs/core/-/core-4.3.6.tgz"
+  integrity sha512-CCk4+jwbiTl7Hj3REZqweglUQQdA3cF29TqJ4dEWunaBPyfsAGLTlJExK5lGIS10ptJkr8DqPvHQT41iTIb0Yg==
   dependencies:
     "@alvarosabu/utils" "^3.2.0"
     "@vue/devtools-api" "^6.6.3"
@@ -2306,8 +2306,8 @@ fs-extra@^10.0.0:
   resolved "https://registry.npmjs.org/fs-extra/-/fs-extra-10.1.0.tgz"
   integrity sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==
   dependencies:
-    jsonfile "^6.0.1"
     graceful-fs "^4.2.0"
+    jsonfile "^6.0.1"
     universalify "^2.0.0"
 
 fs.realpath@^1.0.0:
@@ -2723,10 +2723,10 @@ jsonfile@^6.0.1:
   version "6.1.0"
   resolved "https://registry.npmjs.org/jsonfile/-/jsonfile-6.1.0.tgz"
   integrity sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==
-  dependencies:
-    universalify "^2.0.0"
   optionalDependencies:
     graceful-fs "^4.1.6"
+  dependencies:
+    universalify "^2.0.0"
 
 jszip@^3.10.1:
   version "3.10.1"
@@ -4052,10 +4052,10 @@ three@^0.170.0:
   resolved "https://registry.npmjs.org/three/-/three-0.170.0.tgz"
   integrity sha512-FQK+LEpYc0fBD+J8g6oSEyyNzjp+Q7Ks1C568WWaoMRLW+TkNNWmenWeGgJjV105Gd+p/2ql1ZcjYvNiPZBhuQ==
 
-three@>=0.126.1, three@>=0.128.0, three@>=0.133, three@>=0.154, three@^0.176.0:
-  version "0.176.0"
-  resolved "https://registry.npmjs.org/three/-/three-0.176.0.tgz"
-  integrity sha512-PWRKYWQo23ojf9oZSlRGH8K09q7nRSWx6LY/HF/UUrMdYgN9i1e2OwJYHoQjwc6HF/4lvvYLC5YC1X8UJL2ZpA==
+three@>=0.126.1, three@>=0.128.0, three@>=0.133, three@>=0.154, three@^0.177.0:
+  version "0.177.0"
+  resolved "https://registry.npmjs.org/three/-/three-0.177.0.tgz"
+  integrity sha512-EiXv5/qWAaGI+Vz2A+JfavwYCMdGjxVsrn3oBwllUoqYeaBO75J63ZfyaQKoiLrqNHoTlUc6PFgMXnS0kI45zg==
 
 three-custom-shader-material@^5.4.0:
   version "5.4.0"
