@@ -54,7 +54,7 @@
     "lint-staged": "^15.5.2",
     "locate-chrome": "^0.1.1",
     "prettier": "^3.6.2",
-    "puppeteer": "^24.9.0",
+    "puppeteer": "^24.22.2",
     "sass-embedded": "^1.85.1",
     "sharp": "^0.34.1",
     "svgo": "^3.3.2",
