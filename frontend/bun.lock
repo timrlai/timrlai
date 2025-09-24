@@ -26,7 +26,7 @@
         "@typescript-eslint/parser": "^8.44.1",
         "@vitejs/plugin-vue": "^5.2.4",
         "@vue/tsconfig": "^0.7.0",
-        "accessibility-checker": "^4.0.4",
+        "accessibility-checker": "^4.0.9",
         "daisyui": "^5.0.0",
         "eslint": "^9.25.1",
         "eslint-config-prettier": "^10.1.2",
@@ -152,6 +152,8 @@
     "@humanwhocodes/module-importer": ["@humanwhocodes/module-importer@1.0.1", "", {}, "sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA=="],
 
     "@humanwhocodes/retry": ["@humanwhocodes/retry@0.4.2", "", {}, "sha512-xeO57FpIu4p1Ri3Jq/EXq4ClRm86dVF2z/+kvFnyqVYRavTZmaFaUBbWCOuuTh0o/g7DSsk6kc2vrS4Vl5oPOQ=="],
+
+    "@ibm/telemetry-js": ["@ibm/telemetry-js@1.10.2", "", { "bin": { "ibmtelemetry": "dist/collect.js" } }, "sha512-F8+/NNUwtm8BuFz18O9KPvIFTFDo8GUSoyhPxPjEpk7nEyEzWGfhIiEPhL00B2NdHRLDSljh3AiCfSnL/tutiQ=="],
 
     "@iconify/types": ["@iconify/types@2.0.0", "", {}, "sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg=="],
 
@@ -395,7 +397,7 @@
 
     "@webgpu/types": ["@webgpu/types@0.1.55", "", {}, "sha512-p97I8XEC1h04esklFqyIH+UhFrUcj8/1/vBWgc6lAK4jMJc+KbhUy8D4dquHYztFj6pHLqGcp/P1xvBBF4r3DA=="],
 
-    "accessibility-checker": ["accessibility-checker@4.0.4", "", { "dependencies": { "chromedriver": "*", "deep-diff": "^1.0.2", "exceljs": "^4.3.0", "js-yaml": "^4.1.0", "puppeteer": "^22.14.0", "string-hash": "^1.1.3" }, "bin": { "achecker": "bin/achecker.js" } }, "sha512-+Vg9BUBKMsjqwH3iDqU/j6zSbvHHsQleXzmsHeM+eXXlrytmCZn+3cxSFYwiJ/8HMx3LSrFX9A4m2YQ3dheAMw=="],
+    "accessibility-checker": ["accessibility-checker@4.0.9", "", { "dependencies": { "@ibm/telemetry-js": "^1.9.1", "chromedriver": "*", "deep-diff": "^1.0.2", "exceljs": "^4.3.0", "js-yaml": "^4.1.0", "puppeteer": "^22.14.0", "string-hash": "^1.1.3" }, "bin": { "achecker": "bin/achecker.js" } }, "sha512-PBkTYensx9yEmCtP4Cz29VMLaTGVWNxru5b15Mvvc71ybUM3hChoRiAFM91ddmr/LnKtkRbDun0Jx9KoyXwnsQ=="],
 
     "acorn": ["acorn@8.14.0", "", { "bin": { "acorn": "bin/acorn" } }, "sha512-cl669nCJTZBsL97OF4kUQm5g5hC2uihk0NxY3WENAC0TYdILVkAyHymAntgxGkl7K+t0cXIrH5siy5S4XkFycA=="],
 

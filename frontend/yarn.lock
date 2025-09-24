@@ -357,6 +357,11 @@
   resolved "https://registry.npmjs.org/@humanwhocodes/retry/-/retry-0.4.2.tgz"
   integrity sha512-xeO57FpIu4p1Ri3Jq/EXq4ClRm86dVF2z/+kvFnyqVYRavTZmaFaUBbWCOuuTh0o/g7DSsk6kc2vrS4Vl5oPOQ==
 
+"@ibm/telemetry-js@^1.9.1":
+  version "1.10.2"
+  resolved "https://registry.npmjs.org/@ibm/telemetry-js/-/telemetry-js-1.10.2.tgz"
+  integrity sha512-F8+/NNUwtm8BuFz18O9KPvIFTFDo8GUSoyhPxPjEpk7nEyEzWGfhIiEPhL00B2NdHRLDSljh3AiCfSnL/tutiQ==
+
 "@iconify/types@^2.0.0":
   version "2.0.0"
   resolved "https://registry.npmjs.org/@iconify/types/-/types-2.0.0.tgz"
@@ -1421,11 +1426,12 @@
   resolved "https://registry.npmjs.org/@webgpu/types/-/types-0.1.55.tgz"
   integrity sha512-p97I8XEC1h04esklFqyIH+UhFrUcj8/1/vBWgc6lAK4jMJc+KbhUy8D4dquHYztFj6pHLqGcp/P1xvBBF4r3DA==
 
-accessibility-checker@^4.0.4:
-  version "4.0.4"
-  resolved "https://registry.npmjs.org/accessibility-checker/-/accessibility-checker-4.0.4.tgz"
-  integrity sha512-+Vg9BUBKMsjqwH3iDqU/j6zSbvHHsQleXzmsHeM+eXXlrytmCZn+3cxSFYwiJ/8HMx3LSrFX9A4m2YQ3dheAMw==
+accessibility-checker@^4.0.9:
+  version "4.0.9"
+  resolved "https://registry.npmjs.org/accessibility-checker/-/accessibility-checker-4.0.9.tgz"
+  integrity sha512-PBkTYensx9yEmCtP4Cz29VMLaTGVWNxru5b15Mvvc71ybUM3hChoRiAFM91ddmr/LnKtkRbDun0Jx9KoyXwnsQ==
   dependencies:
+    "@ibm/telemetry-js" "^1.9.1"
     chromedriver "*"
     deep-diff "^1.0.2"
     exceljs "^4.3.0"
