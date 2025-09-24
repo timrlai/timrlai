@@ -24,7 +24,7 @@
     "@tresjs/core": "^4.3.6",
     "@vueuse/core": "^13.9.0",
     "is-mobile": "^5.0.0",
-    "pinia": "^3.0.2",
+    "pinia": "^3.0.3",
     "three": "^0.177.0",
     "vue": "^3.5.21",
     "vue-confetti-explosion": "^1.0.2",
