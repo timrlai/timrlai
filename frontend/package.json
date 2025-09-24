@@ -28,7 +28,7 @@
     "three": "^0.177.0",
     "vue": "^3.5.21",
     "vue-confetti-explosion": "^1.0.2",
-    "vue-router": "4",
+    "vue-router": "^4.5.1",
     "vue-writer": "^2.0.2",
     "vue3-lottie": "^3.3.1"
   },
