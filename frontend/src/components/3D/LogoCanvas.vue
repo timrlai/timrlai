@@ -9,7 +9,7 @@ import {
 } from "vue";
 import { storeToRefs } from "pinia";
 import isMobile from "is-mobile";
-import type { Scene } from "three/src/scenes/Scene.d.ts";
+import type { Group } from "three/src/objects/Group.d.ts";
 import { LinearSRGBColorSpace } from "three/src/constants.js";
 import { TresCanvas } from "@tresjs/core";
 import { useGLTF, OrbitControls, Text3D, Box } from "@tresjs/cientos";
@@ -17,6 +17,7 @@ import { useGLTF, OrbitControls, Text3D, Box } from "@tresjs/cientos";
 import { lottieConstants } from "../../../lib/constants";
 import constants from "../../../lib/constants/LogoCanvas";
 import { useThemeStore } from "../../../lib/stores/theme";
+
 
 const LottieSphere = defineAsyncComponent(() => import("./LottieSphere.vue"));
 const LottieCylinder = defineAsyncComponent(
@@ -316,14 +317,14 @@ const store = useThemeStore();
 const { isNight } = storeToRefs(store);
 const canvasKey: Ref<string> = ref("logo-canvas");
 const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
-const { scene: logoLightScene } = await useGLTF(LOGO_LIGHT_GLTF_PATH, {
+const { state: logoLightState } = await useGLTF(LOGO_LIGHT_GLTF_PATH, {
   draco: true,
 });
-const { scene: logoDarkScene } = await useGLTF(LOGO_DARK_GLTF_PATH, {
+const { state: logoDarkState } = await useGLTF(LOGO_DARK_GLTF_PATH, {
   draco: true,
 });
-let logoLightModel: Scene = logoLightScene;
-let logoDarkModel: Scene = logoDarkScene;
+let logoLightModel: Group | undefined = logoLightState.value?.scene;
+let logoDarkModel: Group | undefined = logoDarkState.value?.scene;
 
 const setPoses = (event: Event | null = null) => {
   setTimeout(
@@ -484,14 +485,14 @@ const setPoses = (event: Event | null = null) => {
           ? LANDSCAPE_BAT_SKILLS_SOFT_SCALE
           : DESKTOP_BAT_SKILLS_SOFT_SCALE;
 
-      const { scene: logoLightScene } = await useGLTF(LOGO_LIGHT_GLTF_PATH, {
+      const { state: logoLightState } = await useGLTF(LOGO_LIGHT_GLTF_PATH, {
         draco: true,
       });
-      const { scene: logoDarkScene } = await useGLTF(LOGO_DARK_GLTF_PATH, {
+      const { state: logoDarkState } = await useGLTF(LOGO_DARK_GLTF_PATH, {
         draco: true,
       });
-      logoLightModel = logoLightScene;
-      logoDarkModel = logoDarkScene;
+      logoLightModel = logoLightState.value?.scene;
+      logoDarkModel = logoDarkState.value?.scene;
 
       // Regenerate the value of the key prop of the canvas to rerender it after resetting poses
       canvasKey.value = `logo-canvas-${Math.random()}`;
@@ -530,6 +531,7 @@ watchEffect(() => {
       :tone-mapping-exposure="1.2"
       shadows
       alpha
+      :clearAlpha="0"
     >
       <TresPerspectiveCamera :position="[0, 0, 1]" />
       <OrbitControls
