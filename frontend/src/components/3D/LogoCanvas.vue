@@ -18,7 +18,6 @@ import { lottieConstants } from "../../../lib/constants";
 import constants from "../../../lib/constants/LogoCanvas";
 import { useThemeStore } from "../../../lib/stores/theme";
 
-
 const LottieSphere = defineAsyncComponent(() => import("./LottieSphere.vue"));
 const LottieCylinder = defineAsyncComponent(
   () => import("./LottieCylinder.vue"),
