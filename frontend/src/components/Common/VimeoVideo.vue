@@ -48,11 +48,6 @@ const {
       </div>
     </div>
   </section>
-  <script
-    src="https://player.vimeo.com/api/player.js"
-    crossorigin="anonymous"
-    async
-  ></script>
 </template>
 
 <style scoped></style>
