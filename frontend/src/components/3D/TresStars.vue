@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { shallowRef } from "vue";
-import { useRenderLoop } from "@tresjs/core";
+import { useLoop } from "@tresjs/core";
 import { Stars } from "@tresjs/cientos";
 import type { TresStarsProps } from "../../../lib/types";
 
@@ -12,7 +12,8 @@ const {
 } = defineProps<TresStarsProps>();
 
 const yRotation = shallowRef(0);
-useRenderLoop().onLoop(({ delta }) => {
+const { onBeforeRender } = useLoop();
+onBeforeRender(({ delta }) => {
   yRotation.value += 0.02 * delta;
 });
 </script>
