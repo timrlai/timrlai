@@ -35,7 +35,7 @@
   "devDependencies": {
     "@eslint/js": "^9.36.0",
     "@iconify/vue": "^4.3.0",
-    "@tailwindcss/vite": "^4.0.9",
+    "@tailwindcss/vite": "^4.1.13",
     "@types/bun": "latest",
     "@types/vue": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^8.25.0",
