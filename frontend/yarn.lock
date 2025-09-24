@@ -971,17 +971,17 @@
   resolved "https://registry.npmjs.org/@typescript-eslint/eslint-plugin/-/eslint-plugin-8.44.1.tgz"
   integrity sha512-molgphGqOBT7t4YKCSkbasmu1tb1MgrZ2szGzHbclF7PNmOkSTQVHy+2jXOSnxvR3+Xe1yySHFZoqMpz3TfQsw==
   dependencies:
-    ignore "^7.0.0"
-    graphemer "^1.4.0"
-    ts-api-utils "^2.1.0"
-    natural-compare "^1.4.0"
-    "@typescript-eslint/utils" "8.44.1"
     "@eslint-community/regexpp" "^4.10.0"
-    "@typescript-eslint/type-utils" "8.44.1"
-    "@typescript-eslint/visitor-keys" "8.44.1"
     "@typescript-eslint/scope-manager" "8.44.1"
+    "@typescript-eslint/type-utils" "8.44.1"
+    "@typescript-eslint/utils" "8.44.1"
+    "@typescript-eslint/visitor-keys" "8.44.1"
+    graphemer "^1.4.0"
+    ignore "^7.0.0"
+    natural-compare "^1.4.0"
+    ts-api-utils "^2.1.0"
 
-"@typescript-eslint/parser@8.25.0", "@typescript-eslint/parser@^8.0.0 || ^8.0.0-alpha.0", "@typescript-eslint/parser@^8.25.0", "@typescript-eslint/parser@^8.44.1":
+"@typescript-eslint/parser@8.25.0", "@typescript-eslint/parser@^8.0.0 || ^8.0.0-alpha.0", "@typescript-eslint/parser@^8.44.1":
   version "8.25.0"
   resolved "https://registry.npmjs.org/@typescript-eslint/parser/-/parser-8.25.0.tgz"
   integrity sha512-4gbs64bnbSzu4FpgMiQ1A+D+urxkoJk/kqlDJ2W//5SygaEiAP2B4GoS7TEdxgwol2el03gckFV9lJ4QOMiiHg==
@@ -992,14 +992,25 @@
     "@typescript-eslint/visitor-keys" "8.25.0"
     debug "^4.3.4"
 
+"@typescript-eslint/parser@^8.44.1":
+  version "8.44.1"
+  resolved "https://registry.npmjs.org/@typescript-eslint/parser/-/parser-8.44.1.tgz"
+  integrity sha512-EHrrEsyhOhxYt8MTg4zTF+DJMuNBzWwgvvOYNj/zm1vnaD/IC5zCXFehZv94Piqa2cRFfXrTFxIvO95L7Qc/cw==
+  dependencies:
+    debug "^4.3.4"
+    "@typescript-eslint/types" "8.44.1"
+    "@typescript-eslint/visitor-keys" "8.44.1"
+    "@typescript-eslint/scope-manager" "8.44.1"
+    "@typescript-eslint/typescript-estree" "8.44.1"
+
 "@typescript-eslint/project-service@8.44.1":
   version "8.44.1"
   resolved "https://registry.npmjs.org/@typescript-eslint/project-service/-/project-service-8.44.1.tgz"
   integrity sha512-ycSa60eGg8GWAkVsKV4E6Nz33h+HjTXbsDT4FILyL8Obk5/mx4tbvCNsLf9zret3ipSumAOG89UcCs/KRaKYrA==
   dependencies:
-    debug "^4.3.4"
-    "@typescript-eslint/types" "^8.44.1"
     "@typescript-eslint/tsconfig-utils" "^8.44.1"
+    "@typescript-eslint/types" "^8.44.1"
+    debug "^4.3.4"
 
 "@typescript-eslint/scope-manager@8.25.0":
   version "8.25.0"
@@ -1037,11 +1048,11 @@
   resolved "https://registry.npmjs.org/@typescript-eslint/type-utils/-/type-utils-8.44.1.tgz"
   integrity sha512-KdEerZqHWXsRNKjF9NYswNISnFzXfXNDfPxoTh7tqohU/PRIbwTmsjGK6V9/RTYWau7NZvfo52lgVk+sJh0K3g==
   dependencies:
+    "@typescript-eslint/types" "8.44.1"
+    "@typescript-eslint/typescript-estree" "8.44.1"
+    "@typescript-eslint/utils" "8.44.1"
     debug "^4.3.4"
     ts-api-utils "^2.1.0"
-    "@typescript-eslint/types" "8.44.1"
-    "@typescript-eslint/utils" "8.44.1"
-    "@typescript-eslint/typescript-estree" "8.44.1"
 
 "@typescript-eslint/types@8.25.0":
   version "8.25.0"
@@ -1072,16 +1083,16 @@
   resolved "https://registry.npmjs.org/@typescript-eslint/typescript-estree/-/typescript-estree-8.44.1.tgz"
   integrity sha512-qnQJ+mVa7szevdEyvfItbO5Vo+GfZ4/GZWWDRRLjrxYPkhM+6zYB2vRYwCsoJLzqFCdZT4mEqyJoyzkunsZ96A==
   dependencies:
-    debug "^4.3.4"
-    semver "^7.6.0"
-    is-glob "^4.0.3"
-    fast-glob "^3.3.2"
-    minimatch "^9.0.4"
-    ts-api-utils "^2.1.0"
+    "@typescript-eslint/project-service" "8.44.1"
+    "@typescript-eslint/tsconfig-utils" "8.44.1"
     "@typescript-eslint/types" "8.44.1"
     "@typescript-eslint/visitor-keys" "8.44.1"
-    "@typescript-eslint/tsconfig-utils" "8.44.1"
-    "@typescript-eslint/project-service" "8.44.1"
+    debug "^4.3.4"
+    fast-glob "^3.3.2"
+    is-glob "^4.0.3"
+    minimatch "^9.0.4"
+    semver "^7.6.0"
+    ts-api-utils "^2.1.0"
 
 "@typescript-eslint/utils@8.25.0":
   version "8.25.0"
@@ -1098,9 +1109,9 @@
   resolved "https://registry.npmjs.org/@typescript-eslint/utils/-/utils-8.44.1.tgz"
   integrity sha512-DpX5Fp6edTlocMCwA+mHY8Mra+pPjRZ0TfHkXI8QFelIKcbADQz1LUPNtzOFUriBB2UYqw4Pi9+xV4w9ZczHFg==
   dependencies:
-    "@typescript-eslint/types" "8.44.1"
     "@eslint-community/eslint-utils" "^4.7.0"
     "@typescript-eslint/scope-manager" "8.44.1"
+    "@typescript-eslint/types" "8.44.1"
     "@typescript-eslint/typescript-estree" "8.44.1"
 
 "@typescript-eslint/visitor-keys@8.25.0":
@@ -1116,8 +1127,8 @@
   resolved "https://registry.npmjs.org/@typescript-eslint/visitor-keys/-/visitor-keys-8.44.1.tgz"
   integrity sha512-576+u0QD+Jp3tZzvfRfxon0EA2lzcDt3lhUbsC6Lgzy9x2VR4E+JUiNyGHi5T8vk0TV+fpJ5GLG1JsJuWCaKhw==
   dependencies:
-    eslint-visitor-keys "^4.2.1"
     "@typescript-eslint/types" "8.44.1"
+    eslint-visitor-keys "^4.2.1"
 
 "@vitejs/plugin-vue@^5.2.1":
   version "5.2.1"
