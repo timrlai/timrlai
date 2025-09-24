@@ -3,11 +3,6 @@
 # bun ./bun.lockb --hash: 0000000000000000-0000000000000000-0000000000000000-0000000000000000
 
 
-"@alvarosabu/utils@^3.2.0":
-  version "3.2.0"
-  resolved "https://registry.npmjs.org/@alvarosabu/utils/-/utils-3.2.0.tgz"
-  integrity sha512-aoGWRfaQjOo9TUwrBA6W0zwTHktgrXy69GIFNILT4gHsqscw6+X8P6uoSlZVQFr887SPm8x3aDin5EBVq8y4pw==
-
 "@babel/code-frame@^7.0.0":
   version "7.27.1"
   resolved "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.27.1.tgz"
@@ -945,28 +940,19 @@
   resolved "https://registry.npmjs.org/@tootallnate/quickjs-emscripten/-/quickjs-emscripten-0.23.0.tgz"
   integrity sha512-C5Mc6rdnsaJDjO3UpGW/CQTHtCKaYlScZTly4JIu97Jxo/odCiH0ITnDXSJPTOrEKk/ycSZ0AOgTmkDtkOsvIA==
 
-"@tresjs/cientos@^4.3.1":
-  version "4.3.1"
-  resolved "https://registry.npmjs.org/@tresjs/cientos/-/cientos-4.3.1.tgz"
-  integrity sha512-3qp6lEtMrFdhxDuASP1Sz/hEi8+xcEpM6Vd6uDJysCh4uRAzyJLlBSbPoR7gVjN12wrhwJIF1AfYEFz/Vhz5ZQ==
+"@tresjs/cientos@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.npmjs.org/@tresjs/cientos/-/cientos-5.0.0.tgz"
+  integrity sha512-m65PsPZELODzwvI4jjCXTuA68xsAXVjyS+yB/Niql0qcI07HtPQzPSerLFg+qEjVBOealC+u89UnB/Qd/Uwj8Q==
   dependencies:
-    "@vueuse/core" "^12.0.0"
+    "@vueuse/core" "^13.8.0"
     camera-controls "^2.9.0"
     stats-gl "^2.0.1"
     stats.js "^0.17.0"
     three-custom-shader-material "^5.4.0"
-    three-stdlib "^2.34.0"
+    three-stdlib "^2.36.0"
 
-"@tresjs/core@>=4.2.1":
-  version "4.3.6"
-  resolved "https://registry.npmjs.org/@tresjs/core/-/core-4.3.6.tgz"
-  integrity sha512-CCk4+jwbiTl7Hj3REZqweglUQQdA3cF29TqJ4dEWunaBPyfsAGLTlJExK5lGIS10ptJkr8DqPvHQT41iTIb0Yg==
-  dependencies:
-    "@alvarosabu/utils" "^3.2.0"
-    "@vue/devtools-api" "^6.6.3"
-    "@vueuse/core" "^12.5.0"
-
-"@tresjs/core@^5.0.1":
+"@tresjs/core@>=5.0.0", "@tresjs/core@^5.0.1":
   version "5.0.1"
   resolved "https://registry.npmjs.org/@tresjs/core/-/core-5.0.1.tgz"
   integrity sha512-aQhIPvK85u+lSbjf67bNiqr4bSuJ4cLmpxsE7q7LSTLI4G4+3xqvhXzSyOYmgniW/KMhjTUQKfUEGtNdBRFDtg==
@@ -1301,7 +1287,7 @@
     de-indent "^1.0.2"
     he "^1.2.0"
 
-"@vue/devtools-api@^6.6.3", "@vue/devtools-api@^6.6.4":
+"@vue/devtools-api@^6.6.4":
   version "6.6.4"
   resolved "https://registry.npmjs.org/@vue/devtools-api/-/devtools-api-6.6.4.tgz"
   integrity sha512-sGhTPMuXqZ1rVOk32RylztWkfXTRhuS7vgAKv0zjqk8gbsHkJ7xfFf+jbySxt7tWObEJwyKaHMikV/WGDiQm8g==
@@ -1428,17 +1414,7 @@
   resolved "https://registry.npmjs.org/@vue/tsconfig/-/tsconfig-0.7.0.tgz"
   integrity sha512-ku2uNz5MaZ9IerPPUyOHzyjhXoX2kVJaVf7hL315DC17vS6IiZRmmCPfggNbU16QTvM80+uYYy3eYJB59WCtvg==
 
-"@vueuse/core@^12.0.0", "@vueuse/core@^12.5.0":
-  version "12.8.2"
-  resolved "https://registry.npmjs.org/@vueuse/core/-/core-12.8.2.tgz"
-  integrity sha512-HbvCmZdzAu3VGi/pWYm5Ut+Kd9mn1ZHnn4L5G8kOQTPs/IwIAmJoBrmYk2ckLArgMXZj0AW3n5CAejLUO+PhdQ==
-  dependencies:
-    "@types/web-bluetooth" "^0.0.21"
-    "@vueuse/metadata" "12.8.2"
-    "@vueuse/shared" "12.8.2"
-    vue "^3.5.13"
-
-"@vueuse/core@^13.9.0":
+"@vueuse/core@^13.8.0", "@vueuse/core@^13.9.0":
   version "13.9.0"
   resolved "https://registry.npmjs.org/@vueuse/core/-/core-13.9.0.tgz"
   integrity sha512-ts3regBQyURfCE2BcytLqzm8+MmLlo5Ln/KLoxDVcsZ2gzIwVNnQpQOL/UKV8alUqjSZOlpFZcRNsLRqj+OzyA==
@@ -1447,22 +1423,10 @@
     "@vueuse/metadata" "13.9.0"
     "@vueuse/shared" "13.9.0"
 
-"@vueuse/metadata@12.8.2":
-  version "12.8.2"
-  resolved "https://registry.npmjs.org/@vueuse/metadata/-/metadata-12.8.2.tgz"
-  integrity sha512-rAyLGEuoBJ/Il5AmFHiziCPdQzRt88VxR+Y/A/QhJ1EWtWqPBBAxTAFaSkviwEuOEZNtW8pvkPgoCZQ+HxqW1A==
-
 "@vueuse/metadata@13.9.0":
   version "13.9.0"
   resolved "https://registry.npmjs.org/@vueuse/metadata/-/metadata-13.9.0.tgz"
   integrity sha512-1AFRvuiGphfF7yWixZa0KwjYH8ulyjDCC0aFgrGRz8+P4kvDFSdXLVfTk5xAN9wEuD1J6z4/myMoYbnHoX07zg==
-
-"@vueuse/shared@12.8.2":
-  version "12.8.2"
-  resolved "https://registry.npmjs.org/@vueuse/shared/-/shared-12.8.2.tgz"
-  integrity sha512-dznP38YzxZoNloI0qpEfpkms8knDtaoQ6Y/sfS0L7Yki4zh40LFHEhur0odJC6xTHG5dxWVPiUWBXn+wCG2s5w==
-  dependencies:
-    vue "^3.5.13"
 
 "@vueuse/shared@13.9.0":
   version "13.9.0"
@@ -4542,10 +4506,10 @@ three-custom-shader-material@^5.4.0:
     glsl-tokenizer "^2.1.5"
     object-hash "^3.0.0"
 
-three-stdlib@^2.34.0:
-  version "2.35.14"
-  resolved "https://registry.npmjs.org/three-stdlib/-/three-stdlib-2.35.14.tgz"
-  integrity sha512-kpCaEg59M9usFTgHC+YZNKvx7nMoLI2zQxZBV8pjoNW6vNZmGyXpaLBL09A2oLCsS3KepgMFkOuk6lRoebTNvA==
+three-stdlib@^2.36.0:
+  version "2.36.0"
+  resolved "https://registry.npmjs.org/three-stdlib/-/three-stdlib-2.36.0.tgz"
+  integrity sha512-kv0Byb++AXztEGsULgMAs8U2jgUdz6HPpAB/wDJnLiLlaWQX2APHhiTJIN7rqW+Of0eRgcp7jn05U1BsCP3xBA==
   dependencies:
     "@types/draco3d" "^1.4.0"
     "@types/offscreencanvas" "^2019.6.4"
@@ -4753,7 +4717,7 @@ vscode-uri@^3.0.8:
   resolved "https://registry.npmjs.org/vscode-uri/-/vscode-uri-3.1.0.tgz"
   integrity sha512-/BpdSx+yCQGnCvecbyXdxHDkuk55/G3xwnC0GqY4gmQ3j+A+g8kzzgB4Nk/SINjqn6+waqw3EgbVF2QKExkRxQ==
 
-vue@*, vue@3.5.13, vue@^3.5.13:
+vue@*, vue@3.5.13:
   version "3.5.13"
   resolved "https://registry.npmjs.org/vue/-/vue-3.5.13.tgz"
   integrity sha512-wmeiSMxkZCSc+PM2w2VRsOYAZC8GdipNFRTsLSfodVqI9mbejKeXEGr8SckuLnrQPGe3oJN5c3K0vpoU9q/wCQ==
@@ -4764,7 +4728,7 @@ vue@*, vue@3.5.13, vue@^3.5.13:
     "@vue/server-renderer" "3.5.13"
     "@vue/shared" "3.5.13"
 
-vue@3.5.21, vue@>=3, vue@>=3.3, vue@>=3.4, "vue@^2.7.0 || ^3.5.11", vue@^3.0.5, vue@^3.2, vue@^3.2.25, vue@^3.4.0, vue@^3.4.21, vue@^3.5.0, vue@^3.5.21:
+vue@3.5.21, vue@>=3, vue@>=3.4, vue@>=3.5.17, "vue@^2.7.0 || ^3.5.11", vue@^3.0.5, vue@^3.2, vue@^3.2.25, vue@^3.4.0, vue@^3.4.21, vue@^3.5.0, vue@^3.5.21:
   version "3.5.21"
   resolved "https://registry.npmjs.org/vue/-/vue-3.5.21.tgz"
   integrity sha512-xxf9rum9KtOdwdRkiApWL+9hZEMWE90FHh8yS1+KJAiWYh+iGWV1FquPjoO9VUHQ+VIhsCXNNyZ5Sf4++RVZBA==
