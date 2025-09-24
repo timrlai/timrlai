@@ -51,7 +51,7 @@
     "eslint-plugin-vuejs-accessibility": "^2.4.1",
     "globals": "^16.4.0",
     "husky": "^9.1.7",
-    "lint-staged": "^15.4.3",
+    "lint-staged": "^15.5.2",
     "locate-chrome": "^0.1.1",
     "prettier": "^3.5.3",
     "puppeteer": "^24.9.0",
