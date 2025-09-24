@@ -33,7 +33,7 @@ const {
 const lottieTexture: LottieTexture = (await useLoader(
   LottieLoader as LoaderProto<LottieTexture>,
   src,
-)) as LottieTexture;
+)).state.value as LottieTexture;
 
 lottieTexture.repeat.x = repeatX;
 lottieTexture.repeat.y = repeatY;
