@@ -11,7 +11,7 @@ import {
 } from "three/src/constants.js";
 import { Color } from "three/src/math/Color.js";
 import { ImprovedNoise } from "three/addons/math/ImprovedNoise.js";
-import { useTresContext, useRenderLoop } from "@tresjs/core";
+import { useTresContext, useLoop } from "@tresjs/core";
 import { Box } from "@tresjs/cientos";
 
 import type { GLCloudProps } from "../../../lib/types";
@@ -26,10 +26,10 @@ const {
   args = [10, 10, 10],
 } = defineProps<GLCloudProps>();
 
-const { scene, camera: cameraRef, renderer } = useTresContext();
-const cameraValue = cameraRef.value as Camera;
+const { scene, camera: cameraReturn, renderer } = useTresContext();
+const cameraValue = cameraReturn.activeCamera.value as Camera;
 
-const { onLoop } = useRenderLoop();
+const { onBeforeRender } = useLoop();
 
 // Texture
 
@@ -98,10 +98,10 @@ function animate(elapsed: number) {
 
   mesh.value.material.uniforms.frame.value++;
 
-  renderer.value.render(scene.value, cameraValue);
+  renderer.instance.render(scene.value, cameraValue);
 }
 
-onLoop(({ elapsed }) => {
+onBeforeRender(({ elapsed }) => {
   if (mesh.value) {
     animate(elapsed);
   }

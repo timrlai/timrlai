@@ -30,10 +30,9 @@ const {
   depthWrite = false,
 } = defineProps<LottieCylinderProps>();
 
-const lottieTexture: LottieTexture = (await useLoader(
-  LottieLoader as LoaderProto<LottieTexture>,
-  src,
-)) as LottieTexture;
+const lottieTexture: LottieTexture = (
+  await useLoader(LottieLoader as LoaderProto<LottieTexture>, src)
+).state.value as LottieTexture;
 
 lottieTexture.repeat.x = repeatX;
 lottieTexture.repeat.y = repeatY;
