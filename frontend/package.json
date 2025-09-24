@@ -65,7 +65,7 @@
     "vite-plugin-glsl": "^1.5.1",
     "vite-plugin-image-optimizer": "^1.1.9",
     "vite-plugin-webfont-dl": "^3.11.1",
-    "vue-tsc": "^2.2.8"
+    "vue-tsc": "^2.2.12"
   },
   "peerDependencies": {
     "typescript": "^5.8.2"
