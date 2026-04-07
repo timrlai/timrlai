@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineProps } from "vue";
 import { RepeatWrapping, BackSide } from "three/src/constants.js";
 import { LottieLoader } from "three/addons/loaders/LottieLoader.js";
 import { type LoaderProto, useLoader } from "@tresjs/core";
