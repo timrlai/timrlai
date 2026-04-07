@@ -45,21 +45,21 @@ lottieTexture.wrapT = wrapT;
       :scale="scale"
       :renderOrder="renderOrder"
     >
-      <MeshBasicMaterial
+      <TresMeshBasicMaterial
         v-if="material === 'basic'"
         :map="lottieTexture"
         :side="side"
         :transparent="transparent"
         :depthWrite="depthWrite"
       />
-      <MeshStandardMaterial
+      <TresMeshStandardMaterial
         v-if="material === 'standard'"
         :map="lottieTexture"
         :side="side"
         :transparent="transparent"
         :depthWrite="depthWrite"
       />
-      <MeshToonMaterial
+      <TresMeshToonMaterial
         v-if="material === 'toon'"
         :map="lottieTexture"
         :side="side"
