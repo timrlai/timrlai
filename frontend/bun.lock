@@ -1,11 +1,12 @@
 {
   "lockfileVersion": 1,
+  "configVersion": 0,
   "workspaces": {
     "": {
       "name": "timrlai",
       "dependencies": {
         "@tresjs/cientos": "^5.0.0",
-        "@tresjs/core": "^5.0.1",
+        "@tresjs/core": "^5.8.0",
         "@vueuse/core": "^13.9.0",
         "is-mobile": "^5.0.0",
         "pinia": "^3.0.3",
@@ -339,7 +340,7 @@
 
     "@tresjs/cientos": ["@tresjs/cientos@5.0.0", "", { "dependencies": { "@vueuse/core": "^13.8.0", "camera-controls": "^2.9.0", "stats-gl": "^2.0.1", "stats.js": "^0.17.0", "three-custom-shader-material": "^5.4.0", "three-stdlib": "^2.36.0" }, "peerDependencies": { "@tresjs/core": ">=5.0.0", "three": ">=0.133", "vue": ">=3.5.17" } }, "sha512-m65PsPZELODzwvI4jjCXTuA68xsAXVjyS+yB/Niql0qcI07HtPQzPSerLFg+qEjVBOealC+u89UnB/Qd/Uwj8Q=="],
 
-    "@tresjs/core": ["@tresjs/core@5.0.1", "", { "dependencies": { "@pmndrs/pointer-events": "^6.6.17", "@vue/devtools-api": "^7.7.2", "@vueuse/core": "^13.9.0", "radashi": "^12.6.2" }, "peerDependencies": { "three": ">=0.133", "vue": ">=3.4" } }, "sha512-aQhIPvK85u+lSbjf67bNiqr4bSuJ4cLmpxsE7q7LSTLI4G4+3xqvhXzSyOYmgniW/KMhjTUQKfUEGtNdBRFDtg=="],
+    "@tresjs/core": ["@tresjs/core@5.8.0", "", { "dependencies": { "@pmndrs/pointer-events": "^6.6.17", "@vue/devtools-api": "^7.7.2", "@vueuse/core": "^13.9.0", "radashi": "^12.6.2" }, "peerDependencies": { "three": ">=0.133", "vue": ">=3.4" } }, "sha512-l0ThyBNpEUxIem3iJt1g4Fuhx2FGUYnm8xJzdGAqZeD7E1ofbh0AzKTd7xHKoHhHM/Cdd4MVY2qVz8wXRQs0gg=="],
 
     "@trysound/sax": ["@trysound/sax@0.2.0", "", {}, "sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA=="],
 

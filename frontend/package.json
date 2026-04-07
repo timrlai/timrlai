@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@tresjs/cientos": "^5.0.0",
-    "@tresjs/core": "^5.0.1",
+    "@tresjs/core": "^5.8.0",
     "@vueuse/core": "^13.9.0",
     "is-mobile": "^5.0.0",
     "pinia": "^3.0.3",
