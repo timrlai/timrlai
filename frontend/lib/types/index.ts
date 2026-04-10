@@ -110,7 +110,7 @@ export type LottieCylinderProps = LottieShapeProps & {
   heightSegments?: number;
   openEnded?: boolean;
   thetaStart?: number;
-  theataEnd?: number;
+  thetaLength?: number;
 };
 
 export type GLCloudProps = {

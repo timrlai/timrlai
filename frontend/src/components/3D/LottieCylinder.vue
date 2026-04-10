@@ -17,8 +17,8 @@ const {
   radialSegments = 16,
   heightSegments = 1,
   openEnded = true,
-  thetaStart,
-  theataEnd,
+  thetaStart = 0,
+  thetaLength = 2 * Math.PI,
   position = [0, 0, 0],
   rotation = [0, 0, 0],
   scale = [1, 1, 1],
@@ -50,7 +50,7 @@ lottieTexture.wrapT = wrapT;
         heightSegments,
         openEnded,
         thetaStart,
-        theataEnd,
+        thetaLength,
       ]"
       :position="position"
       :rotation="rotation"
