@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineProps } from "vue";
 import { ClampToEdgeWrapping, FrontSide } from "three/src/constants.js";
 import { LottieLoader } from "three/addons/loaders/LottieLoader.js";
 import { type LoaderProto, useLoader } from "@tresjs/core";
@@ -45,21 +44,21 @@ lottieTexture.wrapT = wrapT;
       :scale="scale"
       :renderOrder="renderOrder"
     >
-      <MeshBasicMaterial
+      <TresMeshBasicMaterial
         v-if="material === 'basic'"
         :map="lottieTexture"
         :side="side"
         :transparent="transparent"
         :depthWrite="depthWrite"
       />
-      <MeshStandardMaterial
+      <TresMeshStandardMaterial
         v-if="material === 'standard'"
         :map="lottieTexture"
         :side="side"
         :transparent="transparent"
         :depthWrite="depthWrite"
       />
-      <MeshToonMaterial
+      <TresMeshToonMaterial
         v-if="material === 'toon'"
         :map="lottieTexture"
         :side="side"

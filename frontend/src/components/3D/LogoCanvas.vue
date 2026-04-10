@@ -549,7 +549,7 @@ watchEffect(() => {
       <Suspense>
         <LottieSphere v-if="isNight" :src="CLOUDS_DARK_LOTTIE_PATH" />
       </Suspense>
-      <TresMesh
+      <TresGroup
         :position="logoPosition"
         :rotation="logoRotation"
         :scale="logoScale"
@@ -560,14 +560,14 @@ watchEffect(() => {
         <Suspense
           ><primitive v-if="isNight" :object="logoDarkModel"
         /></Suspense>
-      </TresMesh>
-      <TresMesh
+      </TresGroup>
+      <TresGroup
         :position="taglinePosition"
         :rotation="taglineRotation"
         :scale="taglineScale"
       >
         <Suspense
-          ><TresMesh :position="[0, 2, 0]"
+          ><TresGroup :position="[0, 2, 0]"
             ><Text3D :font="FONT_PATH" :size="FONT_SIZE"
               >A FULL
               <TresMeshStandardMaterial
@@ -575,10 +575,10 @@ watchEffect(() => {
                 :color="TEXT_COLOR_LIGHT" /><TresMeshStandardMaterial
                 v-if="isNight"
                 :color="TEXT_COLOR_DARK" /></Text3D
-          ></TresMesh>
+          ></TresGroup>
         </Suspense>
         <Suspense
-          ><TresMesh :position="[0, 0.7, 0]"
+          ><TresGroup :position="[0, 0.7, 0]"
             ><Text3D :font="FONT_PATH" :size="FONT_SIZE"
               >STACK
               <TresMeshStandardMaterial
@@ -586,10 +586,10 @@ watchEffect(() => {
                 :color="TEXT_COLOR_LIGHT" /><TresMeshStandardMaterial
                 v-if="isNight"
                 :color="TEXT_COLOR_DARK" /></Text3D
-          ></TresMesh>
+          ></TresGroup>
         </Suspense>
         <Suspense
-          ><TresMesh :position="[0, -0.7, 0]"
+          ><TresGroup :position="[0, -0.7, 0]"
             ><Text3D :font="FONT_PATH" :size="FONT_SIZE"
               >TEAM iN
               <TresMeshStandardMaterial
@@ -597,10 +597,10 @@ watchEffect(() => {
                 :color="TEXT_COLOR_LIGHT" /><TresMeshStandardMaterial
                 v-if="isNight"
                 :color="TEXT_COLOR_DARK" /></Text3D
-          ></TresMesh>
+          ></TresGroup>
         </Suspense>
         <Suspense
-          ><TresMesh :position="[0, -2, 0]"
+          ><TresGroup :position="[0, -2, 0]"
             ><Text3D :font="FONT_PATH" :size="FONT_SIZE"
               >ONE TiM!
               <TresMeshStandardMaterial
@@ -608,9 +608,9 @@ watchEffect(() => {
                 :color="TEXT_COLOR_LIGHT" /><TresMeshStandardMaterial
                 v-if="isNight"
                 :color="TEXT_COLOR_DARK" /></Text3D
-          ></TresMesh>
+          ></TresGroup>
         </Suspense>
-      </TresMesh>
+      </TresGroup>
       <Suspense>
         <LottieCylinder
           :src="AVATAR_WAVE_LOTTIE_PATH"
@@ -655,7 +655,7 @@ watchEffect(() => {
           :scale="avatarSkillsScale"
         />
       </Suspense>
-      <TresMesh
+      <TresGroup
         :position="avatarDeskPosition"
         :rotation="avatarDeskRotation"
         :scale="avatarDeskScale"
@@ -685,7 +685,7 @@ watchEffect(() => {
             <TresMeshStandardMaterial color="#963600" />
           </Box>
         </Suspense>
-      </TresMesh>
+      </TresGroup>
       <Suspense>
         <LottieCylinder
           v-if="isNight"

@@ -110,23 +110,23 @@ onBeforeRender(({ elapsed }) => {
 
 <template>
   <Suspense>
-    <TresMesh
+    <Box
       :ref="mesh"
       :position="position"
       :rotation="rotation"
       :scale="scale"
+      :args="args"
+      :renderOrder="1"
     >
-      <Box :args="args" :renderOrder="1">
-        <TresRawShaderMaterial
-          :vertex-shader="vertexShader"
-          :fragment-shader="fragmentShader"
-          :uniforms="uniforms"
-          :glsl-version="glslVersion"
-          :side="side"
-          transparent
-          :depthWrite="false"
-        />
-      </Box>
-    </TresMesh>
+      <TresRawShaderMaterial
+        :vertex-shader="vertexShader"
+        :fragment-shader="fragmentShader"
+        :uniforms="uniforms"
+        :glsl-version="glslVersion"
+        :side="side"
+        transparent
+        :depthWrite="false"
+      />
+    </Box>
   </Suspense>
 </template>

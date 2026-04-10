@@ -3,9 +3,7 @@ import { createWebHistory, createRouter } from "vue-router";
 
 import type { ScrollPosition } from "../lib/types";
 
-const Home = defineAsyncComponent(
-  () => import("./components/Pages/Home/Home.vue"),
-);
+const Home = () => import("./components/Pages/Home/Home.vue");
 const Experience = defineAsyncComponent(
   () => import("./components/Pages/Experience/Experience.vue"),
 );

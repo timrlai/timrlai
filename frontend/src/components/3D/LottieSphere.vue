@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineProps } from "vue";
 import { RepeatWrapping, BackSide } from "three/src/constants.js";
 import { LottieLoader } from "three/addons/loaders/LottieLoader.js";
 import { type LoaderProto, useLoader } from "@tresjs/core";
@@ -37,27 +36,27 @@ lottieTexture.wrapT = wrapT;
 <template>
   <Suspense>
     <Sphere
-      :args="[radius, segments, segments]"
+      :args="[radius ?? 500, segments ?? 16, segments ?? 16]"
       :position="position"
       :rotation="rotation"
       :scale="scale"
       :renderOrder="renderOrder"
     >
-      <MeshBasicMaterial
+      <TresMeshBasicMaterial
         v-if="material === 'basic'"
         :map="lottieTexture"
         :side="side"
         :transparent="transparent"
         :depthWrite="depthWrite"
       />
-      <MeshStandardMaterial
+      <TresMeshStandardMaterial
         v-if="material === 'standard'"
         :map="lottieTexture"
         :side="side"
         :transparent="transparent"
         :depthWrite="depthWrite"
       />
-      <MeshToonMaterial
+      <TresMeshToonMaterial
         v-if="material === 'toon'"
         :map="lottieTexture"
         :side="side"
