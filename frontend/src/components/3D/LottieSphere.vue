@@ -36,7 +36,7 @@ lottieTexture.wrapT = wrapT;
 <template>
   <Suspense>
     <Sphere
-      :args="[radius, segments, segments]"
+      :args="[radius ?? 500, segments ?? 16, segments ?? 16]"
       :position="position"
       :rotation="rotation"
       :scale="scale"
