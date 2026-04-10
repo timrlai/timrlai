@@ -25,6 +25,7 @@ onBeforeRender(({ delta }) => {
     :depth="depth"
     :count="count"
     :size="size"
-    :size-attenuation="true"
+    size-attenuation
+    transparent
   />
 </template>
