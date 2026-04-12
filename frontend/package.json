@@ -39,7 +39,7 @@
     "@types/bun": "latest",
     "@types/vue": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^8.58.1",
-    "@typescript-eslint/parser": "^8.44.1",
+    "@typescript-eslint/parser": "^8.58.1",
     "@vitejs/plugin-vue": "^5.2.4",
     "@vue/tsconfig": "^0.7.0",
     "accessibility-checker": "^4.0.9",
