@@ -27,7 +27,6 @@ export default defineConfig({
             params: {
               overrides: {
                 cleanupNumericValues: false,
-                removeViewBox: false, // https://github.com/svg/svgo/issues/1128
                 cleanupIds: {
                   minify: false,
                   remove: false,
