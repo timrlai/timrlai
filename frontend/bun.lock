@@ -27,7 +27,7 @@
         "@typescript-eslint/parser": "^8.58.1",
         "@vitejs/plugin-vue": "^6.0.5",
         "@vue/tsconfig": "^0.9.1",
-        "accessibility-checker": "^4.0.9",
+        "accessibility-checker": "^4.0.16",
         "daisyui": "^5.1.14",
         "eslint": "^10.2.0",
         "eslint-config-prettier": "^10.1.8",
@@ -378,7 +378,7 @@
 
     "@webgpu/types": ["@webgpu/types@0.1.55", "", {}, "sha512-p97I8XEC1h04esklFqyIH+UhFrUcj8/1/vBWgc6lAK4jMJc+KbhUy8D4dquHYztFj6pHLqGcp/P1xvBBF4r3DA=="],
 
-    "accessibility-checker": ["accessibility-checker@4.0.9", "", { "dependencies": { "@ibm/telemetry-js": "^1.9.1", "chromedriver": "*", "deep-diff": "^1.0.2", "exceljs": "^4.3.0", "js-yaml": "^4.1.0", "puppeteer": "^22.14.0", "string-hash": "^1.1.3" }, "bin": { "achecker": "bin/achecker.js" } }, "sha512-PBkTYensx9yEmCtP4Cz29VMLaTGVWNxru5b15Mvvc71ybUM3hChoRiAFM91ddmr/LnKtkRbDun0Jx9KoyXwnsQ=="],
+    "accessibility-checker": ["accessibility-checker@4.0.16", "", { "dependencies": { "@ibm/telemetry-js": "^1.9.1", "chromedriver": "*", "deep-diff": "^1.0.2", "exceljs": "^4.3.0", "js-yaml": "^4.1.0", "puppeteer": "^22.14.0", "string-hash": "^1.1.3" }, "bin": { "achecker": "bin/achecker.js" } }, "sha512-iujFDx+gXoK/MZp4MPgjkDpRx8VeQfOrVTUueh+//YeDRefF7IdXkc8sFDSagqOcxN6welLrPzx6pgQuK4axLA=="],
 
     "acorn": ["acorn@8.16.0", "", { "bin": { "acorn": "bin/acorn" } }, "sha512-UVJyE9MttOsBQIDKw1skb9nAwQuR5wuGD3+82K6JgJlm/Y+KI92oNsMNGZCYdDsVtRHSak0pcV5Dno5+4jh9sw=="],
 
