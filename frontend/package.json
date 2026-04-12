@@ -57,7 +57,7 @@
     "puppeteer": "^24.40.0",
     "sass-embedded": "^1.99.0",
     "sharp": "^0.34.5",
-    "svgo": "^3.3.2",
+    "svgo": "^4.0.1",
     "tailwindcss": "^4.2.2",
     "typescript-eslint": "^8.58.1",
     "vite": "^8.0.8",
