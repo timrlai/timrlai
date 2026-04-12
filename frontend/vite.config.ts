@@ -99,34 +99,19 @@ export default defineConfig({
     minify: "esbuild",
     cssMinify: "esbuild",
     cssCodeSplit: true,
-    rollupOptions: {
+    rolldownOptions: {
       output: {
-        manualChunks: {
-          vue: ["vue"],
-          router: ["vue-router"],
-          vueuse: ["@vueuse/core"],
-          pinia: ["pinia"],
-          three: ["three"],
-          threeImprovedNoise: ["three/addons/math/ImprovedNoise.js"],
-          threeLottieLoader: ["three/addons/loaders/LottieLoader.js"],
-          tres: ["@tresjs/core"],
-          cientos: ["@tresjs/cientos"],
-          draco3d: ["draco3d"],
-          lottieWeb: ["lottie-web"],
-          vueLottie: ["vue3-lottie"],
-          confetti: ["vue-confetti-explosion"],
-          writer: ["vue-writer"],
-          mobile: ["is-mobile"],
-          iconify: ["@iconify/vue"],
-          eslint: [
-            "eslint",
-            "@eslint/js",
-            "eslint-config-prettier",
-            "eslint-plugin-prettier",
-            "eslint-plugin-vue",
-            "eslint-plugin-vuejs-accessibility",
+        codeSplitting: {
+          groups: [
+            {
+              name: 'large-libs',
+              test: /node_modules/,
+              minSize: 100000, // 100KB
+              maxSize: 250000, // 250KB
+              priority: 10,
+            },
           ],
-        },
+        }
       },
     },
   },
