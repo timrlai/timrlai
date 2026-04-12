@@ -63,7 +63,7 @@
     "vite": "^8.0.8",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-glsl": "^1.6.0",
-    "vite-plugin-image-optimizer": "^1.1.9",
+    "vite-plugin-image-optimizer": "^2.0.3",
     "vite-plugin-webfont-dl": "^3.11.1",
     "vue-tsc": "^3.2.6"
   },
