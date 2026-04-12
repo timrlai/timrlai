@@ -812,31 +812,31 @@
   resolved "https://registry.npmjs.org/@tailwindcss/node/-/node-4.2.2.tgz"
   integrity sha512-pXS+wJ2gZpVXqFaUEjojq7jzMpTGf8rU6ipJz5ovJV6PUGmlJ+jvIwGrzdHdQ80Sg+wmQxUFuoW1UAAwHNEdFA==
   dependencies:
+    "@jridgewell/remapping" "^2.3.5"
+    enhanced-resolve "^5.19.0"
     jiti "^2.6.1"
-    tailwindcss "4.2.2"
     lightningcss "1.32.0"
     magic-string "^0.30.21"
     source-map-js "^1.2.1"
-    enhanced-resolve "^5.19.0"
-    "@jridgewell/remapping" "^2.3.5"
+    tailwindcss "4.2.2"
 
 "@tailwindcss/oxide@4.2.2":
   version "4.2.2"
   resolved "https://registry.npmjs.org/@tailwindcss/oxide/-/oxide-4.2.2.tgz"
   integrity sha512-qEUA07+E5kehxYp9BVMpq9E8vnJuBHfJEC0vPC5e7iL/hw7HR61aDKoVoKzrG+QKp56vhNZe4qwkRmMC0zDLvg==
   optionalDependencies:
+    "@tailwindcss/oxide-android-arm64" "4.2.2"
+    "@tailwindcss/oxide-darwin-arm64" "4.2.2"
     "@tailwindcss/oxide-darwin-x64" "4.2.2"
     "@tailwindcss/oxide-freebsd-x64" "4.2.2"
-    "@tailwindcss/oxide-wasm32-wasi" "4.2.2"
-    "@tailwindcss/oxide-darwin-arm64" "4.2.2"
-    "@tailwindcss/oxide-android-arm64" "4.2.2"
-    "@tailwindcss/oxide-linux-x64-gnu" "4.2.2"
-    "@tailwindcss/oxide-linux-x64-musl" "4.2.2"
-    "@tailwindcss/oxide-win32-x64-msvc" "4.2.2"
+    "@tailwindcss/oxide-linux-arm-gnueabihf" "4.2.2"
     "@tailwindcss/oxide-linux-arm64-gnu" "4.2.2"
     "@tailwindcss/oxide-linux-arm64-musl" "4.2.2"
+    "@tailwindcss/oxide-linux-x64-gnu" "4.2.2"
+    "@tailwindcss/oxide-linux-x64-musl" "4.2.2"
+    "@tailwindcss/oxide-wasm32-wasi" "4.2.2"
     "@tailwindcss/oxide-win32-arm64-msvc" "4.2.2"
-    "@tailwindcss/oxide-linux-arm-gnueabihf" "4.2.2"
+    "@tailwindcss/oxide-win32-x64-msvc" "4.2.2"
 
 "@tailwindcss/oxide-android-arm64@4.2.2":
   version "4.2.2"
@@ -888,12 +888,12 @@
   resolved "https://registry.npmjs.org/@tailwindcss/oxide-wasm32-wasi/-/oxide-wasm32-wasi-4.2.2.tgz"
   integrity sha512-eKSztKsmEsn1O5lJ4ZAfyn41NfG7vzCg496YiGtMDV86jz1q/irhms5O0VrY6ZwTUkFy/EKG3RfWgxSI3VbZ8Q==
   dependencies:
-    tslib "^2.8.1"
     "@emnapi/core" "^1.8.1"
     "@emnapi/runtime" "^1.8.1"
-    "@tybys/wasm-util" "^0.10.1"
     "@emnapi/wasi-threads" "^1.1.0"
     "@napi-rs/wasm-runtime" "^1.1.1"
+    "@tybys/wasm-util" "^0.10.1"
+    tslib "^2.8.1"
 
 "@tailwindcss/oxide-win32-arm64-msvc@4.2.2":
   version "4.2.2"
@@ -910,9 +910,9 @@
   resolved "https://registry.npmjs.org/@tailwindcss/vite/-/vite-4.2.2.tgz"
   integrity sha512-mEiF5HO1QqCLXoNEfXVA1Tzo+cYsrqV7w9Juj2wdUFyW07JRenqMG225MvPwr3ZD9N1bFQj46X7r33iHxLUW0w==
   dependencies:
-    tailwindcss "4.2.2"
     "@tailwindcss/node" "4.2.2"
     "@tailwindcss/oxide" "4.2.2"
+    tailwindcss "4.2.2"
 
 "@testim/chrome-version@^1.1.4":
   version "1.1.4"
@@ -3222,20 +3222,20 @@ lightningcss@1.32.0:
   version "1.32.0"
   resolved "https://registry.npmjs.org/lightningcss/-/lightningcss-1.32.0.tgz"
   integrity sha512-NXYBzinNrblfraPGyrbPoD19C1h9lfI/1mzgWYvXUTe414Gz/X1FD2XBZSZM7rRTrMA8JL3OtAaGifrIKhQ5yQ==
+  optionalDependencies:
+    lightningcss-android-arm64 "1.32.0"
+    lightningcss-darwin-arm64 "1.32.0"
+    lightningcss-darwin-x64 "1.32.0"
+    lightningcss-freebsd-x64 "1.32.0"
+    lightningcss-linux-arm-gnueabihf "1.32.0"
+    lightningcss-linux-arm64-gnu "1.32.0"
+    lightningcss-linux-arm64-musl "1.32.0"
+    lightningcss-linux-x64-gnu "1.32.0"
+    lightningcss-linux-x64-musl "1.32.0"
+    lightningcss-win32-arm64-msvc "1.32.0"
+    lightningcss-win32-x64-msvc "1.32.0"
   dependencies:
     detect-libc "^2.0.3"
-  optionalDependencies:
-    lightningcss-darwin-x64 "1.32.0"
-    lightningcss-linux-x64-gnu "1.32.0"
-    lightningcss-win32-x64-msvc "1.32.0"
-    lightningcss-win32-arm64-msvc "1.32.0"
-    lightningcss-darwin-arm64 "1.32.0"
-    lightningcss-linux-arm64-gnu "1.32.0"
-    lightningcss-linux-arm-gnueabihf "1.32.0"
-    lightningcss-linux-arm64-musl "1.32.0"
-    lightningcss-linux-x64-musl "1.32.0"
-    lightningcss-freebsd-x64 "1.32.0"
-    lightningcss-android-arm64 "1.32.0"
 
 lightningcss-android-arm64@1.32.0:
   version "1.32.0"
@@ -4579,12 +4579,7 @@ synckit@^0.11.12:
   dependencies:
     "@pkgr/core" "^0.2.9"
 
-tailwindcss@^4.1.13:
-  version "4.1.13"
-  resolved "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.1.13.tgz"
-  integrity sha512-i+zidfmTqtwquj4hMEwdjshYYgMbOrPzb9a0M3ZgNa0JMoZeFC6bxZvO8yr8ozS6ix2SDz0+mvryPeBs2TFE+w==
-
-tailwindcss@4.2.2:
+tailwindcss@4.2.2, tailwindcss@^4.2.2:
   version "4.2.2"
   resolved "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.2.2.tgz"
   integrity sha512-KWBIxs1Xb6NoLdMVqhbhgwZf2PGBpPEiwOqgI4pFIYbNTfBXiKYyWoTsXgBQ9WFg/OlhnvHaY+AEpW7wSmFo2Q==
