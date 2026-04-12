@@ -8,9 +8,8 @@ import {
   technologistSeniorSkills,
 } from "../../../../lib/constants";
 
-const senecaChalkboardSvgPath = await import(
-  "../../../assets/img/props/seneca_chalkboard.svg"
-);
+const senecaChalkboardSvgPath =
+  await import("../../../assets/img/props/seneca_chalkboard.svg");
 
 const Lazy = defineAsyncComponent(() => import("../../Common/Lazy.vue"));
 const LottiePlayer = defineAsyncComponent(

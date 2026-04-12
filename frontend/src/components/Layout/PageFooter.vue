@@ -3,12 +3,10 @@ import { defineAsyncComponent } from "vue";
 import { RouterLink } from "vue-router";
 import { Icon } from "@iconify/vue";
 
-const logoSvgPath = await import(
-  "../../assets/img/logos/timrlai_logo_light.svg"
-);
-const headSvgPath = await import(
-  "../../assets/img/icons/timrlai_head_trans_bg.svg"
-);
+const logoSvgPath =
+  await import("../../assets/img/logos/timrlai_logo_light.svg");
+const headSvgPath =
+  await import("../../assets/img/icons/timrlai_head_trans_bg.svg");
 
 const SocialButtons = defineAsyncComponent(
   () => import("../Common/SocialButtons.vue"),
