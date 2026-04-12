@@ -15,4 +15,4 @@ auto = "auto"
 # Whether to generate a lockfile on bun install. Default true.
 save = true
 # Whether to generate a non-Bun lockfile alongside bun.lock. (A bun.lock will always be created.) Currently "yarn" is the only supported value.
-print = "yarn"
+# print = "yarn"
