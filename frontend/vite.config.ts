@@ -104,14 +104,14 @@ export default defineConfig({
         codeSplitting: {
           groups: [
             {
-              name: 'large-libs',
+              name: "large-libs",
               test: /node_modules/,
               minSize: 100000, // 100KB
               maxSize: 250000, // 250KB
               priority: 10,
             },
           ],
-        }
+        },
       },
     },
   },

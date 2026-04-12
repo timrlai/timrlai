@@ -8,9 +8,8 @@ import { meetSubItems, experienceSubItems } from "../../../lib/constants";
 import { useThemeStore } from "../../../lib/stores/theme";
 
 const logoDarkSvgPath = await import("../../assets/img/logos/timrlai_logo.svg");
-const logoLightSvgPath = await import(
-  "../../assets/img/logos/timrlai_logo_light.svg"
-);
+const logoLightSvgPath =
+  await import("../../assets/img/logos/timrlai_logo_light.svg");
 
 const SocialButtons = defineAsyncComponent(
   () => import("../Common/SocialButtons.vue"),

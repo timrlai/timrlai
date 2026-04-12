@@ -8,9 +8,8 @@ import {
   freelanceSkills,
 } from "../../../../lib/constants";
 
-const headSvgPath = await import(
-  "../../../assets/img/icons/timrlai_head_trans_bg.svg"
-);
+const headSvgPath =
+  await import("../../../assets/img/icons/timrlai_head_trans_bg.svg");
 
 const Lazy = defineAsyncComponent(() => import("../../Common/Lazy.vue"));
 const LottiePlayer = defineAsyncComponent(
