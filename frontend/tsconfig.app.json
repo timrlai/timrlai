@@ -10,7 +10,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
-    "types": ["vite-plugin-glsl/ext"]
+    "types": ["vue", "vite-plugin-glsl/ext"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
