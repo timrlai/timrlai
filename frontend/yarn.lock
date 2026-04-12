@@ -1441,10 +1441,10 @@
   resolved "https://registry.npmjs.org/@vue/shared/-/shared-3.5.32.tgz"
   integrity sha512-ksNyrmRQzWJJ8n3cRDuSF7zNNontuJg1YHnmWRJd2AMu8Ij2bqwiiri2lH5rHtYPZjj4STkNcgcmiQqlOjiYGg==
 
-"@vue/tsconfig@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.npmjs.org/@vue/tsconfig/-/tsconfig-0.7.0.tgz"
-  integrity sha512-ku2uNz5MaZ9IerPPUyOHzyjhXoX2kVJaVf7hL315DC17vS6IiZRmmCPfggNbU16QTvM80+uYYy3eYJB59WCtvg==
+"@vue/tsconfig@^0.9.1":
+  version "0.9.1"
+  resolved "https://registry.npmjs.org/@vue/tsconfig/-/tsconfig-0.9.1.tgz"
+  integrity sha512-buvjm+9NzLCJL29KY1j1991YYJ5e6275OiK+G4jtmfIb+z4POywbdm0wXusT9adVWqe0xqg70TbI7+mRx4uU9w==
 
 "@vueuse/core@^13.9.0":
   version "13.9.0"
@@ -4702,7 +4702,7 @@ typed-query-selector@^2.12.0:
   resolved "https://registry.npmjs.org/typed-query-selector/-/typed-query-selector-2.12.0.tgz"
   integrity sha512-SbklCd1F0EiZOyPiW192rrHZzZ5sBijB6xM+cpmrwDqObvdtunOHHIk9fCGsoK5JVIYXoyEp4iEdE3upFH3PAg==
 
-typescript@*, typescript@5.x, typescript@>=4.5.0, typescript@>=4.8.4, "typescript@>=4.8.4 <6.1.0", typescript@>=4.9.5, typescript@>=5.0.0, typescript@^6.0.2:
+typescript@*, "typescript@>= 5.8", typescript@>=4.5.0, typescript@>=4.8.4, "typescript@>=4.8.4 <6.1.0", typescript@>=4.9.5, typescript@>=5.0.0, typescript@^6.0.2:
   version "6.0.2"
   resolved "https://registry.npmjs.org/typescript/-/typescript-6.0.2.tgz"
   integrity sha512-bGdAIrZ0wiGDo5l8c++HWtbaNCWTS4UTv7RaTH/ThVIgjkveJt83m74bBHMJkuCbslY8ixgLBVZJIOiQlQTjfQ==

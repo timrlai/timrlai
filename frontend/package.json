@@ -41,7 +41,7 @@
     "@typescript-eslint/eslint-plugin": "^8.58.1",
     "@typescript-eslint/parser": "^8.58.1",
     "@vitejs/plugin-vue": "^5.2.4",
-    "@vue/tsconfig": "^0.7.0",
+    "@vue/tsconfig": "^0.9.1",
     "accessibility-checker": "^4.0.9",
     "daisyui": "^5.1.14",
     "eslint": "^10.2.0",
