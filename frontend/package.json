@@ -43,7 +43,7 @@
     "@vitejs/plugin-vue": "^6.0.5",
     "@vue/tsconfig": "^0.9.1",
     "accessibility-checker": "^4.0.16",
-    "daisyui": "^5.1.14",
+    "daisyui": "^5.5.19",
     "eslint": "^10.2.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
