@@ -341,6 +341,7 @@ export const generalSkills: Skill[] = [
   { title: "XAMPP", icon: "logos:xampp" },
   { title: "Git", icon: "skill-icons:git" },
   { title: "GitHub", icon: "skill-icons:github-dark" },
+  { title: "CodeSandbox", icon: "streamline-logos:code-sandbox-logo-block" },
   { title: "Terraform", icon: "skill-icons:terraform-light" },
   { title: "ClickUp", icon: "simple-icons:clickup" },
   { title: "Height", icon: null },
@@ -353,7 +354,9 @@ export const generalSkills: Skill[] = [
   { title: "Microsoft Office", icon: "mdi:microsoft-office" },
   { title: "Microsoft Word", icon: "vscode-icons:file-type-word" },
   { title: "Microsoft Excel", icon: "vscode-icons:file-type-excel" },
+  { title: "Microsoft PowerPoint", icon: "vscode-icons:file-type-powerpoint" },
   { title: "Prezi", icon: "simple-icons:prezi" },
+  { title: "OBS Studio", icon: "streamline-logos:obs-studio-logo-block" },
 ];
 export const primarySkills: Skill[] = [
   ...languageSkills.filter(({ title }) =>
@@ -446,6 +449,7 @@ export const futuretalkSkills: Skill[] = [
     [
       "Git",
       "GitHub",
+      "CodeSandbox",
       "Terraform",
       "ClickUp",
       "Height",
@@ -453,6 +457,7 @@ export const futuretalkSkills: Skill[] = [
       "Discord",
       "Google Meet",
       "Google Docs",
+      "OBS Studio",
     ].includes(title),
   ),
 ];
@@ -627,7 +632,7 @@ export const educationSkills: EducationSkills = {
       ["VS Code", "Visual Studio", "Android Studio"].includes(title),
     ),
     ...generalSkills.filter(({ title }) =>
-      ["Linux", "Git", "GitHub"].includes(title),
+      ["Linux", "Git", "GitHub", "OBS Studio"].includes(title),
     ),
   ],
   it: [
