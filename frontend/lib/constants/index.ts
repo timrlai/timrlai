@@ -500,7 +500,26 @@ export const freelanceSkills: Skill[] = [
     ["XAMPP", "Git", "GitHub", "Google Docs"].includes(title),
   ),
 ];
-export const instructorSkills: Skill[] = [
+export const ocaduInstructorSkills: Skill[] = [
+  ...languageSkills.filter(({ title }) =>
+    ["JavaScript", "Node.js", "PHP", "HTML", "CSS", "Markdown"].includes(title),
+  ),
+  ...editorSkills.filter(({ title }) =>
+    ["VS Code", "Dreamweaver"].includes(title),
+  ),
+  ...generalSkills.filter(({ title }) =>
+    [
+      "XAMPP",
+      "CodeSandbox",
+      "Microsoft Teams",
+      "Microsoft Office",
+      "Microsoft Word",
+      "Microsoft PowerPoint",
+      "OBS Studio",
+    ].includes(title),
+  ),
+];
+export const senecaInstructorSkills: Skill[] = [
   ...languageSkills.filter(({ title }) =>
     [
       "JavaScript",
@@ -518,12 +537,17 @@ export const instructorSkills: Skill[] = [
   ),
   ...frameworkSkills.filter(({ title }) =>
     [
+      "React",
+      "Next.js",
       "Angular",
       "Django",
       "Laravel",
-      "Bootstrap",
       "Electron",
+      "Redux",
+      "Zustand",
+      "React Router",
       "Gulp.js",
+      "Bootstrap",
       "OpenCV",
       "jQuery",
     ].includes(title),
@@ -549,7 +573,7 @@ export const instructorSkills: Skill[] = [
     ].includes(title),
   ),
 ];
-export const technologistSeniorSkills: Skill[] = [
+export const senecaTechnologistSeniorSkills: Skill[] = [
   ...languageSkills.filter(({ title }) =>
     [
       "JavaScript",
