@@ -69,8 +69,8 @@ I have over five years of experience as a full-stack software and web developer 
 | ---------------------- | -------------- | ------------------- |
 
 - Planned lessons to teach web development in the Web Programming and Webmaster/Web Design and Developement programs
-- Instructed students in languages such as Python, PHP, JavaScript, HTML, CSS, Sass and SQL
-- Taught students to use frameworks and technologies such as Django, Laravel, Angular, jQuery, Electron, Gulp.js, Bootstrap, VS Code and GitHub
+- Instructed students in languages such as JavaScript, TypeScript, Python, PHP, HTML, CSS, Sass and SQL
+- Taught students to use frameworks and technologies such as React, Django, Laravel, Angular, jQuery, Electron, Gulp.js, Bootstrap, VS Code and GitHub
 - Wrote extensive and detailed technical notes to provide to students
 - Facilitated interactive learning activities to engage students in concepts
 - Ran workshops on design software such as Adobe Illustrator and InDesign
