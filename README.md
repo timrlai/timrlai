@@ -34,18 +34,14 @@ I am a full-stack software developer, 👨🏻‍💻 web developer, 🛜 teache
 
 My skills include developing, testing, debugging and troubleshooting web applications and have experience working with JavaScript, 🟨 TypeScript, 🟦 React, ⚛️ Next.js, Angular, 🦸🏻 Vue, 💚 Vite, ⚡ Python, 🐍 Django, 🎸 Flask, 🍼 PHP, 🐘 Laravel, 🧱 Ruby, 💎 Ruby on Rails, 🛤️ SQL, 🐬 HTML, 🏷️ XML, 🏷️ CSS, 🔶 Sass, 🩷 Tailwind CSS, 🍃 Bootstrap, 🥾 WordPress, 📝 VS Code, 💙 Visual Studio 💜 and Adobe Creative Cloud. ☁️ I am experienced with using those skills to design intuitive, dynamic and accessible user interfaces for web applications. 💻
 
-| **Category**              | **Skills**                                                                                                                                                                  |
-| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Languages:**            | JavaScript, TypeScript, Node.js, Bun, Python, PHP, Ruby, C, C++, Java, HTML, XML, CSS, Sass, SQL, MySQL, MariaDB, PostgreSQL, SQLite, GraphQL, Bash, JSON, YAML, TOML, GLSL |
-| **Frameworks/Libraries:** | React/Next.js, Angular, Vue, Vite, Three.js/WebGL, React Three Fiber, TresJS,                                                                                               |
-
-Drei, A-Frame, React Spring, Theatre.js, Lottie Web, GSAP, Zustand, Pinia, Electron, Gulp.js,
-jQuery, Express, Koa, Django, Laravel, Ruby on Rails, Spring MVC, Tailwind CSS, daisyUI, Bootstrap,
-Material UI, Carbon Design System, Font Awesome, OpenCV, OpenGL |
-| **Content Management Systems:** | WordPress, ExpressionEngine |
-| **Text Editors/IDEs/FTP:** | Visual Studio Code, Visual Studio, Android Studio, Postman, WinSCP, Filezilla |
-| **Design/Illustration Software:** | Adobe Creative Cloud, Visual Paradigm, 3ds Max, Blender, Clip Studio Paint |
-| **General Software:** | Linux, Git, GitHub, MS Teams, Zoom, Slack, Discord, Microsoft Office, Google Docs |
+| **Category**                      | **Skills**                                                                                                                                                                                                                                                                                                                                      |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Languages:**                    | JavaScript, TypeScript, Node.js, Bun, Python, PHP, Ruby, C, C++, Java, HTML, XML, CSS, Sass, SQL, MySQL, MariaDB, PostgreSQL, SQLite, GraphQL, Bash, JSON, YAML, TOML, GLSL                                                                                                                                                                     |
+| **Frameworks/Libraries:**         | React/Next.js, Angular, Vue, Vite, Three.js/WebGL, React Three Fiber, TresJS, Drei, A-Frame, React Spring, Theatre.js, Lottie Web, GSAP, Zustand, Pinia, Electron, Gulp.js, jQuery, Express, Koa, Django, Laravel, Ruby on Rails, Spring MVC, Tailwind CSS, daisyUI, Bootstrap, Material UI, Carbon Design System, Font Awesome, OpenCV, OpenGL |
+| **Content Management Systems:**   | WordPress, ExpressionEngine                                                                                                                                                                                                                                                                                                                     |
+| **Text Editors/IDEs/FTP:**        | Visual Studio Code, Visual Studio, Android Studio, Postman, WinSCP, Filezilla                                                                                                                                                                                                                                                                   |
+| **Design/Illustration Software:** | Adobe Creative Cloud, Visual Paradigm, 3ds Max, Blender, Clip Studio Paint                                                                                                                                                                                                                                                                      |
+| **General Software:**             | Linux, Git, GitHub, MS Teams, Zoom, Slack, Discord, Microsoft Office, Google Docs                                                                                                                                                                                                                                                               |
 
 ### Soft Skills<a name="skills-soft"></a> ❤️‍🔥
 
