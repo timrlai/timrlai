@@ -4,8 +4,9 @@ import { Icon } from "@iconify/vue";
 
 import {
   lottieConstants,
-  instructorSkills,
-  technologistSeniorSkills,
+  ocaduInstructorSkills,
+  senecaInstructorSkills,
+  senecaTechnologistSeniorSkills,
 } from "../../../../lib/constants";
 
 const senecaChalkboardSvgPath =
@@ -36,6 +37,123 @@ const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
             Teacher
           </h1>
           <div class="flex flex-wrap justify-between gap-y-8">
+            <div class="w-full sm:w-3/4">
+              <div class="flex justify-between gap-2 mb-8">
+                <h2
+                  class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto"
+                >
+                  <Icon
+                    icon="fluent-emoji:school"
+                    class="block sm:inline-block text-6xl sm:text-3xl"
+                  />
+                  OCAD University
+                </h2>
+                <h3
+                  id="teacher-instructor-heading"
+                  class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+                >
+                  <Icon
+                    icon="fluent-emoji:man-teacher-light"
+                    class="block sm:inline-block text-6xl sm:text-3xl"
+                  />
+                  Instructor
+                </h3>
+                <h3
+                  class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+                >
+                  <Icon
+                    icon="fluent-color:calendar-28"
+                    class="block sm:inline-block text-6xl sm:text-3xl"
+                  />
+                  2025 to Present
+                </h3>
+              </div>
+              <p class="text-lg sm:text-xl my-4 ahn-medium">
+                I have experience developing content and asynchronously teaching
+                for
+                <Icon
+                  icon="fluent-emoji:man-teacher-light"
+                  class="inline-block h-[1em]"
+                />
+                the
+                <a
+                  href="https://continuingstudies.ocadu.ca/search/publicCourseSearchDetails.do?method=load&courseId=18023"
+                  target="_blank"
+                  class="link link-accent link-hover"
+                  >Introduction to Web Development</a
+                >
+                course at OCAD University
+                <Icon icon="fluent-emoji:school" class="inline-block h-[1em]" />
+                since 2025.
+              </p>
+              <ul class="list text-base sm:text-lg my-4 ahn-medium">
+                <li class="list-row">
+                  <div class="text-3xl sm:text-4xl">
+                    <Icon icon="fluent-color:apps-list-24" />
+                  </div>
+                  <div>
+                    Created outline and learning outcomes for CSDM-N115 -
+                    Introduction to Web Development course
+                  </div>
+                </li>
+                <li class="list-row">
+                  <div class="text-3xl sm:text-4xl">
+                    <Icon icon="fluent-color:code-24" />
+                  </div>
+                  <div>
+                    Developed course content and recorded instructional videos
+                    about HTML, CSS and JavaScript
+                  </div>
+                </li>
+                <li class="list-row">
+                  <div class="text-3xl sm:text-4xl">
+                    <Icon icon="fluent-color:content-view-24" />
+                  </div>
+                  <div>
+                    Covered modern, responsive layout techniques such as
+                    flexbox, grid and media/container queries
+                  </div>
+                </li>
+                <li class="list-row">
+                  <div class="text-3xl sm:text-4xl">
+                    <Icon icon="fluent-color:scan-type-24" />
+                  </div>
+                  <div>
+                    Compared different font types such as WOFF/WOFF2, TrueType
+                    and OpenType and when to use them on the web
+                  </div>
+                </li>
+                <li class="list-row">
+                  <div class="text-3xl sm:text-4xl">
+                    <Icon icon="fluent-emoji:framed-picture" />
+                  </div>
+                  <div>
+                    Compared different image types such as WebP, AVIF, PNG/APNG,
+                    JPG, GIF and SVG and when to use them on the web
+                  </div>
+                </li>
+                <li class="list-row">
+                  <div class="text-3xl sm:text-4xl">
+                    <Icon icon="fluent-emoji:wheelchair-symbol" />
+                  </div>
+                  <div>
+                    Explained accessibility standards such as WCAG, AODA and ACA
+                    and topics such as screen readers, text alternatives,
+                    semantic markup, keyboard navigation, skip links and colour
+                    contrast
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <Lazy :min-height="200">
+              <Suspense>
+                <SkillsUsed
+                  labelledby="teacher-instructor-heading"
+                  :skills="ocaduInstructorSkills"
+                  v-once
+                />
+              </Suspense>
+            </Lazy>
             <div class="w-full sm:w-1/2">
               <div class="flex justify-between gap-2 mb-8">
                 <h2
@@ -80,14 +198,14 @@ const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
                   href="https://www.senecapolytechnic.ca/ce/creative/graphics-web-design/web-programming-development.html"
                   target="_blank"
                   class="link link-accent link-hover"
-                  >Web Programming</a
+                  >Web Programming and Development</a
                 >
                 and
                 <a
                   href="https://web-design-development.senecapolytechnic.ca/"
                   target="_blank"
                   class="link link-accent link-hover"
-                  >Webmaster (Web Design and Development)</a
+                  >Web Design and Development (formerly Webmaster)</a
                 >
                 programs since 2017.
               </p>
@@ -116,7 +234,7 @@ const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
                   </div>
                   <div>
                     Taught students to use frameworks and technologies such as
-                    Django, Laravel, Angular, jQuery, Electron, Gulp.js,
+                    React, Django, Laravel, Angular, jQuery, Electron, Gulp.js,
                     Bootstrap, VS Code and GitHub
                   </div>
                 </li>
@@ -184,12 +302,12 @@ const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
               <Suspense>
                 <SkillsUsed
                   labelledby="teacher-instructor-heading"
-                  :skills="instructorSkills"
+                  :skills="senecaInstructorSkills"
                   v-once
                 />
               </Suspense>
             </Lazy>
-            <div class="w-full sm:w-2/3">
+            <div class="w-full sm:w-3/4">
               <div class="flex justify-between gap-2 my-8">
                 <h2
                   class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto"
@@ -267,7 +385,7 @@ const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
               <Suspense>
                 <SkillsUsed
                   labelledby="teacher-technologist-heading"
-                  :skills="technologistSeniorSkills"
+                  :skills="senecaTechnologistSeniorSkills"
                   v-once
                 />
               </Suspense>

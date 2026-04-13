@@ -261,8 +261,10 @@ export const frameworkSkills: Skill[] = [
   { title: "Ruby on Rails", icon: "skill-icons:rails" },
   { title: "Spring MVC", icon: "skill-icons:spring-light" },
   { title: "Electron", icon: "skill-icons:electron" },
+  { title: "Redux", icon: "skill-icons:redux" },
   { title: "Zustand", icon: "devicon:zustand" },
   { title: "Pinia", icon: "skill-icons:pinia-dark" },
+  { title: "React Router", icon: "logos:react-router" },
   { title: "Gulp.js", icon: "skill-icons:gulp" },
   { title: "Tailwind CSS", icon: "skill-icons:tailwindcss-dark" },
   { title: "daisyUI", icon: "logos:daisyui-icon" },
@@ -341,6 +343,7 @@ export const generalSkills: Skill[] = [
   { title: "XAMPP", icon: "logos:xampp" },
   { title: "Git", icon: "skill-icons:git" },
   { title: "GitHub", icon: "skill-icons:github-dark" },
+  { title: "CodeSandbox", icon: "streamline-logos:code-sandbox-logo-block" },
   { title: "Terraform", icon: "skill-icons:terraform-light" },
   { title: "ClickUp", icon: "simple-icons:clickup" },
   { title: "Height", icon: null },
@@ -353,7 +356,9 @@ export const generalSkills: Skill[] = [
   { title: "Microsoft Office", icon: "mdi:microsoft-office" },
   { title: "Microsoft Word", icon: "vscode-icons:file-type-word" },
   { title: "Microsoft Excel", icon: "vscode-icons:file-type-excel" },
+  { title: "Microsoft PowerPoint", icon: "vscode-icons:file-type-powerpoint" },
   { title: "Prezi", icon: "simple-icons:prezi" },
+  { title: "OBS Studio", icon: "streamline-logos:obs-studio-logo-block" },
 ];
 export const primarySkills: Skill[] = [
   ...languageSkills.filter(({ title }) =>
@@ -446,6 +451,7 @@ export const futuretalkSkills: Skill[] = [
     [
       "Git",
       "GitHub",
+      "CodeSandbox",
       "Terraform",
       "ClickUp",
       "Height",
@@ -453,6 +459,7 @@ export const futuretalkSkills: Skill[] = [
       "Discord",
       "Google Meet",
       "Google Docs",
+      "OBS Studio",
     ].includes(title),
   ),
 ];
@@ -493,7 +500,26 @@ export const freelanceSkills: Skill[] = [
     ["XAMPP", "Git", "GitHub", "Google Docs"].includes(title),
   ),
 ];
-export const instructorSkills: Skill[] = [
+export const ocaduInstructorSkills: Skill[] = [
+  ...languageSkills.filter(({ title }) =>
+    ["JavaScript", "Node.js", "PHP", "HTML", "CSS", "Markdown"].includes(title),
+  ),
+  ...editorSkills.filter(({ title }) =>
+    ["VS Code", "Dreamweaver"].includes(title),
+  ),
+  ...generalSkills.filter(({ title }) =>
+    [
+      "XAMPP",
+      "CodeSandbox",
+      "Microsoft Teams",
+      "Microsoft Office",
+      "Microsoft Word",
+      "Microsoft PowerPoint",
+      "OBS Studio",
+    ].includes(title),
+  ),
+];
+export const senecaInstructorSkills: Skill[] = [
   ...languageSkills.filter(({ title }) =>
     [
       "JavaScript",
@@ -511,12 +537,17 @@ export const instructorSkills: Skill[] = [
   ),
   ...frameworkSkills.filter(({ title }) =>
     [
+      "React",
+      "Next.js",
       "Angular",
       "Django",
       "Laravel",
-      "Bootstrap",
       "Electron",
+      "Redux",
+      "Zustand",
+      "React Router",
       "Gulp.js",
+      "Bootstrap",
       "OpenCV",
       "jQuery",
     ].includes(title),
@@ -542,7 +573,7 @@ export const instructorSkills: Skill[] = [
     ].includes(title),
   ),
 ];
-export const technologistSeniorSkills: Skill[] = [
+export const senecaTechnologistSeniorSkills: Skill[] = [
   ...languageSkills.filter(({ title }) =>
     [
       "JavaScript",
@@ -627,7 +658,7 @@ export const educationSkills: EducationSkills = {
       ["VS Code", "Visual Studio", "Android Studio"].includes(title),
     ),
     ...generalSkills.filter(({ title }) =>
-      ["Linux", "Git", "GitHub"].includes(title),
+      ["Linux", "Git", "GitHub", "OBS Studio"].includes(title),
     ),
   ],
   it: [

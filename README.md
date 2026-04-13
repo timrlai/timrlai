@@ -34,14 +34,18 @@ I am a full-stack software developer, 👨🏻‍💻 web developer, 🛜 teache
 
 My skills include developing, testing, debugging and troubleshooting web applications and have experience working with JavaScript, 🟨 TypeScript, 🟦 React, ⚛️ Next.js, Angular, 🦸🏻 Vue, 💚 Vite, ⚡ Python, 🐍 Django, 🎸 Flask, 🍼 PHP, 🐘 Laravel, 🧱 Ruby, 💎 Ruby on Rails, 🛤️ SQL, 🐬 HTML, 🏷️ XML, 🏷️ CSS, 🔶 Sass, 🩷 Tailwind CSS, 🍃 Bootstrap, 🥾 WordPress, 📝 VS Code, 💙 Visual Studio 💜 and Adobe Creative Cloud. ☁️ I am experienced with using those skills to design intuitive, dynamic and accessible user interfaces for web applications. 💻
 
-| **Category**                      | **Skills**                                                                                                                                                                                                                                                             |
-| --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Languages:**                    | JavaScript, TypeScript, Node.js, Bun, Python, PHP, Ruby, C, C++, Java, HTML, XML, CSS, Sass, SQL, MySQL, MariaDB, PostgreSQL, SQLite, JSON, YAML, TOML                                                                                                                 |
-| **Frameworks/Libraries:**         | React/Next.js, Angular, Vue, Vite, Express, Koa, Django, Laravel, Ruby on Rails, Spring MVC, Electron, Gulp.js, Tailwind CSS, daisyUI, Bootstrap, Material UI, Carbon Design System, Font Awesome, OpenGL, OpenCV, Three.js, React Three Fiber, Drei, A-Frame, Enhance |
-| **Content Management Systems:**   | WordPress, ExpressionEngine                                                                                                                                                                                                                                            |
-| **Text Editors/IDEs/FTP:**        | Visual Studio Code, Visual Studio, Android Studio, WinSCP, FileZilla                                                                                                                                                                                                   |
-| **Design/Illustration Software:** | Adobe Creative Cloud, Visual Paradigm, Clip Studio Paint                                                                                                                                                                                                               |
-| **General Software:**             | Linux, GitHub, MS Teams, Zoom, Slack, Discord, Microsoft Office, Google Docs                                                                                                                                                                                           |
+| **Category**              | **Skills**                                                                                                                                                                  |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Languages:**            | JavaScript, TypeScript, Node.js, Bun, Python, PHP, Ruby, C, C++, Java, HTML, XML, CSS, Sass, SQL, MySQL, MariaDB, PostgreSQL, SQLite, GraphQL, Bash, JSON, YAML, TOML, GLSL |
+| **Frameworks/Libraries:** | React/Next.js, Angular, Vue, Vite, Three.js/WebGL, React Three Fiber, TresJS,                                                                                               |
+
+Drei, A-Frame, React Spring, Theatre.js, Lottie Web, GSAP, Zustand, Pinia, Electron, Gulp.js,
+jQuery, Express, Koa, Django, Laravel, Ruby on Rails, Spring MVC, Tailwind CSS, daisyUI, Bootstrap,
+Material UI, Carbon Design System, Font Awesome, OpenCV, OpenGL |
+| **Content Management Systems:** | WordPress, ExpressionEngine |
+| **Text Editors/IDEs/FTP:** | Visual Studio Code, Visual Studio, Android Studio, Postman, WinSCP, Filezilla |
+| **Design/Illustration Software:** | Adobe Creative Cloud, Visual Paradigm, 3ds Max, Blender, Clip Studio Paint |
+| **General Software:** | Linux, Git, GitHub, MS Teams, Zoom, Slack, Discord, Microsoft Office, Google Docs |
 
 ### Soft Skills<a name="skills-soft"></a> ❤️‍🔥
 
@@ -51,16 +55,25 @@ Having worked with large, fast-paced organizations such as Futuretalk Inc., 🤖
 
 I have over five years of experience as a full-stack software and web developer 👨🏻‍💻 who most recently worked with [Futuretalk Inc.](https://www.futuretalk.ca/) 🤖 At Futuretalk Inc. 🤖 I developed cutting edge web 🛜 [applications](https://learnwithtrek.com/) using JavaScript/TypeScript, 🟨🟦 React ⚛️ and Three.js 🌐 to create immersive, 3D, 🌐 virtual and augmented reality experiences for educational 👨🏻‍🏫 content and used Python 🐍 to create AI 🤖 powered tools to automate processes. I also have experience teaching 👨🏻‍🏫 web development 🛜 skills at [Seneca Polytechnic](https://www.senecapolytechnic.ca/ce/creative/graphics-web-design/web-programming-development.html) 🏫 since 2017.
 
-| **Futuretalk Inc.** | **Creative Software Developer** | **2022 to 2025** |
-| ------------------- | ------------------------------- | ---------------- |
+| **OCAD University** | **Instructor** | **2025 to Present** |
+| ------------------- | -------------- | ------------------- |
 
-- Developed, updated and debugged front-end UI/UX using JavaScript/TypeScript, React, Next.js, Tailwind CSS, the Carbon Design System and React Spring
-- Designed UI/UX wireframes and concepts using Adobe XD
-- Contributed to, updated and debugged software for building 3D worlds using JavaScript/TypeScript, Three.js, React Three Fiber, Drei and Theatre.js
-- Adapted 3D worlds for VR experiences using React XR, the Meta Quest VR headset and the Meta Quest Developer Hub
-- Created AR experiences using 8th Wall, A-Frame, JavaScript and Three.js
-- Created automated AI tools with Python, Langchain, and the Google Docs and YouTube APIs
-- Documented software and development process using Clickup, GitHub issues and pull requests
+- Created outline and learning outcomes for CSDM-N115 - Introduction to Web Development course
+- Developed course content and recorded instructional videos about HTML, CSS and JavaScript
+- Covered modern, responsive layout techniques such as flexbox, grid and media/container queries
+- Compared different font types such as WOFF/WOFF2, TrueType and OpenType and when to use them on the web
+- Compared different image types such as WebP, AVIF, PNG/APNG, JPG, GIF and SVG and when to use them on the web
+- Explained accessibility standards such as WCAG, AODA and ACA and topics such as screen readers, text alternatives, semantic markup, keyboard navigation, skip links and colour contrast
+
+| **Seneca Polytechnic** | **Instructor** | **2017 to Present** |
+| ---------------------- | -------------- | ------------------- |
+
+- Planned lessons to teach web development in the Web Programming and Webmaster/Web Design and Developement programs
+- Instructed students in languages such as JavaScript, TypeScript, Python, PHP, HTML, CSS, Sass and SQL
+- Taught students to use frameworks and technologies such as React, Django, Laravel, Angular, jQuery, Electron, Gulp.js, Bootstrap, VS Code and GitHub
+- Wrote extensive and detailed technical notes to provide to students
+- Facilitated interactive learning activities to engage students in concepts
+- Ran workshops on design software such as Adobe Illustrator and InDesign
 
 | **Tim Lai Design & Development** | **Freelance Software Developer** | **2017 to Present** |
 | -------------------------------- | -------------------------------- | ------------------- |
@@ -73,15 +86,16 @@ I have over five years of experience as a full-stack software and web developer 
 - Used JavaScript, jQuery and AJAX to access the YouTube API
 - Edited, cropped and combined photos in Adobe Photoshop
 
-| **Seneca Polytechnic** | **Instructor** | **2017 to Present** |
-| ---------------------- | -------------- | ------------------- |
+| **Futuretalk Inc.** | **Creative Software Developer** | **2022 to 2025** |
+| ------------------- | ------------------------------- | ---------------- |
 
-- Planned lessons to teach web development in the Web Programming and Webmaster/Web Design and Developement programs
-- Instructed students in languages such as Python, PHP, JavaScript, HTML, CSS, Sass and SQL
-- Taught students to use frameworks and technologies such as Django, Laravel, Angular, jQuery, Electron, Gulp.js, Bootstrap, VS Code and GitHub
-- Wrote extensive and detailed technical notes to provide to students
-- Facilitated interactive learning activities to engage students in concepts
-- Ran workshops on design software such as Adobe Illustrator and InDesign
+- Developed, updated and debugged front-end UI/UX using JavaScript/TypeScript, React, Next.js, Tailwind CSS, the Carbon Design System and React Spring
+- Designed UI/UX wireframes and concepts using Adobe XD
+- Contributed to, updated and debugged software for building 3D worlds using JavaScript/TypeScript, Three.js, React Three Fiber, Drei and Theatre.js
+- Adapted 3D worlds for VR experiences using React XR, the Meta Quest VR headset and the Meta Quest Developer Hub
+- Created AR experiences using 8th Wall, A-Frame, JavaScript and Three.js
+- Created automated AI tools with Python, Langchain, and the Google Docs and YouTube APIs
+- Documented software and development process using Clickup, GitHub issues and pull requests
 
 | **Seneca Polytechnic** | **Technologist Senior** | **2017 to 2018** |
 | ---------------------- | ----------------------- | ---------------- |
