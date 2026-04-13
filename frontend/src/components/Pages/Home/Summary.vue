@@ -67,10 +67,25 @@ const { isNight } = storeToRefs(store);
                   href="https://www.senecapolytechnic.ca/ce/creative/graphics-web-design/web-programming-development.html"
                   target="_blank"
                   class="link link-accent link-hover"
-                  >Web Programming</a
+                  >Web Programming and Development</a
                 >
-                with Python and Django, PHP and Laravel and JavaScript and
-                Angular at Seneca Polytechnic
+                with JavaScript and React, Python and Django and PHP and Laravel
+                at Seneca Polytechnic
+              </div>
+            </li>
+            <li class="list-row">
+              <div class="text-4xl sm:text-5xl">
+                <Icon icon="fluent-emoji:man-artist-light" />
+              </div>
+              <div>
+                Teacher of
+                <a
+                  href="https://continuingstudies.ocadu.ca/search/publicCourseSearchDetails.do?method=load&courseId=18023"
+                  target="_blank"
+                  class="link link-accent link-hover"
+                  >Introduction to Web Development</a
+                >
+                with HTML, CSS and JavaScript at OCAD University
               </div>
             </li>
             <li class="list-row">
