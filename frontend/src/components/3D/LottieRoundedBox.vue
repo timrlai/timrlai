@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ClampToEdgeWrapping, FrontSide } from "three/src/constants.js";
-import { LottieLoader } from "three/addons/loaders/LottieLoader.js";
+import { LottieLoader } from "../../../lib/three/loaders/LottieLoader";
 import { type LoaderProto, useLoader } from "@tresjs/core";
 import { RoundedBox } from "@tresjs/cientos";
 import type { LottieTexture, LottieRoundedBoxProps } from "../../../lib/types";
@@ -28,7 +28,7 @@ const {
 
 const lottieTexture: LottieTexture = (
   await useLoader(LottieLoader as LoaderProto<LottieTexture>, src)
-).state.value as LottieTexture;
+).state.value;
 
 lottieTexture.repeat.x = repeatX;
 lottieTexture.repeat.y = repeatY;
