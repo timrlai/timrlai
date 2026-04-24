@@ -1,7 +1,13 @@
 import lottie from "lottie-web";
 import type { AnimationConfig, AnimationItem } from "lottie-web";
 import type { LottieTexture } from "../../types";
-import { Loader, CanvasTexture, NearestFilter, FileLoader } from "three";
+import {
+  Loader,
+  CanvasTexture,
+  NearestFilter,
+  FileLoader,
+  SRGBColorSpace,
+} from "three";
 
 type AnimationItemWithContainer = AnimationItem & {
   container: Element;
@@ -47,6 +53,7 @@ class LottieLoader extends Loader {
         } as AnimationConfig<"canvas">) as AnimationItemWithContainer;
         texture.animation = animation;
         texture.image = animation.container;
+        texture.colorSpace = SRGBColorSpace;
         animation.addEventListener("enterFrame", function () {
           texture.needsUpdate = true;
         });
