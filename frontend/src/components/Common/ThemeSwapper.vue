@@ -80,6 +80,7 @@ darkMediaQuery.value.addEventListener("change", changeDarkMode);
       for="swap-theme-checkbox"
       :class="`swap swap-rotate text-5xl pr-2 ${iconColors[iconColor]}`"
     >
+      <div class="visually-hidden">{{ tooltip }}</div>
       <!-- this hidden checkbox controls the state -->
       <input
         id="swap-theme-checkbox"
