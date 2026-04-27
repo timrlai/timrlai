@@ -30,7 +30,6 @@ const year = new Date().getFullYear();
           fetchpriority="low"
           loading="lazy"
           alt="Tim R. Lai"
-          title="Tim R. Lai"
           width="320"
           height="234"
           class="inline-block w-full"

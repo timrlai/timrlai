@@ -36,7 +36,7 @@ const { isNight } = storeToRefs(store);
           >Skip to main content
           <Icon icon="mingcute:arrow-to-down-fill" class="inline-block"
         /></RouterLink>
-        <div class="dropdown z-[9999] ubuntu-titling uppercase">
+        <div class="dropdown z-9999 ubuntu-titling uppercase">
           <button
             tabindex="0"
             class="btn btn-ghost lg:hidden text-3xl"
@@ -98,7 +98,6 @@ const { isNight } = storeToRefs(store);
               "
               fetchpriority="high"
               alt="Tim R. Lai"
-              title="Tim R. Lai"
               width="52"
               height="38"
               class="w-full h-full" /></Suspense
@@ -112,7 +111,7 @@ const { isNight } = storeToRefs(store);
             >
           </li>
           <li>
-            <details class="z-[9999]">
+            <details class="z-9999">
               <summary>
                 <Icon icon="line-md:emoji-smile-twotone" /> Meet Tim
               </summary>
@@ -132,7 +131,7 @@ const { isNight } = storeToRefs(store);
             </details>
           </li>
           <li>
-            <details class="z-[9999]">
+            <details class="z-9999">
               <summary>
                 <Icon icon="line-md:document-list-twotone" /> Experience
               </summary>
