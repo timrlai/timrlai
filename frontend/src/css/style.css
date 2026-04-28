@@ -83,6 +83,10 @@ body,
   min-height: 100vh;
 }
 
+[id] {
+  scroll-margin-top: 100px;
+}
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
