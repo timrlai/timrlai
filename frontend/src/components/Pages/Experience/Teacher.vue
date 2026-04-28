@@ -8,6 +8,7 @@ import {
   senecaInstructorSkills,
   senecaTechnologistSeniorSkills,
 } from "../../../../lib/constants";
+import { onSectionStable } from "../../../../lib/functions";
 
 const senecaChalkboardSvgPath =
   await import("../../../assets/img/props/seneca_chalkboard.svg");
@@ -21,380 +22,379 @@ const SkillsUsed = defineAsyncComponent(
 );
 
 const { AVATAR_TEACHER_DESK_LOTTIE_PATH } = lottieConstants;
+
+const sectionId = "teacher";
 </script>
 
 <template>
-  <section id="teacher">
-    <Lazy :min-height="1000">
-      <div
-        class="mockup-window bg-secondary/80 text-secondary-content border-4 border-primary shadow-lg shadow-primary"
-      >
-        <div class="px-5 pb-5">
-          <h1
-            class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase ubuntu-titling border-b-4 border-primary mb-8"
-          >
-            <Icon icon="mingcute:school-fill" class="inline-block h-[1em]" />
-            Teacher
-          </h1>
-          <div class="flex flex-wrap justify-between gap-y-8">
-            <div class="w-full sm:w-3/4">
-              <div class="flex justify-between gap-2 mb-8">
-                <h2
-                  class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto"
-                >
-                  <Icon
-                    icon="fluent-emoji:school"
-                    class="block sm:inline-block text-6xl sm:text-3xl"
-                  />
-                  OCAD University
-                </h2>
-                <h3
-                  id="teacher-instructor-heading"
-                  class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
-                >
-                  <Icon
-                    icon="fluent-emoji:man-teacher-light"
-                    class="block sm:inline-block text-6xl sm:text-3xl"
-                  />
-                  Instructor
-                </h3>
-                <h3
-                  class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
-                >
-                  <Icon
-                    icon="fluent-color:calendar-28"
-                    class="block sm:inline-block text-6xl sm:text-3xl"
-                  />
-                  2025 to Present
-                </h3>
-              </div>
-              <p class="text-lg sm:text-xl my-4 ahn-medium">
-                I have experience developing content and asynchronously teaching
-                for
+  <Lazy :id="sectionId" :min-height="1000" @stable="onSectionStable(sectionId)">
+    <section
+      class="mockup-window bg-secondary/80 text-secondary-content border-4 border-primary shadow-lg shadow-primary"
+    >
+      <div class="px-5 pb-5">
+        <h1
+          class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase ubuntu-titling border-b-4 border-primary mb-8"
+        >
+          <Icon icon="mingcute:school-fill" class="inline-block h-[1em]" />
+          Teacher
+        </h1>
+        <div class="flex flex-wrap justify-between gap-y-8">
+          <div class="w-full sm:w-3/4">
+            <div class="flex justify-between gap-2 mb-8">
+              <h2
+                class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto"
+              >
+                <Icon
+                  icon="fluent-emoji:school"
+                  class="block sm:inline-block text-6xl sm:text-3xl"
+                />
+                OCAD University
+              </h2>
+              <h3
+                id="teacher-instructor-heading"
+                class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+              >
                 <Icon
                   icon="fluent-emoji:man-teacher-light"
-                  class="inline-block h-[1em]"
+                  class="block sm:inline-block text-6xl sm:text-3xl"
                 />
-                the
-                <a
-                  href="https://continuingstudies.ocadu.ca/search/publicCourseSearchDetails.do?method=load&courseId=18023"
-                  target="_blank"
-                  class="link link-accent link-hover"
-                  >Introduction to Web Development</a
-                >
-                course at OCAD University
-                <Icon icon="fluent-emoji:school" class="inline-block h-[1em]" />
-                since 2025.
-              </p>
-              <ul class="list text-base sm:text-lg my-4 ahn-medium">
-                <li class="list-row">
-                  <div class="text-3xl sm:text-4xl">
-                    <Icon icon="fluent-color:apps-list-24" />
-                  </div>
-                  <div>
-                    Created outline and learning outcomes for CSDM-N115 -
-                    Introduction to Web Development course
-                  </div>
-                </li>
-                <li class="list-row">
-                  <div class="text-3xl sm:text-4xl">
-                    <Icon icon="fluent-color:code-24" />
-                  </div>
-                  <div>
-                    Developed course content and recorded instructional videos
-                    about HTML, CSS and JavaScript
-                  </div>
-                </li>
-                <li class="list-row">
-                  <div class="text-3xl sm:text-4xl">
-                    <Icon icon="fluent-color:content-view-24" />
-                  </div>
-                  <div>
-                    Covered modern, responsive layout techniques such as
-                    flexbox, grid and media/container queries
-                  </div>
-                </li>
-                <li class="list-row">
-                  <div class="text-3xl sm:text-4xl">
-                    <Icon icon="fluent-color:scan-type-24" />
-                  </div>
-                  <div>
-                    Compared different font types such as WOFF/WOFF2, TrueType
-                    and OpenType and when to use them on the web
-                  </div>
-                </li>
-                <li class="list-row">
-                  <div class="text-3xl sm:text-4xl">
-                    <Icon icon="fluent-emoji:framed-picture" />
-                  </div>
-                  <div>
-                    Compared different image types such as WebP, AVIF, PNG/APNG,
-                    JPG, GIF and SVG and when to use them on the web
-                  </div>
-                </li>
-                <li class="list-row">
-                  <div class="text-3xl sm:text-4xl">
-                    <Icon icon="fluent-emoji:wheelchair-symbol" />
-                  </div>
-                  <div>
-                    Explained accessibility standards such as WCAG, AODA and ACA
-                    and topics such as screen readers, text alternatives,
-                    semantic markup, keyboard navigation, skip links and colour
-                    contrast
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <Lazy :min-height="200">
-              <Suspense>
-                <SkillsUsed
-                  labelledby="teacher-instructor-heading"
-                  :skills="ocaduInstructorSkills"
-                  v-once
-                />
-              </Suspense>
-            </Lazy>
-            <div class="w-full sm:w-1/2">
-              <div class="flex justify-between gap-2 mb-8">
-                <h2
-                  class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto"
-                >
-                  <Icon
-                    icon="fluent-emoji:school"
-                    class="block sm:inline-block text-6xl sm:text-3xl"
-                  />
-                  Seneca Polytechnic
-                </h2>
-                <h3
-                  id="teacher-instructor-heading"
-                  class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
-                >
-                  <Icon
-                    icon="fluent-emoji:man-teacher-light"
-                    class="block sm:inline-block text-6xl sm:text-3xl"
-                  />
-                  Instructor
-                </h3>
-                <h3
-                  class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
-                >
-                  <Icon
-                    icon="fluent-color:calendar-28"
-                    class="block sm:inline-block text-6xl sm:text-3xl"
-                  />
-                  2017 to Present
-                </h3>
-              </div>
-              <p class="text-lg sm:text-xl my-4 ahn-medium">
-                I have experience teaching
+                Instructor
+              </h3>
+              <h3
+                class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+              >
                 <Icon
-                  icon="fluent-emoji:man-teacher-light"
-                  class="inline-block h-[1em]"
+                  icon="fluent-color:calendar-28"
+                  class="block sm:inline-block text-6xl sm:text-3xl"
                 />
-                web development skills at Seneca Polytechnic
-                <Icon icon="fluent-emoji:school" class="inline-block h-[1em]" />
-                in the
-                <a
-                  href="https://www.senecapolytechnic.ca/ce/creative/graphics-web-design/web-programming-development.html"
-                  target="_blank"
-                  class="link link-accent link-hover"
-                  >Web Programming and Development</a
-                >
-                and
-                <a
-                  href="https://web-design-development.senecapolytechnic.ca/"
-                  target="_blank"
-                  class="link link-accent link-hover"
-                  >Web Design and Development (formerly Webmaster)</a
-                >
-                programs since 2017.
-              </p>
-              <ul class="list text-base sm:text-lg my-4 ahn-medium">
-                <li class="list-row">
-                  <div class="text-3xl sm:text-4xl">
-                    <Icon icon="fluent-color:apps-list-24" />
-                  </div>
-                  <div>
-                    Planned lessons to teach web development in the Web
-                    Programming and Webmaster programs
-                  </div>
-                </li>
-                <li class="list-row">
-                  <div class="text-3xl sm:text-4xl">
-                    <Icon icon="fluent-color:code-24" />
-                  </div>
-                  <div>
-                    Instructed students in languages such as Python, PHP,
-                    JavaScript, HTML, CSS, Sass and SQL
-                  </div>
-                </li>
-                <li class="list-row">
-                  <div class="text-3xl sm:text-4xl">
-                    <Icon icon="fluent-color:library-24" />
-                  </div>
-                  <div>
-                    Taught students to use frameworks and technologies such as
-                    React, Django, Laravel, Angular, jQuery, Electron, Gulp.js,
-                    Bootstrap, VS Code and GitHub
-                  </div>
-                </li>
-                <li class="list-row">
-                  <div class="text-3xl sm:text-4xl">
-                    <Icon icon="fluent-color:clipboard-text-edit-24" />
-                  </div>
-                  <div>
-                    Wrote extensive and detailed technical notes to provide to
-                    students
-                  </div>
-                </li>
-                <li class="list-row">
-                  <div class="text-3xl sm:text-4xl">
-                    <Icon icon="fluent-color:game-chat-20" />
-                  </div>
-                  <div>
-                    Facilitated interactive learning activities to engage
-                    students in concepts
-                  </div>
-                </li>
-                <li class="list-row">
-                  <div class="text-3xl sm:text-4xl">
-                    <Icon icon="fluent-color:design-ideas-24" />
-                  </div>
-                  <div>
-                    Ran workshops on design software such as Adobe Illustrator
-                    and InDesign
-                  </div>
-                </li>
-              </ul>
+                2025 to Present
+              </h3>
             </div>
-            <div class="w-full sm:w-1/2 pl-4">
-              <div class="stack">
-                <div class="flex justify-end">
-                  <div class="w-2/3">
-                    <Suspense>
-                      <LottiePlayer
-                        :src="AVATAR_TEACHER_DESK_LOTTIE_PATH"
-                        autoPlay
-                        v-once
-                      />
-                    </Suspense>
-                  </div>
+            <p class="text-lg sm:text-xl my-4 ahn-medium">
+              I have experience developing content and asynchronously teaching
+              for
+              <Icon
+                icon="fluent-emoji:man-teacher-light"
+                class="inline-block h-[1em]"
+              />
+              the
+              <a
+                href="https://continuingstudies.ocadu.ca/search/publicCourseSearchDetails.do?method=load&courseId=18023"
+                target="_blank"
+                class="link link-accent link-hover"
+                >Introduction to Web Development</a
+              >
+              course at OCAD University
+              <Icon icon="fluent-emoji:school" class="inline-block h-[1em]" />
+              since 2025.
+            </p>
+            <ul class="list text-base sm:text-lg my-4 ahn-medium">
+              <li class="list-row">
+                <div class="text-3xl sm:text-4xl">
+                  <Icon icon="fluent-color:apps-list-24" />
                 </div>
-                <div class="flex justify-start">
-                  <div class="w-3/4">
-                    <Suspense>
-                      <img
-                        :src="senecaChalkboardSvgPath.default"
-                        fetchpriority="low"
-                        loading="lazy"
-                        alt="A chalkboard with the Seneca Polytechnic logo on it."
-                        title="Seneca Polytechnic"
-                        width="316"
-                        height="241"
-                        class="inline-block w-full"
-                      />
-                    </Suspense>
-                  </div>
+                <div>
+                  Created outline and learning outcomes for CSDM-N115 -
+                  Introduction to Web Development course
                 </div>
-              </div>
-            </div>
-            <Lazy :min-height="200">
-              <Suspense>
-                <SkillsUsed
-                  labelledby="teacher-instructor-heading"
-                  :skills="senecaInstructorSkills"
-                  v-once
-                />
-              </Suspense>
-            </Lazy>
-            <div class="w-full sm:w-3/4">
-              <div class="flex justify-between gap-2 my-8">
-                <h2
-                  class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto"
-                >
-                  <Icon
-                    icon="fluent-emoji:school"
-                    class="block sm:inline-block text-6xl sm:text-3xl"
-                  />
-                  Seneca Polytechnic
-                </h2>
-                <h3
-                  id="teacher-technologist-heading"
-                  class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
-                >
-                  <Icon
-                    icon="fluent-emoji:man-technologist-light"
-                    class="block sm:inline-block text-6xl sm:text-3xl"
-                  />
-                  Technologist Senior
-                </h3>
-                <h3
-                  class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
-                >
-                  <Icon
-                    icon="fluent-color:calendar-28"
-                    class="block sm:inline-block text-6xl sm:text-3xl"
-                  />
-                  2017 to 2018
-                </h3>
-              </div>
-              <p class="text-lg sm:text-xl my-4 ahn-medium">
-                I also worked as a Technologist Senior, helping students with
-                course content and assignments at Seneca Polytechnic
-                <Icon icon="fluent-emoji:school" class="inline-block h-[1em]" />
-                in the
-                <a
-                  href="https://web-design-development.senecapolytechnic.ca/"
-                  target="_blank"
-                  class="link link-accent link-hover"
-                  >Webmaster (Web Design and Development)</a
-                >
-                program.
-              </p>
-              <ul class="list text-base sm:text-lg my-4 ahn-medium">
-                <li class="list-row">
-                  <div class="text-3xl sm:text-4xl">
-                    <Icon icon="fluent-color:laptop-24" />
-                  </div>
-                  <div>
-                    Helped students with assignments and exercises in Seneca
-                    College's Webmaster Program
-                  </div>
-                </li>
-                <li class="list-row">
-                  <div class="text-3xl sm:text-4xl">
-                    <Icon icon="fluent-color:chat-bubbles-question-24" />
-                  </div>
-                  <div>
-                    Explained concepts and broke down class examples into
-                    manageable chunks
-                  </div>
-                </li>
-                <li class="list-row">
-                  <div class="text-3xl sm:text-4xl">
-                    <Icon icon="fluent-emoji:bug" />
-                  </div>
-                  <div>
-                    Assisted students in troubleshooting and debugging coding
-                    problems
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <Lazy :min-height="200">
-              <Suspense>
-                <SkillsUsed
-                  labelledby="teacher-technologist-heading"
-                  :skills="senecaTechnologistSeniorSkills"
-                  v-once
-                />
-              </Suspense>
-            </Lazy>
+              </li>
+              <li class="list-row">
+                <div class="text-3xl sm:text-4xl">
+                  <Icon icon="fluent-color:code-24" />
+                </div>
+                <div>
+                  Developed course content and recorded instructional videos
+                  about HTML, CSS and JavaScript
+                </div>
+              </li>
+              <li class="list-row">
+                <div class="text-3xl sm:text-4xl">
+                  <Icon icon="fluent-color:content-view-24" />
+                </div>
+                <div>
+                  Covered modern, responsive layout techniques such as flexbox,
+                  grid and media/container queries
+                </div>
+              </li>
+              <li class="list-row">
+                <div class="text-3xl sm:text-4xl">
+                  <Icon icon="fluent-color:scan-type-24" />
+                </div>
+                <div>
+                  Compared different font types such as WOFF/WOFF2, TrueType and
+                  OpenType and when to use them on the web
+                </div>
+              </li>
+              <li class="list-row">
+                <div class="text-3xl sm:text-4xl">
+                  <Icon icon="fluent-emoji:framed-picture" />
+                </div>
+                <div>
+                  Compared different image types such as WebP, AVIF, PNG/APNG,
+                  JPG, GIF and SVG and when to use them on the web
+                </div>
+              </li>
+              <li class="list-row">
+                <div class="text-3xl sm:text-4xl">
+                  <Icon icon="fluent-emoji:wheelchair-symbol" />
+                </div>
+                <div>
+                  Explained accessibility standards such as WCAG, AODA and ACA
+                  and topics such as screen readers, text alternatives, semantic
+                  markup, keyboard navigation, skip links and colour contrast
+                </div>
+              </li>
+            </ul>
           </div>
+          <Lazy :min-height="200">
+            <Suspense>
+              <SkillsUsed
+                labelledby="teacher-instructor-heading"
+                :skills="ocaduInstructorSkills"
+                v-once
+              />
+            </Suspense>
+          </Lazy>
+          <div class="w-full sm:w-1/2">
+            <div class="flex justify-between gap-2 mb-8">
+              <h2
+                class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto"
+              >
+                <Icon
+                  icon="fluent-emoji:school"
+                  class="block sm:inline-block text-6xl sm:text-3xl"
+                />
+                Seneca Polytechnic
+              </h2>
+              <h3
+                id="teacher-instructor-heading"
+                class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+              >
+                <Icon
+                  icon="fluent-emoji:man-teacher-light"
+                  class="block sm:inline-block text-6xl sm:text-3xl"
+                />
+                Instructor
+              </h3>
+              <h3
+                class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+              >
+                <Icon
+                  icon="fluent-color:calendar-28"
+                  class="block sm:inline-block text-6xl sm:text-3xl"
+                />
+                2017 to Present
+              </h3>
+            </div>
+            <p class="text-lg sm:text-xl my-4 ahn-medium">
+              I have experience teaching
+              <Icon
+                icon="fluent-emoji:man-teacher-light"
+                class="inline-block h-[1em]"
+              />
+              web development skills at Seneca Polytechnic
+              <Icon icon="fluent-emoji:school" class="inline-block h-[1em]" />
+              in the
+              <a
+                href="https://www.senecapolytechnic.ca/ce/creative/graphics-web-design/web-programming-development.html"
+                target="_blank"
+                class="link link-accent link-hover"
+                >Web Programming and Development</a
+              >
+              and
+              <a
+                href="https://web-design-development.senecapolytechnic.ca/"
+                target="_blank"
+                class="link link-accent link-hover"
+                >Web Design and Development (formerly Webmaster)</a
+              >
+              programs since 2017.
+            </p>
+            <ul class="list text-base sm:text-lg my-4 ahn-medium">
+              <li class="list-row">
+                <div class="text-3xl sm:text-4xl">
+                  <Icon icon="fluent-color:apps-list-24" />
+                </div>
+                <div>
+                  Planned lessons to teach web development in the Web
+                  Programming and Webmaster programs
+                </div>
+              </li>
+              <li class="list-row">
+                <div class="text-3xl sm:text-4xl">
+                  <Icon icon="fluent-color:code-24" />
+                </div>
+                <div>
+                  Instructed students in languages such as Python, PHP,
+                  JavaScript, HTML, CSS, Sass and SQL
+                </div>
+              </li>
+              <li class="list-row">
+                <div class="text-3xl sm:text-4xl">
+                  <Icon icon="fluent-color:library-24" />
+                </div>
+                <div>
+                  Taught students to use frameworks and technologies such as
+                  React, Django, Laravel, Angular, jQuery, Electron, Gulp.js,
+                  Bootstrap, VS Code and GitHub
+                </div>
+              </li>
+              <li class="list-row">
+                <div class="text-3xl sm:text-4xl">
+                  <Icon icon="fluent-color:clipboard-text-edit-24" />
+                </div>
+                <div>
+                  Wrote extensive and detailed technical notes to provide to
+                  students
+                </div>
+              </li>
+              <li class="list-row">
+                <div class="text-3xl sm:text-4xl">
+                  <Icon icon="fluent-color:game-chat-20" />
+                </div>
+                <div>
+                  Facilitated interactive learning activities to engage students
+                  in concepts
+                </div>
+              </li>
+              <li class="list-row">
+                <div class="text-3xl sm:text-4xl">
+                  <Icon icon="fluent-color:design-ideas-24" />
+                </div>
+                <div>
+                  Ran workshops on design software such as Adobe Illustrator and
+                  InDesign
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="w-full sm:w-1/2 pl-4">
+            <div class="stack">
+              <div class="flex justify-end">
+                <div class="w-2/3">
+                  <Suspense>
+                    <LottiePlayer
+                      :src="AVATAR_TEACHER_DESK_LOTTIE_PATH"
+                      autoPlay
+                      v-once
+                    />
+                  </Suspense>
+                </div>
+              </div>
+              <div class="flex justify-start">
+                <div class="w-3/4">
+                  <Suspense>
+                    <img
+                      :src="senecaChalkboardSvgPath.default"
+                      fetchpriority="low"
+                      loading="lazy"
+                      alt="A chalkboard with the Seneca Polytechnic logo on it."
+                      title="Seneca Polytechnic"
+                      width="316"
+                      height="241"
+                      class="inline-block w-full"
+                    />
+                  </Suspense>
+                </div>
+              </div>
+            </div>
+          </div>
+          <Lazy :min-height="200">
+            <Suspense>
+              <SkillsUsed
+                labelledby="teacher-instructor-heading"
+                :skills="senecaInstructorSkills"
+                v-once
+              />
+            </Suspense>
+          </Lazy>
+          <div class="w-full sm:w-3/4">
+            <div class="flex justify-between gap-2 my-8">
+              <h2
+                class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto"
+              >
+                <Icon
+                  icon="fluent-emoji:school"
+                  class="block sm:inline-block text-6xl sm:text-3xl"
+                />
+                Seneca Polytechnic
+              </h2>
+              <h3
+                id="teacher-technologist-heading"
+                class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+              >
+                <Icon
+                  icon="fluent-emoji:man-technologist-light"
+                  class="block sm:inline-block text-6xl sm:text-3xl"
+                />
+                Technologist Senior
+              </h3>
+              <h3
+                class="text-lg sm:text-xl md:text-2xl ahn-bold border-l-2 border-primary h-40 sm:h-auto pl-2"
+              >
+                <Icon
+                  icon="fluent-color:calendar-28"
+                  class="block sm:inline-block text-6xl sm:text-3xl"
+                />
+                2017 to 2018
+              </h3>
+            </div>
+            <p class="text-lg sm:text-xl my-4 ahn-medium">
+              I also worked as a Technologist Senior, helping students with
+              course content and assignments at Seneca Polytechnic
+              <Icon icon="fluent-emoji:school" class="inline-block h-[1em]" />
+              in the
+              <a
+                href="https://web-design-development.senecapolytechnic.ca/"
+                target="_blank"
+                class="link link-accent link-hover"
+                >Webmaster (Web Design and Development)</a
+              >
+              program.
+            </p>
+            <ul class="list text-base sm:text-lg my-4 ahn-medium">
+              <li class="list-row">
+                <div class="text-3xl sm:text-4xl">
+                  <Icon icon="fluent-color:laptop-24" />
+                </div>
+                <div>
+                  Helped students with assignments and exercises in Seneca
+                  College's Webmaster Program
+                </div>
+              </li>
+              <li class="list-row">
+                <div class="text-3xl sm:text-4xl">
+                  <Icon icon="fluent-color:chat-bubbles-question-24" />
+                </div>
+                <div>
+                  Explained concepts and broke down class examples into
+                  manageable chunks
+                </div>
+              </li>
+              <li class="list-row">
+                <div class="text-3xl sm:text-4xl">
+                  <Icon icon="fluent-emoji:bug" />
+                </div>
+                <div>
+                  Assisted students in troubleshooting and debugging coding
+                  problems
+                </div>
+              </li>
+            </ul>
+          </div>
+          <Lazy :min-height="200">
+            <Suspense>
+              <SkillsUsed
+                labelledby="teacher-technologist-heading"
+                :skills="senecaTechnologistSeniorSkills"
+                v-once
+              />
+            </Suspense>
+          </Lazy>
         </div>
       </div>
-    </Lazy>
-  </section>
+    </section>
+  </Lazy>
 </template>
 
 <style scoped lang="scss"></style>

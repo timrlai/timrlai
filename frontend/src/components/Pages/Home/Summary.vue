@@ -5,6 +5,7 @@ import { Icon } from "@iconify/vue";
 
 import { lottieConstants } from "../../../../lib/constants";
 import { useThemeStore } from "../../../../lib/stores/theme";
+import { onSectionStable } from "../../../../lib/functions";
 
 const Lazy = defineAsyncComponent(() => import("../../Common/Lazy.vue"));
 const LottiePlayer = defineAsyncComponent(
@@ -15,14 +16,15 @@ const { AVATAR_SUMMARY_LOTTIE_PATH, BAT_SUMMARY_LOTTIE_PATH } = lottieConstants;
 
 const store = useThemeStore();
 const { isNight } = storeToRefs(store);
+
+const sectionId = "summary";
 </script>
 
 <template>
-  <section
-    id="summary"
-    class="mockup-window bg-secondary/80 text-secondary-content border-4 border-primary shadow-lg shadow-primary"
-  >
-    <Lazy :min-height="700">
+  <Lazy :id="sectionId" :min-height="700" @stable="onSectionStable(sectionId)">
+    <section
+      class="mockup-window bg-secondary/80 text-secondary-content border-4 border-primary shadow-lg shadow-primary"
+    >
       <div class="px-5">
         <h1
           class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase ubuntu-titling border-b-4 border-primary mb-4"
@@ -149,13 +151,8 @@ const { isNight } = storeToRefs(store);
           </div>
         </div>
       </div>
-    </Lazy>
-  </section>
+    </section>
+  </Lazy>
 </template>
 
-<style scoped lang="scss">
-#summary {
-  min-height: 700px;
-  contain-intrinsic-size: 700px;
-}
-</style>
+<style scoped lang="scss"></style>

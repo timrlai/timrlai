@@ -4,6 +4,7 @@ import { RouterLink } from "vue-router";
 import { Icon } from "@iconify/vue";
 
 import { lottieConstants } from "../../../../lib/constants";
+import { onSectionStable } from "../../../../lib/functions";
 
 const Lazy = defineAsyncComponent(() => import("../../Common/Lazy.vue"));
 const LottiePlayer = defineAsyncComponent(
@@ -18,14 +19,15 @@ const {
   AVATAR_EDUCATION_LOTTIE_PATH,
   AVATAR_VOLUNTEER_LOTTIE_PATH,
 } = lottieConstants;
+
+const sectionId = "experience";
 </script>
 
 <template>
-  <section
-    id="experience"
-    class="mockup-window bg-secondary/80 text-secondary-content border-4 border-primary shadow-lg shadow-primary"
-  >
-    <Lazy :min-height="1000">
+  <Lazy :id="sectionId" :min-height="1000" @stable="onSectionStable(sectionId)">
+    <section
+      class="mockup-window bg-secondary/80 text-secondary-content border-4 border-primary shadow-lg shadow-primary"
+    >
       <div class="px-5">
         <h1
           class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase ubuntu-titling border-b-4 border-primary mb-4"
@@ -213,8 +215,8 @@ const {
           >
         </div>
       </div>
-    </Lazy>
-  </section>
+    </section>
+  </Lazy>
 </template>
 
 <style scoped lang="scss">
@@ -233,10 +235,5 @@ $transition: all 0.7s;
       transition: $transition;
     }
   }
-}
-
-#skills {
-  min-height: 1000px;
-  contain-intrinsic-size: 1000px;
 }
 </style>

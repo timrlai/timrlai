@@ -2,16 +2,20 @@
 import { defineAsyncComponent } from "vue";
 import { Icon } from "@iconify/vue";
 
+import { onSectionStable } from "../../../../lib/functions";
+
 const Lazy = defineAsyncComponent(() => import("../../Common/Lazy.vue"));
 const TechnicalSkills = defineAsyncComponent(
   () => import("./TechnicalSkills.vue"),
 );
 const SoftSkills = defineAsyncComponent(() => import("./SoftSkills.vue"));
+
+const sectionId = "skills";
 </script>
 
 <template>
-  <section id="skills" class="flex flex-col">
-    <Lazy :min-height="2000">
+  <Lazy :id="sectionId" :min-height="2000" @stable="onSectionStable(sectionId)">
+    <section class="flex flex-col">
       <div
         class="mockup-window bg-secondary/80 text-secondary-content border-4 border-primary rounded-b-none shadow-lg shadow-primary"
       >
@@ -22,23 +26,14 @@ const SoftSkills = defineAsyncComponent(() => import("./SoftSkills.vue"));
           Skills
         </h1>
       </div>
-      <Lazy>
-        <Suspense>
-          <TechnicalSkills v-once />
-        </Suspense>
-      </Lazy>
-      <Lazy>
-        <Suspense>
-          <SoftSkills v-once />
-        </Suspense>
-      </Lazy>
-    </Lazy>
-  </section>
+      <Suspense>
+        <TechnicalSkills v-once />
+      </Suspense>
+      <Suspense>
+        <SoftSkills v-once />
+      </Suspense>
+    </section>
+  </Lazy>
 </template>
 
-<style scoped lang="scss">
-#skills {
-  min-height: 2000px;
-  contain-intrinsic-size: 2000px;
-}
-</style>
+<style scoped lang="scss"></style>
