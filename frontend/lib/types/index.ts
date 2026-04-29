@@ -20,6 +20,23 @@ export type ColorKind =
 
 export type TooltipPosition = "left" | "right" | "top" | "bottom";
 
+type HeaderOrFooterLocation = {
+  location?: "header" | "footer";
+};
+
+type ButtonColor = {
+  buttonColor?: ColorKind;
+};
+
+type IconColor = {
+  iconColor?: ColorKind;
+};
+
+type ToolTipColorAndPosition = {
+  tooltipColor?: ColorKind;
+  tooltipPosition?: TooltipPosition;
+};
+
 export type SubItem = {
   readonly label: string;
   readonly to: string;
@@ -34,20 +51,17 @@ export type SocialButton = {
   readonly main: boolean;
 };
 
-export type SocialButtonsProps = {
-  location?: "header" | "footer";
-  buttonColor?: ColorKind;
-  tooltipColor?: ColorKind;
-  tooltipPosition?: TooltipPosition;
-  showAll?: boolean;
-};
+export type SocialButtonsProps = HeaderOrFooterLocation &
+  ButtonColor &
+  ToolTipColorAndPosition & {
+    showAll?: boolean;
+  };
 
-export type ThemeSwapperProps = {
-  location?: "header" | "footer";
-  iconColor?: ColorKind;
-  tooltipColor?: ColorKind;
-  tooltipPosition?: TooltipPosition;
-};
+export type TopTopButtonProps = ButtonColor & ToolTipColorAndPosition;
+
+export type ThemeSwapperProps = HeaderOrFooterLocation &
+  IconColor &
+  ToolTipColorAndPosition;
 
 export type Skill = {
   readonly title: string;

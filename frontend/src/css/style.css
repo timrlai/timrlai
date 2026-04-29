@@ -69,18 +69,46 @@
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
   font-size: 1em;
-  line-height: 1.5;
 }
 body {
   margin: 0;
-}
-body,
-#app {
+  line-height: 1.5;
   min-width: 320px;
   min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: inline flow-root;
+}
+
+[id] {
+  scroll-margin-top: 100px;
 }
 
 /*
