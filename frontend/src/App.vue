@@ -9,6 +9,9 @@ const PageHeader = defineAsyncComponent(
 const PageFooter = defineAsyncComponent(
   () => import("./components/Layout/PageFooter.vue"),
 );
+const ToTopButton = defineAsyncComponent(
+  () => import("./components/Common/ToTopButton.vue"),
+);
 </script>
 
 <template>
@@ -23,6 +26,7 @@ const PageFooter = defineAsyncComponent(
   <Lazy :min-height="400"
     ><Suspense><PageFooter v-once /></Suspense
   ></Lazy>
+  <ToTopButton button-color="accent" tooltip-color="accent" />
 </template>
 
 <style scoped></style>
