@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { defineAsyncComponent } from "vue";
-import { RouterLink } from "vue-router";
 import { Icon } from "@iconify/vue";
 
 const logoSvgPath =
@@ -32,7 +31,7 @@ const year = new Date().getFullYear();
           alt="Tim R. Lai"
           width="320"
           height="234"
-          class="inline-block w-full"
+          class="w-full"
         />
       </Suspense>
     </section>
@@ -48,7 +47,7 @@ const year = new Date().getFullYear();
             alt=""
             width="45"
             height="45"
-            class="inline-block h-[1.5em]"
+            class="h-[1.5em]"
           />
         </Suspense>
         Email Tim
@@ -72,7 +71,7 @@ const year = new Date().getFullYear();
             alt=""
             width="45"
             height="45"
-            class="inline-block h-[1.5em]"
+            class="h-[1.5em]"
           />
         </Suspense>
         Follow Tim on Social Media
@@ -88,15 +87,6 @@ const year = new Date().getFullYear();
       </Suspense>
     </section>
     <section class="footer-tile md:w-2xs">
-      <RouterLink
-        to=""
-        hash="#"
-        tabindex="0"
-        role="button"
-        class="w-full my-4 btn btn-xl btn-secondary text-2xl ubuntu-titling"
-        ><Icon icon="mingcute:arrow-to-up-fill" class="inline-block" /> To
-        Top</RouterLink
-      >
       <p class="mt-4">
         <small
           >Made with love
@@ -120,7 +110,7 @@ const year = new Date().getFullYear();
             alt=""
             width="45"
             height="45"
-            class="inline-block h-[1.5em]"
+            class="h-[1.5em]"
           />
         </Suspense>
       </p>
