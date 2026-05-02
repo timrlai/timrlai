@@ -1,7 +1,7 @@
 <script lang="ts">
 // This component was borrowed from this article: https://medium.com/js-dojo/lazy-rendering-in-vue-to-improve-performance-dcccd445d5f
 
-import { ref, watch, nextTick, onBeforeUnmount } from "vue";
+import { ref, nextTick } from "vue";
 import { useIntersectionObserver } from "@vueuse/core";
 
 function onIdle(cb = () => {}) {
@@ -24,20 +24,12 @@ export default {
       default: 10000,
     },
   },
-  setup(props, { emit }) {
+  setup(props) {
     const shouldRender = ref(false);
     const targetEl = ref();
     const fixedMinHeight = ref(0);
     let unrenderTimer: number;
     let renderTimer: number;
-    const ro = new ResizeObserver(() => {
-      clearTimeout(stabilityTimer);
-      stabilityTimer = setTimeout(() => {
-        emit("stable");
-      }, 120); // wait for height to stop changing
-    });
-
-    let stabilityTimer: number;
 
     const { stop } = useIntersectionObserver(
       targetEl,
@@ -81,20 +73,6 @@ export default {
         }
       });
     }
-
-    watch(shouldRender, async (value) => {
-      if (value) {
-        await nextTick();
-        await nextTick();
-
-        // Start observing height changes
-        ro.observe(targetEl.value);
-      }
-    });
-
-    onBeforeUnmount(() => {
-      ro.disconnect();
-    });
 
     return { targetEl, shouldRender, fixedMinHeight };
   },
