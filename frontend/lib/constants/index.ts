@@ -124,6 +124,12 @@ export const socialButtons: SocialButton[] = [
     main: false,
   },
   {
+    tooltip: "Vimeo",
+    url: "https://vimeo.com/timrlai",
+    icon: "entypo-social:vimeo-with-circle",
+    main: false,
+  },
+  {
     tooltip: "Artstation",
     url: "https://artstation.com/timrlai",
     icon: "cib:artstation",
