@@ -153,6 +153,20 @@ export type VimeoVideoProps = {
   width?: number | `${number}%`;
 };
 
+export type ProjectProps = {
+  slug: string;
+  icon: string;
+  title: string;
+  videoId: number;
+  description: string;
+  process: string;
+  outcome: string;
+  demoLink: string | null;
+  gitHubLink: string | null;
+  lottieType: "skills" | "vr" | "designer";
+  skills: Skill[];
+};
+
 export type LottieConstants = {
   readonly CLOUDS_LIGHT_LOTTIE_PATH: string;
   readonly CLOUDS_DARK_LOTTIE_PATH: string;
