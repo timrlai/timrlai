@@ -124,6 +124,12 @@ export const socialButtons: SocialButton[] = [
     main: false,
   },
   {
+    tooltip: "Vimeo",
+    url: "https://vimeo.com/timrlai",
+    icon: "entypo-social:vimeo-with-circle",
+    main: false,
+  },
+  {
     tooltip: "Artstation",
     url: "https://artstation.com/timrlai",
     icon: "cib:artstation",
@@ -291,6 +297,7 @@ export const frameworkSkills: Skill[] = [
   { title: "Puppeteer", icon: "devicon:puppeteer" },
   { title: "jQuery", icon: "skill-icons:jquery" },
   { title: "Enhance", icon: null },
+  { title: "chess.js", icon: "fa6-regular:chess-knight" },
 ];
 export const databaseSkills: Skill[] = [
   { title: "MySQL", icon: "skill-icons:mysql-light" },
@@ -753,6 +760,45 @@ export const taafiSkills: Skill[] = [
   ...generalSkills.filter(({ title }) =>
     ["Slack", "Google Docs"].includes(title),
   ),
+];
+export const xrProjectSkills: Skill[] = [
+  ...languageSkills.filter(({ title }) =>
+    [
+      "JavaScript",
+      "TypeScript",
+      "Bun",
+      "HTML",
+      "CSS",
+      "Bash",
+      "JSON",
+      "TOML",
+      "Markdown",
+    ].includes(title),
+  ),
+  ...frameworkSkills.filter(({ title }) =>
+    [
+      "React",
+      "Next.js",
+      "Vite",
+      "Three.js",
+      "React Three Fiber",
+      "Drei",
+      "WebGL",
+      "Prettier",
+      "ESLint",
+    ].includes(title),
+  ),
+  ...editorSkills.filter(({ title }) =>
+    ["VS Code", "Meta Developer Hub"].includes(title),
+  ),
+  ...designSkills.filter(({ title }) =>
+    ["Adobe Illustrator", "Adobe After Effects", "Blender"].includes(title),
+  ),
+  ...generalSkills.filter(({ title }) => ["Git", "GitHub"].includes(title)),
+];
+export const chexrmateProjectSkills: Skill[] = [
+  ...xrProjectSkills,
+  ...frameworkSkills.filter(({ title }) => ["chess.js"].includes(title)),
 ];
 export const madeWithSkills: Skill[] = [
   { title: "TypeScript", icon: "catppuccin:typescript" },
