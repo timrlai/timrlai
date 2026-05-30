@@ -67,7 +67,7 @@ const {
               <li class="list-row">
                 <div>
                   <h2
-                    class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto mb-4"
+                    class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling mb-4"
                   >
                     Description:
                   </h2>
@@ -77,7 +77,7 @@ const {
               <li class="list-row">
                 <div>
                   <h2
-                    class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto mb-4"
+                    class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling mb-4"
                   >
                     Process:
                   </h2>
@@ -87,7 +87,7 @@ const {
               <li class="list-row">
                 <div>
                   <h2
-                    class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto mb-4"
+                    class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling mb-4"
                   >
                     Outcome:
                   </h2>
@@ -97,7 +97,7 @@ const {
               <li class="list-row" v-if="demoLink">
                 <div>
                   <h2
-                    class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto mb-4"
+                    class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling mb-4"
                   >
                     Demo Link:
                   </h2>
@@ -105,7 +105,7 @@ const {
                   <a
                     :href="demoLink"
                     target="_blank"
-                    class="link link-accent link-hover text-lg sm:text-xl md:text-2xl lg:text-3xl h-40 sm:h-auto mb-4"
+                    class="link link-accent link-hover text-lg sm:text-xl md:text-2xl lg:text-3xl mb-4"
                     >{{ demoLink }}</a
                   >
                 </div>
@@ -113,7 +113,7 @@ const {
               <li class="list-row" v-if="gitHubLink">
                 <div>
                   <h2
-                    class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling h-40 sm:h-auto mb-4"
+                    class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling mb-4"
                   >
                     GitHub Repository Link:
                   </h2>
@@ -121,7 +121,7 @@ const {
                   <a
                     :href="gitHubLink"
                     target="_blank"
-                    class="link link-accent link-hover text-lg sm:text-xl md:text-2xl lg:text-3xl h-40 sm:h-auto mb-4"
+                    class="link link-accent link-hover text-lg sm:text-xl md:text-2xl lg:text-3xl mb-4"
                     >{{ gitHubLink }}</a
                   >
                 </div>
