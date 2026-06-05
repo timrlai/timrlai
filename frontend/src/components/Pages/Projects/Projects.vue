@@ -22,7 +22,7 @@ const Project = defineAsyncComponent(() => import("./Project.vue"));
       process="I modelled and animated the ballot, tables and voting screen. I programmed user interactions such as grabbing the ballot with the controller, moving behind the screen with locomotion, marking the ballot using an HTML Canvas which is placed on the ballot model as a texture and placing it in the box by checking for an intersection between the ballot model and the box geometry."
       outcome="The user gains confidence with completing the steps required to vote and is prepared to complete them in real life. A potential extension is handing the ballot to the Deputy Returning Officer to remove the stub before placing it in the box."
       demo-link="https://vr-voting.pages.dev"
-      git-hub-link="https://github.com/timrlai/vr-voting"
+      github-link="https://github.com/timrlai/vr-voting"
       lottie-type="vr"
       :skills="xrProjectSkills"
     />
@@ -35,7 +35,7 @@ const Project = defineAsyncComponent(() => import("./Project.vue"));
       process="I modelled and animated the six chess pieces and programmatically built the board. I programmed the user interactions to select a piece, highlight valid moves and select a square to move to. I displayed the valid moves and whether the game is in check, checkmate or stalemate on the screen. When a pawn reaches the end of the board, I allow the user to choose a piece to promote it to. I integrated the pieces and board with the rules of chess, the state of the board and an automated opponent using the chess.js library."
       outcome="The user becomes familiar with the rules of chess, the movement of the pieces and the flow of a real game resulting in checkmate or stalemate. The opponent’s moves are random, but a potential extension could add the Stockfish.js chess engine to increase the difficulty."
       demo-link="https://chexrmate.pages.dev"
-      git-hub-link="https://github.com/timrlai/chexrmate"
+      github-link="https://github.com/timrlai/chexrmate"
       lottie-type="vr"
       :skills="chexrmateProjectSkills"
     />

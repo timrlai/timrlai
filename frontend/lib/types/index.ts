@@ -162,7 +162,7 @@ export type ProjectProps = {
   process: string;
   outcome: string;
   demoLink: string | null;
-  gitHubLink: string | null;
+  githubLink: string | null;
   lottieType: "skills" | "vr" | "designer";
   skills: Skill[];
 };
