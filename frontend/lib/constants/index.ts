@@ -339,6 +339,7 @@ export const designSkills: Skill[] = [
 ];
 export const hostingSkills: Skill[] = [
   { title: "AWS", icon: "skill-icons:aws-light" },
+  { title: "Cloudflare", icon: "devicon:cloudflare" },
   { title: "Render", icon: "simple-icons:render" },
   { title: "Dreamhost", icon: "logos:dreamhost" },
   { title: "Porkbun", icon: "simple-icons:porkbun" },
@@ -778,7 +779,6 @@ export const xrProjectSkills: Skill[] = [
   ...frameworkSkills.filter(({ title }) =>
     [
       "React",
-      "Next.js",
       "Vite",
       "Three.js",
       "React Three Fiber",
@@ -794,6 +794,7 @@ export const xrProjectSkills: Skill[] = [
   ...designSkills.filter(({ title }) =>
     ["Adobe Illustrator", "Adobe After Effects", "Blender"].includes(title),
   ),
+  ...hostingSkills.filter(({ title }) => ["Cloudflare"].includes(title)),
   ...generalSkills.filter(({ title }) => ["Git", "GitHub"].includes(title)),
 ];
 export const chexrmateProjectSkills: Skill[] = [
