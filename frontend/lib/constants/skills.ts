@@ -112,7 +112,7 @@ export const designSkills: Skill[] = [
 ];
 export const hostingSkills: Skill[] = [
   { title: "AWS", icon: "skill-icons:aws-light" },
-  { title: "Cloudflare", icon: "devicon:cloudflare" },
+  { title: "Cloudflare", icon: "skill-icons:cloudflare-light" },
   { title: "Render", icon: "simple-icons:render" },
   { title: "Dreamhost", icon: "logos:dreamhost" },
   { title: "Porkbun", icon: "simple-icons:porkbun" },
@@ -604,6 +604,6 @@ export const madeWithSkills: Skill[] = [
   { title: "Adobe After Effects", icon: "catppuccin:adobe-ae" },
   { title: "Adobe Photoshop", icon: "catppuccin:adobe-ps" },
   { title: "Blender", icon: "logos:blender" },
-  { title: "Cloudflare", icon: "simple-icons:cloudflare" },
+  { title: "Cloudflare", icon: "devicon:cloudflare" },
   { title: "Porkbun", icon: "simple-icons:porkbun" },
 ];
