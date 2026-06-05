@@ -192,6 +192,7 @@ watchEffect(() => {
       :tone-mapping-exposure="1.2"
       shadows
       alpha
+      :clearAlpha="0"
     >
       <TresPerspectiveCamera :position="[0, 0, 1]" />
       <OrbitControls
