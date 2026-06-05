@@ -604,6 +604,6 @@ export const madeWithSkills: Skill[] = [
   { title: "Adobe After Effects", icon: "catppuccin:adobe-ae" },
   { title: "Adobe Photoshop", icon: "catppuccin:adobe-ps" },
   { title: "Blender", icon: "logos:blender" },
-  { title: "Render", icon: "simple-icons:render" },
+  { title: "Cloudflare", icon: "simple-icons:cloudflare" },
   { title: "Porkbun", icon: "simple-icons:porkbun" },
 ];
