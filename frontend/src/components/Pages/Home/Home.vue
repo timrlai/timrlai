@@ -8,6 +8,9 @@ const Hi = defineAsyncComponent(() => import("./Hi.vue"));
 const Summary = defineAsyncComponent(() => import("./Summary.vue"));
 const Skills = defineAsyncComponent(() => import("./Skills.vue"));
 const Experience = defineAsyncComponent(() => import("./Experience.vue"));
+const FeaturedProject = defineAsyncComponent(
+  () => import("./FeaturedProject.vue"),
+);
 </script>
 
 <template>
@@ -31,6 +34,9 @@ const Experience = defineAsyncComponent(() => import("./Experience.vue"));
     </Suspense>
     <Suspense>
       <Experience v-once />
+    </Suspense>
+    <Suspense>
+      <FeaturedProject v-once />
     </Suspense>
   </main>
 </template>

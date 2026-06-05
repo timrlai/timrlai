@@ -31,7 +31,7 @@ const {
   process,
   outcome,
   demoLink,
-  gitHubLink,
+  githubLink,
   lottieType,
   skills,
 } = defineProps<ProjectProps>();
@@ -110,7 +110,7 @@ const {
                   >
                 </div>
               </li>
-              <li class="list-row" v-if="gitHubLink">
+              <li class="list-row" v-if="githubLink">
                 <div>
                   <h2
                     class="text-lg sm:text-xl md:text-2xl lg:text-3xl ubuntu-titling mb-4"
@@ -119,10 +119,10 @@ const {
                   </h2>
                   {{ " " }}
                   <a
-                    :href="gitHubLink"
+                    :href="githubLink"
                     target="_blank"
                     class="link link-accent link-hover text-lg sm:text-xl md:text-2xl lg:text-3xl mb-4"
-                    >{{ gitHubLink }}</a
+                    >{{ githubLink }}</a
                   >
                 </div>
               </li>
