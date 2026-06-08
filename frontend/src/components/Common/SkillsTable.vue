@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { useTemplateRef } from "vue";
+import { useTemplateRef, watch } from "vue";
 import { Icon } from "@iconify/vue";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import {
   languageSkills,
@@ -20,6 +22,16 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
     tableCheckbox.value.checked = !tableCheckbox.value.checked;
   }
 };
+
+gsap.registerPlugin(ScrollTrigger);
+
+watch(tableCheckbox, (el) => {
+  if (!el) return;
+  el.addEventListener("change", () => {
+    setTimeout(() => ScrollTrigger.refresh(), 250);
+  });
+  ScrollTrigger.refresh();
+});
 </script>
 
 <template>

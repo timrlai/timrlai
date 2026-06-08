@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import { defineAsyncComponent, ref } from "vue";
+import { defineAsyncComponent, nextTick, onMounted, ref } from "vue";
 import { storeToRefs } from "pinia";
 import { Icon } from "@iconify/vue";
 import { VueWriter } from "vue-writer";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import {
   lottieConstants,
@@ -38,11 +40,46 @@ const onSkillTyped = (currentTitle: string) => {
 const randomizedSkills = [...primarySkills]
   .sort(() => Math.random() - 0.5)
   .slice(-6);
+
+const sectionId = "tech-skills";
+const madeWithId = "made-with-skills";
+
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(async () => {
+  await nextTick();
+
+  const from = {
+    opacity: 0,
+    rotation: -90,
+  };
+  const timelineSettings = {
+    scrollTrigger: {
+      trigger: `#${madeWithId}`,
+      pin: true,
+      pinSpacing: true,
+      start: "-=100",
+      end: "+=1000",
+      scrub: 1,
+    },
+    duration: 2,
+    opacity: 1,
+    rotation: 0,
+  };
+
+  let timeline = gsap.timeline(timelineSettings);
+  madeWithSkills.forEach(({ title }) => {
+    const skillId = `#${madeWithId}-${title.replaceAll(" ", "").replaceAll(".", "")}`;
+    timeline = timeline.from(skillId, from);
+  });
+
+  ScrollTrigger.refresh();
+});
 </script>
 
 <template>
   <div
-    id="tech-skills"
+    :id="sectionId"
     class="mockup-code bg-slate-950 text-slate-400 border-x-4 border-primary rounded-none shadow-lg shadow-primary fira-code overflow-x-hidden"
   >
     <div class="px-5">
@@ -127,45 +164,48 @@ const randomizedSkills = [...primarySkills]
           <SkillsTable v-once />
         </Suspense>
       </Lazy>
-      <div class="mt-8">
-        <h2
-          class="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 code-comment-inline"
-        >
-          <Icon icon="fluent-color:code-24" class="inline-block h-[1em]" />
-          This Site Was Made With...
-        </h2>
-        <p class="code-comment-block text-lg/8 sm:text-xl/10 my-4">
-          <span
-            v-for="(skill, index) in madeWithSkills"
-            v-bind:key="skill.title"
+      <div class="pin-wrapper block relative isolate">
+        <div :id="madeWithId" class="mt-8">
+          <h2
+            class="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 code-comment-inline"
           >
-            {{ skill.title
-            }}<span v-if="index < madeWithSkills.length - 1">, </span>
-          </span>
-        </p>
-        <div
-          class="flex flex-wrap justify-center gap-4 text-6xl sm:text-7xl md:text-8xl lg:text-9xl print:hidden"
-        >
+            <Icon icon="fluent-color:code-24" class="inline-block h-[1em]" />
+            This Site Was Made With...
+          </h2>
+          <p class="code-comment-block text-lg/8 sm:text-xl/10 my-4">
+            <span
+              v-for="(skill, index) in madeWithSkills"
+              v-bind:key="skill.title"
+            >
+              {{ skill.title
+              }}<span v-if="index < madeWithSkills.length - 1">, </span>
+            </span>
+          </p>
           <div
-            v-for="skills in madeWithSkills.filter(
-              (skill) => skill.icon !== null,
-            )"
-            v-bind:key="skills.title"
-            class="tooltip tooltip-neutral tooltip-secondary-content w-1/5 md:w-auto text-center opacity-70 hover:opacity-100"
-            :data-tip="`${skills.title}`"
+            class="flex flex-wrap justify-center gap-4 text-6xl sm:text-7xl md:text-8xl lg:text-9xl print:hidden"
           >
-            <div class="tooltip-content">
-              <div
-                class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl gluten"
-              >
-                {{ skills.title }}
+            <div
+              v-for="skill in madeWithSkills.filter(
+                (skill) => skill.icon !== null,
+              )"
+              v-bind:key="skill.title"
+              :id="`${madeWithId}-${skill.title.replaceAll(' ', '').replaceAll('.', '')}`"
+              class="tooltip tooltip-neutral tooltip-secondary-content w-1/5 md:w-auto text-center"
+              :data-tip="`${skill.title}`"
+            >
+              <div class="tooltip-content">
+                <div
+                  class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl gluten"
+                >
+                  {{ skill.title }}
+                </div>
               </div>
+              <Icon
+                :icon="`${skill.icon}`"
+                :aria-label="`${skill.title} logo`"
+                class="inline-block opacity-60 hover:opacity-100"
+              />
             </div>
-            <Icon
-              :icon="`${skills.icon}`"
-              :aria-label="`${skills.title} logo`"
-              class="inline-block"
-            />
           </div>
         </div>
         <div class="text-center mt-8">
