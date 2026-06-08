@@ -58,6 +58,7 @@ onMounted(async () => {
       trigger: `#${madeWithId}`,
       pin: true,
       pinSpacing: true,
+      anticipatePin: 1,
       start: "-=100",
       end: "+=1000",
       scrub: 1,
@@ -164,61 +165,59 @@ onMounted(async () => {
           <SkillsTable v-once />
         </Suspense>
       </Lazy>
-      <div class="pin-wrapper block relative isolate">
-        <div :id="madeWithId" class="mt-8">
-          <h2
-            class="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 code-comment-inline"
+      <div :id="madeWithId" class="mt-8">
+        <h2
+          class="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 code-comment-inline"
+        >
+          <Icon icon="fluent-color:code-24" class="inline-block h-[1em]" />
+          This Site Was Made With...
+        </h2>
+        <p class="code-comment-block text-lg/8 sm:text-xl/10 my-4">
+          <span
+            v-for="(skill, index) in madeWithSkills"
+            v-bind:key="skill.title"
           >
-            <Icon icon="fluent-color:code-24" class="inline-block h-[1em]" />
-            This Site Was Made With...
-          </h2>
-          <p class="code-comment-block text-lg/8 sm:text-xl/10 my-4">
-            <span
-              v-for="(skill, index) in madeWithSkills"
-              v-bind:key="skill.title"
-            >
-              {{ skill.title
-              }}<span v-if="index < madeWithSkills.length - 1">, </span>
-            </span>
-          </p>
+            {{ skill.title
+            }}<span v-if="index < madeWithSkills.length - 1">, </span>
+          </span>
+        </p>
+        <div
+          class="flex flex-wrap justify-center gap-4 text-6xl sm:text-7xl md:text-8xl lg:text-9xl print:hidden"
+        >
           <div
-            class="flex flex-wrap justify-center gap-4 text-6xl sm:text-7xl md:text-8xl lg:text-9xl print:hidden"
+            v-for="skill in madeWithSkills.filter(
+              (skill) => skill.icon !== null,
+            )"
+            v-bind:key="skill.title"
+            :id="`${madeWithId}-${skill.title.replaceAll(' ', '').replaceAll('.', '')}`"
+            class="tooltip tooltip-neutral tooltip-secondary-content w-1/5 md:w-auto text-center"
+            :data-tip="`${skill.title}`"
           >
-            <div
-              v-for="skill in madeWithSkills.filter(
-                (skill) => skill.icon !== null,
-              )"
-              v-bind:key="skill.title"
-              :id="`${madeWithId}-${skill.title.replaceAll(' ', '').replaceAll('.', '')}`"
-              class="tooltip tooltip-neutral tooltip-secondary-content w-1/5 md:w-auto text-center"
-              :data-tip="`${skill.title}`"
-            >
-              <div class="tooltip-content">
-                <div
-                  class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl gluten"
-                >
-                  {{ skill.title }}
-                </div>
+            <div class="tooltip-content">
+              <div
+                class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl gluten"
+              >
+                {{ skill.title }}
               </div>
-              <Icon
-                :icon="`${skill.icon}`"
-                :aria-label="`${skill.title} logo`"
-                class="inline-block opacity-60 hover:opacity-100"
-              />
             </div>
+            <Icon
+              :icon="`${skill.icon}`"
+              :aria-label="`${skill.title} logo`"
+              class="inline-block opacity-60 hover:opacity-100"
+            />
           </div>
         </div>
-        <div class="text-center mt-8">
-          <a
-            href="https://github.com/timrlai/timrlai"
-            target="_blank"
-            class="btn btn-block btn-md sm:btn-lg md:btn-xl btn-neutral ubuntu-titling"
-            ><Icon
-              icon="mingcute:github-fill"
-              class="inline-block h-[1.5em]"
-            />View the Code for This Site on GitHub
-          </a>
-        </div>
+      </div>
+      <div class="text-center mt-8">
+        <a
+          href="https://github.com/timrlai/timrlai"
+          target="_blank"
+          class="btn btn-block btn-md sm:btn-lg md:btn-xl btn-neutral ubuntu-titling"
+          ><Icon
+            icon="mingcute:github-fill"
+            class="inline-block h-[1.5em]"
+          />View the Code for This Site on GitHub
+        </a>
       </div>
     </div>
   </div>
