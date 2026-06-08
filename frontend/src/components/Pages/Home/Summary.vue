@@ -153,20 +153,33 @@ onMounted(async () => {
             </li>
             <li class="list-row item5">
               <div class="text-4xl sm:text-5xl">
-                <Icon icon="fluent-emoji:man-technologist-light" />
+                <Icon icon="fluent-emoji:artist-palette" />
               </div>
               <div>
-                A passionate full stack developer/designer with 5+ years of web
-                development experience
+                Graduated with a diploma in
+                <a
+                  href="https://www.senecapolytechnic.ca/programs/fulltime/ILS.html"
+                  target="_blank"
+                  class="link link-accent link-hover"
+                  >Illustration</a
+                >
+                and a certificate in
+                <a
+                  href="https://www.senecapolytechnic.ca/programs/fulltime/ADF.html"
+                  target="_blank"
+                  class="link link-accent link-hover"
+                  >Art Fundamentals</a
+                >
+                from Seneca Polytechnic
               </div>
             </li>
             <li class="list-row item6">
               <div class="text-4xl sm:text-5xl">
-                <Icon icon="fluent-emoji:heart-on-fire" />
+                <Icon icon="fluent-emoji:man-technologist-light" />
               </div>
               <div>
-                Enthusiastic, creative, detail-oriented, resourceful, reliable,
-                fast learning, dedicated and adaptable
+                A full stack, creative developer/designer with 5+ years of web
+                development experience
               </div>
             </li>
             <li class="list-row item7">
