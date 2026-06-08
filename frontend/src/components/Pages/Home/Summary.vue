@@ -60,7 +60,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="pin-wrapper block">
+  <div class="pin-wrapper block relative isolate">
     <section
       :id="sectionId"
       class="mockup-window bg-secondary/80 text-secondary-content border-4 border-primary shadow-lg shadow-primary"
