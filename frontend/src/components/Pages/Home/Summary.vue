@@ -38,6 +38,7 @@ onMounted(async () => {
       start: "-=70",
       end: "+=2000",
       scrub: 1,
+      invalidateOnRefresh: true,
     },
     duration: 2,
     x: 0,
@@ -56,7 +57,16 @@ onMounted(async () => {
     .from(".item7", from)
     .from(".item8", from);
 
+  // Refresh once immediately
   ScrollTrigger.refresh();
+
+  // Refresh again after a short delay (for Suspense, Lazy, Lottie)
+  setTimeout(() => ScrollTrigger.refresh(), 300);
+
+  // Refresh again after images/icons load
+  window.addEventListener("load", () => {
+    ScrollTrigger.refresh();
+  });
 });
 </script>
 

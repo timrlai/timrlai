@@ -30,7 +30,17 @@ watch(tableCheckbox, (el) => {
   el.addEventListener("change", () => {
     setTimeout(() => ScrollTrigger.refresh(), 250);
   });
+
+  // Refresh once immediately
   ScrollTrigger.refresh();
+
+  // Refresh again after a short delay (for Suspense, Lazy, Lottie)
+  setTimeout(() => ScrollTrigger.refresh(), 300);
+
+  // Refresh again after images/icons load
+  window.addEventListener("load", () => {
+    ScrollTrigger.refresh();
+  });
 });
 </script>
 
