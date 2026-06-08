@@ -166,9 +166,16 @@ export const primarySkills: Skill[] = [
       "Flask",
       "Laravel",
       "Ruby on Rails",
+      "Redux",
+      "Zustand",
+      "Pinia",
       "Tailwind CSS",
+      "daisyUI",
       "Bootstrap",
       "Three.js",
+      "GSAP (GreenSock Animation Platform)",
+      "React Spring",
+      "Lottie",
     ].includes(title),
   ),
   ...databaseSkills.filter(({ title }) =>
@@ -180,7 +187,14 @@ export const primarySkills: Skill[] = [
   ),
   ...generalSkills.filter(({ title }) => ["Git", "GitHub"].includes(title)),
   ...designSkills.filter(({ title }) =>
-    ["Adobe Photoshop", "Adobe Illustrator", "Adobe XD"].includes(title),
+    [
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Adobe XD",
+      "Adobe After Effects",
+      "Blender",
+      "3ds Max",
+    ].includes(title),
   ),
 ];
 export const futuretalkSkills: Skill[] = [
