@@ -4,6 +4,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default function useScrollTriggers() {
   gsap.registerPlugin(ScrollTrigger);
 
+  const belowSmall = window.matchMedia("(width <= 40rem)").matches;
+  const motionReduce = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
   const calculateDynamicEnd = (elementId: string, fallback = 1000): string => {
     const element = document.querySelector(`#${elementId}`);
     const elementHeight: number = element?.clientHeight ?? fallback;
@@ -67,6 +72,8 @@ export default function useScrollTriggers() {
   };
 
   return {
+    belowSmall,
+    motionReduce,
     calculateDynamicEnd,
     buildScrollTrigger,
     addScrollTrigger,
