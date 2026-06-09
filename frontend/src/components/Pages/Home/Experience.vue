@@ -29,6 +29,8 @@ const {
 const sectionId = "experience";
 let scrollTriggers: ScrollTrigger[] = [];
 const {
+  belowSmall,
+  motionReduce,
   buildScrollTrigger,
   addScrollTrigger,
   refreshScrollTriggers,
@@ -38,6 +40,8 @@ const {
 onMounted(async () => {
   // 1. Vue DOM updates
   await nextTick();
+
+  if (belowSmall || motionReduce) return;
 
   // 2. Two paints
   await new Promise((r) =>

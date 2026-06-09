@@ -28,6 +28,8 @@ const sectionId = "summary";
 
 let scrollTriggers: ScrollTrigger[] = [];
 const {
+  belowSmall,
+  motionReduce,
   buildScrollTrigger,
   addScrollTrigger,
   refreshScrollTriggers,
@@ -36,6 +38,8 @@ const {
 
 onMounted(async () => {
   await nextTick();
+
+  if (belowSmall || motionReduce) return;
 
   const from = {
     x: -1000,
