@@ -203,35 +203,38 @@ onMounted(async () => {
               (skill) => skill.icon !== null,
             )"
             v-bind:key="skill.title"
-            :id="`${madeWithId}-${skill.title.replaceAll(' ', '').replaceAll('.', '')}`"
-            class="tooltip tooltip-neutral tooltip-secondary-content w-1/5 md:w-auto text-center"
-            :data-tip="`${skill.title}`"
           >
-            <div class="tooltip-content">
-              <div
-                class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl gluten"
-              >
-                {{ skill.title }}
+            <div
+              :id="`${madeWithId}-${skill.title.replaceAll(' ', '').replaceAll('.', '')}`"
+              class="tooltip tooltip-neutral tooltip-secondary-content w-1/5 md:w-auto text-center"
+              :data-tip="`${skill.title}`"
+            >
+              <div class="tooltip-content">
+                <div
+                  class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl gluten"
+                >
+                  {{ skill.title }}
+                </div>
               </div>
+              <Icon
+                :icon="`${skill.icon}`"
+                :aria-label="`${skill.title} logo`"
+                class="inline-block opacity-60 hover:opacity-100"
+              />
             </div>
-            <Icon
-              :icon="`${skill.icon}`"
-              :aria-label="`${skill.title} logo`"
-              class="inline-block opacity-60 hover:opacity-100"
-            />
           </div>
         </div>
-      </div>
-      <div class="text-center mt-8">
-        <a
-          href="https://github.com/timrlai/timrlai"
-          target="_blank"
-          class="btn btn-block btn-md sm:btn-lg md:btn-xl btn-neutral ubuntu-titling"
-          ><Icon
-            icon="mingcute:github-fill"
-            class="inline-block h-[1.5em]"
-          />View the Code for This Site on GitHub
-        </a>
+        <div class="text-center mt-8">
+          <a
+            href="https://github.com/timrlai/timrlai"
+            target="_blank"
+            class="btn btn-block btn-md sm:btn-lg md:btn-xl btn-neutral ubuntu-titling"
+            ><Icon
+              icon="mingcute:github-fill"
+              class="inline-block h-[1.5em]"
+            />View the Code for This Site on GitHub
+          </a>
+        </div>
       </div>
     </div>
   </div>
