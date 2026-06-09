@@ -18,6 +18,7 @@ import {
   madeWithSkills,
 } from "../../../../lib/constants";
 import { useThemeStore } from "../../../../lib/stores/theme";
+import useScrollTriggers from "../../../../lib/gsap/useScrollTriggers.ts";
 
 const Lazy = defineAsyncComponent(() => import("../../Common/Lazy.vue"));
 const LottiePlayer = defineAsyncComponent(
@@ -50,8 +51,12 @@ const randomizedSkills = [...primarySkills]
 const sectionId = "tech-skills";
 const madeWithId = "made-with-skills";
 let scrollTriggers: ScrollTrigger[] = [];
-
-gsap.registerPlugin(ScrollTrigger);
+const {
+  buildScrollTrigger,
+  addScrollTrigger,
+  refreshScrollTriggers,
+  killAllScrollTriggers,
+} = useScrollTriggers();
 
 onMounted(async () => {
   await nextTick();
@@ -62,20 +67,7 @@ onMounted(async () => {
     scale: 0,
   };
   const timelineSettings = {
-    scrollTrigger: {
-      trigger: `#${madeWithId}`,
-      pin: true,
-      pinSpacing: true,
-      anticipatePin: 1,
-      start: "-=100",
-      end: () => {
-        const element = document.querySelector(`#${madeWithId}`);
-        const madeWithHeight: number = element?.clientHeight ?? 1000;
-        return "+=" + madeWithHeight;
-      },
-      scrub: 1,
-      invalidateOnRefresh: true,
-    },
+    scrollTrigger: buildScrollTrigger(madeWithId, "-=100"),
     opacity: 1,
     rotation: 0,
     scale: 1,
@@ -84,7 +76,7 @@ onMounted(async () => {
   let timeline = gsap.timeline(timelineSettings);
 
   if (timeline) {
-    if (timeline.scrollTrigger) scrollTriggers.push(timeline.scrollTrigger);
+    addScrollTrigger(timeline, scrollTriggers);
 
     madeWithSkills.forEach(({ title }) => {
       const skillId = `#${madeWithId}-${title.replaceAll(" ", "").replaceAll(".", "")}`;
@@ -92,22 +84,10 @@ onMounted(async () => {
     });
   }
 
-  // Refresh once immediately
-  ScrollTrigger.refresh();
-
-  // Refresh again after a short delay (for Suspense, Lazy, Lottie)
-  setTimeout(() => ScrollTrigger.refresh(), 300);
-
-  // Refresh again after images/icons load
-  window.addEventListener("load", () => {
-    ScrollTrigger.refresh();
-  });
+  refreshScrollTriggers();
 });
 
-onBeforeUnmount(() => {
-  scrollTriggers.forEach((trigger) => trigger.kill());
-  scrollTriggers = [];
-});
+onBeforeUnmount(() => killAllScrollTriggers(scrollTriggers));
 </script>
 
 <template>

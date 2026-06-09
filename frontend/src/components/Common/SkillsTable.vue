@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { useTemplateRef, watch } from "vue";
 import { Icon } from "@iconify/vue";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import {
   languageSkills,
@@ -14,6 +12,7 @@ import {
   hostingSkills,
   generalSkills,
 } from "../../../lib/constants";
+import useScrollTriggers from "../../../lib/gsap/useScrollTriggers.ts";
 
 const tableCheckbox = useTemplateRef("table-checkbox");
 
@@ -23,25 +22,9 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
   }
 };
 
-gsap.registerPlugin(ScrollTrigger);
+const { refreshScrollTriggersOnInputChange } = useScrollTriggers();
 
-watch(tableCheckbox, (el) => {
-  if (!el) return;
-  el.addEventListener("change", () => {
-    setTimeout(() => ScrollTrigger.refresh(), 250);
-  });
-
-  // Refresh once immediately
-  ScrollTrigger.refresh();
-
-  // Refresh again after a short delay (for Suspense, Lazy, Lottie)
-  setTimeout(() => ScrollTrigger.refresh(), 300);
-
-  // Refresh again after images/icons load
-  window.addEventListener("load", () => {
-    ScrollTrigger.refresh();
-  });
-});
+watch(tableCheckbox, refreshScrollTriggersOnInputChange);
 </script>
 
 <template>

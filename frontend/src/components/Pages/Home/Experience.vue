@@ -11,6 +11,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { lottieConstants } from "../../../../lib/constants";
+import useScrollTriggers from "../../../../lib/gsap/useScrollTriggers.ts";
 
 const LottiePlayer = defineAsyncComponent(
   () => import("../../Common/LottiePlayer.vue"),
@@ -27,11 +28,15 @@ const {
 
 const sectionId = "experience";
 let scrollTriggers: ScrollTrigger[] = [];
-
-gsap.registerPlugin(ScrollTrigger);
+const {
+  buildScrollTrigger,
+  addScrollTrigger,
+  refreshScrollTriggers,
+  killAllScrollTriggers,
+} = useScrollTriggers();
 
 onMounted(() => {
-  window.requestIdleCallback(async () => {
+  requestIdleCallback(async () => {
     await nextTick();
 
     const from = {
@@ -40,21 +45,7 @@ onMounted(() => {
       opacity: 0,
     };
     const timelineSettings = {
-      scrollTrigger: {
-        trigger: `#${sectionId}`,
-        pin: true,
-        pinSpacing: true,
-        anticipatePin: 1,
-        start: "top+=80 top",
-        end: () => {
-          const element = document.querySelector(`#${sectionId}`);
-          const sectionHeight: number = element?.clientHeight ?? 1500;
-          return "+=" + sectionHeight;
-        },
-        scrub: 1,
-        invalidateOnRefresh: true,
-      },
-      duration: 2,
+      scrollTrigger: buildScrollTrigger(sectionId, "top+=80 top", 1500),
       rotation: 0,
       scale: 1,
       opacity: 1,
@@ -63,7 +54,7 @@ onMounted(() => {
     const timeline = gsap.timeline(timelineSettings);
 
     if (timeline) {
-      if (timeline.scrollTrigger) scrollTriggers.push(timeline.scrollTrigger);
+      addScrollTrigger(timeline, scrollTriggers);
 
       timeline
         .from(".experience1", from)
@@ -76,23 +67,11 @@ onMounted(() => {
         .from(".experience8", from);
     }
 
-    // Refresh once immediately
-    ScrollTrigger.refresh();
-
-    // Refresh again after a short delay (for Suspense, Lazy, Lottie)
-    setTimeout(() => ScrollTrigger.refresh(), 300);
-
-    // Refresh again after images/icons load
-    window.addEventListener("load", () => {
-      ScrollTrigger.refresh();
-    });
+    refreshScrollTriggers();
   });
 });
 
-onBeforeUnmount(() => {
-  scrollTriggers.forEach((trigger) => trigger.kill());
-  scrollTriggers = [];
-});
+onBeforeUnmount(() => killAllScrollTriggers(scrollTriggers));
 </script>
 
 <template>

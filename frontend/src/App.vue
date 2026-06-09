@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { defineAsyncComponent, onMounted } from "vue";
 import { useRouter, RouterView } from "vue-router";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import useScrollTriggers from "../lib/gsap/useScrollTriggers.ts";
 
 const Lazy = defineAsyncComponent(() => import("./components/Common/Lazy.vue"));
 const PageHeader = defineAsyncComponent(
@@ -15,12 +16,11 @@ const ToTopButton = defineAsyncComponent(
 );
 
 const router = useRouter();
+const { refreshScrollTriggers } = useScrollTriggers();
 
 onMounted(() => {
   router.afterEach(() => {
-    requestAnimationFrame(() => {
-      ScrollTrigger.refresh();
-    });
+    refreshScrollTriggers();
   });
 });
 </script>
