@@ -25,58 +25,56 @@ const sectionId = "experience";
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
-  requestAnimationFrame(() => {
-    requestAnimationFrame(async () => {
-      await nextTick();
+  window.requestIdleCallback(async () => {
+    await nextTick();
 
-      const from = {
-        rotation: -180,
-        scale: 0,
-        opacity: 0,
-      };
-      const timelineSettings = {
-        scrollTrigger: {
-          trigger: `#${sectionId}`,
-          pin: true,
-          pinSpacing: true,
-          anticipatePin: 1,
-          start: "top+=80 top",
-          end: () => {
-            const element = document.querySelector(`#${sectionId}`);
-            const sectionHeight: number = element?.clientHeight ?? 1500;
-            return "+=" + sectionHeight;
-          },
-          scrub: 1,
-          invalidateOnRefresh: true,
+    const from = {
+      rotation: -180,
+      scale: 0,
+      opacity: 0,
+    };
+    const timelineSettings = {
+      scrollTrigger: {
+        trigger: `#${sectionId}`,
+        pin: true,
+        pinSpacing: true,
+        anticipatePin: 1,
+        start: "top+=80 top",
+        end: () => {
+          const element = document.querySelector(`#${sectionId}`);
+          const sectionHeight: number = element?.clientHeight ?? 1500;
+          return "+=" + sectionHeight;
         },
-        duration: 2,
-        rotation: 0,
-        scale: 1,
-        opacity: 1,
-      };
+        scrub: 1,
+        invalidateOnRefresh: true,
+      },
+      duration: 2,
+      rotation: 0,
+      scale: 1,
+      opacity: 1,
+    };
 
-      const timeline = gsap.timeline(timelineSettings);
+    const timeline = gsap.timeline(timelineSettings);
 
-      timeline
-        .from(".experience1", from)
-        .from(".experience2", from)
-        .from(".experience3", from)
-        .from(".experience4", from)
-        .from(".experience5", from)
-        .from(".experience6", from)
-        .from(".experience7", from)
-        .from(".experience8", from);
+    timeline
+      .from(".experience1", from)
+      .from(".experience2", from)
+      .from(".experience3", from)
+      .from(".experience4", from)
+      .from(".experience5", from)
+      .from(".experience6", from)
+      .from(".experience7", from)
+      .from(".experience8", from);
 
-      // Refresh once immediately
+    // Refresh once immediately
+    ScrollTrigger.refresh();
+
+    // Refresh again after a short delay (for Suspense, Lazy, Lottie)
+    setTimeout(() => ScrollTrigger.refresh(), 300);
+
+    // Refresh again after images/icons load
+    window.addEventListener("load", () => {
       ScrollTrigger.refresh();
-
-      // Refresh again after a short delay (for Suspense, Lazy, Lottie)
-      setTimeout(() => ScrollTrigger.refresh(), 300);
-
-      // Refresh again after images/icons load
-      window.addEventListener("load", () => {
-        ScrollTrigger.refresh();
-      });
     });
   });
 });
