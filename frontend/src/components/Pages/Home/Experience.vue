@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { defineAsyncComponent } from "vue";
+import { defineAsyncComponent, nextTick, onMounted } from "vue";
 import { RouterLink } from "vue-router";
 import { Icon } from "@iconify/vue";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { lottieConstants } from "../../../../lib/constants";
 
@@ -19,6 +21,65 @@ const {
 } = lottieConstants;
 
 const sectionId = "experience";
+
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+  requestAnimationFrame(() => {
+    requestAnimationFrame(async () => {
+      await nextTick();
+
+      const from = {
+        rotation: -180,
+        scale: 0,
+        opacity: 0,
+      };
+      const timelineSettings = {
+        scrollTrigger: {
+          trigger: `#${sectionId}`,
+          pin: true,
+          pinSpacing: true,
+          anticipatePin: 1,
+          start: "top+=80 top",
+          end: () => {
+            const element = document.querySelector(`#${sectionId}`);
+            const sectionHeight: number = element?.clientHeight ?? 1500;
+            return "+=" + sectionHeight;
+          },
+          scrub: 1,
+          invalidateOnRefresh: true,
+        },
+        duration: 2,
+        rotation: 0,
+        scale: 1,
+        opacity: 1,
+      };
+
+      const timeline = gsap.timeline(timelineSettings);
+
+      timeline
+        .from(".experience1", from)
+        .from(".experience2", from)
+        .from(".experience3", from)
+        .from(".experience4", from)
+        .from(".experience5", from)
+        .from(".experience6", from)
+        .from(".experience7", from)
+        .from(".experience8", from);
+
+      // Refresh once immediately
+      ScrollTrigger.refresh();
+
+      // Refresh again after a short delay (for Suspense, Lazy, Lottie)
+      setTimeout(() => ScrollTrigger.refresh(), 300);
+
+      // Refresh again after images/icons load
+      window.addEventListener("load", () => {
+        ScrollTrigger.refresh();
+      });
+    });
+  });
+});
 </script>
 
 <template>
@@ -35,163 +96,157 @@ const sectionId = "experience";
       </h1>
       <div class="flex flex-wrap justify-between items-center gap-4">
         <div class="flex flex-col items-center w-full md:w-1/4">
-          <RouterLink
-            to="/experience#developer"
-            hash="developer"
-            class="experience-link"
-          >
-            <div
-              class="lottie-box mask mask-squircle glass w-2xs h-2xs bg-primary -mb-10"
-            >
-              <div class="-mb-30">
-                <Suspense>
-                  <LottiePlayer
-                    :src="AVATAR_SKILLS_DESK_LOTTIE_PATH"
-                    autoPlay
-                    v-once
-                  />
-                </Suspense>
+          <div class="experience-link experience1">
+            <RouterLink to="/experience#developer" hash="developer">
+              <div
+                class="lottie-box mask mask-squircle glass w-2xs h-2xs bg-primary -mb-10"
+              >
+                <div class="-mb-30">
+                  <Suspense>
+                    <LottiePlayer
+                      :src="AVATAR_SKILLS_DESK_LOTTIE_PATH"
+                      autoPlay
+                      v-once
+                    />
+                  </Suspense>
+                </div>
               </div>
-            </div>
-            <h2 class="text-3xl text-center ubuntu-titling">
-              <Icon icon="mingcute:code-fill" class="inline-block h-[1em]" />
-              Developer
-            </h2>
-          </RouterLink>
+              <h2 class="text-3xl text-center ubuntu-titling">
+                <Icon icon="mingcute:code-fill" class="inline-block h-[1em]" />
+                Developer
+              </h2>
+            </RouterLink>
+          </div>
         </div>
         <div class="flex flex-col items-center w-full md:w-1/4">
-          <RouterLink
-            to="/experience#teacher"
-            hash="teacher"
-            class="experience-link"
-          >
-            <div
-              class="lottie-box mask mask-squircle glass w-2xs h-2xs bg-primary -mb-3"
-            >
-              <div class="-ml-30 -mb-30">
-                <Suspense>
-                  <LottiePlayer
-                    :src="AVATAR_TEACHER_DESK_LOTTIE_PATH"
-                    autoPlay
-                    v-once
-                  />
-                </Suspense>
+          <div class="experience-link experience2">
+            <RouterLink to="/experience#teacher" hash="teacher">
+              <div
+                class="lottie-box mask mask-squircle glass w-2xs h-2xs bg-primary -mb-3"
+              >
+                <div class="-ml-30 -mb-30">
+                  <Suspense>
+                    <LottiePlayer
+                      :src="AVATAR_TEACHER_DESK_LOTTIE_PATH"
+                      autoPlay
+                      v-once
+                    />
+                  </Suspense>
+                </div>
               </div>
-            </div>
-            <h2 class="text-3xl text-center ubuntu-titling">
-              <Icon icon="mingcute:school-fill" class="inline-block h-[1em]" />
-              Teacher
-            </h2>
-          </RouterLink>
+              <h2 class="text-3xl text-center ubuntu-titling">
+                <Icon
+                  icon="mingcute:school-fill"
+                  class="inline-block h-[1em]"
+                />
+                Teacher
+              </h2>
+            </RouterLink>
+          </div>
         </div>
         <div class="flex flex-col items-center w-full md:w-1/4">
-          <RouterLink
-            to="/experience#designer"
-            hash="designer"
-            class="experience-link"
-          >
-            <div
-              class="lottie-box mask mask-squircle glass w-2xs h-2xs bg-primary mt-10 mb-5"
-            >
-              <div class="-mb-30">
-                <Suspense>
-                  <LottiePlayer
-                    :src="AVATAR_DESIGNER_DESK_LOTTIE_PATH"
-                    autoPlay
-                    v-once
-                  />
-                </Suspense>
+          <div class="experience-link experience3">
+            <RouterLink to="/experience#designer" hash="designer">
+              <div
+                class="lottie-box mask mask-squircle glass w-2xs h-2xs bg-primary mt-10 mb-5"
+              >
+                <div class="-mb-30">
+                  <Suspense>
+                    <LottiePlayer
+                      :src="AVATAR_DESIGNER_DESK_LOTTIE_PATH"
+                      autoPlay
+                      v-once
+                    />
+                  </Suspense>
+                </div>
               </div>
-            </div>
-            <h2 class="text-3xl text-center ubuntu-titling">
-              <Icon icon="mingcute:palette-fill" class="inline-block h-[1em]" />
-              Designer
-            </h2>
-          </RouterLink>
+              <h2 class="text-3xl text-center ubuntu-titling">
+                <Icon
+                  icon="mingcute:palette-fill"
+                  class="inline-block h-[1em]"
+                />
+                Designer
+              </h2>
+            </RouterLink>
+          </div>
         </div>
         <div class="flex flex-col items-center w-full md:w-1/4">
-          <RouterLink
-            to="/experience#illustrator"
-            hash="illustrator"
-            class="experience-link"
-          >
-            <div
-              class="lottie-box mask mask-squircle glass w-2xs h-2xs bg-primary mt-10 mb-5"
-            >
-              <div class="-mb-30">
-                <Suspense>
-                  <LottiePlayer
-                    :src="AVATAR_ILLUSTRATOR_LOTTIE_PATH"
-                    autoPlay
-                    v-once
-                  />
-                </Suspense>
+          <div class="experience-link experience4">
+            <RouterLink to="/experience#illustrator" hash="illustrator">
+              <div
+                class="lottie-box mask mask-squircle glass w-2xs h-2xs bg-primary mt-10 mb-5"
+              >
+                <div class="-mb-30">
+                  <Suspense>
+                    <LottiePlayer
+                      :src="AVATAR_ILLUSTRATOR_LOTTIE_PATH"
+                      autoPlay
+                      v-once
+                    />
+                  </Suspense>
+                </div>
               </div>
-            </div>
-            <h2 class="text-3xl text-center ubuntu-titling">
-              <Icon
-                icon="mingcute:paint-brush-fill"
-                class="inline-block h-[1em]"
-              />
-              Illustrator
-            </h2>
-          </RouterLink>
+              <h2 class="text-3xl text-center ubuntu-titling">
+                <Icon
+                  icon="mingcute:paint-brush-fill"
+                  class="inline-block h-[1em]"
+                />
+                Illustrator
+              </h2>
+            </RouterLink>
+          </div>
         </div>
         <div class="flex flex-col items-center w-full md:w-1/4">
-          <RouterLink
-            to="/experience#education"
-            hash="education"
-            class="experience-link"
-          >
-            <div
-              class="lottie-box mask mask-squircle glass w-2xs h-2xs bg-primary -mt-20 -mb-25"
-            >
-              <div class="-mb-30">
-                <Suspense>
-                  <LottiePlayer
-                    :src="AVATAR_EDUCATION_LOTTIE_PATH"
-                    autoPlay
-                    v-once
-                  />
-                </Suspense>
+          <div class="experience-link experience5">
+            <RouterLink to="/experience#education" hash="education">
+              <div
+                class="lottie-box mask mask-squircle glass w-2xs h-2xs bg-primary -mt-20 -mb-25"
+              >
+                <div class="-mb-30">
+                  <Suspense>
+                    <LottiePlayer
+                      :src="AVATAR_EDUCATION_LOTTIE_PATH"
+                      autoPlay
+                      v-once
+                    />
+                  </Suspense>
+                </div>
               </div>
-            </div>
-            <h2 class="text-3xl text-center ubuntu-titling">
-              <Icon
-                icon="mingcute:mortarboard-fill"
-                class="inline-block h-[1em]"
-              />
-              Education
-            </h2>
-          </RouterLink>
+              <h2 class="text-3xl text-center ubuntu-titling">
+                <Icon
+                  icon="mingcute:mortarboard-fill"
+                  class="inline-block h-[1em]"
+                />
+                Education
+              </h2>
+            </RouterLink>
+          </div>
         </div>
         <div class="flex flex-col items-center w-full md:w-1/4">
-          <RouterLink
-            to="/experience#volunteer"
-            hash="volunteer"
-            class="experience-link"
-          >
-            <div
-              class="lottie-box mask mask-squircle glass w-2xs h-2xs bg-primary -mb-5"
-            >
-              <div class="-mb-30">
-                <Suspense>
-                  <LottiePlayer
-                    :src="AVATAR_VOLUNTEER_LOTTIE_PATH"
-                    autoPlay
-                    v-once
-                  />
-                </Suspense>
+          <div class="experience-link experience6">
+            <RouterLink to="/experience#volunteer" hash="volunteer">
+              <div
+                class="lottie-box mask mask-squircle glass w-2xs h-2xs bg-primary -mb-5"
+              >
+                <div class="-mb-30">
+                  <Suspense>
+                    <LottiePlayer
+                      :src="AVATAR_VOLUNTEER_LOTTIE_PATH"
+                      autoPlay
+                      v-once
+                    />
+                  </Suspense>
+                </div>
               </div>
-            </div>
-            <h2 class="text-3xl text-center ubuntu-titling">
-              <Icon
-                icon="mingcute:hand-heart-fill"
-                class="inline-block h-[1em]"
-              />
-              Volunteer
-            </h2>
-          </RouterLink>
+              <h2 class="text-3xl text-center ubuntu-titling">
+                <Icon
+                  icon="mingcute:hand-heart-fill"
+                  class="inline-block h-[1em]"
+                />
+                Volunteer
+              </h2>
+            </RouterLink>
+          </div>
         </div>
       </div>
       <div class="pt-20 pb-5">
