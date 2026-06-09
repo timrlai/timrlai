@@ -69,7 +69,6 @@ onMounted(async () => {
       scrub: 1,
       invalidateOnRefresh: true,
     },
-    duration: 2,
     opacity: 1,
     rotation: 0,
     scale: 1,
