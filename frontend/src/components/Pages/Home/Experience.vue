@@ -35,10 +35,25 @@ const {
   killAllScrollTriggers,
 } = useScrollTriggers();
 
-onMounted(() => {
-  requestIdleCallback(async () => {
-    await nextTick();
+onMounted(async () => {
+  // 1. Vue DOM updates
+  await nextTick();
 
+  // 2. Two paints
+  await new Promise((r) =>
+    requestAnimationFrame(() => requestAnimationFrame(r)),
+  );
+
+  // 3. Fonts
+  await document.fonts.ready;
+
+  // 4. Images, Lottie, async components, Suspense
+  await new Promise((resolve) => {
+    if (document.readyState === "complete") resolve(null);
+    else window.addEventListener("load", resolve, { once: true });
+  });
+
+  requestIdleCallback(() => {
     const from = {
       rotation: -180,
       scale: 0,
