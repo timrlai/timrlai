@@ -52,6 +52,7 @@ onMounted(async () => {
   const from = {
     opacity: 0,
     rotation: -90,
+    scale: 0,
   };
   const timelineSettings = {
     scrollTrigger: {
@@ -71,6 +72,7 @@ onMounted(async () => {
     duration: 2,
     opacity: 1,
     rotation: 0,
+    scale: 1,
   };
 
   let timeline = gsap.timeline(timelineSettings);
