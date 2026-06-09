@@ -36,7 +36,11 @@ onMounted(async () => {
       pinSpacing: true,
       anticipatePin: 1,
       start: "-=70",
-      end: "+=2000",
+      end: () => {
+        const element = document.querySelector(`#${sectionId}`);
+        const sectionHeight: number = element?.clientHeight ?? 1000;
+        return "+=" + sectionHeight;
+      },
       scrub: 1,
       invalidateOnRefresh: true,
     },

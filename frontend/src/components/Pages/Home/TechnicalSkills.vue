@@ -60,7 +60,11 @@ onMounted(async () => {
       pinSpacing: true,
       anticipatePin: 1,
       start: "-=100",
-      end: "+=1000",
+      end: () => {
+        const element = document.querySelector(`#${madeWithId}`);
+        const madeWithHeight: number = element?.clientHeight ?? 1000;
+        return "+=" + madeWithHeight;
+      },
       scrub: 1,
       invalidateOnRefresh: true,
     },
