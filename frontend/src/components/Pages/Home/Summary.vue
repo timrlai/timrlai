@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { defineAsyncComponent, nextTick, onMounted } from "vue";
+import {
+  defineAsyncComponent,
+  nextTick,
+  onBeforeUnmount,
+  onMounted,
+} from "vue";
 import { storeToRefs } from "pinia";
 import { Icon } from "@iconify/vue";
 import { gsap } from "gsap";
@@ -19,6 +24,7 @@ const store = useThemeStore();
 const { isNight } = storeToRefs(store);
 
 const sectionId = "summary";
+let scrollTriggers: ScrollTrigger[] = [];
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,15 +56,19 @@ onMounted(async () => {
 
   const timeline = gsap.timeline(timelineSettings);
 
-  timeline
-    .from(".item1", from)
-    .from(".item2", from)
-    .from(".item3", from)
-    .from(".item4", from)
-    .from(".item5", from)
-    .from(".item6", from)
-    .from(".item7", from)
-    .from(".item8", from);
+  if (timeline) {
+    if (timeline.scrollTrigger) scrollTriggers.push(timeline.scrollTrigger);
+
+    timeline
+      .from(".item1", from)
+      .from(".item2", from)
+      .from(".item3", from)
+      .from(".item4", from)
+      .from(".item5", from)
+      .from(".item6", from)
+      .from(".item7", from)
+      .from(".item8", from);
+  }
 
   // Refresh once immediately
   ScrollTrigger.refresh();
@@ -70,6 +80,11 @@ onMounted(async () => {
   window.addEventListener("load", () => {
     ScrollTrigger.refresh();
   });
+});
+
+onBeforeUnmount(() => {
+  scrollTriggers.forEach((trigger) => trigger.kill());
+  scrollTriggers = [];
 });
 </script>
 

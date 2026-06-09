@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import { defineAsyncComponent, nextTick, onMounted, ref } from "vue";
+import {
+  defineAsyncComponent,
+  nextTick,
+  onBeforeUnmount,
+  onMounted,
+  ref,
+} from "vue";
 import { storeToRefs } from "pinia";
 import { Icon } from "@iconify/vue";
 import { VueWriter } from "vue-writer";
@@ -43,6 +49,7 @@ const randomizedSkills = [...primarySkills]
 
 const sectionId = "tech-skills";
 const madeWithId = "made-with-skills";
+let scrollTriggers: ScrollTrigger[] = [];
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -75,10 +82,15 @@ onMounted(async () => {
   };
 
   let timeline = gsap.timeline(timelineSettings);
-  madeWithSkills.forEach(({ title }) => {
-    const skillId = `#${madeWithId}-${title.replaceAll(" ", "").replaceAll(".", "")}`;
-    timeline = timeline.from(skillId, from);
-  });
+
+  if (timeline) {
+    if (timeline.scrollTrigger) scrollTriggers.push(timeline.scrollTrigger);
+
+    madeWithSkills.forEach(({ title }) => {
+      const skillId = `#${madeWithId}-${title.replaceAll(" ", "").replaceAll(".", "")}`;
+      timeline = timeline.from(skillId, from);
+    });
+  }
 
   // Refresh once immediately
   ScrollTrigger.refresh();
@@ -90,6 +102,11 @@ onMounted(async () => {
   window.addEventListener("load", () => {
     ScrollTrigger.refresh();
   });
+});
+
+onBeforeUnmount(() => {
+  scrollTriggers.forEach((trigger) => trigger.kill());
+  scrollTriggers = [];
 });
 </script>
 

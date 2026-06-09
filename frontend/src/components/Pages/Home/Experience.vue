@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { defineAsyncComponent, nextTick, onMounted } from "vue";
+import {
+  defineAsyncComponent,
+  nextTick,
+  onBeforeUnmount,
+  onMounted,
+} from "vue";
 import { RouterLink } from "vue-router";
 import { Icon } from "@iconify/vue";
 import { gsap } from "gsap";
@@ -21,6 +26,7 @@ const {
 } = lottieConstants;
 
 const sectionId = "experience";
+let scrollTriggers: ScrollTrigger[] = [];
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,15 +62,19 @@ onMounted(() => {
 
     const timeline = gsap.timeline(timelineSettings);
 
-    timeline
-      .from(".experience1", from)
-      .from(".experience2", from)
-      .from(".experience3", from)
-      .from(".experience4", from)
-      .from(".experience5", from)
-      .from(".experience6", from)
-      .from(".experience7", from)
-      .from(".experience8", from);
+    if (timeline) {
+      if (timeline.scrollTrigger) scrollTriggers.push(timeline.scrollTrigger);
+
+      timeline
+        .from(".experience1", from)
+        .from(".experience2", from)
+        .from(".experience3", from)
+        .from(".experience4", from)
+        .from(".experience5", from)
+        .from(".experience6", from)
+        .from(".experience7", from)
+        .from(".experience8", from);
+    }
 
     // Refresh once immediately
     ScrollTrigger.refresh();
@@ -77,6 +87,11 @@ onMounted(() => {
       ScrollTrigger.refresh();
     });
   });
+});
+
+onBeforeUnmount(() => {
+  scrollTriggers.forEach((trigger) => trigger.kill());
+  scrollTriggers = [];
 });
 </script>
 
