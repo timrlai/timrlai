@@ -1,5 +1,11 @@
 import type { CanvasTexture } from "three/src/textures/CanvasTexture.d.ts";
 import type { Wrapping, Side } from "three/src/constants.d.ts";
+import {
+  type RendererType,
+  type SVGRendererConfig,
+  type CanvasRendererConfig,
+  type HTMLRendererConfig,
+} from "lottie-web";
 
 export type ScrollPosition = {
   el?: string | Element;
@@ -74,6 +80,39 @@ export type EducationSkills = {
   web: Skill[];
   ilu: Skill[];
   afd: Skill[];
+};
+
+export type LottieScrollTriggerVars = {
+  target?: Element | string;
+  start?: string;
+  renderer?: RendererType | undefined;
+  speed: "slow" | "medium" | "fast";
+  path?: string;
+  rendererSettings?:
+    | SVGRendererConfig
+    | CanvasRendererConfig
+    | HTMLRendererConfig
+    | undefined;
+};
+
+export type LottiePlayerProps = {
+  src?: string;
+  data?: JSON;
+  height?: number;
+  width?: number;
+  speed?: number;
+  direction?: "forward" | "backward";
+  autoPlay?: boolean;
+  delay?: number;
+  pauseAnimation?: boolean;
+  pauseOnHover?: boolean;
+  playOnHover?: boolean;
+  backgroundColor?: string;
+  scrolling?: boolean;
+  scrollTarget?: string;
+  scrollStart?: string;
+  scrollRenderer?: RendererType | undefined;
+  scrollSpeed?: "slow" | "medium" | "fast";
 };
 
 export type LottieTexture = CanvasTexture & {
