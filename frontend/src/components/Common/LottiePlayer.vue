@@ -1,47 +1,99 @@
 <script setup lang="ts">
-import { nextTick, onMounted } from "vue";
-import { Vue3Lottie } from "vue3-lottie";
+import { nextTick, onBeforeUnmount, onMounted, watch } from "vue";
+import { Vue3Lottie, type AnimationItem } from "vue3-lottie";
+import type { ScrollTrigger } from "gsap/ScrollTrigger";
+import { storeToRefs } from "pinia";
 
+import type {
+  LottiePlayerProps,
+  LottieScrollTriggerVars,
+} from "../../../lib/types";
 import useScrollTriggers from "../../../lib/gsap/useScrollTriggers";
+import { useThemeStore } from "../../../lib/stores/theme";
 
-const { src, scrolling, target } = defineProps<{
-  src?: string;
-  data?: JSON;
-  height?: number;
-  width?: number;
-  speed?: number;
-  direction?: "forward" | "backward";
-  autoPlay?: boolean;
-  delay?: number;
-  pauseAnimation?: boolean;
-  pauseOnHover?: boolean;
-  playOnHover?: boolean;
-  backgroundColor?: string;
-  scrolling?: boolean;
-  target?: string;
-}>();
+const {
+  src,
+  scrolling,
+  scrollTarget,
+  scrollStart = "-=70",
+  scrollRenderer = "svg",
+  scrollSpeed = "fast",
+} = defineProps<LottiePlayerProps>();
 
-const { motionReduce, lottieScrollTrigger } = useScrollTriggers();
+let animation: AnimationItem | undefined;
+let scrollTrigger: ScrollTrigger | undefined;
+const lottieScrollTriggerVars: LottieScrollTriggerVars = {
+  target: scrollTarget,
+  path: src,
+  start: scrollStart,
+  renderer: scrollRenderer,
+  speed: scrollSpeed,
+};
 
-onMounted(async () => {
+const {
+  motionReduce,
+  gsapCtx,
+  refreshScrollTriggers,
+  buildLottieScrollTriggerConfig,
+  createScrollingLottieAnimation,
+  connectLottieToScrollTrigger,
+  cleanupLottieScrollTrigger,
+} = useScrollTriggers();
+
+const store = useThemeStore();
+const { isNight } = storeToRefs(store);
+
+const initLottieScrollTrigger = async () => {
   await nextTick();
 
-  if (!scrolling || !target || motionReduce || !src) return;
+  if (!scrolling || !scrollTarget || motionReduce || !src) return;
 
-  requestIdleCallback(() => {
-    lottieScrollTrigger({
-      target,
-      path: src,
-      start: "-=70",
-      renderer: "svg",
-      speed: "fast",
-    });
+  cleanupLottieScrollTrigger(animation, scrollTrigger, gsapCtx);
+
+  animation = createScrollingLottieAnimation(lottieScrollTriggerVars);
+
+  if (!animation) return;
+
+  animation.addEventListener("DOMLoaded", function () {
+    const scrollTriggerConfig = buildLottieScrollTriggerConfig(
+      lottieScrollTriggerVars,
+    );
+    if (!scrollTriggerConfig) return;
+
+    if (gsapCtx && gsapCtx.add) {
+      gsapCtx.add(() => {
+        scrollTrigger = connectLottieToScrollTrigger(
+          animation,
+          scrollTriggerConfig,
+        );
+      });
+    } else {
+      scrollTrigger = connectLottieToScrollTrigger(
+        animation,
+        scrollTriggerConfig,
+      );
+    }
+    // In case there are any other ScrollTriggers on the page and the loading of this Lottie asset caused layout changes
+    refreshScrollTriggers();
   });
-});
+};
+
+onMounted(initLottieScrollTrigger);
+watch(
+  () => src,
+  () => initLottieScrollTrigger(),
+);
+watch(
+  () => isNight,
+  () => initLottieScrollTrigger(),
+);
+onBeforeUnmount(() =>
+  cleanupLottieScrollTrigger(animation, scrollTrigger, gsapCtx),
+);
 </script>
 
 <template>
-  <section v-if="scrolling && !motionReduce" :id="target"></section>
+  <section v-if="scrolling && !motionReduce" :id="scrollTarget"></section>
   <section v-if="!scrolling && !motionReduce">
     <Vue3Lottie
       v-if="typeof src === 'string'"
