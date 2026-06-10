@@ -1,29 +1,7 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import lottie, {
-  type AnimationItem,
-  type CanvasRendererConfig,
-  type HTMLRendererConfig,
-  type RendererType,
-  type SVGRendererConfig,
-} from "lottie-web";
-
-type LottieScrollTriggerVars = {
-  target: Element | string;
-  start?: string;
-  renderer?: RendererType | undefined;
-  speed: "slow" | "medium" | "fast";
-  path: string;
-  rendererSettings?:
-    | SVGRendererConfig
-    | CanvasRendererConfig
-    | HTMLRendererConfig
-    | undefined;
-};
-
-type AnimationItemWithFrameTween = AnimationItem & {
-  frameTween: gsap.core.Tween;
-};
+import lottie, { type AnimationItem } from "lottie-web";
+import type { LottieScrollTriggerVars } from "../types";
 
 export default function useScrollTriggers() {
   gsap.registerPlugin(ScrollTrigger);
@@ -32,6 +10,8 @@ export default function useScrollTriggers() {
   const motionReduce = window.matchMedia(
     "(prefers-reduced-motion: reduce)",
   ).matches;
+  const speeds = { slow: "+=2000", medium: "+=1000", fast: "+=500" };
+  const gsapCtx = gsap.context && gsap.context();
 
   const calculateDynamicEnd = (elementId: string, fallback = 1000): string => {
     const element = document.querySelector(`#${elementId}`);
@@ -100,11 +80,17 @@ export default function useScrollTriggers() {
     return scrollTrigger;
   };
 
-  const lottieScrollTrigger = (vars: LottieScrollTriggerVars) => {
-    const playhead = { frame: 0 };
+  const setLottieScrollTriggerTarget = (vars: LottieScrollTriggerVars) => {
+    if (!vars || !vars.target) return null;
     const target = document.querySelector(`#${vars.target}`);
+    return target;
+  };
+
+  const buildLottieScrollTriggerConfig = (
+    vars: LottieScrollTriggerVars,
+  ): ScrollTrigger.Vars | undefined => {
+    const target = setLottieScrollTriggerTarget(vars);
     if (!target) return;
-    const speeds = { slow: "+=2000", medium: "+=1000", fast: "+=500" };
     const scrollTrigger = {
       trigger: target,
       start: vars.start || "top top",
@@ -115,7 +101,12 @@ export default function useScrollTriggers() {
       anticipatePin: 1,
       invalidateOnRefresh: true,
     };
-    const ctx = gsap.context && gsap.context();
+    return scrollTrigger;
+  };
+
+  const createScrollingLottieAnimation = (vars: LottieScrollTriggerVars) => {
+    const target = setLottieScrollTriggerTarget(vars);
+    if (!target) return;
     const animation = lottie.loadAnimation({
       container: target,
       renderer: vars.renderer || "svg",
@@ -125,34 +116,49 @@ export default function useScrollTriggers() {
       rendererSettings: vars.rendererSettings || {
         preserveAspectRatio: "xMidYMid slice",
       },
-    }) as AnimationItemWithFrameTween;
-    animation.addEventListener("DOMLoaded", function () {
-      const createTween = function () {
-        animation.frameTween = gsap.to(playhead, {
-          frame: animation.totalFrames - 1,
-          ease: "none",
-          onUpdate: () => animation.goToAndStop(playhead.frame, true),
-          scrollTrigger,
-        });
-        return () => animation.destroy && animation.destroy();
-      };
-      if (ctx && ctx.add) ctx.add(createTween);
-      else createTween();
-      // In case there are any other ScrollTriggers on the page and the loading of this Lottie asset caused layout changes
-      refreshScrollTriggers();
     });
-    return { scrollTrigger, animation };
+    return animation;
+  };
+
+  const connectLottieToScrollTrigger = (
+    animation: AnimationItem | undefined,
+    scrollTriggerConfig: ScrollTrigger.Vars,
+  ): ScrollTrigger | undefined => {
+    if (!animation) return;
+    const playhead = { frame: 0 };
+    const tween = gsap.to(playhead, {
+      frame: animation.totalFrames - 1,
+      ease: "none",
+      onUpdate: () => animation.goToAndStop(playhead.frame, true),
+      scrollTrigger: scrollTriggerConfig,
+    });
+    return tween.scrollTrigger;
+  };
+
+  const cleanupLottieScrollTrigger = (
+    animation: AnimationItem | undefined,
+    trigger: ScrollTrigger | undefined,
+    ctx: gsap.Context | undefined,
+  ) => {
+    if (animation && animation.destroy) animation.destroy();
+    if (trigger) trigger.kill();
+    if (ctx) ctx.revert();
   };
 
   return {
     belowSmall,
     motionReduce,
+    speeds,
+    gsapCtx,
     calculateDynamicEnd,
     addScrollTrigger,
     refreshScrollTriggers,
     refreshScrollTriggersOnInputChange,
     killAllScrollTriggers,
     dynamicEndScrollTrigger,
-    lottieScrollTrigger,
+    buildLottieScrollTriggerConfig,
+    createScrollingLottieAnimation,
+    connectLottieToScrollTrigger,
+    cleanupLottieScrollTrigger,
   };
 }
