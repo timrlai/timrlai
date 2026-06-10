@@ -59,7 +59,7 @@ export default function useScrollTriggers() {
     scrollTriggers = [];
   };
 
-  const dynamicEndScrollTrigger = (
+  const buildDynamicScrollTriggerConfig = (
     elementId: string,
     start: string,
     fallbackEnd = 1000,
@@ -155,7 +155,7 @@ export default function useScrollTriggers() {
     refreshScrollTriggers,
     refreshScrollTriggersOnInputChange,
     killAllScrollTriggers,
-    dynamicEndScrollTrigger,
+    buildDynamicScrollTriggerConfig,
     buildLottieScrollTriggerConfig,
     createScrollingLottieAnimation,
     connectLottieToScrollTrigger,
