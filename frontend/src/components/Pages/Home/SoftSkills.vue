@@ -51,13 +51,14 @@ const { isNight } = storeToRefs(store);
         <div class="w-full sm:w-1/2 min-h-75">
           <Suspense>
             <LottiePlayer
+              :key="isNight ? 'night' : 'day'"
               :src="
                 isNight
                   ? BAT_SKILLS_SOFT_LOTTIE_PATH
                   : AVATAR_SKILLS_SOFT_LOTTIE_PATH
               "
               scrolling
-              target="soft-skills-lottie"
+              scroll-target="soft-skills-lottie"
             />
           </Suspense>
         </div>
