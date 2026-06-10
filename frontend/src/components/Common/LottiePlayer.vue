@@ -1,7 +1,10 @@
 <script setup lang="ts">
+import { nextTick, onMounted } from "vue";
 import { Vue3Lottie } from "vue3-lottie";
 
-defineProps<{
+import useScrollTriggers from "../../../lib/gsap/useScrollTriggers";
+
+const { src, scrolling, target } = defineProps<{
   src?: string;
   data?: JSON;
   height?: number;
@@ -14,11 +17,32 @@ defineProps<{
   pauseOnHover?: boolean;
   playOnHover?: boolean;
   backgroundColor?: string;
+  scrolling?: boolean;
+  target?: string;
 }>();
+
+const { motionReduce, lottieScrollTrigger } = useScrollTriggers();
+
+onMounted(async () => {
+  await nextTick();
+
+  if (!scrolling || !target || motionReduce || !src) return;
+
+  requestIdleCallback(() => {
+    lottieScrollTrigger({
+      target,
+      path: src,
+      start: "-=70",
+      renderer: "svg",
+      speed: "fast",
+    });
+  });
+});
 </script>
 
 <template>
-  <section class="motion-reduce:hidden">
+  <section v-if="scrolling && !motionReduce" :id="target"></section>
+  <section v-if="!scrolling && !motionReduce">
     <Vue3Lottie
       v-if="typeof src === 'string'"
       :animationLink="src"
@@ -48,7 +72,7 @@ defineProps<{
       :backgroundColor="backgroundColor"
     />
   </section>
-  <section class="motion-safe:hidden">
+  <section v-if="motionReduce">
     <Vue3Lottie
       v-if="typeof src === 'string'"
       :animationLink="src"
