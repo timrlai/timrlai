@@ -15,27 +15,6 @@ export default function useScrollTriggers() {
     return "+=" + elementHeight;
   };
 
-  const buildScrollTrigger = (
-    elementId: string,
-    start: string,
-    fallbackEnd = 1000,
-    scrub = 1,
-    pin = true,
-    anticipatePin = 1,
-  ) => {
-    const scrollTrigger = {
-      trigger: `#${elementId}`,
-      start,
-      end: calculateDynamicEnd(elementId, fallbackEnd),
-      scrub,
-      pin,
-      pinSpacing: pin,
-      anticipatePin,
-      invalidateOnRefresh: true,
-    };
-    return scrollTrigger;
-  };
-
   const addScrollTrigger = (
     timeline: gsap.core.Timeline,
     scrollTriggers: ScrollTrigger[],
@@ -71,14 +50,35 @@ export default function useScrollTriggers() {
     scrollTriggers = [];
   };
 
+  const dynamicEndScrollTrigger = (
+    elementId: string,
+    start: string,
+    fallbackEnd = 1000,
+    scrub = 1,
+    pin = true,
+    anticipatePin = 1,
+  ) => {
+    const scrollTrigger = {
+      trigger: `#${elementId}`,
+      start,
+      end: calculateDynamicEnd(elementId, fallbackEnd),
+      scrub,
+      pin,
+      pinSpacing: pin,
+      anticipatePin,
+      invalidateOnRefresh: true,
+    };
+    return scrollTrigger;
+  };
+
   return {
     belowSmall,
     motionReduce,
     calculateDynamicEnd,
-    buildScrollTrigger,
     addScrollTrigger,
     refreshScrollTriggers,
     refreshScrollTriggersOnInputChange,
     killAllScrollTriggers,
+    dynamicEndScrollTrigger,
   };
 }

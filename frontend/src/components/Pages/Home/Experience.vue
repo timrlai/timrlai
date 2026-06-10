@@ -31,10 +31,10 @@ let scrollTriggers: ScrollTrigger[] = [];
 const {
   belowSmall,
   motionReduce,
-  buildScrollTrigger,
   addScrollTrigger,
   refreshScrollTriggers,
   killAllScrollTriggers,
+  dynamicEndScrollTrigger,
 } = useScrollTriggers();
 
 onMounted(async () => {
@@ -64,7 +64,7 @@ onMounted(async () => {
       opacity: 0,
     };
     const timelineSettings = {
-      scrollTrigger: buildScrollTrigger(sectionId, "top+=80 top", 1500),
+      scrollTrigger: dynamicEndScrollTrigger(sectionId, "top+=80 top", 1500),
       rotation: 0,
       scale: 1,
       opacity: 1,
