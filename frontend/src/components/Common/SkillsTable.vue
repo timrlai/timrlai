@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useTemplateRef, watch } from "vue";
+import { onMounted, useTemplateRef, watch } from "vue";
 import { Icon } from "@iconify/vue";
 
 import {
@@ -14,6 +14,7 @@ import {
 } from "../../../lib/constants";
 import useScrollTriggers from "../../../lib/gsap/useScrollTriggers.ts";
 
+const collapse = useTemplateRef("collapse");
 const tableCheckbox = useTemplateRef("table-checkbox");
 
 const checkboxKeyPress = (event: KeyboardEvent) => {
@@ -22,13 +23,19 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
   }
 };
 
-const { refreshScrollTriggersOnInputChange } = useScrollTriggers();
+const {
+  refreshScrollTriggerAfterAccordion,
+  refreshScrollTriggersOnInputChange,
+} = useScrollTriggers();
 
+onMounted(() => {
+  refreshScrollTriggerAfterAccordion(collapse.value);
+});
 watch(tableCheckbox, refreshScrollTriggersOnInputChange);
 </script>
 
 <template>
-  <div class="collapse collapse-plus mt-5">
+  <div ref="collapse" class="collapse collapse-plus mt-5">
     <input
       ref="table-checkbox"
       id="table-checkbox"
@@ -42,7 +49,7 @@ watch(tableCheckbox, refreshScrollTriggersOnInputChange);
       <Icon icon="mingcute:table-2-line" class="inline-block h-[1.5em]" />
       Click to View All Technical Skills
     </label>
-    <div class="overflow-x-auto">
+    <div class="collapse-content px-0 overflow-x-auto">
       <table
         class="flex flex-wrap md:table table-zebra text-lg bg-base-100 text-base-content"
       >
