@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, useTemplateRef, watch } from "vue";
+import { onMounted, useTemplateRef } from "vue";
 import { Icon } from "@iconify/vue";
 
 import {
@@ -23,15 +23,11 @@ const checkboxKeyPress = (event: KeyboardEvent) => {
   }
 };
 
-const {
-  refreshScrollTriggerAfterAccordion,
-  refreshScrollTriggersOnInputChange,
-} = useScrollTriggers();
+const { refreshScrollTriggerAfterAccordion } = useScrollTriggers();
 
 onMounted(() => {
   refreshScrollTriggerAfterAccordion(collapse.value);
 });
-watch(tableCheckbox, refreshScrollTriggersOnInputChange);
 </script>
 
 <template>

@@ -57,17 +57,6 @@ export default function useScrollTriggers() {
     });
   };
 
-  const refreshScrollTriggersOnInputChange = (
-    inputElement: HTMLInputElement | null,
-  ) => {
-    if (!inputElement) return;
-    inputElement.addEventListener("change", () => {
-      requestAnimationFrame(() => {
-        ScrollTrigger.refresh();
-      });
-    });
-  };
-
   const killAllScrollTriggers = (scrollTriggers: ScrollTrigger[]) => {
     scrollTriggers.forEach((trigger) => trigger.kill());
     scrollTriggers = [];
@@ -168,7 +157,6 @@ export default function useScrollTriggers() {
     addScrollTrigger,
     refreshScrollTriggers,
     refreshScrollTriggerAfterAccordion,
-    refreshScrollTriggersOnInputChange,
     killAllScrollTriggers,
     buildDynamicScrollTriggerConfig,
     buildLottieScrollTriggerConfig,
