@@ -17,7 +17,7 @@ const {
   scrollTarget,
   scrollStart = "-=70",
   scrollRenderer = "svg",
-  scrollSpeed = "fast",
+  scrollSpeed = "medium",
 } = defineProps<LottiePlayerProps>();
 
 let animation: AnimationItem | undefined;
