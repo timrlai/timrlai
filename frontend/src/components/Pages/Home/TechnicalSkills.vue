@@ -1,8 +1,16 @@
 <script setup lang="ts">
-import { defineAsyncComponent, ref } from "vue";
+import {
+  defineAsyncComponent,
+  nextTick,
+  onBeforeUnmount,
+  onMounted,
+  ref,
+} from "vue";
 import { storeToRefs } from "pinia";
 import { Icon } from "@iconify/vue";
 import { VueWriter } from "vue-writer";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import {
   lottieConstants,
@@ -10,6 +18,7 @@ import {
   madeWithSkills,
 } from "../../../../lib/constants";
 import { useThemeStore } from "../../../../lib/stores/theme";
+import useScrollTriggers from "../../../../lib/gsap/useScrollTriggers.ts";
 
 const Lazy = defineAsyncComponent(() => import("../../Common/Lazy.vue"));
 const LottiePlayer = defineAsyncComponent(
@@ -37,12 +46,57 @@ const onSkillTyped = (currentTitle: string) => {
 
 const randomizedSkills = [...primarySkills]
   .sort(() => Math.random() - 0.5)
-  .slice(-6);
+  .slice(-18);
+
+const sectionId = "tech-skills";
+const madeWithId = "made-with-skills";
+let scrollTriggers: ScrollTrigger[] = [];
+const {
+  belowSmall,
+  motionReduce,
+  addScrollTrigger,
+  refreshScrollTriggers,
+  killAllScrollTriggers,
+  buildDynamicScrollTriggerConfig,
+} = useScrollTriggers();
+
+onMounted(async () => {
+  await nextTick();
+
+  if (belowSmall || motionReduce) return;
+
+  const from = {
+    opacity: 0,
+    rotation: -90,
+    scale: 0,
+  };
+  const timelineSettings = {
+    scrollTrigger: buildDynamicScrollTriggerConfig(madeWithId, "-=100"),
+    opacity: 1,
+    rotation: 0,
+    scale: 1,
+  };
+
+  let timeline = gsap.timeline(timelineSettings);
+
+  if (timeline) {
+    addScrollTrigger(timeline, scrollTriggers);
+
+    madeWithSkills.forEach(({ title }) => {
+      const skillId = `#${madeWithId}-${title.replaceAll(" ", "").replaceAll(".", "")}`;
+      timeline = timeline.from(skillId, from);
+    });
+  }
+
+  refreshScrollTriggers();
+});
+
+onBeforeUnmount(() => killAllScrollTriggers(scrollTriggers));
 </script>
 
 <template>
   <div
-    id="tech-skills"
+    :id="sectionId"
     class="mockup-code bg-slate-950 text-slate-400 border-x-4 border-primary rounded-none shadow-lg shadow-primary fira-code overflow-x-hidden"
   >
     <div class="px-5">
@@ -93,29 +147,31 @@ const randomizedSkills = [...primarySkills]
                 ><span v-if="index === randomizedSkills.length - 2"> and </span>
               </span>
             </p>
-            <div class="text-7xl smtext-8xl text-center my-6">
+            <div class="text-7xl sm:text-8xl text-center my-6">
               <Icon
                 v-for="skill in randomizedSkills.filter(
                   ({ icon }) => icon && icon,
                 )"
                 v-bind:key="skill.title"
                 :icon="`${skill.icon}`"
-                class="inline-block mx-4"
+                class="inline-block m-4"
               />
             </div>
           </div>
         </div>
-        <div v-if="!isNight" class="w-full sm:w-1/4">
+        <div class="w-full sm:w-1/4">
           <Suspense
             ><LottiePlayer
-              :src="AVATAR_SKILLS_DESK_LOTTIE_PATH"
-              autoPlay
-              v-once
-          /></Suspense>
-        </div>
-        <div v-if="isNight" class="w-full sm:w-1/4">
-          <Suspense
-            ><LottiePlayer :src="BAT_SKILLS_LAPTOP_LOTTIE_PATH" autoPlay v-once
+              :key="isNight ? 'night' : 'day'"
+              :src="
+                isNight
+                  ? BAT_SKILLS_LAPTOP_LOTTIE_PATH
+                  : AVATAR_SKILLS_DESK_LOTTIE_PATH
+              "
+              scrolling
+              scroll-target="tech-skills-lottie"
+              scroll-start="-=80"
+              scroll-speed="slow"
           /></Suspense>
         </div>
       </div>
@@ -127,7 +183,7 @@ const randomizedSkills = [...primarySkills]
           <SkillsTable v-once />
         </Suspense>
       </Lazy>
-      <div class="mt-8">
+      <div :id="madeWithId" class="mt-8">
         <h2
           class="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 code-comment-inline"
         >
@@ -147,25 +203,29 @@ const randomizedSkills = [...primarySkills]
           class="flex flex-wrap justify-center gap-4 text-6xl sm:text-7xl md:text-8xl lg:text-9xl print:hidden"
         >
           <div
-            v-for="skills in madeWithSkills.filter(
+            v-for="skill in madeWithSkills.filter(
               (skill) => skill.icon !== null,
             )"
-            v-bind:key="skills.title"
-            class="tooltip tooltip-neutral tooltip-secondary-content w-1/5 md:w-auto text-center opacity-70 hover:opacity-100"
-            :data-tip="`${skills.title}`"
+            v-bind:key="skill.title"
           >
-            <div class="tooltip-content">
-              <div
-                class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl gluten"
-              >
-                {{ skills.title }}
+            <div
+              :id="`${madeWithId}-${skill.title.replaceAll(' ', '').replaceAll('.', '')}`"
+              class="tooltip tooltip-neutral tooltip-secondary-content w-1/5 md:w-auto text-center"
+              :data-tip="`${skill.title}`"
+            >
+              <div class="tooltip-content">
+                <div
+                  class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl gluten"
+                >
+                  {{ skill.title }}
+                </div>
               </div>
+              <Icon
+                :icon="`${skill.icon}`"
+                :aria-label="`${skill.title} logo`"
+                class="inline-block opacity-60 hover:opacity-100"
+              />
             </div>
-            <Icon
-              :icon="`${skills.icon}`"
-              :aria-label="`${skills.title} logo`"
-              class="inline-block"
-            />
           </div>
         </div>
         <div class="text-center mt-8">

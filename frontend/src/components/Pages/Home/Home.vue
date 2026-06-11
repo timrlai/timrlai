@@ -26,15 +26,21 @@ const FeaturedProject = defineAsyncComponent(
     <Suspense>
       <Hi v-once />
     </Suspense>
-    <Suspense>
-      <Summary v-once />
-    </Suspense>
-    <Suspense>
-      <Skills v-once />
-    </Suspense>
-    <Suspense>
-      <Experience v-once />
-    </Suspense>
+    <div class="pin-wrapper block relative isolate">
+      <Suspense>
+        <Summary v-once />
+      </Suspense>
+    </div>
+    <div class="pin-wrapper block relative isolate">
+      <Suspense>
+        <Skills v-once />
+      </Suspense>
+    </div>
+    <div class="pin-wrapper block relative isolate">
+      <Suspense>
+        <Experience v-once />
+      </Suspense>
+    </div>
     <Suspense>
       <FeaturedProject v-once />
     </Suspense>

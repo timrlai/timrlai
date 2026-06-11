@@ -1,10 +1,18 @@
 <script setup lang="ts">
-import { defineAsyncComponent } from "vue";
+import {
+  defineAsyncComponent,
+  nextTick,
+  onBeforeUnmount,
+  onMounted,
+} from "vue";
 import { storeToRefs } from "pinia";
 import { Icon } from "@iconify/vue";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { lottieConstants } from "../../../../lib/constants";
 import { useThemeStore } from "../../../../lib/stores/theme";
+import useScrollTriggers from "../../../../lib/gsap/useScrollTriggers.ts";
 
 const Lazy = defineAsyncComponent(() => import("../../Common/Lazy.vue"));
 const LottiePlayer = defineAsyncComponent(
@@ -17,6 +25,52 @@ const store = useThemeStore();
 const { isNight } = storeToRefs(store);
 
 const sectionId = "summary";
+
+let scrollTriggers: ScrollTrigger[] = [];
+const {
+  belowSmall,
+  motionReduce,
+  addScrollTrigger,
+  refreshScrollTriggers,
+  killAllScrollTriggers,
+  buildDynamicScrollTriggerConfig,
+} = useScrollTriggers();
+
+onMounted(async () => {
+  await nextTick();
+
+  if (belowSmall || motionReduce) return;
+
+  const from = {
+    x: -1000,
+    opacity: 0,
+  };
+  const timelineSettings = {
+    scrollTrigger: buildDynamicScrollTriggerConfig(sectionId, "-=70"),
+    x: 0,
+    opacity: 1,
+  };
+
+  const timeline = gsap.timeline(timelineSettings);
+
+  if (timeline) {
+    addScrollTrigger(timeline, scrollTriggers);
+
+    timeline
+      .from(".item1", from)
+      .from(".item2", from)
+      .from(".item3", from)
+      .from(".item4", from)
+      .from(".item5", from)
+      .from(".item6", from)
+      .from(".item7", from)
+      .from(".item8", from);
+  }
+
+  refreshScrollTriggers();
+});
+
+onBeforeUnmount(() => killAllScrollTriggers(scrollTriggers));
 </script>
 
 <template>
@@ -24,7 +78,7 @@ const sectionId = "summary";
     :id="sectionId"
     class="mockup-window bg-secondary/80 text-secondary-content border-4 border-primary shadow-lg shadow-primary"
   >
-    <div class="px-5">
+    <div class="px-5 pb-2">
       <h1
         class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase ubuntu-titling border-b-4 border-primary mb-4"
       >
@@ -33,7 +87,7 @@ const sectionId = "summary";
       </h1>
       <div class="flex flex-wrap justify-between items-center">
         <ul class="list w-full sm:w-3/4 text-lg sm:text-xl ahn-bold">
-          <li class="list-row">
+          <li class="list-row item1">
             <div class="text-4xl sm:text-5xl">
               <Icon icon="fluent-emoji:robot" />
             </div>
@@ -55,7 +109,7 @@ const sectionId = "summary";
               with React/Next.js and Three.js
             </div>
           </li>
-          <li class="list-row">
+          <li class="list-row item2">
             <div class="text-4xl sm:text-5xl">
               <Icon icon="fluent-emoji:man-teacher-light" />
             </div>
@@ -65,13 +119,12 @@ const sectionId = "summary";
                 href="https://www.senecapolytechnic.ca/ce/creative/graphics-web-design/web-programming-development.html"
                 target="_blank"
                 class="link link-accent link-hover"
-                >Web Programming and Development</a
+                >JavaScript & React, Python & Django and PHP & Laravel</a
               >
-              with JavaScript and React, Python and Django and PHP and Laravel
               at Seneca Polytechnic
             </div>
           </li>
-          <li class="list-row">
+          <li class="list-row item3">
             <div class="text-4xl sm:text-5xl">
               <Icon icon="fluent-emoji:man-artist-light" />
             </div>
@@ -83,10 +136,17 @@ const sectionId = "summary";
                 class="link link-accent link-hover"
                 >Introduction to Web Development</a
               >
-              with HTML, CSS and JavaScript at OCAD University
+              and
+              <a
+                href="https://continuingstudies.ocadu.ca/search/publicCourseSearchDetails.do?method=load&courseId=18145"
+                target="_blank"
+                class="link link-accent link-hover"
+                >Web Programming with JavaScript and React</a
+              >
+              at OCAD University
             </div>
           </li>
-          <li class="list-row">
+          <li class="list-row item4">
             <div class="text-4xl sm:text-5xl">
               <Icon icon="fluent-emoji:student-light" />
             </div>
@@ -101,25 +161,38 @@ const sectionId = "summary";
               degree from Seneca Polytechnic
             </div>
           </li>
-          <li class="list-row">
+          <li class="list-row item5">
+            <div class="text-4xl sm:text-5xl">
+              <Icon icon="fluent-emoji:artist-palette" />
+            </div>
+            <div>
+              Graduated with a diploma in
+              <a
+                href="https://www.senecapolytechnic.ca/programs/fulltime/ILS.html"
+                target="_blank"
+                class="link link-accent link-hover"
+                >Illustration</a
+              >
+              and a certificate in
+              <a
+                href="https://www.senecapolytechnic.ca/programs/fulltime/ADF.html"
+                target="_blank"
+                class="link link-accent link-hover"
+                >Art Fundamentals</a
+              >
+              from Seneca Polytechnic
+            </div>
+          </li>
+          <li class="list-row item6">
             <div class="text-4xl sm:text-5xl">
               <Icon icon="fluent-emoji:man-technologist-light" />
             </div>
             <div>
-              A passionate full stack developer/designer with 5+ years of web
+              A full stack, creative developer/designer with 5+ years of web
               development experience
             </div>
           </li>
-          <li class="list-row">
-            <div class="text-4xl sm:text-5xl">
-              <Icon icon="fluent-emoji:heart-on-fire" />
-            </div>
-            <div>
-              Enthusiastic, creative, detail-oriented, resourceful, reliable,
-              fast learning, dedicated and adaptable
-            </div>
-          </li>
-          <li class="list-row">
+          <li class="list-row item7">
             <div class="text-4xl sm:text-5xl">
               <Icon icon="fluent-emoji:handshake" />
             </div>
@@ -128,11 +201,14 @@ const sectionId = "summary";
               collaborative environments
             </div>
           </li>
-          <li class="list-row">
+          <li class="list-row item8">
             <div class="text-4xl sm:text-5xl">
               <Icon icon="flag:ca-1x1" />
             </div>
-            <div>Canadian citizen</div>
+            <div>
+              Canadian citizen living in the Greater Toronto Area, able to work
+              in the GTA or remote environments
+            </div>
           </li>
         </ul>
         <div v-if="!isNight" class="w-full sm:w-1/4 pl-14 sm:pl-0 pr-14">
