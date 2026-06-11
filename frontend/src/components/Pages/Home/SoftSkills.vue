@@ -59,6 +59,8 @@ const { isNight } = storeToRefs(store);
               "
               scrolling
               scroll-target="soft-skills-lottie"
+              scroll-start="-=70"
+              scroll-speed="medium"
             />
           </Suspense>
         </div>
