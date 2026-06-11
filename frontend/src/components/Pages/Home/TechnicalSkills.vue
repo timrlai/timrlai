@@ -46,7 +46,7 @@ const onSkillTyped = (currentTitle: string) => {
 
 const randomizedSkills = [...primarySkills]
   .sort(() => Math.random() - 0.5)
-  .slice(-6);
+  .slice(-18);
 
 const sectionId = "tech-skills";
 const madeWithId = "made-with-skills";
@@ -147,29 +147,31 @@ onBeforeUnmount(() => killAllScrollTriggers(scrollTriggers));
                 ><span v-if="index === randomizedSkills.length - 2"> and </span>
               </span>
             </p>
-            <div class="text-7xl smtext-8xl text-center my-6">
+            <div class="text-7xl sm:text-8xl text-center my-6">
               <Icon
                 v-for="skill in randomizedSkills.filter(
                   ({ icon }) => icon && icon,
                 )"
                 v-bind:key="skill.title"
                 :icon="`${skill.icon}`"
-                class="inline-block mx-4"
+                class="inline-block m-4"
               />
             </div>
           </div>
         </div>
-        <div v-if="!isNight" class="w-full sm:w-1/4">
+        <div class="w-full sm:w-1/4">
           <Suspense
             ><LottiePlayer
-              :src="AVATAR_SKILLS_DESK_LOTTIE_PATH"
-              autoPlay
-              v-once
-          /></Suspense>
-        </div>
-        <div v-if="isNight" class="w-full sm:w-1/4">
-          <Suspense
-            ><LottiePlayer :src="BAT_SKILLS_LAPTOP_LOTTIE_PATH" autoPlay v-once
+              :key="isNight ? 'night' : 'day'"
+              :src="
+                isNight
+                  ? BAT_SKILLS_LAPTOP_LOTTIE_PATH
+                  : AVATAR_SKILLS_DESK_LOTTIE_PATH
+              "
+              scrolling
+              scroll-target="tech-skills-lottie"
+              scroll-start="-=80"
+              scroll-speed="slow"
           /></Suspense>
         </div>
       </div>
