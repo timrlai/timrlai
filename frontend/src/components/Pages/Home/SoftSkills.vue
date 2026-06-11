@@ -29,16 +29,49 @@ const { isNight } = storeToRefs(store);
             <Icon icon="fluent-emoji:handshake" class="inline-block h-[1em]" />
             Soft Skills
           </h2>
-          <h3 class="text-2xl sm:text-3xl ubuntu-titling mb-4">Teamwork</h3>
+          <h3 class="text-2xl sm:text-3xl ubuntu-titling mb-4">
+            <Icon icon="fluent-color:people-28" class="inline-block h-[1em]" />
+            Teamwork
+          </h3>
           <p class="text-xl sm:text-2xl mb-8 text-justify">
             Having worked with large, fast-paced organizations such as
-            Futuretalk Inc., Seneca Polytechnic and the Toronto Animation Arts
-            Festival International, I have experience communicating with large
-            teams and working under time constraints. People know me to be
-            passionate, creative, detail-oriented, resourceful, reliable and
-            adaptable.
+            <em class="font-bold italic">Futuretalk Inc.</em>,
+            <em class="font-bold italic">Seneca Polytechnic</em>,
+            <em class="font-bold italic">OCAD University</em> and the
+            <em class="font-bold italic"
+              >Toronto Animation Arts Festival International</em
+            >, I have experience working with large, interdisciplinary teams
+            using modern workflows and collaborative processes.
           </p>
           <h3 class="text-2xl sm:text-3xl ubuntu-titling mb-4">
+            <Icon
+              icon="fluent-color:calendar-checkmark-24"
+              class="inline-block h-[1em]"
+            />
+            Project Management
+          </h3>
+          <p class="text-xl sm:text-2xl mb-8 text-justify">
+            In my work, I have applied project management skills including agile
+            processes, collaborated across disciplines and managed full
+            development pipelines for successful and timely delivery.
+          </p>
+          <h3 class="text-2xl sm:text-3xl ubuntu-titling mb-4">
+            <Icon
+              icon="fluent-emoji:man-teacher-light"
+              class="inline-block h-[1em]"
+            />
+            Teaching
+          </h3>
+          <p class="text-xl sm:text-2xl mb-8 text-justify">
+            Teaching has deepened my understanding of programming and design
+            concepts and strengthened my ability to effectively explain those
+            concepts to others.
+          </p>
+          <h3 class="text-2xl sm:text-3xl ubuntu-titling mb-4">
+            <Icon
+              icon="fluent-emoji:writing-hand"
+              class="inline-block h-[1em]"
+            />
             Work Philosophy Statement
           </h3>
           <p class="text-xl sm:text-2xl text-justify">
