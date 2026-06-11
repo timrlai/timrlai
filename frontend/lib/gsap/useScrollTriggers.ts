@@ -43,15 +43,29 @@ export default function useScrollTriggers() {
     });
   };
 
-  const refreshScrollTriggersOnInputChange = (
-    element: HTMLInputElement | null,
+  const refreshScrollTriggerAfterAccordion = (
+    collapseElement: HTMLDivElement | null,
   ) => {
-    if (!element) return;
-    element.addEventListener("change", () => {
-      refreshScrollTriggers();
-    });
+    if (!collapseElement) return;
+    const content = collapseElement.querySelector(".collapse-content");
+    if (!content) return;
 
-    refreshScrollTriggers();
+    content.addEventListener("transitionend", () => {
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh();
+      });
+    });
+  };
+
+  const refreshScrollTriggersOnInputChange = (
+    inputElement: HTMLInputElement | null,
+  ) => {
+    if (!inputElement) return;
+    inputElement.addEventListener("change", () => {
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh();
+      });
+    });
   };
 
   const killAllScrollTriggers = (scrollTriggers: ScrollTrigger[]) => {
@@ -153,6 +167,7 @@ export default function useScrollTriggers() {
     calculateDynamicEnd,
     addScrollTrigger,
     refreshScrollTriggers,
+    refreshScrollTriggerAfterAccordion,
     refreshScrollTriggersOnInputChange,
     killAllScrollTriggers,
     buildDynamicScrollTriggerConfig,
