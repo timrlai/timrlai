@@ -148,6 +148,29 @@ export default function useScrollTriggers() {
     if (ctx) ctx.revert();
   };
 
+  const buildThreeTriggerConfig = (
+    triggerId: string,
+    scrollTrackId: string,
+    onUpdate: ScrollTrigger.Callback,
+    fallbackEnd = 2000,
+    scrub = 1,
+    pin = true,
+    anticipatePin = 1,
+  ) => {
+    const scrollTrigger = {
+      trigger: `#${triggerId}`,
+      start: "top top",
+      end: calculateDynamicEnd(scrollTrackId, fallbackEnd),
+      scrub,
+      pin,
+      pinSpacing: pin,
+      anticipatePin,
+      invalidateOnRefresh: true,
+      onUpdate: onUpdate,
+    };
+    return scrollTrigger;
+  };
+
   return {
     belowSmall,
     motionReduce,
@@ -163,5 +186,6 @@ export default function useScrollTriggers() {
     createScrollingLottieAnimation,
     connectLottieToScrollTrigger,
     cleanupLottieScrollTrigger,
+    buildThreeTriggerConfig,
   };
 }
