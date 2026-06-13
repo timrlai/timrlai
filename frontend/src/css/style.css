@@ -188,11 +188,11 @@ body {
   background: linear-gradient(
     180deg,
     var(--color-base-300) 0%,
-    var(--color-base-200) 2%,
-    var(--color-base-100) 5%,
-    var(--color-neutral) 15%,
-    var(--color-base-300) 40%,
-    var(--color-base-200) 70%,
+    var(--color-base-200) 5%,
+    var(--color-base-100) 20%,
+    var(--color-neutral) 40%,
+    var(--color-base-300) 60%,
+    var(--color-base-200) 80%,
     var(--color-base-100) 100%
   );
 }
