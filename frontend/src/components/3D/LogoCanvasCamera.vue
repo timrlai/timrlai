@@ -13,14 +13,14 @@ const {
   isLandscape,
   isMobileOrTablet,
   verticalRotationLimit,
-  horizontalRotaitonLimit,
+  horizontalRotationLimit,
 } = defineProps<{
   sectionId: string;
   scrollTrackId: string;
   isLandscape: boolean;
   isMobileOrTablet: boolean;
   verticalRotationLimit: number;
-  horizontalRotaitonLimit: number;
+  horizontalRotationLimit: number;
 }>();
 
 const { camera } = useTresContext();
@@ -103,8 +103,8 @@ onBeforeUnmount(() => killAllScrollTriggers(scrollTriggers));
     :max-distance="Infinity"
     :min-polar-angle="0"
     :max-polar-angle="Math.PI / verticalRotationLimit"
-    :min-azimuth-angle="-(Math.PI / horizontalRotaitonLimit)"
-    :max-azimuth-angle="Math.PI / horizontalRotaitonLimit"
+    :min-azimuth-angle="-(Math.PI / horizontalRotationLimit)"
+    :max-azimuth-angle="Math.PI / horizontalRotationLimit"
     :enable-zoom="false"
   />
 </template>

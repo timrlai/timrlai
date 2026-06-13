@@ -548,7 +548,7 @@ watchEffect(() => {
         :is-landscape="isLandscape"
         :is-mobile-or-tablet="isMobileOrTablet"
         :vertical-rotation-limit="VERTICAL_ROTATION_LIMIT"
-        :horizontal-rotaiton-limit="HORIZONTAL_ROTATION_LIMIT"
+        :horizontal-rotation-limit="HORIZONTAL_ROTATION_LIMIT"
       />
       <Suspense>
         <LottieSphere v-if="!isNight" :src="CLOUDS_LIGHT_LOTTIE_PATH" />
