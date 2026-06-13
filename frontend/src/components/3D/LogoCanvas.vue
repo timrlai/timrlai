@@ -12,12 +12,15 @@ import isMobile from "is-mobile";
 import type { Group } from "three/src/objects/Group.d.ts";
 import { LinearSRGBColorSpace } from "three/src/constants.js";
 import { TresCanvas } from "@tresjs/core";
-import { useGLTF, OrbitControls, Text3D, Box } from "@tresjs/cientos";
+import { useGLTF, Text3D, Box } from "@tresjs/cientos";
 
 import { lottieConstants } from "../../../lib/constants";
 import constants from "../../../lib/constants/LogoCanvas";
 import { useThemeStore } from "../../../lib/stores/theme";
 
+const LogoCanvasCamera = defineAsyncComponent(
+  () => import("./LogoCanvasCamera.vue"),
+);
 const LottieSphere = defineAsyncComponent(() => import("./LottieSphere.vue"));
 const LottieCylinder = defineAsyncComponent(
   () => import("./LottieCylinder.vue"),
@@ -325,6 +328,9 @@ const { state: logoDarkState } = await useGLTF(LOGO_DARK_GLTF_PATH, {
 let logoLightModel: Group | undefined = logoLightState.value?.scene;
 let logoDarkModel: Group | undefined = logoDarkState.value?.scene;
 
+const sectionId = "logo-canvas";
+const scrollTrackId = "scroll-track";
+
 const setPoses = (event: Event | null = null) => {
   setTimeout(
     async () => {
@@ -517,11 +523,11 @@ watchEffect(() => {
 </script>
 
 <template>
-  <section class="relative z-0 motion-reduce:hidden print:hidden">
-    <div
-      v-if="isLandscape && isMobileOrTablet"
-      class="absolute z-10 top-0 left-0 w-full h-full"
-    ></div>
+  <section
+    :id="sectionId"
+    class="relative z-0 motion-reduce:hidden print:hidden"
+  >
+    <div :id="scrollTrackId"></div>
     <h1 class="visually-hidden">Tim R. Lai</h1>
     <h2 class="visually-hidden">A full stack team in one Tim!</h2>
     <TresCanvas
@@ -532,16 +538,13 @@ watchEffect(() => {
       alpha
       :clearAlpha="0"
     >
-      <TresPerspectiveCamera :position="[0, 0, 1]" />
-      <OrbitControls
-        v-if="!(isLandscape && isMobileOrTablet)"
-        :min-distance="0"
-        :max-distance="Infinity"
-        :min-polar-angle="0"
-        :max-polar-angle="Math.PI / VERTICAL_ROTATION_LIMIT"
-        :min-azimuth-angle="-(Math.PI / HORIZONTAL_ROTATION_LIMIT)"
-        :max-azimuth-angle="Math.PI / HORIZONTAL_ROTATION_LIMIT"
-        :enable-zoom="false"
+      <LogoCanvasCamera
+        :section-id="sectionId"
+        :scroll-track-id="scrollTrackId"
+        :is-landscape="isLandscape"
+        :is-mobile-or-tablet="isMobileOrTablet"
+        :vertical-rotation-limit="VERTICAL_ROTATION_LIMIT"
+        :horizontal-rotaiton-limit="HORIZONTAL_ROTATION_LIMIT"
       />
       <Suspense>
         <LottieSphere v-if="!isNight" :src="CLOUDS_LIGHT_LOTTIE_PATH" />
@@ -773,7 +776,8 @@ watchEffect(() => {
 </template>
 
 <style scoped lang="scss">
-section {
+#logo-canvas {
+  position: relative;
   cursor: pointer;
   height: 140vh;
   contain-intrinsic-height: 140vh;
@@ -783,5 +787,10 @@ section {
     contain-intrinsic-height: 170vh;
     margin-bottom: -80vh;
   }
+}
+#scroll-track {
+  position: absolute;
+  z-index: -1;
+  height: 600vh;
 }
 </style>
