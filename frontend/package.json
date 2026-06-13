@@ -20,6 +20,7 @@
     ]
   },
   "dependencies": {
+    "@dimforge/rapier3d-compat": "^0.19.3",
     "@tresjs/cientos": "^5.7.0",
     "@tresjs/core": "^5.8.0",
     "@vueuse/core": "^14.2.1",
