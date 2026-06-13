@@ -9,6 +9,7 @@ import {
 } from "vue";
 import { storeToRefs } from "pinia";
 import isMobile from "is-mobile";
+import type { Mesh } from "three";
 import type { Group } from "three/src/objects/Group.d.ts";
 import { LinearSRGBColorSpace } from "three/src/constants.js";
 import { TresCanvas } from "@tresjs/core";
@@ -17,17 +18,17 @@ import { useGLTF } from "@tresjs/cientos";
 import { lottieConstants } from "../../../lib/constants";
 import constants from "../../../lib/constants/LogoCanvas";
 import { useThemeStore } from "../../../lib/stores/theme";
-import Logo from "./Logo.vue";
-import Tagline from "./Tagline.vue";
-import AvatarSkills from "./AvatarSkills.vue";
 
 const LogoCanvasCamera = defineAsyncComponent(
   () => import("./LogoCanvasCamera.vue"),
 );
 const LottieSphere = defineAsyncComponent(() => import("./LottieSphere.vue"));
+const Logo = defineAsyncComponent(() => import("./Logo.vue"));
+const Tagline = defineAsyncComponent(() => import("./Tagline.vue"));
 const LottieCylinder = defineAsyncComponent(
   () => import("./LottieCylinder.vue"),
 );
+const AvatarSkills = defineAsyncComponent(() => import("./AvatarSkills.vue"));
 const GLCloud = defineAsyncComponent(() => import("./GLCloud.vue"));
 const TresStars = defineAsyncComponent(() => import("./TresStars.vue"));
 
