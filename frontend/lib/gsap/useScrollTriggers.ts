@@ -148,7 +148,7 @@ export default function useScrollTriggers() {
     if (ctx) ctx.revert();
   };
 
-  const buildThreeTriggerConfig = (
+  const buildThreeScrollTriggerConfig = (
     triggerId: string,
     scrollTrackId: string,
     onUpdate: ScrollTrigger.Callback,
@@ -186,6 +186,6 @@ export default function useScrollTriggers() {
     createScrollingLottieAnimation,
     connectLottieToScrollTrigger,
     cleanupLottieScrollTrigger,
-    buildThreeTriggerConfig,
+    buildThreeScrollTriggerConfig,
   };
 }

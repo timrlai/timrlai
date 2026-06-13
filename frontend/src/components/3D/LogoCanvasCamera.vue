@@ -31,8 +31,9 @@ const {
   addScrollTrigger,
   refreshScrollTriggers,
   killAllScrollTriggers,
-  buildThreeTriggerConfig,
+  buildThreeScrollTriggerConfig,
 } = useScrollTriggers();
+
 const orbitRef = ref<typeof OrbitControls>();
 
 onMounted(async () => {
@@ -41,7 +42,7 @@ onMounted(async () => {
   if (orbitRef.value?.instance) orbitRef.value.instance.enabled = false;
 
   const timelineSettings: gsap.TimelineVars = {
-    scrollTrigger: buildThreeTriggerConfig(
+    scrollTrigger: buildThreeScrollTriggerConfig(
       sectionId,
       scrollTrackId,
       (self: ScrollTrigger) => {
