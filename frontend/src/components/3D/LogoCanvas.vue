@@ -721,9 +721,13 @@ watchEffect(() => {
     margin-bottom: -80vh;
   }
 }
+#logo-canvas canvas {
+  touch-action: pan-y !important;
+  pointer-events: none;
+}
 #scroll-track {
   position: absolute;
   z-index: -1;
-  height: 600vh;
+  height: 600dvh;
 }
 </style>
