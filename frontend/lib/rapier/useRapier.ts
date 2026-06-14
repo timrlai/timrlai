@@ -25,6 +25,7 @@ export default function useRapier() {
     if (!world.value) return;
 
     const body = world.value.createRigidBody(rigidBodyDesc);
+    body.enableCcd(true);
     world.value.createCollider(colliderDesc, body);
 
     bodies.value.push({ mesh, body });
@@ -41,8 +42,11 @@ export default function useRapier() {
     bodies.value.forEach(({ mesh, body }) => {
       const translation = body.translation();
       const rotation = body.rotation();
-      mesh.position.set(translation.x, translation.y, translation.z);
-      mesh.quaternion.set(rotation.x, rotation.y, rotation.z, rotation.w);
+
+      if (body.isDynamic() || body.isKinematic()) {
+        mesh.position.set(translation.x, translation.y, translation.z);
+        mesh.quaternion.set(rotation.x, rotation.y, rotation.z, rotation.w);
+      }
     });
   };
 
