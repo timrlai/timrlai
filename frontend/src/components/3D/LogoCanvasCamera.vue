@@ -100,10 +100,13 @@ onMounted(async () => {
           y: initialY,
         },
         {
-          x: initialX + 0.5,
-          y: belowSmall ? initialY - 0.1 : initialY - 0.5,
+          y: 0,
         },
       )
+      .to(camera.activeCamera.value.rotation, {
+        x: initialX + 0.5,
+        y: belowSmall ? initialY - 0.1 : initialY - 0.5,
+      })
       .to(camera.activeCamera.value.rotation, {
         y: belowSmall ? initialY - 0.4 : initialY - 1,
       })
