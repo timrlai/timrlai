@@ -6,10 +6,11 @@ import {
   onMounted,
   onUnmounted,
   watchEffect,
+  useTemplateRef,
 } from "vue";
 import { storeToRefs } from "pinia";
 import isMobile from "is-mobile";
-import type { Mesh } from "three";
+
 import type { Group } from "three/src/objects/Group.d.ts";
 import { LinearSRGBColorSpace } from "three/src/constants.js";
 import { TresCanvas } from "@tresjs/core";
@@ -322,6 +323,7 @@ let batSkillsSoftScale: number = isPortrait
 const store = useThemeStore();
 const { isNight } = storeToRefs(store);
 const canvasKey: Ref<string> = ref("logo-canvas");
+const logoRef = useTemplateRef("logoRef");
 const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
 const { state: logoLightState } = await useGLTF(LOGO_LIGHT_GLTF_PATH, {
   draco: true,
@@ -549,6 +551,7 @@ watchEffect(() => {
         :is-mobile-or-tablet="isMobileOrTablet"
         :vertical-rotation-limit="VERTICAL_ROTATION_LIMIT"
         :horizontal-rotation-limit="HORIZONTAL_ROTATION_LIMIT"
+        :meshes="logoRef?.meshes"
       />
       <Suspense>
         <LottieSphere v-if="!isNight" :src="CLOUDS_LIGHT_LOTTIE_PATH" />
@@ -557,6 +560,7 @@ watchEffect(() => {
         <LottieSphere v-if="isNight" :src="CLOUDS_DARK_LOTTIE_PATH" />
       </Suspense>
       <Logo
+        ref="logoRef"
         :position="logoPosition"
         :rotation="logoRotation"
         :scale="logoScale"
