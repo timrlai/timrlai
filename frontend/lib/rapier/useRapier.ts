@@ -8,11 +8,11 @@ import {
   init,
 } from "@dimforge/rapier3d-compat";
 
-export default function useRapier() {
-  const world = ref<World | null>(null);
-  const bodies = ref<{ mesh: Mesh; body: RigidBody }[]>([]);
+const world = ref<World | null>(null);
+const bodies = ref<{ mesh: Mesh; body: RigidBody }[]>([]);
 
-  const initRapier = async (gravity = new Vector3(0, -9.81, 0)) => {
+export default function useRapier() {
+  const initRapier = async (gravity = new Vector3(0, -1, 0)) => {
     await init();
     world.value = new World(gravity);
   };
