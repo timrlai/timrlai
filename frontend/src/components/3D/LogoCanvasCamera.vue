@@ -18,7 +18,6 @@ import useRapier from "../../../lib/rapier/useRapier.ts";
 const {
   sectionId,
   scrollTrackId,
-  isLandscape,
   isMobileOrTablet,
   verticalRotationLimit,
   horizontalRotationLimit,
@@ -135,7 +134,7 @@ onBeforeUnmount(() => killAllScrollTriggers(scrollTriggers));
 <template>
   <TresPerspectiveCamera :position="[0, 0, 1]" />
   <OrbitControls
-    v-if="!(isLandscape && isMobileOrTablet)"
+    v-if="!isMobileOrTablet"
     ref="orbitRef"
     :min-distance="0"
     :max-distance="Infinity"
