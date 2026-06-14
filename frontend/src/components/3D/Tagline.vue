@@ -20,45 +20,29 @@ const {
     <Suspense
       ><TresGroup :position="[0, 2, 0]"
         ><Text3D :font="fontPath" :size="fontSize"
-          >A FULL
-          <TresMeshStandardMaterial
-            v-if="!isNight"
-            :color="textColorLight" /><TresMeshStandardMaterial
-            v-if="isNight"
-            :color="textColorDark" /></Text3D
+          >A FULL<TresMeshStandardMaterial
+            :color="isNight ? textColorDark : textColorLight" /></Text3D
       ></TresGroup>
     </Suspense>
     <Suspense
       ><TresGroup :position="[0, 0.7, 0]"
         ><Text3D :font="fontPath" :size="fontSize"
-          >STACK
-          <TresMeshStandardMaterial
-            v-if="!isNight"
-            :color="textColorLight" /><TresMeshStandardMaterial
-            v-if="isNight"
-            :color="textColorDark" /></Text3D
+          >STACK<TresMeshStandardMaterial
+            :color="isNight ? textColorDark : textColorLight" /></Text3D
       ></TresGroup>
     </Suspense>
     <Suspense
       ><TresGroup :position="[0, -0.7, 0]"
         ><Text3D :font="fontPath" :size="fontSize"
-          >TEAM iN
-          <TresMeshStandardMaterial
-            v-if="!isNight"
-            :color="textColorLight" /><TresMeshStandardMaterial
-            v-if="isNight"
-            :color="textColorDark" /></Text3D
+          >TEAM iN<TresMeshStandardMaterial
+            :color="isNight ? textColorDark : textColorLight" /></Text3D
       ></TresGroup>
     </Suspense>
     <Suspense
       ><TresGroup :position="[0, -2, 0]"
         ><Text3D :font="fontPath" :size="fontSize"
-          >ONE TiM!
-          <TresMeshStandardMaterial
-            v-if="!isNight"
-            :color="textColorLight" /><TresMeshStandardMaterial
-            v-if="isNight"
-            :color="textColorDark" /></Text3D
+          >ONE TiM!<TresMeshStandardMaterial
+            :color="isNight ? textColorDark : textColorLight" /></Text3D
       ></TresGroup>
     </Suspense>
   </TresGroup>
