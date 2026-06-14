@@ -6,22 +6,30 @@ import {
   onMounted,
   onUnmounted,
   watchEffect,
+  useTemplateRef,
 } from "vue";
 import { storeToRefs } from "pinia";
 import isMobile from "is-mobile";
+
 import type { Group } from "three/src/objects/Group.d.ts";
 import { LinearSRGBColorSpace } from "three/src/constants.js";
 import { TresCanvas } from "@tresjs/core";
-import { useGLTF, OrbitControls, Text3D, Box } from "@tresjs/cientos";
+import { useGLTF } from "@tresjs/cientos";
 
 import { lottieConstants } from "../../../lib/constants";
 import constants from "../../../lib/constants/LogoCanvas";
 import { useThemeStore } from "../../../lib/stores/theme";
 
+const LogoCanvasCamera = defineAsyncComponent(
+  () => import("./LogoCanvasCamera.vue"),
+);
 const LottieSphere = defineAsyncComponent(() => import("./LottieSphere.vue"));
+const Logo = defineAsyncComponent(() => import("./Logo.vue"));
+const Tagline = defineAsyncComponent(() => import("./Tagline.vue"));
 const LottieCylinder = defineAsyncComponent(
   () => import("./LottieCylinder.vue"),
 );
+const AvatarSkills = defineAsyncComponent(() => import("./AvatarSkills.vue"));
 const GLCloud = defineAsyncComponent(() => import("./GLCloud.vue"));
 const TresStars = defineAsyncComponent(() => import("./TresStars.vue"));
 
@@ -315,6 +323,7 @@ let batSkillsSoftScale: number = isPortrait
 const store = useThemeStore();
 const { isNight } = storeToRefs(store);
 const canvasKey: Ref<string> = ref("logo-canvas");
+const logoRef = useTemplateRef("logoRef");
 const isMobileOrTablet: boolean = isMobile() || isMobile({ tablet: true });
 const { state: logoLightState } = await useGLTF(LOGO_LIGHT_GLTF_PATH, {
   draco: true,
@@ -324,6 +333,9 @@ const { state: logoDarkState } = await useGLTF(LOGO_DARK_GLTF_PATH, {
 });
 let logoLightModel: Group | undefined = logoLightState.value?.scene;
 let logoDarkModel: Group | undefined = logoDarkState.value?.scene;
+
+const sectionId = "logo-canvas";
+const scrollTrackId = "scroll-track";
 
 const setPoses = (event: Event | null = null) => {
   setTimeout(
@@ -517,11 +529,11 @@ watchEffect(() => {
 </script>
 
 <template>
-  <section class="relative z-0 motion-reduce:hidden print:hidden">
-    <div
-      v-if="isLandscape && isMobileOrTablet"
-      class="absolute z-10 top-0 left-0 w-full h-full"
-    ></div>
+  <section
+    :id="sectionId"
+    class="relative z-0 motion-reduce:hidden print:hidden"
+  >
+    <div :id="scrollTrackId"></div>
     <h1 class="visually-hidden">Tim R. Lai</h1>
     <h2 class="visually-hidden">A full stack team in one Tim!</h2>
     <TresCanvas
@@ -532,16 +544,14 @@ watchEffect(() => {
       alpha
       :clearAlpha="0"
     >
-      <TresPerspectiveCamera :position="[0, 0, 1]" />
-      <OrbitControls
-        v-if="!(isLandscape && isMobileOrTablet)"
-        :min-distance="0"
-        :max-distance="Infinity"
-        :min-polar-angle="0"
-        :max-polar-angle="Math.PI / VERTICAL_ROTATION_LIMIT"
-        :min-azimuth-angle="-(Math.PI / HORIZONTAL_ROTATION_LIMIT)"
-        :max-azimuth-angle="Math.PI / HORIZONTAL_ROTATION_LIMIT"
-        :enable-zoom="false"
+      <LogoCanvasCamera
+        :section-id="sectionId"
+        :scroll-track-id="scrollTrackId"
+        :is-landscape="isLandscape"
+        :is-mobile-or-tablet="isMobileOrTablet"
+        :vertical-rotation-limit="VERTICAL_ROTATION_LIMIT"
+        :horizontal-rotation-limit="HORIZONTAL_ROTATION_LIMIT"
+        :meshes="logoRef?.meshes"
       />
       <Suspense>
         <LottieSphere v-if="!isNight" :src="CLOUDS_LIGHT_LOTTIE_PATH" />
@@ -549,68 +559,25 @@ watchEffect(() => {
       <Suspense>
         <LottieSphere v-if="isNight" :src="CLOUDS_DARK_LOTTIE_PATH" />
       </Suspense>
-      <TresGroup
+      <Logo
+        ref="logoRef"
         :position="logoPosition"
         :rotation="logoRotation"
         :scale="logoScale"
-      >
-        <Suspense
-          ><primitive v-if="!isNight" :object="logoLightModel"
-        /></Suspense>
-        <Suspense
-          ><primitive v-if="isNight" :object="logoDarkModel"
-        /></Suspense>
-      </TresGroup>
-      <TresGroup
+        :is-night="isNight"
+        :light-model="logoLightModel"
+        :dark-model="logoDarkModel"
+      />
+      <Tagline
         :position="taglinePosition"
         :rotation="taglineRotation"
         :scale="taglineScale"
-      >
-        <Suspense
-          ><TresGroup :position="[0, 2, 0]"
-            ><Text3D :font="FONT_PATH" :size="FONT_SIZE"
-              >A FULL
-              <TresMeshStandardMaterial
-                v-if="!isNight"
-                :color="TEXT_COLOR_LIGHT" /><TresMeshStandardMaterial
-                v-if="isNight"
-                :color="TEXT_COLOR_DARK" /></Text3D
-          ></TresGroup>
-        </Suspense>
-        <Suspense
-          ><TresGroup :position="[0, 0.7, 0]"
-            ><Text3D :font="FONT_PATH" :size="FONT_SIZE"
-              >STACK
-              <TresMeshStandardMaterial
-                v-if="!isNight"
-                :color="TEXT_COLOR_LIGHT" /><TresMeshStandardMaterial
-                v-if="isNight"
-                :color="TEXT_COLOR_DARK" /></Text3D
-          ></TresGroup>
-        </Suspense>
-        <Suspense
-          ><TresGroup :position="[0, -0.7, 0]"
-            ><Text3D :font="FONT_PATH" :size="FONT_SIZE"
-              >TEAM iN
-              <TresMeshStandardMaterial
-                v-if="!isNight"
-                :color="TEXT_COLOR_LIGHT" /><TresMeshStandardMaterial
-                v-if="isNight"
-                :color="TEXT_COLOR_DARK" /></Text3D
-          ></TresGroup>
-        </Suspense>
-        <Suspense
-          ><TresGroup :position="[0, -2, 0]"
-            ><Text3D :font="FONT_PATH" :size="FONT_SIZE"
-              >ONE TiM!
-              <TresMeshStandardMaterial
-                v-if="!isNight"
-                :color="TEXT_COLOR_LIGHT" /><TresMeshStandardMaterial
-                v-if="isNight"
-                :color="TEXT_COLOR_DARK" /></Text3D
-          ></TresGroup>
-        </Suspense>
-      </TresGroup>
+        :is-night="isNight"
+        :font-path="FONT_PATH"
+        :font-size="FONT_SIZE"
+        :text-color-light="TEXT_COLOR_LIGHT"
+        :text-color-dark="TEXT_COLOR_DARK"
+      />
       <Suspense>
         <LottieCylinder
           :src="AVATAR_WAVE_LOTTIE_PATH"
@@ -644,48 +611,17 @@ watchEffect(() => {
           :scale="avatarSkillsSoftScale"
         />
       </Suspense>
-      <Suspense>
-        <LottieCylinder
-          :src="AVATAR_SKILLS_LEGS_LOTTIE_PATH"
-          :height="AVATAR_SKILLS_HEIGHT"
-          :radius-top="AVATAR_SKILLS_RADIUS"
-          :radius-bottom="AVATAR_SKILLS_RADIUS"
-          :position="avatarSkillsPosition"
-          :rotation="avatarSkillsRotation"
-          :scale="avatarSkillsScale"
-        />
-      </Suspense>
-      <TresGroup
-        :position="avatarDeskPosition"
-        :rotation="avatarDeskRotation"
-        :scale="avatarDeskScale"
-      >
-        <Suspense>
-          <Box
-            :args="[2.2, 0.1, 1.6]"
-            :position="[0, 2.4, 1.5]"
-            :rotation="[2.2, 0.1, 0.05]"
-            shadows
-          >
-            <TresMeshStandardMaterial color="#006177" />
-          </Box>
-        </Suspense>
-        <Suspense>
-          <Box
-            :args="[2.2, 0.2, 1.6]"
-            :position="[0, 1.7, 0]"
-            :rotation="[0, 0, 0.05]"
-            shadows
-          >
-            <TresMeshStandardMaterial color="#006177" />
-          </Box>
-        </Suspense>
-        <Suspense>
-          <Box :args="[5, 3, 3]" shadows>
-            <TresMeshStandardMaterial color="#963600" />
-          </Box>
-        </Suspense>
-      </TresGroup>
+      <AvatarSkills
+        :avatar-position="avatarSkillsPosition"
+        :avatar-rotation="avatarSkillsRotation"
+        :avatar-scale="avatarSkillsScale"
+        :avatar-lottie-path="AVATAR_SKILLS_LEGS_LOTTIE_PATH"
+        :avatar-height="AVATAR_SKILLS_HEIGHT"
+        :avatar-radius="AVATAR_SKILLS_RADIUS"
+        :desk-position="avatarDeskPosition"
+        :desk-rotation="avatarDeskRotation"
+        :desk-scale="avatarDeskScale"
+      />
       <Suspense>
         <LottieCylinder
           v-if="isNight"
@@ -773,7 +709,8 @@ watchEffect(() => {
 </template>
 
 <style scoped lang="scss">
-section {
+#logo-canvas {
+  position: relative;
   cursor: pointer;
   height: 140vh;
   contain-intrinsic-height: 140vh;
@@ -783,5 +720,10 @@ section {
     contain-intrinsic-height: 170vh;
     margin-bottom: -80vh;
   }
+}
+#scroll-track {
+  position: absolute;
+  z-index: -1;
+  height: 600vh;
 }
 </style>
