@@ -1,5 +1,5 @@
 import type { CanvasTexture } from "three/src/textures/CanvasTexture.d.ts";
-import type { Group, Object3DEventMap } from "three";
+import type { Group, Mesh, Object3DEventMap } from "three";
 import type { Wrapping, Side } from "three/src/constants.d.ts";
 import {
   type RendererType,
@@ -180,6 +180,16 @@ export type TresStarsProps = {
   depth?: number;
   count?: number;
   size?: number;
+};
+
+export type LogoCanvasCameraProps = {
+  sectionId: string;
+  scrollTrackId: string;
+  isLandscape: boolean;
+  isMobileOrTablet: boolean;
+  verticalRotationLimit: number;
+  horizontalRotationLimit: number;
+  meshes: Mesh[] | undefined;
 };
 
 export type LogoProps = {
