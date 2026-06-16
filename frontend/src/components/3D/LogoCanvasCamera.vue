@@ -25,7 +25,7 @@ const {
   meshes,
 } = defineProps<LogoCanvasCameraProps>();
 
-const { camera } = useTresContext();
+const { camera, scene } = useTresContext();
 
 let scrollTriggers: ScrollTrigger[] = [];
 const {
@@ -50,6 +50,7 @@ onMounted(async () => {
   await initRapier();
 
   const mesh = new Mesh();
+  scene.value.add(mesh);
   const floorDesc = RigidBodyDesc.fixed().setTranslation(0, -0.08, 0);
   const floorCollider = ColliderDesc.cuboid(10, 0.05, 10);
 
