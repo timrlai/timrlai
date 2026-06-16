@@ -35,7 +35,8 @@ const {
   killAllScrollTriggers,
   buildThreeScrollTriggerConfig,
 } = useScrollTriggers();
-let logoDropped = false;
+let logoCollapsed = false;
+let scrollFinished = true;
 const bodies: RigidBody[] = [];
 const orbitRef = ref<typeof OrbitControls>();
 
@@ -61,8 +62,8 @@ onMounted(async () => {
       sectionId,
       scrollTrackId,
       (self: ScrollTrigger) => {
-        if (self.progress > 0.99 && !logoDropped && meshes) {
-          logoDropped = true;
+        scrollFinished = self.progress === 1;
+        if (scrollFinished && !logoCollapsed && meshes) {
           meshes.forEach((mesh) => {
             const desc = RigidBodyDesc.kinematicPositionBased();
             const points = new Float32Array(
@@ -74,15 +75,12 @@ onMounted(async () => {
             if (!body) return;
             body.setBodyType(RigidBodyType.Dynamic, true);
             body.applyImpulse({ x: 0, y: -0.5, z: 0.5 }, true);
+            logoCollapsed = true;
             if (!body.isDynamic() || body.isSleeping()) return;
             bodies.push(body);
           });
         }
-        if (
-          !isMobileOrTablet &&
-          orbitRef.value?.instance &&
-          self.progress === 1
-        ) {
+        if (!isMobileOrTablet && orbitRef.value?.instance && scrollFinished) {
           orbitRef.value.instance.enabled = true;
         }
       },
@@ -147,7 +145,7 @@ onBeforeUnmount(() => killAllScrollTriggers(scrollTriggers));
 <template>
   <TresPerspectiveCamera :position="[0, 0, 1]" />
   <OrbitControls
-    v-if="!isMobileOrTablet"
+    v-if="!isMobileOrTablet && scrollFinished"
     ref="orbitRef"
     :min-distance="0"
     :max-distance="Infinity"
