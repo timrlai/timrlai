@@ -7,6 +7,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   ColliderDesc,
+  RigidBody,
   RigidBodyDesc,
   RigidBodyType,
 } from "@dimforge/rapier3d-compat";
@@ -35,6 +36,7 @@ const {
   buildThreeScrollTriggerConfig,
 } = useScrollTriggers();
 let logoDropped = false;
+const bodies: RigidBody[] = [];
 const orbitRef = ref<typeof OrbitControls>();
 
 const { initRapier, step, addRigidBody } = useRapier();
@@ -72,6 +74,8 @@ onMounted(async () => {
               if (!body) return;
               body.setBodyType(RigidBodyType.Dynamic, true);
               body.applyImpulse({ x: 0, y: -0.5, z: 0.5 }, true);
+              if (!body.isDynamic() || body.isSleeping()) return;
+              bodies.push(body);
             }, 1000);
           });
         }
@@ -125,7 +129,17 @@ onMounted(async () => {
 });
 
 onRender(({ delta }: { delta: number }) => {
-  step(delta);
+  let activeBodies = 0;
+
+  bodies.forEach((body) => {
+    if (body.isDynamic() && !body.isSleeping()) {
+      activeBodies++;
+    }
+  });
+
+  if (bodies.length > 0 && activeBodies > 0) {
+    step(delta);
+  }
 });
 
 onBeforeUnmount(() => killAllScrollTriggers(scrollTriggers));
