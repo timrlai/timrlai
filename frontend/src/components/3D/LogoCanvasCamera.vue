@@ -70,14 +70,12 @@ onMounted(async () => {
             );
             const collider = ColliderDesc.convexHull(points);
             if (!collider) return;
-            setTimeout(() => {
-              const body = addRigidBody(mesh, desc, collider);
-              if (!body) return;
-              body.setBodyType(RigidBodyType.Dynamic, true);
-              body.applyImpulse({ x: 0, y: -0.5, z: 0.5 }, true);
-              if (!body.isDynamic() || body.isSleeping()) return;
-              bodies.push(body);
-            }, 1000);
+            const body = addRigidBody(mesh, desc, collider);
+            if (!body) return;
+            body.setBodyType(RigidBodyType.Dynamic, true);
+            body.applyImpulse({ x: 0, y: -0.5, z: 0.5 }, true);
+            if (!body.isDynamic() || body.isSleeping()) return;
+            bodies.push(body);
           });
         }
         if (
