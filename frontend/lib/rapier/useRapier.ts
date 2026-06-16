@@ -25,7 +25,6 @@ export default function useRapier() {
     if (!world.value) return;
 
     const body = world.value.createRigidBody(rigidBodyDesc);
-    body.enableCcd(true);
     world.value.createCollider(colliderDesc, body);
 
     bodies.value.push({ mesh, body });
