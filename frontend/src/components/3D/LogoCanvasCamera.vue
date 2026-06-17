@@ -143,16 +143,19 @@ onBeforeUnmount(() => killAllScrollTriggers(scrollTriggers));
 </script>
 
 <template>
-  <TresPerspectiveCamera :position="[0, 0, 1]" />
-  <OrbitControls
-    v-if="!isMobileOrTablet && scrollFinished"
-    ref="orbitRef"
-    :min-distance="0"
-    :max-distance="Infinity"
-    :min-polar-angle="0"
-    :max-polar-angle="Math.PI / verticalRotationLimit"
-    :min-azimuth-angle="-(Math.PI / horizontalRotationLimit)"
-    :max-azimuth-angle="Math.PI / horizontalRotationLimit"
-    :enable-zoom="false"
-  />
+  <TresPerspectiveCamera :position="[0, 0, 1]" v-once />
+  <Suspense>
+    <OrbitControls
+      v-if="!isMobileOrTablet && scrollFinished"
+      ref="orbitRef"
+      :min-distance="0"
+      :max-distance="Infinity"
+      :min-polar-angle="0"
+      :max-polar-angle="Math.PI / verticalRotationLimit"
+      :min-azimuth-angle="-(Math.PI / horizontalRotationLimit)"
+      :max-azimuth-angle="Math.PI / horizontalRotationLimit"
+      :enable-zoom="false"
+      v-once
+    />
+  </Suspense>
 </template>
