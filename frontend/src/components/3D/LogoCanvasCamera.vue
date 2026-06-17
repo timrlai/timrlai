@@ -149,7 +149,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <TresPerspectiveCamera :position="[0, 0, 1]" />
+  <TresPerspectiveCamera :position="[0, 0, 1]" v-once />
   <OrbitControls
     v-if="!isMobileOrTablet && scrollFinished"
     ref="orbitRef"
@@ -160,5 +160,6 @@ onBeforeUnmount(() => {
     :min-azimuth-angle="-(Math.PI / horizontalRotationLimit)"
     :max-azimuth-angle="Math.PI / horizontalRotationLimit"
     :enable-zoom="false"
+    v-once
   />
 </template>
