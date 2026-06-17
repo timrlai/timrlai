@@ -40,7 +40,7 @@ let scrollFinished = true;
 const bodies: RigidBody[] = [];
 const orbitRef = ref<typeof OrbitControls>();
 
-const { initRapier, step, addRigidBody } = useRapier();
+const { world, initRapier, step, addRigidBody } = useRapier();
 const { onRender } = useLoop();
 
 onMounted(async () => {
@@ -74,8 +74,8 @@ onMounted(async () => {
             if (!body) return;
             body.setBodyType(RigidBodyType.Dynamic, true);
             body.applyImpulse({ x: 0, y: -0.5, z: 0.5 }, true);
-            logoCollapsed = true;
             bodies.push(body);
+            logoCollapsed = true;
           });
         }
         if (!isMobileOrTablet && orbitRef.value?.instance && scrollFinished) {
@@ -139,7 +139,16 @@ onRender(() => {
   }
 });
 
-onBeforeUnmount(() => killAllScrollTriggers(scrollTriggers));
+onBeforeUnmount(() => {
+  bodies.length = 0;
+
+  killAllScrollTriggers(scrollTriggers);
+
+  if (world.value) {
+    world.value.free();
+    world.value = null;
+  }
+});
 </script>
 
 <template>
