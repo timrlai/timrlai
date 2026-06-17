@@ -39,6 +39,7 @@ export default function useRapier() {
     world.value.step();
 
     bodies.forEach(({ mesh, body }) => {
+      if (body.isFixed()) return;
       if (body.isDynamic() && !body.isSleeping()) {
         const translation = body.translation();
         const rotation = body.rotation();
