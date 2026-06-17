@@ -39,10 +39,9 @@ export default function useRapier() {
     world.value.step();
 
     bodies.value.forEach(({ mesh, body }) => {
-      const translation = body.translation();
-      const rotation = body.rotation();
-
-      if (body.isDynamic() || body.isKinematic()) {
+      if ((!body.isSleeping() && body.isDynamic()) || body.isKinematic()) {
+        const translation = body.translation();
+        const rotation = body.rotation();
         mesh.position.set(translation.x, translation.y, translation.z);
         mesh.quaternion.set(rotation.x, rotation.y, rotation.z, rotation.w);
       }
