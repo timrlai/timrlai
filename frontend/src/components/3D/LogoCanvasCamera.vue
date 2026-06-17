@@ -75,7 +75,6 @@ onMounted(async () => {
             body.setBodyType(RigidBodyType.Dynamic, true);
             body.applyImpulse({ x: 0, y: -0.5, z: 0.5 }, true);
             logoCollapsed = true;
-            if (!body.isDynamic() || body.isSleeping()) return;
             bodies.push(body);
           });
         }
