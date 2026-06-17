@@ -7,7 +7,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   ColliderDesc,
-  RigidBody,
   RigidBodyDesc,
   RigidBodyType,
 } from "@dimforge/rapier3d-compat";
@@ -37,10 +36,9 @@ const {
 } = useScrollTriggers();
 let logoCollapsed = false;
 let scrollFinished = true;
-const bodies: RigidBody[] = [];
 const orbitRef = ref<typeof OrbitControls>();
 
-const { initRapier, step, addRigidBody } = useRapier();
+const { world, bodies, initRapier, step, addRigidBody } = useRapier();
 const { onRender } = useLoop();
 
 onMounted(async () => {
@@ -75,7 +73,6 @@ onMounted(async () => {
             body.setBodyType(RigidBodyType.Dynamic, true);
             body.applyImpulse({ x: 0, y: -0.5, z: 0.5 }, true);
             logoCollapsed = true;
-            bodies.push(body);
           });
         }
         if (!isMobileOrTablet && orbitRef.value?.instance && scrollFinished) {
@@ -126,7 +123,7 @@ onMounted(async () => {
 onRender(() => {
   let activeBodies = 0;
 
-  bodies.forEach((body) => {
+  bodies.forEach(({ body }) => {
     if (body.isDynamic() && !body.isSleeping()) {
       activeBodies++;
     }
@@ -139,23 +136,30 @@ onRender(() => {
   }
 });
 
-onBeforeUnmount(() => killAllScrollTriggers(scrollTriggers));
+onBeforeUnmount(() => {
+  bodies.length = 0;
+
+  killAllScrollTriggers(scrollTriggers);
+
+  if (world.value) {
+    world.value.free();
+    world.value = null;
+  }
+});
 </script>
 
 <template>
   <TresPerspectiveCamera :position="[0, 0, 1]" v-once />
-  <Suspense>
-    <OrbitControls
-      v-if="!isMobileOrTablet && scrollFinished"
-      ref="orbitRef"
-      :min-distance="0"
-      :max-distance="Infinity"
-      :min-polar-angle="0"
-      :max-polar-angle="Math.PI / verticalRotationLimit"
-      :min-azimuth-angle="-(Math.PI / horizontalRotationLimit)"
-      :max-azimuth-angle="Math.PI / horizontalRotationLimit"
-      :enable-zoom="false"
-      v-once
-    />
-  </Suspense>
+  <OrbitControls
+    v-if="!isMobileOrTablet && scrollFinished"
+    ref="orbitRef"
+    :min-distance="0"
+    :max-distance="Infinity"
+    :min-polar-angle="0"
+    :max-polar-angle="Math.PI / verticalRotationLimit"
+    :min-azimuth-angle="-(Math.PI / horizontalRotationLimit)"
+    :max-azimuth-angle="Math.PI / horizontalRotationLimit"
+    :enable-zoom="false"
+    v-once
+  />
 </template>
