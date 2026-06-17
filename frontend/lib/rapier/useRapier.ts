@@ -9,13 +9,12 @@ import {
 } from "@dimforge/rapier3d-compat";
 
 const world = ref<World | null>(null);
-const bodies: { mesh: Mesh; body: RigidBody }[] = [];
+const bodies = ref<{ mesh: Mesh; body: RigidBody }[]>([]);
 
 export default function useRapier() {
   const initRapier = async (gravity = new Vector3(0, -1, 0)) => {
     await init();
     world.value = new World(gravity);
-    world.value.timestep = 1 / 60;
   };
 
   const addRigidBody = (
@@ -26,23 +25,25 @@ export default function useRapier() {
     if (!world.value) return;
 
     const body = world.value.createRigidBody(rigidBodyDesc);
+    body.enableCcd(true);
     world.value.createCollider(colliderDesc, body);
 
-    bodies.push({ mesh, body });
+    bodies.value.push({ mesh, body });
 
     return body;
   };
 
-  const step = () => {
-    if (!world.value || bodies.length === 0) return;
+  const step = (dt: number) => {
+    if (!world.value) return;
 
+    world.value.timestep = dt;
     world.value.step();
 
-    bodies.forEach(({ mesh, body }) => {
-      if (body.isFixed()) return;
-      if (body.isDynamic() && !body.isSleeping()) {
-        const translation = body.translation();
-        const rotation = body.rotation();
+    bodies.value.forEach(({ mesh, body }) => {
+      const translation = body.translation();
+      const rotation = body.rotation();
+
+      if (body.isDynamic() || body.isKinematic()) {
         mesh.position.set(translation.x, translation.y, translation.z);
         mesh.quaternion.set(rotation.x, rotation.y, rotation.z, rotation.w);
       }
