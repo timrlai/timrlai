@@ -544,15 +544,17 @@ watchEffect(() => {
       alpha
       :clearAlpha="0"
     >
-      <LogoCanvasCamera
-        :section-id="sectionId"
-        :scroll-track-id="scrollTrackId"
-        :is-landscape="isLandscape"
-        :is-mobile-or-tablet="isMobileOrTablet"
-        :vertical-rotation-limit="VERTICAL_ROTATION_LIMIT"
-        :horizontal-rotation-limit="HORIZONTAL_ROTATION_LIMIT"
-        :meshes="logoRef?.meshes"
-      />
+      <Suspense>
+        <LogoCanvasCamera
+          :section-id="sectionId"
+          :scroll-track-id="scrollTrackId"
+          :is-landscape="isLandscape"
+          :is-mobile-or-tablet="isMobileOrTablet"
+          :vertical-rotation-limit="VERTICAL_ROTATION_LIMIT"
+          :horizontal-rotation-limit="HORIZONTAL_ROTATION_LIMIT"
+          :meshes="logoRef?.meshes"
+        />
+      </Suspense>
       <Suspense>
         <LottieSphere v-if="!isNight" :src="CLOUDS_LIGHT_LOTTIE_PATH" />
       </Suspense>
