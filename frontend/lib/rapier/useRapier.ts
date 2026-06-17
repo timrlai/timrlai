@@ -33,7 +33,7 @@ export default function useRapier() {
   };
 
   const step = (dt: number) => {
-    if (!world.value) return;
+    if (!world.value || bodies.length === 0) return;
 
     world.value.timestep = dt;
     world.value.step();
