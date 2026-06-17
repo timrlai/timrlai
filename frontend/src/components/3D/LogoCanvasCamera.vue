@@ -66,9 +66,8 @@ onMounted(async () => {
         if (scrollFinished && !logoCollapsed && meshes) {
           meshes.forEach((mesh) => {
             const desc = RigidBodyDesc.kinematicPositionBased();
-            const points = new Float32Array(
-              mesh.geometry.attributes.position.array,
-            );
+            const points = mesh.geometry.attributes.position
+              .array as Float32Array;
             const collider = ColliderDesc.convexHull(points);
             if (!collider) return;
             const body = addRigidBody(mesh, desc, collider);
