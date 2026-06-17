@@ -15,6 +15,7 @@ export default function useRapier() {
   const initRapier = async (gravity = new Vector3(0, -1, 0)) => {
     await init();
     world.value = new World(gravity);
+    world.value.timestep = 1 / 60;
   };
 
   const addRigidBody = (
@@ -32,10 +33,9 @@ export default function useRapier() {
     return body;
   };
 
-  const step = (dt: number) => {
+  const step = () => {
     if (!world.value || bodies.length === 0) return;
 
-    world.value.timestep = dt;
     world.value.step();
 
     bodies.forEach(({ mesh, body }) => {

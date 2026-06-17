@@ -123,7 +123,7 @@ onMounted(async () => {
   refreshScrollTriggers();
 });
 
-onRender(({ delta }: { delta: number }) => {
+onRender(() => {
   let activeBodies = 0;
 
   bodies.forEach((body) => {
@@ -133,7 +133,7 @@ onRender(({ delta }: { delta: number }) => {
   });
 
   if (activeBodies > 0) {
-    step(delta);
+    step();
   } else if (logoCollapsed) {
     bodies.length = 0;
   }
