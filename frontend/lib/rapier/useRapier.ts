@@ -9,7 +9,7 @@ import {
 } from "@dimforge/rapier3d-compat";
 
 const world = ref<World | null>(null);
-const bodies = ref<{ mesh: Mesh; body: RigidBody }[]>([]);
+const bodies: { mesh: Mesh; body: RigidBody }[] = [];
 
 export default function useRapier() {
   const initRapier = async (gravity = new Vector3(0, -1, 0)) => {
@@ -27,7 +27,7 @@ export default function useRapier() {
     const body = world.value.createRigidBody(rigidBodyDesc);
     world.value.createCollider(colliderDesc, body);
 
-    bodies.value.push({ mesh, body });
+    bodies.push({ mesh, body });
 
     return body;
   };
@@ -38,7 +38,7 @@ export default function useRapier() {
     world.value.timestep = dt;
     world.value.step();
 
-    bodies.value.forEach(({ mesh, body }) => {
+    bodies.forEach(({ mesh, body }) => {
       if (body.isDynamic() && !body.isSleeping()) {
         const translation = body.translation();
         const rotation = body.rotation();
