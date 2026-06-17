@@ -134,8 +134,10 @@ onRender(({ delta }: { delta: number }) => {
     }
   });
 
-  if (bodies.length > 0 && activeBodies > 0) {
+  if (activeBodies > 0) {
     step(delta);
+  } else if (logoCollapsed) {
+    bodies.length = 0;
   }
 });
 
